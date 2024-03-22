@@ -1,0 +1,201 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+
+\title{Lezione 3 Geometria I}
+\date{2024-03-21}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{nomen}{Nomenclatura}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Nella lezione precedente...}
+	Abbiamo introdotto i sottospazi affini di $(A,V)$ come i sottospazi del tipo \[
+		p + W \ \ \ \ W\subseteq V \ \ \text{sottospazio vettoriale}
+	.\] 
+	Ricordiamo anche che $p + W = q + W \Leftrightarrow \overrightarrow{PQ}\in W$
+	\section{Nuova lezione}
+	\textbf{Osservazione} \\
+	Se $\Sigma_1 = p_1 + W_1, \ \ \Simga_2 = p_2 + W_2$ sono sottospazi affini , la loro intersezione, se non vuota, è un sottospazio affine. Infatti $p\in\Sigma_1\cap\Sigma_2$ 
+	\[
+	\Sigma_1\cap\Sigma_2=p + W_1\capW_2
+	.\] 
+	\begin{lemm}
+		$\emptyset\neq S\subset A \ \ \ \ p,q\in S$\\
+		$H_p = \{\overrightarrow{px}\ \ |\ \ x\in S\} \ H_q =\{ \overrightarrow{qy}\ \ |\ \ y\in S\}$\\
+		Allora $<H_p> = <H_q>$ e $p + <H_p> = q + <H_q>$ \\(sottospazio generato da $S$)
+	\end{lemm}
+	\begin{dimo}
+		\begin{aliged}
+		&v_0 = \overrightarrow{pq} \ \ v_0\in H_p \ \ -v_0 = \overrightarrow{qp}\in H_q \\
+		&H_p\ni \overrightarrow{px} = \overrightarrow{pq} + \overrightarrow{qx} = v_0 + \overrightarrow{qx}\in <H_q>\\
+		& H_p \ \subseteq \ <H_q>\ \  \Rightarrow\ \ \ <H_p>\ \subseteq \ <H_q>\\
+		&H_q\ni \overrightarrow{qy} = \overrightarrow{qp} + \overrightarrow{py}\in <H_q>\ \Rightarrow  \ <H_q>\ \subseteq \ <H_p>
+		\end{aliged} \\
+		Quindi \begin{aligend}
+			&<H_p> = <H_q> \\
+			&\overrightarrow{pq}\in<H_p> = <H_q>\\
+			&p + <H_p> = q + <H_q>
+		\end{aligend}
+	\end{dimo}
+	\begin{nome}
+		$\Sigma_1,\Sigma_2$ sottospazi affini \[
+			\Sigma_1 \vee \Sigma_2 := \text{sottospazio generato da } \Sigma_1\cup\Sigma_2
+		.\] 
+	\end{nome}
+	\newpage
+	\begin{lemm}
+		Siano $\Sigma_i = p_i + W_i, \ \ \ i = 1,2$ sottospazi affini. Allora\\
+		(a) $\Sigma_1\cap\Sigma_2\neq\emptyset \Leftrightarrow \overrightarrow{p_1p_2}\in W_1+W_2\\$
+		(b) $\Sigma_1\vee\Sigma_2 = p_1 + (W_1 + W_2 + <\overrightarrow{p_1p_2}>)$
+	\end{lemm}
+	\begin{dimo}
+		(a) $p_0\in\Sigma_1\cap\Sigma_2$ allora
+		\begin{aligend}
+			&\Sigma_1 = p_0 + W_1 \ \ \Simga_2 = p_0+W_2\\
+			&\exists w_i\in W_i, \ \ i = 1,2 \ \ \text{ t.c }\\
+			&p_1 = p_0 + W_1, p_2 = p_0 + W_2\\
+			&\overrightarrow{p_1p_2} = w_2-w_1\in W_1 + W_2\\
+		\end{aligend}
+		Viceversa, se $\overrightarrow{p_1p_2} = w_1 + w_2, w_1\in W_1, w_2\in W_2 $\\
+		\begin{aligned}
+			&p_2 = p_1 + \overrightarrow{p_1p_2} = p_1 + w_1 + w_2\\
+			&p_2 - w_2 = p_1 + w_1 \in \Sigma_1\cap\Sigma_2
+		\end{aligned}
+		(2) Dato $x\in\Sigma_1\cup\Sigma_2$, risulta \\
+		$\overrightarrow{p_1x}\in W_1$ se $x\in\Sigma_1$ \\ 
+		oppure
+		\[
+		\overrightarrow{p_1x}\in\overrightarrow{p_1p_2}+ W_2 \ \ (\overrightarrow{p_1x} = \overrightarrow{p_1p_2} + \overrightarrow{p_2x})
+		.\] 
+		Dunque la giacitura di $\Sigma_1\vee\Sigma_2$ è \[
+		W_1 + W_2 + <\overrightarrow{p_1p_2}>
+		.\] 
+	\end{dimo}
+	\section{Posizioni Reciproche di sottospazi affini}
+	\begin{defi}
+		Siano $\Sigma_1,\Sigma_2$ sottospazi affini di $(A,V)$ di giacitura rispettivamente $W_1,W_2$ Diciamo che \\
+		1) $\Sigma_1,\Sigma_2$ sono \textbf{incidenti}, se \Sigma_1\cap\Sigma_2\neq\emptyset\\
+		2) $\Sigma_1,\Sigma_2$ sono \textbf{paralleli} se $W_1\subseteq W_2$ p $W_2\subseteq W_1$\\
+		3) $\Sigma_1,\Sigma_2$ sono \textbf{sghembi} se $\Sigma_1\cap\Sigma_2 = \emptyset$ e $W_1\cap W_2 = \{0\}$
+	\end{defi}
+	\textbf{Osservazione} \\
+	Queste posizioni non sono mutuamente esclusive e non costituiscono tutte le possibilità\\
+	\newpage
+	\section{Esercizi Elementari}
+	\textbf{Esercizio 1} \\
+	Dire se $p = \icol{1\\0\\2}$ appartiene alla retta per $\icol{1\\5\\4}$
+	e direzione $\icol{1\\1\\1}$
+	\textbf{Svolgimento}
+	Scriviamo l'equazione parametrica della retta
+	\[
+		\icol{x_1\\x_2\\x_3} = \icol{1\\5\\4} + t\icol{1\\1\\1}
+	.\]
+	\[
+		\icol{1\\0\\2} = \icol{1\\5\\4} + t\icol{1\\1\\1} \ \ \ \ \ \begin{cases}
+			t = 0\\
+			t = -5
+		\end{cases}
+	.\] 
+	alternativamente avrei potuto cercare le coordinate cartesiane\\
+	\hline \ \\
+	\textbf{Esercizio 2} \\
+	Scrivere le equazioni parametriche e cartesiane per il piano contenente 
+	\[
+		A = \icol{1\\1\\1}, B = \icol{1\\1\\0},C = \icol{1\\0\\0}
+	.\]
+	\begin{aligned}
+	&P = A + t\overrightarrow{AB} + s\overrightarrow{AC}\\
+	&\icol{x_1\\x_2\\x_3} = \icol{1\\0\\0} + t\left(\icol{1\\1\\0}-\icol{1\\0\\0}\right) + s\left(\icol{1\\1\\1} - \icol{1\\0\\0}\right)\\
+	&\icol{x_1\\x_2\\x_3} = \icol{1\\0\\0}+ t\icol{0\\1\\0} + s\icol{0\\1\\1}\\
+	&\icol{x_1-1\\x_2\\x_3}\in <\icol{0\\1\\0},\icol{0\\1\\1}>\\
+	&det\icol{0&1&0\\0&1&1\\x_1-1&x_2&x_3} = 0  \ \ \ \Rightarrow \ \ x_1 = 1
+	\end{aligned} \\[10px]
+	\hline \ \\
+	\textbf{Esercizio 3} \\
+	Scrivere equazioni per il piano identificato dalla retta \\ $\icol{x_1\\x_2\\x_3} = \icol{1\\2\\3} + t\icol{0\\1\\0}$ e dal punto $\icol{0\\0\\0}$ \\[10px]
+	\textbf{Svolgimento} \\ 
+	modo 1, scelgo due punti distinti sulla retta e riduco al punto precedente\\
+	modo 2, sia $q = \icol{1\\2\\3}, \ v = \icol{0\\1\\0}$ e $O = \icol{0\\0\\0}$\\ considero il piano $P = q + tv + s\overrightarrow{Oq}$ \\
+	\begin{aligend}
+		&\icol{x_1\\x_2\\x_3}=\icol{1\\2\\3} + t\icol{0\\1\\0} + s\icol{1\\2\\3}\\
+		&det\matrice{x_1-x_2&x_2-2&x_3-3\\0&1&0\\1&2&3} = 0 \\
+		&3(x_1-1) - (x_3-3) = 0\\
+		&3x_1 -x_3 = 0
+	\end{aligend}
+	Fascio di piani di asse una retta $r$ è l'insieme dei piani che contengono $r$
+	\[
+	r = \begin{cases}
+		a_1x_1+a_2x_2+a_3x_3+a_4 = 0\\
+		b_1x_1+b_2x_2+b_3x_3+b_4=0
+	\end{cases}
+	.\] 
+	Equazione del fascio
+	\[
+	\lambda(a_1x_1+a_2x_2+a_3x_3+a_4) + \mu(b_1x_1+b_2x_2+b_3x_3+b_4) = 0 \ \ \ \lambda,\mu\in \mathbb{K}
+	.\] 
+	Ogni piano del fascio si ottiene con una coppia $(\lambda,\mu)\in \mathbb{K}^2.$ Coppie proporzioneali per un fattore non nulla invidiano lo stesso piano
+\end{document} 

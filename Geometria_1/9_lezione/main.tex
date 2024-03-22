@@ -1,0 +1,219 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+
+\title{Lezione 9 Geometria I}
+\date{2024-03-20}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{nomen}{Nomenclatura}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newenvironment{sistema}
+{\begin{equations}\begin{cases}}{\end{cases}\end{equations}}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Rimembranze dalla scorsa lezione}
+	V spazio vettoriale. Un prodotto scalare su $V$ è una funzione bilineare simetirca $< \cdot \ , \ \cdot> : V\times V \rightarrow \mathbb{R}$ tale che: \[
+	<v,v> \geq 0 \ \ \forall v\inV
+	.\] 
+	\[
+	<v,v> = 0 \Leftrightarrow v = 0
+	.\] 
+	\section{Nuova effettiva lezione}
+Dimostriamo alcune proprietà del prodotto scalare: 
+\begin{lemm} 
+	\[
+	1. \ \ ||v|| \geq 0 \text{ e } ||v|| = 0 \text{ se e solo se } v = 0. .\]
+\[
+	2. \ \ ||\alpha v|| = |\alpha| \cdot ||v|| \ \ \alpha\in \mathbb{R}, v\in V
+.\] 
+\[
+3. \ \ ||v + w|| \leq ||v|| + ||w|| \ \ \forall v, w\in V
+.\] 
+\end{lemm}
+\begin{dimo}
+	1. segue dalla definizione \\
+	2. $||\alpha v|| = \sqrt{<\alpha v,\alpha v>} = \sqrt{\alpha^2 <v,v>} = |\alpha| \cdot ||v||$ \\
+	3. $||v + w||^2 = <v+w,v+w> = \\ = <v,v> + <w,v> + <v,w> + <w,w> = \\ = ||v||^2 + 2<v,w> + ||w||^2 \leq ||v||^2 + 2||v||w|| + ||w||^2 = (||v|| + ||w||)^2$ \\
+	Ci basta ora prendere le radici quadrate del primo e del secondo termine (possiamo farlo poiché sono entrambi positivi
+\end{dimo}
+\begin{nome}
+	$\cdot v,w'\in V$ si dicono ortogonali se $<v,v'>=0$ \\
+	$\cdot$ Un insieme $S$ di vettori è detto ortogonale se \[
+		0\in S \text{ e } <s_1,s_2> = 0 \ \ \ \forall s_1,s_2 \in S
+	.\] 
+	$\cdot$ Una base di $V$ si dice ortogonale se è un insieme ortogonale
+	$\cdot$ Una base $\{vi\}_{i\in I}$ si dice ortonormale se 
+	\begin{aligned}
+		<v_i,v_j> = \delta_{i,j} =
+		\begin{sistema}
+			1 \ \ \ i = j \\
+			0 \ \ \ i\neq j
+		\end{sistema}
+	\end{aligned}
+\end{nome}
+\begin{defi}[Versore]
+	Sia $v\in V$ tale che $||v|| = 1$ allora v è un versore
+\end{defi}
+\textbf{Oss} \\
+Dat $u\neq 0$, $\frac{u}{||u||}$ è un versore
+\[
+\left|\left| \frac{u}{||u||} \right|\right| = \frac{1}{||u||} \cdot ||u|| = 1
+.\] 
+\begin{prop}
+	Sia $\{v_1,\ldots,v_k\}$ un insieme ortogonale allora $v_1,\ldots,v_k$ sono linearmente indipendenti. In particolare se $dim(V) = n$, un insieme ortogonale di n vettori è una base
+\end{prop}
+\begin{dimo}
+	Supponiamo $\alpha_1v_1 + \ldots \alpha_kv_k = 0$ \\
+	\begin{aligned}
+&<\alpha_1v_1 + \ldots +\alpha_kv_k, v_i> = <0,v_i> = 0 \\
+& = \alpha_1<v_1,v_i> + \ldots +\alpha_k<v_k,v_i> \\
+& = \alpha_i<v_i,v_i>
+	\end{aligned} \\
+	Dato che $<v_i,v_i> > 0$ poiché $v_i \neq 0$ per ipotesi, dunque $\alpha_i = 0$,\\ dato che posso scegliere qualunque $v_i$
+\end{dimo}\\ 
+\textbf{Osservazioni} \\
+1. La base standard di $\mathbb{R}^n$ è ortonormale rispetto al prodotto scalare standard \\
+2. Sia $g = < , >$ un prodotto scalare su $V$, Se $B = \{v_1,\ldots,v_n\}$ è una base $g$-ortonormale allora $[g]_B = Id_n$ ovvero $g(v_i,v_j) = \delta_{i,j}$ \\
+Inoltre, se $X = [v]_B, \ \ Y = [Id]_B$ \\
+$g(v,w) = X^t[g]_BY = X^tY$ (sempre con B ortonormale)
+\begin{prop}
+	Se $\{v_1,\ldots,v_n\}$ è una base ortonormale, per ogni $v\in V$ risulta \[
+	v = \sum^n_{i=1}<v,v_i>v_i
+	.\] 
+\end{prop}
+\begin{dimo}
+	$(1)$ Sia $ \ \ v = \sum^n_{j=1}a_jv_j$ \\
+	\[<v,v_i> = <\sum^n_{j=1}a_jv_j,v_i> = \sum^n_{j=1}a_j<v_j,v_i> = 
+	\sum^n_{j=1}a_j \delta_{ij} = a_i\]
+	Basta poi sostituire in $(1)$ $a_j$ con $<v,v_j>$
+\end{dimo}
+\begin{nome}
+Dato $v\neq0 $ viene detto coefficiente di Fourier di $w\in V$ risptto a $v$ 
+\[
+	a_v(w)= \frac{<v,w>}{<v,v>}
+.\] 
+\end{nome}
+\textbf{Nota} \\
+In sostanza il coefficiente di Fourier è il modulo della proiezione di $w$ rispetto a $v$ (moltiplicato quindi per il versore di v otteniamo il vettore della proiezione)\\
+Abbiamo quindi una definizione canonica della proiezione.\\
+\begin{aligned}
+	<w - a_v(w)v,v> = <w - \frac{<v,w>}{<v,v>}v,v> = <w,v> - \frac{<v,w>}{\cancel{<v,v>}}\cdot \cancel{<v,v>}
+\end{aligned}
+\section{Procedimento di ortogonalizzazione di Gram-Schmidt}
+\begin{lemm}
+Sia $v_1,v_2,\ldots$ una successione di vettori in $V$ spazio  vettoriale euclideo. Allora:\\
+1. Esiste una successione $w_1,w_2,\ldots$ in $V$ tale che per ogni $k\geq 1$
+\[
+a) \ \ <v_1, \ldots, v_K> = <w_1,\ldots,w_k>
+.\] 
+\[
+	b) \ \ <w_i,w_j> = 0 \text{ se } i\neq j
+.\] 
+2. Se $u_1,u_2,\ldots$ è un'altra successione che verifica le proprietà $a$ e $b$, allora esistono non nulli $\gamma_1,\gamma_2,\ldots$ tali che
+\[
+u_k = \gamma_k w_k, \ \ \ k = 1,2,\ldots
+.\] 
+\end{lemm}
+\begin{dimo}
+	Costruiamo i $w_i$ per induzione su k. \\
+	Base  $k = 1$ 
+	\[
+		v_1 \rightarrow w_1 = v_1 \text{ verifica }a,b
+	.\] 
+	Supponiamo per induzione di aver costruito $w_1,\ldots w_t, \ \ t >1$ verificanti a e b e costruiamo $w_{t+1}$
+	\[
+		\o w_{t+1} = v_{t+1} -\sum^t_{i=1}a_{w_i}(v_{t+1})w_i
+	.\] 
+	Verifichiamo a
+	\[
+		v_{t+1} = w_{t+1} + \sum^t_{i=1}a_{w_i}(v_{t+1})w_i
+	.\] 
+	per induzione $v_i\in <w_1,\ldots,w_t>\subseteq <w_1,\ldots,w_{t+1}> \ \ \ 1\leq i \leq t$\\
+	dunque
+	\[
+		<v_1,\ldots,v_{t+1}> \ \ \subseteq\ \ <w_1,\ldots,w_{t+1}>
+	.\] 
+	D'altra parte $w_{t+1}\in<w_1,\ldotsw_t,v_{t+1}> = <v_1,\ldots,v_{t+1}>$ perché per induzione $w_i\in <v_1,\ldots, v_t> \ \ 1\leq i\leq t$ \\
+	Quindi $<w_1,\ldots,w_{t+1}>\ \ \subseteq \ \ <v_1,\ldots, v_{t+1}>$ e quindi le proprietà a è verificata. \\ 
+	Verifichiamo ora b, sia $w_i \neq 0$ \\
+	\begin{aligned}
+		&<w_{t+1},w_i> = <v_{t+1} - \sum^t_{j=1} a_{w_j}(v_{t+1})w_j,w_i> = \\
+		&= <v_{t+1},w_i> - a_{w_j}<(v_{t+1})w_j,w_j> =\\
+		&= <v_{t + 1}, w_i > - \frac{<v_{t+1},w_i>}{\cancel{<w_i,w_i>}}\cancel{<w_i,w_i>} = 0
+	\end{aligned}
+	\newpage \ \\ 
+	2. Di nuovo procedo per induzione su $k$, con base ovvia $k=1$ \\
+	Supponiamo $t>1$ e apponiamo che esistano $\gamma_1,\ldots,\gamma_t$ con $u_k = \delta_kw_k$ per ogni $k\leq t$. per (a)\\ 
+	\[
+		u_{t+1} = z + \gamma_{t+1}w_{t+1} \ \ \ \ z\in <w_1,\ldots,w_t> = <u_1,\ldots,u_t>
+	.\] 
+	D'altra parte, $<u_{t+1}, z> = <w_{t+1},z>= = 0$\\
+	Quindi $<u_{t+1} - \gamma_{t+1}w_{t+1},w> = 0$ ovvero $<z,z>$ \\
+	$ \Rightarrow z= 0$ e $u_{t+1}=\gamma_{t+1}w_{t+1}$
+\end{dimo}
+\end{document}

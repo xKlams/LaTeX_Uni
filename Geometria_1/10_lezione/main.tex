@@ -1,0 +1,160 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+
+\title{Lezione 10 Geometria}
+\date{2024-03-21}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Utilizzo del procedimento di Gram Schmidt}
+	$\{v_1,\ldots,v_n\}\subset V, \ \ V$ spazio euclideo \\
+	$w_1 = v_1$ \\
+	\[w_{t+1} = v_{t+1} - \sum^t_{i=1, w_i\neq 0}\frac{<v_{t+1},w_i>}{<w_i,w_i>}w_i\]
+	$<w_1,\ldots,w_n> \  =  \ <v_1,\dlots,v_n>$
+	e i $w_i$ sono a due a due ortogonali\\
+	\hline \ \\
+	\textbf{Esercizio 1} \\
+	Applicare il procedimento di $G.S$ ai vettori di $\mathbb{R}^4$ \\
+	\[
+		v_1 = \matrice{0\\1\\0\\1}, v_2 = \matrice{2\\1\\0\\1}, v_3 = \matrice{-1\\0\\0\\1}, v_4 = \matrice{0\\0\\1\\0}
+	.\] 
+	Scrivere le corrispondente base ortonormale\\
+	\textbf{Svolgimento}\\
+	\begin{aligned}
+		&w_1 = v_1 \\
+		&w_2 = v_2 - \frac{<v_2,v_1>}{<v_1,v_1>}v_1 = \icol{2\\1\\0\\1} - \frac{<\icol{2\\1\\0\\1},\icol{0\\1\\0\\1}>}{<\icol{0\\1\\0\\1},\icol{0\\1\\0\\1}>}\icol{0\\1\\0\\1} = \\
+		&\icol{2\\1\\0\\1} - \frac{2}{2}\icol{0\\1\\0\\1} = \icol{2\\0\\0\\0} \\[10px]
+		&w_3 = v_3 - \frac{<v_3,w_1>}{<w_1,w_1>}w_1 - \frac{<v_3,w_2>}{<w_2,w_2>}w_2 = \\[10px]&= \icol{-1\\0\\0\\1} -\frac{<\icol{-1\\0\\0\\1},\icol{0\\1\\0\\1}>}{<\icol{0\\1\\0\\1},\icol{0\\1\\0\\1}>} - \frac{<\icol{-1\\0\\0\\1},\icol{2\\0\\0\\0}>}{<\icol{2\\0\\0\\0},\icol{2\\0\\0\\0}>}\icol{2\\0\\0\\0} = \icol{0\\\frac{-1}{2}\\0\\\frac{1}{2}}
+	\end{aligned} \\[10px]
+	Il procedimento è analogo e banale per $w_4$.\\
+	I vettori della alla fine dello svolgimento sono:
+\[
+	\left(\matrice{0\\1\\0\\1},\matrice{2\\0\\0\\0},\matrice{0\\-\frac{1}{2}\\0\\\frac{1}{2}},\matrice{0\\0\\1\\0}\right)
+ \]
+ Vanno solo normalizzare (fatto dal professore ma non da me)
+ \newpage
+ \hline\ \\
+ \textbf{Eserczio 2} \\ 
+ Ortogonalizzare la base standard di $\mathbb{R}^4$ rispetto al prodotto scalare
+ \[
+	 \langle \icol{x_1\\x_2\\x_3\\x_4},\icol{y_1\\y_2\\y_3\\y_4}  \rangle = 2x_1y_1 + x_1y_2 + x_2y_1 + 2x_2y_2 + 2x_3y_3 + x_3y_4 + y_4x_3 + 2x_4y_4
+ .\] 
+$\varepsilon$  base standard i $\mathbb{R}^4$ 
+\[
+	\langle \ , \  \rangle_\varepsilon = \matrice{2 & 1 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 1 & 2}
+.\]
+\textbf{Svolgimento} \\
+Notare come $a_{ij}$ sia il coefficiente di $x_iy_j$\\
+\begin{aligend}
+	w_1 = v_1\\
+	w_2 = v_2 - \frac{ \langle v_2, w_1 \rangle }{ \langle w_1, w_1 \rangle }w_1 = v_2 - \frac{v_2^tAw_1}{w_1^tAw_1}w_1 = \icol{0\\1\\0\\0} - \frac{\irow{0&1&0&0}\icol{2&1&0&0\\1&2&0&0\\0&0&2&1\\0&0&1&2}\icol{1\\0\\0\\0}}{\irow{1&0&0&0}\icol{2&1&0&0\\1&2&0&0\\0&0&2&1\\0&0&1&2}\icol{1\\0\\0\\0}} = \icol{-\frac{1}{2}\\1\\0\\0}
+\end{aligend} \\
+Il procedimento continua, ma non è niente di che. \\
+\hline \ \\
+\textbf{Foglio 2} \\
+\textbf{Esercizio 2} \\
+\[
+p_1,\ldots,p_n\in A, \ \ c_1,\ldots, c_n\in \mathbb{K}, \ \ \sum^n_{i=1}c_i = 1
+.\]
+Dimostrare che dato qualunque $q\in A$\\
+\[
+p = q + \sum^n_{i=1}c_i \overrightarrow{op_i}
+.\]
+non dipende da $q \\ \sum^n_{i=1}c_ip_i$ combinazione baricentrica dei punti $p_i$ con coefficienti $c_i$\\
+Dobbiamo dimostrare che se $q'\in A $
+\[
+	q + \sum^n_{i=1}c_i \overrightarrow{qp_i} = q' + \sum^n_{i=1}c_i\overrightarrow{q'p_i}
+.\] \\ 
+\begin{aligend}
+	& q = q' + \overrightarrow{q'q} \\
+	& q + \sum^n_{i=1}c_i \overrightarrow{qp_i} = q' - \overrightarrow{q{'}q} + \sum^n_{i=1} c_i \overrightarrow{qp_i} = q' - \sum^n_{i=1}c_i\overrightarrow{something} \\
+\end{aligend} \\
+ non sono riuscito a finire l'esericizo in tempo pene pene pene TODO\\
+ \newpage \ \\
+ \textbf{Punto  b dell'esercizio 3} \\
+ $f:A \rightarrow A', \varphi:V \rightarrow V'$ parte lineare\\
+ Devo vedere che $f(\sum^n_{i=1}c_ip_i) = \sum^n_{i=1}c_if(p_i) \ \ \ \sum^n_{i=1}c_i = 1$ \\
+ \begin{aligned}
+	 &f(p_0+\sum^n_{i=1}c_i\overrightarrow{p_0p_i}) = f(p_i) + \sum^n_{i=1}c_i \varphi(\overrightarrow{p_0pi}) =\\&= f(p_0) + \sum^n_{i=1}c_i \overrightarrow{f(p_0)f(p_i)} = \sum^n_{i=1}c_i f(p_i)\\
+	 &= (1 - \sum^n_{i=1}c_i)f(p_0) + \sum^n_{i=1}c_i\overrightarrow{f(p_0)f(p_i)}
+ \end{aligned} \\
+ Dove nell'ultimo passaggio si spezza la somma \\ 
+ Viceversa supponiamo che $f:A \rightarrow A'$ rispetti le combinazioni baricentriche; verifichiamo che $\varphi : V \rightarrow V'$
+ \[
+ p_0\in A\ \ \ \ \varphi(v) = \overrightarrow{f(p_0)f(p_0 + v)}
+ .\] 
+ è lineare \\
+ \begin{aligned}
+	&v_1,v_2\in V \ \alpha_1,\alpha_2\in \mathbb{K} \ \ p_1 = p_0 + v_1 \ \ p_2 = p_0 + v_2\\
+	& v_1 = \overrightarrow{p_0p_1} \ \ \ v_2 = \overrightarrow{p_0p_2} \\
+	&\varphi(\alpha_1v_1 + \alpha_2v_2) = \overrightarrow{f(p_0)f(p_0 + \alpha_1v_1 + \alpha_2v_2)} = \\
+	& \overrightarrow{f(p_0)f(p_0 + \alpha_1 \overrightarrow{p_0p_1} + \alpha_2 \overrightarrow{p_1p_2}} = \\
+	& \overrightarrow{f(p_0)f(\alpha_0p_0 + \alpha_1p_1 + \alpha_2p_2} =\\
+	& = \alpha_0 \overrightarrow{f(p_0)f(p_0)} + \alpha_1\overrightarrow{f(p_0)f(p_1)} + \alpha_2\overrightarrow{f(p_0)f(p_2)} = \alpha_2\varphi(v_1) + \alpha_2 \varphi(v_2)
+ \end{aligned} \\[10px]
+ infatti $f(p_1) = f(p_0 + v_1), \overrightarrow{f(p_0)f(p_1)} = \overrightarrow{f(p_0)f(p_0 + v_1)} = \varphi(v_1)$
+\end{document}

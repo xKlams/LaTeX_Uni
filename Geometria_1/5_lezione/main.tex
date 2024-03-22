@@ -1,0 +1,204 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+
+\title{Lezione 5 Geometria I \\
+\large ebbene sì, sta accadendo davvero}
+\date{2024-03-17}
+\author{Federico De Sisti}
+
+
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{teo}
+  {\begin{mdframed}\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{lemm}
+  {\begin{mdframed}\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newenvironment{prop}
+  {\begin{mdframed}\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+  {\begin{mdframed}\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\begin{document}
+\maketitle
+\newpage
+$V, V'$ spazi vettoriali su $\mathbb{K}, (A,V,+), (A',V',+)$ spazi affini\\
+\begin{defi}
+	$f:A\rightarrow A'$ è un'applicazione affine se esiste un'applicazione lineare $\phi :V\rightarrow V'$ tale che:  \[
+	f(p + v) = f(p) + \phi (v) \ \ \ \forall p\in A, \forall v\in V
+	.\]
+	\left( ovvero \  \ \ 
+		\begin{aligned}
+		& f(Q) = f(P) + \phi(\overrightarrow{PQ}) \ \ \forall P, Q\in A \\ 
+		& \overrightarrow{f(P)f(Q)} = \phi(\overrightarrow{PQ})\ \ \ \ \   \forall P,Q\in A \\ 
+	\end{aligned}
+\right)
+\end{defi}
+\textbf{Nomenclatura}\\
+Se $f$ è biunivoca, $f$ è detto isomorfismo affine\\
+Un isomorfismo affine $A\rightarrow A$ è detto affinità.
+\textbf{Oss}\\
+vedremo che le affinità formano un gruppo rispetto alla composizione di applicazione che denoteremo come $\text{Aff}(A)$\\
+\begin{es}
+	$Ov_1...vn$ rifermento affine in A\\
+	\[
+		f: \mathbb{A} \rightarrow \mathbb{A}^n \ \ f(p) = \begin{pNiceArray}{c}
+			x_1\\
+			.\\.\\
+			x_n
+		\end{pNiceArray} \ \ \  e \ \ \ \overrightarrow{OP} = \sum^n_{i=1}x_i v_i
+	.\]
+	Dico che f è un isomorfismo affine con associato isomorfismo lineare \\ $ \varphi ( \sum^n_{i=1}x_i v_0) = \begin{pNiceArray}{c}
+		x_1 \\ . \\ . \\ x_n \\	
+	\end{pNiceArray}$\\
+	Verifichiamo che $\overrightarrow{f(P)f(Q)} = \varphi (\overrightarrow{PQ})\\
+	\overrightarrow{OQ} = \sum^n_{i=1}y_iv_i \ \ \ f(Q) = \begin{pNiceArray}{c}
+		y_1\\ . \\ . \\ y_n \\
+	\end{pNiceArray}
+	\overrightarrow{f(P)f(Q)} = \icol{y_1\\.\\.\\.\\y_n} - \icol{x_1\\.\\.\\.\\ x_n} = \icol{y_1 - x_1\\.\\.\\.\\y_n - x_n} =  \varphi ( \sum^n_{i=1}(y_i - x_i)v_i) = \varphi (\overrightarrow{OQ} - \overrightarrow{OP}) =  \varphi (\overrightarrow{PQ})$
+\end{es}
+\textbf{3 Esempi di affinità}\\
+I Transazioni\\
+Fissato $v\in V$ definiamo \\
+$t_v:A\rightarrow A, \ \ t_v(P) = p + v$
+Dico che $t_v$ è un'affinità con assoviato isomorfismo $Id_V$ dato che:\\
+$t_V(p + w) = (p + w) + v = p + (w + v) = p + (v + w) = (p + v) + w =\\ = t_V(p) + w = t_V(p) +  \varphi (w) \leftarrow Id_V$ \\
+la biunicità segue dagli assiomi per A \\[10px]
+II Simmetria rispetto ad un punto\\
+$\sigma_C(p) = C - \overrightarrow{CP}\\
+$ Dico che $\sigma_C$ è un'affinità con parte lineare $ \varphi = -Id$\\
+$\sigma_C(p + v) = c - \overrightarrow{CQ} \ \ Q = p + v \ \ v = \overrightarrow{PQ} \\
+\sigma_C(p) + \phi(v) = c - \overrightarrow{CP} - v = c - \overrightarrow{CP} - \overrightarrow{PQ} = c - \overrightarrow{CQ}$ \\
+III Otetia di centro O e fattore $\gamma\in\matbb{R}\backslash \{ 0 \} $ \\ 
+\[
+	\omega_{O,\gamma}(p) = O + \gamma \overrightarrow{OP}
+.\] 
+è un'affinità con parte lineare $\phi = \gamma Id_V$\\
+$\omega_{O,\gamma}(p + v) = O + \gamma \overrightarrow{OQ} = O + \gamma( \overrightarrow{OP} + \overrightarrow{PQ}) = (O + \gamma \overrightarrow{OP}) + \gamma \overrightarrow{PQ} = \omega_{O,\gamma}(p) = \varphi(v)$
+
+\begin{lemm}
+	Fissato $O\in \mathbb{A} $, per ogni $O'\in \mathbb{A} $ e per ogni $ \varphi\in GL(V) $ esiste un'unica affinità tale che $f(O) = O'$ e che ha $ \varphi$ come isomorfismo associato
+\end{lemm}
+\begin{dimo}
+	\textbf{esistenza}\\
+	Pongo $f(P) = O' + \varphi(\overrightarrow{OP} \ \ \ f(O) = O' + \varphi(\overrightarrow{OQ}) = O' + O = O'\\
+	f(p + v) = O' + \varphi(\overrightarrow{OQ}) = O' + \varphi(\overrightarrow{OP} + \overrightarrow{PQ}) = O' + \varphi(\overrightarrow{OP}) + \varphi(\overrightarrow{PQ}) = f(p) + \varphi(v)$\\
+	dove abbiamo usato $Q = p + v \ \ \ v = \overrightarrow{PQ}$\\
+	\textbf{unicità}\\
+	Supponiamo che g abbia le stesse proprietà di f, allora \\
+	$\overrightarrow{f(O)f(p)} = \varphi(\overrightarrow{OP}) = \overrightarrow{g(O)g(p)} = \overrightarrow{O'f(p)} = \overrightarrow{f(O)g(p)} \Rightarrow f(p) = g(p)\\ \Rightarrow  f = g \hfill\square$
+\end{dimo}
+\begin{defi}
+	Definiamo 
+	$\text{Aff}_O(A) = \{f\in \text{Aff}(A) | f(O) = O\} \leq Aff(A)$\\
+	tale gruppo è anche isomorfo a $GL(V)$
+\end{defi}
+\begin{lemm}
+	Sia $O\in A, f \in\text{Aff}(A)$ Esistono $v,v'\in V$ e $g\in\text{Aff}_O(A)$, univocamente determinate da f tale che
+	\[
+		f = g \circ t_v = t_{v'}\circ g
+	.\] 
+\end{lemm}
+\begin{dimo}\ \\
+	poniamo $v = \overrightarrow{-Of^{-1}}, \ \ v' = \overrightarrow{Of(O)}, \ \  g = f\circ t_{-v}, \ \  g' = t_{-v}\circ f$ \\
+	Allora
+	\[
+		(g \circ t_v) = (f\circ t_{-v})t_v = f\circ(t_{-v}\circ t_v) = f
+	.\] 
+	quindi vale $f = g\circ t_v$
+	\[
+		t_{v'}\circ g' = t_{v'}\circ (t_{-v'}\circ f) = (t_{v'}\circ t_{-v'})\circ f = f
+	.\] 
+	Vedremo che $g = g'$, per cui ho dimostrato anche $f = t_{v'}\circ g$ \\
+	\begin{gather*}
+		g(O) = (f\circ t_{-v})(O) = f(O-v) = f(O + \overrightarrow{Of^{-1}(O)}) = \\ = f(O + f^{-1}(O) - O) = f(f^{-1}(O)) = f(O + f^{-1}(O)) = 0
+	\end{gather*}
+	\[
+		g'(O) = t_{-v}(f(O)) = f(O) - v' = f(O) - \overrightarrow{Of(O)} = 0
+	.\]
+	d'altra parte $g, g'$ hanno lo stesso isomorfismo associato e mandano entrambi O in O, dunque coincidono
+\end{dimo}
+\textbf{Descrizione in coordinate delle affinità di $ \mathbb{A} ^n$} \\
+	\[
+	\delta (x) = f(O) + L_A X = AX + b
+	.\]
+	\begin{align*}
+		b = f(O) \ \ \varphi = L_A \ \ \ \ L_A : \ &\mathbb{K}^n \rightarrow \mathbb{K}^n \\ 
+						    	 & X \rightarrow AX
+	\end{align*}
+	con $det(A) \neq 0$ ovviamente\\
+	Viceversa, per $A\in GL(n,\R), b\in\mathbb{K}^n$\\
+	\[
+		f_{A,b} = AX + b
+	.\] 
+	$f_{A,b}$ è un'affinità con parte lineare $L_A$
+	\begin{align*}
+		& f_{A,b}(x + v) = f_{A,b}(x) + \varphi(v) \\
+		& f_{A,b}(x + y)) = f_{A,b}(x) + L_Ay
+	\end{align*}
+	\[
+		f_{A,b}(x + y) = A(x + y) + b = AX + AY + b = (AX + b) + AY = f_{A,b} (x) + L_A(y)
+	.\] 
+	\[
+		\text{Aff}( \mathbb{A}^n =\{f_{A,b} | A\in GL(n,\mathbb{K}), b\in\mathbb{K}^n\}
+	.\] 
+	\textbf{Osservazione} \\
+	Aff $ \mathbb{A} ^n$ è un gruppo per composizione \\ 
+	\begin{align*}
+		(f_{A,b}\circ f_{C,d})(x)  &= f_{A,b}(f_{C,d}(x)) =\\
+					   &= f_{A,b}(CX + d) = \\
+					   &=A(CX + d) + b =\\
+					   &=ACX + Ad + b = f_{AC, Ad + b}(x) \\
+	\end{align*}
+	Osservo che $f_{I,O}$ è l'elemento neutro
+	\begin{align*}
+		&(f_{A,b}\circ f_{I,O})(x) = f_{A,b}(Ix + O) = f_{A,b}(x) \\
+		&(f_{I,O}\circ f_{A,b})(x) = f_{A,b}(x)
+	\end{align*}
+	Manca solo dimostrare l'esistenza dell'inverso di $f_{A,b}$,\\
+	ovvero che esiste $f_{C,d}$ tale che $f_{A,b}\circ f_{C,d} = f_{C,d}\circ f_{A,b} = f_{I,O}$
+	\begin{align*}
+		(f_{A,b}\circ f_{C,d}(x) = f_{I,O}(x) = x \\
+		ACX + Ad + b + X \ \ \ \ \forall \  X\in\mathbb{K}^n \\
+		\Rightarrow AC = Id \ \ Ad + b = 0\\
+		C = A^{-1} \ \ \ d = -A^{-1}b \\
+		(f_{A,b})^{-1} = f_{A^{-1}, -A^{-1}b}
+	\end{align*}
+	
+\end{document}

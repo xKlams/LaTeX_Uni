@@ -1,0 +1,151 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+
+\title{Lezione 5 Geometria I}
+\date{2024-03-13}
+\author{Federico De Sisti}
+
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{corol}{Corollario}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newenvironment{coro}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{corol}}
+  {\end{corol}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Equivalenza per affinità}
+	\begin{defi}{Equivalenza per affinità}{}
+		Due sottoinsiemi $F, F'\subseteq A$ spazio affine, si dicono affinamente equivalenti se esiste $f\in$ Aff$(A)$ tale che $f(F) = F'$\\
+		Definiamo anche una proprietà \textbf{affine} se è equivalente per affinità
+	\end{defi}
+	\begin{prop}{}{}
+		Se $f\in$Aff $(A)$ e F un sottospazio affine di $A$ di dimensione $k$, allora $f(F)$ è un sottospazio affine di dimensione k
+	\end{prop}
+	\begin{dimo} 
+		$F = p + W \ \ dim(W) = k$ Sia $\varphi$ la parte lineare di $f$, che è un omomorfismo $\varphi:V \rightarrow V.$\\
+		Poniamo $F' = f(p) + W'$ dove $W' = \varphi(W)$\\
+		Chiaramente, $dim(W') = dim(\varphi(W)) = k$ \\
+		risulta $f(F) = F'$\\ \[
+		Q\in F \ \ \ \ \overrightarrow{f(P)f(Q)} = \varphi(\overrightarrow{PQ})\in \varphi(W) = W'
+		.\] 
+		e dato che $ \overrightarrow{PQ}\in W \ \Rightarrow f(F)\subseteq F'$
+		Viceversa, dato $R\in F$ 
+		\[
+			\overrightarrow{Pf^{-1}(R)} = \varphi^{-1}(\overrightarrow{f(P)R})\in W \Rightarrow  f^-1(R) \in F, R\in f(F)
+		.\] 
+		dunque F'\subseteq f(F)
+	\end{dimo}
+	\begin{teo}
+		Sia $(A, V, +)$ uno spazio affine di dimensione n e siano $\{p_0,\ldots,p_n\}, \\ \{a_0,\ldots,a_n\}$ due $(n+1)$-ple di punti indipendenti. Allora esiste un'unica affinità $f\in$Aff$(A)$ tale che $f(p_i) = q_i, \ \ 0\leq i\leq n$
+	\end{teo}
+	\begin{dimo}
+		Per ipotesi $\{\overrightarrow{p_0p_1},\ldots,\overrightarrow{p_0p_n}\},\{\overrightarrow{q_0q_1}, \ldots, \overrightarrow{q_0q_n}$ Sono basi di V, dunque esiste un unico operatore lineare $\varphi\in GL(V)$ tale che $\varphi(\overrightarrow{p_0p_i} = \overrightarrow{q_0q_i}) \ \ 1\leq i\leq n$ \\
+			Pongo	$f(p) = q_0 + \varphi(\overrightarrow{p_0p})\\
+			f(p_i) = q_0 + \varphi(\overrightarrow{p_0p_i} = q_0 + \overrightarrow{q_0q_i} = q_i$ \\ 
+			f è chiaramente biettiva
+			$\overrightarrow{f(p)f(p')} = \overrightarrow{q_0f(p)} - \overrightarrow{q_0f(p')} = \varphi(\overrightarrow{p_0p'}) - \varphi(\overrightarrow{p_0p}) = \\= \varphi(\overrightarrow{p_0p'} - \overrightarrow{p_0p}) = \varphi(pp')$ \\
+			L'unicità di f segue da quella di $\varphi$ e dal fatto che $f(p_0) = q_0$ (un'affinità è determinata dalla parte lineare e dall'immagine di un punto.
+	\end{dimo}
+	\newpage
+	\begin{es}
+		Determino $f\in$Aff$( \mathbb{A} ^2)$ t.c.
+		\[
+			f\icol{2\\1} = \icol{1\\2},\ \  f\icol{-1\\-1}=\icol{1\\1}, \ \ f\icol{0\\1} = \icol{2\\-1}
+		.\] \[
+	\{\overrightarrow{p_0p_1},\overrightarrow{p_0p_2}\}  \rightarrow \{\overrightarrow{q_0q_1},\overrightarrow{q_0q_2}\} \]
+	Cercherò quindi $\varphi\in GL(V)$ tale che \[\varphi(\overrightarrow{p_0p_1})=\overrightarrow{q_0q_1},\varphi(\overrightarrow{p_0p_2})=\overrightarrow{q_0q_2}\]
+\begin{gather*}
+	\varphi\icol{-3\\-2}=\icol{0\\-1}, \ \ \varphi\icol{2\\0} = \icol{1\\-3}\\
+	P = \{\icol{-3\\-1},\icol{-2\\0}\} \ \ \varepsilon\{\icol{1\\0},\icol{0\\1}\} \\
+	[\varphi]_B^\varepsilon = \icol{ 0 & 1 \\ -1 & -3}\ \ \ \ \ [Id]^\varepsilon_B = \icol{-3 & -2\\-2 & 0}\\
+	[\varphi]^\varepsilon_ \varepsilon = [\varphi]^\varepsilon_B[Id]^B_ \varepsilon = [\varphi]_B^\varepsilon[Id]^\varepsilon_B^{-1}=\\
+	=\icol{0 & 1 \\-1& -3}\icol{0 & -\frac{1}{2} \\ -\frac{1}{2} & \frac{3}{4}} =\icol{-\frac{1}{2} & \frac{3}{4} \\ \frac{3}{2} & -\frac{7}{4}} \\
+	f\icol{x_1\\x_2} = \icol{1\\2} + \icol{-\frac{1}{2} & \frac{3}{4} \\ \frac{3}{2} & -\frac{7}{4}}\icol{x_1-2\\x_2-1} \\
+	f(p) = q_0 + \varphi(\overrightarrow{p_0p}) \\
+	f\icol{x_1\\x_2}=\icol{\frac{9}{4}\\\frac{11}{4}} + \icol{-\frac{1}{2} & \frac{3}{4} \\ \frac{3}{2} & -\frac{7}{4}}\icol{x_1\\x_2} = (t_V\circ L_A)\icol{x_1\\x_2} \ \ \ v = \icol{\frac{9}{4} \\ \frac{11}{4}} 
+\end{gather*}
+\end{es}
+\begin{coro}
+	$(A,V,+)$ spazio affine di dimensione $n$\\
+	1. per ogni $1\leq k\leq n + 1$ due qualsiasi $k$-uple di punti sono affinamente equivalenti\\
+	2. Due sottospazi affini sono affinamente equivalenti se e solo se hanno al stessa dimensione
+\end{coro}
+\begin{dimo}
+	1. Se $\{p_0,\ldots,p_{k-1}\}, \{q_0,\ldots,q_{k - 1}\}$ sono le $k$-ple date, completiamole a $(n+1)$-ple di punti indipendenti $\{p_0,\ldots,p_n\}, \{q_0,\ldots,q_n\}$ e usiamo il teorema
+	2. Abbiamo già visto che un'affinità preserva la dimensione dei sottospazi.\\
+	Viceversa, se $S,S'$ sono sottospazi affini della stessa dimensione k, possiamo trovare $k+1$ punti indipendenti in $S$, e $k+1$ punti indipendenti in $S'$ tali che \[
+	S = \overrightarrow{p_0,\ldots,p_k}, \ \ \ S'=\overrightarrow{q_0,\ldots,q_n}
+	.\] 
+	Per la parte 1, esiste un'affinità che manda $P_i$ in $q_i$, $0\leq i \leq k$, dunque \[
+	f(S) = S'
+	.\]
+\end{dimo}
+\newpage
+\section{Proiezioni e Simmetrie}
+\begin{defi}[Proiezioni e Simmetrie]
+In $(A,V,+)$ Sia $L$ un sottospazio affine, $L = P+W$\\
+Sia $U$ un complementare di $W$ in $V$, ovvero  $V = W\bigoplus U$
+\begin{align*}
+	\pi_W^U(w+u)=w \ \ \ \ \ \ \ \ \ \ \ & \pi_W^U:V \rightarrow V\\
+	\sigma_W^U(w+u) = w - u \ \ \ \ \ & \sigma_W^U:V \rightarrow V \\
+	p_L^U(x) = p+\pi_W^U(\overrightarrow{px}) \ \ \ \ &\text{proiezione su L parallela a U}\\
+	s_L^U(x) = p+\sigma_W^U(\overrightarrow{px}) \ \ \ \ &\text{simmetria di asse $L$ e direzione $U$}
+\end{align*}
+\end{defi}
+\end{document}

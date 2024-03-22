@@ -1,0 +1,67 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+
+\title{Lezione 4 Geometria I}
+\date{ 2024-03-16}
+\author{Federico De Sisti}
+\maketitle
+
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+
+\newenvironment{teo}
+  {\begin{mdframed}\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{lem}
+  {\begin{mdframed}\begin{lem}}
+  {\end{lem}\end{mdframed}}
+
+\newenvironment{prop}
+  {\begin{mdframed}\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{def}
+  {\begin{mdframed}\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+
+\begin{document}
+
+\begin{prop}[Fromula Grassmann per spazi affini]
+	Siano $\Sigma_1, \Sigma_2 $ sottospazi affini di $A$, Allora 
+	\[
+	dim(\Sigma_1 \vee \Sigma_2) \leq dim\Sigma_1 + dim\Sigma_2 - dim(\Sigma_1\cap\Sigma_2)
+	.\] 
+	e vale l'uguaglianza se $\Sigma_1, \Sigma_2$ sono incidenti o sghembi\\
+	si usa la notazione $dim(\emptyset) = -1$
+\end{prop}
+\begin{dimo}
+	- Supponiamo $\Sigma_1,\Sigma_2$ incidenti, allora esiste
+\begin{gather*}
+	p_0 \in\Sigma_1\cap\Sigma_2 \\
+	\Sigma_1 = p_0 + W_1, \Sigma_2 = p_0 + W_2\\
+	\Sigma_1\cap\Sigma_2 = p_0 + W_1\cap W_2, \Sigma_1\vee\Sigma_2 = p_0 + W_1 + W_2
+\end{gather*}
+	dunque vale l'uguaglianza per Grassman vettoriale\\
+	- Sia ora $\Sigma_1\cap\Sigma_2 = \emptyset$ allora $\Sigma_i = p_i + W_i$  $i = 1, 2$
+\end{dimo}
+
+\end{document}
+

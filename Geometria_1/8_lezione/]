@@ -1,0 +1,291 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{mathtools}
+
+\title{Lezione 8 Geometria I}
+\date{2024-03-18}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Complementi}
+	$ \mathbb{A} $ spazio affine reale con associato spazio vettoriale $V$\\
+	\begin{defi}[Semiretta]
+		Possiamo definire la semiretta di origine $Q\in \mathbb{A} $ e direzione $v\in V\setminus \{0\}$
+		\[
+		P = Q + tv, t\geq 0\ \ (\overrightarrow{QP} = tv, t\geq 0)
+		.\] 
+	\end{defi}
+	\begin{defi}[Segmento]
+		Possiamo definire il segmento di estremi $A, B\in \mathbb{A} \ \ (A\neq B) $
+		\[
+		P = A + t \overrightarrow{AB} \ \ \ \ 0\leq t\leq 1
+		.\] 	
+	\end{defi}
+	i punti $p_1,\ldots,p_t$ che dividono il segmento $AB$ in $t$ parti uguali sono dati, cioè
+\[
+	\overrightarrow{AP_1} = \overrightarrow{p_1p_2} = \overrightarrow{p_2p_3} = \ldots = \overrightarrow{p_{t-1}B}
+.\] 
+sono dati da \[
+	\overrightarrow{AP_i} = \frac{i}{t}\overrightarrow{AB} \ \ 1 \leq i\leq t-1
+.\] 
+	In un riferimento affine $Oe_1\ldots,e_n$, in cui
+	\[
+		A = \icol{a_1\\ . \\.\\.\\ a_n}, \ \ B = \icol{b_1\\ .\\.\\.\\b_n} \ \ P_i = \icol{x_1\\.\\.\\.\\ x_n}
+	.\] 
+	\[
+		\icol{x_1^i - a_1\\.\\.\\.\\x_n^i - a_n} = \frac{i}{t}\icol{b_1-a_1\\.\\.\\.\\ b_n = a_n}
+	.\] 
+	\[
+		\icol{x_1^i\\.\\.\\x_n^i} = \frac{1}{t}\icol{ib_1 (t - i)a_1\\.\\.\\.}
+	.\] 
+	in particolare, il punto medio del segmento $AB$ ha coordinate
+	\[
+		\icol{\frac{a_1+b_1}{2}\\.\\.\\.\\\frac{a_n + b_n}{2}}
+	.\] 
+	$A,B,C$ non allineati
+	\[
+	\overrightarrow{AP} = t\overrightarrow{AB} + k\overrightarrow{AC}
+	.\] 
+	se $t,n \geq 0$ e $t + n\leq 1$ allora abbiamo un triangolo ABC\\
+	se $0\leq t,n \leq 1$ abbiamo il parallelogramma individuato da $A,B,C$\newpage
+	\textbf{Osservazione}\\
+	Questo procedimento funziona in ogni dimensione, Ad esempio se A,B,C,D sono quattro punti indipendenti
+	\[
+	\overrightarrow{AP} = t\overrightarrow{AB} + k\overrightarrow{AC} + v\overrightarrow{AD}
+	.\] 
+	se $0\leq,t,n,v\leq 1$ tetraedro di vertici ABCD\\
+	se $n,t,v\geq 0$ e $n+t+v\leq 1$ si ha un parallelogramma\\
+	in generale dati $p_0,\ldots,p_k$ punti indipendenti:\\
+	\[
+	\overrightarrow{p_0p} = \sum^k_{i=1}t_ip_0p_i, \ \ \sum^k_{i=1}t_i \leq 1
+	.\] 
+	definisce il \textbf{$k$-simplesso di vertici $p_0,\ldots,p_k$}\\
+	\begin{defi}[Sottosineime Convesso]
+	$S\subseteq \mathbb{A} $ si dice Convesso se per ogni $A,B\in S$ il segmento $AB$ è contenuto in $S$
+\end{defi}
+\
+\section{Cambiamenti di riferimento affine}
+Sia $(A,V,+)$ uno spazio affine $n$-dimensionale
+\[
+	R = Ee_1,\ldots,e_n;\ \ \ \ R'= Ff_1,\ldots,f_n \ \ \ \text{due riferimenti affini}
+.\] 
+\[
+	\varepsilon = \{e_1,\ldots,e_n\}, \ \ \Gamma = \{f_1,\ldots,f_n\}
+\]
+\[
+\overrightarrow{EP} = \sum^n_{i=1}x_ie_i\ \ \ \overrightarrow{FE} = \sum^n_{i=1}b_ie_i \ \ \ \overrightarrow{FP} = \sum^n_{i=1}y_if_i
+.\] 
+\[
+	A = (e_{ij}) = \prescript{}{\varepsilon}{(Id_V)}_\Gamma
+.\] 
+\begin{gather}
+\overrightarrow{FP} = \overrightarrow{FE} + \overrightarrow{EP} = -\overrightarrow{EF} + \overrightarrow{EP} = -\sum^n_{i=1}b_ie_i + \sum^n_{i=1}x_ie_i\\
+\overrightarrow{FP} = \sum^n_{i=1}y_if_i = \sum^n_{i=1, j=1}y_ia_{ij}-e_i
+\end{gather}
+Comparando $(1),(2)$ troviamo \[
+X = AY + b
+.\] 
+\[
+	\left(\frac{1}{X}\right) = \begin{pNiceArray}{c|c}
+		1 & 0 \\
+		\hline
+		b & A \\ 
+	\end{pNiceArray} = \left(\frac{1}{Y}\right)
+.\] 
+\[
+	Y = A^{-1}X - A^{-1}b
+.\] 
+\section{Esercizi}
+Trovare l'affinità $F: \mathbb{A} ^2 \rightarrow \mathbb{A} ^2$ tale che
+\[
+	f\icol{1\\3} = \icol{1\\1} \ \ f(r) = r', \ \ f(s) = s
+.\] 
+dove $r: x = 0, \ \ s: 2x - y = 0 \ \ r': x - 2y = 1$\\
+\hline \\
+$f$ è del tipo $f\icol{x_1\\x_2} = \icol{e & b\\ c & d}\icol{x_1\\x_2} + \icol{\alpha_1\\ \alpha_2}$ con $ad + bc \neq 0$//
+\[
+\begin{pNiceArray}{ccc}
+	1 & 0 & 0\\
+	\alpha_1 & a & b \\
+	\alpha_2 & c & d \\
+\end{pNiceArray} \ \ \ \ \ 
+\left(\frac{1}{f\icol{x_1\\x_2}}\right) = \begin{pNiceArray}{ccc}
+	1 & 0 & 0\\
+	\alpha_1 & a & b \\
+	\alpha_2 & c & d \\
+\end{pNiceArray} \icol{1\\x_1\\x_2}
+.\]
+Imponiamo le condizioni del testo
+\[
+	f\icol{1\\ 3} = \icol{1\\1} \rightarrow \begin{equations}
+		\begin{cases}
+			a + \alpha_1 + 3b = 1\\
+			\alpha_2 + c + 3d = 1
+		\end{cases}
+	\end{equations}
+.\] 
+Un punto in $r (x_1 = 0)$ è del tipo $\icol{0\\t} \Rightarrow f\icol{0\\t}\in r\ \ \ \forall t\in \R$
+\[
+\icol{\akpha_1 + bt\\\alpha_2 + dt}\in v'
+.\] 
+\[
+x_1 - 2x_2 = 1 \Leftrightarrow \alpha_1 + bt - 2 )\alpha_2 + dt) = 1 \ \ \forall t
+.\] 
+\[
+\Rightarrow \alpha_1 - 2\alpha_2 = 1
+.\]
+\[
+b - 2d = 0
+.\] 
+Sicuramente il punto di S ha coordinate \\
+\begin{gather*}
+	\icol{t \\2t}, \ \ \text{e imponiamo} \ \ f\icol{t\\2t}\in s \\
+	f\icol{t\\2t} = \icol{\alpha_1 + at + 2bt\\\alpha_2 + ct + 2dt} \\
+	2(\alpha_1 + at + 2bt) = \alpha_2 + ct + 2dt \\
+	\Rightarrow 
+	\begin{equations}
+		\begin{cases}
+			2\alpha_1 - alpha_2 = 0\\
+			2a + 4b - c - 2d = 0 
+		\end{cases}
+	\end{equations}\\
+	a = - \frac{2}{3} \ \ b = \frac{2}{3} = c \ \ d = \frac{1}{3} \ \ \alpha_1 = - \frac{1}{3} \ \ \alpha_2 = - \frac{2}{3} \\
+	f\icol{x_1 \\ x_2} = \icol{-\frac{1}{3} -\frac{2}{3}x_1 + \frac{2}{3}x_2\\ - \frac{2}{3} + \frac{2}{3}x_1 + \frac{1}{3}c_2}
+\end{gather*}
+\\
+\hfill \\
+\[
+	\pi_1 = \icol{0 \\ 0\\ 0\\ 0 } + <\icol{1 \\ 0\\0\\0}> \ \ \pi_2: \icol{0\\0\\1\\0} + <\icol{1 \\ 0 \\0 \\0},\icol{0\\0\\0\\1}>
+.\] 
+Dire se sono incidenti, paralleli o sghembi\\
+\hfill
+\\
+non sono chiaramente paralleli
+\pi: \begin{equations}
+	\begin{cases}
+		x_3 = 0 \\
+		x_4 = 0
+	\end{cases}
+\end{equations} \ \ \ \ 
+\pi_2: \begin{equations}
+	\begin{cases}
+		x_2 = 0\\
+		x_3 = 1
+	\end{cases}
+\end{equations}
+Della eq cartesiane è chiaro che $pi_1\cap pi_2 = \emptyset$, quindi $\pi_1\pi_2$ non sono incidenti la giacitura di $\pi_1,\pi_2$ sono $W_1 = \R e_1 + \R e_2, \ \ W_2 = \R e_1 + \R e_2$\\
+dunque \textbf{APPUNTI DA RECUPERARE}
+\\
+\\
+\\
+\begin{align*}
+	f:\  &A \rightarrow A\ \\
+	   & R_1 \ \ \ \ R_1'\\
+	   & R_2 \ \ \ \ R_2'
+\end{align*} 
+\[
+	[f]^{R_1'}_{R_1} = \begin{pNiceArray}{ c | c}
+	1 & 0 \\
+	\hline
+	b & A \\
+\end{pNiceArray} 
+.\] 
+\[
+	[f]^{'R_2}_{R_2} = [Id]^{R_2}_{R'_1}[f]^{R_1'}_{R_1}[Id]^{R_1}_{R_2}
+.\] 
+Troviamo l'affinità che manda ordinatamente $A, B,C$ in $A',B',C'$ ove \[
+	A = \icol{1\\1} \ \ B = \icol{3\\a} \ \ C = \icol{4\\4} 
+.\] 
+\[
+	A\ = \icol{-1\\0} \ \ B'\icol{-3\\2} \ \ C'= \icol{1\\4}
+.\]
+$R_1 = \{ A, \{\overrightarrow{AB},\overrightarrow{AC}\}\}$ è un riferimento affine\\
+$R_2 = \{A',\{\overrightarrow{A'B'}, \overrightarrow{A'C'}\}\}$ è un riferimento affine
+\[
+	[F]^{R_2}_{R_1} = \begin{pNiceArray}{c | c c}
+	1 & 0 & 0 \\
+	\hline
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+\end{pNiceArray} 
+.\]
+\[
+	f(\overrightarrow{AB}) = \alpha \overrightarrow{A'B'} + \beta \overrightarrow{B'C'}
+.\] 
+\[
+	R = \{\icol{0\\0},\icol{1\\0},\icol{0\\1}\}
+.\] 
+\[
+	[f]^R_R = [Id]^R_{R_2}[f]^{R_2}_{R_1}[Id]^{R_1}_R
+.\]
+\[
+	R_2 = \{A', \{\overrightarrow{AB}, \overrightarrow{A'C'}\}\} = \{\icol{-1\\0},\{\icol{-4\\2}, \icol{8\\4}\}\}
+.\] 
+Quindi la matrice del cambio di base da $R$ a $R_2$ è\\[5px]
+\[
+	[Id]^R_{R_2} = \begin{pNiceArray}{c | c c}
+		1 & 0 & 0 \\
+		-1 & -4 & 8 \\
+		0 & 2 & 4\\
+	\end{pNiceArray} 
+.\]\\
+Analogamente si fa con $R_1 = \{\icol{1\\1},\{\icol{2\\1},\icol{3\\3}\}\}\\
+\hline
+\\
+\end{document}
