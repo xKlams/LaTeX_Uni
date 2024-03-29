@@ -1,0 +1,122 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 11 Geometria I}
+\date{2024-03-27}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\newline\end{dimostrazione}}
+
+\newenvironment{teor}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Varie robe su basi ortonormali}
+	\begin{prop}
+		Sia $B = \{v_1,\ldots,v_n\}$ una base ortonormale dello spazio euclideo $V$, la base $L = \{w_1,\ldots,w_n\}$ è ortonormale se e solo se $M = [Id_V]^B_L$ è ortogonale $(MM^t = Id_v)$
+	\end{prop}
+	\begin{dimo}
+		Sia $M = (m_{ij})$ per definizione di $M \ w_i = \sum^n_{j=1}m_{ji}v_j \ \ 1\leq i\leq n$
+		\[
+			\langle w_i, w_j \rangle = \langle \sum^n_{k=1}m_{ki}v_k, \sum^n_{h=1}m_{hj}v_h \rangle = \sum^n_{k,h=1}m_{ki}m_{kj} \langle v_k, v_h \rangle  = \sum^n_{k=1}m_{ki}m_{kj} = (M^tM)_{i,j}
+		.\] 
+	\end{dimo} 
+	\textbf{Osservazione}\\
+	Sia $V = \mathbb{R}[x] \ \ \langle p(x), q(x) \rangle = \int_{-1}^1p(x)q(x)dx$ è un prodotto scalare\\
+	\begin{defi}[Angolo non orientato tra vettori]
+		$| \langle v,w  \rangle | \leq ||v||||w|| \Rightarrow -1\leq \frac{ \langle v, w \rangle }{||v||||w||}\leq 1 \ \ \ \ (v,w\neq 0)\\$ allora $\\ \exists!\teta\in [0,\pi] : \cos\teta = \frac{ \langle v, w \rangle }{||v||||w||}$\\
+		$\teta$ è detto angolo non orientato tra $v,w$
+	\end{defi}
+	\begin{defi}
+		Sia $S\subseteq V$ con $V$ spazio euclideo, $S^\perp:=\{v\in V | \langle v, s \rangle = 0 \ \  \forall s\in S\}$
+	\end{defi}
+	\textbf{Osservazione} \\
+	$S^\perp$ è un sottospazio vettoriale di V. \\ Siano $v_1,v_2\in S^\perp$ e $ \alpha_{1,2}\in \mathbb{K}\\ \Rightarrow  \langle \alpha_1v_1 + \alpha_2v_2, s \rangle = \alpha_1 \langle v, s \rangle + \alpha_2 \langle v_2, s \rangle  = 0 \ \ \ \forall s\in S$
+	\newpage
+\begin{prop}
+	Sia $V$ uno spazio vettoriale euclideo e $W$ un sottospazio di $V$ allora \[ V = W + W^\perp\]
+\end{prop}
+	\begin{dimo}
+		Sia $\{w_1,\ldots,w_k\}$ una base ortogonale di $W$ \\ consideriamo $\pi :V \rightarrow W$ con $ \pi(v) = \sum^n_{i=1}\frac{ \langle v, w_i \rangle }{ \langle w_i, w_i \rangle} w_i$, dobbiamo mostrare che $V = W + W^\perp$ e che $W\cap W^\perp = \{0\}$ ma la seconda è ovvia poiché se $w\in W\cap W^t$ è ortogonale a se stesso $ \Rightarrow \langle w, w \rangle = 0 \Leftrightarrow w = 0$\\
+		Osserviamo inoltre che se $v\in V \Rightarrow  v = \pi(v) + (v - \pi(v))$ la richiesta è dunque $v - \pi(v)\in W^\perp$. Basta verificare che $ \langle v - \pi(v), w_i \rangle = 0 \ \ \forall i$
+		\[
+			\langle v - \sum^n_{j=1} \frac{ \langle v, w_j \rangle} {\langle w_j, w_j \rangle} w_j\rangle = \langle v, w_i \rangle  - \sum^n_{j=1} \frac{ \langle v, w_j \rangle }{ \langle w_j, w_j \rangle } \langle w_j, w_i \rangle  = \langle v, w_i \rangle  - \frac{\langle v,w_i\rangle }{\cancel{ \langle w_j, w_j \rangle }} \cancel{\langle w_j, w_j \rangle } =0
+		.\]
+	\end{dimo}
+	\textbf{Osservazione}\\
+	1- Se $V$ è spazio euclideo e $W$ è sottospazio di $V, \\(W, \langle \codt, \codt \rangle |_{W\times W})$ è uno spazio euclideo\\
+	2- Se $\{w_1,\ldots, w_k\}$ è base ortogonale di $W$ risulta:\\ $|| v- \sum^n_{h=1}a_hw_||\geq||v - \sum^n_{h=1}\frac{ \langle v, w_h \rangle }{ \langle w_h, w_h \rangle} w_h||$ \\e vale l'uguaglianza se se solo se $a_h = \frac{ \langle v, w_h \rangle }{ \langle w_h, w_h \rangle }$
+	\begin{dimo}[Punto 2]
+		$||v - \sum^n_{h=1}a_hw_k||\geq||v-\sum^n_{h=1}\frac{ \langle v, w_h \rangle }{ \langle w_h, w_h \rangle }w_h||; \\ ||v-w||^2 = \langle v - u, v - u \rangle  =\\= \langle v - w + w - u, v - w + w - u \rangle = \langle v - w, v - w \rangle  + \langle w - u, w - u \rangle \geq ||v-w||^2$
+	\end{dimo}
+	La lezione prosegue con lo svolgimento di alcuni esercizi
+	\section{Prodotto vettoriale}
+		Sia $V$ uno spazio vettoriale euclideo per cui $dim(V) = 3$ sia $\{v,j,k\}$ una base ortonormale di $V$
+		\begin{defi}[Prodotto vettoriale]
+			Dati $v = \icol{x_1\\y_1\\z_1}\ \ w=\icol{x_2\\y_2\\z_2}$ pongo $v\wedge w = \icol{y_1z_2 - y_2z_1\\x_2z_1-x_1z_2\\x_1y_2-x_2y_1}$
+		\end{defi}
+		\begin{nota}
+			$B_1,B_2$ si dicono concordemente orientate se $det([Id]^{B_2}_{B_1})>0$, questa è inoltre una relazione di equivalenza.\\
+			Di fatti se $B_1\sim B_2, \ B_2\sim B_3\ \ det([Id]^{B_3}_{B_1})= det([Id]^{B_3}_{B_2}[Id]^{B_2}_{B_1})=\\ =det([Id]^{B_3}_{B_2})det([Id]^{B_2}_{B_1})>0 \Rightarrow B_1\sim B_2$
+		\end{nota}
+\end{document}
