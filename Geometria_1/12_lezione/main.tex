@@ -1,0 +1,218 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 12 Geometira}
+\date{2024-03-27}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Operatori Lineari Unitari}
+	Sia $V$ uno spazio vettoriale euclideo
+	\begin{defi}
+		Un operatore lineare $T:V \rightarrow V$ si dice unitario se \\$ \langle T(u), T(v) \rangle  = \langle u, v \rangle \ \ \forall u,v\in V$
+	\end{defi}
+	\begin{prop}
+		Sia $V$ spazio vettoriale euclideo $n-$ dimensionale e sia $T: V \rightarrow V$ un applicazione, TFAE (The Following Are Equivalent)\\
+		\begin{aligned}
+			&1.\ T \text{ è unitario}\\
+			&2.\ T \text{ è lineare e} ||T(w)|| = ||v|| \ \ \forall v\in V\\
+			&3.\ T(O) = O, ||T(v) - T(w)|| = ||v - w|| \ \ \forall v, w\in V\\
+			&4.\ T \text{ è lineare e manda basi ortonormali in basi ortonormali}\\
+			&5.\ T \text{ è lineare ed esiste una base } \{v_1,\ldots,v_n\} \text{ ortonormale di } V \text{ tale che }\\ &\{T(v_1),\ldots, T(v_n)\} \text{ è una base ortonormale}
+		\end{aligned}
+	\end{prop}
+	\begin{dimo}
+		$1 \Rightarrow 2.$ Unitario $ \Rightarrow  \langle T_(v), T(v) \rangle  = ||T(v)||^2 = \langle v, v \rangle  = ||v||^2$\\[10px]
+		$2 \Rightarrow 3$ $T$ lineare $ \Rightarrow  T(O)=O \ \ ||T(v) - T(w)|| = ||T(v-w)|| = ||v-w||$\\[10px]
+		$3 \Rightarrow 1 ||T(v)|| = ||T(v) - O|| = ||T(v) - T(O)|| = ||v - O|| = ||v||$\\ Esplicitiamo $||T(v)-T(w)||^2 = ||v-w||^2 \  \ \ \ \\ \langle T(v) - T(w), T(v) - T(w) \rangle  = \langle v - w, v - w \rangle  \\\Rightarrow \cancel{||T(v)||^2} - 2 \langle T(v), T(w) \rangle  + \cancel{||T(w)||^2} = \cancel{||v||^2} - 2\langle v, w \rangle  + \cancel{||w||^2}$\\
+		Dunque $ \langle T(v), T(w) \rangle  = \langle v, w \rangle $\\
+		Resta da vedere che $T$ è lineare.\\
+		Sia $\{e_1,\ldots,e_n\}$ una base ortonormale di $V$ allora $\{T(e_1),\ldots,T(e_n)\}$ è una base ortonormale per quanto dimostrato prima.
+		\[
+			\langle T(e_j), T(e_i) \rangle = \langle e_j, e_i \rangle  = \delta_{ij}
+		.\] 
+		\begin{aligend}
+			\displaystyle
+			&v = \sum^n_{i=1}x_ie_i\ \ ( \Rightarrow x_i = \langle v, e_i \rangle)\\
+			&T(v) = \sum^n_{i=1} \langle T(v), T(e_i) \rangle T(e_i) = \sum^n_{i=1} \langle v, e_i \rangle T(e_i) = \sum^n_{i=1}x_i T(e_j)
+		\end{aligend}\\
+		Dunque $\displaystyle T(\sum^n_{i=1}x_ie_i) = \sum^n_{i=1}x_iT(e_i)$ quindi $T$ è lineare\\[10px]
+		$1 \Rightarrow 4 \{e_1,\ldots, e_n\} $ è una base ortonormale \[
+			\langle T(e_i), T(e_j) \rangle = \langle e_i, e_j \rangle = \delta_{ij}
+		.\] \\[10px]
+		$4 \Rightarrow 5$ Ovvio\\[10px]
+		$5 \Rightarrow 1$ Sia  ${e_1,\ldots,e_n}$ la base ortonormale dell'enunciato. Considero $u,v \in V$\\
+		\[
+		u = \sum^n_{i=1}x_i e_i, \ \ w = \sum^n_{i=1}y_i e_i
+		.\] 
+		\begin{aligned}
+			\langle T(u), T(w) \rangle &= \langle T(\sum^n_{i=1}x_ie_i, T(\sum^n_{j=1}y_ie_i) \rangle =\\
+						   &= \langle \sum^n_{i=1}x_i T(e_i), \sum^n_{j=1}y_i T(e_i) \rangle  =\\
+						   &=\sum^n_{i,j=1}x_iy_i \langle T(e_i), T(e_j) \rangle \\
+						   &= \sum^n_{i=1}x_iy_i = \langle u, w \rangle 
+		\end{aligned}\\
+		Dove abbiamo usato $\langle T(e_i), T(e_j) \rangle = \delta_{ij}$
+	\end{dimo}\\
+	\hline \ \\
+$\displaystyle\alpha\in V\minus \{0\}  \ \ \ \ S_\alpha = v-2\frac{ \langle v, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha$ riflessione rispetto ad $\alpha^2\\$
+1. $S_\alpha$ è unitaria\\
+2. $S_\alpha^2 = Id$\\
+3. Esiste una base $B$ di $V$ tale che 
+$(S_\alpha)_B = diag(1,\ldots, 1, -1)$
+\begin{dimo}
+	1. $ \langle S_\alpha (v), S_\alpha (w) \rangle  = \langle v, w \rangle \\
+	\langle v -2\frac{ \langle v, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha,w  -2\frac{ \langle w, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha  \rangle  = \\
+	\langle v, w \rangle   -2\frac{ \langle v, \alpha \rangle \langle \alpha, w \rangle }{ \langle \alpha,\alpha \rangle} -2\frac{ \langle v, \alpha \rangle \langle w, \alpha \rangle }{ \langle \alpha,\alpha \rangle}  + 4\frac{ \langle v, \alpha \rangle \langle w, \alpha \rangle }{ \langle \alpha,\alpha \rangle \cancel{\langle \alpha, \alpha \rangle} } \cancel{\langle \alpha, \alpha \rangle } = \langle v, w \rangle $\\
+	\[
+		V = \mathbb{R}\alpha \oplus \alpha^\perp
+	.\] 
+	Quindi presa una base $\{w_1,\ldots, w_{n-1}\}$ di $\alpha^\perp,$\\
+	$B = \{w_1,\ldots,w_{n-1},\alpha\}  $ è una base di $V$ e\\
+	\begin{aligned}
+		&S_\alpha(w_i) = w_i, i = 1,\ldots, n-1\\
+		&S_\alpha(\alpha) = -\alpha\\
+		&(S_\alpha)_B = \matrice{1 & 0 & \ldots \\ 0 & \ddots & 0 \\ \ldots & 0 &-1} = M
+	\end{aligned}\\
+	In particolare $S_\alpha = Id$ poiché $M^2 = Id$
+\end{dimo}
+\section{Osservazioni sugli operatori unitari}
+1. Se $T$ è unitario, e $v\in Ker(T)$, allora
+\[
+ 0 = ||T(v)|| = ||v|| \Rightarrow  v = 0
+.\] 
+Dunque $T$ è invertibile.\\
+È facile vedere che se $T_1,T_2$ sono unitarie, lo è anche $T_1T_2^{-1}$, quindi, posto
+\[
+	O(V) = \{T\in End(V)| T è unitario\}
+.\] 
+\[
+O(V) \leq GL(V)
+.\] 
+e $O(V)$ viene chiamato gruppo ortogonale di $V$.\\
+2. Se fissiamo in  $V$ una base ortonormale $B$, e $T\in O(V), [T]^B_B$ è ortogonale.\\
+3. Se $T\in O(V)$ e $\labda\in \mathbb{R}$ è un autovalore di $T$, allora $\lambda = \pm 1$ \\
+Se $\lambda$ è autovalore, esiste $v\neq 0$ tale che $T(V) = \lambda v$ 
+\[
+||v|| = ||T(v)|| = ||\lambda v|| = |\lamba|||v||
+.\] 
+Poiché $v\neq 0, ||v|| \neq 0$ quindi $|\lambda| = 1$, cioè $\lambda = \pm 1$
+4. Se $V$ è uno spazio euclideo di dimensione $n$, ogni $T\in O(V)$ è composizione di al più $n$ riflessioni $S_n$\\
+\begin{dimo}
+	per induzione su $n$, con base ovvia $n=1$.\\
+	Supponiamo il teorema valga per ogni spazio euclideo di dimensione $n-1$ e dimostriamo per uno spazio euclideo di dimensione $n$. Sia $f\in O(V)$ \\
+	\textbf{Primo caso}\\
+	$f$ ha un punto fisso non nullo
+	\[
+	v\in V,\ \ v\neq 0,\ \ f(v) = v
+	.\] 
+	\[
+		V = \mathbb{R}v \oplus v^\perp
+	.\] 
+	$W = v^\perp, \ \ (W, \langle ,  \rangle |_{W\times W})$ è euclideo di dimensione $n-1$ \\
+	$F|_W:W \rightarrow W$, infatti, se $u\in W$
+	 \[
+	\langle f(u), v \rangle = \langle f(u), f(v) \rangle = \langle u, v \rangle = 0
+	.\] 
+	Per induzione $f|_W = S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}, \ \ r\leq n -1$\\
+	e quindi $f = S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}, \ \ r \leq n - 1$\\
+	\textbf{Secondo caso}\\
+	Sia $v\neq 0$ tale che $f(v)\neq v$. Allora
+	\[
+		S_{f(v)-v}(f(v))= v
+	.\] 
+	Infatti
+	\begin{aigned}
+		\displaystyle
+		S_{f(v)-v}(f(v)) &= f(v) - 2\frac{ \langle f(v), f(v)-v \rangle }{ \langle f(v)- v, f(v) - v \rangle} (f(v) - v)\\
+		\text{Ma} \ \  \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &=f(w) =+ 2\frac{ \langle f(v), f(v)-v \rangle }{ \langle f(v)- v, f(v) - v \rangle} (v - f(v))\\
+		\text{ Ora}  \ \ & \langle f(v), f(v) - v \rangle  = ||v||^2 - \langle f(v), v \rangle  \\
+				 & \langle f(v) - v, f(v) - v \rangle  = 2||v||^2 - 2 \langle f(v), v \rangle.
+	\end{aigned}\\
+	Dunque $(S_{f(v) - v}\circ f)$ ha un punto fisso.
+	Per il primo caso $S_{f(v) - v}\circ f= S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}\ \ \ r\leq n - 1$\\
+	Dunque $S_{f(v)-v}\circ S_{f(v)-v}\circ f = S_{f(v)-v}\circ S_{\alpha_1}\ldots\circ S_{\alpha_r}\\
+\Rightarrow f = S_{f(v) - v}\circ S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}} \ \ \ \\$ quindi f è composizione di al più $n$ riflessioni
+\end{dimo}
+\section{Spazi affini euclidei}
+Uno spazio affine euclideo è uno spazio affine $(E,V, +)$ dove $V$ è uno spazio euclideo.\\
+Si può definire una distanza tra punti di $E$ 
+\[
+ d(P,Q) = ||\overrightarrow{PQ}||
+.\] 
+Un riferimento cartesiano per uno spazio affine euclideo è il dato $Oe_1\ldots e_n$ di un punto e di una base ortonormale di $V$\\
+In particolare se $P = \icol{ x_1\\\vdots\\x_n}, \ \ Q = \icol{y_1\\\vdots\\y_n}$ allora
+\[
+	d(P,Q) = \sqrt{\sum^n_{i=1}(x_i - y_i)^2}\ \ \ \ \ \overrightarrow{PQ} = \icol{y_1 - x_1\\ \vdots \\ y_n - x_n}
+.\] 
+\begin{defi}
+	Due sottospazi affini si dicono ortogonali se le loro giaciture sono ortogonali 
+	\[
+		(\text{cioè se } S = P + U, \ \ T = Q + W, \langle u, w \rangle  = 0\ \ \forall u \in U , \ \ \forall w\in W)
+	.\] 
+\end{defi}
+\end{document}
