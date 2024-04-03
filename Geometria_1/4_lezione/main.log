@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.20)  21 MAR 2024 12:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  3 APR 2024 09:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -552,12 +552,27 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
- (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count321
+\scratchdimen=\dimen282
+\scratchbox=\box68
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen283
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks40
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
+)) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
@@ -570,48 +585,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--88
 
  []
 
-
-Overfull \vbox (10.96292pt too high) has occurred while \output is active []
-
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 94.
-\g__nicematrix_max_cell_width_dim=\dimen282
-\c@iRow=\count321
-\c@jCol=\count322
-\l__nicematrix_cell_box=\box68
-\l__nicematrix_the_array_box=\box69
-\l__nicematrix_left_delim_dim=\dimen283
-\l__nicematrix_right_delim_dim=\dimen284
-\g__nicematrix_dp_row_zero_dim=\dimen285
-\g__nicematrix_ht_row_zero_dim=\dimen286
-\g__nicematrix_ht_row_one_dim=\dimen287
-\g__nicematrix_dp_ante_last_row_dim=\dimen288
-\g__nicematrix_ht_last_row_dim=\dimen289
-\g__nicematrix_dp_last_row_dim=\dimen290
-\g__nicematrix_ddots_int=\count323
-\g__nicematrix_iddots_int=\count324
-\g__nicematrix_delta_x_one_dim=\dimen291
-\g__nicematrix_delta_y_one_dim=\dimen292
-\g__nicematrix_delta_x_two_dim=\dimen293
-\g__nicematrix_delta_y_two_dim=\dimen294
-\l__nicematrix_initial_i_int=\count325
-\l__nicematrix_initial_j_int=\count326
-\l__nicematrix_final_i_int=\count327
-\l__nicematrix_final_j_int=\count328
-\l__nicematrix_end_int=\count329
-\l__nicematrix_local_start_int=\count330
-\l__nicematrix_local_end_int=\count331
+\g__nicematrix_max_cell_width_dim=\dimen284
+\c@iRow=\count327
+\c@jCol=\count328
+\l__nicematrix_cell_box=\box69
+\l__nicematrix_the_array_box=\box70
+\l__nicematrix_left_delim_dim=\dimen285
+\l__nicematrix_right_delim_dim=\dimen286
+\g__nicematrix_dp_row_zero_dim=\dimen287
+\g__nicematrix_ht_row_zero_dim=\dimen288
+\g__nicematrix_ht_row_one_dim=\dimen289
+\g__nicematrix_dp_ante_last_row_dim=\dimen290
+\g__nicematrix_ht_last_row_dim=\dimen291
+\g__nicematrix_dp_last_row_dim=\dimen292
+\g__nicematrix_ddots_int=\count329
+\g__nicematrix_iddots_int=\count330
+\g__nicematrix_delta_x_one_dim=\dimen293
+\g__nicematrix_delta_y_one_dim=\dimen294
+\g__nicematrix_delta_x_two_dim=\dimen295
+\g__nicematrix_delta_y_two_dim=\dimen296
+\l__nicematrix_initial_i_int=\count331
+\l__nicematrix_initial_j_int=\count332
+\l__nicematrix_final_i_int=\count333
+\l__nicematrix_final_j_int=\count334
+\l__nicematrix_end_int=\count335
+\l__nicematrix_local_start_int=\count336
+\l__nicematrix_local_end_int=\count337
 Package mdframed Info: Not enough space on this page on input line 134.
 
 Underfull \hbox (badness 10000) in paragraph at lines 149--166
 
  []
 
-[2]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
@@ -699,20 +709,20 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[3] (./main.aux) ) 
+[4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15484 strings out of 478087
- 333173 string characters out of 5842650
+ 15779 strings out of 477985
+ 337146 string characters out of 5839380
  1897388 words of memory out of 6000000
- 35329 multiletter control sequences out of 15000+600000
+ 35720 multiletter control sequences out of 15000+600000
  520189 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,20n,90p,466b,752s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,20n,90p,466b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (3 pages, 156968 bytes).
+Output written on main.pdf (4 pages, 157171 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
