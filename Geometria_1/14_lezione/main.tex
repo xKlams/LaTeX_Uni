@@ -1,0 +1,142 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 14 Geometria 1}
+\date{2024-04-04}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Precisazione}
+	Siano $S,T$ sottospazi affini in uno spazio euclideo $\delta$ di dimensione $n$. Diciamo che $S,T$ sono ortogonali se, posto $S = p + U, \ \ T= q + W, \ \ p\in S,q\in T$\\
+	 $U,W$ sottospazi vettoriali di $V$,
+	 \[
+		 \langle U, W \rangle = 0\ \ \text{ se } dim(S) + dim(T) < n
+	 .\] 
+	 \[
+		 \langle U^\perp, W^\perp \rangle  = 0 \ \ \text{ se } dim(S) + dim(T) \geq n
+	 .\] 
+	 \textbf{Esempi}\\
+	 1. Due rette $r, s$ in $\mathbb{E}^3$ con vettori direttori $v_s, v_r$ \\
+	 \textbf{COMPLETARE CON DISEGNI}\\
+	2. retta e piano in $\mathbb{E}^3$\\
+	\textbf{COMPLETARE CON DISEGNI}\\
+	3. due piani in $\mathbb{E}^3$\\
+	\textbf{COMPLETARE CON DISEGNI}\\
+	sarò sincero, non si capisce un cazzo
+	\section{Esercizi foglio 4}
+	\textbf{es 3}\\[10px]
+	\begin{aligned}
+		&r: \begin{cases}
+			x_1 - x_3 = 0\\
+			x_2 - x_3 = 0
+		\end{cases} \ \ r' = \begin{cases}
+			x_1 + x_2 = 0\\
+			x_3 = -1
+		\end{cases}
+	\end{aligned}\\[10px]
+	Posizione reciproca\\
+	La direzione di $r$ è $\mathbb{R}\icol{1\\1\\1},$ quella di $r'= \mathbb{R}\icol{1\\-1\\0}$\\
+	Essendo tali vettori indipendenti, le rette non sono parallele\\
+	$p'= \icol{1\\-1\\-1}\in r', \ \ O\in r\\
+	\overrightarrow{Op'} = \icol{1\\-1\\-1}\nin \langle \icol{1\\1\\1}, \icol{1\\-1\\0} \rangle \\$
+	quindi $r,r'$ sono sghembi\\
+	$S = \pi\cap\pi'\ \ \ \pi$ piano per $r$ parallelo a $v\wedge v'$ \ \\
+	$\pi'$ piano per $r'$ parallelo a $v\wedge v'$
+	\[
+		v\wedge v'\ \ \matrice{1& 1 & 1\\1 & -1&0} \ \ v\wedge v' = \icol{1\\1\\-2}
+	.\] 
+	\[
+		\pi : \icol{x_1\\x_2\\x_3} = t\icol{1\\1\\1} + s\icol{1\\1\\-2}
+	.\] 
+	\[
+		\pi' : \icol{x_1\\x_2\\x_3} = \icol{0\\0\\-1} + t\icol{1\\-1\\0} + s\icol{1\\1\\-2}
+	.\] 
+	trasformiamo in coordinate cartesiane\\
+	$\pi \rightarrow det\matrice{x_1&x_2&x_3\\1&1&1\\1&1&-2} = 0 \rightarrow x_1 - x_2 = 0$\\
+analogo per $\pi'$\\
+ \textbf{es 4}\\
+ proiezione ortogonale su $\pi$\\
+ simmetria ortogonale di asse $\pi$ \\
+\[
+\pi : 2x_1 + x_2 - x_3 + 2 = 0
+.\]
+vettore normale a $\pi\ \ \ \ p_0\in\pi$\\
+$p(p) = p_0 + \widetilde{p}(\overrightarrow{p_0p})\\
+\sigma(p) = p_0 + \widetilde{\sigma}(\overrightarrow{p_0p})\\$
+scelgo $p_0\in\pi$\ \ \ \ \ \ $p_0 = \icol{0\\0\\2}$\\
+$W$ giacitura di $\pi = \langle \icol{1\\-2\\0}, \icol{0\\1\\1} \rangle  \ \ \ \ \mathbb{R}^3 = W\oplus W^\perp$\\
+Dobbiamo decomporre $\overrightarrow{p_0p}$ rispetto a $W\oplus W^\perp$ \ \ $W^\perp = \mathbb{R}\icol{-1\\-1\\1}\\
+\icol{x_1\\x_2\\x_3-2} = \alpha\icol{1\\-2\\0} + \beta\icol{0\\1\\1} + \gamma\icol{-2\\-1\\1}$\\
+Questo poi è solo un sistema noioso da risolvere\\
+\[
+	p\icol{x_1\\x_2\\\x_3} = (\text{ guarda le lavagnate, è un super vettore} ) 
+.\] 
+sulle lavagnate trovi anche il risultato della simmetria
+\\
+
+\end{document}
