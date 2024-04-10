@@ -1,0 +1,142 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 15 Geometria I}
+\date{2024-04-10}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Ultima Parte teorica prima del compito}
+	$O(2) = SO(2) \cup O(2)\setminus SO(2)$
+	\[
+		R_\theta = \matrice{cos\theta & -sin\theta\\ sin\theta& cos\theta}\ \ \ A_\theta = R_\theta A_\theta = \matrice{cos\theta& sin\theta\\ sin\theta & -cos\theta}
+	.\] 
+	\[
+		R_\theta R_\varphi = R_{\theta + \varphi}
+	.\] 
+	\[
+		A_\theta A_ \varphi = R_{\theta - \varphi}
+	.\] 
+	\begin{defi}[Riflessione]
+		Isometria che fissa puntualmente una retta (detta asse della riflessione)
+	\end{defi}
+	$E$ piano euclideo
+	$C\in E, r\subset E$ retta $\exists s,t$ rette passanti per $C$ tali che
+	\[
+	 R_{c,\theta} = \rho_r \circ\rho_s = \rho_t\circ\rho_r	.\] 
+	"e viceversa"\\
+	Possiamo fissare $c = 0 \ \ p_r = A_{o,\alpha}.$ Allora
+	\[
+		R_\theta = A_\alpha\circ A_{\alpha - \theta} = A_{\theta + \alpha}\circ A_\alpha
+	.\] 
+	dove $\rho_r = A_\alpha$ e $A_{\alpha - \theta} \equiv \rho_s$
+\\
+Il viceversa segue, sostituendo $c\equiv 0$, da $A_\alpha\circ A_\beta = R_{\alpha - \beta}$
+ \[
+	 R_{C,\theta}\circ R_{D,\varphi} \ \ \rightarrow \ \ \text{rotazione di angolo } \theta + \varphi \text{ Se } \theta + \varphi\neq 2k\pi,\ \ k\in \mathbb{Z}
+.\] 
+altrimenti è una traslazione (che è l'identità $ \LeftrightarrowC = D$)\\
+Se $C = D$ chiaramente $R_{C,\theta}\circ R_{C, \varphi} = R_{C,\theta + \varphi}\\$
+Se $C \neq D$ sia $r$ la retta per $C$ e $D$ Per la parte precedente possiamo scrivere
+\[
+	R_{C,\theta} = \rho_t\circ\rho_r, \ \ \ \ R_{D,\varphi} = \rho_r\circ\rho_s
+.\] 
+per certe rette $s,t$ 
+\[
+	T = R_{C,\theta}\circ R_{D,\varphi} = \rho_t\circ\rho_r\circ\rho_r\circ\rho_s
+.\] 
+Se $s,t$ sono incidenti allora per la parte precedente $T$ è una rotazione, altrimenti $s\parallel t$\\
+\textbf{TODO disegno}\\
+In coordinate rispetto ad un riferimetno cartesiano $Oe_1e_2$ Se $P\equiv\icol{x_1\\x_2}$ 
+\[
+	(R_{C,\theta}\circ R_{D,\varphi})(P) \ \ \ \text{ ha coordinate}
+.\] 
+\[
+	R_\rho(R(x-d) + d-x) + x  
+.\]
+dove $c,d$ sono i vettori delle coordinate di $C,D $ rispettivamente\\
+\begin{aligned}
+	&\underline{R_{\theta + \varphi}(x - d)} + R_\theta(d-c) + c\\[-5px]
+	&\hspace{-4px}\text{ parte lineare}
+\end{aligend}\\[10px]
+$T$ T è una translazione se e solo se $\theta + \varphi = 2k\pi, k\in\mathbb{Z}$ e in tal caso
+\[
+T(x) = x + R_\theta(d-c) = (d-c)
+.\] 
+che è l'identità se e solo se $d = c$ cioè $D=C$
+\begin{defi}[Glissoriflessione]
+	Una glissoriflessione è un'isometria di un piano euclideo ottenuta come composizione $t_v\circ\rho_r$ di una riflessione di asse $r$ con una traslazione $t_v\neq Id$ con $v\neq 0, v\parallel r$
+\end{defi}
+\textbf{TODO disegno}\\
+\begin{teo}[Charles, 1831]
+	Un'isometria di un piano euclideo che fissa un punto è una rotazione o una riflessione a seconda che sia diretta o inversa. Un'isometria senza punti fissi è una traslazione o una glissoriflessione a seconda che sia diretta o inversa
+\end{teo}
+\begin{dimo}
+	Sia $f\in Isom(E)$\\ Se $f$ ha un punto fisso abbiamo già visto che $f$ è una rotazione se è diretta o una riflessione se $f$ è inversa
+\end{dimo}
+\end{document}
