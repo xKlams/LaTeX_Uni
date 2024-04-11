@@ -148,19 +148,24 @@ $(S_\alpha)_B = diag(1,\ldots, 1, -1)$
 Dunque $T$ è invertibile.\\
 È facile vedere che se $T_1,T_2$ sono unitarie, lo è anche $T_1T_2^{-1}$, quindi, posto
 \[
-	O(V) = \{T\in End(V)| T è unitario\}
+	O(V) = \{T\in End(V)| T \text{ è unitario}\}
 .\] 
 \[
 O(V) \leq GL(V)
 .\] 
-e $O(V)$ viene chiamato gruppo ortogonale di $V$.\\
+e $O(V)$ viene chiamato gruppo ortogonale di $V$.\\[10px]
 2. Se fissiamo in  $V$ una base ortonormale $B$, e $T\in O(V), [T]^B_B$ è ortogonale.\\
-3. Se $T\in O(V)$ e $\labda\in \mathbb{R}$ è un autovalore di $T$, allora $\lambda = \pm 1$ \\
-Se $\lambda$ è autovalore, esiste $v\neq 0$ tale che $T(V) = \lambda v$ 
+Infatti sia $A = [T]_B^B, \ B = \{e_1,\ldots,e_n\}$. Le colonne di $A$ sono le coordinate di $T(e_i)$ rispetto a $B$, quindi $T $ è unitario se e solo se
 \[
-||v|| = ||T(v)|| = ||\lambda v|| = |\lamba|||v||
+	\langle A^i, A^j \rangle = \delta_{ij}
 .\] 
-Poiché $v\neq 0, ||v|| \neq 0$ quindi $|\lambda| = 1$, cioè $\lambda = \pm 1$
+dove $A^i, A^j$ rappresentano la riga $i$-esima e $j$-esima della matrice $A$\\[10px]
+3. Se $T\in O(V)$ e $\lambda\in \mathbb{R}$ è un autovalore di $T$, allora $\lambda = \pm 1$ \\
+Se $\lambda$ è autovalore, esiste $v\neq 0$ tale che $T(v) = \lambda v$ 
+\[
+||v|| = ||T(v)|| = ||\lambda v|| = |\lambda|||v||
+.\] 
+Poiché $v\neq 0, ||v|| \neq 0$ quindi $|\lambda| = 1$, cioè $\lambda = \pm 1$\\[10px]
 4. Se $V$ è uno spazio euclideo di dimensione $n$, ogni $T\in O(V)$ è composizione di al più $n$ riflessioni $S_n$\\
 \begin{dimo}
 	per induzione su $n$, con base ovvia $n=1$.\\

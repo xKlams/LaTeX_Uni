@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  29 MAR 2024 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  11 APR 2024 11:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -903,65 +903,33 @@ l.142 \end{dimo}
 Things are pretty mixed up, but I think the worst is over.
 
 [3]
-
-LaTeX Warning: Command \` invalid in math mode on input line 151.
-
-./main.tex:151: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.151 	O(V) = \{T\in End(V)| T è
-                                  unitario\}
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./main.tex:158: Undefined control sequence.
-<recently read> \labda 
-                       
-l.158 3. Se $T\in O(V)$ e $\labda
-                                 \in \mathbb{R}$ è un autovalore di $T$, al...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:161: Undefined control sequence.
-l.161 ||v|| = ||T(v)|| = ||\lambda v|| = |\lamba
-                                                |||v||
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 
  []
 
 
-./main.tex:189: LaTeX Error: Environment aigned undefined.
+./main.tex:194: LaTeX Error: Environment aigned undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 	\begin{aigned}
+l.194 	\begin{aigned}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:190: Missing $ inserted.
+./main.tex:195: Missing $ inserted.
 <inserted text> 
                 $
-l.190 		\displaystyle
+l.195 		\displaystyle
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:191: Misplaced alignment tab character &.
-l.191 		S_{f(v)-v}(f(v)) &
+./main.tex:196: Misplaced alignment tab character &.
+l.196 		S_{f(v)-v}(f(v)) &
                           = f(v) - 2\frac{ \langle f(v), f(v)-v \rangle }{ \...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -970,8 +938,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:192: Misplaced alignment tab character &.
-l.192 ... \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &
+./main.tex:197: Misplaced alignment tab character &.
+l.197 ... \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &
                                                   =f(w) =+ 2\frac{ \langle f...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -980,8 +948,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:193: Misplaced alignment tab character &.
-l.193 		\text{ Ora}  \ \ &
+./main.tex:198: Misplaced alignment tab character &.
+l.198 		\text{ Ora}  \ \ &
                            \langle f(v), f(v) - v \rangle  = ||v||^2 - \lang...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -990,10 +958,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:194: Misplaced alignment tab character &.
+./main.tex:199: Misplaced alignment tab character &.
 <recently read> &
                  
-l.194 				 &
+l.199 				 &
              \langle f(v) - v, f(v) - v \rangle  = 2||v||^2 - 2 \langle f(v)...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1003,22 +971,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:195: LaTeX Error: \begin{dimo} on input line 165 ended by \end{aigned}.
+./main.tex:200: LaTeX Error: \begin{dimo} on input line 170 ended by \end{aigned}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.195 	\end{aigned}
+l.200 	\end{aigned}
                    \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:195: Missing $ inserted.
+./main.tex:200: Missing $ inserted.
 <inserted text> 
                 $
-l.195 	\end{aigned}
+l.200 	\end{aigned}
                    \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1026,8 +994,8 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:199: Extra }, or forgotten $.
-l.199 ..._{\alpha_1}\circ\ldots\circ S_{\alpha_r}}
+./main.tex:204: Extra }, or forgotten $.
+l.204 ..._{\alpha_1}\circ\ldots\circ S_{\alpha_r}}
                                                    \ \ \ \\$ quindi f è com...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1035,31 +1003,31 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./main.tex:200: Missing $ inserted.
+./main.tex:205: Missing $ inserted.
 <inserted text> 
                 $
-l.200 \end{dimo}
+l.205 \end{dimo}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:200: LaTeX Error: \begin{dimo} on input line 165 ended by \end{dimostrazione}.
+./main.tex:205: LaTeX Error: \begin{dimo} on input line 170 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.200 \end{dimo}
+l.205 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:200: Missing $ inserted.
+./main.tex:205: Missing $ inserted.
 <inserted text> 
                 $
-l.200 \end{dimo}
+l.205 \end{dimo}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1068,40 +1036,40 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:200: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:205: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.200 \end{dimo}
+l.205 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:200: Extra \endgroup.
+./main.tex:205: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.200 \end{dimo}
+l.205 \end{dimo}
                 
 Things are pretty mixed up, but I think the worst is over.
 
 [4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 212.
+(mdframed)              on input line 217.
  [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16930 strings out of 477985
- 375111 string characters out of 5839380
+ 16929 strings out of 477985
+ 375106 string characters out of 5839380
  1866388 words of memory out of 6000000
- 36839 multiletter control sequences out of 15000+600000
+ 36838 multiletter control sequences out of 15000+600000
  521246 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,16n,90p,466b,378s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (5 pages, 199845 bytes).
+Output written on main.pdf (5 pages, 200597 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  10 APR 2024 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  10 APR 2024 13:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -530,19 +530,20 @@ Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.3'
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 \c@theo=\count320
-\c@lemma=\count321
-\c@defin=\count322
-\c@propo=\count323
+\c@corollario=\count321
+\c@lemma=\count322
+\c@defin=\count323
+\c@propo=\count324
 
 
-./main.tex:37: LaTeX Error: Command \dimo already defined.
+./main.tex:39: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37   {\hfill\square\end{dimostrazione}}
+l.39   {\hfill\square\end{dimostrazione}}
                                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -555,208 +556,156 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-L                     
-? 
-
-LaTeX Warning: Unused global option(s):
-    [12px].
-
-(./main.aux)
-\openout1 = `main.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count325
+\scratchdimen=\dimen284
+\scratchbox=\box76
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen285
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks42
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 85.
+(mdframed)              on input line 94.
 
-! Undefined control sequence.
-l.103 ...ne (che è l'identità $ \LeftrightarrowC
+./main.tex:112: Undefined control sequence.
+l.112 ...ne (che è l'identità $ \LeftrightarrowC
                                                    = D$)\\
-? 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-! Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+./main.tex:133: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 	&
+l.133 	&
         \underline{R_{\theta + \varphi}(x - d)} + R_\theta(d-c) + c\\[-5px]
-? 
-! Missing $ inserted.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.tex:133: Missing $ inserted.
 <inserted text> 
                 $
-l.124 	&
+l.133 	&
         \underline{R_{\theta + \varphi}(x - d)} + R_\theta(d-c) + c\\[-5px]
-? 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-! LaTeX Error: \begin{aligned} on input line 123 ended by \end{aligend}.
+
+./main.tex:135: LaTeX Error: \begin{aligned} on input line 132 ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Missing } inserted.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:135: Missing } inserted.
 <inserted text> 
                 }
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Missing $ inserted.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:135: Missing $ inserted.
 <inserted text> 
                 $
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Interruption.
-<to be read again> 
-                   \endgroup 
-l.126 \end{aligend}
-                   \\[10px]
-? 
-! Missing } inserted.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:135: Missing } inserted.
 <inserted text> 
                 }
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Missing \cr inserted.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:135: Missing \cr inserted.
 <inserted text> 
                 \cr 
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Missing { inserted.
+I'm guessing that you meant to end an alignment here.
+
+./main.tex:135: Missing { inserted.
 <inserted text> 
                 {
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.126 \end{aligend}
-                   \\[10px]
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.126 \end{aligend}
-                   \\[10px]
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.126 \end{aligend}
-                   \\[10px]
-? 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 132.
-[2]
-Package mdframed Info: Not enough space on this page on input line 134.
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 136.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{dimo}
-                
-? 
-
-! LaTeX Error: \begin{dimo} on input line 139 ended by \end{dimostrazione}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.141 \end{dimo}
-                
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.141 \end{dimo}
-                
-? 
-
-! LaTeX Error: \begin{document} ended by \end{dimo}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.141 \end{dimo}
-                
-? 
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.141 \end{dimo}
-                
-? 
-[3] (./main.aux) ) 
-Here is how much of TeX's memory you used:
- 16561 strings out of 477986
- 369587 string characters out of 5839406
- 1863385 words of memory out of 6000000
- 36483 multiletter control sequences out of 15000+600000
- 520189 words of font info for 63 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 87i,10n,90p,466b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on main.dvi (3 pages, 16924 bytes).
-at seems to be necessary to fix
+I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:126: Missing $ inserted.
+./main.tex:135: Missing $ inserted.
 <inserted text> 
                 $
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:126: Missing } inserted.
+./main.tex:135: Missing } inserted.
 <inserted text> 
                 }
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -764,10 +713,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:126: Missing $ inserted.
+./main.tex:135: Missing $ inserted.
 <inserted text> 
                 $
-l.126 \end{aligend}
+l.135 \end{aligend}
                    \\[10px]
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -777,42 +726,47 @@ my insertion and my current dilemma will both disappear.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 132.
+(mdframed)              on input line 141.
 [2]
-Package mdframed Info: Not enough space on this page on input line 134.
+Package mdframed Info: Not enough space on this page on input line 143.
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 136.
-./main.tex:141: Missing $ inserted.
+(mdframed)              on input line 145.
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--154
+
+ []
+
+./main.tex:173: Missing $ inserted.
 <inserted text> 
                 $
-l.141 \end{dimo}
+l.173 \end{dimo}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:141: LaTeX Error: \begin{dimo} on input line 139 ended by \end{dimostrazione}.
+./main.tex:173: LaTeX Error: \begin{dimo} on input line 148 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.141 \end{dimo}
+l.173 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:141: Missing $ inserted.
+./main.tex:173: Missing $ inserted.
 <inserted text> 
                 $
-l.141 \end{dimo}
+l.173 \end{dimo}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -821,39 +775,172 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:141: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:173: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.141 \end{dimo}
+l.173 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:141: Extra \endgroup.
+./main.tex:173: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.141 \end{dimo}
+l.173 \end{dimo}
                 
 Things are pretty mixed up, but I think the worst is over.
 
-[3] (./main.aux) ) 
+[3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 177.
+
+./main.tex:196: Undefined control sequence.
+l.196 ...erline{x}^tx = \overline{\lambda}\oveline
+                                                  {x}^tx \ \ \ \Rightarrow \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:196: Undefined control sequence.
+l.196 ... \ \ \Rightarrow \ \ \ \lambda = \oveline
+                                                  {\lambda}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./main.tex:198: Missing $ inserted.
+<inserted text> 
+                $
+l.198 \end{dimo}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:198: LaTeX Error: \begin{dimo} on input line 180 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:198: Missing $ inserted.
+<inserted text> 
+                $
+l.198 \end{dimo}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:198: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.198 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:198: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.198 \end{dimo}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 199.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 202.
+./main.tex:221: Missing $ inserted.
+<inserted text> 
+                $
+l.221 \end{dimo}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:221: LaTeX Error: \begin{dimo} on input line 208 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:221: Missing $ inserted.
+<inserted text> 
+                $
+l.221 \end{dimo}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:221: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:221: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.221 \end{dimo}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+[4] [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16921 strings out of 477985
- 375027 string characters out of 5839380
+ 16935 strings out of 477985
+ 375176 string characters out of 5839380
  1863388 words of memory out of 6000000
- 36832 multiletter control sequences out of 15000+600000
- 520189 words of font info for 63 fonts, out of 8000000 for 9000
+ 36844 multiletter control sequences out of 15000+600000
+ 521246 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,10n,90p,466b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (3 pages, 160858 bytes).
+ 87i,14n,90p,466b,319s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (5 pages, 189438 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
