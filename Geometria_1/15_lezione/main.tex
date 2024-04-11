@@ -1,0 +1,218 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 15 Geometria}
+\date{2024-04-08}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Definizioni su operatori}
+	\begin{defi}
+		$T\in End(V)$ è \\
+		$\cdot$ Simmetrico o Autoaggiunto se
+		\[
+		T = T^t
+		.\] 
+		$\cdot$ Antisimmetrico se
+		\[
+		T = -T^t
+		.\] 
+	\end{defi}
+	\begin{prop}
+		$T$ è unitario se e solo se $T^t\circ T = Id_V$
+	\end{prop}
+	\begin{defi}
+		Sia $E$ uno spazio euclideo. Un'affinità $f:E \rightarrow E$ si dice Isometria se la sua parte lineare $\varphi: V \rightarrow V$ è un operatore unitario
+	\end{defi}
+	\textbf{Osservazione}\\
+	Le isometrie formano un gruppo denotato con $Isom(E)$ (difatti, $Isom(E) \leq Aff(E))$\\
+	Infatti la composizione di isometrie è un isometria.\\
+	se $\varphi_1,\varphi_2$ sono le parti lineari di $f_1,f_2\in Isom(E)$\\
+	Per ipotesi $\varphi_1\circ \varphi_1 = Id, \ \ \ \varphi_2^t\circ \varphi_2 = Id$ \\
+	\[
+		(\varphi_1\circ \varphi_2)^t\circ(\varphi_1\circ \varphi_2) = \varphi_2^t\circ \varphi_1^t\circ \varphi_1\circ \varphi_2 = \varphi_2^t\circ \varphi_2 = Id
+	.\] 
+	Inoltre, dalla definizione, l'inversa di un operatore unitario è unitario.\\
+	In effetti, ho dimostrato che 
+	\[
+		O(V) = \{f\in End(V)|f^t\circ f = Id\}
+	.\] 
+	è un gruppo, e un sottogruppo di $GL(V)$\\
+ \begin{nome}
+ 	Data $f\in Isom(E)$ diciamo che:\\
+	$f$ è diretta se $det(\varphi) = 1$ \\
+	$f$ è inversa se $det(\varphi) = -1$
+ \end{nome}
+ Le isometrie dirette formano un sottogruppo
+ \[
+ Isom^+(E)\leq Isom(E)
+ .\] 
+ \textbf{Osservazione}
+\\
+1. Sia $O\in E$ 
+\[
+ Isom^+(E)_O\leq Isom(E)_O = \{f\in Isom(E)|f(O) = O\} \leq Isom(E)
+.\] 
+Dove $Isom^+(E)_O$ sono le rotazioni di centro $O$ \\
+2. Se nello spazio euclideo $E$ è assegnato con riferimento cartesiano $R = Oe_1,\ldots,e_n$, ogni isometria $f\in Isom(E)$ con parte lineare $\varphi\in O(V)$ si scrive in coordinate rispetto al riferimento nella forma
+\[
+Y + AX + c \ \ \ \ \ \ \ A\in O(n)
+.\] 
+dove $p\in E, \ \ \ X = [P]_R, \ \ \ Y + [f(P)]_R$\\
+$A = [\varphi]^{\{e_1,\ldots,e_n\}}_{\{e_1,\ldots,e_n\}}, \ \ \ c = [f(O)]_R$
+\begin{teo}
+	Sia $E$ uno spazio euclideo, Un'applicazione $f:E \rightarrow E$ è un isometria se e solo se
+	\[
+	 \circledast d(P,Q) = d(f(P),f(Q))\ \ \ \ \forall P,Q\in E
+	.\] 
+\end{teo}
+\begin{dimo}
+	supponiamo che $f$ sia un'isometria, con parte lineare $\varphi$ 
+	\[
+	d(f(P),f(Q)) = ||\overrightarrow{f(P)f(Q)}|| = ||\varphi(\overrightarrow{PQ})|| = ||\overrightarrow{PQ}|| = d(P,Q)
+	.\] 
+	Viceversa se $f: E \rightarrow E$ un'affinità verificante l'equazione $\circledast$, fissiamo $O\in E$ e definiamo $\varphi:V \rightarrow V$ ponendo
+	\[
+	 \varphi(\overrightarrow{OP}) = \overrightarrow{f(O)f(P)}
+	.\] 
+	Poiché ogni vettore $v\in V$ è del tipo $\overrightarrow{OP}$ per qualche $P\in E, \ \ \varphi$ è definita, e tale che se $\underline{O}$ è il vettore nullo in $V$
+	\[
+		\varphi(\underline{O}) = \varphi(\overrightarrow{OO}) = \overrightarrow{f(O)f(O)} = \underline{O}
+	.\]
+	Inoltre se $v = \overrightarrow{OP}, w = \overrightarrow{OQ}$ \\
+	\begin{aligned}
+		&||\varphi(v) - \varphi(w)|| = ||\varphi(\overrightarrow{OP}) - \varphi(\overrightarrow{OQ})|| =\\
+		&=||\overrightarrow{f(O)f(P)} - \overrightarrow{f(O)f(q)}|| = ||\overrightarrow{f(Q)f(P)}|| =\\&= d(f(Q),f(P))=d(Q,P) = ||\overrightarrow{PQ}|| = ||v-w||
+	\end{aligned}\\
+	Quindi, per una delle caratterizzazioni già dimostrati, $\varphi$ è un operatore unitario. Dimostro ora che $f$ è un'affinità con parte lineare $\varphi$
+	\[
+	\varphi(\overrightarrow{PQ}) = \varphi(\overrightarrow{OQ} - \overrightarrow{OP} ) = \varphi(\overrightarrow{OQ}) - \varphi(\overrightarrow{OP}) = \overrightarrow{f(O)f(P)} - \overrightarrow{f(O) - f(Q)} = \overrightarrow{f(P)f(Q)}
+	.\] 
+\end{dimo}
+\section{Isometrie di piani e spazi euclidei di dimensione 3}
+$A\in SO(2) \ \ \ \matrice{a&b\\c&d}$ tale che: \ \ \ 
+\begin{aligned}
+	&a^2 + c^2 = 1\\
+	&b^2 + d^2 = 1\\
+	&ab + cd = 0 \\
+	&ad - bc = 1
+\end{aligned}\\
+$a^2 + c^2 = 1 \ \ \ \ \  \  \leadsto \ \ a = \cos\theta,\ \ \ \  c = \sin\theta$ \\
+altre condizioni $\leadsto \ \ b=-\sin\theta,\ \ d = \cos\theta$\\
+Dunque \\
+\[
+	SO(2) = \{R_\theta = \matrice{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}|\theta\in\mathbb{R}\}
+.\] 
+Osserviamo che se $det(A) = det(B) = -1$ allora  $det(AB) = 1$, quindi se $A\in O(2)\setminus SO(2)$\\
+ \[
+	 A = (AB)B^{-1} = (AB)B^t
+.\] 
+con $B\in O(2)\setminus SO(2)$ fissato.\\
+Scegliendo $B = \matrice{1&0\\0&-1}$, tutti gli elementi di $O(2)\setminus SO(2)$ sono del tipo
+\[
+A_\theta = R_\theta\matrice{1&0\\0&-1} = \matrice{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}\matrice{1&0\\0&-1} = \matrice{\cos\theta&\sin\theta\\\sin\theta&-\cos\theta}
+.\] 
+\begin{lemm}
+	1) $A_\theta = R_\theta A_O = A_OR_{-\theta}$\\
+	2) $A_  \varphi\circ A_\theta = R_{ \varphi - \theta}$ \\
+	3) $A_\theta$ ha autovalori  $1$ e $-1$ con autospazi ortogonali
+\end{lemm}
+\begin{dimo}
+	1. ovvio\\
+	2. $A_ \varphi A_\theta = R_ \varphi A_O R_\theta A_O = R_\varphi A_OA_O R_{-\theta} = R_ \varphi R_{-\theta} = R_{\varphi - \theta}$\\
+	3. Calcoliamo il polinomio caratteristico di $A_ \varphi$:
+	\[
+		det\matrice{T -\cos\theta&-\sin\theta\\-\sin\theta & T + \cos\theta} = (T - \cos\theta)(T+\cos\theta) - \sin^2\theta = T^2-1
+	.\] 
+	quindi $A_\theta$ ha autovalori $\plusminus 1$. Si capisce direttamente che gli autospazi sono ortogonali. In realtà
+	\[
+		V_1 = \mathbb{R}\icol{\cos\theta - 1\\\sin\theta}, \ \ V_{-1}-\icol{\cos\theta +1\\\sin\theta}
+	.\] 
+\end{dimo}
+\newpage
+Sia $c\in E\ \ \ \sigma : E \rightarrow E$  rotazione di centro $c$.\\
+La parte lineare di $\sigma$ appartiene a $SO(2)$, quindi è del tipo $R_\theta$. Se $Oe_1e_2$ è un riferimento cartesiano
+\[
+	R_{c,\theta} = t_{\overrightarrow{OP}}\circ R_{O,\theta} \circ t_{-\overrightarrow{OC}}
+.\] 
+\begin{nome}
+	riflessione: isometria diretta che fissa tutti i punti di una retta, detta asse di riflessione
+\end{nome}
+\textbf{Osservazione}\\
+Riflessioni per $O  \Leftrightarrow O(w)\setminus SO(2)$
+\begin{lemm}
+	1. $r\subset E$ retta, $C\in r$, \ \  $R_{C,\theta}$ rotazione di centro $C$. Esistono rette $s,t$ contenenti $C$ tali che 
+	\[
+		R_{C,\theta} = \rho_r\circ\rho_s=\rho_t\circ\rho_r
+	.\] 
+	Viceversa, per ogni coppia di rette $r,s$ passanti per $C$ $\rho_r\circ\rho_s$ è una rotazione di centro $C$ e \[\rho_r\circ\rho_s = Id \Leftrightarrow r = s.\]
+	2. $R_{C,\theta}\circ R_{D,\varphi}$ è una rotazione di angolo $\theta + \varphi$ a meno che $\theta + \varphi = 2k\pi,\ \ k\in\mathbb{Z}$, in tal caso è una traslazione che è diversa dall'identità se e solo se $C\neq D$\\
+	3. Se $C,D\in E, \ C\neq D$ e $r$ è la retta per $C$ e $D$. Se $R_{C,\theta}, R_{D,\varphi}$ sono non banali e $\theta + \varphi\neq 2k\pi, \ \ k\in \mathbb{Z}$, allora $R_{C,\theta}\circ R_{D,\varphi}$ e $R_{C,-\theta}\circ R_{D,-\varphi}$ hanno centri destini e simmetrici rispetto ad $r$.
+\end{lemm}
+
+\end{document}
