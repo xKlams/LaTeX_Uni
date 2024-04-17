@@ -1,5 +1,5 @@
 #!/bin/bash
-date=$(date '+%Y-%m-%d')
+date=$(date '%d/%m')
 echo "inizio da $1 e finisco a $2"
 for i in $(seq $1 1 $2)
 do
@@ -13,5 +13,5 @@ do
 done
 python3 merge_pdfs.py $1 $2
 git add -A
-git commit -m "update $date fino a lezione $2"
+git commit -m "Update date"
 git push
