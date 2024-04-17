@@ -1,0 +1,253 @@
+\documentclass[12px]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{nicematrix}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\title{Lezione 17 Geometria I}
+\date{2024-04-17}
+\author{Federico De Sisti}
+\newtheoremstyle{break}
+  {1px}{1px}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem{theo}{Teorema}
+\theoremstyle{break}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{break}
+\newtheorem{defin}{Definizione}
+\theoremstyle{break}
+\newtheorem{propo}{Proposizione}
+\theoremstyle{break}
+\newtheorem*{dimo}{Dimostrazione}
+\theoremstyle{break}
+\newtheorem*{es}{Esempio}
+
+\newenvironment{dimo}
+  {\begin{dimostrazione}}
+  {\hfill\square\end{dimostrazione}}
+
+\newenvironment{teo}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
+  {\end{theo}\end{mdframed}}
+
+\newenvironment{nome}
+{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
+  {\end{nomen}\end{mdframed}}
+
+\newenvironment{prop}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
+  {\end{propo}\end{mdframed}}
+
+\newenvironment{defi}
+{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
+  {\end{defin}\end{mdframed}}
+
+\newenvironment{lemm}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
+  {\end{lemma}\end{mdframed}}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \begin{smallmatrix}(#1)\end{smallmatrix}%
+}
+
+\newcommand{\matrice}[1]{% inline column vector
+  \begin{pmatrix}#1\end{pmatrix}%
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Prodotto Hermitiano}
+	$V$ spazio vettoriale complesso
+	\begin{defi}[Funzione sesquilineare]
+		Una funzione sesquilineare su $V$ è un'applicazione $h: V\times V \rightarrow \mathbb{C}$\\
+		che è lineare nella prima variabile e antilineare nella seconda, cioè\\[10px]
+		\begin{aligned}
+			\hspace{80px}&h(v+v',w) = h(v,w) + g(v',w)\\
+		&h(\alpha v,w) = \alpha h(v,w)\\
+		&h(v,w + w') = h(v,w) + h(v,w')\\
+			&h(v,\alpha w) = \overline{\alpha}h(v,w)\\
+		\end{aligned}\\[10px]
+		per ogni scelta di $v,w,v',w'\in V$ e $\alpha \in\mathbb{C}$
+	\end{defi}
+	\begin{defi}[Forma hermitiana]
+		Una forma sesquilineare si dice hermitiana se
+		\[
+			h(v,w) = \overline{h(w,v)}
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $h$ è hermitiana, $h(v,v)\in\R$, infatti deve risultare $h(v,v) = \overline{h(v,v)}$
+	\begin{defi}[Forma antihermitiana]
+		Una forma sesquilineare si dice antihermitiana se 
+		\[
+			g(v,w) = - \overline{h(v,w)}
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	In questo caso $h(v,v)\in\sqrt{1}\R$\\
+	\begin{defi}
+		Una forma hermitiana si dice semidefinita positiva se 
+		\[
+		h(v,v) \geq 0 \ \ \forall v\in V
+		.\] 
+	\end{defi}
+	\begin{defi}
+		Una forma hermitiana si dice definita positiva se 
+		\[
+		h(v,v)>0 \ \ \forall v \neq 0
+		.\] 
+		ovvero
+		\[
+			(h(v,v)\geq 0 \text{ e }h(v,v) = 0 \Rightarrow v=0)
+		.\] 
+	\end{defi}
+	\textbf{Esempio}\\
+	$V = \C^n$
+	\[
+		h( \icol{z_1\\ \vdots \\ z_n},\icol{w_1\\\vdots\\w_n}) = \sum^n_{i=1}z_i\overline{w_i}
+	.\] 
+	questo viene chiamato prodotto hermitiano standard su $\C^n$
+ \[
+		h( \icol{z_1\\ \vdots \\ z_n},\icol{z_1\\\vdots\\z_n}) = \sum^n_{i=1}z_i\overline{z_i} = \sum^n_{i=1}|z_i|^2
+	\]
+	\hline \ \\[10px]
+	Dato $V$, consideriamo una base $B = \{v_1,\ldots,v_n\}$ di $V$ Se $h$ è una forma heritiana, diciamo che $(h_{ij}) = h(v_i,v_j)$ è la matrice che rappresenta $h$ nella base $B$ e la denoto come $(h)_B$\\
+	se  $v = \sum^n_{i=1}x_iv_i, \ \ \ w = \sum^n_{i=1}y_iv_i$\\
+\begin{aligned}
+	\hspace{30px}h(v,w) &= h(\sum^n_{i=1}x_iv_i,\sum^n_{i=1}y_iv_i) = \\
+&= \sum^n_{i=1}x_ih_i(v_i,\sum^n_{i=1}y_iv_i) = \\
+& = \sum^n_{i=1}x_i\overline{y_i}h(v_i,v_i) = \\
+& = x^t H\overline{y}
+\end{aligned}\\
+Poiché $h$ è hermitiana, $h(v,w) = \overline{h(w,v)}$\\
+\begin{aligned}
+	X^tHY &= \overline{Y^tHX}\\
+	 &     = \overline{Y}^t \overline{H} \overline{X}\\
+	 & = (\overline{Y}^t \overline{H} \overline{X})^t\\
+	 & = \overline{X}^t \overline{H}^t \overline{Y} \ \ \ \ \Rightarrow \ \ \  H = \overline{H}^t
+\end{aligned}
+\begin{defi}
+	Una matrice $M\in M_n(\C)$ si dice hermitiana se
+	\[
+		H = \overline{H}^t
+	.\] 
+\end{defi}
+\newpage
+\textbf{Esercizio}\\
+le matrici hermitiane $2\times 2$ sono un $\R$-sottospazio di $M_2(\C)$ di dimensione 4
+\[
+	\matrice{a_1 + ib_1 & a_2 + ib_2\\ a_3 + ib_3 & a_4 + ib_4} = \matrice{a_1 - ib_1 & a_3 - ib_3\\a_2 - ib_2 & a_4 - ib_4}
+.\] 
+
+$\Rightarrow \hspace{20px}$\begin{aligned}
+	& a_1 + ib_1 = a_1 - ib_1 \Rightarrow  b_1 = 0\\
+	&a_2 + ib_2 = a_3 - ib_3 \Rightarrow  a_2 = a_3 \ \ b_2 = -b_3\\
+	&a_3 + ib_3 = a_2 - ib_2\Rightarrow  a_2 = a_3 \ \ b_2 = -b_3\\
+	&a_4 + ib_4 = a_4-ib_4 \Rightarrow b_4 = 0\\[10px]
+\end{aligned}\\
+\begin{aligend}
+	&\matrice{a_1&a_2+ib_2\\a_2-ib_2&a_4}\\[10px]
+	&M_2 = \R\icol{1&0\\0&0}\oplus\R\icol{0&0\\0&1}\oplus\R\icol{0&1\\1&0}\oplus\R\icol{0&i\\-i&0}
+\end{aligend}\\
+il professore qui lascia un esercizio, non penso che realisticamente qualcuno lo farà\\
+\hline \ \\[20px]
+Si definiscano allo stesso modo del caso reale simmetrico $S^t$\\
+coefficiente di Fourier
+\[
+| \langle v, w \rangle |\leq ||v||||w||
+.\] 
+disuguaglianza triangolare $||v+w||\leq||v|| + ||w||$\\
+Operatore unitario: $T\in End_\C(V)$ t.c.
+\[
+\langle T(u), T(v) \rangle  = \langle u, v \rangle \ \ \ \forall u,v\in V
+.\] 
+Verifichiamo le caratteristiche degli operatori unitari dati nel caso reale\\
+\textbf{Gram Schmidt}\\
+$T\in End(V)$ operatore unitario\\
+$1.$ Gli autovalori hanno modulo 1\\
+$2.$ Autospazi relativi ad autovalori distinti sono ortogonali\\
+$1.$ Sia $v$ un autovettore di autovalore $\lambda$ 
+\[
+	\langle v, v \rangle = \langle Tv, Tv \rangle  = \langle tv, tv \rangle  = \lambda\overline{\lambda} \langle v, v \rangle = |\lambda|^2 \langle v, v \rangle 
+.\] 
+\[
+v \neq 0 \Rightarrow  \ \ \ |\lambda|^2 = 1 \ \ \  \Rightarrow  \ \ \ |\lambda| = 1
+.\] 
+$2.$ Sia $v\in V_\lambda$, $w\in V_\mu$ \ \ $\lambda\neq\mu$
+\[
+	\langle v, w \rangle  = \langle Tv, Tw \rangle = \langle \lambda v, \mu w \rangle = \lambda\overline{\mu} \langle v, w \rangle 
+.\] 
+Se $ \langle v, w \rangle \neq 0 $ \neq 0 \Rightarrow \lambda \overline{\mu} = 1. Per il punto 1\\
+\[
+	\lambda\overline{\lambda} \ \ \Rightarrow \ \ \overline{\lambda} = \overline{\mu} \ \ \Rightarrow \ \ \lambda = \mu \ \ \text{ assurdo}
+.\] 
+\begin{defi}
+	Diciamo che $U\in M_n(\C)$ è unitaria se 
+	\[
+		U\overline{U}^t = Id
+	.\] 
+\end{defi}
+\begin{prop}
+	$T\in End(V)$ è unitario se e solo se la sua matrice in una base ortonormale è unitaria
+\end{prop}
+\begin{dimo}
+	Sia $B = \{v_1,\ldots,v_n\}$ una base ortonormale di $V$ 
+	\[
+		\delta_{ij} = \langle v_i, v_j \rangle  = \langle Tv_i, Tv_j \rangle  = \langle Ae_i, Ae_j \rangle = e_i^tA^t\overline{A}e_j = A_i^t\overline{A}_j
+	\] 
+	dove abbiamo posto $A = (T)_B$ e $\{e_i\}$ è una base di $\C^n$
+	\\\textbf{TODO} dimostrazione da finire
+
+\end{dimo}\\
+Come nel caso reale si dimostra
+\begin{teo}
+	Sia $T\in End(V)$ un operatore unitario Esiste una base standard di autovettori per $T$
+\end{teo} 
+In particolare, per ogni matrice unitaria $A\in U(n)$ esiste $M\in U(n)$ tale che $M^{-1}AM$ è diagonale
+\begin{nota}
+	a volte si pone 
+	\[
+	 A^* = \overline{A}^t
+	.\] 
+	$A$ unitario $AA^* = Id$ \\
+	$A$ hermitiano $A = A*$ \\
+	$A$ antihermitiano $A=-A*$
+\end{nota}
+\begin{defi}[Operatore Aggiunto]
+	Dato $T\in End(V)$, esiste unico $S\in End(V)$ tale che 
+	\[
+	\langle Tu, w \rangle = \langle u, Sw \rangle \ \ \forall u,w\in V
+	.\] 
+	Tale operatore è detto aggiunto hermitiano di $T$ e denotato con $T^*$
+\end{defi}
+\begin{defi}[operatore normale]
+	Sia $V$ uno spazio vettoriale complesso dotato di prodotto hermitiano (forma hermitiana definita positiva), un operatore $L\in End(V)$ è normale se 
+	\[
+	L\circ L^* = L^*\circ L
+	.\] 
+\end{defi}
+\textbf{Osservazione}\\
+$L$ unitario, hermitiano, antihermitiano $ \Rightarrow$ $L$ diagonale
+\begin{teo}
+	Sono equivalenti le seguenti affermazioni:\\
+	$1)$ $L$ è normale\\
+	$2)$ esiste una base ortonormale di $V$ formata da autovettori di $L$
+\end{teo}
+\end{document}
