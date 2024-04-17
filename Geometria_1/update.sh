@@ -1,5 +1,5 @@
 #!/bin/bash
-date=$(date '%d/%m')
+date=$(date +%d/%m)
 echo "inizio da $1 e finisco a $2"
 for i in $(seq $1 1 $2)
 do
