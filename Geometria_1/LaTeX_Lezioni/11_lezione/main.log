@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  29 MAR 2024 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  18 APR 2024 00:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -22,7 +22,7 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (../../setup.tex (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -535,19 +535,20 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 \c@propo=\count323
 
 
-./main.tex:37: LaTeX Error: Command \dimo already defined.
+../../setup.tex:32: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.37   {\hfill\square\newline\end{dimostrazione}}
-                                                 
+l.32   {\hfill\square\end{dimostrazione}}
+                                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+)
 
 LaTeX Warning: Unused global option(s):
     [12px].
@@ -555,20 +556,20 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
@@ -588,11 +589,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -600,37 +601,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 75.
+(mdframed)              on input line 13.
 
-Overfull \hbox (25.78865pt too wide) detected at line 82
+Overfull \hbox (25.78865pt too wide) detected at line 20
 \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 w[]; w[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 h[] \OML/cmm/m/it/10 m[]v[]; [] m[]v[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 m[]m[]\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 v[]; v[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 m[]m[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 M[]M\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 :
  []
 
-./main.tex:83: Missing $ inserted.
+./main.tex:21: Missing $ inserted.
 <inserted text> 
                 $
-l.83 	\end{dimo}
+l.21 	\end{dimo}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:83: LaTeX Error: \begin{dimo} on input line 78 ended by \end{dimostrazione}.
+./main.tex:21: LaTeX Error: \begin{dimo} on input line 16 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 	\end{dimo}
+l.21 	\end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:83: Missing $ inserted.
+./main.tex:21: Missing $ inserted.
 <inserted text> 
                 $
-l.83 	\end{dimo}
+l.21 	\end{dimo}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -639,35 +640,35 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:83: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:21: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 	\end{dimo}
+l.21 	\end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:83: Extra \endgroup.
+./main.tex:21: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.83 	\end{dimo}
+l.21 	\end{dimo}
                 
 Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--86
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 86.
-./main.tex:87: Undefined control sequence.
-l.87 ... \ (v,w\neq 0)\\$ allora $\\ \exists!\teta
+(mdframed)              on input line 24.
+./main.tex:25: Undefined control sequence.
+l.25 ... \ (v,w\neq 0)\\$ allora $\\ \exists!\teta
                                                   \in [0,\pi] : \cos\teta = ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -675,10 +676,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:87: Undefined control sequence.
+./main.tex:25: Undefined control sequence.
 <recently read> \teta 
                       
-l.87 ...a $\\ \exists!\teta\in [0,\pi] : \cos\teta
+l.25 ...a $\\ \exists!\teta\in [0,\pi] : \cos\teta
                                                    = \frac{ \langle v, w \ra...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -686,10 +687,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:88: Undefined control sequence.
+./main.tex:26: Undefined control sequence.
 <recently read> \teta 
                       
-l.88 		$\teta
+l.26 		$\teta
              $ è detto angolo non orientato tra $v,w$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -699,43 +700,43 @@ and I'll forget about whatever was undefined.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 90.
+(mdframed)              on input line 28.
 [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 96.
-Package mdframed Info: Not enough space on this page on input line 98.
+(mdframed)              on input line 34.
+Package mdframed Info: Not enough space on this page on input line 36.
 
-Overfull \hbox (19.67699pt too wide) detected at line 104
+Overfull \hbox (19.67699pt too wide) detected at line 42
 \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 v \OMS/cmsy/m/n/10 ^^@ [] []\OML/cmm/m/it/10 w[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 v; w[]\OMS/cmsy/m/n/10 i ^^@ [] []h\OML/cmm/m/it/10 w[]; w[]\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 v; w[]\OMS/cmsy/m/n/10 i ^^@ [][] \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :
  []
 
-./main.tex:105: Missing $ inserted.
+./main.tex:43: Missing $ inserted.
 <inserted text> 
                 $
-l.105 	\end{dimo}
-                 
+l.43 	\end{dimo}
+                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:105: LaTeX Error: \begin{dimo} on input line 99 ended by \end{dimostrazione}.
+./main.tex:43: LaTeX Error: \begin{dimo} on input line 37 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 	\end{dimo}
-                 
+l.43 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:105: Missing $ inserted.
+./main.tex:43: Missing $ inserted.
 <inserted text> 
                 $
-l.105 	\end{dimo}
-                 
+l.43 	\end{dimo}
+                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -743,27 +744,27 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:105: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:43: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 	\end{dimo}
-                 
+l.43 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:105: Extra \endgroup.
+./main.tex:43: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.105 	\end{dimo}
-                 
+l.43 	\end{dimo}
+                
 Things are pretty mixed up, but I think the worst is over.
 
-./main.tex:107: Undefined control sequence.
-l.107 ...è sottospazio di $V, \\(W, \langle \codt
+./main.tex:45: Undefined control sequence.
+l.45 ... è sottospazio di $V, \\(W, \langle \codt
                                                   , \codt \rangle |_{W\times...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -771,8 +772,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:107: Undefined control sequence.
-l.107 ...ospazio di $V, \\(W, \langle \codt, \codt
+./main.tex:45: Undefined control sequence.
+l.45 ...tospazio di $V, \\(W, \langle \codt, \codt
                                                    \rangle |_{W\times W})$ �...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -780,32 +781,32 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:111: Missing $ inserted.
+./main.tex:49: Missing $ inserted.
 <inserted text> 
                 $
-l.111 	\end{dimo}
-                 
+l.49 	\end{dimo}
+                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:111: LaTeX Error: \begin{dimo} on input line 109 ended by \end{dimostrazione}.
+./main.tex:49: LaTeX Error: \begin{dimo} on input line 47 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 	\end{dimo}
-                 
+l.49 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:111: Missing $ inserted.
+./main.tex:49: Missing $ inserted.
 <inserted text> 
                 $
-l.111 	\end{dimo}
-                 
+l.49 	\end{dimo}
+                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -813,63 +814,63 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:111: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:49: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 	\end{dimo}
-                 
+l.49 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:111: Extra \endgroup.
+./main.tex:49: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.111 	\end{dimo}
-                 
+l.49 	\end{dimo}
+                
 Things are pretty mixed up, but I think the worst is over.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 115.
+(mdframed)              on input line 53.
 
-./main.tex:118: LaTeX Error: Environment nota undefined.
+./main.tex:56: LaTeX Error: Environment nota undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.118 		\begin{nota}
-                    
+l.56 		\begin{nota}
+                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:121: LaTeX Error: \begin{document} ended by \end{nota}.
+./main.tex:59: LaTeX Error: \begin{document} ended by \end{nota}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.121 		\end{nota}
-                  
+l.59 		\end{nota}
+                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [3] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16922 strings out of 477985
- 375030 string characters out of 5839380
+ 16927 strings out of 477985
+ 375106 string characters out of 5839380
  1867388 words of memory out of 6000000
- 36833 multiletter control sequences out of 15000+600000
+ 36835 multiletter control sequences out of 15000+600000
  520189 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,12n,90p,466b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,12n,93p,490b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on main.pdf (3 pages, 178445 bytes).
 PDF statistics:

@@ -1,4 +1,4 @@
-PWD /home/klams/Mathematics/LaTeX_Uni/Geometria_1/11_lezione
+PWD /home/klams/Mathematics/LaTeX_Uni/Geometria_1/LaTeX_Lezioni/11_lezione
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
@@ -19,6 +19,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+INPUT ../../setup.tex
+INPUT ../../setup.tex
+INPUT ../../setup.tex
+INPUT ../../setup.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty

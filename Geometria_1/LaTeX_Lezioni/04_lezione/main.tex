@@ -1,58 +1,12 @@
 \documentclass[12px]{article}
 
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mdframed}
-\usepackage{amssymb}
-\usepackage{nicematrix}
-\usepackage{amsfonts}
 
 \title{Lezione 4 Geometria I}
 \date{ 2024-03-16}
 \author{Federico De Sisti}
 \maketitle
 
-\newtheoremstyle{break}
-  {1px}{1px}%
-  {\itshape}{}%
-  {\bfseries}{}%
-  {\newline}{}%
-\theoremstyle{break}
-\newtheorem{theo}{Teorema}
-\theoremstyle{break}
-\newtheorem{lemma}{Lemma}
-\theoremstyle{break}
-\newtheorem{defin}{Definizione}
-\theoremstyle{break}
-\newtheorem{propo}{Proposizione}
-\theoremstyle{break}
-\newtheorem*{dimo}{Dimostrazione}
-\theoremstyle{break}
-\newtheorem*{es}{Esempio}
-
-\newenvironment{teo}
-  {\begin{mdframed}\begin{theo}}
-  {\end{theo}\end{mdframed}}
-
-\newenvironment{lem}
-  {\begin{mdframed}\begin{lem}}
-  {\end{lem}\end{mdframed}}
-
-\newenvironment{prop}
-  {\begin{mdframed}\begin{propo}}
-  {\end{propo}\end{mdframed}}
-
-\newenvironment{def}
-  {\begin{mdframed}\begin{defin}}
-  {\end{defin}\end{mdframed}}
-
-\newcommand{\icol}[1]{% inline column vector
-  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
-}
-
-\newcommand{\irow}[1]{% inline row vector
-  \begin{smallmatrix}(#1)\end{smallmatrix}%
-}
+\input{../../setup.tex}
 
 \begin{document}
 \newpage

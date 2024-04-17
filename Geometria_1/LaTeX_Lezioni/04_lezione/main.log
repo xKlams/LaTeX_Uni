@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  3 APR 2024 09:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  18 APR 2024 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -22,7 +22,26 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+
+./main.tex:7: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \maketitle
+              
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 7.
+(../../setup.tex (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -491,46 +510,64 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \l__nicematrix_start_int=\count315
 \l__nicematrix_multiplicity_int=\count316
 \l__nicematrix_brace_yshift_dim=\dimen281
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2023/03/17 version 6.0.3 text color boxes
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen282
+\pgf@nodesepend=\dimen283
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks39
+\verbatim@line=\toks40
+\verbatim@in@stream=\read3
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box68
+\tcb@upperbox=\box69
+\tcb@lowerbox=\box70
+\tcb@phantombox=\box71
+\c@tcbbreakpart=\count317
+\c@tcblayer=\count318
+\c@tcolorbox@number=\count319
+\tcb@temp=\box72
+\tcb@temp=\box73
+\tcb@temp=\box74
+\tcb@temp=\box75
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.3'
+) (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-
-./main.tex:13: LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \maketitle
-               
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-\c@theo=\count317
-\c@lemma=\count318
-\c@defin=\count319
-\c@propo=\count320
+\c@theo=\count320
+\c@lemma=\count321
+\c@defin=\count322
+\c@propo=\count323
 
 
-./main.tex:47: LaTeX Error: Command \def already defined.
+../../setup.tex:32: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.47   {\end{defin}\end{mdframed}}
-                                  
+l.32   {\hfill\square\end{dimostrazione}}
+                                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+)
 
 LaTeX Warning: Unused global option(s):
     [12px].
@@ -538,106 +575,219 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
-\scratchdimen=\dimen282
-\scratchbox=\box68
-\nofMPsegments=\count322
-\nofMParguments=\count323
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count324
-\MPscratchDim=\dimen283
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count324
+\scratchdimen=\dimen284
+\scratchbox=\box76
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen285
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) [1
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 70.
+(mdframed)              on input line 24.
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--88
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
 
  []
+
+./main.tex:46: Missing $ inserted.
+<inserted text> 
+                $
+l.46 \end{dimo}
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:46: LaTeX Error: \begin{dimo} on input line 32 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \end{dimo}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:46: Missing $ inserted.
+<inserted text> 
+                $
+l.46 \end{dimo}
+               
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:46: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \end{dimo}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:46: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.46 \end{dimo}
+               
+Things are pretty mixed up, but I think the worst is over.
 
 [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 94.
-\g__nicematrix_max_cell_width_dim=\dimen284
-\c@iRow=\count327
-\c@jCol=\count328
-\l__nicematrix_cell_box=\box69
-\l__nicematrix_the_array_box=\box70
-\l__nicematrix_left_delim_dim=\dimen285
-\l__nicematrix_right_delim_dim=\dimen286
-\g__nicematrix_dp_row_zero_dim=\dimen287
-\g__nicematrix_ht_row_zero_dim=\dimen288
-\g__nicematrix_ht_row_one_dim=\dimen289
-\g__nicematrix_dp_ante_last_row_dim=\dimen290
-\g__nicematrix_ht_last_row_dim=\dimen291
-\g__nicematrix_dp_last_row_dim=\dimen292
-\g__nicematrix_ddots_int=\count329
-\g__nicematrix_iddots_int=\count330
-\g__nicematrix_delta_x_one_dim=\dimen293
-\g__nicematrix_delta_y_one_dim=\dimen294
-\g__nicematrix_delta_x_two_dim=\dimen295
-\g__nicematrix_delta_y_two_dim=\dimen296
-\l__nicematrix_initial_i_int=\count331
-\l__nicematrix_initial_j_int=\count332
-\l__nicematrix_final_i_int=\count333
-\l__nicematrix_final_j_int=\count334
-\l__nicematrix_end_int=\count335
-\l__nicematrix_local_start_int=\count336
-\l__nicematrix_local_end_int=\count337
-Package mdframed Info: Not enough space on this page on input line 134.
+(mdframed)              on input line 48.
+\g__nicematrix_max_cell_width_dim=\dimen286
+\c@iRow=\count330
+\c@jCol=\count331
+\l__nicematrix_cell_box=\box77
+\l__nicematrix_the_array_box=\box78
+\l__nicematrix_left_delim_dim=\dimen287
+\l__nicematrix_right_delim_dim=\dimen288
+\g__nicematrix_dp_row_zero_dim=\dimen289
+\g__nicematrix_ht_row_zero_dim=\dimen290
+\g__nicematrix_ht_row_one_dim=\dimen291
+\g__nicematrix_dp_ante_last_row_dim=\dimen292
+\g__nicematrix_ht_last_row_dim=\dimen293
+\g__nicematrix_dp_last_row_dim=\dimen294
+\g__nicematrix_ddots_int=\count332
+\g__nicematrix_iddots_int=\count333
+\g__nicematrix_delta_x_one_dim=\dimen295
+\g__nicematrix_delta_y_one_dim=\dimen296
+\g__nicematrix_delta_x_two_dim=\dimen297
+\g__nicematrix_delta_y_two_dim=\dimen298
+\l__nicematrix_initial_i_int=\count334
+\l__nicematrix_initial_j_int=\count335
+\l__nicematrix_final_i_int=\count336
+\l__nicematrix_final_j_int=\count337
+\l__nicematrix_end_int=\count338
+\l__nicematrix_local_start_int=\count339
+\l__nicematrix_local_end_int=\count340
+Package mdframed Info: Not enough space on this page on input line 88.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--166
+./main.tex:101: Missing $ inserted.
+<inserted text> 
+                $
+l.101 \end{dimo}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:101: LaTeX Error: \begin{dimo} on input line 89 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:101: Missing $ inserted.
+<inserted text> 
+                $
+l.101 \end{dimo}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:101: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:101: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.101 \end{dimo}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--120
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-./main.tex:179: Missing $ inserted.
+./main.tex:133: Missing $ inserted.
 <inserted text> 
                 $
-l.179 	rk \icol{A_1 \\ \hline  A_2}
+l.133 	rk \icol{A_1 \\ \hline  A_2}
                                     & rk(C) & \pi_1\cap \pi_2 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:179: Missing $ inserted.
+./main.tex:133: Missing $ inserted.
 <inserted text> 
                 $
-l.179 	rk \icol{A_1 \\ \hline  A_2} &
+l.133 	rk \icol{A_1 \\ \hline  A_2} &
                                       rk(C) & \pi_1\cap \pi_2 \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -645,18 +795,18 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:179: Missing $ inserted.
+./main.tex:133: Missing $ inserted.
 <inserted text> 
                 $
-l.179 	rk \icol{A_1 \\ \hline  A_2} & rk(C) & \pi
+l.133 	rk \icol{A_1 \\ \hline  A_2} & rk(C) & \pi
                                                  _1\cap \pi_2 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:180: Missing $ inserted.
+./main.tex:134: Missing $ inserted.
 <inserted text> 
                 $
-l.180 	\hline
+l.134 	\hline
              
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -664,25 +814,25 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 181.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 135.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
 
-./main.tex:182: Missing $ inserted.
+./main.tex:136: Missing $ inserted.
 <inserted text> 
                 $
-l.182 	3 & 4 & \emptyset
+l.136 	3 & 4 & \emptyset
                          \text{ e } W_1, W_2 \text{ hanno una direzione in c...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:183: Missing $ inserted.
+./main.tex:137: Missing $ inserted.
 <inserted text> 
                 $
-l.183 	3
+l.137 	3
          & 3 & r \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -690,18 +840,18 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:184: Missing $ inserted.
+./main.tex:138: Missing $ inserted.
 <inserted text> 
                 $
-l.184 	2 & 3 & \emptyset
+l.138 	2 & 3 & \emptyset
                         \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:185: Missing $ inserted.
+./main.tex:139: Missing $ inserted.
 <inserted text> 
                 $
-l.185 	\hline
+l.139 	\hline
              
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -711,15 +861,15 @@ my insertion and my current dilemma will both disappear.
 
 [4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15779 strings out of 477985
- 337146 string characters out of 5839380
+ 18383 strings out of 477985
+ 405338 string characters out of 5839380
  1897388 words of memory out of 6000000
- 35720 multiletter control sequences out of 15000+600000
- 520189 words of font info for 63 fonts, out of 8000000 for 9000
+ 38289 multiletter control sequences out of 15000+600000
+ 518280 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,20n,90p,466b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,20n,93p,490b,754s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (4 pages, 157171 bytes).
+Output written on main.pdf (4 pages, 157211 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream

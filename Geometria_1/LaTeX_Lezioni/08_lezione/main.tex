@@ -1,71 +1,10 @@
 \documentclass[12px]{article}
 
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mdframed}
-\usepackage{amssymb}
-\usepackage{nicematrix}
-\usepackage{amsfonts}
-\usepackage{tcolorbox}
-\tcbuselibrary{theorems}
-\usepackage{xcolor}
-\usepackage{mathtools}
-
 \title{Lezione 8 Geometria I}
 \date{2024-03-18}
 \author{Federico De Sisti}
-\newtheoremstyle{break}
-  {1px}{1px}%
-  {\itshape}{}%
-  {\bfseries}{}%
-  {\newline}{}%
-\theoremstyle{break}
-\newtheorem{theo}{Teorema}
-\theoremstyle{break}
-\newtheorem{lemma}{Lemma}
-\theoremstyle{break}
-\newtheorem{defin}{Definizione}
-\theoremstyle{break}
-\newtheorem{propo}{Proposizione}
-\theoremstyle{break}
-\newtheorem*{dimo}{Dimostrazione}
-\theoremstyle{break}
-\newtheorem*{es}{Esempio}
-\theoremstyle{breal}
-\newtheorem{nomen}{Nomenclatura}
 
-\newenvironment{dimo}
-  {\begin{dimostrazione}}
-  {\hfill\square\end{dimostrazione}}
-
-\newenvironment{teo}
-{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
-  {\end{theo}\end{mdframed}}
-
-\newenvironment{prop}
-{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{propo}}
-  {\end{propo}\end{mdframed}}
-
-\newenvironment{defi}
-{\begin{mdframed}[linecolor=orange, backgroundcolor=orange!10]\begin{defin}}
-  {\end{defin}\end{mdframed}}
-
-
-\newenvironment{nome}
-{\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
-  {\end{nomen}\end{mdframed}}
-  
-\newenvironment{lemm}
-{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{lemma}}
-  {\end{lemma}\end{mdframed}}
-
-\newcommand{\icol}[1]{% inline column vector
-  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
-}
-
-\newcommand{\irow}[1]{% inline row vector
-  \begin{smallmatrix}(#1)\end{smallmatrix}%
-}
+\input{../../setup.tex}
 
 \begin{document}2
 	\maketitle
