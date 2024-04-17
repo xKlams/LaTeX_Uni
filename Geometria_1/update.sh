@@ -13,5 +13,5 @@ do
 done
 python3 merge_pdfs.py $1 $2
 git add -A
-git commit -m "Update date"
+git commit -m "Update $date"
 git push
