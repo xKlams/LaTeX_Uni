@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.18)  18 MAR 2024 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  17 APR 2024 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -567,7 +567,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
- (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count324
+\scratchdimen=\dimen284
+\scratchbox=\box76
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen285
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks42
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -777,15 +790,15 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 141.
  [4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16587 strings out of 478087
- 370231 string characters out of 5842650
+ 16883 strings out of 477985
+ 374220 string characters out of 5839380
  1879388 words of memory out of 6000000
- 36404 multiletter control sequences out of 15000+600000
+ 36796 multiletter control sequences out of 15000+600000
  521246 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,21n,90p,466b,420s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (4 pages, 177448 bytes).
+Output written on main.pdf (4 pages, 177416 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
