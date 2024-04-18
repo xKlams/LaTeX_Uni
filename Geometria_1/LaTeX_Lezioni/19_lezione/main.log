@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  18 APR 2024 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  18 APR 2024 14:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -531,18 +531,19 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 \c@theo=\count320
 \c@lemma=\count321
-\c@defin=\count322
-\c@propo=\count323
+\c@nomen=\count322
+\c@defin=\count323
+\c@propo=\count324
 
 
-../../setup.tex:32: LaTeX Error: Command \dimo already defined.
+../../setup.tex:34: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32   {\hfill\square\end{dimostrazione}}
+l.34   {\hfill\square\end{dimostrazione}}
                                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -572,16 +573,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
+\scratchcounter=\count325
 \scratchdimen=\dimen284
 \scratchbox=\box76
-\nofMPsegments=\count325
-\nofMParguments=\count326
+\nofMPsegments=\count326
+\nofMParguments=\count327
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count327
+\MPscratchCnt=\count328
 \MPscratchDim=\dimen285
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
 \everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -918,17 +919,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 101.
+./main.tex:107: Missing { inserted.
+<to be read again> 
+                   \@@underline 
+l.107 ...i asse $\underline{a}$,  $s_\underline{a}
+                                                  $ è una riflessione rispe...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./main.tex:107: Missing } inserted.
+<inserted text> 
+                }
+l.107 ... asse $\underline{a}$,  $s_\underline{a}$
+                                                   è una riflessione rispet...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 109.
 [4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16924 strings out of 477985
- 375071 string characters out of 5839380
+ 16931 strings out of 477985
+ 375129 string characters out of 5839380
  1869388 words of memory out of 6000000
- 36832 multiletter control sequences out of 15000+600000
+ 36839 multiletter control sequences out of 15000+600000
  520189 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 92i,20n,93p,490b,309s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,20n,93p,490b,313s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (4 pages, 171509 bytes).
+Output written on main.pdf (4 pages, 178352 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
