@@ -1,0 +1,101 @@
+\documentclass[12px]{article}
+
+\title{Lezione 19 Geometria I}
+\date{2024-04-18}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Esercizi vari}
+	\textbf{Esercizio 1 Foglio 6}\\
+	$f:A \rightarrow A$ affinità ha un unico punto fisso se e solo se la sua parte lineare ($\varphi$) non ha l'autovalore 1\\
+	\textbf{Svolgimento}\\
+	Sia $F = \{x\in A | f(x) = x\}$ \\
+	Supponiamo $F\neq \emptyset$ e $P\in F$ dico che 
+	\[
+	\star \ \ F = P + \ker(\varphi - Id)
+	.\] 
+	dove $\ker(\varphi - Id)$ è l'autospazio di autovalore $1$ di $\varphi$ \\
+	$u\in V \ \ \ P + u\in F \Leftrightarrow P+u = f(P+u) = f(P) + \varphi(u) = P + \varphi(u) \Leftrightarrow \varphi(u) = u$ ovvero $u\in \ker(\varphi - Id)$\\
+	Se ora $F$ ha un unico punto fisso $\star$ implica che 
+	\[
+		ker(\varphi - Id) = \{0\}
+	.\] 
+	cioè $1$ non è autovalore di $\varphi$\\
+	Viceversa facciamo vedere che se $\ker(\varphi - Id) = \{0\}$ allora 
+	$F \neq \emptyset$ Cerchiamo $Q + v$ tale che\\
+	\begin{aligned}
+		&f(Q + v) = Q + v\\
+		&f(Q) + \varphi(v)\\
+		&f(Q) - P = v - \varphi(v)\\
+		&\overrightarrow{Qf(Q)} = - (\varphi-Id)(v)
+	\end{aligned}\\
+	Quindi, poiché $(\varphi - Id)$ è invertibile (per ipotesi), dato $Q$ trovo un unico $ v = -(\varphi-Id)^{-1}( \overrightarrow{Qf(Q)})$\\
+	per cui $Q + v$ è un punto fisso
+	\hline \ \\[10px]
+	\textbf{Esercizio 5 Foglio 6}\\
+	$f(x) = Ax + b$ in $\mathbb{E}^2$\\
+	 \begin{aligned}
+		&A = \matrice{1&0\\0&1} \ \ b = \matrice{1\\0}\\
+		&A = \matrice{1/2&-\sqrt{3}/2\\\sqrt{3}/2 & 1/2} \ \ b = \matriec{0\\1}\\
+		&A = \matrice{0&1\\1&0} \ \ b = \matrice{-1\\0}
+	\end{aligned}\\
+	\textbf{Svolgimento}A\\
+	1. è una traslazione quindi non ha punti fissi\\
+	2. $\det A= 1$ e $A$ ortogonale\\
+	\begin{aligned}
+		&AX + b = X\\
+		& (A-I)X = -b\\
+		&  \matrice{1/2&-\sqrt{3}/2\\\sqrt{3}/2 & 1/2}\matrice{x_1\\x_2} = \matrice{0\\-1}\\
+		&x_1 = \det \matrice{0&-\sqrt{3}/2\\-1&-1/2} = -\frac{\sqrt{3}}{2}
+		&x_2 = \det\matrice{-1/2&0\\\sqrt{3}/2&-1} = \frac{1}{2}
+	\end{aligned}\\
+	3. $\matrice{0&-1\\1&0}\in SO(2)$ rotazione di  $\frac{\pi}{2}$\\
+	Esercizio da finire\\
+	\hline
+	\section{Diangonalizzazione unitaria di operatori normali}
+	($\C^n$, prodotto hermitiano standard) $M^\star = \overline{M}^t$\\
+	 $M$ è normale se $MM^\star = M^\star M$\\
+	 siano normali le matrici\\ \begin{aligned}
+		 \hspace{120px}&\text{unitarie} \ \ \ \ &MM^\star = Id\\
+						       &\text{hermitiane} \ \ \ \ &M=M^\star\\
+						       &\text{antihermitiane} \ \ \ &M = -M^\star
+	 \end{aligned}\\
+	 \begin{teo}[Spettrale]
+	 	$M$ è normale se e solo se $\exists U\in U(n) : \ U^tMU$ è ortogonale
+	 \end{teo}
+	 \textbf{nota}\\
+	 $U(n)$ spazio delle matrici unitarie\\
+	 \hline \ \\[10px]
+	$ L = \matrice{1&i\\-i&1}\ \ L^\star = \matrice{1&i\\-i&1} \Rightarrow $ $L$ matrice hermitiana\\
+	Trovo ora il polinomio caratteristico\\
+$t^2 - 2t = 0$ 
+	che ha quindi autovalori $t = 0, t = 2$\\
+	$v_0 = \C\matrice{1\\i}\ \ \ v_2 = \C\matrice{1\\-i}$\\
+	$\langle \matrice{1\\i}, \matrice{1\\-i} \rangle  = 1 \cdot 2 + i\cdot i = 0$\\
+	$ \langle \matrice{1\\i}, \matrice{1\\i} \rangle = 1\cdot 1 + i\cdot(-i) = 1-i^2 = 2$
+	\[
+		U = \matrice{1/\sqrt{2} &1/\sqrt{2}\\i/\sqrt{2}&-i/\sqrt{2}}\ \ \ \ \ \ U^-1LU = \amtrice{0&0\\0&2}
+	.\] 
+	Dove il prodotto scalare standard è stato fatto per verificare che siano ortogonali, il secondo mi serve per normalizzare la matrice (di fatti divido per la radice del risultato) \newpage \ \\
+	\textbf{Esempio 2}\\
+		$L = \matrice{\sqrt{3}/2&-1/2\\1/2&\sqrt{3}/2}$ matrice ortogonale con determinante 1, quindi rotazione\\
+		il polinomio caratteristico è $t^2 - \sqrt 3 t + 1$ gli autovalori sono quindi $t = \frac {\sqrt{3}\pm i}{2}$
+		$v_{\frac {\sqrt{3}\pm i}{2}} = \C\matrice{i\\\pm 1}$
+		 \[
+			 U = \matrice{i/\sqrt 2 & i/\sqrt 2\\ 1/\sqrt 2 & - 1/\sqrt 2}
+		.\] 
+		\hline \ \\[10px]
+		\textbf{Ultimo esempio}\\[8px]
+			 $L = \matrice{1 +i&i\\-i&1+i} \ \ \ L^\star = \matrice{1-i&i\\-i&1-i}\\$
+			 \[
+				 LL^\star = \matrice{3&2i\\-2i&3} = L^\star L
+			 .\] 
+			 $t^2 - 2(i + 1) + 2i - 1 = 0\ \ t_1,t_2\\
+			 v_{t_1} = \C\matrice{i\\1} \ \ v_{t_2} = \C\matrice{i\\-1}$\\
+			 $U$ come nell'esercizio precedente
+
+\end{document}
