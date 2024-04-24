@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  24 APR 2024 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  24 APR 2024 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,32 +1132,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
-./main.tex:157: Double subscript.
-<argument> b(v,w_1_
-                   \\\vdots \\b(v,w_s)
-l.157 ...s} = \matrice{b(v,w_1_\\\vdots\\b(v,w_s)}
-                                                  
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:157: Missing { inserted.
-<to be read again> 
-                   \let 
-l.157 ...s} = \matrice{b(v,w_1_\\\vdots\\b(v,w_s)}
-                                                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./main.tex:157: Missing } inserted.
-<inserted text> 
-                }
-l.157 ...s} = \matrice{b(v,w_1_\\\vdots\\b(v,w_s)}
-                                                  
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
 
 ./main.tex:169: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
@@ -1189,31 +1163,31 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:178: Missing $ inserted.
+./main.tex:177: Missing $ inserted.
 <inserted text> 
                 $
-l.178 \end{dimo}
+l.177 \end{dimo}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:178: LaTeX Error: \begin{dimo} on input line 152 ended by \end{dimostrazione}.
+./main.tex:177: LaTeX Error: \begin{dimo} on input line 152 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178 \end{dimo}
+l.177 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:178: Missing $ inserted.
+./main.tex:177: Missing $ inserted.
 <inserted text> 
                 $
-l.178 \end{dimo}
+l.177 \end{dimo}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1222,27 +1196,27 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:178: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:177: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178 \end{dimo}
+l.177 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:178: Extra \endgroup.
+./main.tex:177: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.178 \end{dimo}
+l.177 \end{dimo}
                 
 Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
 
  []
 
@@ -1256,7 +1230,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  92i,11n,93p,490b,372s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (5 pages, 185010 bytes).
+Output written on main.pdf (5 pages, 185006 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
