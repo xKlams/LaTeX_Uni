@@ -1,0 +1,133 @@
+\documentclass[12px]{article}
+
+\title{Lezione 20 Geometria I}
+\date{2024-04-22}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Teoremi vari su spazi Hermitiani e company}
+	\begin{lemm}
+		Sia $V$ uno spazio vettoriale su un campo $\R$\\
+		Siano  $P,Q\in End(V)$ tali che $PQ=QP$. Allora, se  $V_\lambda$ è l'autospazio di autovalore $\lambda$ su $P$, risulta
+		\[
+		Q(V_\lambda)\subseteq V_\lambda
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		Sia $v\in V_ \lambda $ (cioè $P(v) = \lambda v)$. Dobbiamo vedere che $Qv\in V_ \lambda$.
+		\[
+		P(Q(v)) = (P\circ Q)(v) = (Q\circ P)(v) = Q( \lambda v) = \lambda Q(v)
+		.\]
+	\end{dimo}
+	$(V,h)$ spazio Hermitiano (Spazio vettoriale complesso $h$ forma hermitiana definita positiva in $V$ )\\
+	$\dim(V) < +\infty$
+	 \begin{teo}
+		Sia $(V,h)$ uno spazio hermitiano, $L\in End(V)$ operatore, sono equivalenti
+		\begin{itemize}
+			\item $L$ è normale (rispetto ad $h$)
+			\item esiste una base ortonormale $B$ di  $V$ composta da autovettori per $L$
+		\end{itemize}
+	\end{teo}
+	\begin{lemm}
+		$(V,h)$ spazio hermitiano, $L\in End(V)$ normale\\
+		sono equivalenti
+		\begin{itemize}
+			\item $Lv = \lambda v$
+			\item  $L^\star v = \overline{ \lambda} v$
+		\end{itemize}
+		In particolare $ \lambda$ è l'autovalore per $L$ se e solo se $\overline{ \lambda}$ è autovalore per $ L^\star$ 
+		\[
+			V_ \lambda (L) = V_{\overline{ \lambda}}(L^\star)
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		Se $v = 0$ non c'è niente da dimostrare.\\
+		Se $v \neq 0$ basta far vedere che se $v\in V_ \lambda (L)$ allora $v\in V_{\overline{ \lambda}}(L^\star)$. L'inclusione contraria segue da $L^{\star t} = L$
+		 \[
+		w\in V_ \lambda (L), \ \ v\in V_ \lambda (L)
+		.\] 
+		\begin{aligned}
+			\hspace{80px}h(L^\star(v),w) &= h(v,L(w)) = h(v, \lambda w)\\
+					&=\overline{ \lambda}h(v,w) = h(\overline{ \lambda}v,w)
+		\end{aligned}\\
+		\[
+			h(L^\star(v) - \overline{ \lambda}v,w) = 0 \ \ \circledast
+		\] 
+		Per il lemma, siccome per ipotesi $L$ è normale, 
+		 \[
+		L^\star (v)\in V_\lambda (L), \ \ \overline{
+		\lambda}v\in V_ \lambda (L)
+		\] 
+		\[
+			\Rightarrow \ \ \ L^\star (v) - \overline{ \lambda} v\in V_ \lambda (L)
+		\] 
+		Quindi nella $\circledast$ posso prendere $w = L^\star (v) - \overline{ \lambda} v$, ottenendo 
+		\[
+			h(L^\star (v) - \overline{ \lambda} v, L^\star (v) - \overline{\lambda} v) = 0
+		.\] 
+		Poiché $h$ è definito positivo, segue\\
+		\begin{aligned}
+			&L^\star(v) - \overline{ \lambda}v = 0\\
+			\text{cioè} \hspace{50px}  & L^\star (v) = \overline{ \lambda} v
+		\end{aligned}\\
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Dal lemma segue $V_ \lambda(L) \perp V_\mu (L)$ se $ \lambda \neq \mu$
+	\[
+	v\in V_ \lambda, \ \ \ w\in V_\mu
+	\] 
+	\[
+		\lambda h(v,w) = h( \lambda v,w) = h(Lv,w) = h(v,L^\star w) = h(v, \overline{\mu}w) = \mu h(v,w) \Rightarrow  h(v,w) = 0
+	\]
+	Dato che $ \lambda \neq \mu$
+	\begin{dimo}[Teorema Spettrale]
+		$1) \Rightarrow  2)$ Procediamo per induzione su $\dim V$,con base ovvia $\dim V = 1$ \\
+		Supponiamo il teorema vero per gli spazi hermitiani di dimensione $\leq n-1$ e sia  $\dim_\C V = n$\\
+		Sia  $v_1\in V$ un autovettore per $L$, che possiamo assumere di norma  $1$. Sia $V_1 = \C v_1, W = v_1^perp$.\\
+		Allora $V = V_1 \oplus W$.\\
+		Poiché $V_1$ è $L$-invariante (per costruzione) e $L^\star$-invariante per il lemma precedente, lo stesso accade per  $W$.\\
+		Inoltre $L|_W\in End(V)$ è normale.\\
+		Per induzione, esiste una base $h|_W$-ortonormale formata da autovettori per $L|_W$, sia $\{v_2,\ldots,v_n\}.$ Allora $\{v_1,\ldots,v_n\}$ è una base $h$-ortonormale di $V$ formata da autovettori per $L$.\\
+		$2) \Rightarrow 1)$. Sia $B = \{v_1,\ldots,v_n\}$ una base $h$-ortonormale di autovettori per $L$. Allora\\
+		\begin{aligned}
+			\hspace{80px}&[L]^B_B = \bigwedge = \matrice{ \lambda_1  &\ldots& 0\\
+				 0  & \ddots & 0\\
+			 0  &\ldots & \lambda_n}\\
+			    &[L^\star]^B_B = \overline{[L]_B^B}^t = \overline{\bigwedge}\\
+			    &[L\circ L^\star]^B_B = [L]^B_B[L^\star]^B_B = \bigwedge\overline{\bigwedge}=\overline{\bigwedge}\bigwedge = [L^\star]_B^B[L]^B_B = [L^\star \circ L]_B^B
+		 \end{aligned} \\
+		 Poiché la mappa $A \rightarrow [A]^B_B$ è un isomorfismo tra
+		 $End(V)$ e $M_{nn}(\C)$, segue 
+		 \[
+		 L\circ L^\star = L^\star \circ L
+		 .\] 
+		 cioè $L$ è normale
+	\end{dimo}
+	\textbf{Osservazioni}\\
+	1. È essenziale che $h$ sia definita positiva.\\
+	\[
+	 h(x,y) = x^tH\overline{y} \ \ \ M = \matrice{1&0\\0&-1}
+	.\] 
+	non è definita positiva $h(\icol{0\\1},\icol{0\\1}) = -1$
+	\[
+		L_A:\C^2 \rightarrow\C^2 \ \ A = \matrice{0&i\\i & -2}
+	.\] 
+	Dico che $L_A$ è autoaggiunto, quindi normale\\
+	\begin{aligned}
+		\hspace{80px}&h(L_AX,Y) = h(X,L_AY)\\
+		&(L_AX)^tH\overline{Y} = X^tH\overline{L_AY}\\
+		&X^tA^tH\overline{Y} = X^tH\overline{A}\overline{Y} \ \ \forall X,Y\\
+		&A^tH = H\overline{A}\\
+		&\matrice{0&u\\i&-2}\matrice{1&0\\0&-1} = \matrice{1&0\\0&-1}\matrice{0&-i\\-i&-2}\\
+		&\hspace{47px}\matrice{0&-i\\i&2} = \matrice{0&-i\\i&2}
+	\end{aligned}
+	Calcolo il polinomio caratteristico di $A$ 
+	\[
+		\det\matrice{t& -i\\-i & t + 2} = t(t+2) + 1 = (t+1)^2
+	.\] 
+		Ma $A\neq \matrice{-1&0\\0&-1}$, in particolare non è diagonalizzabile
+ \end{document}

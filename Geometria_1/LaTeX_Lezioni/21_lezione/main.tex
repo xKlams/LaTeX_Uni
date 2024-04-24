@@ -1,0 +1,178 @@
+\documentclass[12px]{article}
+
+\title{Lezione 21 Geometria 1}
+\date{2024-04-24}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Nuove informazioni sulle forme bilineari}
+	$V$ spazio vettoriale su $\R$ \\
+	Ricordiamo che una forma bilineare è un'applicazione 
+	\[
+	b:V\times V \rightarrow \R
+	.\] 
+	Abbiamo già osservato che se $A = [b]_B$\\
+	$X = [v]_B, \ \ Y=[w]_B$
+	 \[
+	b(v,w) = X^tAY
+	.\] 
+	Come cambia $[b]_B$ se cambio $B$ \\
+	$B = \{v_1,\ldots,v_n\}$ \ \ \  X=[v]_B \ \ X'=[v]_B'\\
+	$B' = \{v_1',\ldots,v_n'\}$ \ \ Y = [w]_B \ \ Y' = [w]_B'\\
+	$A = [b]_B \ \ A' = [b]_{B'}$\\
+	$$b(v,w) = X^tAY = X'^TA'Y'$$
+	$X = MX', \ \ Y=MY'\ \ \ M = [Id_V]_B^B$\\
+	 \begin{aligend}
+		 \hspace{80px} &(MX')^tA(MY') = X'^t A'Y'\\
+		 &X'M^t AMY' = X'^tA'Y'\\
+		 & \ \ \ A' = M^tAM
+	 \end{aligend}\\
+\begin{defi}
+	Diciamo che due matrici $A,B$ sono congruenti se esiste una matrice invertibile $M$ tale che  $B = M^tAM$
+\end{defi}
+\begin{prop}
+	Due matrici rappresentano la stessa forma bilineare in basi diversi se e solo se sono congruenti
+\end{prop}
+\textbf{Osservazione}\\
+1. La congruenza è una relazione di equivalenza\\
+2. Il rango è invariante per la congruenza\\
+3. Per matrici reali invertibili, il segno del determinante è invariante\\
+4. Se $M$ è ortogonale\\
+\[
+	M^tAM = M^{-1}AM
+.\] 
+\hline \ \\
+Se ho una forma bilineare $b:V\times V \rightarrow \mathbb{K}$ posso definire due applicazioni $V \rightarrow V^\star$ nel modo seguente.\\
+Fissato $v\in V$, \ prendo \ \  \begin{aligned}
+	&b_v(w) = b(v,w)\\
+	&b_v'(w) = b(w,v)
+\end{aligned}\\
+È chiaro che $b_v, b'_v\in V^\star$ (usiamo il fatto che $b$ è bilineare)\\
+Dunque ho due applicazioni $V \rightarrow V^\star$
+\[
+\delta_b(v) = b_v  \ \ \ \delta_b '(v) = b'_v
+.\] 
+\begin{defi}
+	Il rango di una funzione bilineare è il rango di una qualsiasi matrice che la rappresenta
+\end{defi}
+\begin{defi}
+	Una forma bilineare è non degenere se ha rango (massimo) $\dim V$
+\end{defi}
+\begin{prop}
+Sia $V$ uno spazio vettoriale di dimensione finita,
+\[
+	b:V\times V \rightarrow \K \text{ una forma bilineare}
+.\] 
+Sono equivalenti 
+\begin{itemize}
+	\item $b$ è non degenere ovvero $b(v,v)= 0 \Leftrightarrow v = 0$
+	\item $\forall v\in V, v\neq 0\ \ \exists w\in V : \ \ b(v,w)\neq 0$
+	\item $\forall w\in V, \ w\neq 0 \ \ \exists v\in V: b(v,w) \neq 0$
+	\item $\delta_b :V \rightarrow V^\star$ è un isomorfismo
+	\item $\delta_b' : V \rightarrow V^*$ è un isomorfismo
+\end{itemize}
+\end{prop}
+\begin{dimo}
+	Sia $B = \{v_1,\ldots,v_n\}$ una base di $V$ e sia $A = [b]_B$\\
+	$1) \Rightarrow  2)$ per ipotesi $\det A \neq 0$ se  $X = [v]_B \ \ X\neq 0  \Rightarrow  X^tA\neq 0$ \\
+	quindi esiste $Y\in \K^n: X^tAY\neq 0$.\\ Se  $w\in V$ è tale che $[w]_B=Y$ ho dimostrato che  $b(v,w) = X^tAY\neq 0$ \\
+	$2) \Rightarrow 1)$ Riscrivendo l'ipotesi in coordinate abbiamo\\
+	\begin{aligned}
+	\hspace{80px}&\forall X\neq 0 \ \exists Y : \ \ X^tAY\neq 0	\\
+	& \Rightarrow X^t A\neq 0 \ \ \forall X\neq 0 \Rightarrow  A \text{ è invertibile}
+	\end{aligned}\\
+	$1) \Leftrightarrow 3)$ è come sopra\\
+	$2) \Rightarrow 4)$ Poiché $\dim V = \dim V^\star$ basta vedere che $\delta_b$ è iniettava, cioè  $\ker\delta_b=\{0\}$\\
+	 \begin{aligend}
+		&v\in \ker\delta_b \ \ \Rightarrow \ \ \delta_b(v) = b_v \ \text{ è il funzionale nullo, cioè}\\
+		&b_v(w) = 0 \ \ \forall w\in V\\
+		&b_v(w) = b(v,w) \Rightarrow  v = 0 
+	\end{aligend}\\
+	$4) \Rightarrow  2)$ Dato $v\neq 0$,  $\delta_b(v) = b_v\neq 0$ perché  $\delta_b$ è un isomorfismo, \\quindi esiste  $w\in V:$\\
+	\[b(v,w) = b_v(w)\neq 0\]
+	$3) \Leftrightarrow 5)$ è simile a $2) \Leftrightarrow 4)$
+\end{dimo}
+\section{Caso Simmetrico}
+\[
+b(v,w) = b(w,v)
+.\] 
+\textbf{Osservazione}\\
+$b$ è simmetrica se e solo se lo è qualsiasi matrice che la rappresenta.
+\textbf{Dato} $S\subset V$ definiamo
+\[
+	S^\perp = \{v\in V| b(v,s) = 0 \ \ \forall s\in S\}
+.\] 
+\textbf{Esercizio} $S^\perp$ è un sottogruppo e, $S^\perp = <s>^\perp$
+\begin{defi}
+	Due sottospazi $U,W$ si dicono ortogonali se\\
+	\[
+	Y\subseteq W^perp \ \( \Leftrightarrow W\subset U^\perp )\\\]
+\end{defi}
+\begin{defi}
+	$v\in V$ si dice isotropo se $b(v,v) = 0$\\
+\end{defi}
+\begin{defi}
+	$\ker b = \{ v\in V|b(v,w)=0 \ \ \forall w\in V\} = V^\perp$
+\end{defi}
+ \textbf{Osservazione}\\
+ $b$ è non degenere se e solo se $\ker b = \{0\}$\\
+ \begin{prop}
+ 	Sia $b$ non degenere, $W\subseteq V$ sottospazio,\\
+	Allora, se $\delta_b:V \rightarrow V^\star$ è l'isomorfismo canonico indotto da $b$, $\delta_b(W^t) = W^\star.$ In particolare risulta sempre $\dim W + \dim W^\perp = \dim V$
+ \end{prop}
+ \textbf{Nota}\\
+ Non è vero, anche nel caso non degenere, che $V = W\oplus W^\perp$
+\begin{dimo}
+	$w\in W^\perp\ \ \ \delta_b(w) = b_w$ Voglio vedere che\\
+	$b_w\in W^\# \ \ \ b_w(w')=b(w,w')=0 \ \ \forall w'\in W$ \\
+	Quindi $\delta_b(W^\perp)\subseteq W^\#$\\
+	Prendo ora  $f\in W^\# $; poiché  $b$ è non degenere, $\delta_b$ è un isomorfismo, quindi esiste $v\in V$
+	 \[
+	f = \delta_b(v) = b_v \ \ b(v,w) = b_v(w) = 0 \ \ \forall w \Rightarrow v\in W^\perp
+	.\] 
+	quindi $f = \delta(b_v)$ con $v\in W^\perp$
+\end{dimo}
+\begin{prop}
+	Sia $V$ spazio vettoriale, $W\subset V$ sottospazio, $b\in Bi(V).$ Sono equivalenti:
+	\begin{itemize}
+		\item $V = W\oplus W^\perp$ 
+		\item $b|_W$ è non degenere
+	\end{itemize}
+\end{prop}
+\begin{lemm}
+	$\ker b|_W = W\cap W^\perp$
+\end{lemm}
+\begin{dimo}[lemma]
+	$w\in \ker b|_W \Leftrightarrow b(w,w') = 0 \ \ \forall w'\in W \Leftrightarrow w \in W\cap W'$
+\end{dimo}
+\begin{dimo}[proposizione]
+	$1) \Rightarrow 2)$segue dal lemma perché dall'ipotesi $W\cap W^\perp = \{0\}$ \\
+	$2) \Rightarrow  1)$ Sia $\{w_1,\ldots,w_s\}$ una base di $W$ \\
+	Per ipotesi $A = (b(w_i,w_j))$ è invertibile, in particolare dato $v\in V$, il sistema lineare
+	\[
+		* \ \ A\matrice{x_1\\\vdots\\x_s} = \matrice{b(v,w_1_\\\vdots\\b(v,w_s)}
+	\]
+	ha soluzione unica. Poniamo 
+	\[
+	w = v - \sum^s_{h=1}x_jw_j
+	.\] 
+	Notiamo che * significa
+	\[
+	\sum^s_{h=1}b(v_h,w_j)x_h=b(v,w_j) \ \ 1\leq j \leq s
+	.\] 
+	Calcoliamo \\
+	\begin{aligned}
+		&b(w,w_i) = b(v - \sum^s_{h=1}x_hw_h, w_j) =  b(v,w_j) - \sum^s_{h=1}x_hb(w_h,w_j) = b(v,w_j) = \\
+		&=b(v,w_i) - b(v,w_i) = 0
+	\end{aligned}\\
+	Poiché i $\{w_i\}$ sono una base di $W$, risulta $b(w,u) = 0\ \ \ \forall u\in W$, cioè  $w\in W^\perp$ Allora
+	\[
+	v = w + \sum^s_{h=1}x_hw_h
+	.\] 
+	Pertanto $V = W + W^\perp$, per ipotesi  $W\cap W^\perp = \ker b|_W = \{0\}$, quindi $V = W\oplus W^\perp$
+\end{dimo}
+\end{document}

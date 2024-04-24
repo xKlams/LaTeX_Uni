@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  23 APR 2024 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  23 APR 2024 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,8 +543,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34   {\hfill\square\end{dimostrazione}}
-                                         
+l.34 ...}\hfill\square\newline\end{dimostrazione}}
+                                                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -600,108 +600,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 13.
 
-./main.tex:31: Package amsmath Error: \begin{aligned} allowed only in math mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 		&
-        f(Q + v) = Q + v\\
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./main.tex:31: Missing $ inserted.
+./main.tex:25: Missing $ inserted.
 <inserted text> 
                 $
-l.31 		&
-        f(Q + v) = Q + v\\
+l.25 	\end{dimo}
+                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:35: Missing $ inserted.
-<inserted text> 
-                $
-l.35 	\end{aligned}
-                   \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-./main.tex:38: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.38 	\hline
-             \ \\[10px]
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+./main.tex:25: LaTeX Error: \begin{dimo} on input line 20 ended by \end{dimostrazione}.
 
-
-./main.tex:42: Package amsmath Error: \begin{aligned} allowed only in math mode.
-
-See the amsmath package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 		&
-        A = \matrice{1&0\\0&1} \ \ b = \matrice{1\\0}\\
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.25 	\end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-./main.tex:42: Missing $ inserted.
+./main.tex:25: Missing $ inserted.
 <inserted text> 
                 $
-l.42 		&
-        A = \matrice{1&0\\0&1} \ \ b = \matrice{1\\0}\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:43: Undefined control sequence.
-l.43 ...t{3}/2\\\sqrt{3}/2 & 1/2} \ \ b = \matriec
-                                                  {0\\1}\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:43: Missing } inserted.
-<inserted text> 
-                }
-l.43 ...2\\\sqrt{3}/2 & 1/2} \ \ b = \matriec{0\\1
-                                                  }\\
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-./main.tex:43: Undefined control sequence.
-\math@cr@@@ ...t@ {&\kern -\alignsep@ }\fi \next@ 
-                                                  \cr 
-l.43 ...\sqrt{3}/2 & 1/2} \ \ b = \matriec{0\\1}\\
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:43: Missing { inserted.
-<inserted text> 
-                {
-l.43 ...\sqrt{3}/2 & 1/2} \ \ b = \matriec{0\\1}\\
-                                                  
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-./main.tex:45: Missing $ inserted.
-<inserted text> 
-                $
-l.45 	\end{aligned}
-                   \\
+l.25 	\end{dimo}
+                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -709,145 +637,60 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:50: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:25: LaTeX Error: \begin{document} ended by \end{dimo}.
 
-See the amsmath package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 		&
-        AX + b = X\\
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.25 	\end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-./main.tex:50: Missing $ inserted.
-<inserted text> 
-                $
-l.50 		&
-        AX + b = X\\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:55: Missing $ inserted.
-<inserted text> 
-                $
-l.55 	\end{aligned}
-                   \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:58: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.58 	\hline
-            
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+./main.tex:25: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.25 	\end{dimo}
+                
+Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--58
-
+Overfull \hbox (3.19044pt too wide) in paragraph at lines 24--28
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V; h\OT1/cmr/m/n/10 )$ spazio Her-mi-tiano (Spazio vet-to-ri-ale com-p-lesso $\OML/cmm/m/it/10 h$ \OT1/cmr/m/n/10 forma her-mi-tiana definita
  []
 
-./main.tex:58: You can't use `\hrule' here except with leaders.
-\size@update ...p \setbox \strutbox \hbox {\vrule 
-                                                  \@height .7\baselineskip \...
-l.58 	\hline
-            
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 28.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 35.
 
-./main.tex:58: Missing number, treated as zero.
-<to be read again> 
-                   d
-l.58 	\hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:58: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   d
-l.58 	\hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./main.tex:58: Missing number, treated as zero.
-<to be read again> 
-                   h
-l.58 	\hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:58: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   h
-l.58 	\hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./main.tex:58: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.58 	\hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:58: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.58 	\hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[2]
-
-./main.tex:63: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:54: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 		 \hspace
-               {120px}&\text{unitarie} \ \ \ \ &MM^\star = Id\\
+l.54 			\hspace
+               {80px}h(L^\star(v),w) &= h(v,L(w)) = h(v, \lambda w)\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:63: Missing $ inserted.
+./main.tex:54: Missing $ inserted.
 <inserted text> 
                 $
-l.63 		 \hspace
-               {120px}&\text{unitarie} \ \ \ \ &MM^\star = Id\\
+l.54 			\hspace
+               {80px}h(L^\star(v),w) &= h(v,L(w)) = h(v, \lambda w)\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:66: Missing $ inserted.
+./main.tex:56: Missing $ inserted.
 <inserted text> 
                 $
-l.66 	 \end{aligned}
+l.56 		\end{aligned}
                     \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -856,110 +699,238 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--67
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
 
  []
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 67.
-./main.tex:72: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.72 	 \hline
-              \ \\[10px]
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+[2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
+./main.tex:74: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 			&
+         L^\star(v) - \overline{ \lambda}v = 0\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- []
-
-./main.tex:81: Undefined control sequence.
-l.81 ...&-i/\sqrt{2}}\ \ \ \ \ \ U^-1LU = \amtrice
-                                                  {0&0\\0&2}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:81: Misplaced alignment tab character &.
-l.81 .../\sqrt{2}}\ \ \ \ \ \ U^-1LU = \amtrice{0&
-                                                  0\\0&2}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:81: Misplaced alignment tab character &.
-l.81 ...t{2}}\ \ \ \ \ \ U^-1LU = \amtrice{0&0\\0&
-                                                  2}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[3]
-./main.tex:91: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.91 		\hline
-              \ \\[10px]
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
-
- []
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 101.
-./main.tex:107: Missing { inserted.
-<to be read again> 
-                   \@@underline 
-l.107 ...i asse $\underline{a}$,  $s_\underline{a}
-                                                  $ è una riflessione rispe...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-./main.tex:107: Missing } inserted.
+./main.tex:74: Missing $ inserted.
 <inserted text> 
-                }
-l.107 ... asse $\underline{a}$,  $s_\underline{a}$
-                                                   è una riflessione rispet...
+                $
+l.74 			&
+         L^\star(v) - \overline{ \lambda}v = 0\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:76: Missing $ inserted.
+<inserted text> 
+                $
+l.76 		\end{aligned}
+                    \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 109.
+./main.tex:77: Missing $ inserted.
+<inserted text> 
+                $
+l.77 	\end{dimo}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:77: LaTeX Error: \begin{dimo} on input line 47 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 	\end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:77: Missing $ inserted.
+<inserted text> 
+                $
+l.77 	\end{dimo}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:77: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.77 	\end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:77: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.77 	\end{dimo}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (11.80724pt too wide) detected at line 85
+\OML/cmm/m/it/10 ^^Uh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; w\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Uv; w\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Lv; w\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; L[]w\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; []w\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^Vh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; w\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ) \OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v; w\OT1/cmr/m/n/10 ) = 0
+ []
+
+
+./main.tex:97: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 			\hspace
+               {80px}&[L]^B_B = \bigwedge = \matrice{ \lambda_1  &\ldots& 0\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.tex:97: Missing $ inserted.
+<inserted text> 
+                $
+l.97 			\hspace
+               {80px}&[L]^B_B = \bigwedge = \matrice{ \lambda_1  &\ldots& 0\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:102: Missing $ inserted.
+<inserted text> 
+                $
+l.102 		 \end{aligned}
+                       \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (16.09784pt too wide) in paragraph at lines 88--105
+[]$[]$ 
+ []
+
+./main.tex:109: Missing $ inserted.
+<inserted text> 
+                $
+l.109 	\end{dimo}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./main.tex:109: LaTeX Error: \begin{dimo} on input line 87 ended by \end{dimostrazione}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.109 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:109: Missing $ inserted.
+<inserted text> 
+                $
+l.109 	\end{dimo}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./main.tex:109: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.109 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:109: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.109 	\end{dimo}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--112
+
+ []
+
+[3]
+
+./main.tex:121: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.121 		\hspace
+               {80px}&h(L_AX,Y) = h(X,L_AY)\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./main.tex:121: Missing $ inserted.
+<inserted text> 
+                $
+l.121 		\hspace
+               {80px}&h(L_AX,Y) = h(X,L_AY)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:127: Missing $ inserted.
+<inserted text> 
+                $
+l.127 	\end{aligned}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 [4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16931 strings out of 477985
- 375129 string characters out of 5839380
- 1869388 words of memory out of 6000000
- 36839 multiletter control sequences out of 15000+600000
- 520189 words of font info for 63 fonts, out of 8000000 for 9000
+ 16938 strings out of 477985
+ 375215 string characters out of 5839380
+ 1864388 words of memory out of 6000000
+ 36843 multiletter control sequences out of 15000+600000
+ 521222 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 92i,20n,93p,490b,313s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (4 pages, 178352 bytes).
+ 92i,16n,93p,490b,370s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (4 pages, 161829 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
