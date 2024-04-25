@@ -8,7 +8,10 @@
 \tcbuselibrary{theorems}
 \usepackage{xcolor}
 \usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{rotating}
 
+\graphicspath{ {./images/} }
 \newtheoremstyle{break}
   {1px}{1px}%
   {\itshape}{}%
@@ -64,6 +67,7 @@
 \newcommand{\matrice}[1]{% inline column vector
   \begin{pmatrix}#1\end{pmatrix}%
 }
+\newcommand{\storto}[1]{ \begin{sideways}#1\end{sideways}}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
