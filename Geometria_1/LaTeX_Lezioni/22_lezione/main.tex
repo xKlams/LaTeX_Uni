@@ -1,0 +1,203 @@
+\documentclass[12px]{article}
+
+\title{Lezione 22 Geometria I}
+\date{2024-04-29}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Boh non ero a lezione}
+	$W\subseteq V$ sottospazio $g\in Bi(V)$ \\
+	$g|_W$ è non degenere $ \Leftrightarrow V = W\oplus W^\perp$\\
+	\textbf{Cosa dimostreremo oggi}\\
+	Sia $V$ spazio vettoriale di dimensione finita e $g\in Bi_s(V)$ (forma bilineare simmetrica\\
+	 $\K$ qualsiasi, esiste una base $g-ortogonale$ \\
+	 $\K$ algebricamente chiuso $(\K\cong \C)$, esiste una base di $V $ rispetto alla quale la matrice di $g$ è $\matrice{I_r & 0\\0 & 0 }\ \ r = rg(g)$\\
+	 $\K = \R$ esiste una base di  $V$ rispetto alla quale la matrice di $g$ è $\matrice{I_r& 0&0\\0&-I_s& 0\\0&0&0}\ \ r+s = rg(g) \ \ n - r - s$ indice di nullità, $\ker$ della forma\\
+	 $V$ spazio vettoriale ($\dim(V)<+\infty),g\in Bi_s(V)$\\
+	  \begin{defi}
+	 	la forma quadrativi associata a $V$ è l'applicazione $q:V \rightarrow \K$ definita da $q(v) = g(v,v)$ e questa è una funzione omogenea di grado $2$
+	 \end{defi}
+	 \textbf{Esempio}\\
+	 $V\cong \K^n, g = $ prodotto scalare standard\\
+	 $g\matrice{x_1\\\vdots\\x_n} = \sum^n_{i=1}x_i^2$\\
+	 \textbf{Osservazione}\\
+	 Valgono:\\
+	 1) $q(kv) = k^2q(v)$ \\
+	 2) $2g(v,w) = q(v+w) - q(v) - q(w)$\\
+	 dove $g(v,w)$ è la forma polare di $q$
+	  \begin{dimo}
+		  1.\hl{$q(kv)$}$= g(kv,kv) = k^2g(v,v) =$ \hl{$k^2q(v)$}\\
+		  2.\hl{$q(v+w)- q(v)-q(w)$} $=g(v+w,v+w) - g(v,v)-g(w,w)= \\
+		  =\cancel{g(v,v)}+2g(w,v)+\cancel{g(w,w)}-\cancel{g(v,v)}-\cancel{g(w,w)}= $ \hl{$2g(w,v)$}
+	 \end{dimo}
+	 \textbf{Osservazione}\\
+	 $V=\R^4$ e sia $q\icol{x_1\\x_2\\x_3\\x_4}= x_1^2+2x_2^2-x_4^2+x_1x_4+6x_2x_3-2x_1x_2$\\
+	 Voglio trovare la matrice della forma polare di $q$ rispetto  alla base canonica\\
+	 $\matrice{1&-1&0&1/2\\-1&2&3&0\\0&3&0&0\\1/2&0&0&-1}$\\
+	 Sulla diagonale ci sono i coefficienti delle componenti al quadrato  $(x_i)^2$ gli altri li ottieni dividendo per 2 ogni altro coefficiente 
+	\\
+	\begin{teo}[(Caratteristica di $\K)\neq 2$]
+		Dato $V$ spazio vettoriale di dimensione $n\geq 1$ e  $g$ forma bilineare simmetrica su $V $, allora esiste una base $g$-ortogonale.
+	\end{teo}
+	\begin{dimo}
+		Per induzione su $\dim V = n$. Se  $n=1$ non c'è nulla da dimostrare.\\
+		se $g$ è la forma bilineare nulla ($g(v,w)=0 \ \ \forall v,w\in V)$ ogni base è  $g-$ortogonale.\\
+		Altrimenti esistono,  $v,w\in V$ con $g(v,w)\neq 0$.\\
+		Assumo che almeno uno tra  $v,w,v+w$ è non isotropo. Infatti se $v,w$ sono isotropi
+		\[
+		g(v+w,v+w)=g(v,v) + g(v,w) + g(w,w) = 2g(v,w)\neq 0)
+		.\] 
+		quindi $\exists v_1\in V$ t.c $g(v_1,v_1)\neq 0$. Allora $g|_{\K v_1}$ è non degenere quindi $V = \K v_1\oplus W$ con $W = (\K v_1)^\perp$ \\
+		$\dim(W) = n-1$, per induzione $\exists$ una base  $\{v_2,\ldots,v_n\}$ di $W$ con $g(v_1,v_j) = 0$ se $2\leq j\leq n, \{v_1,\ldots,v_n\}$ è una base $g$-ortogonale di $V$
+	\end{dimo}
+	\begin{teo}
+		Supponiamo $\K$ algebricamente chiuso. Sia $V$ spazio vettoriale dimensione $n\geq 1$ e $g$ forma bilineare simmetrica su $V$, esiste una base di $V$ rispetto alla quale la matrice di $g$ è $D=\matrice{I_r&0\\0&O_{n-r}}$ r = rg(D)\\
+In modo equivalente, ogni matrice simmetrica a coefficienti in  $\K$ è congruente a $D$
+	\end{teo}
+	\begin{dimo}
+		Per il teorema precedente, esiste una base $B´= \{v_1',\ldots,v_n'\}$ di $V$ rispetto alla quale $(g)_{B'}=\matrice{a_{11} &\ldots&0\\
+			\vdots & \ddots&\vdots\\
+	0&\ldots&a_{nn}}$\\
+Possiamo assumere che $a_{11},\ldots,a_{rr}$ siano non nulli e che $a_{r+i,r+i}=0$ con  $1\leq i\leq n-r$.\\
+Poiché  $\K$ è algebricamente chiuso, esistono $\alpha_1,\ldots,\alpha_r\in\K$ t.c. $\alpha_i^2= a_{ii}, \ \ 1\leq i\leq r$ poniamo.\\
+ $v_i = \begin{cases}
+	 \frac {1}{\alpha_i}v_i', \ 1\leq i\leq r\\
+	 v_i'\ \ \ \ r+1\leq i\leq n
+ \end{cases}$\\
+ è chiaro che $\{v_1,\ldots,v_n\}$ è una base. Risulta\\
+ $g(v_i,v_i) = \begin{cases}
+	 g(\frac{v_i'}{\alpha_i},\frac{v_i'}{\alpha_i} = \farc{1}{\alpha_i^2}g(v_i',v_i') = \frac{a_{ii}}{\alpha_i^2} = 1 \ \ 1\leq i \leq r\\
+	 g(v_i',v_i') = 0 \ \ \ \ \ \ \ r+1\leq i\leq n
+ \end{cases}$
+	\end{dimo}
+	\newpage \ \\ \textbf{Osservazione}\\
+Se $g$ è non degenere, esiste una base  $B$ rispetto alla quale $(g)_B=Id_n$\\
+ \textbf{Caso Reale $\K=\R$}\\
+$V$ spazio vettoriale reale $(\dim V=n\geq 1)$\\
+ $g\in Bi_s(V)$\\
+ Sia $B$ una base $g$-ortogonale. Definiamo\\
+ \begin{defi}
+ 	Chiamiamo $i_+(g),i_-(g),i_0(g)$ indice di positività, negatività e nullità di $g$, e sono rispettivamente\\
+	\begin{aligend}
+		&i_+(g) = \{v\in B|g(v,v)>0\}\\
+		&i_-(g) = \{v\in B|g(v,v)<0\}\\
+		&i_0(g) = \{v\in B|g(v,v)=0\}
+	\end{aligend}
+ \end{defi}
+ \begin{teo}[Sylvester]
+ 	Gli indici non dipendono dalla scelta di $B$. Posto $p=i_+(g), q=i_-(g)$ allora $1+q=n-r\ \ \ (r=rg(g))$\\
+	ed esiste una base di $V$ rispetto alla quale la matrice $E$ di $g$ è tale che 
+
+	\[
+		E = \matrice{Id_p & \ldots & 0\\
+			\vdots & -Id_q & \vdots\\
+		0 & \ldots & O_{n-r}}
+	.\] 
+	equivalentemente, ogni matrice simmetrica reale $A$ è congruente ad una matrice della forma $E$ in cui $r = rg(A)$ e $p$ dipende solo da $A$
+ \end{teo}
+ \begin{dimo}
+	 Dal teorema di esistenza di una base $g$-ortogonale deduciamo che esiste una base $\{ f_1,\ldots,f_n\}$ di $V$ rispetto alla quale, se $v = \sum^n_{i=1}y_if_i$\\
+	 $q(v) = a_{11}y_1^2 + a_{22}y_2^2+\ldots+a_{nn}y^2_n$\\
+	 con esattamente $n$ coefficienti diversi da $0$, che possiamo supporre essere $a_{11},\ldots,a_{rr}$\\
+	 Siano $a_{11},\ldots,a_{pp}>0, \ \ a_{p+1,p+1},\ldots,a_{rr}<0$\\
+	 $\exists \alpha_1,\ldots, \alpha_p, \alpha_{p+1},\ldots,\alpha_r\in \R$ t.c. \\$\alpha_i^2=a_{ii} \ \ 1\leq i\leq p$  \ \ \  \ $\alpha^2_i  = - a_{ii} \ \ p+1\leq i\leq r$ \\
+	 Allora posto $e_i = \begin{cases}
+		 \frac{1}{\alpha_i}f_i \ \ 1\leq i\leq r\\
+		 f_i \ \ \ r+1\leq i\leq n
+	 \end{cases}$\\
+	 la matrice di $g$ rispetto a $\{e_1,\ldots,e_n\}$ è $
+\matrice{Id_p & \ldots & 0\\
+			\vdots & -Id_q & \vdots\\
+		0 & \ldots & O_{n-r}}$\\
+		Resta da dimostrare che $p$ dipende solo da $g$ e non dalla base $B$ usata per definirlo\\
+		Supponiamo che rispetto ad un'altra base $g$-ortogonale $\{b_1,\ldots,b_n\}$, risulti, per $v= \sum^n_{i=1}z_ib_i$ \\
+		\[
+			q(v)= z_1^2 + \ldots + z_t^2 - z^2_{t+1} - \ldots - z_r^2
+		.\] 
+		mostriamo che $p=t$\\
+	se per assurdo  $p\neq t$ assumo $t\leq p$ considero quindi i sottospazi  $S = < e_1,\ldots,e_n> \ \ T = <b_{t+1},\ldots,b_n>$\\
+	Poiché $\dim S+\dim T = p+n-t>n$ perché $t<p$ per Grassman vettoriale $S\cap T\neq \{0\}$ sia $0\neq v\in S\cap T$\\
+	allora  $r = x_1e_1+\ldots+x_pe_p = z_{t+1}b_{t+1}+\ldots,z_nb_n$\\
+	contraddizione:
+	\[
+	q(v)= \sum^p_{i=1}x_i^2 >0
+	.\] 
+	\[
+		q(v) =- \sum^r_{i=1}z_i^2 + z_{r+1}^2 + \ldots + z_n^2 <0
+	.\] 
+ \end{dimo}
+	\textbf{Osservazioni}\\
+	1. Esiste una definizione più intrinseca degli indici. Ricordiamo che $g\in Bil_S(V), V$ spazio vettoriale su $/R$ è definita positiva se $g(v,v) >0, \ \ \forall v\in V\setminus\{0\}$ e che  $g$ è definita negativa se $-g$ è definita positiva.\\
+	2.Il teorema di Sylvester si estende, con la stessa dimostrazione alla forma hermitiana.\\
+	In particolare ogni matrice hermitiana è congruente a una matrice diagonale del del tipo
+	\[
+		\matrice{I_p & \ldots & 0\\
+			\vdots & I_{r-p} & \vdots\\
+		0 & \ldots & O_{n-r}}
+	\] 
+\begin{prop}
+	Sia $(V,g)$  uno spazio vettoriale su $\R$ dotati di una forma bilineare simmetrica $g$\\
+	Siano dati un prodotto scalare $h$ e una forma bilineare simmetrica $k$\\
+	Allora esiste una base di  $V$ che sia $h$-ortonormale e $k$-ortogonale
+\end{prop}
+\begin{dimo}
+	$(V,h)$ è uno spazio euclideo, quindi per il teorema di rappresentazione delle forme bilineari, esiste un operatore $L\in End(V)$ tale che
+	\[
+	h(L(v),w) = k(v,w)
+	.\] 
+	Poiché $k$ è simmetrica, $L$ è simmetrica, per il teorema spettrale siste una base $h$-ortonormale costituita da autovettori per $L$.\\
+	Sia  $\{v_1,\ldots,v_n\}$ tale base. Voglio dimostrare che $\{v_1,\ldots,v_n\}$ è $k$-ortogonale
+	\[
+		k(v_r,v_s) = h(L(v_r),v_s) = h(\lambda_r v_r,v_s) = \lambda_rh(v_r,v_s) = \lambda_r \delta_{rs}
+	.\] 
+\end{dimo}
+\begin{coro}
+	Sia $(V,h)$ uno spazio euclideo, e $k$ una forma bilineare simmetrica  su $V$.\\
+	Allora $i_+(k), i_\_(k), i_0(k)$ corrispondono al numero di autovalori positivi, negativi, nulli, dell'endomorfismo di  $V$ che rappresenta $k$ rispetto ad $h$
+\end{coro}
+\begin{dimo}
+	Sia come nella proposizione, $\{v_1,\ldots,v_n\}$ una $h$-ortonormale e $k$-ortogonale, per il teorema di Sylvester
+	\[
+		i_+(k) = |\{v_i|k(v_i,v_i)> 0\}|
+	.\] 
+	Ma abbiamo visto che $k(v_i,v_i) = \lambda_i$\\
+	quindi $i_+(k) = |\{ \lambda_i>0\}|$.
+	La dimostrazione non è terminata.
+\end{dimo}
+\begin{defi}
+	Una matrice simmetrica reale si dice definita positiva se tutti gli autovalori sono positivi
+\end{defi}
+\begin{defi}
+	Data una matrice quadrata $n\times n$, i minori principali leading, sono quelli ottenuti estraendo righe e colonne come segue
+	\[
+		\{1\},\{1,2\},\{1,2,3\},\ldots,\{1,2,3,\ldots,n\}
+	.\] 
+\end{defi}
+\textbf{Esempio}\\
+$ \matrice{1&1&1\\1&-1&0\\1&0&1}$ \\
+\begin{aligend}
+	&\left|1\right| = 1\\
+	&\det\matrice{1&1\\1&-1} = -2\\[5px]
+	&\det\matrice{1&1&1\\1&-1&0\\1&0&1} = \det\matrice{1&1\\-1&0} + \det\matrice{1&1\\1&-1} = 1 - 1 - 1 = -1
+\end{aligend}
+\begin{teo}
+	$A$ è definita positiva se e solo se tutti i suoi autovalori principali leading sono positivi
+\end{teo}
+
+$q\icol{x_1\\x_2\\x_3} = 3x_1^2 + 4x_1x_2 + 8x_1x_3 +4x_2x_3+3x_3^2$\\
+1. Determinare gli indici\\
+2. Calcolare $W\perp$ se $W = \R\icol{1\\-1\\0}$\\
+Scriviamo la matrice della forma bilineare associata rispetto alla base standard
+\[
+	A = \matrice{3&2&4\\2&0&2\\4&2&3}
+.\] 
+\begin{aligned}
+	&\det\matrice{ \lambda-3&-2&-4\\-2 & \lambda & -2\\-4&-2 & \lambda - 3} = 0\ \ \ \ i_-=2
+
+\end{aligned}
+
+\end{document}

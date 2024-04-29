@@ -10,6 +10,8 @@
 \usepackage{cancel}
 \usepackage{graphicx}
 \usepackage{rotating}
+\usepackage{color}
+\usepackage{soul}
 
 \graphicspath{ {./images/} }
 \newtheoremstyle{break}
@@ -26,6 +28,8 @@
 \theoremstyle{break}
 \newtheorem{defin}{Definizione}
 \theoremstyle{break}
+\newtheorem{corollario}{Corollario}
+\theoremstyle{break}
 \newtheorem{propo}{Proposizione}
 \theoremstyle{break}
 \newtheorem*{dimo}{Dimostrazione}
@@ -39,6 +43,10 @@
 \newenvironment{teo}
 {\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
   {\end{theo}\end{mdframed}}
+
+\newenvironment{coro}
+{\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{corollario}}
+  {\end{corollario}\end{mdframed}}
 
 \newenvironment{nome}
 {\begin{mdframed}[linecolor=green, backgroundcolor=green!10]\begin{nomen}}
