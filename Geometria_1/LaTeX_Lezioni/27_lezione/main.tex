@@ -1,0 +1,112 @@
+\documentclass[12px]{article}
+
+\title{Lezione 27 Geometria I}
+\date{2024-05-13}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Parte da recuperare in cui ha fatto robe con sfere e spazi proiettivi}
+	 \textbf{Esercizio}\\
+	 Determinare un'queazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ we per i punti impropri delle rette
+	 \[
+	 r = \begin{cases}
+	 	x + y + z-1=0\\
+		2x-y-z=0
+	 \end{cases}
+	 .\] 
+	 \[
+	 s = \begin{cases}
+	 	2x-y-2x+1=0\\
+		y+z-1=0
+	 \end{cases}
+	 .\] 
+	 Il punto improprio di $r$ è \begin{cases}
+	 	x_1+x_2+x_3-x_0=0\\
+		2x_1-x_2-x_3=0\\
+		x_0=0
+	 \end{cases}\\
+	 \begin{aligend}
+		& \begin{cases}
+			x_1+x_2+x_3=1\\
+			3x_1-x_2_x_3=0\\
+			x_0=0
+		\end{cases}
+		\Rightarrow \begin{cases}
+			x_1+x_2+x_3=0\\
+			3x_1=0\\
+			x_0=0\\
+		\end{cases}
+		\Rightarrow \begin{cases}
+			x_0=0\\
+			x_1=0\\
+			x_2+x_3=0
+		\end{cases}
+		\Rightarrow  [0,0,-1,-1]\\
+		&\text{Per quanto  riguarda s}\\
+		& \begin{cases}
+			2x_1-x_2-2x_3+x_0=0\\
+			x_2+x_3-x_0=0\\
+			x_0=0
+		\end{cases} \Rightarrow  \begin{cases}
+			2x_1-x_2-2x_3=0\\x_2+x_3=0\\
+			x_0=0
+		\end{cases} \Rightarrow \begin{cases}
+			2x_1-x_3=0\\
+			x_2+x_3=0\\
+			x_0=0
+		\end{cases} \\&\Rightarrow  [0,1,-2,2]\\
+		&\det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&-2&2}\\
+	&\det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&0&0}\\
+	&\det\matrice{x_0&x_2&x_3\\1&0&1\\0&1&-1}=0
+	 \end{aligend}
+	 \newpage
+	 \section{Dualità}
+	 $\pro^V=\pro(V^\star)\ \ \dim\pro=\dim\pro^V$ poichè  $\dim V=\dim V^\star$\\
+	 Osserviamo che  $F,F'\in V^\star$ definiscono lo stesso punto in  $\pro^V$ se e solo se  \\$F'= \lambda F\ \ \ \ \lambda\in\K\setminus\{0\}$\\
+	 Ma in questo caso $\ker F = \ker F'$\\
+	 Ne segue che l'iperpiano  $\ker F$ dipende solo da  $[F]$ Quindi si ha un'applicazione di dualità 
+	  \[
+		  \delta :\pro^V \rightarrow \{\text{iperpiani di }\pro\}
+	 .\] 
+	 \[
+		 \delta([F]) = \pro(\ker F)
+	 .\] 
+	 \textbf{$\delta$ è biunivoca}\\
+	 è iniettiva perché due funzionali non nulli che hanno lo stesso nucleo sono proporzionali.\\
+	 Inoltre l'iperpiano di $V$ è il nucleo di un funzionale, quindi  $\delta$ è suriettiva\\
+	 \ \hline \ \\
+	 Diciamo che gli iperpiani $H_1,\ldots,H_s$ in $\pro$ sono linearmenete indipendenti se lo sono $\delta^{-1}(H_1),\ldots,\delta^{-1}(H_s)$ \ \\ \hline \ \\
+	 Sia $\{e_0,\ldots,e_n\}$ una base di $V$ e sia $\{\eta_0,\ldots,\eta_n\}$ la corrispondente base duale di $V^\star:\eta_i(e_i)=\delta_{e_i}$ 
+	 \[
+	 H\subseteq \pro^n \ \ a_0x_0+\ldots+a_nx_n=0
+	 .\] 
+\[
+	H = \pro(\ker F) \ \ F\in V^\star \text{ definita :}
+\] 
+\[
+F(\sum^n_{i=1}x_ie_i)=\sum^n_{i=1}a_ix_i
+.\] 
+Dove le $a_i$ sono le coordinate omogenee di  $[F] $ rispetto al riferimento proiettivo  $\{\eta_0,\ldots,\eta_n\}$\\
+In particolare $H=\delta([F]) \ \ \ H=H[a_0,\ldots,a_n]$ \\
+\begin{aligend}
+	&H_0=H_0[1,\underline{0},\ldots,\underline{0}]=\delta([\eta_0]\\
+	&\vdots\\
+	&H_n=H_n[0,\ldots,0,1]=\delta([\eta_n])
+\end{aligend}
+\begin{defi}
+	$S\subset \pro$ sottospazio,  $\dim S = k \leq n-1$
+	\[
+		\bigwedge_1(S) = \{\text{ iperpiani di }\pro \text{ che contengono } S\}
+	.\] 
+	dove $\bigwedge_1(S)$ è il sistema lineare di iperpiain di centro $S$
+\end{defi}
+\textbf{Esempi}\\
+$\pro=\pro^2 \ \ S = \{Q\}\ \ \\
+\bigwedge_1(Q) = \{$ iperpiani di $\pro^2$  che contengono $Q$ = fascio di rette di centro $Q$\\
+$\pro=\pro^3 \ \ S = \{r\}\ \ \\ \bigwedge_1(r) = \{$ iperpiani di $\pro^3$ che contengono $r$ = fascio di rette di centro $r$\\
+$\pro=\pro^3 \ \ S = \{Q\}\ \ \\ \bigwedge_1(Q) = \{$ iperpiani di $\pro^3$ che contengono $Q$ = stella di rette di centro $Q$\\
+\end{document}

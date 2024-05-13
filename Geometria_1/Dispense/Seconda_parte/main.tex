@@ -1,0 +1,373 @@
+\documentclass[12px]{article}
+
+\title{Dispense di Geometria I
+\\\large{Seconda Parte}}
+\author{Federico De Sisti}
+\date{}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Prefazione}
+	Scrivo queste dispense in vista del secondo esonero dato il mio (potentissimo) 21 al primo. Governo ladro speriamo che il secondo vada meglio\\[10px]
+	L'utilizzo di queste dispense è solamente riservato a chi mi sta particolarmente simpatico quindi siate lieti di essere in questa cerchia.\\[10px]
+	Ciò che è scritto in queste dispense viene solamente dalle lezioni del Papi del 2024, potrei aggiungere qualcosa del libro di Edoardo Sernesi (mio padre).\\
+	Detto ciò cominciamo subito questo magico viaggio!
+	\newpage
+	\subsection{Prodotti Hermitiani}
+	$V$ spazio vettoriale complesso
+	\begin{defi}[Funzione sesquilineare]
+		Una funzione sesquilineare su $V$ è un'applicazione $h: V\times V \rightarrow \mathbb{C}$\\
+		che è lineare nella prima variabile e antilineare nella seconda, cioè\\[10px]
+		\begin{aligned}
+			\hspace{80px}&h(v+v',w) = h(v,w) + g(v',w)\\
+		&h(\alpha v,w) = \alpha h(v,w)\\
+		&h(v,w + w') = h(v,w) + h(v,w')\\
+			&h(v,\alpha w) = \overline{\alpha}h(v,w)\\
+		\end{aligned}\\[10px]
+		per ogni scelta di $v,w,v',w'\in V$ e $\alpha \in\mathbb{C}$
+	\end{defi}
+	\begin{defi}[Forma hermitiana]
+		Una forma sesquilineare si dice hermitiana se
+		\[
+			h(v,w) = \overline{h(w,v)}
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $h$ è hermitiana, $h(v,v)\in\R$, infatti deve risultare $h(v,v) = \overline{h(v,v)}$
+	\begin{defi}[Forma antihermitiana]
+		Una forma sesquilineare si dice antihermitiana se 
+		\[
+			g(v,w) = - \overline{h(v,w)}
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	In questo caso $h(v,v)\in\sqrt{-1}\R$\\	
+	\begin{defi}
+		Una forma hermitiana si dice semidefinita positiva se 
+		\[
+		h(v,v) \geq 0 \ \ \forall v\in V
+		.\] 
+	\end{defi}
+	\begin{defi}
+		Una forma hermitiana si dice definita positiva se 
+		\[
+		h(v,v)>0 \ \ \forall v \neq 0
+		.\] 
+		ovvero
+		\[
+			(h(v,v)\geq 0 \text{ e }h(v,v) = 0 \Rightarrow v=0)
+		.\] 
+	\end{defi}
+	\textbf{Esempio}\\
+	$V = \C^n$
+	\[
+		h\left( \icol{z_1\\ \vdots \\ z_n},\icol{w_1\\\vdots\\w_n}\right) = \sum^n_{i=1}z_i\overline{w_i}
+	.\] 
+	questo viene chiamato prodotto hermitiano standard su $\C^n$
+ \[
+		h\left( \icol{z_1\\ \vdots \\ z_n},\icol{z_1\\\vdots\\z_n}\right) = \sum^n_{i=1}z_i\overline{z_i} = \sum^n_{i=1}|z_i|^2
+	\]
+	\hline \ \\[10px]
+	Dato $V$, consideriamo una base $B = \{v_1,\ldots,v_n\}$ di $V$.\\Se $h$ è una forma heritiana, diciamo che $H=(h_{ij}) = h(v_i,v_j)$ è la matrice che rappresenta $h$ nella base $B$.\\ 
+	se  $u = \sum^n_{i=1}x_iv_i, \ \ \ w = \sum^n_{i=1}y_iv_i$\\
+\begin{aligned}
+	\hspace{30px}h(u,w) &= h(\sum^n_{i=1}x_iv_i,\sum^n_{i=1}y_iv_i) = \\
+&= \sum^n_{i=1}x_ih_i(v_i,\sum^n_{i=1}y_iv_i) = \\
+& = \sum^n_{i=1}x_i\overline{y_i}h(v_i,v_i) = \\
+& = x^t H\overline{y}
+\end{aligned}\\
+Dato che $h$ è hermitiana, abbiamo $h(v,w) = \overline{h(w,v)}$ da cui segue\\[5px]
+\begin{aligned}
+	X^tHY &= \overline{Y^tHX}\\
+	 &     = \overline{Y}^t \overline{H} \overline{X}\\
+	 & = (\overline{Y}^t \overline{H} \overline{X})^t\\
+	 & = \overline{X}^t \overline{H}^t \overline{Y} \ \ \ \ \Rightarrow \ \ \  H = \overline{H}^t
+\end{aligned}
+\begin{defi}
+	Una matrice $M\in M_n(\C)$ si dice hermitiana se
+	\[
+		H = \overline{H}^t
+	.\] 
+\end{defi}
+\newpage
+\section{Operatori Unitari}
+\begin{defi}
+	Sia $T\in End(V)$ questo si dice unitario se
+	\[
+	\langle T(v), T(w) \rangle = \langle v,  \rangle 
+	.\] 
+\end{defi}
+\begin{lemm}
+$T\in End(V)$ operatore unitario\\
+$1.$ Gli autovalori hanno modulo 1\\
+$2.$ Autospazi relativi ad autovalori distinti sono ortogonali\\
+\end{lemm}
+\begin{dimo}
+$1.$ Sia $v$ un autovettore di autovalore $\lambda$ 
+\[
+	\langle v, v \rangle = \langle Tv, Tv \rangle  = \langle tv, tv \rangle  = \lambda\overline{\lambda} \langle v, v \rangle = |\lambda|^2 \langle v, v \rangle 
+.\] 
+\[
+v \neq 0 \Rightarrow  \ \ \ |\lambda|^2 = 1 \ \ \  \Rightarrow  \ \ \ |\lambda| = 1
+.\] 
+$2.$ Sia $v\in V_\lambda$, $w\in V_\mu$ \ \ $\lambda\neq\mu$
+\[
+	\langle v, w \rangle  = \langle Tv, Tw \rangle = \langle \lambda v, \mu w \rangle = \lambda\overline{\mu} \langle v, w \rangle 
+.\] 
+\[\text {Se } \langle v, w \rangle \neq 0  \Rightarrow \lambda \overline{\mu} = 1 \text{ Per il punto 1}\\
+	.\]\[
+	\lambda\overline{\lambda} =1\ \ \Rightarrow \ \ \overline{\lambda} = \overline{\mu} \ \ \Rightarrow \ \ \lambda = \mu \ \ \text{ assurdo}
+.\] 
+\end{dimo}
+\begin{defi}
+	Diciamo che $U\in M_n(\C)$ è unitaria se 
+	\[
+		U\overline{U}^t = Id
+	.\] 
+\end{defi}
+\begin{prop}
+	$T\in End(V)$ è unitario se e solo se la sua matrice in una base ortonormale è unitaria
+\end{prop}
+\begin{dimo}
+	Sia $B = \{v_1,\ldots,v_n\}$ una base ortonormale di $V$ 
+	\[
+		\delta_{ij} = \langle v_i, v_j \rangle  = \langle Tv_i, Tv_j \rangle  = \langle Ae_i, Ae_j \rangle = e_i^tA^t\overline{A}e_j = A_i^t\overline{A}_j
+	\] 
+	dove abbiamo posto $A = (T)_B$ e $\{e_i\}$ è una base di $\C^n$.\\
+	Abbiamo ottenuto quindi $A_i^t\overline{A}_j$ che è il prodotto hermitiano standard tra la $i$-esima e la $j$-esima colonna di $A$
+\end{dimo}
+\begin{teo}
+	Sia $T\in End(V)$ un operatore unitario Esiste una base standard di autovettori per $T$
+\end{teo} 
+In particolare, per ogni matrice unitaria $A\in U(n)$ esiste $M\in U(n)$ tale che $M^{-1}AM$ è diagonale
+\begin{nota}
+	a volte si pone 
+	\[
+	 A^* = \overline{A}^t
+	.\] 
+	$A$ unitario $AA^* = Id$ \\
+	$A$ hermitiano $A = A^*$ \\
+	$A$ antihermitiano $A=-A^*$
+\end{nota}
+\begin{defi}[Operatore Aggiunto]
+	Dato $T\in End(V)$, esiste unico $S\in End(V)$ tale che 
+	\[
+	\langle Tu, w \rangle = \langle u, Sw \rangle \ \ \forall u,w\in V
+	.\] 
+	Tale operatore è detto aggiunto hermitiano di $T$ e denotato con $T^*$
+\end{defi}
+\begin{defi}[operatore normale]
+	Sia $V$ uno spazio vettoriale complesso dotato di prodotto hermitiano (forma hermitiana definita positiva), un operatore $L\in End(V)$ è normale se 
+	\[
+	L\circ L^* = L^*\circ L
+	.\] 
+\end{defi}
+\textbf{Osservazione}\\
+$L$ unitario, hermitiano, antihermitiano $ \Rightarrow$ $L$ diagonale
+\begin{teo}
+	Sono equivalenti le seguenti affermazioni:\\
+	$1)$ $L$ è normale\\
+	$2)$ esiste una base ortonormale di $V$ formata da autovettori di $L$
+\end{teo}
+
+%Inizio lezione 19
+\newpage
+\section{Diangonalizzazione unitaria di operatori normali}
+	($\C^n$, prodotto hermitiano standard)\\
+	Indichiamo $M^\star = \overline{M}^t$\\
+	\begin{defi}
+	 $M$ è normale se $MM^\star = M^\star M$\\
+	\end{defi}
+	\textbf{Nota}\\
+	Sono normali le matrici\\ \begin{aligned}
+		 \hspace{120px}&\text{unitarie} \ \ \ \ &MM^\star = Id\\
+						       &\text{hermitiane} \ \ \ \ &M=M^\star\\
+						       &\text{antihermitiane} \ \ \ &M = -M^\star
+	 \end{aligned}\\
+	\section{Classificazione delle isometrie}
+	\begin{nome}
+	$\cdot$ rotazioni\\
+	$\cdot$ riflessioni\\
+	$\cdot$ traslazioni\\
+	$\cdot$ glissoriflessione $ = t_v\circ s_\alpha$ con $v\parallel \alpha^t$ (disegno de li mortacci sua)\\
+$\cdot$ glissorotazioni $= t\circ R$ dove $v \parallel a$, $a$ asse di $R$ (altro disegno)\\
+$\cdot$ riflessioni rotatorie $s_a\circ R$  $R$ rotazione di asse $\underline{a}$,  $s_\underline{a}$ è una riflessione rispetto ad una retta parallela ad $\underline{a}$
+\end{nome}
+\begin{teo}[Eulero 1776]
+	Ogni isometria di $\mathbb{E}^3$ è di uno dei sei tipi sopra descritti
+\end{teo}
+\newpage
+\section{Spazi Hermitiani}
+	\begin{lemm}
+		Sia $V$ uno spazio vettoriale su un campo $\R$\\
+		Siano  $P,Q\in End(V)$ tali che $PQ=QP$. Allora, se  $V_\lambda$ è l'autospazio di autovalore $\lambda$ su $P$, risulta
+		\[
+		Q(V_\lambda)\subseteq V_\lambda
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		Sia $v\in V_ \lambda $ (cioè $P(v) = \lambda v)$. Dobbiamo vedere che $Qv\in V_ \lambda$.
+		\[
+		P(Q(v)) = (P\circ Q)(v) = (Q\circ P)(v) = Q( \lambda v) = \lambda Q(v)
+		.\]
+	\end{dimo}
+	$(V,h)$ spazio Hermitiano (Spazio vettoriale complesso $h$ forma hermitiana definita positiva in $V$ )\\
+	$\dim(V) < +\infty$
+	 \begin{teo}
+		Sia $(V,h)$ uno spazio hermitiano, $L\in End(V)$ operatore, sono equivalenti
+		\begin{itemize}
+			\item $L$ è normale (rispetto ad $h$)
+			\item esiste una base ortonormale $B$ di  $V$ composta da autovettori per $L$
+		\end{itemize}
+	\end{teo}
+	\begin{lemm}
+		$(V,h)$ spazio hermitiano, $L\in End(V)$ normale\\
+		sono equivalenti
+		\begin{itemize}
+			\item $Lv = \lambda v$
+			\item  $L^\star v = \overline{ \lambda} v$
+		\end{itemize}
+		In particolare $ \lambda$ è l'autovalore per $L$ se e solo se $\overline{ \lambda}$ è autovalore per $ L^\star$ 
+		\[
+			V_ \lambda (L) = V_{\overline{ \lambda}}(L^\star)
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		Se $v = 0$ non c'è niente da dimostrare.\\
+		Se $v \neq 0$ basta far vedere che se $v\in V_ \lambda (L)$ allora $v\in V_{\overline{ \lambda}}(L^\star)$. L'inclusione contraria segue da $L^{\star t} = L$
+		 \[
+		w\in V_ \lambda (L), \ \ v\in V_ \lambda (L)
+		.\] 
+		\begin{aligned}
+			\hspace{80px}h(L^\star(v),w) &= h(v,L(w)) = h(v, \lambda w)\\
+					&=\overline{ \lambda}h(v,w) = h(\overline{ \lambda}v,w)
+		\end{aligned}\\
+		\[
+			h(L^\star(v) - \overline{ \lambda}v,w) = 0 \ \ \circledast
+		\] 
+		Per il lemma, siccome per ipotesi $L$ è normale, 
+		 \[
+		L^\star (v)\in V_\lambda (L), \ \ \overline{
+		\lambda}v\in V_ \lambda (L)
+		\] 
+		\[
+			\Rightarrow \ \ \ L^\star (v) - \overline{ \lambda} v\in V_ \lambda (L)
+		\] 
+		Quindi nella $\circledast$ posso prendere $w = L^\star (v) - \overline{ \lambda} v$, ottenendo 
+		\[
+			h(L^\star (v) - \overline{ \lambda} v, L^\star (v) - \overline{\lambda} v) = 0
+		.\] 
+		Poiché $h$ è definito positivo, segue\\
+		\begin{aligned}
+			&L^\star(v) - \overline{ \lambda}v = 0\\
+			\text{cioè} \hspace{50px}  & L^\star (v) = \overline{ \lambda} v
+		\end{aligned}\\
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Dal lemma segue $V_ \lambda(L) \perp V_\mu (L)$ se $ \lambda \neq \mu$
+	\[
+	v\in V_ \lambda, \ \ \ w\in V_\mu
+	\] 
+	\[
+		\lambda h(v,w) = h( \lambda v,w) = h(Lv,w) = h(v,L^\star w) = h(v, \overline{\mu}w) = \mu h(v,w) \Rightarrow  h(v,w) = 0
+	\]
+	Dato che $ \lambda \neq \mu$
+	\begin{nome}
+		Chiamiamo $U(n)$ lo spazio delle matrici unitarie\\
+	\end{nome}
+	 \begin{teo}[Spettrale]
+	 	$M$ è normale se e solo se $\exists A\in U(n) : \ A^tMA$ è ortogonale
+	 \end{teo}
+	\begin{dimo}[Teorema Spettrale]
+		$1) \Rightarrow  2)$ Procediamo per induzione su $\dim V$,con base ovvia $\dim V = 1$ \\
+		Supponiamo il teorema vero per gli spazi hermitiani di dimensione $\leq n-1$ e sia  $\dim_\C V = n$\\
+		Sia  $v_1\in V$ un autovettore per $L$, che possiamo assumere di norma  $1$. Sia $V_1 = \C v_1, W = V_1^\perp$.\\
+		Allora $V = V_1 \oplus W$.\\
+		Poiché $V_1$ è $L$-invariante (per costruzione) e $L^\star$-invariante per il lemma precedente, lo stesso accade per  $W$.\\
+		Inoltre $L|_W\in End(V)$ è normale.\\
+		Per induzione, esiste una base $h|_W$-ortonormale formata da autovettori per $L|_W$, sia $\{v_2,\ldots,v_n\}.$ Allora $\{v_1,\ldots,v_n\}$ è una base $h$-ortonormale di $V$ formata da autovettori per $L$.\\
+		$2) \Rightarrow 1)$. Sia $B = \{v_1,\ldots,v_n\}$ una base $h$-ortonormale di autovettori per $L$. Allora\\
+		\begin{aligned}
+			\hspace{80px}&[L]^B_B = \bigwedge = \matrice{ \lambda_1  &\ldots& 0\\
+				 0  & \ddots & 0\\
+			 0  &\ldots & \lambda_n}\\
+			    &[L^\star]^B_B = \overline{[L]_B^B}^t = \overline{\bigwedge}\\
+			    &[L\circ L^\star]^B_B = [L]^B_B[L^\star]^B_B = \bigwedge\overline{\bigwedge}=\overline{\bigwedge}\bigwedge = [L^\star]_B^B[L]^B_B = [L^\star \circ L]_B^B
+		 \end{aligned} \\
+		 Poiché la mappa $A \rightarrow [A]^B_B$ è un isomorfismo tra
+		 $End(V)$ e $M_{nn}(\C)$, segue 
+		 \[
+		 L\circ L^\star = L^\star \circ L
+		 .\] 
+		 cioè $L$ è normale
+	\end{dimo}
+	 \hline \ \\[10px]
+	 \textbf{Esercizio 1}\\[10px]
+	$ L = \matrice{1&i\\-i&1}\ \ L^\star = \matrice{1&i\\-i&1} \Rightarrow $ $L$ matrice hermitiana\\
+	Trovo ora il polinomio caratteristico\\
+$t^2 - 2t = 0$ 
+	che ha quindi autovalori $t = 0, t = 2$\\
+	$v_0 = \C\matrice{1\\i}\ \ \ v_2 = \C\matrice{1\\-i}$\\
+	$\langle \matrice{1\\i}, \matrice{1\\-i} \rangle  = 1 \cdot 2 + i\cdot i = 0$\\
+	$ \langle \matrice{1\\i}, \matrice{1\\i} \rangle = 1\cdot 1 + i\cdot(-i) = 1-i^2 = 2$
+	\[
+		U = \matrice{1/\sqrt{2} &1/\sqrt{2}\\i/\sqrt{2}&-i/\sqrt{2}}\ \ \ \ \ \ U^-1LU = \matrice{0&0\\0&2}
+	.\] 
+	Il prodotto scalare standard è stato utilizzato per verificare che siano ortogonali, il secondo mi serve per normalizzare la matrice (di fatti divido per la radice del risultato) [I calcoli sono errati, guarda le slide]\ \\ \hline\newpage \ \\ 
+	\textbf{Esempio 2}\\
+		$L = \matrice{\sqrt{3}/2&-1/2\\1/2&\sqrt{3}/2}$ matrice ortogonale con determinante 1, quindi rotazione\\
+		il polinomio caratteristico è $t^2 - \sqrt 3 t + 1$ gli autovalori sono quindi $t = \frac {\sqrt{3}\pm i}{2}$
+		$v_{\frac {\sqrt{3}\pm i}{2}} = \C\matrice{i\\\pm 1}$
+		 \[
+			 U = \matrice{i/\sqrt 2 & i/\sqrt 2\\ 1/\sqrt 2 & - 1/\sqrt 2}
+		.\] 
+		\hline \ \\[10px]
+		\textbf{Esempio 3}\\[8px]
+			 $L = \matrice{1 +i&i\\-i&1+i} \ \ \ L^\star = \matrice{1-i&i\\-i&1-i}\\$
+			 \[
+				 LL^\star = \matrice{3&2i\\-2i&3} = L^\star L
+			 .\] 
+			 $t^2 - 2(i + 1) + 2i - 1 = 0\ \ t_1,t_2\\
+			 v_{t_1} = \C\matrice{i\\1} \ \ v_{t_2} = \C\matrice{i\\-1}$\\
+			 $U$ come nell'esercizio precedente\\ \ \hline \ \\
+	\textbf{Osservazioni}\\
+	1. È essenziale che $h$ sia definita positiva.\\
+	\[
+	 h(x,y) = x^tH\overline{y} \ \ \ M = \matrice{1&0\\0&-1}
+	.\] 
+	non è definita positiva $h(\icol{0\\1},\icol{0\\1}) = -1$
+	\[
+		L_A:\C^2 \rightarrow\C^2 \ \ A = \matrice{0&i\\i & -2}
+	.\] 
+	Dico che $L_A$ è autoaggiunto, quindi normale\\
+	\begin{aligned}
+		\hspace{80px}&h(L_AX,Y) = h(X,L_AY)\\
+		&(L_AX)^tH\overline{Y} = X^tH\overline{L_AY}\\
+		&X^tA^tH\overline{Y} = X^tH\overline{A}\overline{Y} \ \ \forall X,Y\\
+		&A^tH = H\overline{A}\\
+		&\matrice{0&u\\i&-2}\matrice{1&0\\0&-1} = \matrice{1&0\\0&-1}\matrice{0&-i\\-i&-2}\\
+		&\hspace{47px}\matrice{0&-i\\i&2} = \matrice{0&-i\\i&2}
+	\end{aligned}
+	Calcolo il polinomio caratteristico di $A$ 
+	\[
+		\det\matrice{t& -i\\-i & t + 2} = t(t+2) + 1 = (t+1)^2
+	.\] 
+		Ma $A\neq \matrice{-1&0\\0&-1}$, in particolare non è diagonalizzabile\\
+		2. Vediamo in dettaglio il fatto che $L|_W$ è normale\\
+		Ritornando alla dimostrazione del teorema spettrlae, osserviamo che se $W$ è $L$-invariante è anche $L^\star$-invariante.\\
+		Infatti, se $V = \bigoplus_\lambda V_ \lambda(L)$ (per esercizio da dimostrare)\\
+		\begin{aligend}
+			$W &= \bigoplus_ \lambda (V_ \lambda(L)\cap W)$\\
+			   &=\bigoplus_ \lambda (V_{\overline{ \lambda}}(L^\star)\cap W)
+			
+		\end{aligend}\\
+		$=> W$ è $L^\star$-invariante\\
+		Adesso osservo che $(L|_W)^\star = (L^\star)|_W$\\
+		\begin{aligend}
+			&(L\left|_{W)}\circ(L\right|_W)^\star = (L|_W)\circ(L^star|_W) = \\
+			&(L\circ L^\star)|_W = (L^\star\circ L)|_W = (L^\star|_W) \circ L|_W = (L|_W)^\star\circ L|_W
+		\end{aligend}\\
+\end{document}
