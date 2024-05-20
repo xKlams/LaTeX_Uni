@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1715873581.85051 "main.tex" "main.pdf" "main" 1715873582.67575 2
+["pdflatex"] 1716198690.44187 "main.tex" "main.pdf" "main" 1716198691.4268 2
   "../../setup.tex" 1715858821.80073 2366 5d7fb1647b1db6ffb11e4c7a5bf88259 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -167,8 +167,8 @@
   "images//Iperpiano_affine_A.jpg" 1715870789.60814 34200 d9ad4f665de9dd4e26b5345b2f27ae94 ""
   "images//image_1.png" 1715778310.04451 31751 a021393f187c9c01690361022a7a9f2a ""
   "images/Proiezione_Stereografica.jpg" 1715870827.25974 53741 d25678451b220344858c79f919c29d38 ""
-  "main.aux" 1715873582.4755 538 3fe59cca570c4c5132f4b7737071c125 "pdflatex"
-  "main.tex" 1715873581.8165 6905 fa0c20c660fe0c1f629ef61a6899d6c3 ""
+  "main.aux" 1716198691.20277 507 971386a8fbaa0d1dbfb988d8f0f35dd2 "pdflatex"
+  "main.tex" 1716198477.97252 6874 70b19f37defd0b8f5eabcf6811a41863 ""
   (generated)
   "main.aux"
   "main.log"
