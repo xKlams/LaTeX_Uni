@@ -1,0 +1,113 @@
+\documentclass[12px]{article}
+
+\title{Lezione 28 Geometria I}
+\date{2024-05-16}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Parte mancante }
+	\begin{dimo}
+		Supponiamo che esista una base $\{z_1',\ldots,z_r'\}$ di $Z'$
+		con  $z'_v\in V\setminus U$ e  $\Sigma z_i'\in V\setminus U$\\
+		Sia  $\lambda_i'=\lambda(z_i'), \ \ \lambda_0 = \lambda(\Sigma z_i')$\\
+		$T(z_i')= \lambda_iS(z_i')$\\
+		$T(\Sigma z_i')=\lambda_iS(\Sigmaz_i') = \lambda_0\Sigma S(z_i')$\\
+		$T(\Sigma z_i')=\Sigma T(z_i') = \Sigma \lambda_iS_(z_i')$\\
+		quindi $\lambda_0\Sigma S(z_i') = \Sigma \lambda_i S(z_i')$\\
+		$\Sigma(\lambda_i-\lambda_0) S(z_i)=0 \ \ \ S(\Sigma (\lambda_i-\lambda_0)z_i')=0$\\
+		\[
+		\Sigma(\lambda_i-\lambda_0)z_i'\in \ker S = U
+		.\] 
+		\[
+		 \Rightarrow \Sigma( \lambda_i - \lambda_0)z_i'=0 \Rightarrow \lambda_i= \lambda_0 \forall i
+		.\] 
+		\[
+		T(z_i') = \lambda_i S(z_i') \Leftrightarrow T(Z_i') = \lambda_0 S(z_i') \Rightarrow  T= \lambda_0 S 
+		.\] 
+		Poichè gli $z_i$ sono una base)\\
+		Resta da vedere che esiste una base con le proprietà richieste. Posso supporre (esercizio) che $U$ sia un iperpiano. Allora
+		\[
+			\dim Z'\cap U = \dim Z' - 1 \ \ \ \text{ perchè }Z\not\subset\ U
+		.\] 
+		(se fosse $Z'\subseteq U \ \ \ V = U'\oplus Z' \subset U \neq V$)\\
+		Prendiamo $z_1'\in Z'\setminus U$, \ $\{z_2",\ldots,z_r"\}$ base di $Z'\cap U$\\
+		Poniamo:\\
+		 \begin{aligned}
+			 \hspace{50px}& z_2' = z_1' + z_2"\\
+			&z_3' = z_1' + z_3"\\
+			&\vdots\\
+			&z_r' = z_1' + z_r"
+		\end{aligned}\\
+		Dato che $\{z_1',\ldots,z_r'\}$ è la base cercata, inatti i suoi elementi non appartengono ad $U$, perchè sono somma di un elemento in $U$ e di uno fuori da $U$, Inoltre\\
+		 \begin{aligend}
+			& \sum^r_{i=1}z_i' = r z_1' + \sum^r_{i=1}z_i" \Rightarrow  \notin U
+		\end{aligend}\\
+		Tutto questo funziona se $(char \K =0)$
+	\end{dimo}\\
+	\newpage
+	\begin{teo}[Teorema Fondamentale sulla proiettività]
+		Sia $\pro(V)$ uno spazio proiettivo di dimensione $n$ e $\pro(Z) \subseteq\pro(W)$\\
+		un sottospazio proiettivo di dimensione  $n$.\\
+		Date due $(n+2)$-ple $[v_0],\ldots,[v_n],[u]$ in $\pro(V)$\\
+		e  $[z_0],\ldots,[z_n],[w]$ in $\pro(Z)$ entrambe in posizione generale, esiste un'unica trasformazione proiettiva non degenere $f:\pro(V) \rightarrow \pro(W)$ tale che
+		\[
+			f([v_i]) = [z_i], \ 0\leq i \leq n, \text{ e } f([u]) = [w]
+		.\] 
+		$Im f = \pro(Z)$
+	\end{teo}
+	\begin{coro}
+		Dati $n+2$ punti in posizione generale $[v_0],\ldots,[v_n], [u]$ in $\pro(V), \ \dim\pro(V) = n$ esiste un unico isomorfismo $f:\pro(V) \rightarrow\pro^n$ tale che 
+		\[
+			f([v_i]) = [e_i] \text{ e } f([u]) = [e_0+\ldots+e_n]
+		.\] 
+		In altre parole, esiste un riferimento proiettivo in cui $[v_i]$ ha coordinate omogenee $[0\ldots,0,1,\ldots,0]$e $[w] = [1,\ldots,1]$
+	\end{coro}
+	\begin{dimo}
+		Il fatto che $[v_{0}],\ldots,[v_n],[u]$ sono in posizione generale implica che\\
+		1. $\forall \alpha_1,\ldots,\alpha_n\in \K\setminus\{0\}, \ \ \ \{\alpha_0v_0,\ldots,\alpha_nv_n\}$ è una base di $V$ \\
+		2. $u = \lambda_0v_0 + \ldots + \lambda_nv_n$ con $\lambda_i\neq 0 \ \ \ \forall i$ \\
+		(infatti, se fosse $\lambda_j_0 =0 $, avremmo che  $u\in Span\{v_0,\ldots,\cancel{v_j_0},\ldots,v_n\}$\\
+		$\dim Span\{v_0,\ldots,v_{j_0-1},u,v_{j_0 + 1},\ldots,v)n\}=0$\\
+		Sia $B=\{v_0',\ldots,v_n'\}$ la base di $V$ con $v_i' = \lambda_iv_i.$ Ovviamente $[v_i] = [v_i']$\\
+		Scegliamo similarmente  $\{z_0',\ldots,z_n'\}$ base di $Z$ con $z_0' + \ldots +z_n'=w$ e $\ \ \  [z_i'] = [z_i]$\\
+		Sia $T: V \rightarrow W$ l'unica applicazione lineare tale che \[
+		T(v_i') = z_i'\ \ \ 0\leq i\leq n
+		.\] 
+		$T$ è iniettiva poiché gli $\{z_i'\}$ sono indipendenti e $Im T = Span\{z_0',\ldots,z_n'\}=Z$. Inoltre \\
+		$T(u) = T(\sum^n_{i=1}v_i') = \sum^n_{i=1}T(v_i') = \sum^n_{i=1}z_i' =w$\\
+		quindi $f = [T]$ è non degenere e ha le proprietà indicate
+		\[
+			f([v_i]) + f([\delta v_i'] = [T(v_i')] = [z_i'] = [z_i]
+		.\] 
+		\[
+			f([u]) = [T(u)] = [w]
+		.\] 
+	\end{dimo}
+	\textbf{Esempio}\\
+	Determinare la proiettività di $f$ in  $\pro(\R)$ tale che 
+	\[
+	f \begin{bmatrix}
+		1\\1
+	\end{bmatrix} = \cmatrice{1\\-1} \ \ f \cmatrice{2\\0}= \cmatrice{1\\1} \ \ f\cmatrice {1\\-1} = \cmatrice{1\\0}
+.\] 
+a coppie li denotiamo $v_1, z_1$\\
+\begin{aligend}
+	&\ \hspace{50px}\matrice{1\\-1} = \lambda\matrice{1\\1} + \mu \matrice{2\\0}\\
+	&\matrice{1\\0} = \lambda'\matrice{1\\-1} + \mu' \matrice{1\\1}
+\end{aligned}\\
+quindi $\lambda  = -1,\ \  \mu = +1,\ \  \lambda'=2,\ \  \mu'=2$\\
+$v_0' = \matrice{-1\\-1} \ \ v_1'=\matrice{2\\0} \ \ $inoltre $\matrice{1\\-1} = v_0'+v_1'$\\
+$z_0'=\matrice{1/2\\-1/2} \ \ z_1'=\matrice{1/2\\1/2}$\\
+Sia $\varphi:\R^2 \rightarrow\R^2$ tale che $\varphi(v_i') = z_i' \ \ i=0,1$
+\[
+	[\varphi]^{\{e_1,e_2\}}_{\{v_0',v_1'\}} = \matrice{1/2&1/2\\-1/2&1/2}
+.\] 
+	$[\varphi]^{\{e_1,e_2\}}_{\{e_1,e_2\}} = [\varphi]^{\{e_1,e_2\}}_{\{v_0',v_1'\}}[\varphi]_{\{e_1,e_2\}}^{\{v_0',v_1'\}} = \matrice{1/4&-3/4\\1/4&1/4}$
+	\[
+		f\left(\cmatrice{x_0\\x_1}\right) = \cmatrice{x_0-3x_1\\x_0+x_1}
+	.\] 
+\end{document}

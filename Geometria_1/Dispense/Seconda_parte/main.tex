@@ -370,4 +370,96 @@ $t^2 - 2t = 0$
 			&(L\left|_{W)}\circ(L\right|_W)^\star = (L|_W)\circ(L^star|_W) = \\
 			&(L\circ L^\star)|_W = (L^\star\circ L)|_W = (L^\star|_W) \circ L|_W = (L|_W)^\star\circ L|_W
 		\end{aligend}\\
+		\hline \ \\ 
+		\section{Richiami su spazi vettoriali duali}
+		$V$ spazio vettoriale su $\K$ di dimensione finita
+		 \[
+		V^V = V^\star = Hom(V,\K)
+		.\] 
+		sia $A\leq V$
+		 \[
+			 Ann(A) = A^\# = \{f\in V^\star | f(a) = 0 \ \ \forall a \in A\}
+		.\] 
+		\textbf{Osservazioni}\\
+		1) $A^\# $ è un sottospazio\\
+		2) $A^{\#\#} = <A>$ \\
+		\begin{aligned}
+			\hspace{100px}&i:V \rightarrow V^{\star\star}\\
+			&v\in V, \ \ f\in V^\star\\
+			& i(v)(f) = f(v)
+		\end{aligned}\\
+	$V,W$ spazi vettoriali di dimensione finita $f\in Hom_\K(V,W)$, $f^\star\in Hom_\K(W^\star,V^\star)$, la trasposta di f è definita con $\phi\in W^\star$\\
+	\hspace{40px}$f^\star(\phi) = \phi\circ f \\
+	$\text{ }\hspace{100px}\includegraphics[scale=0.4]{funzione}\\
+	\begin{defi}
+	Definisco la  dualità standard su $V$ come 
+	\[
+	\langle \ , \  \rangle : V^\star\times V \rightarrow \K
+	.\] 
+	$\langle v, f \rangle = \langle f, v \rangle = f(v)$\\
+	con questa proprietà
+	\[
+	\langle f(v), w^\star \rangle  = \langle v, f^\star(w^\star) \rangle 
+	.\] 
+\end{defi}
+\hline \ \\
+Ricordo che se $B = \{v_1,\ldots,v_n\}$ è una base di $V$ allora i funzionali $v_i^\star$ definiti da
+ \[
+	 \langle v_i^\star, v_j \rangle =\delta_{ij}
+.\] 
+per $1\leq i\leq n$ formano una base $B^\star$ di $V^\star$ detta base duale di $B$\\
+Sia  $f:V \rightarrow W$ un'applicazione lineare, siano $B =\{v_1,\ldots,v_n\}, L = \{w_1,\ldots,w_m\}$ basi di $V,W$ consideriamo  $f^\star :W^\star \rightarrow V^\star$ Allora:\\
+\begin{aligned}
+	\hspace{120px}[f&]_B^B = [f^\star]^{B^\star}_{L^\star}^t	\\
+		       & \storto{=} \ \ \ \hspace{18px} \storto{=}\\
+		       &\hspace{-10px}(a_{ij}) \ \ \ \  (a^\star_{ij})
+		        
+\end{aligned}\\
+\textbf{Tesi} \ \ $a_{ih} = a^\star_{hi}$\\
+$f^\star(w^\star_i) = \sum^n_{i=1}a_{ij}^\starv_i^\star$\\
+$f^\star(w_i^\star)(v_h) = \sum^n_{i=1}a^\star_{ij}v^\star_i(v_h) = \sum^n_{i=1}a_{ij}^\star\delta_{ih} = a^\star_{hi}$\\
+\text{ }\ \ \storto{=}\\
+$w_i^\star(f(w_h)) = w^\star_i(\sum^n_{i=1}a_{ih}w_i) = \sum^n_{i=1}a_{ih}w^\star_i(w_i)=$\\
+$=\sum^n_{i=1}a_{ih}\delta_{ij}= a_{ih} $
+\begin{teo}[Qualche proprietà importante]
+	$f:V \rightarrow W$ lineare $\ \ f^\star : W^\star \rightarrow V^\star$\\
+	$1) (Im f)^\# = \ker f^\star \\$
+	 $2) (\ker f)^\# = Im f^\star$\\
+	 $3) (\lambda f + \mu g)^\star = \lambda f^\star + \mu g^\star \ \ \ \ \ \ ( \lambda,\mu \in \K, g\in Hom(V,W)) $\\
+	 $4) (h\circ f)^\star = f^\star\circ h^\star \hspace{40px} \ \ \ h:W \Rightarrow U $ lineare
+\end{teo}
+\begin{dimo}[Il punto 2, 3 e 4 vengono lasciati per esercizio]
+	\begin{aligend}
+	&1) $\emptyset\in (Im f)^\# $\\
+	& \Leftrightarrow \forall w\in Imf \ \ \emptyset(w) = 0 \\
+	& \Leftrightarrow \forall v \in V \emptyset(f(v)) = 0\\
+	& \Leftrightarrow \emptyset \circ f = 0\\
+	& \Leftrightarrow \emptyset \in kerf^\star
+	\end{aligend}\\
+	Quindi abbiamo visto che $(Imf)^\# = \ker F^\star$
+\end{dimo}
+\begin{prop}
+	Sia $V$ uno spazio vettoriale di dimensione $n$ su $\K$ e $W$ un sottospazio. Allora
+	\[
+	\dim(W) + \dim W^\#  = n
+	.\] 
+\end{prop}
+\begin{dimo}
+	Da quanto visto, la mappa\\
+	\begin{aligned}
+		\hspace{80px}&Hom(V_1,V_2) \rightarrow Hom(V^star_2,V^star_1)\\
+			     & \hspace{20px} \ f \ \ \ \ \ \ \ \  \rightarrow \ \ \  \ \ \ f^t
+	\end{aligned}\\
+	è un isomorfismo di spazi vettoriali. Inoltre $f$ è iniettiva (rispettivamente suriettiva) se e solo se $f^\star$ è suriettiva (rispettivamente iniettiva)\\
+	Consideriamo la proiezione  $\pi:V \rightarrow V|_W :=U$ \\
+	Poiché $\pi$ è suriettiva $\pi ^\star : U ^\star \rightarrow V^\star$ è iniettiva e 
+	\[
+	W^\#  = (\ker\pi)^\# = Im\pi^\star
+	.\] 
+	per cui 
+	\[
+	 \dim W^\# = \dim (Im \pi ^\star) = \dim U^\star = \dim V - \dim W
+	.\] 
+\end{dimo}
+%lezione 2
 \end{document}

@@ -1,0 +1,135 @@
+\documentclass[12px]{article}
+
+\title{Lezione 28 Geometria I}
+\date{2024-05-15}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Conclusione Spazi proiettivi (godo)}
+	$V$ spazio vettoriale, $V^\star$, \ \ $\pro^V=\pro(V^\star)$ spazio proiettivo duale \\
+	Se $B$ è una base di $V$ (ottenuta ad esempio a partire da un riferimento proiettivo di $\pro = \pro(V)$), la base duale  $B^\star$ di $V^*$ può essere usata per introdurre in $\pro^V$ un sistema di coordinate omogenee "duali"
+	\[
+		0\neq L\in V^\star \ \ [L]\in\pro^V 
+	.\] 
+	se $x_1,\ldots,x_n$ sono coordinate in $V$ rispetto a $B=\{v_1,\ldots,v_n\}$ 
+	\[
+	L(x_1v_1+\ldots+x_nv_n) = a_0x_0+\ldots+a_nx_n
+	.\] 
+	e $L$ ha coordinate $(a_0,\ldots,a_n)$ rispetto alla base $B^\star=\{v_1^*,\ldots,v_n^*\}\ \ \\ (v_i^*(v_j)=\delta_{ij})$\\
+	Qui il professore prende letteralmenete un altro file e iniza a scriverci sotto, non sappiamo a cosa si stia riferendo\\
+	Sia $S=\pro(W)$ un sottospazio proiettivo di  $\pro$ di dimensione $k$.
+	\[
+		W^\# =\{F\in V^*|F|_W=0\}
+	.\] 
+	$\dim W = n - k$
+	\[
+		\delta:\{\text{sottospazi proiettivi di} \dim k \text{ di } \pro\} \rightarrow \{\text{sottospazi proiettivi di }\pro^V \text{ di dim } n-k-1\}
+	.\] 
+		\[
+		\pro(W) \rightarrow \pro(W^\#)
+		.\] 
+	\textbf{Osservazione}\\
+	Se prendiamo $k = n-1$ sottospazi proiettivi di $\dim n - 1$ in $\pro$ = iperpiani di $\pro$\\
+	Sottospazi proiettivi di  $\dim 0$ in $\pro^V = $ punti di $\pro^V$\\
+	Quindi è facile vedere che  $\delta = \widetilde{\delta}^{-1}$ \\
+	\begin{nome}
+		$\delta \ \ (o \ \ \delta^{-1})$ si chiama corrispondenza di dualità
+\end{nome}
+\begin{lemm}[Proprietà della corispodenza di dualità]
+	$1. \ \ \delta $ è biunivoca\\
+	$2. \ \ \delta$ rovescia le inclusioni\\
+	$3.$ \ \ \begin{aligend}
+		& \delta(S_1\cap S_2)=L(\delta(S_1),\delta(S_2))\\
+		& \delta(L(S_1,S_2))=\delta(S_1)\cap\delta (S_2)\\
+	\end{aligend}
+\end{lemm}
+\begin{dimo}
+	1. Segue dal caso vettoriale\\
+	2. Segue dal fatto che $W_1\subseteq W_2 \Rightarrow W_1^\# \superset W_2^\#$ \\
+	3. $S_1 = \pro(W_1), S_2 = \pro(W_2)$\\
+	$\delta(S_1\cap S_2) = \delta (\pro(W_1\cap S_2)) = \pro((W_1\cap W_2)^\# )= \pro(W_1^\# + W_2^\# = L(\delta(S_1),\delta(S_2))$\\
+	$\delta(L(S_1,S_2)) = \delta (\pro(W_1+W_2))=\pro((W_1+W_2)^\#) = \pro(W^\# \cap W^\# )$  (manca una minchiata da finire)
+\end{dimo}
+\begin{defi}
+	Un sottospazio proiettivo di $\pro^V$ si chiama sistema lineare\\
+	Il centro $S$ di un sistema lineare $L$ è l'intersezione degli iperpiani del sistema lineare\\
+	Allora $L$ coincide con tutti gli iperpiani di $\pro$ che contengono $S$
+	 \[
+		 L \leftrightarrow \Lambda_1(S) \text{ sistema lineare degli iperipani di centro } S
+	.\] 
+\end{defi}
+\textbf{Osservazioni}\\
+$H$ iperpiano di $\pro\ \ \ H\superseteq S \Leftrightarrow \delta(H)\in \delta(S)$ \\
+Ne segue che se $\dim S = k$  allora  $\dim \Lambda_1(S)= n - k - 1$
+\[
+S \Leftrightarrow \begin{cases}
+	a_{10}x_0+\ldots + a_{1n}x_n =0\ \ \ \hspace{26px} (H_1)\\
+	\vdots\\
+	a_{n-k \ 0}x_0+\ldots+a_{n-k\ n}x_n = 0 \ \ (H_{n-k})
+\end{cases} \ \ n-k \ \ \text{ equazioni indipendenti}
+.\] 
+$S=H_1\cap\ldots\cap H_{n-k}$\\
+$\Lambda_1(S) = \delta(S) = \delta(H_1\cap\ldots\cap H_{N-k}) = L(\delta(H_1),\ldots,\delta(H_{n-k})) \\\Rightarrow  \dim \Lambda_1(S) = n-k-1$\\
+$k = n - 2$ \ \ $\Lambda_1(S)$ ha dimensione $1$ ed è il fascio di iperpiani di centro $S$\\
+$n = 2$ e $S$ è una retta, allora $\Lambda_1(S)$ ha dimensione $1$ ed è il fascio di piani di asse la retta
+\ \\ \hline \ \\
+$T: V \rightarrow W$ lineare\\
+\begin{aligned}
+	\hspace{50px}[T]:\pro(V)\setminus &\pro(\ker T) \rightarrow\pro(W)\\
+			     &[v] \rightarrow [T(v)]
+\end{aligned}
+È definita se $v\in V\setminus\ker T, \lambda\neq 0$\\
+ \[
+	 [T][tv] =[T(tv)] = [\lambda T(v)] = [T(v)]
+.\] 
+\textbf{Osservazione}\\
+Se $\lambda\neq 0,\ \ \ker T= \ker \lambda T$, inoltre
+ \[
+	 [\lambda T] = [T]
+.\] 
+\ \\ \hline \ \\
+Siano $\pro(V),\ \pro(W)$ spazi proiettivi e sia $\pro(U)$ un sottospazio di $\pro(V)$
+ \begin{defi}
+	 $f:\pro(V)\setminus P(U) \rightarrow\pro(W)$ si dice applicazione proiettiva se esiste \\$T: V \rightarrow W$ lineare tale che $[T] = f$  $ \ \ \ \ \ \ (\ker T\subset U)$
+\end{defi}
+\textbf{Problema}\\
+È possibile che un'applicazione proiettiva sia indotta da due applicazioni lineari diverse?
+\begin{prop}
+	Siano $T,S :V \rightarrow W$ due applicazioni lineari supponiamo che \\
+	$1.$ Esiste $U$ sottospazio di $V$ tale che $\ker T. \ker S\subset U$\\
+	$2.$  $\forall v\in V\setminus U \ \ \exists \lambda = \lambda(v)\in\K\setminus\{0\}$ t.c.
+	\[
+	T(w) = \lambda S(v)
+	.\] 
+	Allora $\lambda =$const e $T=\lambda S$ in particolare  $\ker T = \ker S$
+\end{prop}
+\begin{coro}
+	Se $f:\pro(V)\setminus\pro(U) \rightarrow\pro(W)$ è indotta da $T,S:V \rightarrow W$ allora, $T = \lambda S, \ \ \lambda\in\K\setminus\{0\}$\\
+	In particolare $\ker T=\ker S$ e il dominio di $f$ si può estendere a $\pro(V)\setminus\pro(\ker T)$ cioè esiste una trasformazione proiettiva \\ $\widetilde{f}:\pro(V)\setminus\pro(\ker T) \rightarrow \pro(W)$ tale che 
+	\[
+		\widetilde{f}|_{\pro(V)\setminus\pro(U)} = f
+	.\] 
+	Tale dominio di definizione è massimale
+\end{coro}
+\begin{defi}
+	Un'applicazione proiettiva si dice non degenere se è indotta da un'applicazione lineare iniettiva, si dice degenere altrimenti.\\
+	Un'applicazione proiettiva non degenere $\pro(V) \rightarrow \pro(V)$
+	si dice proiettività
+\end{defi}
+\textbf{Osservazione}\\
+Le proiettività formano un gruppo, denotato $PGL(V)$\\
+ \textbf{Esempio}\\
+ $PGL(n+1,\K) = PGL(\pro^n_k) = PGL(\K^{n+1})$\\
+ sono le matrici di $GL(n_1,\K)$ identificate se differiscono per uno scalare non nullo
+ \[
+	 P GL(n_1,\K)/\text{matrici scalari non nulle}
+ .\] 
+ dove le matrici scalari non nulle $\matrice{\lambda & \ldots & 0\\\vdots & \ddots & \vdots\\ 0 & \ldots & \lambda} \ \ \lambda \neq 0$
+ \begin{dimo}[Proposizione]
+	Proviamo anzitutto che $\ker T = \ker S$ \\ Sia  $Z$ un complementare di $U: \ \ V=U\oplus Z$ \ \  $u+z\in V\setminus U$ (poiché se  $u+z\in U $ anche $z$ appartiene a $U$ escluso
+\end{dimo}
+\end{document}

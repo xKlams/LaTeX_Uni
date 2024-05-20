@@ -9,9 +9,76 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\section{Parte da recuperare in cui ha fatto robe con sfere e spazi proiettivi}
+	\section{Ancora da definire}
+	\includegraphics[scale=0.5]{image_1.png}\\
+	$\pro^1(\R)=$ rette passanti per $O$  $[x_0,x_1]\in\pro^1(\R)\ \ (\lambda x_0,\lambda x_1)\in\A^2,\ \ \lambda\in\R$\\
+	Osserviamo che ogni punto $[x_0,x_1]\in\pro^1\setminus\{H_0\}$ individua una retata parallela ad $r$ (in $\A^2$), che interseca $r$ nell'unico punti $(1,x_0^{-1}x_1)$\\
+	(Infatti dobbiamo imporre che $(\lambda x_0,\lambda x_1)$ abbia prima coordinata $1$, cioè $\lambda x_0 = 1$ cioè $\lambda = x_0^{-1}$\\
+	Viceversa ogni punto $(1.x)\in r$ appartiene ad un'unica retta per l'origine, quella che corrisponde al punti $[1,x]\in\pro^1\setminus H_0$\\
+	In definitiva, abbiamo una corrispondenza biunivoca\\
+	\begin{aligned}
+		&\pro^1\setminus H_0 \leftrightarrow r\\
+		&\pro^1 \leftrightarrow r\cup \{\infty\}\\
+		& H_0 \leftarrow \infty \text{ punto all'infinito di } r
+	\end{aligned}\\
+	La costruzione si generalizza a $\pro^n \leftrightarrow$ rette per l'origine di $\A^{n+1}$\\
+	$[x_0,\ldots,x_n]\in\pro^n \leftrightarrow $ rette $\{\lambdax_0,\ldots,\lambda x_{n+1} | \lambda\in \R\}\subseteq \A^{n+1}\ \ \ H_0=\{x_0=0\}$\\
+	Consideriamo l'iperpiano affine $A:\{x_0=1\} = \{(1,y_1,\ldots,y_n)\in \A^{n+1}\}$\\
+	\includegraphics[scale=.5]{Iperpiano_affine_A.jpg}
+	\begin{aligned}
+		&j: A \rightarrow \pro^n\setminus \{H_0\}\\
+		&(1,y_1,\ldots,y_n) \rightarrow [1,y_1,\ldots,y_n]\\
+		&y^-1([x_0,\ldots,x_n] = \left[1,\frac {x_1 }{x_0},\ldots, \frac {x_n }{x_0}\right]
+	\end{aligned}
+	Quindi come sopra, ho una corrispondenza biunivoca
+	\[
+		A\cup \{H_0\} \rightarrow \pro^n
+	.\] 
+	Se nella costruzione precedente identificavamo $A$ con $\A^n$ tramite  $(1,y_1,\ldots,y_n) \rightarrow (y_1,\ldots,y_n)$ otteniamo\\
+	\begin{aligned}
+		&j_0:\A^n \rightarrow\pro^n\seminus\{H_0\}\\
+		&j_0(y_1,\ldots,y_n) = [1,y_1,\ldots,y_n] \text{ passaggio a coordinate omogenee rispetto a } x_0\\
+		&j_0^{-1}([x_0,\ldots,x_n]) = \left(\frac {x_1}{x_0},\ldots,\frac{x_n}{x_0}\right) \text{ passaggio a coordinate non omogenee rispetto ad } x_0
+	\end{aligned}|\\
+	ci sono analoghe mappe per ogni $i \ \ 0\leq i \leq n$\\
+	\ \\ \hline \ \\
+	Modello di  $\pro^1 (\C)$ \\
+	$E^3$ spazio euclideo con coordinate $x,y,z$ \\
+	\begin{aligned}
+		&\pi=\{z=0\} \ \ S^2 = \{(x,y,z)\in E^3|d (\icol{x\\y\\0},\icol{0\\0\\0})=1\}\\
+		& N = \icol{0\\0\\1}
+	\end{aligned}
+	\section{Proiezione stereografica}
+	\includegraphics[scale=.3]{Proiezione_stereografica.jpg}\\
+	Se $P = \matrice{x'\\y'\\z'}$\\
+	 $\overrightarrow{NP}\ \ \begin{cases}
+	 	x = x't\\
+		t = y't\\
+		z = (z-1)t + 1
+	 \end{cases}$\\
+	 \sigma \matrice{x'\\y'\\z'} = \matrice{\frac{x'}{1-z'}\\\frac{y'}{1-z'}\\0}
 	 \textbf{Esercizio}\\
-	 Determinare un'queazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ we per i punti impropri delle rette
+	 $\sigma$ è invertibile con inversa\\
+	 \sigma^-1\icol{u\\v\\0}=\matrice{\frac{2u}{u^2+v^2+1}\\\frac{2v}{u^2+v^2+1}\\\frac{u^2+v^2-1}{u^2+v^2+1}}
+	 $S^2 \leftrightarrow \pi\cup \{\infty\}$\\
+	 identifichiamo  $\pi$ con $\C$ tramite\\
+	 \begin{aligend}
+		&\pi \ \ \ \ \rightarrow\ \ \ \ \ \C\\
+		&\matrice{u&v&0} \rightarrow u + iv
+	 \end{aligend}\\
+	 Allora abbiamo ottenuto una corrispondenza biunivoca 
+	 \[
+		 \sigma : S^2 \rightarrow \pro^1{\C} = \C\cup\{\infty\}
+	 .\] 
+	 \[
+	 \sigma(N) =\infty
+	 .\] 
+	 \[
+	 \sigma\matrice{x'\\y'\\z'} = \frac{x'+iy' }{1-z'} \ \ (z\neq 1)
+	 .\] 
+	\section{Alcuni degli esercizi svolti a lezione}
+	 \textbf{Esercizio}\\
+	 Determinare un'equazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ we per i punti impropri delle rette
 	 \[
 	 r = \begin{cases}
 	 	x + y + z-1=0\\
