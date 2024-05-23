@@ -1,0 +1,163 @@
+\documentclass[12px]{article}
+
+\title{Lezione 32 Geometria I}
+\date{2024-05-23}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Omogeneizzati e Curvy}
+	Curva algebrica affine in $\A^2$ (proiettivo su $\pro^2$ ) La nozione si generalizza in modo ovvio al concetto di ipersuperficie (algebrica)
+	\begin{defi}
+		Una ipersuperficie algebrica in $\A^n$ (rispettivamente $\pro^n$ ) è una classe di proporzionalità di polinomi in
+		\[
+			\K[x_1,\ldots,x_n] \text{ (polinomi omogenei in } \K[X_0,\ldots,X_n])
+		.\] 
+		$\underline{x} = (x_1,\ldots,x_n) \ \ \underline X = (X_0,\ldots,X_n)$\\
+		$\ell = f(\underline x) = 0$ equazione della curva \ \ $F(\underline X)=0$\\
+		($x$ sono coordinate affini, $X$ riferimento proiettivo)\\
+		supporto di $\ell\ \ \{\underline x\in\A^n|f(\unferline x)=0\}\ \ \{[X_0,\ldots,X_n]|F(\unferline X) =0 \}$ \\
+		 \begin{aligend}
+			& \varphi\in Aff(\A^n) \ \ \ \ \psi \in PGL(n)\\
+			& \ell \text { ipersuperficie definita da } f(\underline x) = 0\\
+			&  \varphi(l): \text{ ipersuperficie definita da }\\
+			& f( \varphi^{-1}(\underline x))=0
+		\end{aligend}
+	\end{defi}
+	Qui il tipo ha corso un po troppo, TODO finire la definizioen e ci sta una mezza osservazione\\
+	$\ell : x^2 + y^2 = 1 \ \ \ \ \varphi\matrice{x\\y} = \matrice{x+1\\y+1}\ \ \ \varphi^{-1}\matrice{x\\y}=\matrice{x-1\\y-1}$\\
+	$ \varphi(\ell): = (x-1)^2+(x-1)^2 = 1$ \ \ \ $\matrice{x\\y}:x^2 + y^2=1 \ \ \varphi\matrice{x\\u} $ ipersuperficie
+	\begin{defi}
+		Due ipersuperfici affini $\ell_1,\ell_2$(proiettivi) sono affinemente equivalenti (proiettivamente equivalenti), se esiste $ \varphi\in Aff(\A^n) (\psi \in PGL(n))
+		\\$ 
+		tale che $ \varphi(\ell_1)=\ell_2 (\psi(\ell_1) = \ell_2)$
+	\end{defi}
+	\textbf{Nota}:\\
+	$x_1 = \frac {X_1} {X_0}$\\
+	$f(\underline x) \rightarrow F(\underline X)$ e questo si chiama polinomio omogeneizzato di $F$ \\
+	\textbf{Esempio}\\
+$x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$
+	\section {Chiusura proiettiva di $\ell$ }
+	La chiusura proiettiva dell'ipersuperficie affine di equazione $f(\underline x) =0$ è l'ipersuperficie proiettiva di equazione  $F(\underline X)=0$ dove  $F$ è il polinomio omogeneizzato  di $f$\\
+	I punti di  $l^\star \cap H_0$ si chiama punti impropri di $\ell$ ($\ell^\star$ è la chiusura proiettiva)\\
+	Se scriviamo $f$ come\\
+	\[
+	 f(\underline x) = f_0 + f_1(\underline x) + \ldots + f_n(\underline x)
+	.\] 
+	con gli $f_i$ omogenei di grado $i$
+	 \[
+		 F(X) = f_0 X_0^n + f_1(\underline X)X_0^{n-1}+\ldots+f_n(\underline X)
+	.\] 
+	ad esempio
+	\[
+	x^2 + 2xy + y^2 + z+ 2x-3 = 0
+	.\] 
+	diventa
+	\[
+	X_1^2 + 2X_1X_2 + X_2^2 +X_3X_0 + 2X_1X_0-3X_0^2=0
+	.\] 
+	punti impropri: intersecano con $X_0 =0 $\\
+	\[
+		[0,X_1,X_2,X_3]:X_1^2 + 2X_1X_2 + X_2^2 =0 
+	.\] 
+	Quindi l'equazione dei punti omogenei è data da 
+	\[
+	 f_n(\underline X) = 0
+	.\] 
+	\section{Classificazione delle coniche proiettive}
+	Le coniche proiettive sono le curve di secondo grado in $\pro^2$\\
+	:a generica equazione può scriversi 
+	 \[
+		 a_{11}X_1^2+2a_{12}X_1X_2+a_{12}X_2^2+2a_{01}X_0X_1+2a_{02}X_0X_2+a_{00}X_0^2
+	.\] 
+	Posto $a_{21}=a_{12}, a_{10}=a_{01},a_{20}=a_{02}$, la forma precedente si scrive come 
+	\[
+		(1)\ \ \ \ \ \ 	\underline X^t A X = 0 \ \ \ \ \ \text{ ove } A = (a_{ij})
+	.\] 
+	Se ora $M\in GL(3,\K)$ e rimpiazziamo $\underline X$ con $M\underline X$ da (1) si ottiene \\
+	(2)\begin{aligend}
+	&	(M\underline X^t)AM\underline X = 0\\
+	&\underline X^t M A M \underline X =  0\\
+	&\underline X ^t B \underline X = 0 \ \ \ \ B = M^t A M
+	\end{aligend} TODO \\
+	Per definire $\ell_2$ è proiettivamente a $\ell_1$ \\
+	Viceversa ogni conica poriettiva equivalente a $(\ell_1)$ si ottiene in questo modo a partire da $M\in GL(3,\K)$ in definitiva\\
+	classi di quivalenza proiettiva di coniche $\leftrightarrow $ classi di congruenza di matrici simmetriche 
+	\begin{defi}
+		La conica  $\underline X^tA\underline X = 0$ è:\\
+		non degenere se  $\det A \neq 0$\\
+		semplicemente degenere se  $rk A = 2$ e $\det A =0$\\
+		doppiamente degenere se  $rk A  = 1$ e $\det A = 0$
+	\end{defi}
+	\begin{teo}
+		Sia $\K$ algebricamente chisuo. Ogni conica di $\pro^2(\K)$ è proiettivamente equivalente a una delle seguenti\\
+		$x_0^2+x_1^2+x_2^2 =0$ conica generale\\
+		$x_0^2 +x_1^2 = 0$ conica semplicemente degenere\\
+		$x_0^2=0$ conica doppiamente degenere\\
+		Tali coniche non sono equivalenti tra loro
+	\end{teo}
+	\begin{dimo}
+		Dobbiamo solo classificare le matrici simmetriche $3\times 3$ complesse rispetto alle componenti. Sappiamo che il rango è un invariante completo, quindi
+		\[
+			\matrice{1&0&0\\0&1&0\\0&0&1},\matrice{1&0&0\\0&1&0\\0&0&0},\matrice{1&0&0\\0&0&0\\0&0&0}
+		.\] 
+		sono le uniche possibilità.\\
+	\end{dimo}
+	\textbf{Nota:}\\
+		Un invariante completo caratterizza la matrice (se hanno rango uguale allora sono equivalenti e viceversa)\\
+		\newpage
+	\begin{teo}
+			Ogni conica di $\pro^2(\R)$ è proiettivamente equivalente a una delle seguenti:\\
+			$x_0^2+x_1^2-x_2^2 =0 $ \ \ conica generale\\
+			$x_0^2+x_1^2+x_2^2 =0 $ \ \ conica generale a punti non reali\\
+			$x_0^2-x_1^2=0$ \\
+			$x_0+x_1^2=0$ \ \ \ \ \ sono coniche semplicemente degeneri\\
+			$x_0^2 =0$ \ \ \ \ \ \ \ \ \ \ conica doppiamente degenere
+Queste coniche non sono equivalenti tra loro
+	\end{teo}
+	\begin{dimo}
+		Utilizziamo il teorema di Sylvester per classificare le matrici reali simmetriche $3\times 3$ a meno di congruenza\\
+		Sappiamo che gli indici sono invariante completo,\\
+		ora ricordiamo che stiamo classificando polinomi omogenei a meno di proporzionalità\\
+		\begin{aligend}
+			&(i_+,i_-,i_0)\\
+			&(3,0,0)\\
+			&(0,3,0)\\
+			&(0,0,3)\\
+			&(2,1,0)\\
+			&(2,0,1)\\
+			&(0,2,1)\\
+			&(1,0,2)\\
+			&(0,1,2)\\
+			&(1,1,1)
+		\end{aligend} \\
+		TODO aggiungi immagine che sennò finisce male\\
+		Quindi ogni conica proiettiva è equivalente a unna delle cinque elencate.\\
+		Tali coniche non sono equivalenti perché hanno rango diverso oppure stesso rango ma supporti diversi
+	\end{dimo}
+	\textbf{Caso generale: quadriche proiettive}\\
+	$\ell \ \ \ \ \underline X^t A \underline X =0 $ \ \ \  $A$ matrice simmetrica $(n+1)\times(n+1)$\\
+	\newpage
+	 \begin{teo}
+		1.$\K$ algebricamente chiuso: ogni quadrica in $\pro^n(\K)$ è proiettivamente equivalente a una e una sola quadrica poichè
+		\[
+		 \sum^r_{i=1}x_i^2=0 \ \ \ \ 0\leq r\leq n
+		.\] 
+		2. $\K=\R$: ogni quadrica in $\pro^n(\R)$ è proiettivamente equivalente ad una e una sola quadrica
+		\[
+		\sum^p_{i=1}z_i^2 - \sum^r_{i=p+1}x_i^2=0
+		.\] 
+		$0\leq p \leq r\leq n, \ 2p\geq r-1, \ \ r\geq 1$
+	\end{teo}
+	\textbf{Esempio}\\
+	$x_0^2 -1 x_1^2 + x_1x_2=0$\\
+	 \[
+		 A=\matrice{1&0&0\\0&1&1/2\\0&1/2&0}
+	.\] 
+	$\K=\C$ \ \ \ \ \ $\det A = -\frac 1 4\neq 0$ $\ell$ è generale\\
+	$\K = \R$\ \ \ \ \  $i_+\geq 1 \leadsto i_+=2,\ \ i_-=1,i_+=0$\\
+	 $\leadsto $ equivalente a $x_0^2+x_1^2-x_2^2=0$
+		 \end{document}
