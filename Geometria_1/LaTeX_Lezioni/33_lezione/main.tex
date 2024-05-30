@@ -1,0 +1,247 @@
+\documentclass[12px]{article}
+
+\title{Lezione 33 Geometria I}
+\date{2024-05-30}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Classificazione affine ed Euclidea}
+	$\ell \subset \A^2(\K) $ conica\\
+	$\circledast a_{11}x^2 + a_{22}y^2 + 2a_{12}xy + 2a_{01}x + 2a_{01}y + a_{00}$\\
+	pongo $a_{10}=a_{01}, a_{20}=a_{02},a_{21}=a_{12}$ dunque la matrice $A=(a_{ij})$ è simmetrica. Chiamo
+	\[
+		\widetilde{\underline X} = \matrice{1\\x\\y}. \text{ Allora } \circledast \text{ diventa}
+	.\] 
+	\[
+	\underline{\widetilde{X}}^t A\underline{\widetilde{X}}
+	.\] 
+	Considera l'affinità $T_{M,C}(\underline X ) = M\underline X + c$ ove  $M\in GL(2,\K), \ \ b\in \K^2$\\
+	Abbiamo visto che c'è un omomorfismo iniettivo 
+	\[
+	Aff(\A^2_\K) \rightarrow GL(3,\K)
+	.\] 
+	\[
+		T_{M,C} \rightarrow \widetilde M = \matrice{ 1 & 0\ 0\\ c & M }
+	\] 
+	\[
+		M = \matrice{m_{11}&m_{12}\\m_{21}&m_{22}} \ \ c = \matrice{c_1\\c_2}
+	\] 
+	Se effettuo il cambio di coordinate
+	\[
+		\widetilde{\underline{X}} = \widetilde{M}\widetilde{\underline{X}}'
+	.\] 
+	l'equivalenza $\widetilde{\underline{X}}^t A \widetilde{\underline{X}} = 0$ \\
+	diventa  $(\widetilde M\widetilde{\underline{X}}')^t A \widetilde{M}\widetilde{\underline {X}}'$ \\
+	\[
+	\widetilde{\underline{X}}'^t B \widetilde{\underline{X}}'= 0
+	.\] 
+	con $B = \widetilde{M}^t A\widetilde{M}$\\
+	Questa equazione ci dice che il rango di  $A$ è una proprietà affine di $\ell$. Chiameremo tale numero rango di $\ell$ (notazione $r(\ell)$\\
+	Diciamo che  $\ell$ è\\
+	non degenere se $r(\ell) = 3$\\
+	semplicemente degenere se  $r(\ell) = 2$\\
+	doppiamente degenere se  $r(\ell) = 1$
+	\ \\ \hline \ \\
+	$A = \matrice{a_{00}&a_{01} & a_{02}\\a_{01} & a_{11} & a_{12} \\ a_{02} & a_{12} & a_{22}}$ \\In altri termini, $A_0$ è la matrice della forma quadratica associata ai termini quadratici del polinomio $a_{11}x^2 + 2a_{12}xy + a_{22}y^ 2$ ($A_0$ è il minore ottenuto togliendo prima riga e prima colonna)\\
+	\begin{aligend}
+		& \widetilde{\underline{X}} = \widetilde M \widetilde{\underline{X}}'\\
+		& A \leftrightarrow B = \widetilde M ^t A \widetilde M\\
+		& A_0 \leftrightarrow B_0 = M^t A_0 M \circledast
+	\end{aligend}\\
+	Dunque anche $rk A_0$ è un invariante affine di $\ell$ \\
+	$\det A_0 \begin{cases}
+		\neq 0 \ \ \ \ell \text{ conica a centro }\\
+		=0 \ \ \ \ell \text{ parabola}
+	\end{cases}$\\
+	$\K = \R$ Da  $\circledast$ deduciamo che anche il segno di $\det A_0$ è un invariante affine (infatti $\det B = (\det M)^2 \det A_0)$\\
+	\[
+	 \det B  \begin{cases}
+		 >0 \ \ \ell \text{ ellisse}\\
+		 < 0 \ \ \ell \text{ iperbole}
+	 \end{cases}
+	.\] 
+	\begin{teo}
+		Ogni conica di $\A^2(\K)$ è affinemente equivalente a una delle seguenti:\\
+		1) $\K$ algebricamente chiuso \\
+		$x^2 + y^2 - 1 = 0 \ \ $ conica a centro 1\\
+		$x^2 + y^2 = 0 \ \ $ conica a centro degenere 2\\
+		$y^2 -x = 0 \ \ $ parabola 3\\
+		 $y^2-1=0$ \ \ \ parabola degenere 4\\
+		 $y^2 = 0\ \ $ conica doppiamente degenere 5\\
+		 2)  $\K = \R$\\
+		  $x^2 + y^2 - 1 = 0$ \ \ ellisse 1\\
+		  $x^2 + y^2 + 1 = 0$ \ \ ellisse a punti non reali 2\\
+		  $x^2 + y^2 = 0$ \ \ ellisse degenere 3\\
+		  $x^2 - y^2 -1 =0$ \ \ iperbole 4\\
+		  $x^2 - y^2 = 0$ \ \ iperbole degenere 5\\
+		  $y^2 - x =0 $ \ \ \ parabola 6\\
+		  $y^2-1 = 0$ \ \ \ parabola degenere 7\\
+		  $ y^2 + 1 = 0$ \ \ \ parabola degenere 8\\
+		  $y^2 = 0$ \ \ \ conica doppiamente degenere 9 \\
+ 		  Le coniche di ognuno dei gruppi precedenti sono a due a due non affinemente equivalenti
+	\end{teo}
+	\begin{dimo}
+		Partiamo da $\underline{\widetilde{X}}^t A X = 0$ e tramite affinità vogliamo ridurci ad uno dei casi elencati\\
+		Passo 1:\\
+		eliminazione del termine in xy \\ 
+		Poichè $A_0$ è simmetrica, esiste $M\in GL(2,\K)$ tale che $M^t AM$ è diagonale. Quindi effetto la sostituzione $\underline X = M\underline X '$. L'equazione, nelle nuove coordinate $\underline X'$, che per comodità indichiamo ancora $\underline X$ è 
+		\[
+		a_{11}x^2 + a_{22}y^2 + 2a_{01}x + 2a_{02}y + a_00 = 0
+		.\] 
+		Osserviamo che la conica è a centro se e solo se $a_{11}a_{22}\neq 0$\\
+		Passo 2\\
+		Eliminazione dei termini lineari e costanti\\
+		Supponiamo $\ell$ a centro \\
+		effettuiamo la traslazione $\begin{cases}
+			x = x' - \frac {a_{01}}{a_{11}}\\
+			y = y' - \frac{a_{02}}{a_{22}}
+		\end{cases}$
+		che cambia l'equazione in 
+		$a_11 x'^2 + a_{22}y'^2 + c_00 = 0$\\
+		Se $\ell$ non è a centro possiamo supporre, a meno di scambiare le variabili (ovvero effettuare l'affinità $\matrice{0&1\\1&0}$) che risulti\\
+		 \[
+		a_11 =0, a_{22}\neq 0
+		.\] \\
+		$a_{22}y^2 + 2a_{01}x + 2a_{02}y + a_{00} =0 $\\
+		Tramite la traslazione $ \begin{cases}
+			x = x'\\
+			y = y'-\frac {a_{02}}{a_{22}}
+		\end{cases}$ \\
+		l'equazione diventa
+		\[
+		a_22y^2' + 2a_{01}x' + d_{00}=0
+		.\] 
+		Se $a_{01}\neq 0$ eseguo $ \begin{cases}
+			x' = x'' - \frac {d_{00}}{2a_{01}}\\
+			y' = y''
+		\end{cases}$\\
+		ottenendo $a_{22} y''^2 + 2 a_{01}x''=0$\\
+		se $a_{01} = 0$ \  \ $a_{22} y'^2 + d_{00}=0$\\
+		Passo 3\\
+		Normalizzazione dei coefficienti \\
+		$\K = \overline \K$. Sia  $\ell$ a centro. Partiamo da 
+		\[
+		 a_{11}x'^2 + a_{22}y'^2 + c_{00} =0
+		.\] 
+		se $c_{00} = 0 \ \ \begin{cases}
+			x' = \frac {x} {\sqrt {a_{11}}}\\
+			y'  = \frac y {\sqrt{a_{22}}}
+		\end{cases} \leadsto \ \ x^2 + y^2 = 0 \ \ (2)$ \\
+		Se $c_{00} \neq 0$
+		\[
+			-\frac {a_{11}}{c_{00}}x^2 ' - \frac{a_{12}}{c_{00}}y^2 ' - 1 = 0
+		.\] 
+		\[
+		 \begin{cases}
+			 x' = \sqrt{-\frac {c_{00}}{a_{11}}}x\\
+			 y'= \sqrt{-\frac{c_{00}}{a_{22}}}y
+		 \end{cases} \leadsto x^2 + y^2 -1 = 0(1)
+		.\] 
+		Sia ora $\ell$ non a centro, trasformata in 
+		\[
+		 a_{22} y^2 ' + d_{00} = 0
+		.\] 
+		$d_{00} =0  \ \ \ \ y^2 ' =0 \leadsto \ \ y^2 =0 (5)$\\
+	$d_{00}\neq 0 \ \ \ \ -\frac {a_{22}}{d_{00}}y^2' \ - 1 =0 $
+	\[
+	 \begin{cases}
+		 y'= \sqrt{-\frac{d_{00}}{a_{22}}}y\\
+		 x' = x
+	 \end{cases} \leadsto y^2 - 1 = 0 (4)
+	.\]
+	Resta da vedere il caso $\ell $ non a centro trasformata in 
+	\[
+	 a_{22} y'´ ^2 + 2a_{01}x''= 0
+	.\] 
+	\[
+	 \begin{cases}
+		 x''= \frac x {-2a_{01}}\\
+		 y'' = \frac y {\sqrt{a_{22}}}
+	 \end{cases}\leadsto y^2-x = 0 (3)
+	.\] \\
+	$\K = \R \ \ \ell $  a centro\\
+	\[
+	 a_{11} x'^2 + a_{22}y^2 ' + c_{00} =0 
+	.\] 
+	Posso supporre $c_00 =0 $ o $c_00 = -1$\\
+	\[
+	 \begin{cases}
+		 x'= \frac x {\sqrt{|a_{11}|}}\\
+		 y' = \frac y {\sqrt{|a_{22}|}}
+	 \end{cases}\leadsto (1)-(5)
+	.\] 
+	$\ell$ non a centro del tipo
+	\[
+	a_{22}y'^2 + d_00 = 0
+	.\] 
+	Posso supporre $d_{00} = 0$ o $d_{00} = -1$\\
+	\[
+	\begin{cases}
+		x' = x\\
+		y' = \frac y {\sqrt{|a_{22}|}}
+	\end{cases} \leadsto (7) - (9)
+	.\] \\
+	$\ell $a centro del tipo 
+	\[
+		a_{22} y''^2 + 2a_{01}x'' = 0
+	.\] 
+	Posso supporre $a_{22} >0$ e effettuare $ \begin{cases}
+		x'' = \frac x {-2 a_{01}}\\
+		y'' = \frac y {\sqrt{a_{22}}}
+	\end{cases}$ \leadsto 6
+	\end{dimo}
+	\textbf{Osservazioni}\\
+	1) Se $\ell$ è a centro, il sistema lineare
+	\[
+	\begin{cases}
+		a_{11}x + a_{12}y + a_{10} = 0\\
+		a_{22}x + a_{22}y + a_{20} = 0
+	\end{cases}
+	.\] 
+	Ha soluzione unica (poichè $\det A_0 \neq 0)   \ \ (x_0,y_0) $\\
+	Il punto con tali coordinate è il centro di simmetria, infatti la simmetria rispetto a tale punto 
+	\[
+	 \begin{cases}
+	 	x = 2x_0-x'\\
+		y = 2y_0-y'
+	 \end{cases}
+	.\] 
+	manda $\ell$ in $\ell$\\
+	Le rette passanti per $c = \matrice{x_0\\y_0}$ si dicono diametri di $\ell$\\
+	2) per calcolare i punti impropri di $\ell$ di equazione
+	\[
+		\underline{\widetilde{X}}^tA\underline{\widetilde{X}} = 0
+	.\] 
+	bisogna risolvere l'equazione omogenea
+	\[
+		a_{11}x_1^2 + 2a_{12}x_1x_2+a_{22}x_2^2 = 0
+	.\] 
+	$\displaystyle \left(x = \frac {x_1}{x_0}, \ \ y = \frac{x_2}{x_0}\right)$ che ha discriminante $-det A_0$. Quindi le soluzioni sono\\
+	reali distinte $\ell$ iperbole\\
+	reali coincidenti $\ell$ parabola\\
+	complesse conugate $\ell $ ellisse
+	\ \\ \hline \ \\
+	\begin{teo}
+		Ogni conica di $\mathbb{E}^2$ è congruente a una delle seguenti\\
+		\begin{aligned}
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = 1 \ \ a\geq b> 0 \ \ \text{ ellisse}\\
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = -1 \ \ a\geq b > 0 \text{ ellisse a putni non reali}\\
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = 0 \ \ a\geq b > 0 \text{ ellisse degenere}\\
+			&\frac{x^2}{a^2} - \frac {y^2}{b^2} = 1 \ \ a>0, b > 0 \text{ iperbole}\\
+			&\frac{x^2}{a^2} - \frac {y^2}{b^2} = 0 \ \ a>0, b > 0 \text{ iperbole degenere}\\
+			&y^2 - 2px = 0 \ \ p>0\text{ parabola}\\
+			&y^2 - a^2 = 0 \ \ a\geq0\text{ parabola degenere}\\
+			&y^2 + a^2 = 0 \ \ a>0\text{ parabola degenere}\\
+			&y^2 =0 \ \ \texxt{ conica doppiamente degenere}
+		\end{aligned}
+		\\
+		le coniche elencate sono a due a due non equivalenti
+	\end{teo}
+
+
+	
+\end{document}
