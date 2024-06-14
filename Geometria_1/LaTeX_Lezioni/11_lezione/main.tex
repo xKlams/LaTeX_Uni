@@ -14,10 +14,10 @@
 		Sia $B = \{v_1,\ldots,v_n\}$ una base ortonormale dello spazio euclideo $V$, la base $L = \{w_1,\ldots,w_n\}$ è ortonormale se e solo se $M = [Id_V]^B_L$ è ortogonale $(MM^t = Id_v)$
 	\end{prop}
 	\begin{dimo}
-		Sia $M = (m_{ij})$ per definizione di $M \ w_i = \sum^n_{j=1}m_{ji}v_j \ \ 1\leq i\leq n$
-		\[
-			\langle w_i, w_j \rangle = \langle \sum^n_{k=1}m_{ki}v_k, \sum^n_{h=1}m_{hj}v_h \rangle = \sum^n_{k,h=1}m_{ki}m_{kj} \langle v_k, v_h \rangle  = \sum^n_{k=1}m_{ki}m_{kj} = (M^tM)_{i,j}
-		.\] 
+		Sia $M = (m_{ij})$ per definizione di $M \ w_i = \sum^n_{j=1}m_{ji}v_j \ \ 1\leq i\leq n$\\
+		\begin{aligend*}
+			\displaystyle\langle w_i, w_j \rangle = \langle \sum^n_{k=1}m_{ki}v_k, \sum^n_{h=1}m_{hj}v_h \rangle = \sum^n_{k,h=1}m_{ki}m_{kj} \langle v_k, v_h \rangle \\= \sum^n_{k=1}m_{ki}m_{kj} = (M^tM)_{i,j}
+		\end{aligned*}
 	\end{dimo} 
 	\textbf{Osservazione}\\
 	Sia $V = \mathbb{R}[x] \ \ \langle p(x), q(x) \rangle = \int_{-1}^1p(x)q(x)dx$ è un prodotto scalare\\

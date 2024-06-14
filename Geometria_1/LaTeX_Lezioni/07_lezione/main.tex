@@ -12,56 +12,56 @@
 	\section{Esercizi Vari}
 	\textbf{Piccola definizione per esercizio}\\
 	$ \mathbb{A}^n_ \mathbb{K}$   Aff$ (\mathbb{A} ^n_ \mathbb{K}) = \{f_{a,b}| A\in GL(n, \mathbb{K}), b\in \mathbb{K}^n\}$
-\begin{gather*}
-	f_{A,b}(X) = AX + b \\
-	\begin{pNiceArray}{c|c}
+\begin{aligned}
+	&f_{A,b}(X) = AX + b \\
+	&\begin{pNiceArray}{c|c}
 		1 & 0 \\
 		\hline
 		b & A \\
 	\end{pNiceArray} \\
-\end{gather*}
+\end{aligned}
 \textbf{Esercizio 1}\\
 \hline \ \\ 
-\begin{align*}
+\begin{aligned}
 	&f: \mathbb{A}^3_{\mathbb{R}} \rightarrow \mathbb{A}^3_{\mathbb{R}}\\
 	&f\icol{1\\2\\0} = \icol{2\\-1\\1}, \ \ \ f\icol{1\\3\\1} = \icol{3\\-1\\0} \\
 	&\varphi(e_1) = e_1+e_3, \ \ \varphi(e_2) = e_1-e_2 \\
 	& \text{e chiamiamo} \\
 	&p_0 = \icol{1\\2\\0}, \ \ q_0 = \icol{2\\-1\\1}, \ \ p_1 = \icol{1\\3\\1}, \ \ q_1 = \icol{3\\-1\\0}
-\end{align*}
+\end{aligend}
 Dove $\varphi$ è la parte lineare di f.\\
 Trovare l'espressione di f in coordinate affini canoniche \\e trovare i punti fissi  di $f$.\\
 \textbf{Svolgimento}
-\begin{align*}
+\begin{aligend}
 	&\varphi\icol{1\\0\\0} = \icol{1\\0\\1} \ \ \ \varphi\icol{0\\1\\0} = \icol{1\\-1\\0} \ \ \varphi( \overrightarrow{p_0p_1}) = \overrightarrow{q_0q_1}\\
 	&	\varphi(\icol{1\\3\\1} - \icol{1\\2\\0}) = \icol{3\\-1\\0} - \icol{2\\-1\\1} \\
 	&\varphi\icol{0\\1\\1} = \icol{1\\0\\-1} \\
 	&\varphi\icol{0\\0\\1} = \varphi(\icol{0\\1\\1}-\icol{0\\1\\0}) = \varphi\icol{0\\1\\1} - \varphi\icol{0\\1\\0} = \icol{1\\0\\-1}-\icol{1\\-1\\0} = \icol{0\\1\\-1}
-\end{align*}
+\end{aligned}
 Se $\varepsilon = \{e_1,e_2,e_3\}$ è la stessa base standard di $\mathbb{R}^3$
 \[
 	[\varphi]^\varepsilon_ \varepsilon = \icol{1 & 1 & 0\\ 0 &-1&1\\1&0&-1}
 .\] 
-\begin{align*}
+\begin{aligned}
 	&f\icol{x_1\\x_2\\x_3} = \icol{2\\-1\\1} + \icol{1 & 1 & 0\\ 0 &-1&1\\1&0&-1}\icol{x_1-1\\x_2-2\\x_3}\\
 	&f\icol{x_1\\x_2\\x_3} = \icol{1 & 1 & 0\\ 0 &-1&1\\1&0&-1}\icol{x_1\\x_2\\x_3} + \icol{-1\\1\\0}\\
 	&f\icol{x_1\\x_2\\x_3} = \icol{x_1+x_2-1 \\-x_2+x_3+1\\x_1-x_3}
-\end{align*}
+\end{aligned}
 Dove abbiamo utilizzato il fatto che $F(p) = f(p_0) + \varphi(\overrightarrow{p_0p}) = q_0 + \varphi(\overrightarrow{p_0p})$ \\
 \textbf{Cerchiamo ora i punti fissi}\\
-\begin{gather*}
-	\matrice{x_1+ x_2- x_1 \\ -x_2+x_3+1\\x_1-x_3} = \matrice{x_1\\x_2\\x_3}\\
-		\begin{sistema}
+\begin{aligend}
+	&\matrice{x_1+ x_2- x_1 \\ -x_2+x_3+1\\x_1-x_3} = \matrice{x_1\\x_2\\x_3}\\
+	&\begin{cases}
 			x_2 - 1 = 0\\
 			-2x_2 + x_3 = -1\\
 			x_1 - 2x_3 = 0\\
-		\end{sistema} =
-		\begin{sistema}
+		\end{cases} =
+		\begin{cases}
 			x_1 = 2\\
 			x_2 = 1\\
 			x_3 = 1 \\
-		\end{sistema}
-\end{gather*}
+		\end{cases}
+\end{aligend}
 \hline \ \\ 
 \textbf{Esercizio 2} \\
 Dimostrare che un'affinità di piano affine che ha tre punti fissi non allineati è l'identità\\
@@ -79,39 +79,39 @@ iii. Tra le affinità determinate in i, trovare le traslazioni\\
 .\] 
 Basta scegliere $f(p) = p$ per due punti distinti $p\in r$. Posso scegliere $\icol{1\\0}, \icol{0\\1}$ \\
 \begin{aligned}
-&\begin{sistema}
+&\begin{cases}
 	\matrice{a & b \\ c & d}\matrice{1 \\ 0} + \matrice{\alpha \\ \beta} = \matrice{1\\0} \\
 	\matrice{a & b \\ c & d}\matrice{1 \\ 0} + \matrice{\alpha \\ \beta} = \matrice{1\\0} \\
-\end{sistema} \hspace{80px}
-\begin{sistema}
+\end{cases} \hspace{80px}
+\begin{cases}
 	a + \alpha = 1\\
 	c + \beta = 0\\
 	d + \alpha = 0\\
 	d + \beta = 1
-\end{sistema}\\
-&\begin{sistema}
+\end{cases}\\
+&\begin{cases}
 	a = 1 -\alpha\\
 	b = -\alpha\\
 	c = -\beta\\
 	d = 1-\beta
-\end{sistema} \ \ \ \ \  \ \ 
+\end{cases} \ \ \ \ \  \ \ 
 	f\matrice{x\\y} = \matrice{1-\alpha & -\alpha \\ -\beta & 1-\beta}\matrice{x\\y} + \matrice{\alpha\\\beta}
 \end{aligned}\\
 \begin{aligned}
 	&(1-\alpha)(1-\beta) - \alpha\beta = 1 - \alpha - \beta\neq 0 \ \ \ \alpha + \beta \neq 1 \\
 	&\text{ii} \ \ \matrice{1 - \alpha & -\alpha \\ -\beta & 1 - \beta}\matrice{1\\3} + \matrice{\alpha\\\beta} = \matrice{2\\-2} \\
-	&\begin{sistema}
+	&\begin{cases}
 		1-\lapha - 3\alpha + \alpha = 2 \\
 		-\beta + 3 - 3\beta + \beta = -2
-	\end{sistema} \ \ \ 
-	\begin{sistema}
+	\end{cases} \ \ \ 
+	\begin{cases}
 		-3\alpha = 1\\
 		-3\beta = -5
-	\end{sistema} \ \ \
-	\begin{sistema}
+	\end{cases} \ \ \
+	\begin{cases}
 		\alpha = -\frac{1}{3}\\
 		\beta = \frac{5}{3}
-	\end{sistema} \\
+	\end{cases} \\
 	&\text{iii} \begin{pNiceArray}{c| c c}
 		1 & 0 & 0 \\
 		\hline
@@ -166,10 +166,10 @@ e quindi l'unica traslazione è l'identità\\
 \end{align*} \\
 \hline \ \\
 \textbf{Esercizio 4} \\
-In $ \mathbb{A} ^4_\mathbb{Q} \ \ \ L: \begin{sistema}
+In $ \mathbb{A} ^4_\mathbb{Q} \ \ \ L: \begin{cases}
 	x_1 - 3x_3 = 2 \\
 	x_2 + x_4 = 1
-\end{sistema} \ \ W = <\matrice{2\\0\\1\\0},\matrice{0\\1\\0\\-2}>$ \\
+\end{cases} \ \ W = <\matrice{2\\0\\1\\0},\matrice{0\\1\\0\\-2}>$ \\
 Scrivere le matrici delle proiezioni su $L$ parallela a $W$ e la matrice della simmetria di asse $L$ e direzione $W$ \\[5px]
 \textbf{Svolgimento}\\
 \begin{aligned}
@@ -179,16 +179,16 @@ Scrivere le matrici delle proiezioni su $L$ parallela a $W$ e la matrice della s
 \end{aligned}
 Cerco ora l'equazione parametrica di L\\
 \begin{aligned}
-	& \begin{sistema}
+	& \begin{cases}
 		x_1-3x_3=2\\
 		x_2=x_4=1
-	\end{sistema} \ \  \rightarrow
-	\begin{sistema}
+	\end{cases} \ \  \rightarrow
+	\begin{cases}
 		x_1 = 2 + 3t \\
 		x_2 = 1 - s\\
 		x_3 = t \\
-		x_4 s
-	\end{sistema} \ \ \ \rightarrow \ \ \  \matrice{x_1\\x_2\\x_3\\x_4} = \matrice{2\\1\\0\\0} + t\matrice{3\\0\\1\\0} + s\matrice{0\\-1\\0\\1}\\
+		x_4 = s
+	\end{cases} \ \ \ \rightarrow \ \ \  \matrice{x_1\\x_2\\x_3\\x_4} = \matrice{2\\1\\0\\0} + t\matrice{3\\0\\1\\0} + s\matrice{0\\-1\\0\\1}\\
 	&V + W: \matrice{x_1-2\\x_2-1\\x_3\\x_4} = \alpha\matrice{2\\0\\1\\0} + \beta\matrice{0\\1\\0\\-2} + \gamma\matrice{3\\0\\1\\0} + \delta\matrice{0\\-1\\0\\1}
 \end{aligned}\\[10px]
 Qui il professore utilizza la sacra formula di Antani per giungere al seguente risultato \\
@@ -212,5 +212,5 @@ Qui il professore utilizza la sacra formula di Antani per giungere al seguente r
 		-4&2&0&-5&0\\
 		4&0&-4&0&-3\\
 	\end{pNiceArray} 
-\end{aligned} \\
+\end{aligned} 
 \end{document}

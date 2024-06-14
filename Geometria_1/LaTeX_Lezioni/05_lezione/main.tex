@@ -9,7 +9,7 @@
 
 \begin{document}
 \maketitle
-\newpage
+\newpage \ \\
 $V, V'$ spazi vettoriali su $\mathbb{K}, (A,V,+), (A',V',+)$ spazi affini\\
 \begin{defi}
 	$f:A\rightarrow A'$ è un'applicazione affine se esiste un'applicazione lineare $\phi :V\rightarrow V'$ tale che:  \[
@@ -24,11 +24,11 @@ $V, V'$ spazi vettoriali su $\mathbb{K}, (A,V,+), (A',V',+)$ spazi affini\\
 \end{defi}
 \textbf{Nomenclatura}\\
 Se $f$ è biunivoca, $f$ è detto isomorfismo affine\\
-Un isomorfismo affine $A\rightarrow A$ è detto affinità.
-\textbf{Oss}\\
+Un isomorfismo affine $A\rightarrow A$ è detto affinità.\\
+\textbf{Osservazione}\\
 vedremo che le affinità formano un gruppo rispetto alla composizione di applicazione che denoteremo come $\text{Aff}(A)$\\
-\begin{es}
-	$Ov_1...vn$ rifermento affine in A\\
+\textbf{Esempio}\\
+	$Ov_1...v_n$ rifermento affine in A\\
 	\[
 		f: \mathbb{A} \rightarrow \mathbb{A}^n \ \ f(p) = \begin{pNiceArray}{c}
 			x_1\\
@@ -43,13 +43,12 @@ vedremo che le affinità formano un gruppo rispetto alla composizione di applica
 	\overrightarrow{OQ} = \sum^n_{i=1}y_iv_i \ \ \ f(Q) = \begin{pNiceArray}{c}
 		y_1\\ . \\ . \\ y_n \\
 	\end{pNiceArray}
-	\overrightarrow{f(P)f(Q)} = \icol{y_1\\.\\.\\.\\y_n} - \icol{x_1\\.\\.\\.\\ x_n} = \icol{y_1 - x_1\\.\\.\\.\\y_n - x_n} =  \varphi ( \sum^n_{i=1}(y_i - x_i)v_i) = \varphi (\overrightarrow{OQ} - \overrightarrow{OP}) =  \varphi (\overrightarrow{PQ})$
-\end{es}
+	\overrightarrow{f(P)f(Q)} = \icol{y_1\\.\\.\\.\\y_n} - \icol{x_1\\.\\.\\.\\ x_n} = \icol{y_1 - x_1\\.\\.\\.\\y_n - x_n} =  \varphi ( \sum^n_{i=1}(y_i - x_i)v_i) = \varphi (\overrightarrow{OQ} - \overrightarrow{OP}) =  \varphi (\overrightarrow{PQ})$\\[10px]
 \textbf{3 Esempi di affinità}\\
-I Transazioni\\
+I traslazioni\\
 Fissato $v\in V$ definiamo \\
 $t_v:A\rightarrow A, \ \ t_v(P) = p + v$
-Dico che $t_v$ è un'affinità con assoviato isomorfismo $Id_V$ dato che:\\
+Dico che $t_v$ è un'affinità con associato isomorfismo $Id_V$ dato che:\\
 $t_V(p + w) = (p + w) + v = p + (w + v) = p + (v + w) = (p + v) + w =\\ = t_V(p) + w = t_V(p) +  \varphi (w) \leftarrow Id_V$ \\
 la biunicità segue dagli assiomi per A \\[10px]
 II Simmetria rispetto ad un punto\\
@@ -68,13 +67,13 @@ $\omega_{O,\gamma}(p + v) = O + \gamma \overrightarrow{OQ} = O + \gamma( \overri
 	Fissato $O\in \mathbb{A} $, per ogni $O'\in \mathbb{A} $ e per ogni $ \varphi\in GL(V) $ esiste un'unica affinità tale che $f(O) = O'$ e che ha $ \varphi$ come isomorfismo associato
 \end{lemm}
 \begin{dimo}
-	\textbf{esistenza}\\
+	\textbf{Esistenza}\\
 	Pongo $f(P) = O' + \varphi(\overrightarrow{OP} \ \ \ f(O) = O' + \varphi(\overrightarrow{OQ}) = O' + O = O'\\
 	f(p + v) = O' + \varphi(\overrightarrow{OQ}) = O' + \varphi(\overrightarrow{OP} + \overrightarrow{PQ}) = O' + \varphi(\overrightarrow{OP}) + \varphi(\overrightarrow{PQ}) = f(p) + \varphi(v)$\\
 	dove abbiamo usato $Q = p + v \ \ \ v = \overrightarrow{PQ}$\\
-	\textbf{unicità}\\
+	\textbf{Unicità}\\
 	Supponiamo che g abbia le stesse proprietà di f, allora \\
-	$\overrightarrow{f(O)f(p)} = \varphi(\overrightarrow{OP}) = \overrightarrow{g(O)g(p)} = \overrightarrow{O'f(p)} = \overrightarrow{f(O)g(p)} \Rightarrow f(p) = g(p)\\ \Rightarrow  f = g \hfill\square$
+	$\overrightarrow{f(O)f(p)} = \varphi(\overrightarrow{OP}) = \overrightarrow{g(O)g(p)} = \overrightarrow{O'f(p)} = \overrightarrow{f(O)g(p)} \Rightarrow f(p) = g(p)\\ \Rightarrow  f = g $
 \end{dimo}
 \begin{defi}
 	Definiamo 
@@ -88,7 +87,7 @@ $\omega_{O,\gamma}(p + v) = O + \gamma \overrightarrow{OQ} = O + \gamma( \overri
 	.\] 
 \end{lemm}
 \begin{dimo}\ \\
-	poniamo $v = -\overrightarrow{Of^{-1}}, \ \ v' = \overrightarrow{Of(O)}, \ \  g = f\circ t_{-v'}, \ \  g' = t_{-v}\circ f$ \\
+	poniamo $v = -\overrightarrow{Of^{-1}(O)}, \ \ v' = \overrightarrow{Of(O)}, \ \  g = f\circ t_{-v'}, \ \  g' = t_{-v}\circ f$ \\
 	Allora
 	\[
 		(g \circ t_v) = (f\circ t_{-v})t_v = f\circ(t_{-v}\circ t_v) = f
@@ -146,7 +145,7 @@ $\omega_{O,\gamma}(p + v) = O + \gamma \overrightarrow{OQ} = O + \gamma( \overri
 	Manca solo dimostrare l'esistenza dell'inverso di $f_{A,b}$,\\
 	ovvero che esiste $f_{C,d}$ tale che $f_{A,b}\circ f_{C,d} = f_{C,d}\circ f_{A,b} = f_{I,O}$
 	\begin{align*}
-		(f_{A,b}\circ f_{C,d}(x) = f_{I,O}(x) = x \\
+		(f_{A,b}\circ f_{C,d})(x) = f_{I,O}(x) = x \\
 		ACX + Ad + b + X \ \ \ \ \forall \  X\in\mathbb{K}^n \\
 		\Rightarrow AC = Id \ \ Ad + b = 0\\
 		C = A^{-1} \ \ \ d = -A^{-1}b \\

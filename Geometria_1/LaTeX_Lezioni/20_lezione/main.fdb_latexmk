@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715586909.59273 "main.tex" "main.pdf" "main" 1715586910.23761 2
-  "../../setup.tex" 1714988013.97126 2253 1466769c55805f435e8484be1aceb903 ""
+["pdflatex"] 1718380638.96024 "main.tex" "main.pdf" "main" 1718380639.82001 2
+  "../../setup.tex" 1715858821.80073 2366 5d7fb1647b1db6ffb11e4c7a5bf88259 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -165,8 +165,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1714576373.78196 306758 0990e5d54dd9473eae7e9d76efb64f19 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1714661398 6446967 1b9e62db0e230851f342538a03c09497 ""
   "images//funzione.png" 1714061338.78444 10903 37c11dfd6bfe532c37e47789b7d4065e ""
-  "main.aux" 1715586910.06785 319 0e9c01d9bf31eee41cb6f3780c2de013 "pdflatex"
-  "main.tex" 1714064301.23368 9637 2644fe24e554eaf7b61363f8ee21edeb ""
+  "main.aux" 1718380639.57308 319 0e9c01d9bf31eee41cb6f3780c2de013 "pdflatex"
+  "main.tex" 1715613558.61317 9637 6eb58c15874eb88fa3602eee988dab93 ""
   (generated)
   "main.aux"
   "main.log"

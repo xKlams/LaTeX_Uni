@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  3 APR 2024 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  6 JUN 2024 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -22,7 +22,7 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (../../setup.tex (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -526,27 +526,147 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box75
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.3'
+) (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@theo=\count320
-\c@lemma=\count321
-\c@nomen=\count322
-\c@defin=\count323
-\c@propo=\count324
+\c@r@tfl@t=\count320
+\rotFPtop=\skip125
+\rotFPbot=\skip126
+\rot@float@box=\box76
+\rot@mess@toks=\toks41
+) (/usr/share/texlive/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-02-18 v3.0 Permit use of UTF-8 characters in soul (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-02-18 v3.0 letterspacing/underlining (mf)
+\SOUL@word=\toks42
+\SOUL@lasttoken=\toks43
+\SOUL@syllable=\toks44
+\SOUL@cmds=\toks45
+\SOUL@buffer=\toks46
+\SOUL@token=\toks47
+\SOUL@syllgoal=\dimen284
+\SOUL@syllwidth=\dimen285
+\SOUL@charkern=\dimen286
+\SOUL@hyphkern=\dimen287
+\SOUL@dimen=\dimen288
+\SOUL@dimeni=\dimen289
+\SOUL@minus=\count321
+\SOUL@comma=\count322
+\SOUL@apo=\count323
+\SOUL@grave=\count324
+\SOUL@spaceskip=\skip127
+\SOUL@ttwidth=\dimen290
+\SOUL@uldp=\dimen291
+\SOUL@ulht=\dimen292
+)) (/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchronous mode
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
+)
+\XKV@depth=\count325
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count326
+\mult@box=\box77
+\multicol@leftmargin=\dimen293
+\c@unbalance=\count327
+\c@collectmore=\count328
+\doublecol@number=\count329
+\multicoltolerance=\count330
+\multicolpretolerance=\count331
+\full@width=\dimen294
+\page@free=\dimen295
+\premulticols=\dimen296
+\postmulticols=\dimen297
+\multicolsep=\skip128
+\multicolbaselineskip=\skip129
+\partial@page=\box78
+\last@line=\box79
+\maxbalancingoverflow=\dimen298
+\mult@rightbox=\box80
+\mult@grightbox=\box81
+\mult@firstbox=\box82
+\mult@gfirstbox=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\c@minrows=\count332
+\c@columnbadness=\count333
+\c@finalcolumnbadness=\count334
+\last@try=\dimen299
+\multicolovershoot=\dimen300
+\multicolundershoot=\dimen301
+\mult@nat@firstbox=\box120
+\colbreak@box=\box121
+\mc@col@check@num=\count335
+))
+\c@theo=\count336
+\c@lemma=\count337
+\c@nomen=\count338
+\c@defin=\count339
+\c@corollario=\count340
+\c@propo=\count341
 
 
-./main.tex:38: LaTeX Error: Command \dimo already defined.
+../../setup.tex:42: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38   {\hfill\square\end{dimostrazione}}
-                                         
+l.42 ...}\hfill\square\newline\end{dimostrazione}}
+                                                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+)
 
 LaTeX Warning: Unused global option(s):
     [12px].
@@ -554,51 +674,51 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen284
-\scratchbox=\box76
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen285
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count342
+\scratchdimen=\dimen302
+\scratchbox=\box122
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen303
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-./main.tex:82: Undefined control sequence.
-l.82 	Se $\Sigma_1 = p_1 + W_1, \ \ \Simga
+./main.tex:20: Undefined control sequence.
+l.20 	Se $\Sigma_1 = p_1 + W_1, \ \ \Simga
                                           _2 = p_2 + W_2$ sono sottospazi af...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -606,38 +726,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:84: Undefined control sequence.
-l.84 	\Sigma_1\cap\Sigma_2=p + W_1\capW
-                                       _2
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:84: Double subscript.
-l.84 	\Sigma_1\cap\Sigma_2=p + W_1\capW_
-                                        2
-I treat `x_1_2' essentially like `x_1{}_2'.
-
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 86.
+(mdframed)              on input line 24.
 
-./main.tex:92: LaTeX Error: Environment aliged undefined.
+./main.tex:30: LaTeX Error: Environment aliged undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 		\begin{aliged}
+l.30 		\begin{aliged}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:93: Misplaced alignment tab character &.
-l.93 		&
+./main.tex:31: Misplaced alignment tab character &.
+l.31 		&
         v_0 = \overrightarrow{pq} \ \ v_0\in H_p \ \ -v_0 = \overrightarrow{...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -646,18 +752,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:93: Missing $ inserted.
+./main.tex:31: Missing $ inserted.
 <inserted text> 
                 $
-l.93 		&v_
+l.31 		&v_
           0 = \overrightarrow{pq} \ \ v_0\in H_p \ \ -v_0 = \overrightarrow{...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:94: Misplaced alignment tab character &.
+./main.tex:32: Misplaced alignment tab character &.
 <recently read> &
                  
-l.94 		&
+l.32 		&
         H_p\ni \overrightarrow{px} = \overrightarrow{pq} + \overrightarrow{q...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -666,10 +772,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:95: Misplaced alignment tab character &.
+./main.tex:33: Misplaced alignment tab character &.
 <recently read> &
                  
-l.95 		&
+l.33 		&
          H_p \ \subseteq \ <H_q>\ \  \Rightarrow\ \ \ <H_p>\ \subseteq \ <H_...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -678,10 +784,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:96: Misplaced alignment tab character &.
+./main.tex:34: Misplaced alignment tab character &.
 <recently read> &
                  
-l.96 		&
+l.34 		&
         H_q\ni \overrightarrow{qy} = \overrightarrow{qp} + \overrightarrow{p...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -691,22 +797,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:97: LaTeX Error: \begin{dimo} on input line 91 ended by \end{aliged}.
+./main.tex:35: LaTeX Error: \begin{dimo} on input line 29 ended by \end{aliged}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.97 		\end{aliged}
+l.35 		\end{aliged}
                     \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:97: Missing $ inserted.
+./main.tex:35: Missing $ inserted.
 <inserted text> 
                 $
-l.97 		\end{aliged}
+l.35 		\end{aliged}
                     \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -715,20 +821,20 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:98: LaTeX Error: Environment aligend undefined.
+./main.tex:36: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98 		Quindi \begin{aligend}
+l.36 		Quindi \begin{aligend}
                              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:99: Misplaced alignment tab character &.
-l.99 			&
+./main.tex:37: Misplaced alignment tab character &.
+l.37 			&
          <H_p> = <H_q> \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -737,19 +843,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:99: Missing $ inserted.
+./main.tex:37: Missing $ inserted.
 <inserted text> 
                 $
-l.99 			&<H_
+l.37 			&<H_
             p> = <H_q> \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:100: Misplaced alignment tab character &.
+./main.tex:38: Misplaced alignment tab character &.
 <recently read> &
                  
-l.100 			&
-          \overrightarrow{pq}\in<H_p> = <H_q>\\
+l.38 			&
+         \overrightarrow{pq}\in<H_p> = <H_q>\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -757,11 +863,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:101: Misplaced alignment tab character &.
+./main.tex:39: Misplaced alignment tab character &.
 <recently read> &
                  
-l.101 			&
-          p + <H_p> = q + <H_q>
+l.39 			&
+         p + <H_p> = q + <H_q>
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -770,55 +876,55 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:102: LaTeX Error: \begin{dimo} on input line 91 ended by \end{aligend}.
+./main.tex:40: LaTeX Error: \begin{dimo} on input line 29 ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 		\end{aligend}
-                     
+l.40 		\end{aligend}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:102: Missing $ inserted.
+./main.tex:40: Missing $ inserted.
 <inserted text> 
                 $
-l.102 		\end{aligend}
-                     
+l.40 		\end{aligend}
+                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:103: Missing $ inserted.
+./main.tex:41: Missing $ inserted.
 <inserted text> 
                 $
-l.103 	\end{dimo}
-                 
+l.41 	\end{dimo}
+                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:103: LaTeX Error: \begin{dimo} on input line 91 ended by \end{dimostrazione}.
+./main.tex:41: LaTeX Error: \begin{dimo} on input line 29 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 	\end{dimo}
-                 
+l.41 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:103: Missing $ inserted.
+./main.tex:41: Missing $ inserted.
 <inserted text> 
                 $
-l.103 	\end{dimo}
-                 
+l.41 	\end{dimo}
+                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -826,50 +932,60 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:103: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:41: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 	\end{dimo}
-                 
+l.41 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:103: Extra \endgroup.
+./main.tex:41: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.103 	\end{dimo}
-                 
+l.41 	\end{dimo}
+                
 Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--42
+$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--42
+
+ []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 104.
+(mdframed)              on input line 42.
 [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 110.
-Package mdframed Info: Not enough space on this page on input line 114.
+(mdframed)              on input line 48.
+Package mdframed Info: Not enough space on this page on input line 52.
 
 
-./main.tex:117: LaTeX Error: Environment aligend undefined.
+./main.tex:55: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117 		\begin{aligend}
-                       
+l.55 		\begin{aligend}
+                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:118: Misplaced alignment tab character &.
-l.118 			&
-          \Sigma_1 = p_0 + W_1 \ \ \Simga_2 = p_0+W_2\\
+./main.tex:56: Misplaced alignment tab character &.
+l.56 			&
+         \Sigma_1 = p_0 + W_1 \ \ \Simga_2 = p_0+W_2\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -877,28 +993,28 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:118: Missing $ inserted.
+./main.tex:56: Missing $ inserted.
 <inserted text> 
                 $
-l.118 			&\Sigma
-                _1 = p_0 + W_1 \ \ \Simga_2 = p_0+W_2\\
+l.56 			&\Sigma
+               _1 = p_0 + W_1 \ \ \Simga_2 = p_0+W_2\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:118: Undefined control sequence.
-l.118 			&\Sigma_1 = p_0 + W_1 \ \ \Simga
-                                         _2 = p_0+W_2\\
+./main.tex:56: Undefined control sequence.
+l.56 			&\Sigma_1 = p_0 + W_1 \ \ \Simga
+                                        _2 = p_0+W_2\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:119: Misplaced alignment tab character &.
+./main.tex:57: Misplaced alignment tab character &.
 <recently read> &
                  
-l.119 			&
-          \exists w_i\in W_i, \ \ i = 1,2 \ \ \text{ t.c }\\
+l.57 			&
+         \exists w_i\in W_i, \ \ i = 1,2 \ \ \text{ t.c }\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -906,11 +1022,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:120: Misplaced alignment tab character &.
+./main.tex:58: Misplaced alignment tab character &.
 <recently read> &
                  
-l.120 			&
-          p_1 = p_0 + W_1, p_2 = p_0 + W_2\\
+l.58 			&
+         p_1 = p_0 + W_1, p_2 = p_0 + W_2\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -918,11 +1034,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:121: Misplaced alignment tab character &.
+./main.tex:59: Misplaced alignment tab character &.
 <recently read> &
                  
-l.121 			&
-          \overrightarrow{p_1p_2} = w_2-w_1\in W_1 + W_2\\
+l.59 			&
+         \overrightarrow{p_1p_2} = w_2-w_1\in W_1 + W_2\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -931,23 +1047,23 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:122: LaTeX Error: \begin{dimo} on input line 115 ended by \end{aligend}.
+./main.tex:60: LaTeX Error: \begin{dimo} on input line 53 ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122 		\end{aligend}
-                     
+l.60 		\end{aligend}
+                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:122: Missing $ inserted.
+./main.tex:60: Missing $ inserted.
 <inserted text> 
                 $
-l.122 		\end{aligend}
-                     
+l.60 		\end{aligend}
+                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -955,62 +1071,62 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:125: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:63: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125 			&
-          p_2 = p_1 + \overrightarrow{p_1p_2} = p_1 + w_1 + w_2\\
+l.63 			&
+         p_2 = p_1 + \overrightarrow{p_1p_2} = p_1 + w_1 + w_2\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:125: Missing $ inserted.
+./main.tex:63: Missing $ inserted.
 <inserted text> 
                 $
-l.125 			&
-          p_2 = p_1 + \overrightarrow{p_1p_2} = p_1 + w_1 + w_2\\
+l.63 			&
+         p_2 = p_1 + \overrightarrow{p_1p_2} = p_1 + w_1 + w_2\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:127: Missing $ inserted.
+./main.tex:65: Missing $ inserted.
 <inserted text> 
                 $
-l.127 		\end{aligned}
-                     
+l.65 		\end{aligned}
+                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:137: Missing $ inserted.
+./main.tex:75: Missing $ inserted.
 <inserted text> 
                 $
-l.137 	\end{dimo}
-                 
+l.75 	\end{dimo}
+                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:137: LaTeX Error: \begin{dimo} on input line 115 ended by \end{dimostrazione}.
+./main.tex:75: LaTeX Error: \begin{dimo} on input line 53 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137 	\end{dimo}
-                 
+l.75 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:137: Missing $ inserted.
+./main.tex:75: Missing $ inserted.
 <inserted text> 
                 $
-l.137 	\end{dimo}
-                 
+l.75 	\end{dimo}
+                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -1018,87 +1134,92 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:137: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:75: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137 	\end{dimo}
-                 
+l.75 	\end{dimo}
+                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:137: Extra \endgroup.
+./main.tex:75: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.137 	\end{dimo}
-                 
+l.75 	\end{dimo}
+                
 Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 139.
-./main.tex:141: Missing $ inserted.
+(mdframed)              on input line 77.
+./main.tex:79: Missing $ inserted.
 <inserted text> 
                 $
-l.141 ...gma_2$ sono \textbf{incidenti}, se \Sigma
+l.79 ...igma_2$ sono \textbf{incidenti}, se \Sigma
                                                   _1\cap\Sigma_2\neq\emptyset\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:142: Missing $ inserted.
+./main.tex:80: Missing $ inserted.
 <inserted text> 
                 $
-l.142 		2) $\Sigma
-                  _1,\Sigma_2$ sono \textbf{paralleli} se $W_1\subseteq W_2$...
+l.80 		2) $\Sigma
+                 _1,\Sigma_2$ sono \textbf{paralleli} se $W_1\subseteq W_2$ ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
 
  []
 
 [3]
-./main.tex:164: Misplaced \noalign.
+./main.tex:102: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.164 	\hline
+l.102 	\hline
               \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
 
-./main.tex:171: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:109: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 	&
+l.109 	&
         P = A + t\overrightarrow{AB} + s\overrightarrow{AC}\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:171: Missing $ inserted.
+./main.tex:109: Missing $ inserted.
 <inserted text> 
                 $
-l.171 	&
+l.109 	&
         P = A + t\overrightarrow{AB} + s\overrightarrow{AC}\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:176: Missing $ inserted.
+./main.tex:114: Missing $ inserted.
 <inserted text> 
                 $
-l.176 	\end{aligned}
+l.114 	\end{aligned}
                      \\[10px]
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1106,34 +1227,34 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:177: Misplaced \noalign.
+./main.tex:115: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.177 	\hline
+l.115 	\hline
               \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--177
+Underfull \hbox (badness 10000) in paragraph at lines 107--115
 
  []
 
 
-./main.tex:183: LaTeX Error: Environment aligend undefined.
+./main.tex:121: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.183 	\begin{aligend}
+l.121 	\begin{aligend}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:184: Misplaced alignment tab character &.
-l.184 		&
+./main.tex:122: Misplaced alignment tab character &.
+l.122 		&
          \icol{x_1\\x_2\\x_3}=\icol{1\\2\\3} + t\icol{0\\1\\0} + s\icol{1\\2...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1142,18 +1263,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:184: Missing $ inserted.
+./main.tex:122: Missing $ inserted.
 <inserted text> 
                 $
-l.184 		&\icol{x_1\\x_2\\x_3}
+l.122 		&\icol{x_1\\x_2\\x_3}
                              =\icol{1\\2\\3} + t\icol{0\\1\\0} + s\icol{1\\2...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:185: Misplaced alignment tab character &.
+./main.tex:123: Misplaced alignment tab character &.
 <recently read> &
                  
-l.185 		&
+l.123 		&
          det\matrice{x_1-1&x_2-2&x_3-3\\0&1&0\\1&2&3} = 0 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1162,10 +1283,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:186: Misplaced alignment tab character &.
+./main.tex:124: Misplaced alignment tab character &.
 <recently read> &
                  
-l.186 		&
+l.124 		&
          3(x_1-1) - (x_3-3) = 0\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1174,10 +1295,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:187: Misplaced alignment tab character &.
+./main.tex:125: Misplaced alignment tab character &.
 <recently read> &
                  
-l.187 		&
+l.125 		&
          3x_1 -x_3 = 0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1187,22 +1308,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:188: LaTeX Error: \begin{document} ended by \end{aligend}.
+./main.tex:126: LaTeX Error: \begin{document} ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.188 	\end{aligend}
+l.126 	\end{aligend}
                     \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:188: Missing $ inserted.
+./main.tex:126: Missing $ inserted.
 <inserted text> 
                 $
-l.188 	\end{aligend}
+l.126 	\end{aligend}
                     \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1211,21 +1332,21 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [4]
-Overfull \hbox (1.5121pt too wide) in paragraph at lines 199--201
+Overfull \hbox (1.5121pt too wide) in paragraph at lines 137--139
 \OT1/cmr/m/n/10 Ogni pi-ano del fas-cio si ot-tiene con una cop-pia $(\OML/cmm/m/it/10 ^^U; ^^V\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 K[]\OML/cmm/m/it/10 :$ \OT1/cmr/m/n/10 Cop-pie pro-porzioneali
  []
 
 [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16889 strings out of 477985
- 374272 string characters out of 5839380
+ 17877 strings out of 477985
+ 391152 string characters out of 5839381
  1878388 words of memory out of 6000000
- 36802 multiletter control sequences out of 15000+600000
- 521246 words of font info for 66 fonts, out of 8000000 for 9000
+ 37748 multiletter control sequences out of 15000+600000
+ 521559 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,20n,90p,466b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,20n,93p,490b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (5 pages, 182988 bytes).
+Output written on main.pdf (5 pages, 183058 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream

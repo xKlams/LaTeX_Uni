@@ -9,13 +9,13 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\section{Operatori Lineari Unitari}
+	\subsection{Operatori Lineari Unitari}
 	Sia $V$ uno spazio vettoriale euclideo
 	\begin{defi}
 		Un operatore lineare $T:V \rightarrow V$ si dice unitario se \\$ \langle T(u), T(v) \rangle  = \langle u, v \rangle \ \ \forall u,v\in V$
 	\end{defi}
 	\begin{prop}
-		Sia $V$ spazio vettoriale euclideo $n-$ dimensionale e sia $T: V \rightarrow V$ un applicazione, TFAE (The Following Are Equivalent)\\
+		Sia $V$ spazio vettoriale euclideo $n-$ dimensionale e sia $T: V \rightarrow V$ un applicazione, le seguenti sono equivalenti\\
 		\begin{aligned}
 			&1.\ T \text{ è unitario}\\
 			&2.\ T \text{ è lineare e} ||T(w)|| = ||v|| \ \ \forall v\in V\\
@@ -57,11 +57,13 @@
 		Dove abbiamo usato $\langle T(e_i), T(e_j) \rangle = \delta_{ij}$
 	\end{dimo}\\
 	\hline \ \\
+	\begin{prop}
 $\displaystyle\alpha\in V\minus \{0\}  \ \ \ \ S_\alpha = v-2\frac{ \langle v, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha$ riflessione rispetto ad $\alpha^2\\$
 1. $S_\alpha$ è unitaria\\
 2. $S_\alpha^2 = Id$\\
 3. Esiste una base $B$ di $V$ tale che 
 $(S_\alpha)_B = diag(1,\ldots, 1, -1)$
+\end{prop}
 \begin{dimo}
 	1. $ \langle S_\alpha (v), S_\alpha (w) \rangle  = \langle v, w \rangle \\
 	\langle v -2\frac{ \langle v, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha,w  -2\frac{ \langle w, \alpha \rangle }{ \langle \alpha,\alpha \rangle} \alpha  \rangle  = \\

@@ -49,7 +49,7 @@ per certe rette $s,t$
 	T = R_{C,\theta}\circ R_{D,\varphi} = \rho_t\circ\rho_r\circ\rho_r\circ\rho_s
 .\] 
 Se $s,t$ sono incidenti allora per la parte precedente $T$ è una rotazione, altrimenti $s\parallel t$\\
-\textbf{TODO disegno}\\
+\includegraphics[scale=.4]{rette_parallele.png}\\
 In coordinate rispetto ad un riferimetno cartesiano $Oe_1e_2$ Se $P\equiv\icol{x_1\\x_2}$ 
 \[
 	(R_{C,\theta}\circ R_{D,\varphi})(P) \ \ \ \text{ ha coordinate}
@@ -70,14 +70,14 @@ che è l'identità se e solo se $d = c$ cioè $D=C$
 \begin{defi}[Glissoriflessione]
 	Una glissoriflessione è un'isometria di un piano euclideo ottenuta come composizione $t_v\circ\rho_r$ di una riflessione di asse $r$ con una traslazione $t_v\neq Id$ con $v\neq 0, v\parallel r$
 \end{defi}
-\textbf{TODO disegno}\\
+\includegraphics[scale=.4]{glissoriflessione.png}\\
 \begin{teo}[Charles, 1831]
 	Un'isometria di un piano euclideo che fissa un punto è una rotazione o una riflessione a seconda che sia diretta o inversa. Un'isometria senza punti fissi è una traslazione o una glissoriflessione a seconda che sia diretta o inversa
 \end{teo}
 \begin{dimo}
 	Sia $f\in Isom(E)$\\ Se $f$ ha un punto fisso abbiamo già visto che $f$ è una rotazione se è diretta o una riflessione se $f$ è inversa\\
 	se $f$ diretta priva di punti fissi. Allora anche $f^2$ non ha punti fissi, perché se $f^2(p) = p$ \\
-	\textbf{Disegno TODO}\\
+	\includegraphics[scale=.4]{f_punti_fissi.png}\\
 	Dunque $f(M) = M$ escluso.\\
 	DIco che $p,f(p),f^2(p)$ che sono distinti per quanto abbiamo visto, sono allineati, Altrimneti  \textbf{Disegno TODO}\\
 	\[
@@ -92,7 +92,7 @@ che è l'identità se e solo se $d = c$ cioè $D=C$
 	Sia ora $f$ inversa senza punti fissi,\\ Allora $f^2$ è diretta e come prima $f^2= t_v$ per qualche $v$\\
 	Sia $P\in E$ un punto $r_0 = \overrightarrow{Pf^2(P)}, \ \ r_1 = \overrightarrow{f(P)f^2(P)}$ \\
 	sono rette parallele che sono scambiate tra loro da $f$ \\
-	\textbf{Disegno TODO}\\
+	\includegraphics[scale=0.6]{batman.png}\\
 	Sia $r$ la retta equidistante da $r_0$ e $r_1$.\\ Allora $f(r)\subseteq r  $ Ma $f^2 = t_v$ 
 	$f|_r = t_{v/2}$\\
 	Se ora consideriamo $t_{-v/2}\circ f$ \\questa è un'isometria inversa che fissa puntualmente $r$,\\ quindi è una riflessione che indichiamo con $\rho$. Dunque
@@ -100,7 +100,7 @@ che è l'identità se e solo se $d = c$ cioè $D=C$
 		f = t_{v/2}\circ t_{-v/2}\circ f = t_{ v/2}\circ \rho
 	.\] 
 \end{dimo}
-\section{Diagonalizzazione di operatori simmetrici}
+\subsection{Diagonalizzazione di operatori simmetrici}
 \textbf{Ricorda}\\
 $f\in End(V) $ diagonalizzabile se esiste una base di $V$ di autovettori di  $f\\ \Leftrightarrow A = [f]^B_B$ B base $\exists N\in GL(n,\mathbb{K}): N^{-1}AN$ è diagonale 
 \begin{lemm}

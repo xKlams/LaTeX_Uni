@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.18)  18 MAR 2024 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  12 JUN 2024 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -22,7 +22,7 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (../../setup.tex (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
 
@@ -526,58 +526,147 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box75
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.3'
-) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
- (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count320
-\calc@Bcount=\count321
-\calc@Adimen=\dimen284
-\calc@Bdimen=\dimen285
-\calc@Askip=\skip125
-\calc@Bskip=\skip126
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count322
-\calc@Cskip=\skip127
-) (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+) (/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\g_MT_multlinerow_int=\count323
-\l_MT_multwidth_dim=\dimen286
-\origjot=\skip128
-\l_MT_shortvdotswithinadjustabove_dim=\dimen287
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen288
-\l_MT_above_intertext_sep=\dimen289
-\l_MT_below_intertext_sep=\dimen290
-\l_MT_above_shortintertext_sep=\dimen291
-\l_MT_below_shortintertext_sep=\dimen292
-\xmathstrut@box=\box76
-\xmathstrut@dim=\dimen293
+\c@r@tfl@t=\count320
+\rotFPtop=\skip125
+\rotFPbot=\skip126
+\rot@float@box=\box76
+\rot@mess@toks=\toks41
+) (/usr/share/texlive/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-02-18 v3.0 Permit use of UTF-8 characters in soul (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-02-18 v3.0 letterspacing/underlining (mf)
+\SOUL@word=\toks42
+\SOUL@lasttoken=\toks43
+\SOUL@syllable=\toks44
+\SOUL@cmds=\toks45
+\SOUL@buffer=\toks46
+\SOUL@token=\toks47
+\SOUL@syllgoal=\dimen284
+\SOUL@syllwidth=\dimen285
+\SOUL@charkern=\dimen286
+\SOUL@hyphkern=\dimen287
+\SOUL@dimen=\dimen288
+\SOUL@dimeni=\dimen289
+\SOUL@minus=\count321
+\SOUL@comma=\count322
+\SOUL@apo=\count323
+\SOUL@grave=\count324
+\SOUL@spaceskip=\skip127
+\SOUL@ttwidth=\dimen290
+\SOUL@uldp=\dimen291
+\SOUL@ulht=\dimen292
+)) (/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
+Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchronous mode
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks48
+\XKV@tempa@toks=\toks49
 )
-\c@theo=\count324
-\c@lemma=\count325
-\c@defin=\count326
-\c@propo=\count327
+\XKV@depth=\count325
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count326
+\mult@box=\box77
+\multicol@leftmargin=\dimen293
+\c@unbalance=\count327
+\c@collectmore=\count328
+\doublecol@number=\count329
+\multicoltolerance=\count330
+\multicolpretolerance=\count331
+\full@width=\dimen294
+\page@free=\dimen295
+\premulticols=\dimen296
+\postmulticols=\dimen297
+\multicolsep=\skip128
+\multicolbaselineskip=\skip129
+\partial@page=\box78
+\last@line=\box79
+\maxbalancingoverflow=\dimen298
+\mult@rightbox=\box80
+\mult@grightbox=\box81
+\mult@firstbox=\box82
+\mult@gfirstbox=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\c@minrows=\count332
+\c@columnbadness=\count333
+\c@finalcolumnbadness=\count334
+\last@try=\dimen299
+\multicolovershoot=\dimen300
+\multicolundershoot=\dimen301
+\mult@nat@firstbox=\box120
+\colbreak@box=\box121
+\mc@col@check@num=\count335
+))
+\c@theo=\count336
+\c@lemma=\count337
+\c@nomen=\count338
+\c@defin=\count339
+\c@corollario=\count340
+\c@propo=\count341
 
 
-Package amsthm Warning: Unknown theoremstyle `breal' on input line 34.
-
-\c@nomen=\count328
-
-./main.tex:39: LaTeX Error: Command \dimo already defined.
+../../setup.tex:42: LaTeX Error: Command \dimo already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39   {\hfill\square\end{dimostrazione}}
-                                         
+l.42 ...}\hfill\square\newline\end{dimostrazione}}
+                                                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+)
 
 LaTeX Warning: Unused global option(s):
     [12px].
@@ -585,143 +674,156 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
- (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count342
+\scratchdimen=\dimen302
+\scratchbox=\box122
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen303
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks51
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 75.
+(mdframed)              on input line 14.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 81.
+(mdframed)              on input line 20.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 118--122
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 126.
-\g__nicematrix_max_cell_width_dim=\dimen294
-\c@iRow=\count329
-\c@jCol=\count330
-\l__nicematrix_cell_box=\box77
-\l__nicematrix_the_array_box=\box78
-\l__nicematrix_left_delim_dim=\dimen295
-\l__nicematrix_right_delim_dim=\dimen296
-\g__nicematrix_dp_row_zero_dim=\dimen297
-\g__nicematrix_ht_row_zero_dim=\dimen298
-\g__nicematrix_ht_row_one_dim=\dimen299
-\g__nicematrix_dp_ante_last_row_dim=\dimen300
-\g__nicematrix_ht_last_row_dim=\dimen301
-\g__nicematrix_dp_last_row_dim=\dimen302
-\g__nicematrix_ddots_int=\count331
-\g__nicematrix_iddots_int=\count332
-\g__nicematrix_delta_x_one_dim=\dimen303
-\g__nicematrix_delta_y_one_dim=\dimen304
-\g__nicematrix_delta_x_two_dim=\dimen305
-\g__nicematrix_delta_y_two_dim=\dimen306
-\l__nicematrix_initial_i_int=\count333
-\l__nicematrix_initial_j_int=\count334
-\l__nicematrix_final_i_int=\count335
-\l__nicematrix_final_j_int=\count336
-\l__nicematrix_end_int=\count337
-\l__nicematrix_local_start_int=\count338
-\l__nicematrix_local_end_int=\count339
-[3]
-./main.tex:167: Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.167 \hline
-             \ \\
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
-
- []
-
-
-./main.tex:183: LaTeX Error: Environment equations undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.183 ...\icol{1\\1} \rightarrow \begin{equations}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./main.tex:188: LaTeX Error: \begin{equation*} on input line 182 ended by \end{equations}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.188 	\end{equations}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./main.tex:190: Undefined control sequence.
-l.190 ...ow f\icol{0\\t}\in r\ \ \ \forall t\in \R
-                                                  $
+(mdframed)              on input line 65.
+./main.tex:81: Undefined control sequence.
+l.81 	A = (e_{ij}) = \prescript
+                               {}{\varepsilon}{(Id_V)}_\Gamma
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:192: Undefined control sequence.
+\g__nicematrix_max_cell_width_dim=\dimen304
+\c@iRow=\count348
+\c@jCol=\count349
+\l__nicematrix_cell_box=\box123
+\l__nicematrix_the_array_box=\box124
+\l__nicematrix_left_delim_dim=\dimen305
+\l__nicematrix_right_delim_dim=\dimen306
+\g__nicematrix_dp_row_zero_dim=\dimen307
+\g__nicematrix_ht_row_zero_dim=\dimen308
+\g__nicematrix_ht_row_one_dim=\dimen309
+\g__nicematrix_dp_ante_last_row_dim=\dimen310
+\g__nicematrix_ht_last_row_dim=\dimen311
+\g__nicematrix_dp_last_row_dim=\dimen312
+\g__nicematrix_ddots_int=\count350
+\g__nicematrix_iddots_int=\count351
+\g__nicematrix_delta_x_one_dim=\dimen313
+\g__nicematrix_delta_y_one_dim=\dimen314
+\g__nicematrix_delta_x_two_dim=\dimen315
+\g__nicematrix_delta_y_two_dim=\dimen316
+\l__nicematrix_initial_i_int=\count352
+\l__nicematrix_initial_j_int=\count353
+\l__nicematrix_final_i_int=\count354
+\l__nicematrix_final_j_int=\count355
+\l__nicematrix_end_int=\count356
+\l__nicematrix_local_start_int=\count357
+\l__nicematrix_local_end_int=\count358
+[3]
+./main.tex:106: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
+l.106 \hline
+             \ \\
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
+
+ []
+
+
+./main.tex:122: LaTeX Error: Environment equations undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 ...\icol{1\\1} \rightarrow \begin{equations}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./main.tex:127: LaTeX Error: \begin{equation*} on input line 121 ended by \end{equations}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 	\end{equations}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./main.tex:131: Undefined control sequence.
 <argument> \akpha 
                   _1 + bt\\\alpha _2 + dt
-l.192 \icol{\akpha_1 + bt\\\alpha_2 + dt}
+l.131 \icol{\akpha_1 + bt\\\alpha_2 + dt}
                                          \in v'
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -730,217 +832,181 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
 
  []
 
 
-./main.tex:217: LaTeX Error: Environment equations undefined.
+./main.tex:156: LaTeX Error: Environment equations undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \end{gather*}
+l.156 \end{gather*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:217: LaTeX Error: \begin{gather*} on input line 204 ended by \end{equations}.
+./main.tex:156: LaTeX Error: \begin{gather*} on input line 143 ended by \end{equations}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \end{gather*}
+l.156 \end{gather*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:217: LaTeX Error: Environment equations undefined.
+./main.tex:156: LaTeX Error: Environment equations undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \end{gather*}
+l.156 \end{gather*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:217: LaTeX Error: \begin{gather*} on input line 204 ended by \end{equations}.
+./main.tex:156: LaTeX Error: \begin{gather*} on input line 143 ended by \end{equations}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \end{gather*}
+l.156 \end{gather*}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
 
  []
 
-./main.tex:226: Missing $ inserted.
+./main.tex:165: Missing $ inserted.
 <inserted text> 
                 $
-l.226 \pi
+l.165 \pi
          _1: \begin{equations}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:226: LaTeX Error: Environment equations undefined.
+./main.tex:165: LaTeX Error: Environment equations undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.226 \pi_1: \begin{equations}
+l.165 \pi_1: \begin{equations}
                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:231: LaTeX Error: \begin{document} ended by \end{equations}.
+./main.tex:170: LaTeX Error: \begin{document} ended by \end{equations}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.231 \end{equations}
+l.170 \end{equations}
                       \ \ \ \
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:232: LaTeX Error: Environment equations undefined.
+./main.tex:171: LaTeX Error: Environment equations undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 \pi_2: \begin{equations}
+l.171 \pi_2: \begin{equations}
                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./main.tex:237: LaTeX Error: \begin{document} ended by \end{equations}.
+./main.tex:176: LaTeX Error: \begin{document} ended by \end{equations}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.237 \end{equations}
+l.176 \end{equations}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:239: Undefined control sequence.
-l.239 ...giacitura di $\pi_1,\pi_2$ sono $W_1 = \R
-                                                   e_1 + \R e_2, \ \ W_2 = \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-./main.tex:239: Undefined control sequence.
-l.239 ... di $\pi_1,\pi_2$ sono $W_1 = \R e_1 + \R
-                                                   e_2, \ \ W_2 = \R e_1 + \...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:239: Undefined control sequence.
-l.239 ...sono $W_1 = \R e_1 + \R e_2, \ \ W_2 = \R
-                                                   e_1 + \R e_2$\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:239: Undefined control sequence.
-l.239 ... = \R e_1 + \R e_2, \ \ W_2 = \R e_1 + \R
-                                                   e_2$\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--244
+Underfull \hbox (badness 10000) in paragraph at lines 161--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--244
+Underfull \hbox (badness 10000) in paragraph at lines 161--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--244
+Underfull \hbox (badness 10000) in paragraph at lines 161--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--244
+Underfull \hbox (badness 10000) in paragraph at lines 161--183
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
-./main.tex:296: Misplaced \noalign.
+./main.tex:235: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.296 \hline
+l.235 \hline
             
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
 [5]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 300.
+(mdframed)              on input line 239.
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
-./main.tex:305: Undefined control sequence.
-l.305 	g(\alpha v_1 + \betaa
+./main.tex:244: Undefined control sequence.
+l.244 	g(\alpha v_1 + \betaa
                              v_2,v_3) = \alpha g(v_1,v_3) + \beta g(v_2, v_3...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -950,67 +1016,67 @@ and I'll forget about whatever was undefined.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 307.
+(mdframed)              on input line 246.
 
-./main.tex:318: LaTeX Error: \mathbb allowed only in math mode.
+./main.tex:257: LaTeX Error: \mathbb allowed only in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.318 	è una forma bilineare su \mathbb
+l.257 	è una forma bilineare su \mathbb
                                         {K}^n
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:318: Missing $ inserted.
+./main.tex:257: Missing $ inserted.
 <inserted text> 
                 $
-l.318 	è una forma bilineare su \mathbb{K}^
+l.257 	è una forma bilineare su \mathbb{K}^
                                             n
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:319: LaTeX Error: Command \end{es} invalid in math mode.
+./main.tex:258: LaTeX Error: Command \end{es} invalid in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.319 \end{es}
+l.258 \end{es}
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./main.tex:319: LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.tex:258: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.319 \end{es}
+l.258 \end{es}
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./main.tex:319: LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.tex:258: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.319 \end{es}
+l.258 \end{es}
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:319: Missing $ inserted.
+./main.tex:258: Missing $ inserted.
 <inserted text> 
                 $
-l.319 \end{es}
+l.258 \end{es}
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1018,10 +1084,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Extra }, or forgotten \right.
+./main.tex:264: Extra }, or forgotten \right.
 <template> }
             $}\ifdim \wdz@ >\totwidth@ \global \totwidth@ \wdz@ \fi \endtemp...
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1029,10 +1095,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./main.tex:325: Missing \right. inserted.
+./main.tex:264: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1040,10 +1106,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Missing \right. inserted.
+./main.tex:264: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1051,10 +1117,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Missing } inserted.
+./main.tex:264: Missing } inserted.
 <inserted text> 
                 }
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1062,10 +1128,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Extra }, or forgotten \right.
+./main.tex:264: Extra }, or forgotten \right.
 <template> }
             $}\calc@shift@gather \set@gather@field \endtemplate 
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1073,10 +1139,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./main.tex:325: Missing \right. inserted.
+./main.tex:264: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1084,10 +1150,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Missing \right. inserted.
+./main.tex:264: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1095,10 +1161,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:325: Missing } inserted.
+./main.tex:264: Missing } inserted.
 <inserted text> 
                 }
-l.325 	\end{gather*}
+l.264 	\end{gather*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1107,28 +1173,40 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
 [6]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 346.
+(mdframed)              on input line 285.
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+./main.tex:286: Undefined control sequence.
+l.286 ...bilineare simmetrica \\$< , >: V\bigtimes
+                                                   V \rightarrow \mathbb{R}$...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 353.
+(mdframed)              on input line 292.
+[7]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 364.
-[7]
-./main.tex:370: Undefined control sequence.
-l.370 ...possiamo assumere $w\neq 0$. Per $v,w\inV
+(mdframed)              on input line 304.
+Package mdframed Info: Not enough space on this page on input line 307.
+
+./main.tex:309: Undefined control sequence.
+l.309 ...possiamo assumere $w\neq 0$. Per $v,w\inV
                                                   , a,b\in\R$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1136,45 +1214,36 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:370: Undefined control sequence.
-l.370 ...ssumere $w\neq 0$. Per $v,w\inV, a,b\in\R
-                                                  $
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 381--384
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
 
  []
 
-./main.tex:394: Missing $ inserted.
+./main.tex:333: Missing $ inserted.
 <inserted text> 
                 $
-l.394 \end{dimo}
+l.333 \end{dimo}
                  \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:394: LaTeX Error: \begin{dimo} on input line 369 ended by \end{dimostrazione}.
+./main.tex:333: LaTeX Error: \begin{dimo} on input line 308 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.394 \end{dimo}
+l.333 \end{dimo}
                  \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:394: Missing $ inserted.
+./main.tex:333: Missing $ inserted.
 <inserted text> 
                 $
-l.394 \end{dimo}
+l.333 \end{dimo}
                  \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1183,45 +1252,41 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:394: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:333: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.394 \end{dimo}
+l.333 \end{dimo}
                  \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:394: Extra \endgroup.
+./main.tex:333: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.394 \end{dimo}
+l.333 \end{dimo}
                  \\
 Things are pretty mixed up, but I think the worst is over.
 
-./main.tex:399: Undefined control sequence.
-l.399 ... |\alpha| ||v||\ \ \ \forall \alpha\in \R
-                                                  , \ \ \forall v\in V$ \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--340
+
+ []
 
 [8] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 18453 strings out of 478087
- 407251 string characters out of 5842650
+ 19084 strings out of 477985
+ 415960 string characters out of 5839381
  1887388 words of memory out of 6000000
- 38258 multiletter control sequences out of 15000+600000
- 526332 words of font info for 85 fonts, out of 8000000 for 9000
+ 38955 multiletter control sequences out of 15000+600000
+ 521559 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,20n,90p,466b,513s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,20n,93p,490b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (8 pages, 228552 bytes).
+Output written on main.pdf (8 pages, 228258 bytes).
 PDF statistics:
  124 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
