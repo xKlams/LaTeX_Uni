@@ -1022,6 +1022,7 @@ In particolare se $P = \icol{ x_1\\\vdots\\x_n}, \ \ Q = \icol{y_1\\\vdots\\y_n}
 	\begin{prop}
 		$T$ è unitario se e solo se $T^t\circ T = Id_V$
 	\end{prop}
+	\newpage
 	\begin{defi}
 		Sia $E$ uno spazio euclideo. Un'affinità $f:E \rightarrow E$ si dice Isometria se la sua parte lineare $\varphi: V \rightarrow V$ è un operatore unitario
 	\end{defi}
@@ -1061,6 +1062,7 @@ Y + AX + c \ \ \ \ \ \ \ A\in O(n)
 .\] 
 dove $p\in E, \ \ \ X = [P]_R, \ \ \ Y + [f(P)]_R$\\
 $A = [\varphi]^{\{e_1,\ldots,e_n\}}_{\{e_1,\ldots,e_n\}}, \ \ \ c = [f(O)]_R$
+\newpage
 \begin{teo}
 	Sia $E$ uno spazio euclideo, Un'applicazione $f:E \rightarrow E$ è un isometria se e solo se
 	\[
@@ -1113,7 +1115,6 @@ Scegliendo $B = \matrice{1&0\\0&-1}$, tutti gli elementi di $O(2)\setminus SO(2)
 \[
 A_\theta = R_\theta\matrice{1&0\\0&-1} = \matrice{\cos\theta&-\sin\theta\\\sin\theta&\cos\theta}\matrice{1&0\\0&-1} = \matrice{\cos\theta&\sin\theta\\\sin\theta&-\cos\theta}
 .\] 
-\newpage
 \begin{lemm}
 	1) $A_\theta = R_\theta A_O = A_OR_{-\theta}$\\
 	2) $A_  \varphi\circ A_\theta = R_{ \varphi - \theta}$ \\
@@ -1211,7 +1212,9 @@ che è l'identità se e solo se $d = c$ cioè $D=C$
 \begin{defi}[Glissoriflessione]
 	Una glissoriflessione è un'isometria di un piano euclideo ottenuta come composizione $t_v\circ\rho_r$ di una riflessione di asse $r$ con una traslazione $t_v\neq Id$ con $v\neq 0, v\parallel r$
 \end{defi}
+\begin{center}
 \includegraphics[scale=.4]{glissoriflessione.png}\\
+\end{center}
 \begin{teo}[Charles, 1831]
 	Un'isometria di un piano euclideo che fissa un punto è una rotazione o una riflessione a seconda che sia diretta o inversa. Un'isometria senza punti fissi è una traslazione o una glissoriflessione a seconda che sia diretta o inversa
 \end{teo}
@@ -1234,7 +1237,7 @@ che è l'identità se e solo se $d = c$ cioè $D=C$
 	Sia ora $f$ inversa senza punti fissi,\\ Allora $f^2$ è diretta e come prima $f^2= t_v$ per qualche $v$\\
 	Sia $P\in E$ un punto $r_0 = \overrightarrow{Pf^2(P)}, \ \ r_1 = \overrightarrow{f(P)f^2(P)}$ \\
 	sono rette parallele che sono scambiate tra loro da $f$ \\
-	\ \ \ \ \includegraphics[trim={0 0 0 25px},clip,scale=.4]{rette_scambiate.png}\\
+	\begin{center} \includegraphics[trim={0 0 0 25px},clip,scale=.4]{rette_scambiate.png}\end{center}\\
 	Sia $r$ la retta equidistante da $r_0$ e $r_1$.\\ Allora $f(r)\subseteq r  $ Ma $f^2 = t_v$ 
 	$f|_r = t_{v/2}$\\
 	Se ora consideriamo $t_{-v/2}\circ f$ \\questa è un'isometria inversa che fissa puntualmente $r$,\\ quindi è una riflessione che indichiamo con $\rho$. Dunque
@@ -2463,7 +2466,6 @@ Qui c'è lo spazio quoziente $( \lambda,\mu) / \lambda \sim \mu $
  \[
 	 [( \lambda_0 v_0) + \ldots +( \lambda_n v_n)] = [n] = V
  .\] 
- \newpage
  \subsection{Esercizi}
  Verificare che in $\pro^2(\R)$
   \[
@@ -2532,12 +2534,14 @@ c. Completare, se possibile, $P_1,P_2,P_3$ a un riferimento proiettivo di $\pro^
 	La costruzione si generalizza a $\pro^n \leftrightarrow$ rette per l'origine di $\A^{n+1}$\\
 	$[x_0,\ldots,x_n]\in\pro^n \leftrightarrow $ rette $\{\lambdax_0,\ldots,\lambda x_{n+1} | \lambda\in \R\}\subseteq \A^{n+1}\ \ \ H_0=\{x_0=0\}$\\
 	Consideriamo l'iperpiano affine $A:\{x_0=1\} = \{(1,y_1,\ldots,y_n)\in \A^{n+1}\}$\\
-	\includegraphics[scale=.5]{Iperpiano_affine_A.jpg}
+	\begin{center}
+	\includegraphics[scale=.5]{Iperpiano_affine_A.jpg}\\
+	\end{center}
 	\begin{aligned}
 		&j: A \rightarrow \pro^n\setminus \{H_0\}\\
 		&(1,y_1,\ldots,y_n) \rightarrow [1,y_1,\ldots,y_n]\\
 		&y^-1([x_0,\ldots,x_n] = \left[1,\frac {x_1 }{x_0},\ldots, \frac {x_n }{x_0}\right]
-	\end{aligned}
+	\end{aligned}\\
 	Quindi come sopra, ho una corrispondenza biunivoca
 	\[
 		A\cup \{H_0\} \rightarrow \pro^n
@@ -2557,7 +2561,9 @@ c. Completare, se possibile, $P_1,P_2,P_3$ a un riferimento proiettivo di $\pro^
 		& N = \icol{0\\0\\1}
 	\end{aligned}
 	\subsection{Proiezione stereografica}
+	\begin{center}
 	\includegraphics[scale=.3]{Proiezione_stereografica.jpg}\\
+	\end{center}
 	Se $P = \matrice{x'\\y'\\z'}$\\
 	 $\overrightarrow{NP}\ \ \begin{cases}
 	 	x = x't\\
@@ -2584,6 +2590,7 @@ c. Completare, se possibile, $P_1,P_2,P_3$ a un riferimento proiettivo di $\pro^
 	 \[
 	 \sigma\matrice{x'\\y'\\z'} = \frac{x'+iy' }{1-z'} \ \ (z\neq 1)
 	 .\] 
+	 \newpage
 	\subsection{Alcuni degli esercizi svolti a lezione}
 	 \textbf{Esercizio}\\
 	 Determinare un'equazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ e per i punti impropri delle rette
@@ -2715,6 +2722,7 @@ $\pro=\pro^3 \ \ S = \{Q\}\ \ \\ \bigwedge_1(Q) = \{$ iperpiani di $\pro^3$ che 
 	\begin{nome}
 		$\delta \ \ (o \ \ \delta^{-1})$ si chiama corrispondenza di dualità
 \end{nome}
+\newpage
 \begin{lemm}[Proprietà della corispodenza di dualità]
 	$1. \ \ \delta $ è biunivoca\\
 	$2. \ \ \delta$ rovescia le inclusioni\\
@@ -2886,6 +2894,7 @@ $\pi^H_S$ è unna trasformazione proiettiva degenere indotta da $\pro^W_U :V \ri
 \begin{center}
 	\includegraphics[scale=.45]{trasformazione_proiettiva.png}
 \end{center}
+\newpage
  \subsection{Proiettività}
  Siano in $\pro^2\ \ r,s$ rette distinte con $A = r\cap s$
   \begin{defi}
@@ -2909,9 +2918,16 @@ H\cap S_1 = G\cap S_2 = \emptyset
 	f(x,y) = 0
 	.\] si dice equazione della curva
 	\[
-		 l= \{\icol{x\\y}\in \A^2|f(x,y) = 0\}
+		\mathscr{C}= \{\icol{x\\y}\in \A^2|f(x,y) = 0\}
 	.\] è il supporto della curva\\
 	$\deg f$ grado della curva
+\end{defi}
+\begin{defi}
+	Una curva algebrica di $\pro^2(\K)$ è una classe di proporzionalità di polinomi \underline{omogenei} di $\K[x_0,x_1,x_2]$. Se $F(x_0,x_1,x_2)$ è una rappresentazione della classe, l'equazione
+	\[
+	F(x_0,x_1,x_2)=0
+	.\] 
+	Si dice equazione della curva.\\ Le definizioni di grado e supporto sono analoghe a quelle affini
 \end{defi}
 \textbf{Caso affine}\\
 Sia $T: \A^2 \rightarrow \A^2$ l'affinità $T(X) = AX + C$
@@ -2929,12 +2945,12 @@ ove $g(x,y) = f(a_{11}x_1+a_{12}y+c_1,a_{21}x+a_{22}y+c_2)$ \\
  D = T^{-1}(l)
 .\] 
 Se $T^{-1}X = BX + d$ \ \ $(B = A^{-1}, \ \ldots)$\\
-allora  $g(b_{11}x + b_{12}y + d_1, b_{21}x+b_{22}y + d_2) = A(x,y)$
+allora  $g(b_{11}x + b_{12}y + d_1, b_{21}x+b_{22}y + d_2) = A(x,y)$\\
 quindi $l = T(D)$\\
 è chiaro che se  $p(x,y)\in D$ allora $T(p)\in l$ e viceversa.\\
 quindi i supporti si dicono affinamente equivalente
 \begin{defi}
-	Data $l$ curva affine, una curva affine $D$  si dice affinamente equivalente a $l$ se esiste un'affinità $T$ tale che $l = T(D)$
+	Data $\mathscr{C}$ curva affine, una curva affine $D$  si dice affinamente equivalente a $\mathscr{C}$ se esiste un'affinità $T$ tale che $\mathscr{C} = T(D)$
 \end{defi}
 \subsection{Ipersuperfici algebriche}
 	Curva algebrica affine in $\A^2$ (proiettivo su $\pro^2$ ) La nozione si generalizza in modo ovvio al concetto di ipersuperficie (algebrica)
@@ -2942,34 +2958,36 @@ quindi i supporti si dicono affinamente equivalente
 		Una ipersuperficie algebrica in $\A^n$ (rispettivamente $\pro^n$ ) è una classe di proporzionalità di polinomi in
 		\[
 			\K[x_1,\ldots,x_n] \text{ (polinomi omogenei in } \K[X_0,\ldots,X_n])
-		.\] 
-		$\underline{x} = (x_1,\ldots,x_n) \ \ \underline X = (X_0,\ldots,X_n)$\\
-		$\ell = f(\underline x) = 0$ equazione della curva \ \ $F(\underline X)=0$\\
+		.\]
 		($x$ sono coordinate affini, $X$ riferimento proiettivo)\\
-		supporto di $\ell\ \ \{\underline x\in\A^n|f(\unferline x)=0\}\ \ \{[X_0,\ldots,X_n]|F(\unferline X) =0 \}$ \\
-		 \begin{aligend}
-			& \varphi\in Aff(\A^n) \ \ \ \ \psi \in PGL(n)\\
-			& \ell \text { ipersuperficie definita da } f(\underline x) = 0\\
-			&  \varphi(l): \text{ ipersuperficie definita da }\\
-			& f( \varphi^{-1}(\underline x))=0
-		\end{aligend}
+		\begin{center}
+			\begin{tabular}{c|c}
+				
+		$\underline{x} = (x_1,\ldots,x_n) \ \ & \underline X = (X_0,\ldots,X_n)$\\
+		$\mathscr{C} = f(\underline x) = 0$ equazione della curva \ & $F(\underline X)=0$\\
+		supporto di $\mathscr{C}\ \ \{\underline x\in\A^n|f(\unferline x)=0\}\ \ & \{ \left[X_0,\ldots,X_n\right]|F(\unferline X) =0 \}$ \\
+		\varphi\in Aff(\A^n) \ \ \ \ &\psi \in PGL(n)\\
+		$\mathscr{C} \text { ipersuperficie definita da } f(\underline x) = 0 & F(\underline X)\\
+		\varphi(\mathscr{C}): \text{ ipersuperficie definita da } & \psi(\mathscr{C})\\
+			f( \varphi^{-1}(\underline x))=0 & F(\psi^{-1}(\underline X)) = 0$
+			\end{tabular}
+		\end{center}
 	\end{defi}
-	Qui il tipo ha corso un po troppo, TODO finire la definizioen e ci sta una mezza osservazione\\
-	$\ell : x^2 + y^2 = 1 \ \ \ \ \varphi\matrice{x\\y} = \matrice{x+1\\y+1}\ \ \ \varphi^{-1}\matrice{x\\y}=\matrice{x-1\\y-1}$\\
-	$ \varphi(\ell): = (x-1)^2+(x-1)^2 = 1$ \ \ \ $\matrice{x\\y}:x^2 + y^2=1 \ \ \varphi\matrice{x\\u} $ ipersuperficie
+	$\mathscr{C} : x^2 + y^2 = 1 \ \ \ \ \varphi\matrice{x\\y} = \matrice{x+1\\y+1}\ \ \ \varphi^{-1}\matrice{x\\y}=\matrice{x-1\\y-1}$\\
+	$ \varphi(\mathscr{C}): = (x-1)^2+(x-1)^2 = 1$ \ \ \ $\matrice{x\\y}:x^2 + y^2=1 \ \ \varphi\matrice{x\\u} $ ipersuperficie
 	\begin{defi}
-		Due ipersuperfici affini $\ell_1,\ell_2$(proiettivi) sono affinemente equivalenti (proiettivamente equivalenti), se esiste $ \varphi\in Aff(\A^n) (\psi \in PGL(n))
+		Due ipersuperfici affini $\mathscr{C}_1,\mathscr{C}_2$(proiettivi) sono affinemente equivalenti (proiettivamente equivalenti), se esiste $ \varphi\in Aff(\A^n) (\psi \in PGL(n))
 		\\$ 
-		tale che $ \varphi(\ell_1)=\ell_2 (\psi(\ell_1) = \ell_2)$
+		tale che $ \varphi(\mathscr{C}_1)=\mathscr{C}_2 (\psi(\mathscr{C}_1) = \mathscr{C}_2)$
 	\end{defi}
 	\textbf{Nota}:\\
 	$x_1 = \frac {X_1} {X_0}$\\
 	$f(\underline x) \rightarrow F(\underline X)$ e questo si chiama polinomio omogeneizzato di $F$ \\
 	\textbf{Esempio}\\
-$x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$
-	\subsection {Chiusura proiettiva di $\ell$ }
+$x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$\newpage
+	\subsection {Chiusura proiettiva di $\mathscr{C}$ }
 	La chiusura proiettiva dell'ipersuperficie affine di equazione $f(\underline x) =0$ è l'ipersuperficie proiettiva di equazione  $F(\underline X)=0$ dove  $F$ è il polinomio omogeneizzato  di $f$\\
-	I punti di  $l^\star \cap H_0$ si chiama punti impropri di $\ell$ ($\ell^\star$ è la chiusura proiettiva)\\
+	I punti di  $l^\star \cap H_0$ si chiama punti impropri di $\mathscr{C}$ ($\mathscr{C}^\star$ è la chiusura proiettiva)\\
 	Se scriviamo $f$ come\\
 	\[
 	 f(\underline x) = f_0 + f_1(\underline x) + \ldots + f_n(\underline x)
@@ -3009,10 +3027,11 @@ $x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$
 	&	(M\underline X^t)AM\underline X = 0\\
 	&\underline X^t M A M \underline X =  0\\
 	&\underline X ^t B \underline X = 0 \ \ \ \ B = M^t A M
-	\end{aligend} TODO \\
-	Per definire $\ell_2$ è proiettivamente a $\ell_1$ \\
-	Viceversa ogni conica poriettiva equivalente a $(\ell_1)$ si ottiene in questo modo a partire da $M\in GL(3,\K)$ in definitiva\\
+	\end{aligend} \\
+	Per definire $\mathscr{C}_2$ è proiettivamente a $\mathscr{C}_1$ \\
+	Viceversa ogni conica poriettiva equivalente a $(\mathscr{C}_1)$ si ottiene in questo modo a partire da $M\in GL(3,\K)$ in definitiva\\
 	classi di quivalenza proiettiva di coniche $\leftrightarrow $ classi di congruenza di matrici simmetriche 
+	\newpage
 	\begin{defi}
 		La conica  $\underline X^tA\underline X = 0$ è:\\
 		non degenere se  $\det A \neq 0$\\
@@ -3044,28 +3063,19 @@ $x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$
 			$x_0^2 =0$ \ \ \ \ \ \ \ \ \ \ conica doppiamente degenere
 Queste coniche non sono equivalenti tra loro
 	\end{teo}
+	\newpage
 	\begin{dimo}
 		Utilizziamo il teorema di Sylvester per classificare le matrici reali simmetriche $3\times 3$ a meno di congruenza\\
 		Sappiamo che gli indici sono invariante completo,\\
 		ora ricordiamo che stiamo classificando polinomi omogenei a meno di proporzionalità\\
-		\begin{aligend}
-			&(i_+,i_-,i_0)\\
-			&(3,0,0)\\
-			&(0,3,0)\\
-			&(0,0,3)\\
-			&(2,1,0)\\
-			&(2,0,1)\\
-			&(0,2,1)\\
-			&(1,0,2)\\
-			&(0,1,2)\\
-			&(1,1,1)
-		\end{aligend} \\
-		TODO aggiungi immagine che sennò finisce male\\
+		\begin{center}
+			\includegraphics[scale=.4]{classificazione_coniche.png}
+		\end{center}
 		Quindi ogni conica proiettiva è equivalente a unna delle cinque elencate.\\
 		Tali coniche non sono equivalenti perché hanno rango diverso oppure stesso rango ma supporti diversi
 	\end{dimo}
 	\textbf{Caso generale: quadriche proiettive}\\
-	$\ell \ \ \ \ \underline X^t A \underline X =0 $ \ \ \  $A$ matrice simmetrica $(n+1)\times(n+1)$\\
+	$\mathscr{C}: \ \ \ \ \underline X^t A \underline X =0 $ \ \ \  $A$ matrice simmetrica $(n+1)\times(n+1)$\\
 	\newpage
 	 \begin{teo}
 		1.$\K$ algebricamente chiuso: ogni quadrica in $\pro^n(\K)$ è proiettivamente equivalente a una e una sola quadrica poichè
@@ -3083,11 +3093,11 @@ Queste coniche non sono equivalenti tra loro
 	 \[
 		 A=\matrice{1&0&0\\0&1&1/2\\0&1/2&0}
 	.\] 
-	$\K=\C$ \ \ \ \ \ $\det A = -\frac 1 4\neq 0$ $\ell$ è generale\\
+	$\K=\C$ \ \ \ \ \ $\det A = -\frac 1 4\neq 0$ $\mathscr{C}$ è generale\\
 	$\K = \R$\ \ \ \ \  $i_+\geq 1 \leadsto i_+=2,\ \ i_-=1,i_+=0$\\
 	 $\leadsto $ equivalente a $x_0^2+x_1^2-x_2^2=0$
 \subsection{Classificazione affine ed Euclidea}
-	$\ell \subset \A^2(\K) $ conica\\
+	$\mathscr{C} \subset \A^2(\K) $ conica\\
 	$\circledast a_{11}x^2 + a_{22}y^2 + 2a_{12}xy + 2a_{01}x + 2a_{01}y + a_{00}$\\
 	pongo $a_{10}=a_{01}, a_{20}=a_{02},a_{21}=a_{12}$ dunque la matrice $A=(a_{ij})$ è simmetrica. Chiamo
 	\[
@@ -3117,11 +3127,11 @@ Queste coniche non sono equivalenti tra loro
 	\widetilde{\underline{X}}'^t B \widetilde{\underline{X}}'= 0
 	.\] 
 	con $B = \widetilde{M}^t A\widetilde{M}$\\
-	Questa equazione ci dice che il rango di  $A$ è una proprietà affine di $\ell$. Chiameremo tale numero rango di $\ell$ (notazione $r(\ell)$\\
-	Diciamo che  $\ell$ è\\
-	non degenere se $r(\ell) = 3$\\
-	semplicemente degenere se  $r(\ell) = 2$\\
-	doppiamente degenere se  $r(\ell) = 1$
+	Questa equazione ci dice che il rango di  $A$ è una proprietà affine di $\mathscr{C}$. Chiameremo tale numero rango di $\mathscr{C}$ (notazione $r(\mathscr{C})$\\
+	Diciamo che  $\mathscr{C}$ è\\
+	non degenere se $r(\mathscr{C}) = 3$\\
+	semplicemente degenere se  $r(\mathscr{C}) = 2$\\
+	doppiamente degenere se  $r(\mathscr{C}) = 1$
 	\ \\ \hline \ \\
 	$A = \matrice{a_{00}&a_{01} & a_{02}\\a_{01} & a_{11} & a_{12} \\ a_{02} & a_{12} & a_{22}}$ \\In altri termini, $A_0$ è la matrice della forma quadratica associata ai termini quadratici del polinomio $a_{11}x^2 + 2a_{12}xy + a_{22}y^ 2$ ($A_0$ è il minore ottenuto togliendo prima riga e prima colonna)\\
 	\begin{aligend}
@@ -3129,18 +3139,18 @@ Queste coniche non sono equivalenti tra loro
 		& A \leftrightarrow B = \widetilde M ^t A \widetilde M\\
 		& A_0 \leftrightarrow B_0 = M^t A_0 M \circledast
 	\end{aligend}\\
-	Dunque anche $rk A_0$ è un invariante affine di $\ell$ \\
+	Dunque anche $rk A_0$ è un invariante affine di $\mathscr{C}$ \\
 	$\det A_0 \begin{cases}
-		\neq 0 \ \ \ \ell \text{ conica a centro }\\
-		=0 \ \ \ \ell \text{ parabola}
+		\neq 0 \ \ \ \mathscr{C} \text{ conica a centro }\\
+		=0 \ \ \ \mathscr{C} \text{ parabola}
 	\end{cases}$\\
 	$\K = \R$ Da  $\circledast$ deduciamo che anche il segno di $\det A_0$ è un invariante affine (infatti $\det B = (\det M)^2 \det A_0)$\\
-	\[
-	 \det B  \begin{cases}
-		 >0 \ \ \ell \text{ ellisse}\\
-		 < 0 \ \ \ell \text{ iperbole}
-	 \end{cases}
-	.\] 
+	\begin{center}
+	 $\det B  \begin{cases}
+		 >0 \ \ \mathscr{C} \text{ ellisse}\\
+		 < 0 \ \ \mathscr{C} \text{ iperbole}
+	 \end{cases}$
+	\end{center}
 	\newpage
 	\begin{teo}
 		Ogni conica di $\A^2(\K)$ è affinemente equivalente a una delle seguenti:\\
@@ -3173,14 +3183,14 @@ Queste coniche non sono equivalenti tra loro
 		Osserviamo che la conica è a centro se e solo se $a_{11}a_{22}\neq 0$\\
 		Passo 2\\
 		Eliminazione dei termini lineari e costanti\\
-		Supponiamo $\ell$ a centro \\
+		Supponiamo $\mathscr{C}$ a centro \\
 		effettuiamo la traslazione $\begin{cases}
 			x = x' - \frac {a_{01}}{a_{11}}\\
 			y = y' - \frac{a_{02}}{a_{22}}
 		\end{cases}$
 		che cambia l'equazione in 
 		$a_11 x'^2 + a_{22}y'^2 + c_00 = 0$\\
-		Se $\ell$ non è a centro possiamo supporre, a meno di scambiare le variabili (ovvero effettuare l'affinità $\matrice{0&1\\1&0}$) che risulti\\
+		Se $\mathscr{C}$ non è a centro possiamo supporre, a meno di scambiare le variabili (ovvero effettuare l'affinità $\matrice{0&1\\1&0}$) che risulti\\
 		 \[
 		a_11 =0, a_{22}\neq 0
 		.\] \\
@@ -3201,7 +3211,7 @@ Queste coniche non sono equivalenti tra loro
 		se $a_{01} = 0$ \  \ $a_{22} y'^2 + d_{00}=0$\\
 		Passo 3\\
 		Normalizzazione dei coefficienti \\
-		$\K = \overline \K$. Sia  $\ell$ a centro. Partiamo da 
+		$\K = \overline \K$. Sia  $\mathscr{C}$ a centro. Partiamo da 
 		\[
 		 a_{11}x'^2 + a_{22}y'^2 + c_{00} =0
 		.\] 
@@ -3219,7 +3229,7 @@ Queste coniche non sono equivalenti tra loro
 			 y'= \sqrt{-\frac{c_{00}}{a_{22}}}y
 		 \end{cases} \leadsto x^2 + y^2 -1 = 0(1)
 		.\] 
-		Sia ora $\ell$ non a centro, trasformata in 
+		Sia ora $\mathscr{C}$ non a centro, trasformata in 
 		\[
 		 a_{22} y^2 ' + d_{00} = 0
 		.\] 
@@ -3231,7 +3241,7 @@ Queste coniche non sono equivalenti tra loro
 		 x' = x
 	 \end{cases} \leadsto y^2 - 1 = 0 (4)
 	.\]
-	Resta da vedere il caso $\ell $ non a centro trasformata in 
+	Resta da vedere il caso $\mathscr{C} $ non a centro trasformata in 
 	\[
 	 a_{22} y'´ ^2 + 2a_{01}x''= 0
 	.\] 
@@ -3241,7 +3251,7 @@ Queste coniche non sono equivalenti tra loro
 		 y'' = \frac y {\sqrt{a_{22}}}
 	 \end{cases}\leadsto y^2-x = 0 (3)
 	.\] \\
-	$\K = \R \ \ \ell $  a centro\\
+	$\K = \R \ \ \mathscr{C} $  a centro\\
 	\[
 	 a_{11} x'^2 + a_{22}y^2 ' + c_{00} =0 
 	.\] 
@@ -3252,7 +3262,7 @@ Queste coniche non sono equivalenti tra loro
 		 y' = \frac y {\sqrt{|a_{22}|}}
 	 \end{cases}\leadsto (1)-(5)
 	.\] 
-	$\ell$ non a centro del tipo
+	$\mathscr{C}$ non a centro del tipo
 	\[
 	a_{22}y'^2 + d_00 = 0
 	.\] 
@@ -3263,7 +3273,7 @@ Queste coniche non sono equivalenti tra loro
 		y' = \frac y {\sqrt{|a_{22}|}}
 	\end{cases} \leadsto (7) - (9)
 	.\] \\
-	$\ell $a centro del tipo 
+	$\mathscr{C} $a centro del tipo 
 	\[
 		a_{22} y''^2 + 2a_{01}x'' = 0
 	.\] 
@@ -3273,7 +3283,7 @@ Queste coniche non sono equivalenti tra loro
 	\end{cases}$ \leadsto 6
 	\end{dimo}
 	\textbf{Osservazioni}\\
-	1) Se $\ell$ è a centro, il sistema lineare
+	1) Se $\mathscr{C}$ è a centro, il sistema lineare
 	\[
 	\begin{cases}
 		a_{11}x + a_{12}y + a_{10} = 0\\
@@ -3288,9 +3298,9 @@ Queste coniche non sono equivalenti tra loro
 		y = 2y_0-y'
 	 \end{cases}
 	.\] 
-	manda $\ell$ in $\ell$\\
-	Le rette passanti per $c = \matrice{x_0\\y_0}$ si dicono diametri di $\ell$\\
-	2) per calcolare i punti impropri di $\ell$ di equazione
+	manda $\mathscr{C}$ in $\mathscr{C}$\\
+	Le rette passanti per $c = \matrice{x_0\\y_0}$ si dicono diametri di $\mathscr{C}$\\
+	2) per calcolare i punti impropri di $\mathscr{C}$ di equazione
 	\[
 		\underline{\widetilde{X}}^tA\underline{\widetilde{X}} = 0
 	.\] 
@@ -3299,10 +3309,9 @@ Queste coniche non sono equivalenti tra loro
 		a_{11}x_1^2 + 2a_{12}x_1x_2+a_{22}x_2^2 = 0
 	.\] 
 	$\displaystyle \left(x = \frac {x_1}{x_0}, \ \ y = \frac{x_2}{x_0}\right)$ che ha discriminante $-det A_0$. Quindi le soluzioni sono\\
-	reali distinte $\ell$ iperbole\\
-	reali coincidenti $\ell$ parabola\\
-	complesse coniugate $\ell $ ellisse
-	\ \\ \hline \ \\
+	reali distinte $\mathscr{C}$ iperbole\\
+	reali coincidenti $\mathscr{C}$ parabola\\
+	complesse coniugate $\mathscr{C} $ ellisse
 	\begin{teo}
 		Ogni conica di $\mathbb{E}^2$ è congruente a una delle seguenti\\
 		\begin{aligned}
@@ -3341,30 +3350,31 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
  $a = b \ \ \ x^2 + y^2 = a^2$ circonferenza di centro l'origine e rango $a$ \\
  Il  supporto dell'ellisse è chiuso e limitato, infatti esso è centrato nel rettangolo delimitato dalle rette $x\pm a, \ \ y=\pm b$
   \[
-	  supp \ \ \ell \subset \{ (x,y)\in\R^2 : |x|\leq a , \ |y| \leq b\}
+	  supp \ \ \mathscr{C} \subset \{ (x,y)\in\R^2 : |x|\leq a , \ |y| \leq b\}
  .\] 
 \begin{center}
 	\includegraphics[scale=.45]{ellisse.png}
 \end{center}
   $\displaystyle\frac {x^2}{a^2} + \frac{y^2}{b^2} \leadsto y=\frac b a \sqrt{a^2-x^2}, \ \ y = =\frac b a \sqrt{a^2-x^2}$ \\
   \begin{defi}
-	  $c = \sqrt{a^2-b^2} \ \ (\pm c, 0) $ fuori di $\ell$
+	  $c = \sqrt{a^2-b^2} \ \ (\pm c, 0) $ fuori di $\mathscr{C}$
 	   \[
-		   e = \frac c a \ \ \ \text{eccentriche di }\ell
+		   e = \frac c a \ \ \ \text{eccentriche di }\mathscr{C}
 	  .\] 
   \end{defi}
   \textbf{Nota}\\
-  $0 \leq e < 1, \ \ e = 0 \Leftrightarrow\lee$ circonferenza
+  $0 \leq e < 1, \ \ e = 0 \Leftrightarrow\mathscr{C}$ circonferenza
   \[
-	  x =\pm \frac a c  \text{manca qualcosa}
+	  x =\pm \frac a c  \text{direttrici di \mathscr{C}}
   .\] 
+  + rispetto a $(c,0)$, - rispetto a  $(-c,0)$\\
   \textbf{Iperbole}\\
   $\displaystyle\frac {x^2}{e^2} - \frac{y^2}{b^2} = 1 \ \ a > 0, b > 0$\\
 \begin{center}
 	\includegraphics[scale=.45]{iperbole.png}
 \end{center}
   \begin{defi}
-	  $c = \sqrt{a^2 + b^2} \ \ (\pm c,0)$ fuochi di $\ell$ 
+	  $c = \sqrt{a^2 + b^2} \ \ (\pm c,0)$ fuochi di $\mathscr{C}$ 
 	   \[
 		   e = \frac c a \ \ \ \ \text{eccentricità } e>1
 	  .\] 
@@ -3378,7 +3388,7 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
 	\includegraphics[scale=.45]{parabola.png}
 \end{center}
 \begin{defi}
-	Il fuoco di $\ell$ \ \ \ $(\frac p 2 , 0)$
+	Il fuoco di $\mathscr{C}$ \ \ \ $(\frac p 2 , 0)$
 	 \[
 		 \text{ direttrice } \ \ x = -\frac  p 2 \ \ \ e = 1 \ \ \text{eccentricità}
 	.\] 
@@ -3436,8 +3446,6 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
 	Gli altri cambi per l'iperbole sono analoghi e lasciati per esercizio
 \end{dimo}
 \newpage
-\ \hline\ \\
-$\pro^2$  \\
 \begin{center}
 \includegraphics[scale=.4]{prospettivita_2.png}
 \end{center}
@@ -3487,6 +3495,19 @@ $(a)$ per costruzione una prospettività fissa il punto $A$\\
  Ma $A,P_1,P_2, \ \ \ A,Q_1,Q_2$ sono punti in posizione generale\\
  e pertanto, per il teorema fondamentale, $f=g$
  \newpage
+ \begin{nome}
+ 	Classificazione metrica delle quadriche  non degeneri in $\R^3$
+	\begin{center}
+		
+	\begin{tabular}{ c c c }
+		$\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2}=1$ &$ a > b > c > 0$ & $\text{ ellissoide}$ \\ 
+		$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2}=1$ &$ a > b >0, c > 0$ & $\text{ iperboloide iperbolico} $\\
+		$\frac{x^2}{a^2} - \frac{y^2}{b^2} - \frac{z^2}{c^2}=1$ &$ a > 0,b > c > 0$ & $\text{ iperboloide ellittico} $\\ 
+		$\frac{x^2}{a^2} + \frac{y^2}{b^2} - z = 0$ &$ a > b > 0$ & $\text{ paraboloide ellittico} $\\ 
+		$\frac{x^2}{a^2} - \frac{y^2}{b^2} - z=0$ &$ a, b > 0$ & $\text{ paraboloide iperbolico} $\\ 
+	\end{tabular}
+	\end{center}
+ \end{nome}
  \begin{teo}
  	1) L'applicazione 
 	\[
@@ -3511,6 +3532,5 @@ $(a)$ per costruzione una prospettività fissa il punto $A$\\
 	a = A\cap <u>, \ \ a' = A\cap <u'>
 	.\] 
  \end{teo}
- Di quest'ultimo teorema, scritto alla cazzo nell'ultima lezione che doveva essere di soli esercizi il fottuto 3 giugno, il papi non ci lascia la dimostrazioni, ma solo eterna frustrazione nelle nostre povere vite.
- $\mathscr{C}$
+ Di quest'ultimo teorema, il papi non ci lascia la dimostrazioni, ma solo eterna frustrazione nelle nostre povere vite.
 \end{document}

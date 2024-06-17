@@ -1,0 +1,46 @@
+\contentsline {section}{\numberline {1}Preambolo}{4}{section.1}%
+\contentsline {section}{\numberline {2}Geometria Affine}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Spazi Affini}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Posizioni Reciproche di sottospazi affini}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Applicazioni affini}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Proiezioni e Simmetrie}{16}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Complementi}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Cambiamenti di riferimento affine}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Forme Bilineari e Simmetriche}{18}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Prodotto Scalare}{19}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Procedimento di ortogonalizzazione di Gram-Schmidt}{23}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Prodotto vettoriale}{25}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Operatori Lineari Unitari}{26}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Osservazioni sugli operatori unitari}{28}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Geometria Euclidea}{30}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definizioni su operatori}{30}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Isometrie di piani e spazi euclidei di dimensione 3}{32}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Diagonalizzazione di operatori simmetrici}{37}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Prodotto Hermitiano}{38}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Diangonalizzazione unitaria di operatori normali}{43}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Classificazioni delle isometrie}{43}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Teoremi vari su spazi Hermitiani e company}{43}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Richiami su spazi vettoriali duali}{46}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Forme bilineari 2}{48}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Caso Simmetrico}{50}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Sylvester e forme quadratiche}{52}{subsection.3.11}%
+\contentsline {section}{\numberline {4}Geometria Proiettiva}{58}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Spazi proiettivi}{58}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Equazioni parametriche di un sottospazio}{62}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Mappe tra spazi proiettivi}{64}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Sottospazi in posizione Generale}{65}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Posizione generale di sottospazi in $\mathbb {P}^3, \mathbb {P}^4}{67}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Esercizi}{68}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Significato geometrico geometria proiettiva}{70}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Proiezione stereografica}{72}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Alcuni degli esercizi svolti a lezione}{73}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}Dualità}{74}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Parte da rifare seguendo il Sernesi}{75}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Due Teoremi Classici}{78}{subsection.4.12}%
+\contentsline {subsection}{\numberline {4.13}Proiettività}{81}{subsection.4.13}%
+\contentsline {section}{\numberline {5}Curve algebriche}{82}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ipersuperfici algebriche}{83}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Chiusura proiettiva di $\EuScript {C}$ }{84}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Classificazione delle coniche proiettive}{84}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Classificazione affine ed Euclidea}{87}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Geometria delle coniche euclidee}{92}{subsection.5.5}%
