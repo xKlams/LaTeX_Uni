@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  15 MAY 2024 12:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  16 JUN 2024 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,36 +717,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (34.08955pt too wide) detected at line 31
-\OML/cmm/m/it/10 ^^N \OT1/cmr/m/n/10 : \OMS/cmsy/m/n/10 f[] [] \OML/cmm/m/it/10 k[]\U/msb/m/n/10 P\OMS/cmsy/m/n/10 g ! f[]\U/msb/m/n/10 P[][]\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1\OMS/cmsy/m/n/10 g\OML/cmm/m/it/10 :
- []
+./main.tex:23: Too many }'s.
+l.23 ...to, non sappiamo a cosa si stia riferendo}
+                                                  \\
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--39
+Underfull \hbox (badness 10000) in paragraph at lines 34--40
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 39.
+(mdframed)              on input line 40.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 42.
+(mdframed)              on input line 43.
 
-./main.tex:45: LaTeX Error: Environment aligend undefined.
+./main.tex:46: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.45 	$3.$ \ \ \begin{aligend}
+l.46 	$3.$ \ \ \begin{aligend}
                               
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:46: Misplaced alignment tab character &.
-l.46 		&
+./main.tex:47: Misplaced alignment tab character &.
+l.47 		&
          \delta(S_1\cap S_2)=L(\delta(S_1),\delta(S_2))\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -755,18 +757,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:46: Missing $ inserted.
+./main.tex:47: Missing $ inserted.
 <inserted text> 
                 $
-l.46 		& \delta
+l.47 		& \delta
                (S_1\cap S_2)=L(\delta(S_1),\delta(S_2))\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:47: Misplaced alignment tab character &.
+./main.tex:48: Misplaced alignment tab character &.
 <recently read> &
                  
-l.47 		&
+l.48 		&
          \delta(L(S_1,S_2))=\delta(S_1)\cap\delta (S_2)\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -776,22 +778,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:48: LaTeX Error: \begin{lemma} on input line 42 ended by \end{aligend}.
+./main.tex:49: LaTeX Error: \begin{lemma} on input line 43 ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 	\end{aligend}
+l.49 	\end{aligend}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:48: Missing $ inserted.
+./main.tex:49: Missing $ inserted.
 <inserted text> 
                 $
-l.48 	\end{aligend}
+l.49 	\end{aligend}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -800,12 +802,12 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--49
+Underfull \hbox (badness 10000) in paragraph at lines 44--50
 
  []
 
-./main.tex:52: Undefined control sequence.
-l.52 ...\subseteq W_2 \Rightarrow W_1^\# \superset
+./main.tex:53: Undefined control sequence.
+l.53 ...\subseteq W_2 \Rightarrow W_1^\# \superset
                                                    W_2^\#$ \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -813,31 +815,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./main.tex:56: Missing $ inserted.
+./main.tex:57: Missing $ inserted.
 <inserted text> 
                 $
-l.56 \end{dimo}
+l.57 \end{dimo}
                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:56: LaTeX Error: \begin{dimo} on input line 50 ended by \end{dimostrazione}.
+./main.tex:57: LaTeX Error: \begin{dimo} on input line 51 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.56 \end{dimo}
+l.57 \end{dimo}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:56: Missing $ inserted.
+./main.tex:57: Missing $ inserted.
 <inserted text> 
                 $
-l.56 \end{dimo}
+l.57 \end{dimo}
                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -846,43 +848,42 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:56: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:57: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.56 \end{dimo}
+l.57 \end{dimo}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:56: Extra \endgroup.
+./main.tex:57: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.56 \end{dimo}
+l.57 \end{dimo}
                
 Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--57
+Underfull \hbox (badness 10000) in paragraph at lines 52--58
 $
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--57
+Underfull \hbox (badness 10000) in paragraph at lines 52--58
 
  []
 
+[2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 57.
-[2]
-Package mdframed Info: Not enough space on this page on input line 64.
+(mdframed)              on input line 58.
 
-./main.tex:66: Undefined control sequence.
-l.66 $H$ iperpiano di $\pro\ \ \ H\superseteq
+./main.tex:67: Undefined control sequence.
+l.67 $H$ iperpiano di $\pro\ \ \ H\superseteq
                                               S \Leftrightarrow \delta(H)\in...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -891,47 +892,47 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (5.0011pt too wide) detected at line 74
+Overfull \hbox (5.0011pt too wide) detected at line 75
 \OML/cmm/m/it/10 S \OMS/cmsy/m/n/10 , []   \OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 k  []:
  []
 
-./main.tex:79: Misplaced \noalign.
+./main.tex:80: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.79 \ \\ \hline
+l.80 \ \\ \hline
                  \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
 
  []
 
 
-./main.tex:82: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:83: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 	\hspace
+l.83 	\hspace
              {50px}[T]:\pro(V)\setminus &\pro(\ker T) \rightarrow\pro(W)\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:82: Missing $ inserted.
+./main.tex:83: Missing $ inserted.
 <inserted text> 
                 $
-l.82 	\hspace
+l.83 	\hspace
              {50px}[T]:\pro(V)\setminus &\pro(\ker T) \rightarrow\pro(W)\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:84: Missing $ inserted.
+./main.tex:85: Missing $ inserted.
 <inserted text> 
                 $
-l.84 \end{aligned}
+l.85 \end{aligned}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -940,77 +941,68 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--86
+Underfull \hbox (badness 10000) in paragraph at lines 80--87
 
  []
 
-./main.tex:94: Misplaced \noalign.
+./main.tex:95: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.94 \ \\ \hline
+l.95 \ \\ \hline
                  \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 96.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 101.
-Package mdframed Info: Not enough space on this page on input line 109.
+(mdframed)              on input line 97.
+Package mdframed Info: Not enough space on this page on input line 99.
 [3]
-Package mdframed Info: Not enough space on this page on input line 109.
+Package mdframed Info: Not enough space on this page on input line 99.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 110.
+(mdframed)              on input line 102.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 118.
+(mdframed)              on input line 111.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 119.
 
-Overfull \hbox (7.27559pt too wide) in paragraph at lines 119--122
+Overfull \hbox (7.27559pt too wide) in paragraph at lines 120--123
 []\OT1/cmr/m/it/10 Un'applicazione proi-et-tiva si dice non de-genere se ^^Re in-dotta da un'applicazione
  []
 
-./main.tex:133: Undefined control sequence.
-l.133 ...us Z$ \ \  $u+z\in V\setminus U$ (poich\e
-                                                   se  $u+z\in U $ anche $z$...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:134: Missing $ inserted.
+./main.tex:135: Missing $ inserted.
 <inserted text> 
                 $
-l.134 \end{dimo}
+l.135 \end{dimo}
                 
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:134: LaTeX Error: \begin{dimo} on input line 132 ended by \end{dimostrazione}.
+./main.tex:135: LaTeX Error: \begin{dimo} on input line 133 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 \end{dimo}
+l.135 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:134: Missing $ inserted.
+./main.tex:135: Missing $ inserted.
 <inserted text> 
                 $
-l.134 \end{dimo}
+l.135 \end{dimo}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1019,44 +1011,44 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:134: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:135: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 \end{dimo}
+l.135 \end{dimo}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:134: Extra \endgroup.
+./main.tex:135: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.134 \end{dimo}
+l.135 \end{dimo}
                 
 Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
 
  []
 
-[4] (./main.aux) ) 
+[4] [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17876 strings out of 477985
- 391138 string characters out of 5839381
+ 17878 strings out of 477985
+ 391154 string characters out of 5839381
  1864388 words of memory out of 6000000
- 37748 multiletter control sequences out of 15000+600000
+ 37750 multiletter control sequences out of 15000+600000
  521200 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  92i,10n,93p,490b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (4 pages, 169745 bytes).
+Output written on main.pdf (5 pages, 172118 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

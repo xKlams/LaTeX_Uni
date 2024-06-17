@@ -1,0 +1,46 @@
+\contentsline {section}{\numberline {1}Preambolo}{4}{}%
+\contentsline {section}{\numberline {2}Geometria Affine}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Spazi Affini}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Posizioni Reciproche di sottospazi affini}{8}{}%
+\contentsline {subsection}{\numberline {2.3}Applicazioni affini}{10}{}%
+\contentsline {subsection}{\numberline {2.4}Proiezioni e Simmetrie}{16}{}%
+\contentsline {subsection}{\numberline {2.5}Complementi}{16}{}%
+\contentsline {subsection}{\numberline {2.6}Cambiamenti di riferimento affine}{17}{}%
+\contentsline {subsection}{\numberline {2.7}Forme Bilineari e Simmetriche}{18}{}%
+\contentsline {subsection}{\numberline {2.8}Prodotto Scalare}{19}{}%
+\contentsline {subsection}{\numberline {2.9}Procedimento di ortogonalizzazione di Gram-Schmidt}{23}{}%
+\contentsline {subsection}{\numberline {2.10}Prodotto vettoriale}{25}{}%
+\contentsline {subsection}{\numberline {2.11}Operatori Lineari Unitari}{26}{}%
+\contentsline {subsection}{\numberline {2.12}Osservazioni sugli operatori unitari}{28}{}%
+\contentsline {section}{\numberline {3}Geometria Euclidea}{30}{}%
+\contentsline {subsection}{\numberline {3.1}Definizioni su operatori}{30}{}%
+\contentsline {subsection}{\numberline {3.2}Isometrie di piani e spazi euclidei di dimensione 3}{32}{}%
+\contentsline {subsection}{\numberline {3.3}Diagonalizzazione di operatori simmetrici}{38}{}%
+\contentsline {subsection}{\numberline {3.4}Prodotto Hermitiano}{39}{}%
+\contentsline {subsection}{\numberline {3.5}Diangonalizzazione unitaria di operatori normali}{44}{}%
+\contentsline {subsection}{\numberline {3.6}Classificazioni delle isometrie}{44}{}%
+\contentsline {subsection}{\numberline {3.7}Teoremi vari su spazi Hermitiani e company}{44}{}%
+\contentsline {subsection}{\numberline {3.8}Richiami su spazi vettoriali duali}{47}{}%
+\contentsline {subsection}{\numberline {3.9}Forme bilineari 2}{49}{}%
+\contentsline {subsection}{\numberline {3.10}Caso Simmetrico}{51}{}%
+\contentsline {subsection}{\numberline {3.11}Sylvester e forme quadratiche}{53}{}%
+\contentsline {section}{\numberline {4}Geometria Proiettiva}{59}{}%
+\contentsline {subsection}{\numberline {4.1}Spazi proiettivi}{59}{}%
+\contentsline {subsection}{\numberline {4.2}Equazioni parametriche di un sottospazio}{63}{}%
+\contentsline {subsection}{\numberline {4.3}Mappe tra spazi proiettivi}{65}{}%
+\contentsline {subsection}{\numberline {4.4}Sottospazi in posizione Generale}{66}{}%
+\contentsline {subsection}{\numberline {4.5}Posizione generale di sottospazi in $\mathbb {P}^3, \mathbb {P}^4}{68}{}%
+\contentsline {subsection}{\numberline {4.6}Esercizi}{70}{}%
+\contentsline {subsection}{\numberline {4.7}Significato geometrico geometria proiettiva}{71}{}%
+\contentsline {subsection}{\numberline {4.8}Proiezione stereografica}{73}{}%
+\contentsline {subsection}{\numberline {4.9}Alcuni degli esercizi svolti a lezione}{73}{}%
+\contentsline {subsection}{\numberline {4.10}Dualità}{75}{}%
+\contentsline {subsection}{\numberline {4.11}Parte da rifare seguendo il Sernesi}{76}{}%
+\contentsline {subsection}{\numberline {4.12}Due Teoremi Classici}{79}{}%
+\contentsline {subsection}{\numberline {4.13}Proiettività}{81}{}%
+\contentsline {subsection}{\numberline {4.14}Curve algebriche}{83}{}%
+\contentsline {subsection}{\numberline {4.15}Ipersuperfici algebriche}{83}{}%
+\contentsline {subsection}{\numberline {4.16}Chiusura proiettiva di $\ell $ }{84}{}%
+\contentsline {subsection}{\numberline {4.17}Classificazione delle coniche proiettive}{85}{}%
+\contentsline {subsection}{\numberline {4.18}Classificazione affine ed Euclidea}{87}{}%
+\contentsline {subsection}{\numberline {4.19}Geometria delle coniche euclidee}{92}{}%

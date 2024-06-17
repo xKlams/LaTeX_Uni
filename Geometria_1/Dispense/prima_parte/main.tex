@@ -9,6 +9,16 @@
 \begin{document}
 	\maketitle
 	\newpage
+	\tableofcontents
+	\newpage
+	\section{Preambolo}
+	Benvenuti nelle Dispense di Geometria di Federico De Sisti, tratte dalle lezioni di Paolo Papi.\\[10px]
+	Questa è una raccolta dei miei appunti, e di qualche esercizio, presi a lezione durante il corso di geometria dell'anno accademico 2023/2024.\\[10px]
+	Ci tengo a ringraziare tutti coloro che hanno reso queste dispense possibili, in primis mia madre, la quale mi ha aiutato a decifrare buona parte delle "lavagnate" del dotto Papi, i miei compagni di merenda Marco e Alberto che hanno reso possibile un estemporaneo 21 al primo esonero di Geometria, Tutte le mogli di Alberto, avrete si allontanato il suddetto dalla Geometria Proiettiva ma di certo lo avete avvicinato ad un cuore più grande, Ringrazio in fine la mia di moglie, perché sennò mi mena.\\[10px]
+	Lascio a voi lettori il compito di capire cosa volesse dire il papi in certi passaggi, io di certo non lo farò\\[10px]
+	Che queste dispense possano portare più di un 18, e molta gioia nelle vostre vite.\vfill \ \\
+	Tengo a specificare che qualunque informazione qui dentro può essere sbagliata, nella vita non ci sono certezze, ma per fortuna c'è la mamma di Alberto
+	\newpage
 	\section{Geometria Affine}
 	\subsection{Spazi Affini}
 	\begin{defi}[Spazio affine]
@@ -714,7 +724,7 @@ Dat $u\neq 0$, $\frac{u}{||u||}$ è un versore
 & = \alpha_i<v_i,v_i>
 	\end{aligned} \\
 	Dato che $<v_i,v_i> > 0$ poiché $v_i \neq 0$ per ipotesi, dunque $\alpha_i = 0$,\\ dato che posso scegliere qualunque $v_i$
-\end{dimo}\newpage
+\end{dimo}
 \textbf{Osservazioni} \\
 1. La base standard di $\mathbb{R}^n$ è ortonormale rispetto al prodotto scalare standard \\
 2. Sia $g = < , >$ un prodotto scalare su $V$, Se $B = \{v_1,\ldots,v_n\}$ è una base $g$-ortonormale allora $[g]_B = Id_n$ ovvero $g(v_i,v_j) = \delta_{i,j}$ \\
@@ -975,7 +985,7 @@ Poiché $v\neq 0, ||v|| \neq 0$ quindi $|\lambda| = 1$, cioè $\lambda = \pm 1$\
 	Per il primo caso $S_{f(v) - v}\circ f= S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}\ \ \ r\leq n - 1$\\
 	Dunque $S_{f(v)-v}\circ S_{f(v)-v}\circ f = S_{f(v)-v}\circ S_{\alpha_1}\ldots\circ S_{\alpha_r}\\
 \Rightarrow f = S_{f(v) - v}\circ S_{\alpha_1}\circ\ldots\circ S_{\alpha_r}} \ \ \ \\$ quindi f è composizione di al più $n$ riflessioni
-\end{dimo}
+\end{dimo}\newpage
 \section{Geometria Euclidea}
 Uno spazio affine euclideo è uno spazio affine $(E,V, +)$ dove $V$ è uno spazio euclideo.\\
 Si può definire una distanza tra punti di $E$ 
@@ -987,7 +997,6 @@ In particolare se $P = \icol{ x_1\\\vdots\\x_n}, \ \ Q = \icol{y_1\\\vdots\\y_n}
 \[
 	d(P,Q) = \sqrt{\sum^n_{i=1}(x_i - y_i)^2}\ \ \ \ \ \overrightarrow{PQ} = \icol{y_1 - x_1\\ \vdots \\ y_n - x_n}
 .\] 
-\newpage
 \begin{defi}
 	Siano $S,T$ sottospazi affini in uno spazio euclideo $\delta$ di dimensione $n$. Diciamo che $S,T$ sono ortogonali se, posto $S = p + U, \ \ T= q + W, \ \ p\in S,q\in T$\\
 	 $U,W$ sottospazi vettoriali di $V$,
@@ -2049,6 +2058,1457 @@ $ \matrice{1&1&1\\1&-1&0\\1&0&1}$ \\
 	$A$ è definita positiva se e solo se tutti i suoi autovalori principali leading sono positivi
 \end{teo}
 \end{aligned}
-%siamo a lezione 24, si gode forte e ora ci si allena
+\newpage
+\section{Geometria Proiettiva}
+\subsection{Spazi proiettivi}
+	Servirebbe un'introduzione per tutto ciò, ma non sarà il Posta a darcela, la motivazione matematica è che la formula di Grassmann vale sempre (antani)
+	\begin{defi}[Spazio Proiettivo]
+		Sia $V$ uno spazio vettoriale di dimensione finita sul campo $\K$. Lo \textbf{spazio proiettivo} associato a  $V$ denominato con $\mathbb{P}(V)$ è l'insieme dei sottospazi $1 $-dimensionali di $V$ \\
+		\[
+			\K v \leftrightarrow [v] \storto{\storto{\leadsto}} \text{ punto di }\pro(v)
+		.\] 
+		$\dim V = 0 \ \ \ \mathbb{P}(V) = \emptyset$ \\
+		$\dim V = 1 \ \ \ \mathbb{P}(V) = \{pt\}$ \\
+		$\dim V = 2 \ \ \ \mathbb{P}(V)$ retta proiettiva\\
+		$\dim V = 2 \ \ \ \mathbb{P}(V)$ piano proiettivo\\
+		Quindi $\dim \mathbb{P}(V) = \dim V -1$\\
+		Caso importante  $V = \K^{n+1}$\\
+		 \[
+			 \mathbb{P}(V) = \mathbb{P}^n(=\mathbb{P}^n(K))
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	1. Dati $v\in V\setminus \{0\}, \ \ \ \K v$ è un sottospazio $1 $-dimensionale, quindi esso dà luogo a un punto nello spazio proiettivo che denotiamo $[v]$\\
+	2. La nozione di spazio proiettivo di $V$ può introdursi in modo equivalente tramite la seguente relazione d'equivalenza su $V\setminus \{0\}$
+	 \[
+		 v\sim w \Leftrightarrow \exists \lambda\in \K\setminus\{0\} \text{ t.c. } v= \lambda w
+	.\] 
+	Allora\\
+	\begin{center}
+	\includegraphics[scale=.5]{quoziente.png}\\
+	\end{center}
+	Riprendendo l'osservazione 1, nel caso $V=\K^{n+1}$
+	 \[
+		 (x_0,\ldots,x_n)\in\K^{n+1}\setminus\{0\} \leadsto [x_0\ldots,x_n]\in\mathbb{P}^n
+	.\] 
+	\[
+		[x_0,\ldots,x_n]=[y_0,\ldots,y_n]
+	.\] 
+	\[ \Leftrightarrow\exists \lambda\in\K\setminus\{0\}:\ \ \ y_i= \lambda x_i, \ \ \ 0\leq i\leq n\]\\
+	\begin{defi}
+		Sia $\mathbb{P}=\mathbb{P}(V)$ ed $\{e_0,\ldots,e_n\}$ una base di $V$.\\
+		Diciamo che $\{e_0,\ldots,e_n\}$ definisce un sistema di coordinate omogenee (o riferimento proiettivo) su $V$, denotato con $e_0,\ldots,e_n$
+	\end{defi}
+	Dato $v\in V\seminus\{0\}$
+	 \[
+	v= x_0e_0+\ldots +x_ne_n
+	.\] 
+	$\leadsto (x_0,\ldots,x_n)\in\K^{n+1}\setminus\{0\}$
+	\[
+		P[x_0,\ldots,x_n] \leftrightarrow P=[v]
+	.\] 
+	$x_0,\ldots,x_n$ si dicono coordinate omogenee di $v$
+\\
+Ad esempio, fissata la base $\{e_0,e_1,e_2\}$ in $\mathbb{P}^2$,\\
+	$P[1,2,3]$ è il sottospazio $1 $-dim di $V$ generato da $e_0+2e_1+3e_2$\\
+	\begin{nome}
+		Fissato $e_0\ldots e_n$, i punti 
+		\[
+			F_0[1,0,\ldots,0] = [e_0],\ldots,F_n[0,\ldots,1]=[e_n] 
+		.\] 
+\\sono i punti fondamentali del riferimento\\
+		$U[1,\ldots,1]$ punto unità del riferimento\\
+		\textbf{Nota Bene}\\
+		Poichè $[v] = [ \lambda v]$ risulta
+		\[
+		\lambda v = \lambda x_0e_0+\ldots+ \lambda x_n e_n
+		.\] 
+		quindi le coordinate omogenee sono determinate solo a meno di un fattore di proporzionalità non nullo
+	\end{nome}
+	\textbf{Osservazione}\\
+	se $e_0,\ldots ,e_n$ è un riferimento proiettivo, anche  $(\mu e_0),\ldots,(\mu e_n), \ \ \mu\in\K\setminus\{0\}$ è un riferimento proiettivo e i punti hanno le stesse coordinate omogenee rispetto ai due riferimenti.\\
+	\textbf{Quindi}\\
+	consideriamo identici due riferimenti se definiti da basi proporzionali
+	\[
+	e_0,\ldots,e_n=(\mu e_0),\ldots,(\mu e_n)
+	.\] 
+	Un riferimento in $\mathbb{P}^n$ determinato dalla base canonica di $\K^{n+1}$ si dice riferimento standard. \\
+	i punti fondamentali sono
+	\[
+		[1,0,\ldots,0],[0,1,\ldots,0],\ldots,[0,\ldots,0,1]
+	.\] 
+	\hline \ \\
+	Dato $W\subset V$ sottospazio vettoriale possiamo considerare $\mathbb{P}(W)\leq \mathbb{P}(V)$\\
+	$\mathbb{P}(W)$ è detto sottospazio proiettivo di $\mathbb{P}(V)$
+	\[
+		\dim\mathbb{P}(V)-\dim\mathbb{P}(W) = (\dim V-1) -(\dim W -1) = \dim V - \dim W
+	.\] 
 
+\begin{defi}
+	Un iperpiano in $\pro^n$ è un sottospazio proiettivo di codimensione $1$
+\end{defi}
+Supponiamo che in $\pro^n$ sia fissato un riferimento $e_0,\ldots,e_n$ con coordinate omogenee $x_0,\ldots,x_n$
+\[
+	\circledast \ \ a_0x_0+a_1x_1+\ldots+a_nx_n=0 \ \ \icol{a_0\\\vdots\\a_n}\neq\icol{0\\\vdots\\0}
+.\] 
+Se leggiamo quest'equazione in $V$ è l'equazione cartesiana di un iperpiano vettoriale $H\subset V$\\
+I punti di  $P=[v]\in \pro$ le cui coordinate omogenee verificano  $\circledast$ sono quelli tali che  $v\in H, \ \ v\neq 0$ quindi sono i punti di  $\pro(H)$ \\
+\textbf{Nota bene}\\
+Se $[x_0,\ldots, x_n] = [y_0,\ldots,y_n]$ e
+\[
+a_0x_0+\ldots+ a_nx_n=0
+.\] 
+allora anche $a_0y_0+\ldots+a_ny_n=0$ perché $[x_0,\ldots,x_n] = [y_0,\ldots,y_n]$ significa $y_i=\mu x_i \ \ \mu\in\K\setminus\{0\}$ e
+ \[
+a_0y_0+\ldots+a_ny_n=a_0\mu x_0+\ldots+a_n\mu x_n = \mu(a_0x_0+\ldots_a_nx_n)=0
+.\] 
+\  \hline \ \\
+Iperpiani coordinati su $\pro^n$ (rispetto al riferimento standard)\[
+	H_i=\{[x_0,\ldots,x_n]\in\pro^n|x_i=0\} \ \ 0\leq i\leq n
+.\] 
+Ad esempio, in $\pro^2,$   \begin{center}\begin{aligend}
+	&H_0=\{x_0=0\}\\
+	&H_1=\{x_1=0\}\\
+	&H_2=\{x_2=0\}
+\end{aligend}\end{center}\\
+Più in generale consideriamo un sistema di $t$ equazioni omogenee\\
+ \begin{cases}
+	 &a_{10}x_0+\ldots a_{1n}x_n=0\\
+	 &\ldots\\
+	 &a_{t0}x_0+\ldots+a_{tn}x_n=0
+ \end{cases}\\
+ Se $W\subset V$ è il sottospazio definito dal sistema precedente, l'insieme di punti $P\in \pro$ le cui coordinate verificano il sistema è $\pro(W)$\\
+ Sia $A=(a_{ij}) \ \ \ 1\leq i\leq t, 0\leq j\leq n$ e sia  $r=rk(A)$
+  $\dim \pro(V)= \dim W -1=\dim V -r - 1 = \dim \pro(V) -r$
+  Quindi  $\pro(W)$ ha codimensione $r$ su $\pro$\\
+   \textbf{Intersezione}\\
+   $A_1x = 0 \ \ \pro(W_1)$\\
+   $A_2x=0 \ \ \pro(W_2)$ \\
+   \begin{cases}
+	&A_1x=0\\
+	&A_2x=0
+   \end{cases}
+   In particolare $\pro(W_1)\cap\pro(W_2)= \emptyset \Leftrightarrow W_1\cap W_2 = \{0\}$
+   \begin{defi}
+   	$\pro(W_1),\pro(W_2)$ si dicono\\
+	Incidenti se $\pro(W_1)\cap\pro(W_2)\neq\emptyset$\\
+	Sghembi se $\pro(W_1)\cap\pro(W_2)=\emptyset$
+   \end{defi}
+   \textbf{Osservazione}\\
+   La formula si generalizza in 
+   \[
+	   \bigcap_{i\in I}\pro(W_i) = \pro\left(\bigcap_{i\in I }W_i\right)
+   .\] 
+   \begin{defi}
+   	Se $\emptyset\neq J\subset \pro$, il sottospazio proiettivo generato da  $J$ è 
+	\[
+		L(J)=\bigcap_{\pro(W)\supseteq J}\pro(W)
+	.\] 
+	con $W$ sottospazio di $V$
+   \end{defi}
+   \textbf{Caso speciale}\\
+   $J=\{p_1,\ldots, p_t\}$. Scriveremo in tal caso $L(p_1,\ldots,p_y)$ Notiamo che se
+   \[
+	   p_1=[v_1],\ldots,p_t=[v_t]
+   .\] 
+   \[
+   L(p_1,\ldots,p_t)=\pro(<v_1,\ldots,v_t>)
+   .\] 
+   In particolare \\
+   $\dim(L(p_1,\ldots,p_t))\leq t-1$ 
+   \begin{defi}
+   	$p_1,\ldots,p_t$ si dicono linearmente indipendenti se 
+	\[
+	\dim(L(p_1,\ldots, p_t))=t-1
+	.\] 
+   \end{defi}
+   \textbf{Esempio}\\
+   $p_1,p_2$ sono indipendenti $ \Leftrightarrow$ sono distinti \\
+   $p_1,p_2,p_3$ sono indipendenti $ \Leftrightarrow$ non sono allineati
+   \newpage
+   \begin{defi}
+   	$p_1,\ldots,p_t$ in $\pro=\pro(V)$, $\dim(V)=n+1$ si dicono in posizione generale se\\
+	$\circ$ sono linearmente indipendenti $(t\leq n+1)$\\
+	 $\circ$ se $t>n+1$ e $n+1$ tra essi, comunque scelti, sono linearmente indipendenti
+   \end{defi}
+\textbf{Esempio} su $\pro^2$\\
+	\includegraphics[scale=0.20]{pos_gen.jpeg}
+	\subsection{Equazioni parametriche di un sottospazio}
+	$k+1$ punti linearmente indipendenti $[v_0],\ldots,[v_n]$ in un sottospazio proiettivo $S$ di dimensione $k$.\\
+	Per ogni $P\in S$, 
+	\[
+		P = [\lambda_0v_0+ \lambda_1v_1+\ldots+ \lambda_k v_k]
+	.\] 
+	Fissiamo ora un riferimento $e_0,\ldots,e_n$ su $\pro$\\
+Allora se $v_i$ ha coordinate $(p_{i0},\ldots,p_{in})^t$ rispetto a $\{e_0,\ldots,e_n\}$ e $P = P[x_0,\ldots,x_n]$ si ha
+\begin{center}
+\begin{cases}
+	x_0 = \lambda_0 p_{00}+ \lambda_1p_{10}+\ldots+ \lambda_k p_{k0}\\
+	x_1 = \lambda_0 p_{01}+ \lambda_1p_{11}+\ldots+ \lambda_k p_{k1}\\
+	\vdots\\
+
+	x_n = \lambda_0 p_{0n}+ \lambda_1p_{1n}+\ldots+ \lambda_k p_{kn}\\
+\end{cases}\end{center}
+\textbf{Caso importante}: rette $[v_0],[v_1]$\\
+\begin{center}\begin{cases}
+	x_0 = \lambda_0 p_{00}+ \lambda_1 p_{10}\\
+	x_0 = \lambda_0 p_{01}+ \lambda_1 p_{11}\\
+	\vdots\\
+	x_0 = \lambda_0 p_{0n}+ \lambda_1 p_{1n}\\
+\end{cases}\end{center}\\
+\ \\ \hline \ \\
+$\pro$ piano proiettivo, $r$ retta per $P[p_0,p_1,2],Q[q_0,q_1,q_2]$ $r$ è un iperpiano in $\pro$ 
+\[
+	\det\matrice{x_0&x_1&x_2\\p_0&p_1&p_2\\q_0&q_1&q_2}=0
+.\] 
+\textbf{Esercizio} Se in $\pro^3$ sono dati punti non allineati 
+\[
+	P[p_0,p_1,p_2,p_3],Q[q_0,q_1,q_2,q_3],R[r_0,r_1,r_2,r_3]
+.\] 
+l'equazione del piano per $P,Q,E$ è
+ \[
+	 \det\matrice{x_0&x_1&x_2&x_3\\p_0&p_1&p_2&p_3\\q_0&q_1&q_2&q_3\\r_0&r_1&r_2&r_3}=0
+.\] 
+\textbf{Esempio} Retta in $\pro^2(\C)$ per $[-1,1,1],[1,3,2i]$
+\[
+	\det\matrice{x_0&x_1&x_2\\-1&1&1\\1&3&2i}=0
+.\] 
+$\circ$ Verificare che i punti $A=[1,2,2], B=[3,1,4],C = [2,-1,2]$ di  $\pro^2(\R)$ sono allineati e scrivere un'equazione ella retta che li contiene
+\[
+	\det\matrice{x_0&x_1&x_2\\1&2&2\\3&1&4}=0
+.\] 
+$\circ$ Verificare che le rette per $\pro(\C)$ \\
+\begin{aligned}
+	&ix_1-x_2+3ix_0=0\\
+	&x_0+x_1-ix_2=0\\
+	&5x_0 + x_1 + 3ix_2=0
+\end{aligned}\\
+hanno intersezione non vuota (basta verificare che il determinante sia nullo)
+\[
+	A=\matrice{3i&i&-1\\1&1&-i\\5&1&3i}
+.\] 
+$\det A = 0$
+\ \\ \hline \ \\
+Siano $S_1= \pro(W_1), S_2=\pro(W_2)$ due sottospazi proiettivi
+\[
+	L(S_1\cup S_2) \text{ è detto sottospazio somma}
+.\] 
+\[
+L(S_1,S_2) = P(W_1+W_2)
+.\] 
+Infatti, se $\pro(W)\supset S_1\cup S_2$, allora contiene $\pro(W_1+W_2)$ perché $W$ deve contenere sia $W_1$ che $W_2$ \\
+D'altra parte, $W_1+W_2\supseteq W_1, \ \ W_1+W_2\supseteq W_2$\\
+quindi$
+\begin{aligend}
+	\hspace{20px}&\pro(W_1+W_2)\supseteq P(W_1)=S_1\\
+	&\pro(W_1+W_2)\supseteq P(W_2)=S_2
+\end{aligend} 
+\Rightarrow \supseteq L(S_1,S_2)$
+\begin{teo}[Forumla di Grassmann proiettiva]
+\[
+\dim L(S_1,S_2)=\dim S_1+\dim S_2 - \dim S_1\cap S_2
+.\] 
+($S1,S_2$ sottospazi proiettivi di $\pro(V)$
+\end{teo}
+\begin{dimo}
+	La dimostrazione segue subito dalla formula di Grassmann vettoriale
+	\[
+	\dim(W_1+W_2) = \dim W_1 + \dim W_2 - \dim W_1\cap W_2
+	.\] 
+	$\dim L(S_1,S_2) - 1 = \dim S + 1 + \dim S_2 + 1 - (\dim S1\cap S_2 + 2)$
+\end{dimo}
+\textbf{Osservazione}\\
+Poiché $\dim L(S_1,S_2)\leq \dim \pro$, risulta dalla formula di Grassmann
+\[
+	\dim S_1\cap S_2 \geq \dim S_1 + \dim S_2 - \dim \pro
+.\] 
+In particolare
+\[
+	\dim S_1 + \dim S_2 \geq \dim \pro \Rightarrow S_1,S_2 \text{ sono incidenti}
+.\] 
+(Infatti $\dim S_1\cap S_2\geq 0 \Leftrightarrow S_1\geq S_2 \neq \emptyset)$ 
+\begin{coro}
+	1. In un piano proiettivo due rette si intersecano\\
+	2. In uno spazio proiettivo di dimensione 3 una retta e un piano si intersecano e due piani distinti si intersecano in una retta
+\end{coro}
+\subsection{Mappe tra spazi proiettivi}
+		Siano $V,W$ $\K$-spazi vettoriali
+	\begin{defi}
+		Un'applicazione $f:\pro(V) \rightarrow\pro(W)$ si dice trasformazione proiettiva se esiste un'applicazione lineare iniettiva $\varphi : V \rightarrow W$ tale che 
+		\[
+			f([v])=[ \varphi(v)] \ \ \ \forall \ v  \in V\setminus\{0\}
+		.\] 
+	\end{defi}
+	\textbf{Osservazione}\\
+	Scriviamo $f = \bar{\varphi}$ e diciamo che $\varphi$ induce $f$.\\
+	Notiamo che $\bar{\varphi} = \overline{ \lambda \varphi} \ \ \ \ \lambda\in \R\setminus\{0\}$ quindi la famiglia $\{ \lambda \varphi | \lambda\in \K\setminus\{0\}$ induce la stessa trasformazione proiettiva
+	\begin{nome}
+		$\circ$ Se $\varphi$ è un isomorfismo $f=\bar \varphi$ si chiama isomorfismo proiettivo\\
+		$\circ$ Se $\varphi : V \rightarrow V$ è un isomorfismo, $f=\bar \varphi$ si chiama proiettività\\
+		$\circ$ $A,B\subseteq\pro(V)$ sono proiettivamente equivalenti se esiste proettività $f$ tale che $f(A)=B$
+	\end{nome}
+	\textbf{Formula di Grassmann Proiettiva}\\
+	$S_1 = \pro(W_1) \ \ S_2 = \pro(W_2)$\\
+	$S_1\cap S_2=\pro(W_1\cap W_2)$ $\ \ \ L(S_1,S_2) = \pro(W_1+W_2)$\\
+	Dove $L(S_1,S_2)$ è il minimo sottospazio che contiene $S_1,S_2$\\
+	\[
+	\dim L(S_1,S_2) = \dim S_1 + \dim S_2 - \dim (S_1\cap S_2)
+	.\] 
+	\[
+	\Rightarrow \dim(S_1\cap S_2) \geq \dim S_1 + \dim S_2 - \dim\pro
+	.\] 
+	$ \Rightarrow$  se $\dim S_1 + \dim S_2\geq \dim \pro$ allora $S_1,S_2$ sono incidenti
+	\subsection{Sottospazi in posizione Generale}
+	\begin{defi}
+		$S_1, S_2$ sottospazi di $\pro(V)$ sono in posizione generale se $S_1\cap S_2$ ha dimensione minima
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $\dim S_1 = h, \dim S_2 = k, \dim\pro =n$ allora $S_1,S_2$ sono in posizione generale se 
+	\[
+		\dim S_1\cap S_2 = h + k - n \ \ \ \ \text{se } h+k\geq n
+	.\]\[
+	S_1\cap S_2 = \emptyset \ \ \ \ \ \ \ \text{se } h + k <n
+.\]
+\begin{defi}[Cono proiettivo]
+$J\subseteq\pro(V), \ \ P\in \pro$\\
+Il Cono proiettivo  $J$ di $p$ è definito con 
+\[
+	C_p(J) = \bigcup_{Q\in J}L(P,Q)
+.\] 
+\end{defi}
+\begin{center}
+\includegraphics[scale=.53]{cono_proiettivo.png}\\
+\end{center}
+\textbf{Esercizio}\\
+1. $S\subseteq\pro$ è un sottospazio proiettivo, allora 
+\[
+ C_p(S) = L(P,S) 
+.\] 
+2. $S_1, S_2$ sono sottospazi proiettivi, allora 
+\[
+	L(S_1,S_2) = \bigcup_{P_1\in S_1, P_2\in S_2} L(P_1,P_2) = \bigcup_{P_2\in S_2} C_{P_2}(S_1)
+.\] 
+\ \\ \hline \ \\
+$H\in \pro$ iperpiano $P\in \pro\setminus H$\\
+La proiezione di  $H$ di centro $P$ è l'applicazione
+\[
+	\pi_{P,H}:\pro\setminus\{P\} \rightarrow H
+.\] 
+\[
+	\pi_{P,H}(Q) = L(P,Q) \cap H
+.\] 
+Osserviamo che se $J\subseteq \pro$ e $p\notin J$
+ \[
+	 \pi_{P,H}(J) = H\cap C_P(J)
+.\] 
+\textbf{Esempio}\\
+$\pro^N, \ \ \ H_0 = \{x_0=0\} = \{[0,x_1,\ldots,x_N]\in \pro^N\}$\\
+Dato che punti proporzionali ci danno lo stesso risultato dire $x_0 = 1$ non avrebbe senso, sarebbe identico a $x_0=3$\\[10px]
+Se $P = [1,0,\ldots,0]\notin H_0$\\
+Se $Q = [x_0,\ldots,x_N]$, allora
+\[
+	\pi_{P,H}(Q) = [0,x_1,\ldots,x_N]
+.\] 
+$L(P,Q) = [ \lambda + \mu x_0, \mu x_1,\ldots, \mu x_n]\\$
+$L(P,Q)\cap H_0$\\
+\textbf{Esempio}\\
+$[1,2,1] [0,1,-1]$\\
+\[
+	\{ \lambda [1,2,1] + \mu [0,1,-1] | ( \lambda,\mu)\in \K^2 \neq(0,0)\}
+.\] 
+Qui c'è lo spazio quoziente $( \lambda,\mu) / \lambda \sim \mu $
+\ \\ \hline \ \\ 
+\subsection{Posizione generale di sottospazi in $\pro^3, \pro^4}$}
+ \begin{aligned}
+	&\dim S_1 = h\\
+	&\dim S_2 = k\\
+	&\dim \pro = n 
+ \end{aligned}\ \ \ $\dim S_1\cap S_2$ = \begin{cases}
+	&h + k - n \ \ \ h + k\geq n\\
+	&-1 \ \ \  \ \ \ \ \ \ \ \ h + k < n\\
+ \end{cases}\\
+ \begin{center}
+ \includegraphics[scale=.5]{tabelle.png}\\
+ \end{center}
+ \ \\ \hline \ \\
+ Osserviamo che in un riferimento proiettivo in $\pro^n$ sia  $e_0,\ldots,e_n$ individua i punti fondamentali ed il punto unità, e questi sono in posizione generale
+ \[
+	 F_0 = [e_0], \ldots, F_n=[e_n], u  = [e_0 + \ldots + e_n]
+ .\] 
+ ogni $(n+1)$-ple di righe ha rango massimo
+ \begin{aligned}
+	& 1 \ \ 0 \ldots \ \ 0\\
+	&\dots \ \ \ldots\\
+	&0\ \  0 \ldots \ \ 1\\
+	&1 \ \ 1\ldots \ \ 1
+ \end{aligned}\\
+ \textbf{Esempio} $\pro^2$ $[e_0]\ \ \ \ $ \begin{aligned}
+	&1 \ 0 \ 0 \\
+	&0\ 1 \ 0 \\
+	& 0 \ 0 \ 1\\
+	&1 \ 1 \ 1
+ \end{aligned} $\ \ \ $
+ tutti i minori di rango 3 sono non zero\\
+ Viceversa, data una $(n+2)$-pla di punti in posizione generale, esiste un unico riferimento proiettivo che il ammette come punti fondamentali e punti unità.\\
+ Siano dati $P_0,\ldots,P_n$ n punti in posizione generale, \\supponiamo che $P_i= [v_i] , \ \ i= 0,\ldots,n$\\
+ Allora $\{v_0,\ldots,v_n\}$ è una base di $V$. Se $n\in V$ è tale che  $N = [n]$, allora
+  \[
+ n = \lambda_0v_0+\ldots+ \lambda_n v_n
+ .\] 
+ in modo unico. \\Osserviamo che per l'ipotesi di posizione generale, tutti i $ \lambda_i$ sono diversi da zero.\\
+ Allora $( \lambda_0v_0)\ldots ( \lambda v_n)$ è un riferimento con le proprietà valide: infatti i punti fondamentali sono 
+ \[
+	 [ \lambda_i v_i] = [v_i] = P_i
+ .\] 
+ \[
+	 [( \lambda_0 v_0) + \ldots +( \lambda_n v_n)] = [n] = V
+ .\] 
+ \newpage
+ \subsection{Esercizi}
+ Verificare che in $\pro^2(\R)$
+  \[
+	  [\frac{1}{2},1,1],\ \ [1,\frac 4 3, \frac 4 3],\ \ [2,-1,2]
+ .\] 
+ Sono allineati e trovare un'equazione della retta che li contiene\\
+ \textbf{Svolgimento}\\[10px]
+\begin{agliend}
+	0=\det\matrice{x_0&x_1&x_2\\1&2&2\\3&1&4} = 6 x_0 + 2 x_1 - 5x_2 = 12 -2 -10 = 0
+\end{agliend}\\
+\textbf{Altro Esercizio:}\\
+Determinare i valori di $a\in \C$ per cui le rette in  $\pro^2(\C)$
+ \[
+ax_1 - x_2 + 3ix_0 =0
+.\] 
+\[
+-iax_1 + x_1 - ix_2 = 0
+.\] 
+\[
+3ix_2 + 3x_0 + x_1 = 0
+.\] 
+sono concorrenti (si intersecano in un punto)\\
+\textbf{Svolgimento}\\
+Le rette sono concorrenti se e solo se il sistema delle tre equazioni ha una soluzione non nulla
+\[
+	A = \matrice{3i&a&-1\\-ia&1&-i\\5&1&3i}
+.\] 
+$\displaystyle\det A  = 0\ \ \ \ ra^2 + 4ia + 7 = 0 \ \ \Rightarrow  \ \ a = \frac{-2 \pm \sqrt{-ra^2-21a^2}}{3} = $ \begin{cases}
+	i\\
+	-\frac{7}{3}i
+\end{cases}\\
+\textbf{Altro altro esercizio}\\
+Si considerano i punti seguenti in $\pro^3(R)$
+ \[
+	 P_1 = [1,0,1,2], \ P_2 = [0,1,1,1], \ P_3 = [2,1,2,2], \ P_4=[1,1,2,3]
+.\] 
+a. Dire se $P_1,P_2,P_3,P_4$ sono in posizione generale\\
+b. Calcola $\dim L(P_1,P_2,P_3,P_4$ e trovare equazioni cartesiane\\
+c. Completare, se possibile, $P_1,P_2,P_3$ a un riferimento proiettivo di $\pro^3(\R)$\\
+ \textbf{Svolgimento}\\
+ I punti dati sono in posizione generale se posto $P_i = [v_i]$,  $v_1,v_2,v_3,v_4$ sono linearmente indipendenti
+ \[
+	 \det\matrice{1&0&1&2\\0&1&1&1\\2&1&2&2\\1&1&2&3}=0
+ .\] 
+	 Tuttavia il determinante del minore $\matrice{1&0&1\\0&1&1\\0&1&2}$ è diverso da 0 
+	  \[
+	 L(P_1,P_2,P_3,P_4) = L(P_1,P_2,P_3)
+	 .\] 
+	 \[
+		 \det\matrice{x_0&x_1&x_2&x_3\\1&0&1&2\\0&1&1&1\\2&1&2&2} = 0 \ \ \ \Rightarrow  \ \ -x_0 -2x_1+3x_2-x_3=0
+	 .\] 
+	 Ultimo punto dell'esercizio\\
+	 Per prima cosa si completa ad una base, si può completare con $\icol{0\\0\\0\\1}$ e il determinate è diverso da 0, a questo punto possiamo prendere  $P_1,P_2,P_3$ come prima, $\widetilde{P}^4 = [0,0,0,1] $  $ U = [3,2,4,6]$
+\subsection{Significato geometrico geometria proiettiva}
+	\includegraphics[scale=0.5]{geometria_proiettiva.png}\\
+	$\pro^1(\R)=$ rette passanti per $O$  $[x_0,x_1]\in\pro^1(\R)\ \ (\lambda x_0,\lambda x_1)\in\A^2,\ \ \lambda\in\R$\\
+	Osserviamo che ogni punto $[x_0,x_1]\in\pro^1\setminus\{H_0\}$ individua una retata parallela ad $r$ (in $\A^2$), che interseca $r$ nell'unico punti $(1,x_0^{-1}x_1)$\\
+	(Infatti dobbiamo imporre che $(\lambda x_0,\lambda x_1)$ abbia prima coordinata $1$, cioè $\lambda x_0 = 1$ cioè $\lambda = x_0^{-1}$\\
+	Viceversa ogni punto $(1.x)\in r$ appartiene ad un'unica retta per l'origine, quella che corrisponde al punti $[1,x]\in\pro^1\setminus H_0$\\
+	In definitiva, abbiamo una corrispondenza biunivoca\\
+	\begin{aligned}
+		&\pro^1\setminus H_0 \leftrightarrow r\\
+		&\pro^1 \leftrightarrow r\cup \{\infty\}\\
+		& H_0 \leftarrow \infty \text{ punto all'infinito di } r
+	\end{aligned}\\
+	La costruzione si generalizza a $\pro^n \leftrightarrow$ rette per l'origine di $\A^{n+1}$\\
+	$[x_0,\ldots,x_n]\in\pro^n \leftrightarrow $ rette $\{\lambdax_0,\ldots,\lambda x_{n+1} | \lambda\in \R\}\subseteq \A^{n+1}\ \ \ H_0=\{x_0=0\}$\\
+	Consideriamo l'iperpiano affine $A:\{x_0=1\} = \{(1,y_1,\ldots,y_n)\in \A^{n+1}\}$\\
+	\includegraphics[scale=.5]{Iperpiano_affine_A.jpg}
+	\begin{aligned}
+		&j: A \rightarrow \pro^n\setminus \{H_0\}\\
+		&(1,y_1,\ldots,y_n) \rightarrow [1,y_1,\ldots,y_n]\\
+		&y^-1([x_0,\ldots,x_n] = \left[1,\frac {x_1 }{x_0},\ldots, \frac {x_n }{x_0}\right]
+	\end{aligned}
+	Quindi come sopra, ho una corrispondenza biunivoca
+	\[
+		A\cup \{H_0\} \rightarrow \pro^n
+	.\] 
+	Se nella costruzione precedente identificavamo $A$ con $\A^n$ tramite  $(1,y_1,\ldots,y_n) \rightarrow (y_1,\ldots,y_n)$ otteniamo\\
+	\begin{aligned}
+		&j_0:\A^n \rightarrow\pro^n\seminus\{H_0\}\\
+		&j_0(y_1,\ldots,y_n) = [1,y_1,\ldots,y_n] \text{ passaggio a coordinate omogenee rispetto a } x_0\\
+		&j_0^{-1}([x_0,\ldots,x_n]) = \left(\frac {x_1}{x_0},\ldots,\frac{x_n}{x_0}\right) \text{ passaggio a coordinate non omogenee rispetto ad } x_0
+	\end{aligned}|\\
+	ci sono analoghe mappe per ogni $i \ \ 0\leq i \leq n$\\
+	\ \\ \hline \ \\
+	Modello di  $\pro^1 (\C)$ \\
+	$E^3$ spazio euclideo con coordinate $x,y,z$ \\
+	\begin{aligned}
+		&\pi=\{z=0\} \ \ S^2 = \{(x,y,z)\in E^3|d (\icol{x\\y\\0},\icol{0\\0\\0})=1\}\\
+		& N = \icol{0\\0\\1}
+	\end{aligned}
+	\subsection{Proiezione stereografica}
+	\includegraphics[scale=.3]{Proiezione_stereografica.jpg}\\
+	Se $P = \matrice{x'\\y'\\z'}$\\
+	 $\overrightarrow{NP}\ \ \begin{cases}
+	 	x = x't\\
+		t = y't\\
+		z = (z-1)t + 1
+	 \end{cases}$\\
+	 \sigma \matrice{x'\\y'\\z'} = \matrice{\frac{x'}{1-z'}\\\frac{y'}{1-z'}\\0}\\
+	 \textbf{Esercizio}\\
+	 $\sigma$ è invertibile con inversa\\
+	 \sigma^-1\icol{u\\v\\0}=\matrice{\frac{2u}{u^2+v^2+1}\\\frac{2v}{u^2+v^2+1}\\\frac{u^2+v^2-1}{u^2+v^2+1}}
+	 $S^2 \leftrightarrow \pi\cup \{\infty\}$\\
+	 identifichiamo  $\pi$ con $\C$ tramite\\
+	 \begin{aligend}
+		&\pi \ \ \ \ \rightarrow\ \ \ \ \ \C\\
+		&\matrice{u&v&0} \rightarrow u + iv
+	 \end{aligend}\\
+	 Allora abbiamo ottenuto una corrispondenza biunivoca 
+	 \[
+		 \sigma : S^2 \rightarrow \pro^1{\C} = \C\cup\{\infty\}
+	 .\] 
+	 \[
+	 \sigma(N) =\infty
+	 .\] 
+	 \[
+	 \sigma\matrice{x'\\y'\\z'} = \frac{x'+iy' }{1-z'} \ \ (z\neq 1)
+	 .\] 
+	\subsection{Alcuni degli esercizi svolti a lezione}
+	 \textbf{Esercizio}\\
+	 Determinare un'equazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ e per i punti impropri delle rette
+	 \[
+	 r = \begin{cases}
+	 	x + y + z-1=0\\
+		2x-y-z=0
+	 \end{cases}
+	 .\] 
+	 \[
+	 s = \begin{cases}
+	 	2x-y-2x+1=0\\
+		y+z-1=0
+	 \end{cases}
+	 .\] 
+	 Il punto improprio di $r$ è \begin{cases}
+	 	x_1+x_2+x_3-x_0=0\\
+		2x_1-x_2-x_3=0\\
+		x_0=0
+	 \end{cases}\\
+	 \begin{aligend}
+		& \begin{cases}
+			x_1+x_2+x_3=1\\
+			3x_1-x_2_x_3=0\\
+			x_0=0
+		\end{cases}
+		\Rightarrow \begin{cases}
+			x_1+x_2+x_3=0\\
+			3x_1=0\\
+			x_0=0\\
+		\end{cases}
+		\Rightarrow \begin{cases}
+			x_0=0\\
+			x_1=0\\
+			x_2+x_3=0
+		\end{cases}
+		\Rightarrow  [0,0,-1,-1]\\
+		&\text{Per quanto  riguarda s}\\
+		& \begin{cases}
+			2x_1-x_2-2x_3+x_0=0\\
+			x_2+x_3-x_0=0\\
+			x_0=0
+		\end{cases} \Rightarrow  \begin{cases}
+			2x_1-x_2-2x_3=0\\x_2+x_3=0\\
+			x_0=0
+		\end{cases} \Rightarrow \begin{cases}
+			2x_1-x_3=0\\
+			x_2+x_3=0\\
+			x_0=0
+		\end{cases} \\&\Rightarrow  [0,1,-2,2]\\
+		&\det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&-2&2}\\
+	&\det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&0&0}\\
+	&\det\matrice{x_0&x_2&x_3\\1&0&1\\0&1&-1}=0
+	 \end{aligend}
+	 \newpage
+	 \subsection{Dualità}
+	 $\pro^V=\pro(V^\star)\ \ \dim\pro=\dim\pro^V$ poichè  $\dim V=\dim V^\star$\\
+	 Osserviamo che  $F,F'\in V^\star$ definiscono lo stesso punto in  $\pro^V$ se e solo se  \\$F'= \lambda F\ \ \ \ \lambda\in\K\setminus\{0\}$\\
+	 Ma in questo caso $\ker F = \ker F'$\\
+	 Ne segue che l'iperpiano  $\ker F$ dipende solo da  $[F]$ Quindi si ha un'applicazione di dualità 
+	  \[
+		  \delta :\pro^V \rightarrow \{\text{iperpiani di }\pro\}
+	 .\] 
+	 \[
+		 \delta([F]) = \pro(\ker F)
+	 .\] 
+	 \textbf{$\delta$ è biunivoca}\\
+	 è iniettiva perché due funzionali non nulli che hanno lo stesso nucleo sono proporzionali.\\
+	 Inoltre l'iperpiano di $V$ è il nucleo di un funzionale, quindi  $\delta$ è suriettiva\\
+	 \ \hline \ \\
+	 Diciamo che gli iperpiani $H_1,\ldots,H_s$ in $\pro$ sono linearmenete indipendenti se lo sono $\delta^{-1}(H_1),\ldots,\delta^{-1}(H_s)$ \ \\ \hline \ \\
+	 Sia $\{e_0,\ldots,e_n\}$ una base di $V$ e sia $\{\eta_0,\ldots,\eta_n\}$ la corrispondente base duale di $V^\star:\eta_i(e_i)=\delta_{e_i}$ 
+	 \[
+	 H\subseteq \pro^n \ \ a_0x_0+\ldots+a_nx_n=0
+	 .\] 
+\[
+	H = \pro(\ker F) \ \ F\in V^\star \text{ definita :}
+\] 
+\[
+F(\sum^n_{i=1}x_ie_i)=\sum^n_{i=1}a_ix_i
+.\] 
+Dove le $a_i$ sono le coordinate omogenee di  $[F] $ rispetto al riferimento proiettivo  $\{\eta_0,\ldots,\eta_n\}$\\
+In particolare $H=\delta([F]) \ \ \ H=H[a_0,\ldots,a_n]$ \\
+\begin{aligend}
+	&H_0=H_0[1,\underline{0},\ldots,\underline{0}]=\delta([\eta_0]\\
+	&\vdots\\
+	&H_n=H_n[0,\ldots,0,1]=\delta([\eta_n])
+\end{aligend}
+\begin{defi}
+	$S\subset \pro$ sottospazio,  $\dim S = k \leq n-1$
+	\[
+		\bigwedge_1(S) = \{\text{ iperpiani di }\pro \text{ che contengono } S\}
+	.\] 
+	dove $\bigwedge_1(S)$ è il sistema lineare di iperpiani di centro $S$
+\end{defi}
+\textbf{Esempi}\\
+$\pro=\pro^2 \ \ S = \{Q\}\ \ \\
+\bigwedge_1(Q) = \{$ iperpiani di $\pro^2$  che contengono $Q\}$ = fascio di rette di centro $Q$\\
+$\pro=\pro^3 \ \ S = \{r\}\ \ \\ \bigwedge_1(r) = \{$ iperpiani di $\pro^3$ che contengono $r\}$ = fascio di rette di centro $r$\\
+$\pro=\pro^3 \ \ S = \{Q\}\ \ \\ \bigwedge_1(Q) = \{$ iperpiani di $\pro^3$ che contengono $Q$\} = stella di rette di centro $Q$\\
+\subsection{Parte da rifare seguendo il Sernesi}
+	$V$ spazio vettoriale, $V^\star$, \ \ $\pro^V=\pro(V^\star)$ spazio proiettivo duale \\
+	Se $B$ è una base di $V$ (ottenuta ad esempio a partire da un riferimento proiettivo di $\pro = \pro(V)$), la base duale  $B^\star$ di $V^*$ può essere usata per introdurre in $\pro^V$ un sistema di coordinate omogenee "duali"
+	\[
+		0\neq L\in V^\star \ \ [L]\in\pro^V 
+	.\] 
+	se $x_1,\ldots,x_n$ sono coordinate in $V$ rispetto a $B=\{v_1,\ldots,v_n\}$ 
+	\[
+	L(x_1v_1+\ldots+x_nv_n) = a_0x_0+\ldots+a_nx_n
+	.\] 
+	e $L$ ha coordinate $(a_0,\ldots,a_n)$ rispetto alla base $B^\star=\{v_1^*,\ldots,v_n^*\}\ \ \\ (v_i^*(v_j)=\delta_{ij})$\\
+\textbf{Questa Lezione è venuta una merda, non c'è modo apparente di studiare questo argomento se non quello di leggerlo dal Sernesi}\\Qui il professore prende letteralmenete un altro file e iniza a scriverci sotto, non sappiamo a cosa si stia riferendo}\\
+	Sia $S=\pro(W)$ un sottospazio proiettivo di  $\pro$ di dimensione $k$.
+	\[
+		W^\# =\{F\in V^*|F|_W=0\}
+	.\] 
+	$\dim W = n - k$
+	\[
+		\delta:\{\text{s.s.p. di} \dim k \text{ di } \pro\} \rightarrow \{\text{s.s.p. di }\pro^V \text{ di dim } n-k-1\}
+	.\] 
+		\[
+		\pro(W) \rightarrow \pro(W^\#)
+		.\]
+		Per s.s.p. si intende sottospazi proiettivi\\
+	\textbf{Osservazione}\\
+	Se prendiamo $k = n-1$ sottospazi proiettivi di $\dim n - 1$ in $\pro$ = iperpiani di $\pro$\\
+	Sottospazi proiettivi di  $\dim 0$ in $\pro^V = $ punti di $\pro^V$\\
+	Quindi è facile vedere che  $\delta = \widetilde{\delta}^{-1}$ \\
+	\begin{nome}
+		$\delta \ \ (o \ \ \delta^{-1})$ si chiama corrispondenza di dualità
+\end{nome}
+\begin{lemm}[Proprietà della corispodenza di dualità]
+	$1. \ \ \delta $ è biunivoca\\
+	$2. \ \ \delta$ rovescia le inclusioni\\
+	$3.$ \ \ \begin{aligend}
+		& \delta(S_1\cap S_2)=L(\delta(S_1),\delta(S_2))\\
+		& \delta(L(S_1,S_2))=\delta(S_1)\cap\delta (S_2)\\
+	\end{aligend}
+\end{lemm}
+\begin{dimo}
+	1. Segue dal caso vettoriale\\
+	2. Segue dal fatto che $W_1\subseteq W_2 \Rightarrow W_1^\# \superset W_2^\#$ \\
+	3. $S_1 = \pro(W_1), S_2 = \pro(W_2)$\\
+	$\delta(S_1\cap S_2) = \delta (\pro(W_1\cap S_2)) = \pro((W_1\cap W_2)^\# )= \pro(W_1^\# + W_2^\# = L(\delta(S_1),\delta(S_2))$\\
+	$\delta(L(S_1,S_2)) = \delta (\pro(W_1+W_2))=\pro((W_1+W_2)^\#) = \pro(W^\# \cap W^\# )$  (manca una minchiata da finire)
+\end{dimo}
+\begin{defi}
+	Un sottospazio proiettivo di $\pro^V$ si chiama sistema lineare\\
+	Il centro $S$ di un sistema lineare $L$ è l'intersezione degli iperpiani del sistema lineare\\
+	Allora $L$ coincide con tutti gli iperpiani di $\pro$ che contengono $S$
+	 \[
+		 L \leftrightarrow \Lambda_1(S) \text{ sistema lineare degli iperipani di centro } S
+	.\] 
+\end{defi}
+\textbf{Osservazioni}\\
+$H$ iperpiano di $\pro\ \ \ H\superseteq S \Leftrightarrow \delta(H)\in \delta(S)$ \\
+Ne segue che se $\dim S = k$  allora  $\dim \Lambda_1(S)= n - k - 1$
+\[
+S \Leftrightarrow \begin{cases}
+	a_{10}x_0+\ldots + a_{1n}x_n =0\ \ \ \hspace{26px} (H_1)\\
+	\vdots\\
+	a_{n-k \ 0}x_0+\ldots+a_{n-k\ n}x_n = 0 \ \ (H_{n-k})
+\end{cases} \ \ n-k \ \ \text{ equazioni indipendenti}
+.\] 
+$S=H_1\cap\ldots\cap H_{n-k}$\\
+$\Lambda_1(S) = \delta(S) = \delta(H_1\cap\ldots\cap H_{N-k}) = L(\delta(H_1),\ldots,\delta(H_{n-k})) \\\Rightarrow  \dim \Lambda_1(S) = n-k-1$\\
+$k = n - 2$ \ \ $\Lambda_1(S)$ ha dimensione $1$ ed è il fascio di iperpiani di centro $S$\\
+$n = 2$ e $S$ è una retta, allora $\Lambda_1(S)$ ha dimensione $1$ ed è il fascio di piani di asse la retta
+\ \\ \hline \ \\
+$T: V \rightarrow W$ lineare\\
+\begin{aligned}
+	\hspace{50px}[T]:\pro(V)\setminus &\pro(\ker T) \rightarrow\pro(W)\\
+			     &[v] \rightarrow [T(v)]
+\end{aligned}
+È definita se $v\in V\setminus\ker T, \lambda\neq 0$\\
+ \[
+	 [T][tv] =[T(tv)] = [\lambda T(v)] = [T(v)]
+.\] 
+\textbf{Osservazione}\\
+Se $\lambda\neq 0,\ \ \ker T= \ker \lambda T$, inoltre
+ \[
+	 [\lambda T] = [T]
+.\] 
+\ \\ \hline \ \\
+Siano $\pro(V),\ \pro(W)$ spazi proiettivi e sia $\pro(U)$ un sottospazio di $\pro(V)$
+ \begin{defi}
+	 $f:\pro(V)\setminus P(U) \rightarrow\pro(W)$ si dice applicazione proiettiva se esiste \\$T: V \rightarrow W$ lineare tale che $[T] = f$  $ \ \ \ \ \ \ (\ker T\subset U)$
+\end{defi}
+\textbf{Problema}\\
+È possibile che un'applicazione proiettiva sia indotta da due applicazioni lineari diverse?
+\begin{prop}
+	Siano $T,S :V \rightarrow W$ due applicazioni lineari supponiamo che \\
+	$1.$ Esiste $U$ sottospazio di $V$ tale che $\ker T. \ker S\subset U$\\
+	$2.$  $\forall v\in V\setminus U \ \ \exists \lambda = \lambda(v)\in\K\setminus\{0\}$ t.c.
+	\[
+	T(w) = \lambda S(v)
+	.\] 
+	Allora $\lambda =$const e $T=\lambda S$ in particolare  $\ker T = \ker S$
+\end{prop}
+\begin{coro}
+	Se $f:\pro(V)\setminus\pro(U) \rightarrow\pro(W)$ è indotta da $T,S:V \rightarrow W$ allora, $T = \lambda S, \ \ \lambda\in\K\setminus\{0\}$\\
+	In particolare $\ker T=\ker S$ e il dominio di $f$ si può estendere a $\pro(V)\setminus\pro(\ker T)$ cioè esiste una trasformazione proiettiva \\ $\widetilde{f}:\pro(V)\setminus\pro(\ker T) \rightarrow \pro(W)$ tale che 
+	\[
+		\widetilde{f}|_{\pro(V)\setminus\pro(U)} = f
+	.\] 
+	Tale dominio di definizione è massimale
+\end{coro}
+\begin{defi}
+	Un'applicazione proiettiva si dice non degenere se è indotta da un'applicazione lineare iniettiva, si dice degenere altrimenti.\\
+	Un'applicazione proiettiva non degenere $\pro(V) \rightarrow \pro(V)$
+	si dice proiettività
+\end{defi}
+\textbf{Osservazione}\\
+Le proiettività formano un gruppo, denotato $PGL(V)$\\
+ \textbf{Esempio}\\
+ $PGL(n+1,\K) = PGL(\pro^n_k) = PGL(\K^{n+1})$\\
+ sono le matrici di $GL(n_1,\K)$ identificate se differiscono per uno scalare non nullo
+ \[
+	 P GL(n_1,\K)/\text{matrici scalari non nulle}
+ .\] 
+ dove le matrici scalari non nulle $\matrice{\lambda & \ldots & 0\\\vdots & \ddots & \vdots\\ 0 & \ldots & \lambda} \ \ \lambda \neq 0$
+ \begin{dimo}[Proposizione]
+	Proviamo anzitutto che $\ker T = \ker S$ \\ Sia  $Z$ un complementare di $U: \ \ V=U\oplus Z$ \ \  $u+z\in V\setminus U$ (poiché se  $u+z\in U $ anche $z$ appartiene a $U$ escluso
+\end{dimo}
+	\subsection{Due Teoremi Classici}
+	\begin{teo}[Desgardes]
+		$\pro =\pro(V)$ piano proiettivo, $P_1,\ldots,P_6\in\pro$ punti distinti tali che le tre rette
+		\[
+		 L(P_1,P_4) \ \ L(P_2,P_4) \ \ L(P_3,P_6)
+		.\] 
+		abbiano in comune un punto $P_0\neq P_i \ \ 1\leq i \leq 6$
+	Allora
+	\[
+	L(P_1,P_3)\cap L(P_4,P_6),L(P_2,P_5)\cap L(P_5,P_6),L(P_1,P_2)\cap L(P_4,P_5)
+	.\] 
+	sono allineati
+	\end{teo}
+	\begin{dimo}\ 
+		\begin{center}
+			\includegraphics[scale=.35]{Desargues.png}
+		\end{center}
+	Siano $v_i\in V, \ \0\leq i \leq 6, $ t.c. $\ \ [v_i] = P_i$ Per ipotesi
+	\[
+	v_0 = \alpha_1v_1+\alpha_4v_4 = \alpha_2v_2+\alpha_5v_5=\alpha_3v_3+\alpha_6v_6
+	.\] 
+	Inoltre poiché $P_0\neq P_i, i > 1 ,$ tutti gli $\alpha_i$ sono non nulli.
+	I punti \\
+	\begin{aligend}
+		&L(P_1,P_3)\cap L(P_4,P_6)\\
+		&L(P_2,P_3)\cap L(P_5,P_6)\\
+		&L(P_1,P_2)\cap L(P_4,P_5)
+	\end{aligend} sono associati ai vettori \\
+	\begin{aligend}		
+&\alpha_1v_1-\alpha_3v_3=-\alpha_4v_4+\alpha_6v_6\\
+&-\alpha_2v_2 + \alpha_3v_3=\alpha_5v_4-\alpha_6v_6 \\
+&- \alpha_1v_1+\alpha_2v_2=\alpha_4v_4-\alpha_5v_5
+		\end{aligend}\\
+		I vettori nella colonna di sinistra sono dipendenti, poiché la loro somma è 0. Dunque i punti corrispondenti sono allineati.
+	\end{dimo}
+	\begin{teo}[Pappo]
+	$A_1,\ldots,A_6$ distinti $L(A_1,A_2),L(A_2,A_3),\ldots,L(A_6,A_1)$ distinte\\
+	esistono $r,s$ rette con $A_i\in r$, i dispari, $A_i\in s$ i pari\\
+	Supponiamo poi $0=r\cap s\neq A_i.$ Allora 
+	\[
+	L(A_1,A_2)\cap L(A_4,A_5), \ \ L(A_2,A_3)\cap L(A_5,A_6),\ \ L(A_3,A_4)\cap L(A_6,A_1)
+	.\] 
+	sono allineati
+\end{teo}
+\begin{center}
+	\includegraphics[scale=.45]{Pappo.png}
+\end{center}
+\begin{dimo}
+	Poiché $r = L(A_1,A_3),\ \ s=L(A_2,A_4)$ sono distati e $0\neq A_i$\\
+	$A_1,A_2,A_3,A_4$ è un riferimento proiettivo. Ma
+	\[
+		\det\matrice{a-1 & a & 0 \\ 0 &b &1 - a\\ b & b & 1} = 0 \Rightarrow  (a-1)b(1-1+a)+ab(1-a)=0
+	\] 
+
+\end{dimo}
+
+\ \\ \hline \ \\
+ $\pro=\pro(V)$ spazio proiettivo di dimensione $n$ $S = \pro (U),\ \ \ H = \pro(W)$ sottospazi proiettivi tali che 
+ \[
+  S\cap H = \emptyset \ \ \text{ e} \ \ \ L(S,H)=\pro
+ .\] 
+ Se $\dim S = k, \dim H = h$ per le formule di Grassmann
+  \[
+ k + h = n-1
+ .\] 
+$\forall P\in \pro\setminus H, \ \ \ \dim L(H,\{p\})=h+1$\\
+Quindi $S\cap L(H,\{0\}) $ è un punto\\
+Posso definire la proiezione su  $S$ di centro $H$ come
+\[
+ \pi^H_S: \pro\setminus H \rightarrow \pro
+.\] 
+\[
+	P \rightarrow S\cap L(H,\{0\})
+.\] 
+$\pi^H_S$ è unna trasformazione proiettiva degenere indotta da $\pro^W_U :V \rightarrow V$ proiezione su $U$ parallela ad $H$\\
+\begin{center}
+	\includegraphics[scale=.45]{trasformazione_proiettiva.png}
+\end{center}
+ \subsection{Proiettività}
+ Siano in $\pro^2\ \ r,s$ rette distinte con $A = r\cap s$
+  \begin{defi}
+ 	Dato $O\not\in r\cup s,$ la restrizione ad $r$ della proiezione su $s$ di centro $O$ è detta  \textbf{proiettività} di centro $O$
+\end{defi}
+\begin{center}
+	\includegraphics[scale=.6]{proiettivita.png}
+\end{center}
+$f$ è un isomorfismo proiettivo. La notazione si generalizza a $\pro^n$ nel modo seguente.\\
+$S_1,S_2$ sottospazi di dimensione $k$, $H$ sottospazio tale che \[
+H\cap S_1 = G\cap S_2 = \emptyset
+.\] 
+\[
+\dim H = n  - k - 1
+.\] Allora la restrizione a $S_1$ della proiezione su $S_2$ di centro $H$ è un isomorfismo proiettivo $f: S_1 \rightarrow S_2 $ detto prospettività di centro $H$
+\newpage
+\subsection{Curve algebriche}
+\begin{defi}
+	Una curva algebrica in $\A^2(K)$ è una classe di proporzionalità di polinomi non costanti di  $\K[x,y]$. Se  $f(x,y)$ è un rappresentante della classe, l'equazione 
+	\[
+	f(x,y) = 0
+	.\] si dice equazione della curva
+	\[
+		 l= \{\icol{x\\y}\in \A^2|f(x,y) = 0\}
+	.\] è il supporto della curva\\
+	$\deg f$ grado della curva
+\end{defi}
+\textbf{Caso affine}\\
+Sia $T: \A^2 \rightarrow \A^2$ l'affinità $T(X) = AX + C$
+ \[
+	 A = (a_{ij})\in GL(2,\L) \ \ C = \matrice{c_1\\c_2}
+.\] 
+Sia $l$ una curva di equazioni $f(x,y) = 0$
+La curva $D$ di equazione 
+\[
+g(x,y) =0 
+.\] 
+ove $g(x,y) = f(a_{11}x_1+a_{12}y+c_1,a_{21}x+a_{22}y+c_2)$ \\
+è detta la trasformata di $l$ tramite $T^{-1}$
+ \[
+ D = T^{-1}(l)
+.\] 
+Se $T^{-1}X = BX + d$ \ \ $(B = A^{-1}, \ \ldots)$\\
+allora  $g(b_{11}x + b_{12}y + d_1, b_{21}x+b_{22}y + d_2) = A(x,y)$
+quindi $l = T(D)$\\
+è chiaro che se  $p(x,y)\in D$ allora $T(p)\in l$ e viceversa.\\
+quindi i supporti si dicono affinamente equivalente
+\begin{defi}
+	Data $l$ curva affine, una curva affine $D$  si dice affinamente equivalente a $l$ se esiste un'affinità $T$ tale che $l = T(D)$
+\end{defi}
+\subsection{Ipersuperfici algebriche}
+	Curva algebrica affine in $\A^2$ (proiettivo su $\pro^2$ ) La nozione si generalizza in modo ovvio al concetto di ipersuperficie (algebrica)
+	\begin{defi}
+		Una ipersuperficie algebrica in $\A^n$ (rispettivamente $\pro^n$ ) è una classe di proporzionalità di polinomi in
+		\[
+			\K[x_1,\ldots,x_n] \text{ (polinomi omogenei in } \K[X_0,\ldots,X_n])
+		.\] 
+		$\underline{x} = (x_1,\ldots,x_n) \ \ \underline X = (X_0,\ldots,X_n)$\\
+		$\ell = f(\underline x) = 0$ equazione della curva \ \ $F(\underline X)=0$\\
+		($x$ sono coordinate affini, $X$ riferimento proiettivo)\\
+		supporto di $\ell\ \ \{\underline x\in\A^n|f(\unferline x)=0\}\ \ \{[X_0,\ldots,X_n]|F(\unferline X) =0 \}$ \\
+		 \begin{aligend}
+			& \varphi\in Aff(\A^n) \ \ \ \ \psi \in PGL(n)\\
+			& \ell \text { ipersuperficie definita da } f(\underline x) = 0\\
+			&  \varphi(l): \text{ ipersuperficie definita da }\\
+			& f( \varphi^{-1}(\underline x))=0
+		\end{aligend}
+	\end{defi}
+	Qui il tipo ha corso un po troppo, TODO finire la definizioen e ci sta una mezza osservazione\\
+	$\ell : x^2 + y^2 = 1 \ \ \ \ \varphi\matrice{x\\y} = \matrice{x+1\\y+1}\ \ \ \varphi^{-1}\matrice{x\\y}=\matrice{x-1\\y-1}$\\
+	$ \varphi(\ell): = (x-1)^2+(x-1)^2 = 1$ \ \ \ $\matrice{x\\y}:x^2 + y^2=1 \ \ \varphi\matrice{x\\u} $ ipersuperficie
+	\begin{defi}
+		Due ipersuperfici affini $\ell_1,\ell_2$(proiettivi) sono affinemente equivalenti (proiettivamente equivalenti), se esiste $ \varphi\in Aff(\A^n) (\psi \in PGL(n))
+		\\$ 
+		tale che $ \varphi(\ell_1)=\ell_2 (\psi(\ell_1) = \ell_2)$
+	\end{defi}
+	\textbf{Nota}:\\
+	$x_1 = \frac {X_1} {X_0}$\\
+	$f(\underline x) \rightarrow F(\underline X)$ e questo si chiama polinomio omogeneizzato di $F$ \\
+	\textbf{Esempio}\\
+$x + y + z - 3 = 0 \leadsto \ \ X_1+X_2+X_3-3X_0=0$
+	\subsection {Chiusura proiettiva di $\ell$ }
+	La chiusura proiettiva dell'ipersuperficie affine di equazione $f(\underline x) =0$ è l'ipersuperficie proiettiva di equazione  $F(\underline X)=0$ dove  $F$ è il polinomio omogeneizzato  di $f$\\
+	I punti di  $l^\star \cap H_0$ si chiama punti impropri di $\ell$ ($\ell^\star$ è la chiusura proiettiva)\\
+	Se scriviamo $f$ come\\
+	\[
+	 f(\underline x) = f_0 + f_1(\underline x) + \ldots + f_n(\underline x)
+	.\] 
+	con gli $f_i$ omogenei di grado $i$
+	 \[
+		 F(X) = f_0 X_0^n + f_1(\underline X)X_0^{n-1}+\ldots+f_n(\underline X)
+	.\] 
+	ad esempio
+	\[
+	x^2 + 2xy + y^2 + z+ 2x-3 = 0
+	.\] 
+	diventa
+	\[
+	X_1^2 + 2X_1X_2 + X_2^2 +X_3X_0 + 2X_1X_0-3X_0^2=0
+	.\] 
+	punti impropri: intersecano con $X_0 =0 $\\
+	\[
+		[0,X_1,X_2,X_3]:X_1^2 + 2X_1X_2 + X_2^2 =0 
+	.\] 
+	Quindi l'equazione dei punti omogenei è data da 
+	\[
+	 f_n(\underline X) = 0
+	.\] 
+	\subsection{Classificazione delle coniche proiettive}
+	Le coniche proiettive sono le curve di secondo grado in $\pro^2$\\
+	:a generica equazione può scriversi 
+	 \[
+		 a_{11}X_1^2+2a_{12}X_1X_2+a_{12}X_2^2+2a_{01}X_0X_1+2a_{02}X_0X_2+a_{00}X_0^2
+	.\] 
+	Posto $a_{21}=a_{12}, a_{10}=a_{01},a_{20}=a_{02}$, la forma precedente si scrive come 
+	\[
+		(1)\ \ \ \ \ \ 	\underline X^t A X = 0 \ \ \ \ \ \text{ ove } A = (a_{ij})
+	.\] 
+	Se ora $M\in GL(3,\K)$ e rimpiazziamo $\underline X$ con $M\underline X$ da (1) si ottiene \\
+	(2)\begin{aligend}
+	&	(M\underline X^t)AM\underline X = 0\\
+	&\underline X^t M A M \underline X =  0\\
+	&\underline X ^t B \underline X = 0 \ \ \ \ B = M^t A M
+	\end{aligend} TODO \\
+	Per definire $\ell_2$ è proiettivamente a $\ell_1$ \\
+	Viceversa ogni conica poriettiva equivalente a $(\ell_1)$ si ottiene in questo modo a partire da $M\in GL(3,\K)$ in definitiva\\
+	classi di quivalenza proiettiva di coniche $\leftrightarrow $ classi di congruenza di matrici simmetriche 
+	\begin{defi}
+		La conica  $\underline X^tA\underline X = 0$ è:\\
+		non degenere se  $\det A \neq 0$\\
+		semplicemente degenere se  $rk A = 2$ e $\det A =0$\\
+		doppiamente degenere se  $rk A  = 1$ e $\det A = 0$
+	\end{defi}
+	\begin{teo}
+		Sia $\K$ algebricamente chisuo. Ogni conica di $\pro^2(\K)$ è proiettivamente equivalente a una delle seguenti\\
+		$x_0^2+x_1^2+x_2^2 =0$ conica generale\\
+		$x_0^2 +x_1^2 = 0$ conica semplicemente degenere\\
+		$x_0^2=0$ conica doppiamente degenere\\
+		Tali coniche non sono equivalenti tra loro
+	\end{teo}
+	\begin{dimo}
+		Dobbiamo solo classificare le matrici simmetriche $3\times 3$ complesse rispetto alle componenti. Sappiamo che il rango è un invariante completo, quindi
+		\[
+			\matrice{1&0&0\\0&1&0\\0&0&1},\matrice{1&0&0\\0&1&0\\0&0&0},\matrice{1&0&0\\0&0&0\\0&0&0}
+		.\] 
+		sono le uniche possibilità.\\
+	\end{dimo}
+	\textbf{Nota:}\\
+		Un invariante completo caratterizza la matrice (se hanno rango uguale allora sono equivalenti e viceversa)\\
+	\begin{teo}
+			Ogni conica di $\pro^2(\R)$ è proiettivamente equivalente a una delle seguenti:\\
+			$x_0^2+x_1^2-x_2^2 =0 $ \ \ conica generale\\
+			$x_0^2+x_1^2+x_2^2 =0 $ \ \ conica generale a punti non reali\\
+			$x_0^2-x_1^2=0$ \\
+			$x_0+x_1^2=0$ \ \ \ \ \ sono coniche semplicemente degeneri\\
+			$x_0^2 =0$ \ \ \ \ \ \ \ \ \ \ conica doppiamente degenere
+Queste coniche non sono equivalenti tra loro
+	\end{teo}
+	\begin{dimo}
+		Utilizziamo il teorema di Sylvester per classificare le matrici reali simmetriche $3\times 3$ a meno di congruenza\\
+		Sappiamo che gli indici sono invariante completo,\\
+		ora ricordiamo che stiamo classificando polinomi omogenei a meno di proporzionalità\\
+		\begin{aligend}
+			&(i_+,i_-,i_0)\\
+			&(3,0,0)\\
+			&(0,3,0)\\
+			&(0,0,3)\\
+			&(2,1,0)\\
+			&(2,0,1)\\
+			&(0,2,1)\\
+			&(1,0,2)\\
+			&(0,1,2)\\
+			&(1,1,1)
+		\end{aligend} \\
+		TODO aggiungi immagine che sennò finisce male\\
+		Quindi ogni conica proiettiva è equivalente a unna delle cinque elencate.\\
+		Tali coniche non sono equivalenti perché hanno rango diverso oppure stesso rango ma supporti diversi
+	\end{dimo}
+	\textbf{Caso generale: quadriche proiettive}\\
+	$\ell \ \ \ \ \underline X^t A \underline X =0 $ \ \ \  $A$ matrice simmetrica $(n+1)\times(n+1)$\\
+	\newpage
+	 \begin{teo}
+		1.$\K$ algebricamente chiuso: ogni quadrica in $\pro^n(\K)$ è proiettivamente equivalente a una e una sola quadrica poichè
+		\[
+		 \sum^r_{i=1}x_i^2=0 \ \ \ \ 0\leq r\leq n
+		.\] 
+		2. $\K=\R$: ogni quadrica in $\pro^n(\R)$ è proiettivamente equivalente ad una e una sola quadrica
+		\[
+		\sum^p_{i=1}z_i^2 - \sum^r_{i=p+1}x_i^2=0
+		.\] 
+		$0\leq p \leq r\leq n, \ 2p\geq r-1, \ \ r\geq 1$
+	\end{teo}
+	\textbf{Esempio}\\
+	$x_0^2 -1 x_1^2 + x_1x_2=0$\\
+	 \[
+		 A=\matrice{1&0&0\\0&1&1/2\\0&1/2&0}
+	.\] 
+	$\K=\C$ \ \ \ \ \ $\det A = -\frac 1 4\neq 0$ $\ell$ è generale\\
+	$\K = \R$\ \ \ \ \  $i_+\geq 1 \leadsto i_+=2,\ \ i_-=1,i_+=0$\\
+	 $\leadsto $ equivalente a $x_0^2+x_1^2-x_2^2=0$
+\subsection{Classificazione affine ed Euclidea}
+	$\ell \subset \A^2(\K) $ conica\\
+	$\circledast a_{11}x^2 + a_{22}y^2 + 2a_{12}xy + 2a_{01}x + 2a_{01}y + a_{00}$\\
+	pongo $a_{10}=a_{01}, a_{20}=a_{02},a_{21}=a_{12}$ dunque la matrice $A=(a_{ij})$ è simmetrica. Chiamo
+	\[
+		\widetilde{\underline X} = \matrice{1\\x\\y}. \text{ Allora } \circledast \text{ diventa}
+	.\] 
+	\[
+	\underline{\widetilde{X}}^t A\underline{\widetilde{X}}
+	.\] 
+	Considera l'affinità $T_{M,C}(\underline X ) = M\underline X + c$ ove  $M\in GL(2,\K), \ \ b\in \K^2$\\
+	Abbiamo visto che c'è un omomorfismo iniettivo 
+	\[
+	Aff(\A^2_\K) \rightarrow GL(3,\K)
+	.\] 
+	\[
+		T_{M,C} \rightarrow \widetilde M = \matrice{ 1 & 0\ 0\\ c & M }
+	\] 
+	\[
+		M = \matrice{m_{11}&m_{12}\\m_{21}&m_{22}} \ \ c = \matrice{c_1\\c_2}
+	\] 
+	Se effettuo il cambio di coordinate
+	\[
+		\widetilde{\underline{X}} = \widetilde{M}\widetilde{\underline{X}}'
+	.\] 
+	l'equivalenza $\widetilde{\underline{X}}^t A \widetilde{\underline{X}} = 0$ \\
+	diventa  $(\widetilde M\widetilde{\underline{X}}')^t A \widetilde{M}\widetilde{\underline {X}}'$ \\
+	\[
+	\widetilde{\underline{X}}'^t B \widetilde{\underline{X}}'= 0
+	.\] 
+	con $B = \widetilde{M}^t A\widetilde{M}$\\
+	Questa equazione ci dice che il rango di  $A$ è una proprietà affine di $\ell$. Chiameremo tale numero rango di $\ell$ (notazione $r(\ell)$\\
+	Diciamo che  $\ell$ è\\
+	non degenere se $r(\ell) = 3$\\
+	semplicemente degenere se  $r(\ell) = 2$\\
+	doppiamente degenere se  $r(\ell) = 1$
+	\ \\ \hline \ \\
+	$A = \matrice{a_{00}&a_{01} & a_{02}\\a_{01} & a_{11} & a_{12} \\ a_{02} & a_{12} & a_{22}}$ \\In altri termini, $A_0$ è la matrice della forma quadratica associata ai termini quadratici del polinomio $a_{11}x^2 + 2a_{12}xy + a_{22}y^ 2$ ($A_0$ è il minore ottenuto togliendo prima riga e prima colonna)\\
+	\begin{aligend}
+		& \widetilde{\underline{X}} = \widetilde M \widetilde{\underline{X}}'\\
+		& A \leftrightarrow B = \widetilde M ^t A \widetilde M\\
+		& A_0 \leftrightarrow B_0 = M^t A_0 M \circledast
+	\end{aligend}\\
+	Dunque anche $rk A_0$ è un invariante affine di $\ell$ \\
+	$\det A_0 \begin{cases}
+		\neq 0 \ \ \ \ell \text{ conica a centro }\\
+		=0 \ \ \ \ell \text{ parabola}
+	\end{cases}$\\
+	$\K = \R$ Da  $\circledast$ deduciamo che anche il segno di $\det A_0$ è un invariante affine (infatti $\det B = (\det M)^2 \det A_0)$\\
+	\[
+	 \det B  \begin{cases}
+		 >0 \ \ \ell \text{ ellisse}\\
+		 < 0 \ \ \ell \text{ iperbole}
+	 \end{cases}
+	.\] 
+	\begin{teo}
+		Ogni conica di $\A^2(\K)$ è affinemente equivalente a una delle seguenti:\\
+		1) $\K$ algebricamente chiuso \\
+		$x^2 + y^2 - 1 = 0 \ \ $ conica a centro 1\\
+		$x^2 + y^2 = 0 \ \ $ conica a centro degenere 2\\
+		$y^2 -x = 0 \ \ $ parabola 3\\
+		 $y^2-1=0$ \ \ \ parabola degenere 4\\
+		 $y^2 = 0\ \ $ conica doppiamente degenere 5\\
+		 2)  $\K = \R$\\
+		  $x^2 + y^2 - 1 = 0$ \ \ ellisse 1\\
+		  $x^2 + y^2 + 1 = 0$ \ \ ellisse a punti non reali 2\\
+		  $x^2 + y^2 = 0$ \ \ ellisse degenere 3\\
+		  $x^2 - y^2 -1 =0$ \ \ iperbole 4\\
+		  $x^2 - y^2 = 0$ \ \ iperbole degenere 5\\
+		  $y^2 - x =0 $ \ \ \ parabola 6\\
+		  $y^2-1 = 0$ \ \ \ parabola degenere 7\\
+		  $ y^2 + 1 = 0$ \ \ \ parabola degenere 8\\
+		  $y^2 = 0$ \ \ \ conica doppiamente degenere 9 \\
+ 		  Le coniche di ognuno dei gruppi precedenti sono a due a due non affinemente equivalenti
+	\end{teo}
+	\begin{dimo}
+		Partiamo da $\underline{\widetilde{X}}^t A X = 0$ e tramite affinità vogliamo ridurci ad uno dei casi elencati\\
+		Passo 1:\\
+		eliminazione del termine in xy \\ 
+		Poichè $A_0$ è simmetrica, esiste $M\in GL(2,\K)$ tale che $M^t AM$ è diagonale. Quindi effetto la sostituzione $\underline X = M\underline X '$. L'equazione, nelle nuove coordinate $\underline X'$, che per comodità indichiamo ancora $\underline X$ è 
+		\[
+		a_{11}x^2 + a_{22}y^2 + 2a_{01}x + 2a_{02}y + a_00 = 0
+		.\] 
+		Osserviamo che la conica è a centro se e solo se $a_{11}a_{22}\neq 0$\\
+		Passo 2\\
+		Eliminazione dei termini lineari e costanti\\
+		Supponiamo $\ell$ a centro \\
+		effettuiamo la traslazione $\begin{cases}
+			x = x' - \frac {a_{01}}{a_{11}}\\
+			y = y' - \frac{a_{02}}{a_{22}}
+		\end{cases}$
+		che cambia l'equazione in 
+		$a_11 x'^2 + a_{22}y'^2 + c_00 = 0$\\
+		Se $\ell$ non è a centro possiamo supporre, a meno di scambiare le variabili (ovvero effettuare l'affinità $\matrice{0&1\\1&0}$) che risulti\\
+		 \[
+		a_11 =0, a_{22}\neq 0
+		.\] \\
+		$a_{22}y^2 + 2a_{01}x + 2a_{02}y + a_{00} =0 $\\
+		Tramite la traslazione $ \begin{cases}
+			x = x'\\
+			y = y'-\frac {a_{02}}{a_{22}}
+		\end{cases}$ \\
+		l'equazione diventa
+		\[
+		a_22y^2' + 2a_{01}x' + d_{00}=0
+		.\] 
+		Se $a_{01}\neq 0$ eseguo $ \begin{cases}
+			x' = x'' - \frac {d_{00}}{2a_{01}}\\
+			y' = y''
+		\end{cases}$\\
+		ottenendo $a_{22} y''^2 + 2 a_{01}x''=0$\\
+		se $a_{01} = 0$ \  \ $a_{22} y'^2 + d_{00}=0$\\
+		Passo 3\\
+		Normalizzazione dei coefficienti \\
+		$\K = \overline \K$. Sia  $\ell$ a centro. Partiamo da 
+		\[
+		 a_{11}x'^2 + a_{22}y'^2 + c_{00} =0
+		.\] 
+		se $c_{00} = 0 \ \ \begin{cases}
+			x' = \frac {x} {\sqrt {a_{11}}}\\
+			y'  = \frac y {\sqrt{a_{22}}}
+		\end{cases} \leadsto \ \ x^2 + y^2 = 0 \ \ (2)$ \\
+		Se $c_{00} \neq 0$
+		\[
+			-\frac {a_{11}}{c_{00}}x^2 ' - \frac{a_{12}}{c_{00}}y^2 ' - 1 = 0
+		.\] 
+		\[
+		 \begin{cases}
+			 x' = \sqrt{-\frac {c_{00}}{a_{11}}}x\\
+			 y'= \sqrt{-\frac{c_{00}}{a_{22}}}y
+		 \end{cases} \leadsto x^2 + y^2 -1 = 0(1)
+		.\] 
+		Sia ora $\ell$ non a centro, trasformata in 
+		\[
+		 a_{22} y^2 ' + d_{00} = 0
+		.\] 
+		$d_{00} =0  \ \ \ \ y^2 ' =0 \leadsto \ \ y^2 =0 (5)$\\
+	$d_{00}\neq 0 \ \ \ \ -\frac {a_{22}}{d_{00}}y^2' \ - 1 =0 $
+	\[
+	 \begin{cases}
+		 y'= \sqrt{-\frac{d_{00}}{a_{22}}}y\\
+		 x' = x
+	 \end{cases} \leadsto y^2 - 1 = 0 (4)
+	.\]
+	Resta da vedere il caso $\ell $ non a centro trasformata in 
+	\[
+	 a_{22} y'´ ^2 + 2a_{01}x''= 0
+	.\] 
+	\[
+	 \begin{cases}
+		 x''= \frac x {-2a_{01}}\\
+		 y'' = \frac y {\sqrt{a_{22}}}
+	 \end{cases}\leadsto y^2-x = 0 (3)
+	.\] \\
+	$\K = \R \ \ \ell $  a centro\\
+	\[
+	 a_{11} x'^2 + a_{22}y^2 ' + c_{00} =0 
+	.\] 
+	Posso supporre $c_00 =0 $ o $c_00 = -1$\\
+	\[
+	 \begin{cases}
+		 x'= \frac x {\sqrt{|a_{11}|}}\\
+		 y' = \frac y {\sqrt{|a_{22}|}}
+	 \end{cases}\leadsto (1)-(5)
+	.\] 
+	$\ell$ non a centro del tipo
+	\[
+	a_{22}y'^2 + d_00 = 0
+	.\] 
+	Posso supporre $d_{00} = 0$ o $d_{00} = -1$\\
+	\[
+	\begin{cases}
+		x' = x\\
+		y' = \frac y {\sqrt{|a_{22}|}}
+	\end{cases} \leadsto (7) - (9)
+	.\] \\
+	$\ell $a centro del tipo 
+	\[
+		a_{22} y''^2 + 2a_{01}x'' = 0
+	.\] 
+	Posso supporre $a_{22} >0$ e effettuare $ \begin{cases}
+		x'' = \frac x {-2 a_{01}}\\
+		y'' = \frac y {\sqrt{a_{22}}}
+	\end{cases}$ \leadsto 6
+	\end{dimo}
+	\textbf{Osservazioni}\\
+	1) Se $\ell$ è a centro, il sistema lineare
+	\[
+	\begin{cases}
+		a_{11}x + a_{12}y + a_{10} = 0\\
+		a_{22}x + a_{22}y + a_{20} = 0
+	\end{cases}
+	.\] 
+	Ha soluzione unica (poiché $\det A_0 \neq 0)   \ \ (x_0,y_0) $\\
+	Il punto con tali coordinate è il centro di simmetria, infatti la simmetria rispetto a tale punto 
+	\[
+	 \begin{cases}
+	 	x = 2x_0-x'\\
+		y = 2y_0-y'
+	 \end{cases}
+	.\] 
+	manda $\ell$ in $\ell$\\
+	Le rette passanti per $c = \matrice{x_0\\y_0}$ si dicono diametri di $\ell$\\
+	2) per calcolare i punti impropri di $\ell$ di equazione
+	\[
+		\underline{\widetilde{X}}^tA\underline{\widetilde{X}} = 0
+	.\] 
+	bisogna risolvere l'equazione omogenea
+	\[
+		a_{11}x_1^2 + 2a_{12}x_1x_2+a_{22}x_2^2 = 0
+	.\] 
+	$\displaystyle \left(x = \frac {x_1}{x_0}, \ \ y = \frac{x_2}{x_0}\right)$ che ha discriminante $-det A_0$. Quindi le soluzioni sono\\
+	reali distinte $\ell$ iperbole\\
+	reali coincidenti $\ell$ parabola\\
+	complesse coniugate $\ell $ ellisse
+	\ \\ \hline \ \\
+	\begin{teo}
+		Ogni conica di $\mathbb{E}^2$ è congruente a una delle seguenti\\
+		\begin{aligned}
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = 1 \ \ a\geq b> 0 \ \ \text{ ellisse}\\
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = -1 \ \ a\geq b > 0 \text{ ellisse a putni non reali}\\
+			&\frac{x^2}{a^2} + \frac {y^2}{b^2} = 0 \ \ a\geq b > 0 \text{ ellisse degenere}\\
+			&\frac{x^2}{a^2} - \frac {y^2}{b^2} = 1 \ \ a>0, b > 0 \text{ iperbole}\\
+			&\frac{x^2}{a^2} - \frac {y^2}{b^2} = 0 \ \ a>0, b > 0 \text{ iperbole degenere}\\
+			&y^2 - 2px = 0 \ \ p>0\text{ parabola}\\
+			&y^2 - a^2 = 0 \ \ a\geq0\text{ parabola degenere}\\
+			&y^2 + a^2 = 0 \ \ a>0\text{ parabola degenere}\\
+			&y^2 =0 \ \ \text{ conica doppiamente degenere}
+		\end{aligned}
+		\\
+		le coniche elencate sono a due a due non equivalenti
+	\end{teo}
+
+	\textbf{Osservazioni}\\
+	1. Metrico $=$ euclideo\\
+	2. Per distinguere l'ellisse non degenere a punti reali da quella a punti immaginari, si può usare il seguente criterio
+	\[
+		A=(a_{ij})^2_{i,j=0} \ \ A_0=(a_{ij})^2_{i,j=1}
+	.\] 
+	$tr A_0 \det A $ \begin{cases}
+		>0 \text{ellisse a punti immaginari}\\
+		<0 \text{ellisse a punti reali}
+	\end{cases}\\
+$ \displaystyle\lambda_1 x^2 + \lambda_2 y^2 + \frac{\det A}{\det A_0} = 0$\\
+Non ci sono soluzioni reali se e solo se $\lambda_1 ($ o  $\lambda_2)$ hanno lo stesso segno di $\det A$, è equivalente dire
+\[
+tr A_0 \det A >0
+.\] 
+\subsection{Geometria delle coniche euclidee}
+\textbf{Ellissi}\\
+$\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
+ $a = b \ \ \ x^2 + y^2 = a^2$ circonferenza di centro l'origine e rango $a$ \\
+ Il  supporto dell'ellisse è chiuso e limitato, infatti esso è centrato nel rettangolo delimitato dalle rette $x\pm a, \ \ y=\pm b$
+  \[
+	  supp \ \ \ell \subset \{ (x,y)\in\R^2 : |x|\leq a , \ |y| \leq b\}
+ .\] 
+\begin{center}
+	\includegraphics[scale=.45]{ellisse.png}
+\end{center}
+  $\displaystyle\frac {x^2}{a^2} + \frac{y^2}{b^2} \leadsto y=\frac b a \sqrt{a^2-x^2}, \ \ y = =\frac b a \sqrt{a^2-x^2}$ \\
+  \begin{defi}
+	  $c = \sqrt{a^2-b^2} \ \ (\pm c, 0) $ fuori di $\ell$
+	   \[
+		   e = \frac c a \ \ \ \text{eccentriche di }\ell
+	  .\] 
+  \end{defi}
+  \textbf{Nota}\\
+  $0 \leq e < 1, \ \ e = 0 \Leftrightarrow\lee$ circonferenza
+  \[
+	  x =\pm \frac a c  \text{manca qualcosa}
+  .\] 
+  \textbf{Iperbole}\\
+  $\displaystyle\frac {x^2}{e^2} - \frac{y^2}{b^2} = 1 \ \ a > 0, b > 0$\\
+\begin{center}
+	\includegraphics[scale=.45]{iperbole.png}
+\end{center}
+  \begin{defi}
+	  $c = \sqrt{a^2 + b^2} \ \ (\pm c,0)$ fuochi di $\ell$ 
+	   \[
+		   e = \frac c a \ \ \ \ \text{eccentricità } e>1
+	  .\] 
+	  \[
+		  x = \pm \frac a c \ \ \text{ direttrici}
+	  .\] 
+  \end{defi}
+  \textbf{Parabola}\\
+  $y^2 = 2 px \ \ p>0\ \ \ y = \pm\sqrt{2px}$\\
+\begin{center}
+	\includegraphics[scale=.45]{parabola.png}
+\end{center}
+\begin{defi}
+	Il fuoco di $\ell$ \ \ \ $(\frac p 2 , 0)$
+	 \[
+		 \text{ direttrice } \ \ x = -\frac  p 2 \ \ \ e = 1 \ \ \text{eccentricità}
+	.\] 
+\end{defi}
+\begin{prop}
+	L'ellisse (1) e l'iperbole (2) hanno per supporto il luogo dei punti le cui distanze dai due fuochi ha somma (rispettivamente differenza) costante (rispettivamente costante in valore assoluto) uguale a $2a$
+\end{prop}
+\begin{prop}
+	L'ellisse (1), l'iperbole (2), la parabola (3) hanno per supporto il luogo dei punti le cui distanze da un fuoco e dalla relativa direttrice hanno rapporto costante uguale ad $e$ l'eccentricità della conica
+\end{prop}
+\begin{dimo}[proposizione 1]
+	Siano $F, F'$ i fuochi, di coordinate $(c,0),(-c,0)$ rispettivamente.
+	Imponiamo la condizione
+	\[
+	|d(P,F)\pm d(P,F')| = 2a
+	.\] 
+	Se $P$ ha  coordinate $(x,y)$ risulta \[
+		|\sqrt{(x-c)^2+y^2}\pm\sqrt{(x+c)^2 + y^2}| = 2a \ \ \cirlcedast\circledast
+	.\] 
+	Elevando due volte al quadrato, otteniamo 
+	\[
+		\frac{x^2}{a^2} + \frac{y^2}{a^2-c^2} = 1 \ \ \cirlcedast
+	.\] 
+	Se $c = \sqrt{a^2 - b^2} \leadsto \frac{x^2}{a^2} + \frac{y^2}{b^2} =1$ ellisse\\
+	Se $c = \sqrt{a^2 + b^2} \leadsto \frac{x^2}{a^2} - \frac {y^2}{b^2} = 1$ iperbole\\
+	Per concludere, osserviamo che il luogo rappresentato da $\circledast$ è precisamente (1) nel caso dell'ellisse e (2) nel caso dell'iperbole\\
+	A questo scopo, basta osservare che il procedimento è reversibile a meno di affinità di segni nei radicali. Però la conclusione\\
+	\[
+		c < a \ \ \text{ è compatibile col prendere} + \text{nell'equazione} \circledast\circledast
+	.\] 
+	\[
+		c > a \ \ \text{ è compatibile col prendere} - \text{nell'equazione} \circledast\circledast
+	.\] 
+\end{dimo}
+\begin{dimo}[proposizione 2]
+	La condizione che definisce il luogo cercato è 
+	\[
+		\frac{d(P,F)}{d(P,r)}=e
+	.\] 
+	$ P = (x,y)$
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[xshift=120mm,yshift=-84mm,anchor=north west] at (current page.north west){%
+		\includegraphics[width=40mm]{ellisse_prop.png}}
+	\end{tikzpicture}
+	 \[
+		 \frac{\sqrt{(x-c)^2+y^2}}{|x-\frac{a}{c}|}=e
+	.\] 
+	$(x-c)^2 + y^2 = e^2 (x-\frac a e)^2$ \\
+	$x^2 - 2cx + c^2 + y^2 = e^2x^2 - 2aex + a^2$\\
+	$x^2 (1-e^2) + y^2 = \cancel{2(c - ea)x} + a^2 - c^2$ dato che $c = \frac e a$ e  $e = \frac c a$\\\
+	$(1 - \frac {c^2}{a^2})x^2 + y^2 = b^2$ \\
+	$\frac{a^2 - c^2}{a^2}x^2 + y^2 = b^2$\\
+	$\frac{b^2}{e^2}x^2 + y^2 = b^2$\\
+	$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$\\
+	Gli altri cambi per l'iperbole sono analoghi e lasciati per esercizio
+\end{dimo}
+\newpage
+\ \hline\ \\
+$\pro^2$  \\
+\begin{center}
+\includegraphics[scale=.4]{prospettivita_2.png}
+\end{center}
+Più in generale, dati $S_1,S_2$ spazi proiettivi tali che $\dim S_1 = \dim S_2 = k$ in $\pro^n$, e  $H$ sottospazio $H\cap S_1 = H\cap S_2 =\emptyset$ e $\dim H = n - k -1 $, la prospettività di centro $M$ è la restrizione a $S_1$ della proiezione su $S_2$ di centro $H$ ; è un isomorfismo $S_1 \rightarrow S_2$\\
+\textbf{Esercizio}\\
+Siano in $\pro^3$ $T_1$ il piano $x_3 = 0$ e $T_2$ il piano $x_0+2x_1-3x_2=0$\\
+\[
+	Q = [0,1,-1,1], \ \ f: T_1 \rightarrow T_2 \ \ \text{ di centro } Q
+.\] 
+Trova equazioni cartesiane dell'immagine di $r=T_1\cap T_3$ dove $T_3:x_0+x_1=0$\\
+Risulta $f(r) = L(Q,r)\cap T_2$\\
+$r$ ha equazioni  \begin{cases}
+	x_3=0\\
+	x_0+x_1=0
+\end{cases}\\
+Il fascio di piani di asse $r$ ha equazione
+\[
+	\lambda(x_0+x_1)+\mu x_3=0 \ \ \ \ \ [\lambda,\mu]\in\pro^1(\R)
+.\]
+Imponendo il passaggio per $[0,1,-1,1]$ otteniamo\\
+\[
+	\lambda + \mu =0 \ \ \ \ [\lambda,\mu] = [1,-1]
+.\] 
+$L(Q,r):x_0+x_1-x_3=0 \ \ f(r) \ \  \begin{cases}
+	x_0+x_1-x_3=0\\
+	x_0+2x_1-3x_2
+\end{cases}$
+\ \\ \hline\ \\ 
+Siano $r,s\subseteq\pro^2(\R)$ rette distinte, $A=r\cap s$ e $f:r \rightarrow s$ un isomorfismo proiettivo allora.\\
+(a) $f$ è una prospettività se e solo se $f(A) = A$\\
+(b) Se  $f(A)\neq A , $ esiste una retta $t$ in $\pro^2$ e due prospettività $g: r \rightarrow t, \ \ h : t \rightarrow s$ tale che
+\[
+ f = h\circ g
+.\] 
+(c) Ogni proiettività $p:r \rightarrow r$ è composizione di al più tre prospettività
+\\
+$(a)$ per costruzione una prospettività fissa il punto $A$\\
+\begin{center}
+\includegraphics[scale=.5]{prospettivita_3.png}
+\end{center}
+ Viceversa, supponiamo che $f:r \rightarrow s$ sia tale che $f(A) = A$ 
+\begin{center}
+\includegraphics[scale=.5]{prospettivita_4.png}
+\end{center}
+ $L(P_1,Q_1)\cap L(P_2,Q_2) = 0 \not \in r\cup s$\\
+ Se $g$ è la prospettività di centro $O$, risulta $g(A) = A,\ \  g(P_1)=Q_1, \ \ g(P_2)=Q_2$\\
+ Ma $A,P_1,P_2, \ \ \ A,Q_1,Q_2$ sono punti in posizione generale\\
+ e pertanto, per il teorema fondamentale, $f=g$
+ \begin{teo}
+ 	1) L'applicazione 
+	\[
+		\pro\setminus H\times\pro\setminus H \rightarrow Hom_{\K}(V\setminus H, H)
+	.\] 
+	\[
+		(p,p') \ \ \ \rightarrow \ \ \ \varphi_{p,p'}
+	.\] 
+	definisce su $\pro\setminus H$ una struttura di spazio affine con spazio vettoriale associato $Hom_{\K}(V\setminus H, H)$.\\
+	Inoltre, per ogni spazio proiettivo $S = \pro(W)$ di $\pro$ non contenuto in  $H$, $S\cap \pro\setminus H$ è un sottospazio affine di $\pro\setminus H$ con giacitura
+	\[
+	Hom(V\setminus H, W\cap H)
+	.\] 
+	2) Dato nello spazio vettoriale $V$ (pensato come spazio affine) un iperpiano affine $A$ di giacitura $H$, non contentente $O$, si definisce su $\pro\setminus H$ una struttura di spazio affine con spazio vettoriale associato $H$ tramite
+	\[
+	\pro\setminus H\times\pro\setminus H \rightarrow H
+	.\] 
+	\[
+		(p,p') \ \ \ \rightarrow \ \ \ a'-a
+	.\] 
+	\[
+	a = A\cap <u>, \ \ a' = A\cap <u'>
+	.\] 
+ \end{teo}
+ Di quest'ultimo teorema, scritto alla cazzo nell'ultima lezione che doveva essere di soli esercizi il fottuto 3 giugno, il papi non ci lascia la dimostrazioni, ma solo eterna frustrazione nelle nostre povere vite.
+ prova prova prova
 \end{document}

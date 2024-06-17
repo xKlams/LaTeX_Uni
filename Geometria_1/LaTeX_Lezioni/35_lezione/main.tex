@@ -33,7 +33,9 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
   \[
 	  supp \ \ \ell \subset \{ (x,y)\in\R^2 : |x|\leq a , \ |y| \leq b\}
  .\] 
-  \textbf{TODO INSERISCI IMMAGINI}\\
+\begin{center}
+	\includegraphics[scale=.45]{ellisse.png}
+\end{center}
   $\displaystyle\frac {x^2}{a^2} + \frac{y^2}{b^2} \leadsto y=\frac b a \sqrt{a^2-x^2}, \ \ y = =\frac b a \sqrt{a^2-x^2}$ \\
   \begin{defi}
 	  $c = \sqrt{a^2-b^2} \ \ (\pm c, 0) $ fuori di $\ell$
@@ -48,7 +50,9 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
   .\] 
   \textbf{Iperbole}\\
   $\displaystyle\frac {x^2}{e^2} - \frac{y^2}{b^2} = 1 \ \ a > 0, b > 0$\\
-  \textbf{TODO AGGIUNGI DISEGNO}\\
+\begin{center}
+	\includegraphics[scale=.45]{iperbole.png}
+\end{center}
   \begin{defi}
 	  $c = \sqrt{a^2 + b^2} \ \ (\pm c,0)$ fuochi di $\ell$ 
 	   \[
@@ -60,7 +64,9 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
   \end{defi}
   \textbf{Parabola}\\
   $y^2 = 2 px \ \ p>0\ \ \ y = \pm\sqrt{2px}$\\
-   \textbf{TODO AGGIUNGI DISEGNO}
+\begin{center}
+	\includegraphics[scale=.45]{parabola.png}
+\end{center}
 \begin{defi}
 	Il fuoco di $\ell$ \ \ \ $(\frac p 2 , 0)$
 	 \[
@@ -103,6 +109,10 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
 		\frac{d(P,F)}{d(P,r)}=e
 	.\] 
 	$ P = (x,y)$
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[xshift=120mm,yshift=-84mm,anchor=north west] at (current page.north west){%
+		\includegraphics[width=40mm]{ellisse_prop.png}}
+	\end{tikzpicture}
 	 \[
 		 \frac{\sqrt{(x-c)^2+y^2}}{|x-\frac{a}{c}|}=e
 	.\] 
@@ -116,7 +126,10 @@ $\displaystyle \frac{x^2}{a^2} + \frac {y^2}{b^2}=1 \ \ \ \ \ a\geq b>0$\\
 	Gli altri cambi per l'iperbole sono analoghi e lasciati per esercizio
 \end{dimo}
 \ \hline\ \\
-$\pro^2$  \textbf{TODO AGGIUNGI IMMAGINE}\\
+$\pro^2$  \\
+\begin{center}
+\includegraphics[scale=.5]{prospettivita_2.png}
+\end{center}
 Più in generale, dati $S_1,S_2$ spazi proiettivi tali che $\dim S_1 = \dim S_2 = k$ in $\pro^n$, e  $H$ sottospazio $H\cap S_1 = H\cap S_2 =\emptyset$ e $\dim H = n - k -1 $, la prospettività di centro $M$ è la restrizione a $S_1$ della proiezione su $S_2$ di centro $H$ ; è un isomorfismo $S_1 \rightarrow S_2$\\
 \textbf{Esercizio}\\
 Siano in $\pro^3$ $T_1$ il piano $x_3 = 0$ e $T_2$ il piano $x_0+2x_1-3x_2=0$\\
@@ -151,12 +164,17 @@ Siano $r,s\subseteq\pro^2(\R)$ rette distinte, $A=r\cap s$ e $f:r \rightarrow s$
 (c) Ogni proiettività $p:r \rightarrow r$ è composizione di al più tre prospettività
 \\
 $(a)$ per costruzione una prospettività fissa il punto $A$\\
- \textbf{TODO AGGIUNGI IMMAGINE}\\
+\begin{center}
+\includegraphics[scale=.5]{prospettivita_3.png}
+\end{center}
  Viceversa, supponiamo che $f:r \rightarrow s$ sia tale che $f(A) = A$ 
- \textbf{TODO AGGIUNGI IMMAGINE}\\
+\begin{center}
+\includegraphics[scale=.5]{prospettivita_4.png}
+\end{center}
  $L(P_1,Q_1)\cap L(P_2,Q_2) = 0 \not \in r\cup s$\\
- Se $g$ è la rpospettività di centro $O$, risulta $g(A) = A,\ \  g(P_1)=Q_1, \ \ g(P_2)=Q_2$\\
+ Se $g$ è la prospettività di centro $O$, risulta $g(A) = A,\ \  g(P_1)=Q_1, \ \ g(P_2)=Q_2$\\
  Ma $A,P_1,P_2, \ \ \ A,Q_1,Q_2$ sono punti in posizione generale\\
  e pertanto, per il teorema fondamentale, $f=g$
+
 \end{document}
 

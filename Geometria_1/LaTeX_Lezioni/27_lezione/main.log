@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  20 MAY 2024 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  15 JUN 2024 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,10 +717,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<./images//image_1.png, id=12, 599.23875pt x 468.75125pt>
-File: ./images//image_1.png Graphic file (type png)
-<use ./images//image_1.png>
-Package pdftex.def Info: ./images//image_1.png  used on input line 13.
+<./images//geometria_proiettiva.png, id=12, 599.23875pt x 468.75125pt>
+File: ./images//geometria_proiettiva.png Graphic file (type png)
+<use ./images//geometria_proiettiva.png>
+Package pdftex.def Info: ./images//geometria_proiettiva.png  used on input line 13.
 (pdftex.def)             Requested size: 299.61864pt x 234.37505pt.
 
 
@@ -804,7 +804,7 @@ Overfull \hbox (50.37697pt too wide) in paragraph at lines 13--34
 [] []$[]$
  []
 
-[2 <./images//image_1.png>]
+[2 <./images//geometria_proiettiva.png>]
 
 ./main.tex:39: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
@@ -1009,18 +1009,18 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [3 <./images//Iperpiano_affine_A.jpg>] [4 <./images/Proiezione_Stereografica.jpg>]
-./main.tex:95: Missing $ inserted.
+./main.tex:94: Missing $ inserted.
 <inserted text> 
                 $
-l.95 	 Il punto improprio di $r$ è \begin{cases}
+l.94 	 Il punto improprio di $r$ è \begin{cases}
                                                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:99: Missing $ inserted.
+./main.tex:98: Missing $ inserted.
 <inserted text> 
                 $
-l.99 	 \end{cases}
+l.98 	 \end{cases}
                   \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1029,20 +1029,20 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:100: LaTeX Error: Environment aligend undefined.
+./main.tex:99: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.100 	 \begin{aligend}
-                       
+l.99 	 \begin{aligend}
+                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:101: Misplaced alignment tab character &.
-l.101 		&
+./main.tex:100: Misplaced alignment tab character &.
+l.100 		&
           \begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1051,28 +1051,28 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:101: Missing $ inserted.
+./main.tex:100: Missing $ inserted.
 <inserted text> 
                 $
-l.101 		& \begin{cases}
+l.100 		& \begin{cases}
                        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:103: Double subscript.
-l.103 			3x_1-x_2_
+./main.tex:102: Double subscript.
+l.102 			3x_1-x_2_
                   x_3=0\\
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./main.tex:103: Double subscript.
-l.103 			3x_1-x_2_x_
+./main.tex:102: Double subscript.
+l.102 			3x_1-x_2_x_
                     3=0\\
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./main.tex:105: Missing $ inserted.
+./main.tex:104: Missing $ inserted.
 <inserted text> 
                 $
-l.105 		\end{cases}
+l.104 		\end{cases}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1080,18 +1080,18 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:106: Missing $ inserted.
+./main.tex:105: Missing $ inserted.
 <inserted text> 
                 $
-l.106 		\Rightarrow
+l.105 		\Rightarrow
                     \begin{cases}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:117: Misplaced alignment tab character &.
+./main.tex:116: Misplaced alignment tab character &.
 <recently read> &
                  
-l.117 		&
+l.116 		&
          \text{Per quanto  riguarda s}\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1100,11 +1100,23 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:118: Misplaced alignment tab character &.
+./main.tex:117: Misplaced alignment tab character &.
 <recently read> &
                  
-l.118 		&
+l.117 		&
           \begin{cases}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:128: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.128 		\end{cases} \\&
+                       \Rightarrow  [0,1,-2,2]\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1115,8 +1127,8 @@ might try typing `S' now just to see what is salvageable.
 ./main.tex:129: Misplaced alignment tab character &.
 <recently read> &
                  
-l.129 		\end{cases} \\&
-                       \Rightarrow  [0,1,-2,2]\\
+l.129 		&
+         \det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&-2&2}\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1127,8 +1139,8 @@ might try typing `S' now just to see what is salvageable.
 ./main.tex:130: Misplaced alignment tab character &.
 <recently read> &
                  
-l.130 		&
-         \det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&-2&2}\\
+l.130 	&
+        \det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&0&0}\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1140,18 +1152,6 @@ might try typing `S' now just to see what is salvageable.
 <recently read> &
                  
 l.131 	&
-        \det\matrice{x_0&x_1&x_2&x_3\\1&1&0&1\\0&0&1&-1\\0&1&0&0}\\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:132: Misplaced alignment tab character &.
-<recently read> &
-                 
-l.132 	&
         \det\matrice{x_0&x_2&x_3\\1&0&1\\0&1&-1}=0
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1161,22 +1161,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:133: LaTeX Error: \begin{document} ended by \end{aligend}.
+./main.tex:132: LaTeX Error: \begin{document} ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.133 	 \end{aligend}
+l.132 	 \end{aligend}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:133: Missing $ inserted.
+./main.tex:132: Missing $ inserted.
 <inserted text> 
                 $
-l.133 	 \end{aligend}
+l.132 	 \end{aligend}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1185,52 +1185,52 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (13.54367pt too wide) in paragraph at lines 94--134
+Overfull \hbox (13.54367pt too wide) in paragraph at lines 93--133
 []$ $\OMS/cmsy/m/n/10 ) [] ) [] ) \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1][] 
  []
 
 [5]
-./main.tex:149: Misplaced \noalign.
+./main.tex:148: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.149 	 \ \hline
+l.148 	 \ \hline
                  \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--149
+Underfull \hbox (badness 10000) in paragraph at lines 144--148
 
  []
 
-./main.tex:150: Misplaced \noalign.
+./main.tex:149: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.150 ...H_1),\ldots,\delta^{-1}(H_s)$ \ \\ \hline
+l.149 ...H_1),\ldots,\delta^{-1}(H_s)$ \ \\ \hline
                                                    \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-./main.tex:163: LaTeX Error: Environment aligend undefined.
+./main.tex:162: LaTeX Error: Environment aligend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163 \begin{aligend}
+l.162 \begin{aligend}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:164: Misplaced alignment tab character &.
-l.164 	&
+./main.tex:163: Misplaced alignment tab character &.
+l.163 	&
         H_0=H_0[1,\underline{0},\ldots,\underline{0}]=\delta([\eta_0]\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1239,18 +1239,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:164: Missing $ inserted.
+./main.tex:163: Missing $ inserted.
 <inserted text> 
                 $
-l.164 	&H_
+l.163 	&H_
           0=H_0[1,\underline{0},\ldots,\underline{0}]=\delta([\eta_0]\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:165: Misplaced alignment tab character &.
+./main.tex:164: Misplaced alignment tab character &.
 <recently read> &
                  
-l.165 	&
+l.164 	&
         \vdots\\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1259,10 +1259,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./main.tex:166: Misplaced alignment tab character &.
+./main.tex:165: Misplaced alignment tab character &.
 <recently read> &
                  
-l.166 	&
+l.165 	&
         H_n=H_n[0,\ldots,0,1]=\delta([\eta_n])
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1272,22 +1272,22 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./main.tex:167: LaTeX Error: \begin{document} ended by \end{aligend}.
+./main.tex:166: LaTeX Error: \begin{document} ended by \end{aligend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 \end{aligend}
+l.166 \end{aligend}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:167: Missing $ inserted.
+./main.tex:166: Missing $ inserted.
 <inserted text> 
                 $
-l.167 \end{aligend}
+l.166 \end{aligend}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1297,23 +1297,29 @@ my insertion and my current dilemma will both disappear.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 168.
+(mdframed)              on input line 167.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 178.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--180
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
 
  []
 
 [6] [7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17906 strings out of 477985
- 391997 string characters out of 5839381
- 1866388 words of memory out of 6000000
- 37770 multiletter control sequences out of 15000+600000
- 521819 words of font info for 68 fonts, out of 8000000 for 9000
+ 17926 strings out of 477985
+ 392455 string characters out of 5839381
+ 1865388 words of memory out of 6000000
+ 37787 multiletter control sequences out of 15000+600000
+ 522126 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 92i,14n,93p,490b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,14n,93p,490b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (7 pages, 296901 bytes).
+Output written on main.pdf (7 pages, 297232 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

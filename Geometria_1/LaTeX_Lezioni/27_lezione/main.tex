@@ -9,8 +9,8 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\section{Ancora da definire}
-	\includegraphics[scale=0.5]{image_1.png}\\
+	\section{Significato geometrico geometria proiettiva}
+	\includegraphics[scale=0.5]{geometria_proiettiva.png}\\
 	$\pro^1(\R)=$ rette passanti per $O$  $[x_0,x_1]\in\pro^1(\R)\ \ (\lambda x_0,\lambda x_1)\in\A^2,\ \ \lambda\in\R$\\
 	Osserviamo che ogni punto $[x_0,x_1]\in\pro^1\setminus\{H_0\}$ individua una retata parallela ad $r$ (in $\A^2$), che interseca $r$ nell'unico punti $(1,x_0^{-1}x_1)$\\
 	(Infatti dobbiamo imporre che $(\lambda x_0,\lambda x_1)$ abbia prima coordinata $1$, cioè $\lambda x_0 = 1$ cioè $\lambda = x_0^{-1}$\\
@@ -56,7 +56,7 @@
 		t = y't\\
 		z = (z-1)t + 1
 	 \end{cases}$\\
-	 \sigma \matrice{x'\\y'\\z'} = \matrice{\frac{x'}{1-z'}\\\frac{y'}{1-z'}\\0}
+	 \sigma \matrice{x'\\y'\\z'} = \matrice{\frac{x'}{1-z'}\\\frac{y'}{1-z'}\\0}\\
 	 \textbf{Esercizio}\\
 	 $\sigma$ è invertibile con inversa\\
 	 \sigma^-1\icol{u\\v\\0}=\matrice{\frac{2u}{u^2+v^2+1}\\\frac{2v}{u^2+v^2+1}\\\frac{u^2+v^2-1}{u^2+v^2+1}}
@@ -76,10 +76,9 @@
 	 \[
 	 \sigma\matrice{x'\\y'\\z'} = \frac{x'+iy' }{1-z'} \ \ (z\neq 1)
 	 .\] 
-	 \newpage
-	\section{Alcuni degli esercizi svolti a lezione}
+	\subsection{Alcuni degli esercizi svolti a lezione}
 	 \textbf{Esercizio}\\
-	 Determinare un'equazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ we per i punti impropri delle rette
+	 Determinare un'equazione cartesiana del piano da $\pro^3(\R)$ passante per  $[1,1,0,1]$ e per i punti impropri delle rette
 	 \[
 	 r = \begin{cases}
 	 	x + y + z-1=0\\
@@ -132,7 +131,7 @@
 	&\det\matrice{x_0&x_2&x_3\\1&0&1\\0&1&-1}=0
 	 \end{aligend}
 	 \newpage
-	 \section{Dualità}
+	 \subsection{Dualità}
 	 $\pro^V=\pro(V^\star)\ \ \dim\pro=\dim\pro^V$ poichè  $\dim V=\dim V^\star$\\
 	 Osserviamo che  $F,F'\in V^\star$ definiscono lo stesso punto in  $\pro^V$ se e solo se  \\$F'= \lambda F\ \ \ \ \lambda\in\K\setminus\{0\}$\\
 	 Ma in questo caso $\ker F = \ker F'$\\
@@ -170,11 +169,11 @@ In particolare $H=\delta([F]) \ \ \ H=H[a_0,\ldots,a_n]$ \\
 	\[
 		\bigwedge_1(S) = \{\text{ iperpiani di }\pro \text{ che contengono } S\}
 	.\] 
-	dove $\bigwedge_1(S)$ è il sistema lineare di iperpiain di centro $S$
+	dove $\bigwedge_1(S)$ è il sistema lineare di iperpiani di centro $S$
 \end{defi}
 \textbf{Esempi}\\
 $\pro=\pro^2 \ \ S = \{Q\}\ \ \\
-\bigwedge_1(Q) = \{$ iperpiani di $\pro^2$  che contengono $Q$ = fascio di rette di centro $Q$\\
-$\pro=\pro^3 \ \ S = \{r\}\ \ \\ \bigwedge_1(r) = \{$ iperpiani di $\pro^3$ che contengono $r$ = fascio di rette di centro $r$\\
-$\pro=\pro^3 \ \ S = \{Q\}\ \ \\ \bigwedge_1(Q) = \{$ iperpiani di $\pro^3$ che contengono $Q$ = stella di rette di centro $Q$\\
+\bigwedge_1(Q) = \{$ iperpiani di $\pro^2$  che contengono $Q\}$ = fascio di rette di centro $Q$\\
+$\pro=\pro^3 \ \ S = \{r\}\ \ \\ \bigwedge_1(r) = \{$ iperpiani di $\pro^3$ che contengono $r\}$ = fascio di rette di centro $r$\\
+$\pro=\pro^3 \ \ S = \{Q\}\ \ \\ \bigwedge_1(Q) = \{$ iperpiani di $\pro^3$ che contengono $Q$\} = stella di rette di centro $Q$\\
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  9 MAY 2024 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.5.2)  15 JUN 2024 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -731,75 +731,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--32
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 40.
-./main.tex:46: Undefined control sequence.
-l.46 		\dim S_1\capS
-                    _2 = h + k - n \ \ \ \ \text{se } h+k\geq n
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./main.tex:46: Double subscript.
-l.46 		\dim S_1\capS_
-                     2 = h + k - n \ \ \ \ \text{se } h+k\geq n
-I treat `x_1_2' essentially like `x_1{}_2'.
-
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 50.
 Package mdframed Info: Not enough space on this page on input line 56.
 [2]
 Package mdframed Info: Not enough space on this page on input line 56.
+<./images//cono_proiettivo.png, id=22, 651.18282pt x 282.30469pt>
+File: ./images//cono_proiettivo.png Graphic file (type png)
+<use ./images//cono_proiettivo.png>
+Package pdftex.def Info: ./images//cono_proiettivo.png  used on input line 58.
+(pdftex.def)             Requested size: 345.12524pt x 149.62076pt.
 
-./main.tex:66: Misplaced \noalign.
+Overfull \hbox (0.12524pt too wide) in paragraph at lines 58--58
+ [] 
+ []
+
+./main.tex:69: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.66 \ \\ \hline
+l.69 \ \\ \hline
                  \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--92
+[3 <./images//cono_proiettivo.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 89--94
 
  []
 
-./main.tex:96: Misplaced \noalign.
+./main.tex:98: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.96 \ \\ \hline
+l.98 \ \\ \hline
                  \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-./main.tex:97: Missing $ inserted.
+./main.tex:99: Missing $ inserted.
 <inserted text> 
                 $
-l.97 ...generale di sottospazi in $\pro^3, \pro^4}
+l.99 ...generale di sottospazi in $\pro^3, \pro^4}
                                                   $}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:97: Extra }, or forgotten $.
+./main.tex:99: Extra }, or forgotten $.
 <recently read> }
                  
-l.97 ...nerale di sottospazi in $\pro^3, \pro^4}$}
+l.99 ...nerale di sottospazi in $\pro^3, \pro^4}$}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -807,26 +802,26 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./main.tex:102: Missing $ inserted.
+./main.tex:104: Missing $ inserted.
 <inserted text> 
                 $
-l.102  \end{aligned}\ \ \ $\dim
+l.104  \end{aligned}\ \ \ $\dim
                                 S_1\cap S_2$ = \begin{cases}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:102: Missing $ inserted.
+./main.tex:104: Missing $ inserted.
 <inserted text> 
                 $
-l.102 ...}\ \ \ $\dim S_1\cap S_2$ = \begin{cases}
+l.104 ...}\ \ \ $\dim S_1\cap S_2$ = \begin{cases}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:105: Missing $ inserted.
+./main.tex:107: Missing $ inserted.
 <inserted text> 
                 $
-l.105  \end{cases}
+l.107  \end{cases}
                   \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -834,115 +829,53 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:107: Misplaced \noalign.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--108
+
+ []
+
+<./images//tabelle.png, id=30, 499.11469pt x 327.47343pt>
+File: ./images//tabelle.png Graphic file (type png)
+<use ./images//tabelle.png>
+Package pdftex.def Info: ./images//tabelle.png  used on input line 109.
+(pdftex.def)             Requested size: 249.55672pt x 163.73631pt.
+./main.tex:111: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \cs_set_eq:NN \hskip \vskip \cs_set_eq:NN ...
-l.107  \ \\ \hline
+l.111  \ \\ \hline
                    \ \\
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--107
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
 
  []
 
-./main.tex:107: You can't use `\hrule' here except with leaders.
-\size@update ...p \setbox \strutbox \hbox {\vrule 
-                                                  \@height .7\baselineskip \...
-l.107  \ \\ \hline
-                   \ \\
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
 
-./main.tex:107: Missing number, treated as zero.
-<to be read again> 
-                   d
-l.107  \ \\ \hline
-                   \ \\
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:107: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   d
-l.107  \ \\ \hline
-                   \ \\
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./main.tex:107: Missing number, treated as zero.
-<to be read again> 
-                   h
-l.107  \ \\ \hline
-                   \ \\
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:107: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   h
-l.107  \ \\ \hline
-                   \ \\
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-./main.tex:107: Missing number, treated as zero.
-<to be read again> 
-                   }
-l.107  \ \\ \hline
-                   \ \\
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./main.tex:107: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   }
-l.107  \ \\ \hline
-                   \ \\
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[3]
-
-./main.tex:114: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:118: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 	&
+l.118 	&
          1 \ \ 0 \ldots \ \ 0\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:114: Missing $ inserted.
+./main.tex:118: Missing $ inserted.
 <inserted text> 
                 $
-l.114 	&
+l.118 	&
          1 \ \ 0 \ldots \ \ 0\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:118: Missing $ inserted.
+./main.tex:122: Missing $ inserted.
 <inserted text> 
                 $
-l.118  \end{aligned}
+l.122  \end{aligned}
                     \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -951,29 +884,29 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:120: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:124: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 	&
+l.124 	&
         1 \ 0 \ 0 \\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:120: Missing $ inserted.
+./main.tex:124: Missing $ inserted.
 <inserted text> 
                 $
-l.120 	&
+l.124 	&
         1 \ 0 \ 0 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:124: Missing $ inserted.
+./main.tex:128: Missing $ inserted.
 <inserted text> 
                 $
-l.124  \end{aligned}
+l.128  \end{aligned}
                      $\ \ \ $
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -981,45 +914,45 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[4]
+[4 <./images//tabelle.png (PNG copy)>] [5]
 
-./main.tex:148: LaTeX Error: Environment agliend undefined.
+./main.tex:152: LaTeX Error: Environment agliend undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 \begin{agliend}
+l.152 \begin{agliend}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:149: Missing $ inserted.
+./main.tex:153: Missing $ inserted.
 <inserted text> 
                 $
-l.149 	0=\det
+l.153 	0=\det
              \matrice{x_0&x_1&x_2\\1&2&2\\3&1&4} = 6 x_0 + 2 x_1 - 5x_2 = 12...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:150: LaTeX Error: \begin{document} ended by \end{agliend}.
+./main.tex:154: LaTeX Error: \begin{document} ended by \end{agliend}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150 \end{agliend}
+l.154 \end{agliend}
                    \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:150: Missing $ inserted.
+./main.tex:154: Missing $ inserted.
 <inserted text> 
                 $
-l.150 \end{agliend}
+l.154 \end{agliend}
                    \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1027,18 +960,18 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:168: Missing $ inserted.
+./main.tex:172: Missing $ inserted.
 <inserted text> 
                 $
-l.168 ... \sqrt{-ra^2-21a^2}}{3} = $ \begin{cases}
+l.172 ... \sqrt{-ra^2-21a^2}}{3} = $ \begin{cases}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:171: Missing $ inserted.
+./main.tex:175: Missing $ inserted.
 <inserted text> 
                 $
-l.171 \end{cases}
+l.175 \end{cases}
                  \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1046,20 +979,20 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[5] [6] (./main.aux) ) 
+[6] [7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17875 strings out of 477985
- 391147 string characters out of 5839381
- 1863388 words of memory out of 6000000
- 37748 multiletter control sequences out of 15000+600000
- 521749 words of font info for 69 fonts, out of 8000000 for 9000
+ 17897 strings out of 477985
+ 391660 string characters out of 5839381
+ 1864388 words of memory out of 6000000
+ 37766 multiletter control sequences out of 15000+600000
+ 522056 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  92i,8n,93p,490b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (6 pages, 179616 bytes).
+Output written on main.pdf (7 pages, 258670 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

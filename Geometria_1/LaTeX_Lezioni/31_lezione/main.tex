@@ -22,8 +22,10 @@
 	.\] 
 	sono allineati
 	\end{teo}
-	\begin{dimo}
-		\textbf{TODO AGGIUNGI DISEGNO}\\
+	\begin{dimo}\ 
+		\begin{center}
+			\includegraphics[scale=.35]{Desargues.png}
+		\end{center}
 	Siano $v_i\in V, \ \0\leq i \leq 6, $ t.c. $\ \ [v_i] = P_i$ Per ipotesi
 	\[
 	v_0 = \alpha_1v_1+\alpha_4v_4 = \alpha_2v_2+\alpha_5v_5=\alpha_3v_3+\alpha_6v_6
@@ -37,11 +39,10 @@
 	\end{aligend} sono associati ai vettori \\
 	\begin{aligend}		
 &\alpha_1v_1-\alpha_3v_3=-\alpha_4v_4+\alpha_6v_6\\
-&=\alpha_2v_2 + \alpha_3v_3=\alpha_5v_4-\alpha_6v_6 \\
-&= \alpha_1v_1+\alpha_2v_2=\alpha_4v_4-\alpha_5v_5
-		\end{aligend}
-		la loro somma è zero. Dunque i punti corrispondenti sono allineati\\
-		\textbf{TODO Non ho capito se sta cosa deve terminare così (rivedere)}
+&-\alpha_2v_2 + \alpha_3v_3=\alpha_5v_4-\alpha_6v_6 \\
+&- \alpha_1v_1+\alpha_2v_2=\alpha_4v_4-\alpha_5v_5
+		\end{aligend}\\
+		I vettori nella colonna di sinistra sono dipendenti, poiché la loro somma è 0. Dunque i punti corrispondenti sono allineati.
 	\end{dimo}
 	\begin{teo}[Pappo]
 	$A_1,\ldots,A_6$ distinti $L(A_1,A_2),L(A_2,A_3),\ldots,L(A_6,A_1)$ distinte\\
@@ -52,7 +53,9 @@
 	.\] 
 	sono allineati
 \end{teo}
-\textbf{TODO AGGIUNGI DISEGNO}\\
+\begin{center}
+	\includegraphics[scale=.45]{Pappo.png}
+\end{center}
 \begin{dimo}
 	Poiché $r = L(A_1,A_3),\ \ s=L(A_2,A_4)$ sono distati e $0\neq A_i$\\
 	$A_1,A_2,A_3,A_4$ è un riferimento proiettivo. Ma
@@ -81,13 +84,17 @@ Posso definire la proiezione su  $S$ di centro $H$ come
 	P \rightarrow S\cap L(H,\{0\})
 .\] 
 $\pi^H_S$ è unna trasformazione proiettiva degenere indotta da $\pro^W_U :V \rightarrow V$ proiezione su $U$ parallela ad $H$\\
- \textbf{TOOD AGGIUNGI DISEGNO}
+\begin{center}
+	\includegraphics[scale=.45]{trasformazione_proiettiva.png}
+\end{center}
  \section{Proiettività}
  Siano in $\pro^2\ \ r,s$ rette distinte con $A = r\cap s$
   \begin{defi}
  	Dato $O\not\in r\cup s,$ la restrizione ad $r$ della proiezione su $s$ di centro $O$ è detta  \textbf{proiettività} di centro $O$
 \end{defi}
-\textbf{TODO UN ALTRA IMMAGINE}\\
+\begin{center}
+	\includegraphics[scale=.6]{proiettivita.png}
+\end{center}
 $f$ è un isomorfismo proiettivo. La notazione si generalizza a $\pro^n$ nel modo seguente.\\
 $S_1,S_2$ sottospazi di dimensione $k$, $H$ sottospazio tale che \[
 H\cap S_1 = G\cap S_2 = \emptyset
