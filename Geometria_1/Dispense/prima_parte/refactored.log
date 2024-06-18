@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.6.17)  17 JUN 2024 16:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.6.17)  18 JUN 2024 11:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4237,7 +4237,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./images//rette_parallele.png, id=452, 864.22874pt x 333.245pt>
+<./images//rette_parallele.png, id=462, 864.22874pt x 333.245pt>
 File: ./images//rette_parallele.png Graphic file (type png)
 <use ./images//rette_parallele.png>
 Package pdftex.def Info: ./images//rette_parallele.png  used on input line 1194.
@@ -4363,7 +4363,7 @@ my insertion and my current dilemma will both disappear.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1212.
-<./images//glissoriflessione.png, id=460, 395.4775pt x 179.67125pt>
+<./images//glissoriflessione.png, id=470, 395.4775pt x 179.67125pt>
 File: ./images//glissoriflessione.png Graphic file (type png)
 <use ./images//glissoriflessione.png>
 Package pdftex.def Info: ./images//glissoriflessione.png  used on input line 1216.
@@ -4374,12 +4374,12 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: Not enough space on this page on input line 1220.
 [35 <./images//rette_parallele.png> <./images//glissoriflessione.png>]
 Package mdframed Info: Not enough space on this page on input line 1220.
-<./images//f_punti_fissi.png, id=468, 585.18625pt x 128.48pt>
+<./images//f_punti_fissi.png, id=478, 585.18625pt x 128.48pt>
 File: ./images//f_punti_fissi.png Graphic file (type png)
 <use ./images//f_punti_fissi.png>
 Package pdftex.def Info: ./images//f_punti_fissi.png  used on input line 1224.
 (pdftex.def)             Requested size: 234.07034pt x 51.39108pt.
-<./images//batman.png, id=469, 357.58594pt x 202.50656pt>
+<./images//batman.png, id=479, 357.58594pt x 202.50656pt>
 File: ./images//batman.png Graphic file (type png)
 <use ./images//batman.png>
 Package pdftex.def Info: ./images//batman.png  used on input line 1227.
@@ -4389,7 +4389,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1233--1240
 
  []
 
-<./images//rette_scambiate.png, id=470, 481.8pt x 302.12875pt>
+<./images//rette_scambiate.png, id=480, 481.8pt x 302.12875pt>
 File: ./images//rette_scambiate.png Graphic file (type png)
 <use ./images//rette_scambiate.png>
 Package pdftex.def Info: ./images//rette_scambiate.png  used on input line 1240.
@@ -5552,7 +5552,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<./images//funzione.png, id=541, 290.08376pt x 198.7425pt>
+<./images//funzione.png, id=551, 290.08376pt x 198.7425pt>
 File: ./images//funzione.png Graphic file (type png)
 <use ./images//funzione.png>
 Package pdftex.def Info: ./images//funzione.png  used on input line 1651.
@@ -7278,7 +7278,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2088--2090
 
  []
 
-<./images//quoziente.png, id=617, 402.50375pt x 83.31125pt>
+<./images//quoziente.png, id=627, 402.50375pt x 83.31125pt>
 File: ./images//quoziente.png Graphic file (type png)
 <use ./images//quoziente.png>
 Package pdftex.def Info: ./images//quoziente.png  used on input line 2091.
@@ -7585,7 +7585,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 2232.
 Package mdframed Info: Not enough space on this page on input line 2236.
-<./images//pos_gen.jpeg, id=643, 1405.25pt x 813.0375pt>
+<./images//pos_gen.jpeg, id=653, 1405.25pt x 813.0375pt>
 File: ./images//pos_gen.jpeg Graphic file (type jpg)
 <use ./images//pos_gen.jpeg>
 Package pdftex.def Info: ./images//pos_gen.jpeg  used on input line 2238.
@@ -7837,7 +7837,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2375.
-<./images//cono_proiettivo.png, id=660, 651.18282pt x 282.30469pt>
+<./images//cono_proiettivo.png, id=670, 651.18282pt x 282.30469pt>
 File: ./images//cono_proiettivo.png Graphic file (type png)
 <use ./images//cono_proiettivo.png>
 Package pdftex.def Info: ./images//cono_proiettivo.png  used on input line 2383.
@@ -7947,7 +7947,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2424--2433
 
  []
 
-<./images//tabelle.png, id=672, 499.11469pt x 327.47343pt>
+<./images//tabelle.png, id=682, 499.11469pt x 327.47343pt>
 File: ./images//tabelle.png Graphic file (type png)
 <use ./images//tabelle.png>
 Package pdftex.def Info: ./images//tabelle.png  used on input line 2434.
@@ -8093,7 +8093,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [68]
-<./images//geometria_proiettiva.png, id=684, 599.23875pt x 468.75125pt>
+<./images//geometria_proiettiva.png, id=695, 599.23875pt x 468.75125pt>
 File: ./images//geometria_proiettiva.png Graphic file (type png)
 <use ./images//geometria_proiettiva.png>
 Package pdftex.def Info: ./images//geometria_proiettiva.png  used on input line 2523.
@@ -8145,7 +8145,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2523--2537
  []
 
 [69]
-<./images//Iperpiano_affine_A.jpg, id=689, 482.80376pt x 328.22626pt>
+<./images//Iperpiano_affine_A.jpg, id=700, 482.80376pt x 328.22626pt>
 File: ./images//Iperpiano_affine_A.jpg Graphic file (type jpg)
 <use ./images//Iperpiano_affine_A.jpg>
 Package pdftex.def Info: ./images//Iperpiano_affine_A.jpg  used on input line 2538.
@@ -8281,7 +8281,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<./images//Proiezione_stereografica.jpg, id=696, 964.60374pt x 462.72874pt>
+<./images//Proiezione_stereografica.jpg, id=706, 964.60374pt x 462.72874pt>
 File: ./images//Proiezione_stereografica.jpg Graphic file (type jpg)
 <use ./images//Proiezione_stereografica.jpg>
 Package pdftex.def Info: ./images//Proiezione_stereografica.jpg  used on input line 2565.
@@ -9003,7 +9003,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2817--2819
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2820.
-<./images//Desargues.png, id=734, 980.66376pt x 618.31pt>
+<./images//Desargues.png, id=744, 980.66376pt x 618.31pt>
 File: ./images//Desargues.png Graphic file (type png)
 <use ./images//Desargues.png>
 Package pdftex.def Info: ./images//Desargues.png  used on input line 2834.
@@ -9241,7 +9241,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2839--2854
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2854.
-<./images//Pappo.png, id=741, 758.835pt x 337.26pt>
+<./images//Pappo.png, id=751, 758.835pt x 337.26pt>
 File: ./images//Pappo.png Graphic file (type png)
 <use ./images//Pappo.png>
 Package pdftex.def Info: ./images//Pappo.png  used on input line 2864.
@@ -9326,7 +9326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2892--2894
 
  []
 
-<./images//trasformazione_proiettiva.png, id=748, 752.8125pt x 255.95625pt>
+<./images//trasformazione_proiettiva.png, id=758, 752.8125pt x 255.95625pt>
 File: ./images//trasformazione_proiettiva.png Graphic file (type png)
 <use ./images//trasformazione_proiettiva.png>
 Package pdftex.def Info: ./images//trasformazione_proiettiva.png  used on input line 2895.
@@ -9335,7 +9335,7 @@ Package pdftex.def Info: ./images//trasformazione_proiettiva.png  used on input 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2900.
-<./images//proiettivita.png, id=754, 556.32843pt x 233.37187pt>
+<./images//proiettivita.png, id=764, 556.32843pt x 233.37187pt>
 File: ./images//proiettivita.png Graphic file (type png)
 <use ./images//proiettivita.png>
 Package pdftex.def Info: ./images//proiettivita.png  used on input line 2904.
@@ -9724,7 +9724,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3068--3071
 
  []
 
-<classificazione_coniche.png, id=785, 831.105pt x 611.28375pt>
+<classificazione_coniche.png, id=795, 831.105pt x 611.28375pt>
 File: classificazione_coniche.png Graphic file (type png)
 <use classificazione_coniche.png>
 Package pdftex.def Info: classificazione_coniche.png  used on input line 3072.
@@ -10095,7 +10095,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<./images//ellisse.png, id=814, 885.3075pt x 390.45876pt>
+<./images//ellisse.png, id=825, 885.3075pt x 390.45876pt>
 File: ./images//ellisse.png Graphic file (type png)
 <use ./images//ellisse.png>
 Package pdftex.def Info: ./images//ellisse.png  used on input line 3356.
@@ -10130,7 +10130,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3369--3373
 
  []
 
-<./images//iperbole.png, id=821, 742.27313pt x 343.2825pt>
+<./images//iperbole.png, id=831, 742.27313pt x 343.2825pt>
 File: ./images//iperbole.png Graphic file (type png)
 <use ./images//iperbole.png>
 Package pdftex.def Info: ./images//iperbole.png  used on input line 3374.
@@ -10145,7 +10145,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3385--3387
 
  []
 
-<./images//parabola.png, id=828, 485.56406pt x 248.42813pt>
+<./images//parabola.png, id=838, 485.56406pt x 248.42813pt>
 File: ./images//parabola.png Graphic file (type png)
 <use ./images//parabola.png>
 Package pdftex.def Info: ./images//parabola.png  used on input line 3388.
@@ -10239,7 +10239,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3424--3426
 
  []
 
-<./images//ellisse_prop.png, id=837, 450.68375pt x 263.98625pt>
+<./images//ellisse_prop.png, id=847, 450.68375pt x 263.98625pt>
 File: ./images//ellisse_prop.png Graphic file (type png)
 <use ./images//ellisse_prop.png>
 Package pdftex.def Info: ./images//ellisse_prop.png  used on input line 3434.
@@ -10316,7 +10316,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3438--3448
  []
 
 [95 <./images//ellisse_prop.png>]
-<./images//prospettivita_2.png, id=843, 870.25125pt x 445.665pt>
+<./images//prospettivita_2.png, id=853, 870.25125pt x 445.665pt>
 File: ./images//prospettivita_2.png Graphic file (type png)
 <use ./images//prospettivita_2.png>
 Package pdftex.def Info: ./images//prospettivita_2.png  used on input line 3450.
@@ -10374,12 +10374,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 3482--3486
  []
 
 [96 <./images//prospettivita_2.png>]
-<./images//prospettivita_3.png, id=849, 293.59688pt x 243.15843pt>
+<./images//prospettivita_3.png, id=859, 293.59688pt x 243.15843pt>
 File: ./images//prospettivita_3.png Graphic file (type png)
 <use ./images//prospettivita_3.png>
 Package pdftex.def Info: ./images//prospettivita_3.png  used on input line 3487.
 (pdftex.def)             Requested size: 146.79807pt x 121.57892pt.
-<./images//prospettivita_4.png, id=850, 472.01344pt x 299.61937pt>
+<./images//prospettivita_4.png, id=860, 472.01344pt x 299.61937pt>
 File: ./images//prospettivita_4.png Graphic file (type png)
 <use ./images//prospettivita_4.png>
 Package pdftex.def Info: ./images//prospettivita_4.png  used on input line 3491.
@@ -10392,23 +10392,28 @@ Package mdframed Info: Not enough space on this page on input line 3510.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 3511.
- [98] (./refactored.aux)
+ [98]
+Underfull \hbox (badness 10000) in paragraph at lines 3538--3539
+
+ []
+
+[99] (./refactored.aux)
 Package rerunfilecheck Info: File `refactored.out' has not changed.
-(rerunfilecheck)             Checksum: EE6FD6CA5EC60D4D84669F344A7B1A57;9145.
+(rerunfilecheck)             Checksum: 0BE17C4F4BF88AF79FEA27FC01C30695;9372.
  ) 
 Here is how much of TeX's memory you used:
- 29668 strings out of 477985
- 608149 string characters out of 5839380
+ 29673 strings out of 477985
+ 608206 string characters out of 5839380
  1899388 words of memory out of 6000000
- 49067 multiletter control sequences out of 15000+600000
+ 49069 multiletter control sequences out of 15000+600000
  525386 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 92i,22n,93p,537b,775s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,22n,93p,538b,775s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on refactored.pdf (98 pages, 1295743 bytes).
+Output written on refactored.pdf (99 pages, 1297058 bytes).
 PDF statistics:
- 1030 PDF objects out of 1200 (max. 8388607)
- 835 compressed objects within 9 object streams
- 291 named destinations out of 1000 (max. 500000)
- 512 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1044 PDF objects out of 1200 (max. 8388607)
+ 848 compressed objects within 9 object streams
+ 294 named destinations out of 1000 (max. 500000)
+ 528 words of extra memory for PDF output out of 10000 (max. 10000000)
 

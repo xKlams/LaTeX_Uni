@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718633742.58479 "refactored.tex" "refactored.pdf" "refactored" 1718633744.25744 2
+["pdflatex"] 1718701972.15342 "refactored.tex" "refactored.pdf" "refactored" 1718701975.49041 2
   "../../setup.tex" 1718633334.46496 2643 4c6c61172bf541e7fadfad0311c02372 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -244,10 +244,10 @@
   "images//tabelle.png" 1718466344.57571 44203 c3887b76c5a5ecc6a1cf6184d764c450 ""
   "images//trasformazione_proiettiva.png" 1718549140.32574 17739 02702877e63763b3bed7dc8d4965a245 ""
   "images/Proiezione_Stereografica.jpg" 1718466850.25394 53741 d25678451b220344858c79f919c29d38 ""
-  "refactored.aux" 1718633743.7939 19098 277c6b2955b59dd656bd1e8b5111dfc4 "pdflatex"
-  "refactored.out" 1718633743.7949 9145 ee6fd6ca5ec60d4d84669f344a7b1a57 "pdflatex"
-  "refactored.tex" 1718633741.82296 153369 4abfc978d9ec193f7f9040cedf84a6f0 ""
-  "refactored.toc" 1718633743.7959 4326 5205b7dc117f61f80231dc8cd8379e90 "pdflatex"
+  "refactored.aux" 1718701974.51369 19329 f827bbf823bc39fab241ccf5bbca1ee5 "pdflatex"
+  "refactored.out" 1718701974.51669 9372 0be17c4f4bf88af79fea27fc01c30695 "pdflatex"
+  "refactored.tex" 1718701967.83401 153700 d48f1a5c682fe003af82f6b600ce26ae ""
+  "refactored.toc" 1718701974.51769 4475 c98b6bac566a01d4f24007ea6075a1e9 "pdflatex"
   (generated)
   "refactored.aux"
   "refactored.log"
