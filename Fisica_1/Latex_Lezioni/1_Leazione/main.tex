@@ -1,0 +1,112 @@
+\documentclass[12px]{article}
+
+\title{Lezione 2 Fisica 1}
+\date{2024-09-27}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Derivata di un vettore}
+	 \[
+		 \frac{d \overrightarrow{u}(t)}{dt} = \lim_{\Delta t \rightarrow 0} \frac{ \overrightarrow{u}(t + \Delta t) - \overrightarrow{u}(t)}{\Delta t}
+	.\] 
+	\[
+	\Delta \overrightarrow{u} : \overrightarrow{u}(t + \Delta t) - \overrightarrow{u} (t)
+	.\] 
+	\[
+		\overrightarrow{u}(t) = u(t)\hat{u}(t) = \frac{du(t)\hat u(t)}{dt} + u(t)\frac {d \hat u (t)}{dt}
+	.\] 
+	\[
+		\lim_{\Delta t \rightarrow 0} \frac{u(t + \Delta t)\hat u (t + \Delta t) - u(t)\hat u (t) - u(t)\hat u(t + \Delta t) + u(t)\hat u (t + \Delta t)}{\Delta t}
+	.\] 
+	\[
+	= \lim_{\Delta t \rightarrow 0} \frac{\hat u (t + \Delta t)[u + \Delta t) - u(t)] + u(t)[\hat u (t + \Delta t) - \hat u (t)]}{\Delta t}
+	.\] 
+	\[
+		= \frac {du(t)}{dt} \hat u(t) + u(t) \frac{d\hat u(t)}{dt}
+	.\] 
+	\[
+		\lim_{\Delta t \rightarrow 0} \frac{d \overrightarrow{u}(t)}{dt}= \frac{d}{dt} [u_x\hat i + u_y \hat j + u_z \hat k] = \left(\frac{du_x(t)}{dt}\right)\hat i + \left(\frac{du_y(t)}{dt}\right)\hat j + \left(\frac{du_z(t)}{dt}\right) \hat k
+	.\] 
+	Tutto sto bordello per dire che la derivata del vettore è uguale alla somma delle derivate delle cooridnate
+	\[
+		0 = \frac{d}{dt}(\hat u (t)\cdot \hat u (t)) = \hat u(t)\frac{d\hat u(t)}{dt} + \frac{d\hat u }{dt}\hat u(t) = 2\hat u (t)\frac{d\hat u}{dt} = 0
+	.\] 
+	\[
+		\left(\frac {d} {dt} \overrightarrow{v_1}\right) \overrightarrow{v_2}= \left(\frac {d}{dt} \overrightarrow{v_2}\right) \overrightarrow{v_1} + \overrightarrow{v_1}\left(\frac{d}{dt} \overrightarrow{v_2}\right)
+	.\] 
+	\textbf{da dimostrare con le coordinate cartesiane}\\
+	\textbf{sta troia usa il prodotto scalare con il punto mannaggia la troia}
+	\[
+		\frac {d}{dt} (\overrightarrow{ v_1}\times \overrightarrow{v_2}) = \overrightarrow{v_1}\times \frac{d \overrightarrow{v_2}}{dt} + \overrightarrow{v_2}\times \frac{d \overrightarrow{v_1}}{dt}
+	.\] 
+
+	\[
+		\frac{d \overrightarrow{u}(t)}{dt} = \frac{du(t)}{dt}\gat u (t) + u (t)  \frac{d \hat u (t)}{dt} = \frac{d u(t)}{dt} \hat u (t)  + u (t) \hat u (t)
+	.\] 
+	\[
+		\frac{\overrightarrow{u} (t)}{dt} = \lim_{\Delta t \rightarrow 0}\frac{\Delta \overrightarrow{u}}{\Delta t}
+	.\] 
+	Discorso sull'angolo (aggiungi figura di albert)
+	\[
+		|\Delta \overrightarrow{u}| = 2 \sin \frac{\Delta \theta}{2}
+	.\] 
+	\[
+		\lim_{\Delta t \rightarrow 0} \frac{|\Delta \overrightarrow{u}|}{\Delta t}= \lim_{\Delta t \rightarrow 0} \frac{2\sin(\frac{\Delta\theta} 2)} {\Delta t} = \frac{d\theta}{dt} = \omega (t) \text{ Velocità angolare}
+	.\] 
+	moltiplicando sopra e sotto per $\frac {\Delta \theta} 2$ e ricordandoci che con l'aumentare del tempo l'angolo tende a $+\infty$
+	\[
+		\frac{d u(t)}{dt} \hat u (t) + u(t)\omega (t)\hat u(t)_\perp
+	.\] 
+	con
+	\[
+		\overrightarrow{u}_\perp (t) = \frac{d\overrightarrow u(t)}{dt}
+	.\] 
+	\[
+	\frac{du(t)}{dt}\hat u(t) + \overrightarrow{\omega}(t)\times \overrightarrow{u}(t)\]
+		\begin{defi}
+			\[
+			 \overrightarrow{\omega}(t)
+			.\]
+			\[
+				|\overrightarrow{\omega}(t)| = \omega (t) = \frac {d\theta}{dt}
+			.\] 
+			il verso è quello che permette al vettore u di ruotare in senso antiorario (entrante o uscente se si prende un piano bidimensionale
+		\end{defi}
+		\section{Introduzione sulla cinematica}
+		Dipendentemente dal problema possiamo descrivere un oggetto come punto materiale o meno
+		\begin{defi}
+			Grado di libertà: numero di parametri necessari per descrivere il moto di un corpo
+		\end{defi}
+		\textbf{Esempi:}\\
+		In un moto circolare è presente un solo Grado di libertà\\
+		$x_p^2 + y_p^2 = r^2 = |r|^2$\\
+		\begin{cases}
+			$x_p = r \cos\theta$\\
+			$y_p = r \sin\theta$
+		\end{cases}\\[10px]
+		Possiamo anche scrivere \\[10px]
+		\begin{cases}
+			r = \sqrt{x_p^2 + y_p^2}\\
+			\theta = \arctan (\frac{x_p}{y_p})
+		\end{cases}\\[10px]
+		Ogni punto può essere descitto dal modulo di un vettore e dall'angolo che forma con l'angolo che forma con l'asse x, la coppia $(r,a)$ forma le coordinate polari o sferiche\\
+		TODO ci sono un po di disegni da aggiungere volendo\\
+		nel caso del piano tridmensionale si può utilizzare l'angolo tra il vettore e l'asse delle z e quello formato con l'asse x e la proiezione del vettore sul piano sottostante\\
+		\textbf{TODO aggiungi disgeno}\\
+		\newpage
+		\begin{cases}
+			x_p = r \sin(\varphi)\cos(\theta)\\
+			y_p = \sin (\varphi)\sin(\theta)\\
+			z_p = r \cos(\varphi)\\
+		\end{cases}\\[10px]
+		$x_p^2 +y_p^2 + z_p^2 = r^2$\\
+		\textbf{Caso in cui abbiamo due punti in uno spazio di dim 3 distanti un valore fissato}\\
+		5 gradi di libertà, fissato uno l'altro può solo muoversi su una sfera\\
+		\textbf{Caso in cui abbiamo un corpo rigido nello spazio}\\
+		6 gradi di libertà, 3 per la posizione e 3 per la rotazione (1 in più della sbarra dell'esempio precedente)\\
+
+\end{document}
