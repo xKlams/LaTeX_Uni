@@ -1,0 +1,342 @@
+\documentclass[12px]{article}
+
+\title{Lezione 2 Algebra 1}
+\date{2024-10-03}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Nelle lezioni precedenti...}
+	\begin{defi}
+		$(G,\cdot)$ gruppo $H\leq G$
+	$f,g\in G$ si dicono congruenti modulo $H$ se\\ $f^{-1}\cdot g\in H$
+	\end{defi}
+	\section{Classi di equivalenza}
+	\begin{nota}
+		classi di equivalenza:\\
+		\[
+		G/H
+		.\] 
+		%TODO INSERISCI IMMAGINE
+	\end{nota}
+	\textbf{Esempi importanti}\\
+	$(G,\cdot) = (\mathbb Z, +)$
+	$H = (m) = \lbrace a m | a\in \mathbb Z\rbrace$ con m fissato\\
+	%TODO AGGIUNGI IMMAGINE
+	 $G/H = \mathbb Z/(m)$ \\\
+	 \textbf{Attenzione}\\
+	 potete definire $f = g$ mod $H$ tramite la condizione  $f\cdot g^{-1}$ \\
+	 Le due definizioni non sono equivalenti [La chiameremo congruenza destra]\\
+	 \begin{nota}
+	L'insieme delle classi di equivalenza destra si indica con
+	\[
+		H\backslash G
+	.\] 
+	 \end{nota}
+	 \begin{defi}
+	 	Gli elementi di $G/H$ si chiamano laterali sinistri, quelli di  $H\backslash G$ si chiamano laterali destri
+	 \end{defi}
+	 \textbf{Esercizio:}\\
+	 $(G,\cdot)$ gruppo\\
+	 $H\leq G \ \ g\in G$ fissato\\
+	 Allora il laterale sinistro a cui appartiene  $g$ è\\ \[
+	 gH = \lbrace g\cdot h | h\in H\rbrace
+	 .\] 
+	 \textbf{Soluzione}\\
+	 fisso $f\in G$ e osserviamo che  \[
+		 g\equiv f \text{ mod } H
+	 .\] 
+	 Se e solo se $g^{-1}\cdot f\in H$.\\
+	 Questo è equivalente a 
+	  \[
+		  \exists h\in H \text{ tale che } g^{-1}\cdot f=h
+	 .\] 
+	 ovvero
+	 \[
+		 \exists h\in H \text{ tale che } f = g\cdot h
+	 .\] 
+	 \ \\ \hline \ \\ 
+ \textbf{Esercizio}\\
+ $H\leq G$\\
+ Allora  $|G/H| = |H\backslash G|$ \\
+ \textbf{Soluzione}\\
+ Basta eseguire un'applicazione biunivoca tra i due insiemi
+ %TODO AGGUGNI IMMAGINE\\
+ \begin{defi}
+ 	$(G,\cdot)$ gruppo $H\leq G$ si dice sottogruppo normale se  $gH = Hg \ \ \ \forall g\in G$
+ \end{defi}
+ \textbf{Esempio}\\
+ $G=S_3$ ricordo che  $S_3$ è il gruppo di permutazioni dell'insimee $\lbrace 1,2,3\rbrace$\\
+ Quali sono gli elementi di  $S_3$?\\
+ \[
+	 \matrice{1&2&3\\1&3&2} = (2,3)
+ \] 
+ \[
+	 \matrice{1&2&3\\2&3&1} = (3,2,1)
+ \] 
+scambio il 3 con l'uno , il 2 con il 2\\
+\begin{aligend}
+	&(2,3,1)\\
+	&(1,3)\\
+	&(1,2)\\
+	&Id
+\end{aligend}
+\[
+H_1 = <(1,2)> = \lbrace id, (1,2)\rbrace
+.\] 
+\[
+H_2=<(3,2,1)> = \lbrace id, (3,2,1),(2,3,1)\rbrace
+.\] 
+\textbf{Esercizio}|\
+Dimostrare che $H_1\leq S_3$ \underline{non} è normale, mentre $H_2\leq S_3$ è normale
+\begin{nota}
+	Se $H\leq G$ è normale scriveremo
+	 \[
+	H \trianglelefteq G
+	.\] 
+\end{nota}
+\textbf{Esercizio}\\
+$H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \rightarrow gH\\
+	&g \rightarrow g\cdot h\end{*aligend}\\
+	\textbf{Soluzione}\\
+	$ \phi$ è suriettiva per definizione di $gH$\\
+	è anche iniettiva infatti se  $h_1,h_1\in H$ soddisfano 
+	\[
+		gh_1 = gh_2 \ \ 
+	.\] 
+	allora $h_1 = h_2$ (per la legge di cancellazione)\\
+	\textbf{Ossercazione}\\
+	$(G,\cdot)$ gruppo\\
+	$H\leq G$ Allora
+	 \[
+	|gH| = |Hg| \ \ \forall g\in G
+	.\] 
+	anche se $gH\neq Hg$ poiché hanno entrambi la stessa cardinalità di  $H$\\
+	Inoltre tutti i laterali sinistri (e destri) hanno la stessa cardinalità\\
+	 \begin{defi}
+		 $(G,\cdot)$ gruppo, $H\leq G$ l'indice di  $H$ in $G$ è 
+		  \[
+			  [G:H] = |G/H|
+		 .\] 
+		 dove $|G/H|$ è il numero di classi laterali sinistre
+	\end{defi}
+	\textbf{Osservazione}\\
+	$H\leq G$ sottogruppo\\
+	Se  $G$ è abeliano allora  $H\leq G$\\
+	Il viceversa è falso! Possono esistere sottogruppi normali in gruppi non abeliani\\
+	\begin{prop}
+		$(G,\cdot)$ gruppo $H\leq G$ allora
+		 \[
+			 |G| = [G:H]|H|
+		.\] 
+	\end{prop}
+	\begin{dimo}
+		Basta ricordare che la cardinalità di ciascun laterale sinistro è pari a $|H|$
+	\end{dimo}
+	\textbf{Osservazione}\\
+	$\displaystyle H\subseteq G => [G:H] = \frac {|G|}{|H|}$\\
+	\begin{teo}[Lagrange]
+		$(G,\cdot)$ gruppo $H\leq G$ Allora l'ordine di  $H$ divide l'ordine di  $G$
+	\end{teo}
+	\begin{dimo}
+		Dall'osservazione segue $\displaystyle\frac{|G|}{|H|} = [G:H]\in \mathbb N$
+	\end{dimo}
+	\begin{coro}
+		$(G,\cdot)$ gruppo di ordine primo (ovvero $|G| = p$ con $p$ primo)\\
+		Allora $G$ non contiene sottogruppi non banali (tutto il gruppo o il gruppo minimale)
+	\end{coro}
+	\begin{dimo}
+		Sia $H\leq G$ allora per Lagrange abbiamo
+		 \[
+			 |H| \text{ divide } p
+		.\] 
+		$ \Rightarrow |H| = 1$ quindi  $H = \lbrace e \rbrace$\\
+		oppure 
+		$ \Rightarrow |H| = p$ quindi $H=H$
+
+	\end{dimo}
+	\begin{coro}
+		$(G,\cdot)$ gruppo (finito)\\
+		Dato $g\in G $ si ha  $ord(g)$ divide l'ordine di $G$
+		
+	\end{coro}
+	\begin{dimo}
+		Dato $g\in G$ considero\\
+		\[
+			<g> = \lbrace e, g, g^2, \ldots, g^{n-1}\rbrace
+		\]
+		\[
+		|<g>| = ord(g)
+		.\] 
+		La tesi segue ora da Lagrange
+	\end{dimo}
+	\section{Operazioni fra sottogruppi}
+	\begin{prop}
+		$(G,\cdot)$ gruppo $H,K \leq G$\\
+		Allora  $H\cap K\leq G$
+	\end{prop}
+	\begin{dimo}
+		$H\cap K$ è chiuso rispetto all'operazione e agli inversi poiché sia $H$ che $K$ che lo sono 
+	\end{dimo}
+	\textbf{Esercizio}\\
+	Esibire due sottogruppi $H,J\leq G$ tali che  $H\cup K$ non è un gruppo\\
+	\begin{defi}
+		Dati $H,K\leq G$ definiamo il \underline {sottoinsieme}\\
+		 \[
+		HK = \lbrace h\cdot k | h\in H, k\in K\rbrace
+		.\] 
+		\textbf{Attenzione} non è necessariamente un sottogruppo
+	\end{defi}
+	\textbf{Esercizio}\\
+	Dimostrare che $HK$ è un sottogruppo, di $G$ se e solo se 
+	\[
+	HK = KH
+	.\] 
+	\textbf{Soluzione}\\
+	Supponiamo che $HK$ sia un sottogruppo
+	\[
+		HK = (HK)^{-1} = \lbrace (h\cdot k)^{-1} | h\in H, k\in K\rbrace = K^{-1}H^{-1} = KH
+	.\] 
+	Viceversa supponiamo che $HK = KH$\\
+	1) Dimostro che  $KH$ è chiuso rispetto all'operazione.\\
+	$h_1\codt k_1\in HK$ e $h_2\cdot k_2\in HK$\\
+\[
+	(h_1\cdot k_1)\cdot (h_2\cdot k_2) = h_1\cdot (k_1\cdot h_2)\cdot k_2 = h_1\cdot h_3\cdot k_3\cdot k_2 = (h_1\cdot h_3)\cdot(k_3\cdot  k_1)
+.\] 
+2) $HK$ è chiuso rispetto agli inversi
+\[
+	h\cdot k\in HK \leadsto (h\cdot k)^{-1} = k^{-1}\cdot h^{-1} = h_4\cdot k_4\in HK
+.\] 
+\begin{defi}[Sottogruppo generato da un sottoinsieme]
+	$(G,\cdot)$ gruppo $X\subseteq G$ sottoinsieme\\
+	Il sottogruppo generato da $X$ è
+	\[
+		<X> = \bigcap_{H\leq G, X\subseteq H} H
+	.\] 
+\end{defi}
+\begin{nota}
+	$\cdot H,K\leq G$\\
+	 \[
+	<H,K> := <H\cup K>
+	.\] \\
+	$\cdot g_1,\ldtos,g_n\in G$\\
+	\[
+	<g_1,\ldots, g_n> := <\lbrace{g_1,\ldots, g_n\rbrace >
+	.\] 
+\end{nota}
+\textbf{Caso Speciale}\\
+$(G,\cdot) = (\mathbb Z, +)\ \ \  m\in \mathbb Z$\\
+$(m) := <m>$
+\section{Sottogruppi di \mathbb Z}
+\textbf{Ricordo}\\
+dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
+ \textbf{Obbiettivo}\\
+ non esisotno altri sottogruppi
+ \begin{teo}
+ 	$H\leq \mathbb Z$ allora esiste $m\in \mathbb Z$ tale che  $H = (m)$
+ \end{teo}
+ \begin{dimo}
+ 	Distinguiamo due casi:\\
+	1) $H= (0)$ finito\\
+	2) $H\neq(0)$ allora H contiene (almeno) un intero positivo, Definiamo
+	\[
+		m := \min\lbrace n\in\mathbb Z | n\geq 1, n\in H\rbrace
+	.\] 
+	Vogliamo verificare che $H = (m)$ Sicureamente $(m)\subseteq H$ poich\e H\leq \mathbb Z\\
+	Viceversa supponiamo che  $\exists n\in Hx(n)$.\\
+	Allora
+	 \[
+		 n = qm - r \text{ per qualche } q\in \mathbb Z \ \ 0 < r < m
+	.\] 
+	$ \rightarrow r = n - qm \in H$\\
+	Ma $r>0, r<m$ quindi otteniamo l'assurdo per minimalità di m
+
+ \end{dimo}
+ \begin{prop}
+ 	$a,b\in \mathbb Z$, Allora:\\
+	$1) (a)\cap (b) = (n)$ dove $m := mcm\lbrace a,b\rbrace$\\
+	$2) (a) + (b) = (d)$ dove  $d := MCD\lbrace a, b \rbrace$
+
+ \end{prop}
+ \textbf{Osservazione}\\ 
+ $(a)+(b)$ è della forma $HK$ con $ H = (a)$ e $K = (b)$\\
+ inoltre $(a) + (b)\leq \mathbb Z$ poich\e $(\mathbb Z, +)$ è abeliano
+ \begin{dimo}
+	 $1)(a)\cap (b)$ è il sottogruppo dei multipli di $a$ e di $b$\\
+	 Dunque $(a)\cap(b) = (m)$ \\
+	 $2)a+b\leq \mathbb Z \Rightarrow (a) + (b) = (d')$ per teorema\\
+	 Dobbiamo verificare che $d' = d$ \\
+	 \[
+		 (d) = (a)+(b)\supseteq (a) \Rightarrow d'|a ( d'\text{ divide }a)
+	 .\] 
+	 \[ \Rightarrow  \begin{cases}
+	 	d'|a\\
+		d'|b
+	\end{cases} \Rightarrow d'\leq d\]\\
+	 $d'\in (a) + (b) \Rightarrow \exists h,k\in \mathbb Z$ tale che $d' = ha + kb$\\
+	 Dunque:\\
+	 \[
+	  \begin{cases}
+	  	d|a\\
+		d|b
+	  \end{cases} \Rightarrow d|d' => d \leq d'\]
+	  Allora $d=d'$
+ \end{dimo}
+ \section{Gruppi $D_n$ e $C_n$}
+  \textbf{Ricordo}\\
+  $n\geq 3$\\
+  Fissiamo un  $n-agono$ \\
+  $D_n = \lbrace$isometrie che preservano l'n-agono$\rbrace$\\
+   $C_n  = \lbrace$isometrie che preserrvano l'n-agono e l'orientazione$\rbrace$\\
+ \begin{teo}
+ 	$n\geq 3$ Allora\\
+	\[|D_n| = 2n\]
+\[|C_n| = n\]
+ \end{teo}
+ \begin{dimo}
+	 Fissiamo un lato l dell'$n$-agono. Un'isometria $ \varphi\in D_n$ è univocamente determinata dall'immagine di $ \varphi(l)$\\
+	 Ho $n$ scelte per il lato e per ogniuna di queste ho 2 scelte per le orientazione (mando il lato in se stesso? in quello dopo? in quello dopo ancora?, posso anche invertire la sua orientazione, i successivi lati vengono definiti da dove viene mandato il primo)\\
+	 se non scegliamo l'orientazione, ci rimane il gruppo ciclico, e ciò conclude la dimostrazione
+ \end{dimo}
+ \textbf{Osservazione}\\
+ La dimostrazione prova che
+ \[
+  C_n = <\rho>
+ .\]
+ dove $\rho$ è la rotazione di angolo $\frac {2\pi}{n}$ attorno al centro dell'$n$-agono\\
+ Infatti $\rho\in C_n \Rightarrow <\rho>\subseteq C_n$ ma l'ordine di questa rotazione è $n$
+  \[
+ |<\rho>| = ord(\rho) = n = |C_n| => C_n = <\rho>
+ .\] 
+ \textbf{Osservazione}\\
+ Dalla dimostrazione segue che $D_n$ è costituito da $n$ rotazioni \\(della forma $\rho^i \ \ i\in\lbrace 1,\ldots, n\rbrace$ \\
+ e $n$ riflessioni\\
+ \begin{prop}
+ 	$n\geq 3$ Allora:\\
+	 $1)D_n = <\rho,\sigma >$\\
+	 Dove  $\sigma$ è una rotazione qualsiasi  $(\sigma \in D_n\setminus C_n)$ \\
+	 $2)\rho^i \sigma = \sigma \rho^{n-i}$ 
+ \end{prop}
+ \newpage
+ \begin{dimo}
+ 	1)Sicuramente $<\rho,\sigma>\subseteq D_n$\\
+	$H = <\rho> = \lbrace{Id, \rho, \rho^2, \ldots,\rho^{n-1}\rbrace $\\
+	  $K = <\sigma> = \lbrace Id, \sigma \rbrace$ \\
+	  $H\cap K = \lbrace Id\rbrace$
+	   \[
+		   |KH| = \frac{|H||K|}{|H\cap K|} = 2n
+	   .\] 
+	   $ \Rightarrow HK \subseteq D_n$ (In particolare HK è sottogruppo)
+	   $ \Rightarrow D_n = HK = <\rho, \sigma>$\\
+	   $\rho\sigma$ \underline{non} preserva l'orientazione\\
+	   $ \Rightarrow \rho^i\sigma$ è riflessione\\
+	   $ \Rightarrow ord(\rho^i\sigma) = 2$\\
+	   $ \Rightarrow \rho^i\sigma\rho^i\sigma = Id$ \\
+	   $ \Rightarrow \rho^i\sigma\rho^i=\sigma$ \\
+	   $ \Rightarrow \sigma\rho^i = \rho^{n-1}\sigma$
+ \end{dimo}
+
+\end{document}

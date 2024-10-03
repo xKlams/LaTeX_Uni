@@ -1,0 +1,184 @@
+\documentclass[12px]{article}
+
+\title{Lezione 1 Algebra}
+\date{2024-10-01}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Cosa c'è su e-leaning di Francesco Mazzini}
+	Date appelli\\
+	Esercizi settimanali\\
+	All'esame ti chiedono due esercizi delle schede scelti a caso\\
+	Ci sono 2 esoneri (primo 17 dicembre) (secondo ?? maggio)\\
+\textbf{Libri}\\
+M. Artin Algebra\\
+IN. Hernstein: Algebra (difficile)\\
+\section{Gruppi}
+\begin{defi}[Gruppo]
+	Un gruppo è un dato di un insieme $G$ con un'operazione $\cdot$ tali che:\\
+	1) L'operazione è associativa\\
+	\[f \cdot (g\codt h) = (f\cdot g)\cdot h \ \ \ \ \ \forall f, g, h\in G\]
+	2) Esistenza elemento neutro
+	\[
+		\exists e\in G \text{    tale che     } g\cdot e = e\cdot g = g \ \ \ \forall g\in G
+	.\] 
+	3) esistenza degli inversi
+	\[
+		\forall g\in G \ \ \ \ \ \exists \ \ \ \ g^{-1}\in G \ \ \text{ tale che    } g^{-1}\cdot g = g\cdot g^{-1} = e
+	.\] 
+\end{defi}
+\begin{nome}[notazione]
+	$(G,\cdot)$
+	dato  $g\in G$ denotiamo con: \\
+	1) g^0 = e\\
+	2) g^1 = g\\
+	3) g^n = g\cdot\ldots\cdot g
+	4) g^{-n} = (g^{-1})^n
+
+\end{nome}
+\textbf{Osservazione:}\\
+Con questa notazione:\\
+\[
+	(g^n)^m = g^{nm}
+\] 
+\[
+	g^n \cdot g^m = g^{n + m}
+\] 
+\textbf{Esempi}\\
+1) $(\mathbb Z, + ), (\mathbb Q, + ), (\R, +)$\\
+2)  $GL_n(\K) = \lbrace{A\in Mat_{n\times n}(\K) | det(A) \neq 0\rbrace$ con prodotto\\
+	3) $SL_n(\K) = \lbrace{A\in Mat_{nn}(\K) | det(A) = 1\rbrace$\\
+4) $X$ insieme\\
+\text{ } \hspace{90px} $S_X = \lbrace$ funzioni  $X \rightarrow X$ invertibili$\rbrace$\\
+\textbf{Speciale}
+Se $X = \lbrace 1,\ldots, n\rbrace}$\\
+Allora chiamiamo 
+ \[
+S_n = S_X
+.\] 
+(è i lgruppo di permutazioni su $n$ elementi)\\
+Si chiama gruppo simmetrico
+\begin{defi}[Gruppo diedrale]
+	$n\geq 3$ Consideriamo l'n-agono regoalre nel piano (3-agono, triangolo)\\
+	 $D_n$ è l'insieme delle simmetrie del piano che preservano l' $n$-agono\\
+	 Si chiama gruppo diedrale, l'operazione è la composizione
+\end{defi}
+\textbf{Esempio:}\\
+Per $n=3$ abbiamo  $D_3$\\
+\textbf{TODO INSERISCI DISEGNO gruppo diedrale}\\
+\textbf{Esercizio}\\
+Determina gli inversi e tutti i possibili prodotti degli elementi di $D_3$
+\begin{defi}[Gruppo Abeliano]
+	$(G,\codt)$ gruppo si dice Abeliano se l'operazione è commutativa \[f\cdot g = g\cdot f)\]
+\end{defi}
+\begin{defi}[Gruppo finito]
+	$(G,\cdot)$ gruppo si dice finito se la sua cardinalità è finita \[|G| < +\infty\]
+\end{defi}
+\begin{defi}[Ordine del gruppo]
+	L$(G,\cdot)$ gruppo, l'ordine di $G$ è $|G|$
+\end{defi}
+\begin{defi}[Ordine di un elemento]
+	$ord(g) = \min \lbrace{n\in \mathbb N | g^n = e\rbrace$\\
+		se $\cancel\exists n\in \mathbb N$  tale che $ g^n = e$\ \ \  poniamo  \ \ $ord(g) = +\infty$
+\end{defi}
+\begin{defi}[Gruppo ciclico]
+	$n\geq 3$ consideriamo  $C_n$ l'insieme delle isometrie del piano che preservano l' $n$-agono e preservano l'orientazione, questo si chiama gruppo cicliclo
+\end{defi}
+\textbf{Esempio}\\
+Nel caso di $n = 3$ abbiamo solamente 3 elementi: identità, e le due rotazioni (ordine dispari)
+\textbf{Esercizi}\\
+1) si dimostri che l'elemento neutro in un gruppo è unico\\
+2) si dimostri che ogni elemento in un gruppo ammette un unico elemento inverso\\
+per casa\\
+1) Trvoare un'applicazione biunivoca $S_3 \rightarrow D_3$\\
+2) Dimostrare che non esiste un'applicazione biunivoca $S_4 \rightarrow D_4$\\
+3) Dimostrare che i seguenti nkn sono gruppi\\
+$\cdot Mat_{n\times n} (\K)$ con prodotto riche per colonne\\
+ $\codt GL(\K)$ con somma tra matrici\\
+ $\codt \mathbb Z \mathbb Q \R con il prodotto$\\
+  \begin{prop}
+	  $(G, \cdot)$ gruppi finito, Allora ogni elemento ah ordine finito
+ \end{prop}
+ \begin{dimo}
+ 	$g\in G$ Considero il sottoinsieme
+	 \[
+	A = \lbrace g, g^2, g^3, \ldots\rbrace\subseteq G
+	.\] 
+	quindi $|A|<+\infty \Rightarrow \exists s,t\in \mathbb N, s> t$  tali che \[
+	g^s = g^t
+	.\] 
+	Moltiplico per $g^{-t}$ a destra
+	\[
+		g^s = g^t \ \ \ \Rightarrow  \ \ \ g^s\cdot g^{-t} = g^t\cdot g^{-t} \ \ \ \Rightarrow \ \ \ g^{s-t} = e
+	.\] 
+	Quindi $n = s-t\geq 1$ e $g^n = e $ $ \Rightarrow ord(g) \leq n < +\infty $
+ \end{dimo}
+ \begin{defi}[Sottogruppo]
+ 	$(G, \cdot)$ gruppo $H\subseteq$ G sottosinsieme, si dice che H è un sottogruppo se $(H,\cdot)$ è un gruppo.\\
+	In tal caso scriveremo $H \leq G$
+ \end{defi}
+ \textbf{Osservazione}\\
+ $(G,\cdot)$ gruppo,  $G\subseteq G$ sottoinsieme allora  $H\leq G$se H è chiuso rispettto a $\cdot$ \\e  $H$ è chiuso rispetto agli inversi \\(se  $g, h\in G \Rightarrow g\cdot h\in H$ e se $h\in H \Rightarrow h^{-1}\in H)$
+
+ \begin{prop}
+ 	$(G, \cdot)$ gruppo $H\subseteq G$ sottoinsieme con  $|H| < +\infty$ Allora:\\
+	1)  $H \leq G$ se e solo se  $H$ è chiuso rispetto a $\cdot$
+ \end{prop}
+ \begin{dimo}
+ 	$( \Rightarrow )$ ovvia\\
+	$ ( \Leftarrow )$ basta dimostrare che $H$ è chiuso rispetto alĺ inverso ovvero\\
+	se $|H| < +\infty$\\
+	e  H chiuso rispetto a  $\cdot$\\
+	Allora  $H$ è chiuso rispetto agli inversi\\
+	Sia $h\in H$\\
+	$A = \lbrace h, h^2, h^3,\ldots\rbrace\subseteq H$\\
+	Allora  $|A|<\infty $\\
+	Ragionando come prima deduciamo  $ord(h) < + \infty$
+	 \[
+		 h\cdot h^{ord(h) -1} = h^{ord(h) -1}\cdot h = e
+	.\] 
+	Quindi $h^{-1} = h^{ord(h)-1} = h\cdot \ldots\cdot h\in H \Rightarrow h^{-1}\in H$
+ \end{dimo}
+ \textbf{Esempi}\\
+ 1)$C_n\leq D_n$\\
+ 2)  $SL_n(\K)\leq GL_n(\K)$\\
+ 3) $(G, \cdot)$ gruppo $g\in G$ 
+ \[
+ <g> = \lbrace g^n \in G| n\in \mathbb Z\rbrace
+ .\] 
+ Allora  $<g>\leq G$\\
+  \textbf{Congruenze}\\
+  $(G,\cdot)$ gruppo $H\leq G$\\
+   \begin{defi}
+  	$f,g\in G$ si dicono congruenti modulo  $H$ se 
+	 \[
+		 f^{-1}\codt g\in H
+	.\] 
+	In tal caso scriveremo 
+	\[
+	f\equiv g \ \ \ mod \ \ \ H
+	.\] 
+  \end{defi}
+  \textbf{Esercizio}\\
+  Dimostrare che al congruenza modulo $H$ definisce una relazione di equivalenza su  $G$\\
+  \textbf{Suggerimento}\\
+  $(f^{-1}\cdot g)^{-1} = g^{-1}\cdot (f^{-1})^{-1} = g^{-1}\cdot f\\$
+  e $H$ è chiuso rispetto agli inversi\\
+  \textbf{Esercizi:}\\
+  $(G,\cdot)$ è un gruppo $H\leq G$ Allora la classe di equivalenza di $g\in G$ modulo  $H$ è il sottoinsieme
+   \[
+   gH = \lbrace g\cdot h | h\in H\rbrace
+  .\] 
+  C'è una classe di equivalenza speciale in $G$ data da 
+  \[
+  e\cdot H = H
+  .\] 
+  l'unica ad essere un sottogruppo\\
+\hline \ \\
+Dimostrare che esiste un'applicazione biunivoca tra $H \rightarrow gH\ \ \ \forall g\in G$
+
+\end{document}
