@@ -1,0 +1,95 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4 Fisica Generale 1}
+\date{2024-10-07}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Parte mancante da recuperare}
+	\section{Moto Circolare}
+$\overrightarrow{v}(t) = \frac{d \overrightarrow{r}(t)}{dt}$ \\
+$\overrightarrow{a}(t) = \frac{d \overrightarrow{v}(t)}{dt}$\\
+Per una qualunque funzione derivabile possiamo scrivere
+\[
+	\frac{df(x)}{dx} = u(x)
+.\] 
+\[ f(x) = \int u(x) dx
+.\]
+\[
+	f(x) = f(x_0) + \int_{x_0}^x v(x) dx
+.\] 
+Analogo è il ragionamento per i vettori
+\[
+	\overrightarrow{r}(t) = \overrightarrow{r}(t_0) + \int_{t_0}^t \overrightarrow{u}(t') dt'  \Leftrightarrow \begin{cases}
+		x(t) = x(t_0) + \int_{t_0}^t v_x(t')dt'\\
+		y(t) = y(t_0) + \int_{t_0}^t v_y(t')dt'\\
+		z(t) = z(t_0) + \int_{t_0}^t v_z(t')dt'\\
+	\end{cases}
+.\] 
+\[
+	\overrightarrow{v}(t) = \overrightarrow{v}(t_0) + \int_{t_0}^t \overrightarrow{a}(t') dt'
+.\] 
+Anche questa vale per 3 equazioni scalari
+\section{Moto rettilineo uniforme}
+$v = costante = 5 m/s$\\
+ $x(0) = 2m$\\
+  $s(5) = ?$\\ 
+  \[
+	  x(t) = x(t_0) + \int_{t_0}^t v(t')dt' \ \Rightarrow \ 2 + \int_0^5 5dt' = 27 m
+  .\] 
+  \textbf{Generalizzazione}\\
+  \[
+	  v(t) = v_0 + \int_0^t adt'= v_0 + at
+  .\] 
+  \[
+  x(t) = x_0 + \int_0^t (v_0 + at')dt' = x_0 + v_0 t+ \frac 1 2 at^2
+  .\] 
+  Espressione del moto uniformemente accelerato\\
+  \newpage\ \\
+  \textbf{Esercizio}\\
+  $a = cost$\\
+  Se il punto è in $x_1$ la sua velocità è $v_1$\\
+  Se il punto è in $x_2$ la sua velocità è $v_2$ \\
+  Trova l'accelerazione\\
+  \textbf{Svolgimento}\\
+  \[
+	  x(t) = x(0) + v(0)t + \frac 1 2 at^2\ \ \ v(t) = v(0) + at
+  .\] 
+  \[
+  x_1 = x(0) + v(0)t_1 + \frac 1 2 at_1^2\ \ \ v_1 = v(0) + at_1
+  .\] 
+  \[
+  x_2 = x(0) + v(0)t_2 + \frac 1 2 at_2^2\ \ \ v_2 = v(0) + at_2
+  .\] 
+  Scelgo da dove inizio a contare:\\
+  $x(t=0) = x_1$\\
+  $v(t=0) = v_1$
+  \[
+	  x(t_2) = x_2 = x_1 + v_1t_2 + \frac 1 2 a t_1^2
+  .\] 
+  \[
+  v(t_2) = v_2 = v_1 + at_2
+  .\] 
+  \[
+	  t_2 = \frac{v_2 - v_1}{a}
+  .\] 
+\[
+x_2 = x_1 + v_1\frac{v_2-v_1}{ a} + \frac 1 2 \cancel a\frac{(v_2-v_1)^2}{a^{\cancel 2}}
+
+.\] 
+\[
+x_2 = x_1 + \frac{\cancel v_1v_2 - v_1^2}{a} + \frac 1 2 \frac {v_2^2 + v_1^2 \cancel{- 2v_1v_2}}{a}
+.\] 
+\[
+	\Rightarrow x_2 = x_1 + \frac {v_2^2 - v_1^2}{2a}
+.\] 
+\[
+	a = \frac 1 2 \frac{v_2^2-v_1^2}{x_2-x_1}
+.\] 
+	
+	
+\end{document}
