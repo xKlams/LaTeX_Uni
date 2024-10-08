@@ -9,7 +9,112 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\section{Parte mancante da recuperare}
+	\section{Ripasso scorsa lezione}
+	Accelerazione ha due componenti:\\
+	$\overrightarrow{a_t}$ tangente al vettore velocità\\
+	$\overrightarrow{a_n}$ normale al vettore velocità\\
+%TODO add image of curve
+	\[
+		ds \simeq dr = \sqrt{dx^2 + dy^2}
+	.\]
+	\[
+		\diff s t  = \sqrt{\left(\diff x t\right)^2 + \left( \diff y t\right) ^2
+	.\] 
+	\[
+	ds = dt\sqrt{ \left(\diff x t \right)^2 + \left(\diff y t \right)^2
+	.\] 
+	\[
+		\int_{S(0)}^{S(t)}ds = \int^t_0 dt\sqrt{ \left(\diff x t \right)^2 + \left(\diff y t \right)^2}
+	.\] 
+	\[
+		S(t) = \int^t_0dt\sqrt{ \left(\diff x t \right)^2 + \left(\diff y t \right)^2}
+	.\] 
+	%TODO includi disegno
+	\[
+	\begin{cases}
+		x(\theta) = r \cos\theta\\
+		y(\theta) = r\sin\theta
+	\end{cases}
+	.\] 
+	\[
+		\int^{S(\theta)}_{S(\theta = 0) = 0}ds = \int^\theta_0 rd\theta = r\theta
+	.\] 
+	\[
+	S(\theta) = \theta r\\
+	.\] 
+	Voglio adesso  parametrizzare in funzione del tempo\\
+	\[
+	\begin{cases}
+		x(t) = r\cos(\theta(t))\\
+		y(t) = r\sin(\theta(t))
+	\end{cases} \Rightarrow \begin{cases}
+		\diff x t = -r\sin(\theta(t))\theta'(t)\\
+		\diff y t = r\cos(\theta(t))\theta'(t)
+	\end{cases}
+	.\] 
+	\[
+	ds = dt\sqrt{ \left(\diff x t \right)^2 + \left(\diff y t \right)^2
+	.\] 
+	Scrivendo $\theta'(t) = \diff {\theta(t)} t$ otteniamo
+	 \[
+	ds = dt r \left| \diff \theta t \right| \Leftrightarrow	v(t) = \diff r t = r\omega (t)
+	.\] 
+	\[
+	\overrightarrow{v} = \overrightarrow{\omega}\times \overrightarrow{r}
+	.\] 
+	\[
+	\overrightarrow{a} = \overrightarrow{a_t} + \overrightarrow{a_c}
+	.\] 
+	\[
+		\overrightarrow{a_t} = \diff {v(t)}{t}\hat v(t)
+	.\] 
+	\[
+	\overrightarrow{a_c} = \overrightarrow{\omega}(t)\times \overrightarrow{v}(t) = \overrightarrow{\omega}(t)\times \left( \overrightarrow{\omega}(t)\times \overrightarrow{r}(t) \right)
+	.\] 
+	\section{Moto Circolare Uniforme}
+$v(t) = v = cost \Leftrightarrow \omega(t) = \omega = cost$\\
+\begin{cases}
+	x(t) = r\cos(\omega t)\\
+	y(t) = r\sin(\omega t)
+\end{cases}
+$x^2(t) = y^2(t) = r^2 = cost$\\
+ \begin{cases}
+	v_x(t) = -r\omega \sin(\omega t)\\
+	v_y(t) = r\omega \cos(\omega t)
+\end{cases}\\
+\[
+	|v(t)| = \sqrt{v_x^2(t) + v_t^2(t)} = \sqrt{r^2\omega^2\sin^2(\omega t) + r^2\omega^2\cos^2(\omega t)} = r\omega 
+.\] 
+Quindi la velocità non dipende dal tempo\\
+\textbf{Accelerazione:}\\
+\begin{cases}
+	a_x(t) = -r\omega^2\cos(\omega t)\\
+	a_y*t( = -r\omega^2\sin(\omega t)
+\end{cases}
+\[
+	|a(t)| = \sqrt{a^2_x(t) + a_y^2(t)} = r\omega^2
+.\] 
+Che risulta coinncidere solo con $|a_c(t)|$ poichè la componente  $a_n(t)$ non è presente nel moto circolare uniforme
+\begin{defi}[Periodo]
+	Tempo impiegato da un punto materiale a percorrere l'intera circonferenza
+	\[
+		v(t) = \diff s t = \frac{2\pi r} T
+	.\] 
+	Con v(t) costante (caso moto circolare uniforme)
+	\[
+		T = \frac {2\pi r}{v} = \frac {2\pi r}{\omega r} = \frac {2\pi} \omega
+	.\] 
+\end{defi}
+\begin{defi}[Frequenza]
+	\[
+		f = \frac 1 T = \frac \omega {2\pi}
+	.\] 
+\end{defi}
+\textbf{Nota sulle unità di misura}\\
+\begin{cases}
+	\omega: \frac {rad} s\\
+	f: s^{-1}
+\end{cases}
 	\section{Moto Circolare}
 $\overrightarrow{v}(t) = \frac{d \overrightarrow{r}(t)}{dt}$ \\
 $\overrightarrow{a}(t) = \frac{d \overrightarrow{v}(t)}{dt}$\\
