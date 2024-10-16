@@ -1,0 +1,221 @@
+\documentclass[12px]{article}
+
+\title{Lezione 5 Algebra I}
+\date{2024-10-15}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Teoremi di isomorfismo}
+	\begin{teo}[Secondo teorema di isomorfismo]
+		$(G,\cdot)$ gruppo\\
+		$H,N\normale G$ tali che $N\subseteq H$ Allora
+		 \begin{enumerate}
+			 \item$ H/M\normale G/N $
+			 \item $G/N/H/N \cong G/H$
+		 \end{enumerate}
+	\end{teo}
+	\begin{dimo}
+	\begin{tikzcd}
+		G \arrow[r, "\varphi = \pi_H"] \arrow[d,"\pi"]  & G/H \\
+G / N \arrow[ur, dashed, "\exists ! \overline{\varphi}"]
+\end{tikzcd}
+$\pi_H$ proiezione sul quoziente H\\
+$N\subseteq H = ker ( \varphi)$ \\
+Inoltre $Im( \bar\varphi) = Im( \varphi) = G/H$\\
+\textbf{Idea:} applicare il primo teorema di isomorfismo\\
+\underline{suriettiva} $\bar \varphi: G/N \rightarrow G/H$\\
+basta quindi dimostrare che $ker (\bar \varphi) = H/N$\\
+Studiamo
+\[
+ker(\bar \varphi) = \lbrace gN\in G/N | \bar \varphi(gN) = H\rbrace
+.\] 
+\[
+	\{gN\in G/N | gH = H\}
+.\] 
+\[
+	\{gN\in G/N | g\in H\} = H/N
+.\] 
+	\end{dimo}
+	\begin{coro}
+		In $(\mathbb Z, +)$ gruppo abeliano\\$a,n\in \mathbb Z$ interi non nulli\\
+		Denotiamo con
+		\[
+			[a] = a + (n) \in \mathbb Z/(n) = \{ [0],[1],[2],\ldots,[n-1]\}
+		.\] 
+		Allora $ord_{\mathbb Z/(n)}([a]) = \frac n {MCD(a,n)}$
+	\end{coro}
+	\textbf{Nota:}\\
+	se $MCD(n,a) = 1$ allora a genera il gruppo ciclico  $\mathbb Z/(n)$
+	 \begin{dimo}
+		Consideriamo $G=\mathbb Z \ \ H = (a) + (n) \ \ N= (n)$\\
+		Dal II Teorema di isomorfismo
+		 \[
+			 \bigslant{\mathbb Z/(n)}{([a])
+			 }\cong\bigslant{\mathbb Z/(n)}{(a) + (n)/(n)} \cong \bigslant {G/N}{H/N}\cong G/N \cong \mathbb Z/(MCD(a,n))
+		.\] 
+	\end{dimo}
+	Confrontiamo le cardinalità\\
+	\[
+	MCD(a,n) = |\mathbb Z/(MCD(a,n))|
+	.\] 
+	\[
+		= |\bigslant{\mathbb Z/ (n)}{([a])}|
+
+	.\] 
+	\[
+		\frac {|Z/(n)|}{([a])} = \frac n {ord([a])}
+	.\] 
+	\[
+		ord([a]) = \frac n {MCD(a,n)}
+	.\] 
+	\begin{lemm}
+		$a,bg\in \mahbb Z$ non nulli\\
+		tali che  $a|b$ (allora  $(b)\subseteq (a)$ \\
+		Allora\\
+		\[
+		|(a)/(b)| = \frac ba
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		Studiamo $(a)/(b)$\\
+		Per definizione è l'insieme dei laterali\\
+		 \[
+			 (a)/(b) = \{ta + (b) | t\in \mathbb Z\}
+		.\] 
+		dobbiamo capire quanti laterali \underline{distinti} esistono\\
+		Dati $t,s\in \mathbb Z$ tali che\\
+		\[
+		ta + (b) = sa + (b)
+		.\] 
+		\[
+		\Leftrightarrow ta \equiv sa \ mod(b)
+		.\] 
+		\[
+		\Leftrightarrow -ta + sa \in(b)
+		.\] 
+		Allora\\
+		\[
+			(a)/(b) = \{ta + (b)|tt\in\{1,\ldots,\frac ba\}\}
+		.\] 
+	\end{dimo}
+	\begin{teo}[III teorema di isomorfismo]
+		$(G,\cdot)$ gruppo\\
+		\begin{itemize}
+			\item $N\trianglelefteq G$\\
+			\item  $H\leq G$
+		\end{itemize}
+		Allora
+		\begin{enumerate}
+			\item$H\cap N\trianglelefteq H$\\
+			\item  $\bigslant H {H\cap N}\cong HN/N$
+		\end{enumerate}
+	\end{teo}
+		\begin{dimo}
+			$\pi_N:G \rightarrow G/N$\\
+			$g \rightarrow gN$\\
+			consideriamo la restrizione\\
+			\begin{gather*}
+				\pi_N|_H:H \rightarrow G/H\\
+				h \rightarrow hN\\
+				ker (\pi_N|_H) = \{h\in H| \pi_N|_H(h) = N\}\\
+					       =\{h\in H|hN = N\}\\
+					       =\{h\in H| h\in N\}\\
+					       =H\cap N
+			\end{gather*}\\
+			Deduciamo che $H\cap N\trianglelefteq N$\\
+			Idea: Applicare il I teorema di isomorfismo all'omomorfismo
+			 \[
+			\varphi=\pi_N|_H:H \rightarrow G/N
+			.\] 
+			Avremo $Im( \varphi)\cong H/ker( \varphi) = H/H\cap N$\\
+			Studiamo $Im( \varphi)$\\
+	\[
+	Im( \varphi) = Im( \pi_N|_H) = \pi_N(H) = \pi_N(HN) = HN/N
+	.\] 
+	Il penultimo passaggio deriva da un lemma già visto a lezione
+		\end{dimo}
+		\begin{coro}
+			$a,b\in \mathbb Z$ non nullli\\
+			Allora $mcm(a,b) = \frac {ab} {MCD(a,b)}$
+		\end{coro}
+		\begin{dimo}
+			$G = \mathbb Z$ \\
+			$H = (a)$\\
+			 $N= (b)$\\
+			  $H+N = (MCD(a,b))$\\
+			   $H\cap N = (mcm(a,b))$\\
+		Dal III teorema di isomorfismo 
+		 \[
+			 \bigslant{(a)}{(mcm(a,b))}\cong \bigslant H {H\cap N}\cong \bigslant {HN} N \cong \bigslant{(MCD(a,b))}{(b)}
+		.\] 
+		Confrontiamo la cardinalità\\
+		Per il lemma\\
+		\[
+			\frac {mcm(a,b)}{a} = |\biglsant {(a)}{(mcm(a,b))}| = |\bigslant {(MCD(a,b))}{(b)} = \frac {b}{MCD(a,b)}
+		.\] 
+		Quindi 
+		\[
+			mcm(a,b) = \frac {ab}{MCD(a,b)}
+		.\] 
+		\end{dimo}
+		\section{Classificazione di gruppi di ordine "piccolo" a meno di isomorfismo}\\
+		\textbf{Ordine 1}\\
+		Se $|G| = 1 \ \ \Rightarrow  \ \ G = \{e\}$\\
+		\textbf{Ordine p primo:}\\
+		Abbiamo mostrato che se $|G|=p$ allora  $G$ non ammette sottogruppi non banali\\
+		Sia $g\in G$ tale che $g\neq e$
+		$ \Rightarrow ord(g) = p \ \Rightarrow G = <g>$ \\
+		\begin{gather*}
+			\varphi: G \rightarrow G_p = <p>\\
+			g \rightarrow p
+		\end{gather*}\\
+		\textbf{Obiettivo:} classificare a meno di isomorfismo i gruppi di ordine 4 e di ordine 6\\
+		\begin{defi}[Klein,1884]
+			Il gruppo di Klein, $K_4$ è il gruppo delle isometrie del piano che preservano un rettangolo fissato.
+		\end{defi}
+		\textbf{Esercizio}\\
+		Verificare che $K_4 = \{id, \rho,\sigma, \rho\sigma\}$\\
+		dove $\rho$ = rotazione di angolo $\pi$\\
+		e dove  $\sigma$ = riflessione rispetto ad un lato
+		\textbf{Osservazione}\\ tutti gli elementi in $K_4$ hanno ordine $\leq 2$ Quindi  $K_4\neq C_4$\\
+		\begin{nota}
+			Dato che $K_4 = <\rho,\sigma>$\\
+			denoteremo anche
+			\[
+				K_4 = D_2 \text{ (gruppo diedrale)}
+			.\] 
+		\end{nota}
+		\textbf{Esercizio}\\
+		$(G,\cdot)$ gruppo in cui ogni elemento ha ordine $\leq 2$ (equivalentemente ogni elemento è inverso di se stesso)\\
+		1) Dimostrare che $G$ è abeliano\\
+		2) Se $|G| = 4$ dimostrare che  $G \cong K_4$
+		\textbf{Svolgimento}
+		1) Dati $f,g\in G$\\
+		$fg = (fg)^{-1} = g^{-1}f^{-1} = gf$\\
+		2) Sia $|G| = 4$\\
+		Scelgo  $g,f\in G$ distinti tali che \begin{cases}
+			g\neq e\\
+			f\neq e
+		\end{cases}\\
+		Considero $H = <g,h>$ \\
+		Per Lagrange\\
+		$H \geq 3$\\
+		$ \Rightarrow H = H\\
+		\Rightarrow G = \{e,f,g,fg\}$\\
+		abeliano\\
+		Costruisco l'isomorfismo esplicito con $K_4$\\
+		\begin{gather*}
+			\varphi:G \rightarrow K_4 = <\rho,\sigma>\\
+			e \rightarrow e\\
+			f \rightarrow\rho\\
+			g \rightarrow\sigma\\
+			fg \rightarrow\rho\sigma
+		\end{gather*}
+		che è chiaramente biunivoca ed è un omomorfismo $ \Rightarrow \varphi$ è un isomorfismo
+
+
+\end{document}

@@ -1,0 +1,115 @@
+\documentclass[12px]{article}
+
+\title{Lezione 6 Fisica Generale I}
+\date{2024-10-11}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Moto del proiettile}
+%TODO immagine
+	\[\begin{cases}
+		x(t) = v_xt\\
+		y(y) = h + v_yt - \frac 12 g t^2
+	\end{cases} \Rightarrow t = \frac {x}{v_x}
+\]
+	$z(t) = const = 0$\\
+	Eliminando il parametro dal sistema otteniamo:\\
+	$ y = h + v_y \frac {x}{v_x} - \frac 12 g \frac {x^2}{(v_x)^2}$
+	\begin{teo}[Del grande cazzo]
+		per trovare il massimo di una curva tocca fare la derivata 
+		\[
+		8=========D
+		.\] 
+	\end{teo}
+	\[
+		\diff y x = \frac {v_y}{v_{0x}} = \frac {yx}{(v_{0y})} = 0 \Rightarrow x = \frac {v_{0x} v_{0y}}{g} = \frac{ v_0^2\cos\theta\sin\theta} {g}
+	.\] 
+	\[
+		y_{max} = h + \frac {v_{0y}}{v_{0x}}\frac {v_{0x}v_{0y}}{g} - \frac 12 g \frac {v_{0x}^2 v_{0y}^2}{v_{0x}^2}
+	.\] 
+	\[
+		y_{max}=h + \frac 12 g v_{0y}^2
+	.\] 
+	\[
+		t_{hmax} = \frac {v_{0y}} g
+	.\] 
+	
+	\[
+	\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) + \sin(\beta)\cos(\alpha)
+	.\] 
+	ponendo $\alpha=\beta = \theta$
+	 \[
+	\sin(2\theta) = 2\sin(\theta)\cos(\theta)
+	.\] 
+	\[
+		\max_\theta x(\theta) = \max_\theta \frac{\sin(2\theta)} g \Rightarrow \theta = \frac \pi 4
+	\]\[
+	\begin{cases}
+		v_x(t) = v_{0x}\\
+		v_y(t) = v_{0y} - gt
+	\end{cases}\]
+	\[
+		v_y(t_{max}) = 0 = v_{0y} - gt_h{max} \Rightarrow t_{hmax} = \frac { v_{0y}} g
+	.\] 
+	\[
+		y_max = y(t_{hmax}) = h + \frac {v_{0y}^2} g - \frac 12 g \left(\frac {v_{0y}}g \right)^2 = h + \frac 12 \frac{v_{0y}^2} g
+	.\] 
+	\textbf{Esercizio}\\
+	%TODO DISGENO
+	appena sparo la scimmia cade dal ramo, il mio proiettile colpisce la scimmia?\\
+	\textbf{Svolgimento}\\
+	Scrivo le equazioni del moto per il proiettile e la scimmia\\
+	\[
+	\begin{cases}
+		x_p(t) = v_{0x}t\\
+		y_p(t) = v_{0y}t - \frac 12 gt^2
+	\end{cases}
+\begin{cases}
+	x_s(t) = d\\
+	y_s(t) = h - \frac 12 gt^2
+\end{cases}
+\]
+\[
+x_p(t) = v_{0x}t => t_d = \frac d{v_{0x}}\\
+y_p(t_p) = v_{0y}\frac d {v_{0x}} - \frac 12 g \frac {d^2}{v_{0x}}
+.\] 
+\[
+\begin{cases}
+	y_p(t_d) = v_{0y}\frac d{v_{0x}} - \frac 12 g \frac {d^2}{v_{0x}^2}\\
+	y_s(t_d) = h - \frac 12 g\frac {d^2}{v_{0x}^2}
+\end{cases}
+.\] 
+troviamo $t_g = \frac {2v_{0y}}g$\\
+Ci sono delle condizioni sul fatto che la scimmia colpisca il proiettile\\
+\textbf{Esercizio per casa}\\
+cosa succede nello stesso problema se non parto da 0, ma da un'altezza $h$, per colpire la scimmia è una buona strategia avere una velocità che punta la scimmia\\
+\textbf{In quale punto l'accelerazione normale è massima}\\
+Nel massimo
+\[
+	r = \frac {v^2} {a_n} \Rightarrow r = \frac {v_{0x}^2}{g} = \frac{v_0^2\cos\theta}g
+.\] 
+\[
+\begin{cases}
+	a_t(t)=g\sin\gamma(t)\\
+	a_n(t)=g\cos\gamma(t)
+\end{cases}
+.\] 
+$\gamma$ è l'angolo che la velocità forma con l'asse x e che la normale forma con l'asse y\\
+\textbf{fai esercizi 212 210 fine capitolo 2}\\
+\section{Sistemi di riferimento in movimento}
+\subsection{Orientamento degli assi orientati nello stesso modo, l'origine ha un moto traslatorio}
+%TODO aggiungi disegno decisamente
+Indicheremo con l'apice i vettori dal secondo sistema di riferimento\\
+\[
+	\overrightarrow{r}(t) = \overrightarrow{r}_{O'}(t) + \overrightarrow{r}'(t)
+.\] 
+\[
+	x(t)\hat i + y(t) \hat j + z(t) \hat k = x_{O'}(t)\hat i + y_{O'}(t)\hat j + z_{O'}(t)\hat k + x'(t)\hat i ' + y'(t)\hat j ' + z'(t)\hat k '
+.\] 
+qui ho fatto le foto, sarebbe da trascrivere il tutto\\
+\textbf{guarda trasformaszioni galileane pagina 77}
+\end{document}

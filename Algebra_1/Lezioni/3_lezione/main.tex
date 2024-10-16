@@ -1,0 +1,199 @@
+\documentclass[12px]{article}
+
+\title{Lezione 3 Algebra I}
+\date{2024-10-08}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Altra roba sui gruppi}
+	\begin{prop}[Caratterizazzione dei sottogruppi normali]
+		$(G,\cdot)$ gruppo, $N\leq G$\\ 
+		Le seguenti sono equivalenti:\\
+		$1) gNg^{-1}\subseteq N \ \ \ \forall g\in G$\\
+		$2) gNg^{-1} = N \ \ \ \forall g\in G$\\
+		$3) N\normale G$\\ 
+		 $4)$ L'operazione $G/N\times G/N \rightarrow G/N$ \\
+		 è ben posta \ \ \ \ \ \ \ $(fN,gN) \rightarrow fgN$ \\
+		 o equivalentemente $N\backslash G\times n\backslash G \rightarrow n\backslash G$\\
+		 \text{} \hspace{90px} $(Nf,Ng) \rightarrow Nfg$
+
+	\end{prop}
+	\begin{dimo}
+		$1 \rightarrow 2$\\
+		Verifichiamo che $N\subseteq gNg^{-1}$\\
+		Dato che  $n\in N \Rightarrow n = g(g^{-1}ng)g^{-1}$ basta dimostrare che $g^{-1}ng\in N$\\
+		D'altra parte  $g^{-1}ng\in g^{-1}Ng\subseteq N$ (per ipotesi 1)\\
+		$2 \rightarrow 3$\\
+		$\forall g\in G \ \ \forall n\in N$\\
+		$gng^{-1}\in N$ (per ipotesi 2)
+		\[
+		\begin{cases}
+			gn\in Ng\\
+			ng^{-1}\in g^{-1}N
+		\end{cases} \Rightarrow \begin{cases}
+			gN\subseteq Ng (1)\\
+			Ng^{-1} \subseteq g^{-1}N (2)
+		\end{cases}
+		.\] 
+		Il che è equivalente a dire che $gN = Ng$ la prima condizione mi dice $G/N\subseteq G/N$ e la seconda dell'arbitrarietà di  $g$\\
+		 $G/N\subseteq G/N$\\
+		 3  \rightarrow 4\\
+		 Dati $f$ e $g\in G$ abbiamo
+		 \[
+			 (Nf)(Ng) = (fN)(Ng) = fNg = (fN)g = (Nf)g = Nfg
+		 .\] 
+		 $4 \rightarrow 1$\\
+		 Per ipotesi 4 $(Nf)(Ng)=Nfg \ \ \forall f,g\in G$ quindi 
+		  \[
+		 nfn'g\in Nfg \ \ \ \forall n,n'\in N
+		 .\] 
+		 dall'arbitrarietà di g, scelgo $g=f^{-1}$, quindi 
+		 \[
+			 nfn'f^{-1}\in N \ \ \forall f\in G .\] 
+			 Moltiplico (a sinistra) per $n^{-1}$ e ottengo\\
+			 \[
+				 fn'f^{-1}\in N \ \ \forall f\in G
+			 .\] 
+			 Dall'arbitrarietà di $n'$ otteniamo  $fNf^{-1}\subseteq N\ \ \forall f\in G$ che è la condizione (1) \\
+	\end{dimo}
+	\textbf{Osservazione}\\
+	 $(G,\cdot)$ gruppo, la proposizione ci dice che un sottogruppo $H\leqG$ è normale se e solo se l'operazione indotta su $G/H$ è ben definita 
+	 \begin{teo}
+	 	$(G,\cdot)$ gruppo $N\trianglelefteq G$\\
+		Allora $(G/N,\cdot)$ è un gruppo (detto gruppo quoziente)
+	 \end{teo}
+	 \begin{dimo}
+	 	Associatività, ovvia\\
+		elemento neutro : $N=Ne$\\
+		elemento inverso di  $Ng$ è $Ng^{-1}$ \ \  $\forall g\in G$
+	 \end{dimo}
+	 \textbf{Osservazione}\\
+	 $(G,\cdot)$ gruppo e $H\leq G$ t.c.  $[G:H] = 2$ Allora  $H\trianglelefteq G$\\
+	 Infatti esistono solo due laterali sinistri o destri: H, G/H\\
+	 \textbf{Osservazione}\\
+	 $(G,\cdot)$ gruppo abeliano $\Rightarrow$ ogni sottogruppo è normale\\
+	 \textbf{\underline{Non} vale sempre il viceversa}\\
+	 \textbf{Esempio}\\
+	 Dimostrare che $Q = \lbrace \pm 1, \pm i,\pm j,\pm k\rbrace$\\ 
+	 è un gruppo (rispetto al prodotto)
+	 non abeliano in cui però tutti i sottogruppi sono normali\\
+	  \textbf{Prodotti:}\\
+	  $i^2 = k^2 = j^2 = -1$\\
+	   $ij = k \ \ jk = i \ \ ki = j$\\
+	    $ji = -k \ \ kh = -i \ \ ik = -j$
+	 \begin{defi}
+		Siano $(G_1,\cdot)$ e $(G_2,*)$ gruppi\\
+		Sia $ \varphi$ un'applicazione\\
+		$
+		\varphi: G_1  \rightarrow G_2$ si dice omomorfismo se:
+		\[
+		\varphi(g\cdot f) = \varphi(g)* \varphi(f) \ \ \ \forall g,f\in G_1
+		.\] 
+		
+	\end{defi}
+	\textbf{Osservazione}\\
+	Graficamente $ \varphi$ è un omomorfismo se
+	
+\begin{tikzcd}
+	(g, f) \arrow[d, ] & G_1 \times G_1 \arrow[r, "\cdot"] \arrow[d, " \varphi \times \varphi"'] & G_1 \arrow[d, " \varphi"] &  \color{red}(g,f) \arrow[r,red] & \color{red}g\cdot f\arrow[d, red]\\
+	(\varphi(g), \varphi(f)) & G_2 \times G_2 \arrow[r, "*"] & G_2 & {} & \color{red}\varphi(g\cdot f)
+\end{tikzcd}\\
+\newpage
+\textbf{Esempi:}\\
+$(\R, +)$ gruppo additivo reali\\
+$(\R_{> 0}, \cdot)$ gruppo moltiplicativo reali positivi\\
+\textbf{Allora}\\
+$exp: \R \rightarrow \R_{>0}$\\
+\text{}\ \ \ \ $x \rightarrow e^x$\\
+è un omomorfismo infatti: $\forall x,y\in \R$\\
+ \[
+	 e^{x+y} = e^x\cdot e^y
+.\] 
+\textbf{Esempio}\\
+$ln:\R_{>0} \rightarrow \R$\\
+\text{}\ \ \ \ \ $x \rightarrow ln(x)$\\
+è un omomorfismo, infatti $\ln (x\cdot y) = \ln(x) + \ln(y) \ \ \ \forall x,y\in\R_{>0}$\\
+ \textbf{Osservazione:}\\
+ $l^0 = 1 \ \ ln(1) = 0$\\
+  $0$ è l'elemento neutro in $(\R, +)$\\
+  $1$ è l'elemento neutro in  $(\R_{>0},\cdot)$\\
+  \textbf{Osservazione:}\\
+  $e^{-x} = \frac{1}{e^x}$\\
+  Inverso di  $x$ in $(\R, +)$ \\
+  è invero di $e^x$ in  $(\R_{>0},\cdot)$\\
+   $\ln(\frac 1 x) = -\ln(x)$\\
+   \textbf{Esercizio}\\
+   $ \varphi : G_1 \rightarrow G_2$ omomorfismo. Dimostrare\\
+   $1) \varphi(e_1) = e_2$\\
+   $2) \varphi(g^{-1}) = \varphi(g)^{-1} \ \ \forall g\in G_1$\\
+   \textbf{Soluzione:}\\
+   $ \varphi (e_1) = \varphi(e_1\cdot e_2) = \varphi(e_1)* \varphi(e_1)$\\
+   moltiplico per $ \varphi(e_1)^{-1}$\\
+   $ \Rightarrow e_2 = \varphi(e_1)^{-1}* \varphi(e_1) = \varphi(e_1)^{-1}*( \varphi(e_1)* \varphi(e_1)) = \varphi(e_1)$ \\
+   \textbf{Esempio:}
+   $(G,\cdot)$ gruppo, $N\trianglelefteq G$\\
+   Allora\\
+   $\pi:G \rightarrow G/N$\\
+   \text{} \ \ \ $g \rightarrow gN$\\
+   è un omomorfismo\\
+   \textbf{Esempio}\\
+   $det: GL_n (\K) \rightarrow \K^*$ \\
+   dove $\K$ campo\\
+    $\K^* = \K \setminus \lbrace 0 \rbrace$ è un gruppo rispetto l prodotto\\
+    allora  $det$ è un omomorfismo\\
+    infatti:
+     \[
+    \forall A,B\in GL_n(\K) \ \ \ \ det(AB) = det(A)det(B)
+    .\] 
+    in particoalre:\\
+    $det(Id) = 1$\\
+    $det(A^{-1}) = \frac 1 {det(A)} \ \ \ \forall A\in GL_n(\K)$
+     \begin{defi}
+    	$ \varphi: G_1 \rightarrow G_2$ omomorfismo\\
+	il nucleo di $ \varphi$ è $ker( \varphi) := \lbrace g\in G_1| \varphi(g) = e\rbrace$\\
+	L'immagine di $\phi$ è \\
+	$Im ( \varphi) = \lbrace{h\in H_2 | \exists g\in G_1: \varphi (g) = h \rbrace$
+    \end{defi}
+    \textbf{Esercizio:}\\
+    $\varphi: G_1 \rightarrow G_2 $ omomorfismo\\
+    Allora $ker( \varphi)\trianglelefteq G_1)$\\
+    \textbf{Soluzione}\\
+    Chiamo $H:ker ( \varphi )$\\
+    vorrei verificare che $g Hg^{-1}\subseteq H \ \ \forall g\in G_1$\\
+    scegliamo $h\in H$ (ovvero $ \varphi(g) = e_2)$\\
+    $ \Rightarrow  \varphi(ghg^{-1}) = \varphi(g) \varphi(h) \varphi(g^{-1})$ = per esercizio = $ \varphi(g) \varphi(h) \varphi(g)^{-1} = e_2$\\
+    $ \Rightarrow ghg^{-1}\in H\forall h\in H, \forall g\in G \Rightarrow gHg^{-1}\subseteq H$\\
+    \textbf{Osservazione}\\
+    $(G,\cdot)$ gruppo, $H\leq G$. Allora  $H\trinaglelefteq G$ se e solo se esiste  $ \varphi: G_1 \rightarrow G_2$ omomorfismo tale che $H=ker( \varphi)$\\
+    \begin{dimo}
+    	Resta solo l'implicazione $ \Rightarrow $\\
+	Sia $H\trianglelefteq G$. considero l'omomorfismo\\
+$	\pi: G \rightarrow G/H\\
+\text{}\ \ \ g \rightarrow gH$\\
+chi è $ker(\pi)$\\
+ ker(\pi) = \lbrace g\in G | gH = H\rbrace = \lbrace g\in G | g\in H\rbrace = H$
+    \end{dimo}\\
+     \textbf{Esempio}\\
+     $det: GL_n(\K) \rightarrow K^*$\\
+     $ker(det) := \lbrace A\in GL_n(\K) | det(A) = 1\rbrace = SL_n(\K)\\
+     quindi\\
+     $SL_n(\K)\trianglelefteq GL_n (\K)$\\
+     \textbf{Esercizio}\\
+     $(G,\cdot)$ gruppo  $g\in G$ fissato\\
+      $ \varphi: \mathbb Z \rightarrow G$ \\
+     $ \text{} \ \ \ n \rightarrow g^n$\\
+     è un omomorfismo\\
+     determinare $ker \varphi$ e $Im \varphi$\\
+     \textbf{Esercizio}\\
+     Sia $  \varphi: G_1 \rightarrow G_2$ omomorfismo\\
+     $1)$ Se $H_1 \leq G_1 \Rightarrow \varphi(H_1)\leq G_2$ \\
+     se $H_1 \trianglelefteq G_1 \Rightarrow \varphi(H_1)\trianglelefteq \varphi (G_1)$\\
+     $2)$ Se $H_3 \leq G_2 \Rightarrow \varphi^{-1}(H_2)\leq G_1$ \\
+     se $H_1 \trianglelefteq G_2 \Rightarrow \varphi^{-1}(H_2)\trianglelefteq \varphi (G_1)$\\
+
+
+\end{document}

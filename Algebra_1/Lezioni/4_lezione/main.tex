@@ -1,0 +1,256 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4 Algebra I}
+\date{2024-10-10}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Altre informazioni sugli omomorfismi}
+	\textbf{Esercizio}\\
+	Sia $ \varphi: G_1 \rightarrow G_2$ omomorfismo dei gruppi\\
+	$ker \varphi = \lbrace g\in G_1 | \varphi(g) = e_2\rbrace$\\
+	Dimostrare che\\
+	$ \varphi$ è iniettivo $ \Leftrightarrow ker( \varphi) = \lbrace e_1 \rbrace$ \\
+	soluzione:\\
+	supponiamo che $ker ( \varphi) = \lbrace e_1\rbrace$\\
+	Allora dati $g,h \in G_1$ t.c $ \varphi (g) = \varphi(h)$\\
+	dobbiamo mostrare che $g=h$\\
+	moltiplico per  $ \varphi(h)^{-1}$\\
+	\begin{gather*}
+		\Rightarrow \varphi(h)^{-1} * \varphi(g) = e_2\\
+		\Rightarrow \varphi(h^{-1})* \varphi(g) = e_2\\
+		\Rightarrow \varphi(h^{-1}\cdot g) = e_2\\
+	 \Rightarrow h^{-1}\cdot g\in ker \varphi\\
+	 \Rightarrow h^{-1}\cdot g = e_1\\
+	 \Rightarrow g = h\\
+	\end{gather*}
+	Il viceversa è lasciato  al lettore come esercizio\\
+	\textbf{Soluzione di un esercizio passato}\\
+	1)Se $H_1\subseteq G_1$ dimostriamo che $ \varphi(H_1)\trianglelefteq \varphi(G_1)$\\
+	Verifichiamo che\\
+	\[
+		f \varphi(H_1) f^{-1}\subseteq \varphi(H_1) \ \ \forall f\in (G_1)
+	.\] 
+	Quindi basta dimostrare che\\
+	$\forall h\in H_1 \ \ \forall g\in G_1$ abbiamo\\
+	$ \varphi(g) \varphi(h) \varphi(g)^{-1}\in \varphi(H_1)$\\
+	Questo è equivalente a richiedere che\\
+	\[
+		\varphi(g\cdot h\cdot g^{-1}) \varphi(H_1)
+	.\] 
+	Ma $ghg^{-1}\in gH_1g^{-1}=H_1$ dato che $H_1\trianglelefteq G_1$\\
+	\begin{gather*}
+		\exists \tilde h\in H_1 \text { t.c } g\cdot h\cdot g^{-1} = \tilde h\\
+		\varphi(ghg^{-1}) = \varphi(\tilde h)\in \varphi(H_1)
+	\end{gather*}
+	2) Se $H_2\trianglelefteq G_2$ dimostriamo che $ \varphi^{-1}(H_2)\trianglelefteq G_1$\\
+	Ho due omomorfismi,\\
+	li compongo:
+	\[
+		\psi: G_1 \xrightarrow[ \varphi]{} G_2 \xrightarrow[\pi]{} G_2/H_2
+	.\] 
+	Studia il $\ker (\psi)$\\
+	 $\ker(\psi):= \lbrace g\in G_1 | \psi (g) = H_2\rbrace = \lbrace g\in G_1 | \varphi(g)H_2 = H_2\rbrace$\\
+	 $ker (\psi) = \lbrace g\in G | \varphi(g)\in H_2 \rbrace = \varphi^{-1}(H_2)$\\
+	 Quindi $ \varphi^{-1}(H_2)$ è il nucleo di un omomorfismo $\psi : G_1 \rightarrow G_2/H_2$ e dunque $ \varphi^{-1}(H_2)\trianglelefteq G_1$\\
+	 \textbf{Osservazione:}\\
+	 Se $ \varphi:G_1 \rightarrow G_2$\\
+	 omomorfismo di gruppi\\
+	 $H_2 = \lbrace e_2 \rbrace \trianglelefteq G_2$\\
+	 l'esercizio $(2)$ ci dice che  $\ker( \varphi) = \varphi^{-1}(\lbrace e_2\rbrace)\trianglelefteq G_1$\\
+	 \textbf{Osservazione}\\
+	 Dalla parte (1) segue che\\
+	 $H_1\leq G_1 \Rightarrow \varphi(H_1)\leq G_2$ \\
+	 Quindi  se scelgo $H_1=G_1\leq G_1$\\
+	 $ \Rightarrow Im( \varphi) = \varphi(G_1)\leq G_2$ 
+	 \section{Parte figa della lezione}
+	 \begin{lemm}
+	 	
+	 $(G,\cdot)$ gruppo\\
+	 $N\trianglelefteq G, H\trianglelefteq G$ sottogruppi normali\\
+	  $\pi: G \rightarrow G/N$\\
+	  Allora $\pi(H) = \pi(HN)$\\
+	 \end{lemm}
+	  \begin{dimo}
+	  	$H\subseteq HN$ poiché $e\in N$ ogni elemento di  $H$ lo scrivo come lui stesso e $ \Rightarrow \pi(H)\subseteq \pi(HN)$ \\
+		Viceversa dimostriamo che $\pi(HN) \subseteq \pi(H)$\\
+		infatti:\\
+		 $\forall h\in H \ \ \ \forall n\in N$\\
+		  $\pi(hn)=\pi(h)\pi(n)$ (omomorfismo)\\
+		   $n\in N$\\
+		    $ \Rightarrow \pi(n) = N \rightarrow \pi(h)\pi(e) = \pi(ne)$ \\
+		    \pi(e) = N \ \ \ \ =\pi(n)\in \pi H
+	  \end{dimo}
+	  \newpage
+	  \begin{lemm}
+	  	$(G,\cdot)$ gruppo\\
+		$\cdot H\trianglelefteq G$\\
+		$\cdot N\trianglelefteq G$\\
+		$\cdot \pi \rightarrow G/N$\\
+		Allora:\\
+		$1)\pi^{-1}(\pi(H))=HN$\\
+		$2)$ se $N\subseteq H \rightarrow\pi^{-1}(\pi(H)) = N$\\
+		$3) \bar H\leq G/N \rightarrow \pi(\pi^{-1}(\bar H)) = \bar H$
+
+	  \end{lemm}
+	  \begin{dimo}[1]
+		  $\pi^{-1}(\pi(H)) = ?$\\
+		  osserviamo che dal lemma 1\\
+		   $\pi(H) = \pi(HN) = HN$\\
+		   dato che  $\pi(hn) = \pi(h)\pi(n) = hn$\\
+		   $ \Rightarrow \pi^{-1}(\pi(H)) = \pi^{-1}(\pi(HN)) = \pi^{-1}(HN)\supseteq HN$ \\
+		   Resta da verificare che $\pi^{-1}(\pi(H))\subseteq HN$\\
+		    \begin{gather*}
+			    \pi^{-1}(\pi(H)):=\lbrace g\in G|\pi(g)\in \pi(H)\rbrace\\
+			    =\lbrace g\in G|\exists g\in H:\pi(g) = \pi(h)\rbrace\\
+			    =\lbrace g\in G| \exists h\in H: \pi(h)^{-1}\pi(g)=N\rbrace \text{ N= elemento neutro in G}\\
+			    =\lbrace g\in G|\exists h\in H: \pi(hg) = N\rbrace\\
+			    =\lbrace g\in G | \exists h\in H: h^{-1}g\in N\rbrace\\
+			    =\lbrace g\in G | \exists h\in H: g\in hNŕbrace \subseteq HN
+		   \end{gather*}
+		   segue (1)
+	  \end{dimo}
+	  \begin{dimo}[2]
+	  	È un caso particolare del punto 1, infatti se
+		\[
+		N\subset H \Rightarrow HN = H
+		.\] 
+	  \end{dimo}
+	  \begin{dimo}[3]
+	  	Segue dal fatto che $\pi è un omomorfismo suriettivo $
+		 \[
+			 \pi(\pi^{-1}(\bar H))=\pi (G)\cap \bar H = \bar H
+		.\] 
+	  \end{dimo}
+	  \begin{teo}
+		$(G,\cdot)$, $n\trianglelefteq G$\\
+		Allora esistono due corrispondenze biunivoche
+		 \begin{center}
+		 	
+			 $\lbrace \text{sottogruppi } H\leq G \ \ t.c. \ \ N\supseteq H\rbrace \rightarrow \{\text{sottogruppi di } G/N\rbrace\\
+			 H \rightarrow \pi (H)\\
+			 \pi^{-1} \leftarrow \bar H\\
+			 \lbrace \text{ sottogruppi normali } H\trianglelefteq G \ t.c \ N\subseteq H\rbrace \rightarrow \lbrace \text{ sottogruppi normali } G/N \rbrace\\
+			 H \rightarrow \pi(H)\\
+			 \pi^{-1}(\bar H) \rightarrow \bar H$
+		 \end{center}
+	  \end{teo}
+	  \begin{dimo}
+		  Il lemma 2 (punti 2 e 3) garantisce che le due applicazioni $H \rightarrow \pi(H)$ $\pi^{-1}(H) \rightarrow\bar H$\\
+		  sono una l'inversa dell'altra
+	  \end{dimo}
+	  \textbf{Osservazione:}\\
+	  Per la seconda corrispondenza osserviamo che per la suriettività di $\pi$ e l'esercizio di oggi \\
+	  \[
+	  H\trianglelefteq G \rightarrow \pi (H)\trianglelefteq G/N
+	  .\] 
+	  \begin{teo}[Teorema di omomorfismo]
+	  	$ \varphi:G_1 \rightarrow G_2$ omomorfismo\\
+		$\cdot N\trianglelefteq G_1$\\
+		$\pi:G_1 \rightarrow G/N$\\
+		Allora:\\
+		1) esiste unico omomorfismo\\
+		$\bar\varphiL G/N \rightarrow G_2$\\
+		t.c. $ \bar  \varphi\circ \pi = \varphi$
+		\begin{tikzcd}
+G_1 \arrow[r, "\varphi"] \arrow[d, "\pi"] & G_2  \\
+G_1 / N \arrow[ur, dashed, "\exists ! \bar\varphi"]
+\end{tikzcd} \\
+2) $Im (\bar \varphi) = Im ( \varphi)$\\
+3) $ \bar \varphi$ è iniettivo \Leftrightarrow $ker\varphi = N$
+	  \end{teo}
+	  \begin{dimo}
+	  	La condizione $\bar \varphi \cdot \pi = \varphi$\\
+		Significa\\
+		$\forall g\in G_1$ si ha \\
+		$\bar \varphi\cdot \pi(g) = \varphi(g)$\\
+		ovvero\\
+		$ \bar \varphi(gN) = \varphi(g)$\\
+		Dobbiamo verificare:\\
+		$\cdot $ Unicità (segue da $\bar \varphi\cdot \pi = \varphi)$\\
+		$\cdot \bar \varphi$  è ben definita\\
+		$\cdot \bar \varphi$ è un omomorfismo\\
+		significa che se $gN=fN$ per qualche $g,f\in G_1$, allora $ \varphi(g) = \varphi(f)$\\
+		Verifichiamo:\\
+		$gN = fN \rightarrow g\equiv f mod N$\\
+		$ \Rightarrow \exists n\in N$ t.c. $g^{-1}f = n$\\
+		 $ \Rightarrow f=gn \Rightarrow \varphi(f) = \varphi(gn)$ \\
+		 $ \Rightarrow \varphi(f) = \varphi(g) \varphi(n) = \varphi(g)$ \\
+		 dato che $ \varphi(n) = e_2$ ovvero $N\subseteq\ker \varphi$\\
+		 \textbf{Mostriamo adesso che $\bar \varphi$ è un omomorfismo}\\
+		 Significa che $\forall f,g\in G$\\
+		  \[
+		 \bar \varphi((fN)\cdot (gN)) = \bar \varphi(fN)\cdot \bar\varphi(gN)
+		 .\] 
+		 Per definizione\\
+		 \[
+		 \bar\varphi ((fN)(gN)) = \bar \varphi(fgN) = \varphi(fg) = \varphi(f) \varphi(g)
+		 .\] 
+		 $2) \bar \varphi\circ \pi = \varphi$\\
+		 dalla suriettività del $\pi$ segue che  $Im(\bar  \varphi) = Im ( \varphi)$\\
+		 $3) \bar \varphi$ è iniettivo $ \Leftrightarrow ker \bar \varphi = \lbrace N\rbrace$\\
+		 $ker\bar \varphi = \lbrace gN\in G_1/N | \bar \varphi(gN) = e_2\rbrace$\\
+		 $=\lbrace gN\in G_1/N | \varphi(g) = e_2\rbrace$\\
+		 $=\lbrace gN\in G_1/N | g\in ker( \varphi)\rbrace$
+	  \end{dimo}
+	  \begin{coro}
+	  	$(G,\cdot)$, $N\trianglelefteq G$\\
+		Allora esiste una corrispondenza biunivoca\\
+		\begin{center}
+			$
+			 \lbrace \text{omomorfismi } \varphi:G \rightarrow G' \ t.c. \ N\subseteq ker( \varphi)\rbrace \rightarrow \lbrace \text{omomorfismi }G/N \rightarrow G'\rbrace\\
+			 \varphi \rightarrow \bar \varphi\\
+			 \bar\circ \pi \leftarrow \bar \varphi
+			 $
+		\end{center}
+	  \end{coro}
+	  \begin{dimo}
+		  basta osservare che\\
+		  dato $\bar \varphi: G/N \rightarrow G'$ la composizione\\
+		  $\bar \varphi\circ \pi: G \rightarrow G'$ è un omomorfismo\\
+		  tale che $ker(\bar \varphi\circ \pi)\supseteq N$\\
+		  segue $\pi(N) = N$ che è l'elemento neutro di  $G/N$\\
+		   $ \Rightarrow \bar \varphi\circ \pi (N) = e'$ che è l'elemento neutro  di $G'$\\
+		   \end{dimo}
+		   \newpage
+		    \begin{defi}
+		   	$ \varphi: G_1 \rightarrow G_2$\\
+			omomorfismo si dice isomorfismo se è invertibile\\
+
+		   \end{defi}
+		   \begin{teo}[Primo teorema di isomorfismo]
+		   	$ \varphi:G_1 \rightarrow G_2$\\
+			Allora:\\
+			$Im( \varphi) \cong G_1/ker( \varphi)$\\
+			Dove $\cong$ (isomorfo) significa che esiste un isomorfismo tra i due gruppi
+		   \end{teo}\\
+		   \begin{dimo}
+		   \[
+\begin{tikzcd}
+G_1 \arrow[r, "\varphi"] \arrow[d, "\pi"] & G_2 \\
+G_1 / N \arrow[ur, "\exists ! \overline{\varphi}"]
+\end{tikzcd}
+\]	
+scelgo $N-ker \varphi$\\
+il teorema di isomorfismo fornisce un omomorfismo iniettivo
+\[
+\bar\varphi: G_1/\ker \varphi \rightarrow G_2
+.\] 
+Allora mi restringo all'immagine di $\bar \varphi$ così diventa suriettiva\\
+\[
+G/ker \varphi \cong  Im ( \bar\varphi) \cong Im( \varphi)
+.\] 
+la prima tramite $\bar \varphi$ la seconda per il teorema di isomorfismo\\
+Applicazione:\\
+det: $GL_n(\K) \rightarrow (\K^*,\cdot) = (\K\setminus\{0\},\cdot)$ \\
+$\ker(det) = SL_n(\K)$ matrici con det 1\\
+$ \Rightarrow GL_n(\K)/SL_n(\K) \cong (\K^*,\cdot)$
+		   \end{dimo}
+
+	  	
+
+\end{document}

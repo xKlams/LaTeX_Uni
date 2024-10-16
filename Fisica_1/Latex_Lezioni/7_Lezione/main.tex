@@ -1,0 +1,65 @@
+\documentclass[12px]{article}
+
+\title{Lezione 7 Fisica Generale I}
+\date{2024-10-14}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Altre robe sul cambiamento del sistema di riferimento}
+\[
+	\overrightarrow{r}' = \overrightarrow{r} - \overrightarrow{r}_{O'} = \overrightarrow{r}- \overrightarrow{v}_{O'}t
+.\] 
+\[
+	\overrightarrow{v'} = \overrightarrow{v}-\overrightarrow{v}_{O'}
+.\] 
+\[
+\overrightarrow{a}' = \overrightarrow{a}
+.\] 
+\subsection{Rotazione degli assi}
+(caso in cui gli assi sono ruotati ma fissi nel tempo)
+\[
+	\overrightarrow{r'} = x'\hat i ' + y' + \hat j' + z'\hat k' = \overrightarrow{r} - \overrightarrow{r'_{O'}} = x\hat i + y\hat j + z\hat k - x_{O'}\hat i - y_{O'}\hat j - z_{O'}\hat k
+.\] 
+prodotto scalare a destra e sinistra per $\hat i, \hat j, \hat k$ \\
+\begin{cases}
+	
+	x'\hat i\cdot \hat i' + y'\hat i\cdot\hat j' + z'\hat i\cdot \hat k' = x - x_{O'}\\
+	x'\hat j\cdot \hat i' + y'\hat j\cdot\hat j' + z'\hat j\cdot \hat k' = y - y_{O'}\\
+	x'\hat k\cdot \hat i' + y'\hat k\cdot\hat j' + z'\hat k\cdot \hat k' = z - z_{O'}\\
+	
+\end{cases}
+\[
+	\matrice{x\\y\\z}-\matrice{x_{O'}\\y_{O'}\\z_{O'}} = \matrice{\hat i \cdot \hat i' &\hat i \cdot \hat j' &\hat i \cdot \hat k'\\
+		\hat j \cdot \hat i' & \hat j \cdot \hat j' & \hat j \cdot \hat k'\\
+	\hat k \cdot \hat i' & \hat k \cdot \hat j' &\hat k \cdot \hat k' }\matrice{x'\\y'\\z'}
+.\]
+dove la matrice è la matrice di rotazione dai precedenti assi a quelli nuovi
+\[
+	\matrice{\cos\alpha & \cos(\alpha + \pi/2) & 0\\
+		\cos(\pi/2-\alpha) & \cos\alpha & 0\\
+	0 & 0 & 1} = 
+	\matrice{\cos\alpha & -\sin\alpha & 0\\
+		\sin\alpha & \cos\alpha & 0\\
+	0 & 0 & 1}
+.\] 
+	
+\[
+	\overrightarrow{r}' = \overrightarrow{r}- \overrightarrow{r}_{O'}
+.\] 
+\[
+	x'\cdot \hat i' + y'\cdot \hat j' + z'\cdot \hat k' = x\cdot\hat i + y\cdot\hat j + z\cdot\hat k - x_{O'}\cdot \hat i - y_{O'}\cdot \hat j - z_{O'}\cdot \hat k
+.\] 
+\[
+	\diff{x'\cdpt\hat i }{t} = \diff {x'\cdot \hat i} t + x' \overrightarrow{\omega}\times \hat i'
+.\] 
+$
+
+\diff{x'\cdot \hat {i}}{t} + x' \overrightarrow{\omega}\times \hat i' + 
+	\diff {y'\cdot \hat j} {t} + y' \overrightarrow{\omega}\times \hat j' + 
+	\diff {z'\cdot \hat k} t + z' \overrightarrow{\omega}\times \hat k'
+$
+\end{document}
