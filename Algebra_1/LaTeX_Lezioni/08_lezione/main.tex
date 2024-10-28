@@ -1,0 +1,308 @@
+\documentclass[12px]{article}
+
+\title{Lezione 8 Algebra I}
+\date{2024-10-26}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Prodotti tra gruppi}
+	\subsection{Prodotto diretto di gruppi}
+	\begin{defi}
+		Siano $(G_1,\cdot)$, $(G_2, *)$ gruppi il loro prodotto diretto risulta l'insieme $(G_1\times G_2)$ dotato dell'operazione:
+		\[
+			(g_1,g_2)\cdot(f_1,f_2) = (g_1\cdot f_1, g_2 * f_2) \ \ \forall g_1,f_1\in G_1, \ \ \forall g_2,f_2\in G_2
+		.\]
+		e lo indichiamo con $(G_1\times G_2)$
+	\end{defi}
+	\begin{prop}bold
+		$(G_1\times G_2, \cdot)$ è un gruppo
+	\end{prop}
+	\begin{dimo}
+		L'associatività segue da quella di $\cdot$ e  $*$ l'elemento neutro è  $(e_1,e_2)$\\
+		l'inverso di $(g,f)$ con  $g\in G_1$ e $f\in G_2$ risulta $(g^{-1},f^{-1})$
+	\end{dimo}
+	\textbf{Esercizio}\\
+	$(G_1, \cdot)$ e  $(G_2,*)$ gruppi\\
+	Dimostrare:
+	1) $|G_1\times G_2| = |G_1||G_2|$\\
+	2) $G_1\times G_2$ è abeliano se e solo se $G_1$ e $G_2$ sono entrambi abeliani\\
+	3) Dati due sottogruppi $H\leq G_1$ e $K\leq G_2 \Rightarrow H\times K\leq G_1\times G_2$ \\
+	4) Dati $H\trianglelefteq G_1$ e $K\trianglelefteq G_2 \Rightarrow H\times K \trianglelefteq G_1\times G_2$ \\
+	5) Dati  $H\trianglelefteq G_1$ e $K\trianglelefteq G_2$\\
+	\[
+		G_1/H \times G_2/H \cong \bigslant{G_1\times G_2}{H\times K}
+	.\] 
+	\begin{dimo}[4,5]
+	\[
+\begin{tikzcd}
+G_1 \times G_2 \arrow[r, " \varphi"] \arrow[d] & \frac{G_1}{H} \times \frac{G_2}{K} \\
+\frac{(G_1 \times G_2)}{ker \varphi} \arrow[ur, dotted, "\exists ! \bar \varphi"]
+\end{tikzcd}
+\]
+
+dove 
+\[
+\varphi(g_1, g_2) = \left( g_1 H, g_2 K \right)
+\]
+	Dal primo teorema di isomorfismo
+	\[
+		Im \varphi \cong \frac {G_1\times G_2}{ker \varphi}
+	.\] 
+	$\cdot \varphi$ suriettiva poichè $\pi_H e \pi_K$ sono suriettive\\
+	\begin{aligned*}
+	$\cdot$ $\ ker \varphi = \{(g_1,g_2)\in G_1\times G_2| \varphi(g_1,g_2) = (H,K)\} \\= \{(g_1,g_2) | g_1H = H \ e \ g_2K = K\}$ \\
+	$\{(g_1,g_2) | g_1\in H,g_2\in K\} = H\times K$
+	\end{aligned*}\\
+	quindi $H\times K\trianglelefteq G_1\times G_2$
+	\[
+		\frac{G_1\times G_2}{H\times K}\cong G_1/H\times G_2/K
+	.\] 
+	\end{dimo}
+	\textbf{Esercizio (importante)}\\
+	$(G_1,\cdot)$ e $(G_2,*)$ gruppi\\
+	$H,K\normale G_1\times G_2$ tali che $H\cap K = \{\tilde e\}$ dove  $\tilde e  = (e_1,e_2)$\\
+	Dimostrare che ogni elemento di $H$ commuta con ogni elemento di K.
+	\textbf{dimo}Consideriamo $h\in H, k\in K$ e verifichiamo che  $hk = kh$\\
+	 \textbf{Idea:}\\
+	 Dimostrare che $hkh^{-1}k^{-1} = e$\\
+	 Data l'ipotesi  $H\cap K = \{e\}$ è sufficiente dimostrare che  $hkh^{-1}k^{-1}\in H\cap K$
+	  \textbf{Sfruttare la normalità di H e K}\\
+	  Per l'esercizio sotto chiedi a Marco\\
+	  \textbf{Esercizio}\\
+	  $(G_1,\cdot)$, $(G_2,*)$ gruppi
+	  \[
+		  H:= G_1\times \{e_2\} = \{(g,e_2)|g\in G_1\}\leq G_1\times G_2\\
+	  .\] 
+	  \[
+		  H:= e_1\times G_2\} = \{(e_1,g)|g\in G_2\}\leq G_1\times G_2\\
+	  .\] 
+	  Verificare che $H$ e $K$ soddisfano le ipotesi dell'esercizio precedente
+	  \begin{defi}
+	  	$(G,\cdot)$ gruppo $H,K\leq G$\\
+		Diremo che  $G$ è \\
+		Prodotto diretto interno di $H$ e $K$ se:\\
+		1) $H,K\normale G$\\
+		2)  $H\cap K = \{e\}$\\
+		3)  $HK = G$
+	  \end{defi}
+	  \begin{teo}
+	  	$(G,\cdot)$ gruppo\\
+		1) Se $G$ è un prodotto diretto interno di $H,K\leq G$ allora  $G\cong H\times K$\\
+		2) Se  $G\cong G_1\times G_2$ allora esistono $H,K\leq G$ tali che $G$ sia prodotto diretto interno di $H$ e $K$ e inoltre $H\cong G_1, K\cong G_2$
+	  \end{teo}
+	  \begin{dimo}[1]
+	  	$\psi: H\times K \rightarrow G$\\
+		$\ \ \ \ (h,k) \rightarrow hk$\\
+		Dobbiamo verificare che $\psi$ sia isomorfismo\\
+		1)$\psi$ è suriettiva perchè ogni elemento di $G$ si scrive come $hk$ quindi $Im(\psi) = G$\\
+		2)È anche iniettiva infatti se  $\psi(g_1,k_1) = \psi(h_2,k_1)$
+		\begin{gather*}
+			\Rightarrow h_1k_1 = h_2k_2\\
+			\Rightarrow h_2^{-1}h_1k_1 = k_2\\
+			\Rightarrow h_2^{-1}h_1 = k_2k_1^{-1}\in H\cap K = \{e\}\\
+			\Rightarrow \begin{cases}
+				h_2^{-1}h_1 = e\\
+				k_2k_1^{-1} = e
+			\end{cases} \Rightarrow (h_1,k_1) = (h_2,k_2)\\
+			\Rightarrow \psi \text{ iniettiva}
+		\end{gather*}\\
+		Bisogna in fine dimostrare che $\psi$ è un omomorfismo, ovvero che\\
+		\[
+		\psi(h_1h_2,k_1k_2) = \psi(h_1,k_1)\psi(h_2,k_2)
+		.\] 
+		dunque
+		\[
+		\psi(h_1h_2,k_1k_2) = h_1h_2k_1k_2 = h_1(h_2k_1)k_2 = h_1(k_1h_2)k_2 = \psi(h_1,k_1)\psi(h_2,k_2)
+		.\] 
+		Ricordando che tutti gli elementi di $H$ commutano con quelli di $K$
+	  \end{dimo}
+	  \begin{dimo}[2]
+	  	Per ipotesi esiste un isomorfismo
+		$ \varphi: G_1\times G_2 \rightarrow G$\\
+		$\ \ \ (g_1,g_2) \rightarrow \varphi(g_1,g_2)$\\
+		considero\\
+		$H:= \varphi(G_1,\{e_2\})$\\
+		$K:= \varphi(\{e_1\}\times G_2)$ \\
+		Abbiamo visto che\\
+		$\cdot G_1\times \{e_2\}\trianglelefteq G_1\times G_2 \rightarrow H\normale G$\\
+		$\cdot \{e_1\}\times G_2\normale G_1\times G_2 \rightarrow K\normale G$ \\
+		\[
+			H\cap K = \varphi((G_1\times\{e_2\})\cap(\{e_1\}\times G_2)) = \{e\}
+		.\] \\
+		\[
+			HK = \varphi((G_1\times \{e_2\})(\{e_1\}\times G_2)) = G
+	.\]
+	Le opportune restrizioni di $ \varphi$ forniscono gli isomorfismi
+	\[
+		H\cong G_1\times \{e_2\}\cong G_1
+	.\] 
+	\[
+		K\cong \{e_1\}\times G_2\cong G_2
+	.\] 
+
+	  \end{dimo}
+\textbf{Esempio:}\\
+Siano $n,m\in\mathbb Z_{>0}$ t.c.\\
+$MCD(n,m) = 1$\\
+Consideriamo  $C_{nm} = <p>$\\
+dove  $ord(p) = nm$\\
+Considero
+ \[
+H = <\rho^m> \ \ \ K = <\rho^n>
+.\] 
+$|H| = ord(\rho^m) = n$\\
+$|K| = ord(\rho^n) = m$\\
+Verifichiamo che
+ \[
+	 C_{nm} \cong H\times K
+.\] 
+Dobbiamo mostrare:
+\begin{enumerate}
+	\item $H,K\normlae C_{nm}$\\
+	\item $H\cap K = \{Id\}$\\
+	\item $HK = C_{nm}$
+	
+\end{enumerate}\\
+1) $C_{nm}$ abeliano, quindi $H,K\nomrale C_{nm}$\\
+2) $H\cap K = ?$\\
+sia $\rho^h\in H\cap K$\\
+Allora
+ \[
+\begin{cases}
+	\rho^h = (\rho^m)^{t_1}\\
+	\rho^h = (\rho^h)^{t_2}
+\end{cases} \ \ \ \ \ \begin{cases}
+	m|h\\
+	n|h
+\end{cases}
+.\] 
+Ma $h\geq mcm(m,n) = mn \Rightarrow  h = mn \Rightarrow \rho^h = Id \Rightarrow H\cap K = \{Id\}$
+\[
+	|HK| = \frac{|H||K|}{|H\cap K|} = \frac {nm}1
+.\] 
+$ \Rightarrow HK$ è tutto chiuso quindi è $C_{nm}$\\
+\begin{defi}[Automorfismo]
+	$(G,\cdot)$ gruppo\\
+	Un automorfismo di $G$ è un isomorfismo  $ \varphi:G \rightarrow G$
+\end{defi}
+\textbf{Osservazione}\\
+$(G,\cdot)$ gruppo\\
+$ \Rightarrow Aut(G) = \{\text{automorfismi di } G\}\\$
+è un gruppo (rispetto alla composizione)\\
+\textbf{Esempio:}\\
+$(G,\cdot)$ gruppo\\
+Fissato $g\in G$ definiamo\\
+ \begin{aligned}
+	 I_g: &G \rightarrow G\\
+	      &f \rightarrow gfg^{-1}
+\end{aligned}\\
+$I_g$ si dice automorfismo interno\\
+$Int(G) = \{\text{automorfismi interni di } G\}$ \\
+\begin{prop}
+	$Int(G)\normale Aut(G)$
+\end{prop}
+\begin{dimo}
+	$If_G = I_e\in Int(G)$\\
+	dato  $g\in G$ allora\\
+	\[
+		I_{g^{-1}} = I_g^{-1} \rightarrow \begin{cases}
+			I_g\in Aut(G)\\
+			Int(G) \text{ è chiuso rispetto agli inversi}
+		\end{cases}
+	.\] 
+	$I_{g_2}\cdot I_{g_1}(f) = g_3g_2fg_2^{-1}g_2^{-1}
+	= (g_2 g_1)f(g_2g_1)^{-1} = I_{g_2g_1}(f)$\\
+	$I_{g_2}\cdot I_{g_1} = I_{g_2g_1}$\\
+	quindi $Int(G)$ è chiuso rispetto alla composizione\\
+	Quindi $Int(G)\leq Aut(G)$\\
+	Basta verificare che:\\
+	$ \varphi\circ Int(G)\circ \varphi^{-1}\subseteq Int(G)  \ \ \forall \varphi\in Aut(G)$\\
+	ovvero dato $g\in G$\\
+	 \[
+		 \varphi\circ I_g\circ \varphi^{-1}\in Int(G)
+	.\] 
+	$\forall f\in G$\\
+	\begin{aligend}
+		 &\varphi\circ I_g \circ \varphi^{-1}(f) = \varphi(g \varphi^{-1}(f) g^{-1}) = \\
+		 &\varphi(g) \varphi( \varphi^{-1}(f)) \varphi(g^{-1}) = \\
+		 &= \varphi(g) f \varphi(g) =\\
+		 & = I_{ \varphi(g)}(f)\\
+		 &\Rightarrow \varphi\circ I_g \circ \varphi^{-1} = I_{ \varphi(g)}\in Int(G)
+	\end{aligend}
+\end{dimo}
+\begin{defi}[Centro di un gruppo]
+	$(G,\cdot)$ gruppo\\
+	Il centro di $G$ è 
+	\[
+		Z(G):=\{g\in G| gf = fg \ \ \forall f\in G\}
+	.\] 
+\end{defi}
+	\textbf{Osservazione}\\
+	$Z(G)\normale G$\\
+	 \textbf{Osservazione:}\\
+	 $(G,\cdot)$ gruppo\\
+	 Definiamo un omomorfismo\\
+	 \begin{aligned}
+		 \varphi: \ &G \rightarrow Int(G)\\
+			& g \rightarrow I_g
+	 \end{aligned}\\
+		 \cdot $ \varphi$ è suriettiva\\
+		 \cdot $ \varphi$ è omomorfismo\\
+	 $ \varphi(g_2g_1)= \varphi(g_2) \varphi(g_1)$\\
+	 $I_{g_2g_1} = I_{g_2}\circ I_{g_1}$\\
+	 Chi è il $ker( \varphi)$\\
+	 \begin{aligned}
+		 ker( \varphi) &=  \{ g\in G | \varphi(g) = Id\} = \\
+				 &= \{ g\in G | I_g = Id\} = \\
+				 & = \{g\in G | \forall f\in G : I_g(f) = Id(f)\} = \\
+				 & = \{g\in G | \forall f\in G : gfg^{-1} = f \} = Z (G)
+	 \end{aligned}\\
+	 Dal I teorema di isomorfismo si ha che
+	 \[
+	 Int(G) \cong G/Z(G)
+	 .\] 
+	 \subsection{Prodotto semidiretto}\\
+	 Consideriamo due gruppi\\
+	 $(N,\cdot)$ e $(H,*)$\\
+	 Fissiamo un omomorfismo\\
+	  \begin{aligned}
+		  \phi: &H \rightarrow Aut(N)\\
+			& h \rightarrow \o_n
+	 \end{aligned}
+	 \begin{defi}[Prodotto semidiretto]
+	il prodotto semidiretto di $N$ e $H$ tramite $\o$ è l'insieme $N\times H$ dotato dell'operazione
+	 \[
+		 (n_1,h_1)\cdot (n_2,h_{2}) = (n_1\cdot \o_{h_1}(n_2), h_1*h_2)
+	.\] 
+	$\forall n_1,n_2\in N \ \ \ \ \forall h_1,h_2\in H$
+\end{defi}
+\begin{nota}
+Indichiamo il prodotto semidiretto tra $N$ e $H$ con il simbolo $N\rtimes_{\o}$$H$
+\end{nota}
+\begin{prop}
+	$N\rtimes_{\o} H$ è un gruppo
+\end{prop}
+\begin{dimo}
+	Dato $(n,h)\in N\rtimes_{\o} H$\\
+	l'inverso è dato da  $(\o_{h^{-1}}(n^{-1}),h^{-1})$
+\end{dimo}
+\newpage
+\begin{defi}
+	$(G,\cdot)$ gruppo\\
+	$N,H\leq G$ Diremo che\\
+	 $G$ è prodotto semidiretto interno di $N$ e $H$ se\\
+	 \begin{itemize}[noitemsep]
+		 \item $N\normale G$\\
+		 \item $N\cap H = \{e\}$\\
+		 \item $NH = G$
+	 \end{itemize}
+\end{defi}
+\textbf{Esempio}\\
+$D_n = <\rho, \sigma> \ \ N = <\rho> \normale D_n$\\
+ $ H = <\sigma > \leq D_n$. Allora $D_n$ è prodotto semidiretto interno di $N$ e $H$
+\end{document}
+
