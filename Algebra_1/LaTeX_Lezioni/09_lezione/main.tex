@@ -1,0 +1,116 @@
+\documentclass[12px]{article}
+
+\title{Lezione 9 Algebra I}
+\date{2024-10-30}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Ricapitolando}
+
+Siano \( (N, \cdot), (H, *) \) gruppi.
+
+\begin{defi}
+Il \textit{prodotto semidiretto} di \( N \) e \( H \) tramite un omomorfismo \( \theta : H \to \text{Aut}(N) \) è l'insieme \( N \times H \) dotato dell'operazione
+\[
+	(n_1, h_1) \cdot (n_2, h_2) = (n_1 \cdot \o_{h_1}(n_2), h_1 * h_2).
+\]
+\end{defi}
+\textbf{Osservazione:}\\
+$h_1\in H, \ \ \o_{h_1}\in Aut(N) \ \ \o_{h_1}(n_2)\in N$\\
+\textbf{Esempio}\\
+Scegliendo\\
+\begin{aligned}
+	\o : &H \rightarrow Aut(N)\\
+	     & h \rightarrow \o_h
+\end{aligned}\\
+con $\o_n := Id_N \ \ \forall h\in H$\\
+Abbiamo:
+ \[
+	 (n_1,h_1)\cdot (n_2,h_2) = (n_1\cdot n_2, h_1 * h_2)
+.\] 
+Quindi il prodotto diretto è un caso particolare del prodotto semidiretto
+
+\section{Prodotto semidiretto interno:}
+Un gruppo \( G \) si dice \textit{prodotto semidiretto interno} di \( N \) e \( H \leq G \) se:
+\begin{enumerate}
+    \item \( N \trianglelefteq G \),
+    \item \( N \cap H = \{ e \} \),
+    \item \( N H = G \).
+\end{enumerate}
+\textbf{Esercizio}\\
+Sia $\o : H \rightarrow Aut(N)$ un omomorfismo\\
+Dimostrare:\\
+$1) |N\rtimes_{\o} H | = |N||H|$\\
+$2) N\rtimes_{\o} H$ è abeliano $ \Leftrightarrow N,H$ abeliani \\
+$3) \tilde H \leq H, \tilde N \leq N$ (sottogruppo caratteristico)\\
+ \[
+\tilde N \semi \tilde H := \{ (n,h)\in N\semi H | 
+	n\in \tilde N,
+	n\in \tilde H
+ \}
+.\] 
+è un sottogruppo di $N \semi H$\\
+\begin{defi}[Sottogruppo caratteristico]
+	$\tilde N\leq N$ sottogruppo caratteristico se \\$ \varphi(n)\in \tilde N\ \ \forall n\in \rilde N\ \ \ \forall \varphi\in Aut(N)$
+\end{defi}
+\begin{teo}
+Sia \( G \) un gruppo. \\1) Se \( G \) è prodotto semidiretto di \( N \) e \( H \leq G \), allora esiste un omomorfismo \( \o : H \to \text{Aut}(N) \) tale che $G\cong N\semi H$\\
+2) Se  $G\cong \tilde N\semi \tilde H$ allora esistono $N,h\leq G$ t.c.
+\begin{itemize}
+	\setlength\itemsep{-1em}
+	\item $G$ sia prodotto semidiretto interno di $N$ e $H$ \\
+	\item $N\cong \tilde N, h\cong \tilde H$
+\end{itemize}
+\end{teo}
+\begin{dimo}[1]
+	Definiamo l'applicazione\\
+	\begin{aligned}
+		\o :& H \rightarrow Aut(N)\\
+		    &	h \rightarrow \o_n
+	\end{aligned}\\
+	dove $\o_{h}(n) := (hnh^{-1})\in hNh^{-1} = N \ \ \forall n\in N$\\
+	Dato che abbiamo assunto  $N$ normale\\
+	Abbiamo verificato la volta scorsa che è un omomorfismo.\\
+	Definiamo l'applicazione\\
+	\begin{aligned}
+		\psi: &N\semi H \rightarrow G\\
+		      &(n,h) \rightarrow nh
+	\end{aligned}\\
+	$\psi$ è suriettiva poiché $N\cdot H = G$ \\
+	$\psi$ è iniettiva poichè\\
+	\begin{gather*}
+		n_1h_1 = n_2h_2 \rightarrow n_2^{-1}h_1 = h_2h_1^{-1}\in H\cap N = \{e\}\\ 
+		\Rightarrow \begin{cases}
+			n_2^{-1} n_1 = e\\
+			h_2h_1^{-1} = e
+		\end{cases} \rightarrow (n_1,h_1) = (n_2,h_2)
+	\end{gather*}
+	\textbf{$\psi$ è omomorfismo:}\\
+	\begin{aligned}
+	&\psi((n_1,h_1)\cdot(n_2,h_2)) =\\
+	&=\psi((n_1\o_{h_1}(n_2),h_1h_2))\\
+	& =n_1\o_{h_1}(n_2)h_1h_2\\ 
+	&= n_1h_1n_2h^{-1}_1h_1h_2 = \psi(n_1,h_1)\cdot\psi(n_2,h_2)
+		
+	\end{aligned}\\
+	Omomorfismo biunivoco
+\end{dimo}
+\newpage
+	\begin{dimo}[2]
+		Dato un isomorfismo\\
+		$\psi :\tilde N\semi\tilde H \rightarrow G $\\
+		definiamo:\\
+		$N := \psi (\tilde N\semi \{e_{\tilde H}\})\normale G$\\
+		$H:=\psi(\{e_n\}\semi \tilde H)$\\
+		Osserviamo che:\\
+		$\cdot \tilde N \cong \tilde N\semi \{e_{\tilde H}\}\cong N$\\ $\cdot \tilde H\cong \{e_{\tilde H\}\semi \tilde H\cong H$\\
+			$\cdot N\cap H = \{e\}$\\
+			 $\cdot NH = e$ \\(analogo alla dimostrazione per prodtto diretto)
+	\end{dimo}
+
+
+\end{document}
