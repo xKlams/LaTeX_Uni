@@ -1,0 +1,72 @@
+\documentclass[12px]{article}
+
+\title{Lezione 10 Algebra I}
+\date{2024-11-02}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Numeri primi e aritmetica}
+	\begin{defi}[Numero primo]
+		Un intero $\rho > 1$ si dice primo se  $\forall a,b\mathbb Z$
+		 \[
+			 \rho|ab \rightarrow \rho|a \text{ oppure } \rho|b
+		.\] 
+	\end{defi}
+	\begin{defi}[Numero irriducibile]
+		Un intero $\rho>1$ si dice irriducibile se i suoi unici divisori positivi\\ sono  $1$ e $\rho$
+	\end{defi}
+	\textbf{Esercizio:}\\
+	Dimostrare che $\rho$ è primo $\Leftrightarrow$ è irriducibile
+	\begin{teo}[Fondamentale dell'aritmetica]
+		$n>1$ intero. Allora $n$ si scrive in modo unico come
+		\[
+			n = \rho_1^{k_1}\cdot\ldots\cdot \rho_r^{k_r} \ \ \ \ \ \text{ (forma canonica)}
+		\] 
+		dove $k_i>0 \ \ \forall i\in\{1,\ldots,r\}$\\
+		e $\rho_1<\rho_2<\ldots<\rho_r$\\
+		e $\rho_i$ è primo  $\forall i\in \{1,\ldots,r\}$
+	\end{teo}
+	\begin{teo}
+		$\rho$ primo. Allora\\
+		$\sqrt \rho $ è irrazionale (ovvero $\sqrt\rho\ni \mathbb Q$)
+	\end{teo}
+	\begin{dimo}[Per assurdo]
+		$\exists a, b\in \mathbb Z$ t.c.  $\sqrt\rho = \frac a b$ con $MCD(a,b) = 1$\\
+		Allora:\\
+		 $(a) + (b) = (MCD(a,b)) = (1)$\\
+		  $\rightarrow 1\in (a)) + (b)\\
+		  \exists r,s,\in\mathbb,$ t.c. $1 = ra + sb$ (identità di Bezout)\\
+		  ora:  $ \begin{cases}
+		  	a = \sqrt \rho b \\ b\rho = a\sqrt\rho
+		  \end{cases}$ \\
+		  Quindi:
+		  $\sqrt \rho = \rho\cdot 1 = \sqrt \rho\cdot (ra + sb)\\
+		  (\sqrt\rho a)r + (\sqrt\rho b)s$\\
+		  =  $\rho b r + as\in \mathbb Z$\\
+		   $ \Rightarrow \sqrt\rho\in\mathbb Z$ quindi $\sqrt\rho$ è un intero che divide $\rho$ e $1<\sqrt\rho<\rho$
+	\end{dimo}
+	\begin{teo}[Euclide]
+		Esistono infiniti numeri primi
+	\end{teo}
+	\begin{dimo}
+		Supponiamo per assurdo che $\exists$ un numero finito di primi $\rho_1,\ldots, \rho_r$\\
+		Definiamo:
+		$N:= (\rho_1 \cdot\ldots\cdot\rho_r) + 1 > 1$\\
+		$ \Rightarrow\exists \rho_k$ primo tale che $\rho_k | N$\\
+		 $ \Rightarrow \begin{cases}
+		 	\rho_k|N\\
+			\rho_k|N-1
+		 \end{cases} \Rightarrow \rho_k|N-(N-1) \Rightarrow \rho_k | 1$, assurdo
+	\end{dimo}
+	\begin{defi}[Numero di Euclide]
+		Sia $\rho$ primo
+		\[
+			\rho^\# := \left(\prod_{q\in\rho, q \text{ primo}} q \right) + 1
+		.\] 
+		$\rho^\#+1$ si dice numero di Euclide
+	\end{defi}
+\end{document}

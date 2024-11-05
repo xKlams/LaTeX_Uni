@@ -1,0 +1,196 @@
+\documentclass[12px]{article}
+
+\title{Lezione 11 Algebra I}
+\date{2024-11-05}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Svolgimento esercizi}
+	\textbf{Ossercazione:}\\
+	Quali sono gli elementi di oridne $21$ in $S_{13}$?\\
+	Ricordo che in $S_4$, gli elementi $(12)(34), (13)(24), (14)(23)$ hanno ordine 2\\
+	gli elementi di ordine 21 sono $(3-ciclo)(7-ciclo)$ sono $\frac {13!}{126}$\\
+	$(3-ciclo)(3-ciclo)(7-ciclo)$ sono  $\frac{13!}{126}$ \\
+	Nelle note del corso trovi soluzioni degli esercizi\\
+	\section{Funzione di Eulero}
+	$\phi: \mathbb Z_{>0} \rightarrow \mathbb Z$\\
+	$\text{} \ \ \ \ n \rightarrow |U_n|$\\
+	\textbf{Ricordo:}\\
+	$\phi(1) = 1$\\
+	 $\phi(\rho) = \rho -1$\\
+	 $\phi(\rho^k) = \rho^k - \rho ^{k-1}$\\
+	 $\phi(n\cdot m) = \phi(n)\phi(m)$\ \ \ \ se  $MCD(n,m) = 1$\\
+	  \begin{lemm}
+	 	$n>1, a\in\Z$ t.c.  $MCD(n,a) = 1$\\
+		sia  $\{a_1,\ldots,a_{\phi(n)}\}$ l'insieme dei numeri positivi minori di $n$ coprimi con n distinti fra loro.\\
+		Allora $\{[a_1],\ldots,[a_{\phi(n)}] = \{[aa_1],\ldots, [aa_{\phi(n)}]\}$ (Classi in $Z/(n)$)
+	 \end{lemm}
+	 \begin{dimo}
+		 Basta verificare che gli elementi delle classi $[aa_i] \ \ \forall \ 0<i<\phi(n)$\\
+		 Siano tutte distinte tra loro e  $aa_i$ sia coprimo con n  $\forall \ 0<i<\phi(n)$ \\
+		 Se per assurdo $[aa_i] = [aa_j] \ \ i\neq j \Rightarrow aa_i\equiv aa_j\  mod(n) \Rightarrow a\equiv a_j \ mod(n)$ Assurdo perché $1\leq a_i, a_j< n$ per ipotesi e dunque  $a_i-a_j\not\in (n)$\\
+		 \begin{cases}
+		  $MCD(a,n) = 1 \\ MCD(a_i,n) = 1$
+		 \end{cases} $\Rightarrow MCD(a,a_i) = 1\\$
+	 \end{dimo}
+	 \begin{teo}[Eulero 1760]
+	 	$n>1 ,a\in\Z$ tale che $MCD(a,n) = 1$\\
+		Allora
+		 \[
+			 a^{\phi(n)}\equiv 1\  mod(n)
+		.\] 
+	 \end{teo}
+	 \textbf{Nota}\\
+	 Se $n$ è primo ritroviamo il piccolo teorema di Fermat
+	 \begin{dimo}
+	 	Considero la situazione del lemma:\\
+		$A = \{a_1,\ldots,a_{\phi(n)}\}$\\
+			Insieme degli interi positivi minori di n e coprimi con n distinti tra loro\\
+			Dal lemma segue che
+			\[
+				a_1\cdot\ldots\cdot a_{\phi(n)}\equiv (aa_1)\cdot\ldots\cdot (aa_{\phi(n)}) \ mod(n)
+			.\] 
+			\[
+				\equiv a^{\phi(n)}\cdot a_1\cdot\ldots\cdot a_{\phi(n)} \ mod(n)
+			.\] 
+			Dal momento che $MCD(a_i,n) = 1$\\
+			abbiamo:  $1\equiv a^{\phi(n)}\ mod(n)$
+	 \end{dimo}
+	 \textbf{Esempio}\\
+	 Se volessi calcolare le ultime $3$ cifre di $2024^{2025}$ Studiamo la congruenza  \[x\equiv 2024^{2025} \ mod(1000)\]
+	 È equivalente al sistema (Teorema cinese del resto):\[
+	 \begin{cases}
+	 x\equiv 2024^{2025} \ mod(2^3)\\
+	 x\equiv 2024^{2025} \ mod(5^3)
+ \end{cases}\]
+ Alternativamente mi accorgo che la prima equazione è equivalente a
+ \[
+	 x\equiv 24^{2025} \ mod(1000)
+ .\] 
+ $\phi(1000) = \phi(2^3)\phi(5^3) = (2^3 - 2^2)(5^3-5^2) = 400$\\
+ $ \Rightarrow 24^{400} \equiv 1 mod(n)$\\
+ Ma questo implica che la congruenza che devo studiare è:
+ \[
+ \Rightarrow x\equiv 24^{2025} mod(1000)
+ .\] 
+ \[
+ \Rightarrow \begin{cases}
+	 x\equiv 24^{2025}\ mod(8)\\
+	 x\equiv 24^{2025}\ mod(125)
+ \end{cases} \Rightarrow \begin{cases}
+ 	x\equiv 0\ mod(8)\\
+	x\equiv 24^{2025} \ mod(125)
+ \end{cases}
+ .\] 
+ Dove nell'ultimo passaggio abbiamo utilizzato il fatto che $8|24$ e $24^{\phi(125)}\equiv 24^{100}\equiv 1\ mod(125)$\\
+ Alla fine dovremmo ricostruire la soluzione in $\Z/(1000)$ che sarà unica per il teorema cinese del resto
+ \section{Teorema cinese del resto}
+ \textbf{Problema}\\
+ Dato un sistema di congruenze\\
+ \begin{cases}
+ 	x\equiv = a_1\ mod(n_1)\\
+	\vdots\\
+	x\equiv = a_r\ mod(n_r)\\
+ \end{cases}\\
+ con $MCD(n_i,n_j) = 1 \ \ \forall i\neq j$  \\
+ Come ricostruire l'unica soluzione $[\bar x]\in \Z/(n_1\cdot\ldots\cdot n_r)$\\ $\bar x\equiv a_i\ mod(n_i)\ \forall i\in \{1,\ldots,r\}
+  $\\
+  \textbf{Idea}\\
+  Definiamo:\\
+  $n: = n_1\cdot n_r$\\
+  $N_i := \frac n {n_i}$\\
+  $\bar  x := a_1N_1^{\phi(n_1)} + \ldots + a_rN_r^{\phi(n_r)}$\\
+  Ora $\bar x\equiv a_i N^{\phi(n)}\ mod(n) \Rightarrow \bar x = a_i mod(n_i) \ \ \forall i$ 
+  \begin{teo}[TCR]
+	Damp il sistema\\
+	\begin{cases}
+		x\equiv a_1 \ mod(n)\\
+		\ldots\ome
+		x\equiv a_r \ mod(n_r)\\
+	\end{cases}\\
+	con $MCD(n_i,n_j) = 1 \ \ \forall i\neq j$\\
+	Allora esiste un'unica classe  $[\bar x]\in \Z/(n_1\cdot\ldots\cdot n_r)$ tale che\\
+	$\bar x\equiv a_i\ mod(n_i) \ \ \forall i\in \{1,\ldots, r\}$\\
+\end{teo}
+	\begin{dimo}[Alternativa al teorema di Eulero]
+		$n:= n_1\codt\ldots\cdot n_r$\\
+		$N_i = \frac n {n_i}$\\
+		$\bar x :=  a_1N_1m_1+\ldots a_rN_rm_r\\$
+		dove gli $m_i$ sono univocamente determinati dalla condizione
+		$N_im_i\equiv 1 mod(n_i)$\\
+		Infatti  \[
+		\bar x\equiv a_iN_im_i \ mod(n_i) \Rightarrow \bar x\equiv a_i mod(n_i)
+		.\] 
+		Osserviamo che $MCD(N_i,n_i) = 1$ Per ipotesi\\
+		Quindi $[N_i]\in U_{n_i}$ e  $[m_i]$ è l'unico inverso di $[N_i]$ in  $U_{n_i}$
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Per risolvere i sistemi di congruenze "basta" saper trovare gli inversi degli elementi in gruppi $U_{n_i}$\\
+	 \textbf{Esercizi dalle schede}\\
+	 \textbf{Esercizio (Gauss)}\\
+	 Dato un intero $n > 1$ dimostrare che  $n = \sum_{d | n} \phi (d)$ (somma di tutti i divisori positivi di $n$
+\begin{dimo}
+	$S_d : = \{m\in \Z | MCD(m,n) = d, 1 \leq m\leq n\}$\\
+	Osserviamo che \\
+	$\{1,\ldots,n\} = \bigcup_dS_d$\\
+	 $ \Rightarrow  n= \sum_{d | n} | S_d|$\\
+ $MCD(m,n) = d \ \Leftrightarrow MCD(\frac md, \frac nd) = 1$\\
+ Quindi $|S_d| = \phi(\frac nd)$\\
+ $n = \sum_{d|n}|S_d| = \sum_{d|n}\phi(\frac nd) = \sum_{d|n}\phi(d)$\\
+\end{dimo}
+ \newpage \\ 
+ \textbf{Esempio}\\
+ $n = 15$\\
+ Voglio ripetere la dimostrazione per ottenere  $15 = \sum_{d|15}\phi(d)$\\
+ $S_1 = \{1,2, 4, 7, 8, 11, 13 , 14\} \Rightarrow \phi(15/1) = 8$\\
+ $S_3 = \{3, 6, 9, 12\} \Rightarrow \phi(15/3) = 4$\\
+ $S_5 = \{5, 10\$ \Rightarrow \phi(15/5) = 2$\\
+	 $S_{15} = \{15\} \Rightarrow \phi ( 15/15) = 1$\\
+\textbf{Esempio}\\
+$n.1$ Allora la somma di tutti gli interi positivi minori di $n$ coprimi con $n$ vale $\frac 12n\phi(n)\in \Z$
+\begin{dimo}
+	Chiamiamo $a_1,\ldots, a_{\phi(n)}$ tali interi:\\
+	Studio $\sum_{i=1}^{\phi(n)}a_i$\\
+	Osserviamo che  $MCD(a,n)=1 \Leftrightarrow MCD(n-a_i, n) = 1$ \\
+	Quindi\\
+	$\{a_1,\ldots, a_{\phi(n)}\} = \{n - a_1,\ldots n - a_{\phi(n)}\}$\\
+	$ \Rightarrow \sum^{\phi(n)}_{i=1}a_i = \sum^{\phi(n)}_{i=1}(n-a_i) = n\phi(n) - \sum^{\phi(n)}_{i=1}a_i \Rightarrow 2 \sum^{\phi(n)}_{i=1}a_i = n \phi(n)$
+\end{dimo}
+\subsection{Teorema di Wilson/Lagrange}
+Ricordo
+\begin{teo}[Wilson]
+	$p$ primo. Allora\\
+	$(p-1)! \equiv (p-1) \ mod(p)$
+\end{teo}
+\begin{teo}[Lagrange]
+	$m > 1 $ intero tale che\\
+	$(m-1)! \equiv (m-1) \ mod(m)$\\
+	Allora $m$ è primo
+\end{teo}
+\begin{dimo}
+	Per assurdo, se $m$ non è primo allora esiste un intero $d|m$ tale che   $1<d<m$\\
+	Osserviamo che:\\
+	 $d < m \Rightarrow d | (m-1)!$ \\
+	 dall'ipotesi segue che
+	  \[
+	 m | (m-1)! + 1
+	 .\] 
+	 $ \Rightarrow d| (m + 1) ! + 1$ \\
+	 Quindi 
+	 \begin{cases}
+	 	d | (m-1)!\\
+		d|(m-1)!+ 1
+	 \end{cases}
+	 $=>d | 1$ che è un assurdo 
+\end{dimo}
+\textbf{Esercizio}\\
+$p$ primo dispari. Allora 
+ \[
+p\equiv 1 \ mod(
+.\] 
+da completare
+\end{document}
