@@ -1,0 +1,345 @@
+\documentclass[12px]{article}
+
+\title{Appunti Primo Esonero}
+\date{2024-11-11}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Preambolo}
+	Qui sono scritti i principali concetti, teoremi, e definizioni che sono utili per lo svolgimento degli esercizi del primo esonero
+	\section{Appunti}
+	\subsection{Curve}
+	\begin{defi}[Curva parametrica]
+		Una curva parametrica in $\R^n$ è una funzione a valori vettoriali $ \varphi:I \rightarrow \R^n, \ \varphi(t) = ( \varphi_1(t),\ldots, \varphi_n(t))$ per la quale ogni componente $ \varphi_i$ è continua in  $I$. Se $I = [a,b]$ allora i punti  $ \varphi(a)$ e $ \varphi(b)$ sono detti estremi della curva, la sua immagine viene detta sostegno della curva parametrica
+	\end{defi}
+	\begin{defi}[Curva chiusa, curva semplice]
+		Una curva parametrica $ \varphi: [a,b] \rightarrow \R^n$ si dice chiusa se $ \varphi(a) = \varphi(b)$.\\
+		Una curva parametrica si dice semplice se per ogni $t_1 \neq t_2\in[a,b]$ con $t_1\ o \ t_2\in(a,b)$ si ha $ \varphi(t_1)\neq \varphi(t_2)$
+	\end{defi}
+	\begin{defi}[Curve equivalenti]
+		Le curve parametriche $ \varphi\in C(I,R^n)$ e $\psi\in C(J,\R^n)$ si dicono equivalenti se esiste una funzione $g\in C^1(I,J)$ suriettiva, tale che $g'\neq_0\in I$ interno e $ \varphi= \psi\circ g$ in $I$\\
+		Il diffeomorfismo $g$ è detto cambiamento di variabile ammissibile
+	\end{defi}
+	\begin{prop}[Curve come classi di equivalenza]
+		La relazione definita da $ \varphi\sim\psi$ se $ \varphi$ e $\psi$ sono equivalenti secondo la precedente definizione è una relazione di equivalenza. Ogni classe di equivalenza $\gamma = [ \varphi]$, sarà detta curva
+	\end{prop}
+	\begin{defi}[Curve orientate]
+		Due curve parametriche equivalenti, $ \varphi\in C(I,R^n)$ e $\psi\in C(J,R^n)$ hanno verso concorde se  $\phi=\psi\circ g$  con $g'>0$ in  $I$, discorde altrimenti
+	\end{defi}
+	\newpage
+	\begin{defi}[versore tangente]
+		Una curva $\gamma$ si dice regoalre se $\gamma = [ \varphi]$ con $ \varphi\in C^1(I,\R^n)$tale che $|| \varphi'(t) || \neq 0$ per ogni $t\in I$ interno. In questo caso è ben definito il vettore
+		\[
+			T(P) = \frac{ \varphi'(t)}{|| \varphi'(t)||}
+		.\] 
+		che prende il nome di versore tangente a $\gamma$ nel punto $P = \varphi(t)$
+	\end{defi}
+	\begin{defi}[Lunghezza e curva rettificabile]
+		La lunghezza di una curva $ \varphi\in C([a,b],\R^n)$ è definita da
+		\[
+			l( \varphi):=sup \{l(P):P\in\mathcal P\}
+		.\] 
+		dove $P$ è una partizione della curva nell'insieme delle partizioni e $l(P)$ è definito come
+		 \[
+			 l(p):= \sum^n_{i=1}|| \varphi(t_i)- \varphi(t_{i-1})||
+		.\] 
+		se $l ( \varphi) <+\infty$ la curva viene detta rettificabile
+	\end{defi}
+	\begin{teo}[Rettificabilità delle curve $C^1$]
+		Se $ \varphi \in C^1([a,b],\R^n)$, allora $\gamma = [ \varphi]$ è rettificabile e 
+		\[
+		l(\gamma) = \int_a^b|| \varphi'(t)||dt
+		.\] 
+	\end{teo}
+	\begin{defi}[Connessione per archi]
+		$E\subseteq R^n$ si dice connesso per archi se per ogni  $x,y\in E$ esiste una curva tutta contenuta in  $E$ che ha questi due punti come estremi
+	\end{defi}
+	\begin{teo}
+		sia $g:E\subset \R^n \rightarrow\R^m,\ n,m\geq 1$ una funzione continua, Allora se $E$ è un insieme connesso, anche $f(E)$ è un insieme connesso
+	\end{teo}
+	\begin{teo}
+		Ogni insieme aperto $A\subseteq \R^n$ si  può scrivere come unione di aperti connessi disgiunti a due a due. Ognuno di questi aperti prende il nome di componente connessa di $A$
+	\end{teo}
+	\newpage
+	\subsection{Limiti e continuità}
+	\begin{teo}[Teorema ponte sulle curve]
+		Data una funzione $f:\Omega\subseteq\R^n \rightarrow\R^m$ e un punto $x_0$ di accumulazione per l'insieme aperto $\Omega$, allora si ha che
+		\[
+			\lim_{x \rightarrow x_0}f(x) = l
+		.\] 
+		se e solo se per ogni curva $ \varphi\in C([a,b],\Omega\cup \{x_0\})$ tale che $ \varphi(t_0)=x_0$ e $ \varphi(t)\neq x_0$se $t\neq t_0$ si ha
+		\[
+			\lim_{t \rightarrow t_0} f( \varphi(t)) = l
+		.\] 
+		In particolare, il limite è indipendente dalla curva scelta
+	\end{teo}
+	\begin{defi}[grafico]
+		Data una funzione $f:\Omega\subseteq \R^n \rightarrow \R$ il suo grafico è definito da 
+		\[
+			\Gamma (f) = \{(x,y)\in \R^n\times \R : x\in \Omega, y = f(x)\}
+		.\] 
+	\end{defi}
+	\begin{defi}[Restrizione ad una curva]
+		Data una $f:\Omega\subseteq\R^n \rightarrow \R$ e una curva parametrica $ \varphi\in C(I,\Omega)$, $I\subset \R$ intervallo, la restrizione di  $f a \gamma = [ \varphi]$ è la composizione tra $f$ e $ \varphi, f( \varphi(t)), t\in I$ (notazione: $f_{|_\gamma})$
+	\end{defi}
+	\begin{defi}[Insieme di livello]
+		Data una funzione $f:\Omega \subseteq \R^n \rightarrow\R$ e $\lambda\in \R$, il suo insieme di livello  $\lambda$
+		 \[
+			 L_\lambda = \{x\in \Omega: f(x) = \lambda\}
+		.\] 
+	\end{defi}
+	\begin{defi}
+		dato $\alpha\in \R$, una funzione $f:\R^n \rightarrow\R$ è positivamente $\alpha$-omogenea se $f(tx) = t^\alpha f(x)$ per ogni  $x\in \R^n, t > 0$
+	\end{defi}
+	\begin{defi}[Simmetria radiale]
+		Una funzione $f:\Omega\subseteq\R^n \rightarrow \R$ è a simmetria radiale se esiste una funzione $g:[0,+\infty) \rightarrow \R$ tale che $f(x) = g(||x||)$ per ogni $x\in \R^n$
+	\end{defi}
+	\newpage
+	\begin{defi}[Forma polare di un numero complesso]
+		Ogni numero complesso si può scrivere nella forma
+		\[
+			z = \rho(\cos\theta + i\sin\theta) = \rho e^{i\theta}
+		.\] 
+		dove $\rho = |z|$ e $\theta\in \R$, se  $z\neq 0$, è un angolo che determina  $z$ nel piano complesso in coordinate polari
+	\end{defi}
+	\subsection{Calcolo differenziale per funzioni scalari di più variabli}
+	\begin{defi}[Derivate parziali]
+		Sia $f:\Omega\subseteq \R^n \rightarrow\R, \Omega$ insieme aperto, $x_0\in\Omega$ Indichiamo con $e_i$ l'$i$-esimo vettore della base canonica. Diremo che $f$ è derivabile parzialmente rispetto alla variabile $x_i$ in $x_0$ se esiste finito il limite
+		\[
+			\lim_{t \rightarrow 0}\frac{f(x_0 + t e_i)-f(x_0)} t
+		.\] rispetto ad $x_i$ nel punto $x_0$, con notazione $f_{x_i}(x_0)$.
+		Se esistono in $x_0$ tutte le derivate parziali di $f$ diremo che $f$ è derivabile in $x_0$. In questo caso il vettore di $\R^n$
+		 \[
+			 Df(x_0) = (f_{x_1}(x_0), \ldots, f_{x_n}(x_n)) .\] 
+			 prenderà il nome di gradiente di $f$ in $x_0$
+	\end{defi}
+	\begin{defi}[Derivata direzionale]
+		Sia $f:\Omega\subseteq\R^n \rightarrow \R, \Omega$ insieme aperto, $x_0\in\Omega$ e $v\in\R^n$ con $||v||=1$. La derivata direzionale di  $f$ in $x_0$ nella direzione $v$ è data dal limite
+		\[
+			\lim_{t \rightarrow 0}\frac{f(x_0 + t v)-f(x_0)} t
+		.\]
+		posto che tale limite esista e sia finito. La derivata direzionale sarà indicata con $f_v(x_0)$
+	\end{defi}
+	\begin{defi}[Differenziabilità]
+		Sia $f:\Omega\subseteq\R^n \rightarrow\R,\Omega$ insieme aperto, $x_0\in\Omega$ la funzione $f$ è differenziabile in $x_0$ se esiste $v\in\R^n$ tale che 
+		\[
+			\lim_{h \rightarrow 0}\frac{f(x_0 + h)-f(x_0) - \langle v, h \rangle } {||h||} = 0
+		.\] 
+		o equivalentemente
+		\[
+		f(x_0 + h ) = f(x_0) + \langle v, h \rangle  + o(||h||) \ \ \ ||h|| \rightarrow 0
+		.\] 
+	\end{defi}
+	\begin{teo}
+		Se $f$ è differenziabile in $x_0$ allora è derivabile in $x_0$ e $v = Df(x_0)$
+	\end{teo}
+	\begin{teo}
+		Se $f$ è differenziabile in $x_0$, allora è continua in $x_0$
+	\end{teo}
+	\begin{teo}[Derivabilità delle restrizioni]
+		Sia $ \varphi\in C([a,b],\R^n)$ derivabile in $t_0\in(a,b)$ e sia $f$ differenziabile in $x_0 = \varphi (t_0)$. Allora la composizione $f( phi(t))$ è derivabile in $t_0$ e si ha
+		\[
+			\left[\diff {} t f( \varphi(t))\right]_{t = t_0} = \langle Df( \varphi(t_0)), \varphi'(t_0) \rangle 
+		.\] 
+	\end{teo}
+	\begin{teo}[Formula del gradiente]
+		Se $f$ e`differenziabile in $x_0$ allora esistono tutte le derivate direzionali di $f$ in $x_0$ e $f_v(x_0) = \langle Df(x_0), v \rangle $
+	\end{teo}
+	\begin{teo}[Del differenziale totale]
+		Sia $x_0\in \R^n,\delta>0$ e $f:B_{\delta}(x_0) \rightarrow\R$ Supponiamo che tutte le derivate parziali\\
+		\text{} \ \ - esistano in $B_\delta(x_0)$ \\
+		\text{}	\ \ - siano continue in $x_0$\\
+Allora $f$ è differenziabile in $x_0$
+	\end{teo}
+	\begin{prop}[Lipschitzianità delle funzioni a gradiente limitato]
+		Se $f$ è una funzione differenziabile in un aperto convesso $\Omega\subseteq\R^n$ e se esiste una costante  $M>0$ tale che  $||Df||\leq M$ allora  $f$ è Lipschitziana in $\Omega$ con costante di Lipschitz minore o uguale ad $M$
+	\end{prop}
+	\begin{prop}
+		Sia $f$ una funzione differenziabile in un insieme $\Omega\subseteq\R^n$ aperto connesso. Se $Df(x) = 0$, allora $f$ è costante in $\Omega$
+	\end{prop}
+	\newpage
+	\begin{defi}[Matrice Hessiana]
+		Se esistonno tutte le $n^2$ derivate parziali seconde di  $f$ in un punto $x_0$ diremo che la funzione $f$ è derivabile due volte in $x_0$. In questo caso
+		\[
+			D^2f(x_0) = (f_{x_ix_j}(x_0))_{i,j=1,\ldots,n}
+		.\] 
+		prende il nome di matrice Hessiana di $f$ in $x_0$.\\
+		Se la funzione è derivabile due volte ion tutti i punti di un aperto $\Omega$ e le detrivate parziali seconde sono tutte continue in $\Omega$ diremo che $f$ è di classe $C^2$ in  $\Omega$
+	\end{defi}
+	\begin{teo}[Schwarz]
+		Sia $f:\Omega\R^n \rightarrow \R$ una funzione derivabile nell'aperto $\Omega$ e sia $x_0\in\Omega$. Supponiamo che esista in $\Omega$ la derivata parziale seconda $f_{x_ix_j}$ e sia continua in  $x_0$. Allora esiste anche $f_{x_jx_i}$ e
+		\[
+			f_{x_ix_j}(x_0)=f_{x_jx_i}(x_0)
+		.\] 
+	\end{teo}
+	\begin{prop}[Derivate seconde delle restrizioni]
+		Se $f\in C^2(\Omega),\Omega\in\R^n$ aperto, e  se  $x, x + h\in \Omega$ sono tali che il segmento che li congiunge sia tutto contenuto in $\Omega$, allora la restrizione $g(t) = f(x + th)$ è di classe $C^2$ nell'intervallo [0,1]e
+		\[
+			\diff{^2g}{t^2}(t) = \langle D^2f(x + th)h,h  \rangle  \ \ \ t \in [0,1]
+		.\] 
+	\end{prop}
+	\begin{teo}[Forumaa di Taylor al secondo ordine con resto di Lagrange]
+	Sia $f\in C^2(\Omega)$ e siano $x,x+h\in\Omega$ tali che il segmento che li congiunge sia tutto contenuto in $\Omega$ Allora esiste $\teta\in(0,1),\theta = \theta(x,h)$ tale che
+	\[
+	f(x + h) = f(x) + \langle Df(x), h \rangle + \frac 12 \langle D^2f(x + \theta h)h, h \rangle 
+	.\] 
+	\end{teo}
+	\newpage
+	\subsection{Ottimizzazione libera}
+	\begin{defi}
+		Data $f:\Omega\subset \R^n \rightarrow\R, x_0\in\Omega$ è un punto di massimo relativo per $f\in\Omega$ se esiste $\delta>0$ tale che 
+		\[
+		f(x)\leq f(x_0) \ \ \ \forall x\in B_\delta(x_0)\cap\Omega
+		.\] 
+		Analogamente, $x_0\in\Omega$ è un punto di minimo relativo per $f\in\Omega$ se esiste $\delta>0$ tale che
+		\[
+		f(x)\geq f(x_0) \ \ \ \forall x\in B_\delta(x_0)\cap\Omega
+		.\] 
+		In entrambi i casi parleremo di punti di estremo relativo.
+	\end{defi}
+	\begin{teo}[Fermat in $\R^n$]
+		Sia $f:\Omega\subset\R^n \rightarrow\R$ e sia $x_0$ un punto interno ad $\Omega$. Se $f$ è derivabile in $x_0$ e $x_0$ è un punto di estremo relativo, allora $Df(x_0) = 0$
+	\end{teo}
+	\begin{prop}[Condizione necessaria del secondo ordine]
+		Sia $f\in C^2(\Omega), \Omega$ aperto, $x_0\in\Omega$ punto di estremo relativo per $f$ in $\Omega$. Allora
+		 \[
+			 x_0 \text{ punto di minimo relativo } \Rightarrow \langle D^2f(x_0)h, h \rangle \geq 0 \ \ \ \forall h\in \R^n
+		.\] 
+		 \[
+			 x_0 \text{ punto di massimo relativo } \Rightarrow \langle D^2f(x_0)h, h \rangle \leq 0 \ \ \ \forall h\in \R^n
+		.\] 
+	\end{prop}
+	\begin{teo}
+		Una matrice simmetrica $A\in M_n$ è definita positiva se e solo se tutti i suoi autovalori sono positivi ed è definita negativa se e solo se tutti i suoi autovalori sono negativi.
+	\end{teo}
+	\begin{defi}
+		Sia $A\in M_n$.
+		\begin{itemize}
+			\item $A$ è definita positiva se $ \langle Ah, h \rangle > 0$ per ogni $h\neq 0$
+			\item $A$ è definita negativa se $ \langle Ah, h \rangle < 0$ per ogni $h\neq 0$
+		\end{itemize}
+	\end{defi}
+	\newpage
+	\begin{teo}
+		Sia $f\in C^2(\Omega),\Omega$ aperto, $x_0\in\Omega$ punto critico per  $g$. Allora si ha\\
+		\text{} \ \ \ - $D^2f(x_0)$ definita positiva $ \Rightarrow \ x_0$ punto di minimo relativo;\\
+		\text{} \ \ \ - $D^2f(x_0)$ definita negativa $ \Rightarrow \ x_0$ punto di massimo relativo;\\
+		\text{} \ \ \ - $D^2f(x_0)$ indefinita $ \Rightarrow \ x_0$ punto né di massimo né di minimo\\
+
+	\end{teo}
+	\begin{teo}[Dei minori principali del nord-ovest]
+		Sia $A = (a_{ij})\in M_n$ una matrice simmetrica. Se per ogni  $k =1,\ldots, n$ si ha che
+		 \[
+			 d_k = det[(a_{ij})^k_{i,j=1}]\neq 0
+		.\] 
+		Allora:\\
+		 $A$ è definita positiva se e solo se $d_k > 0$ per ogni $k=1,\ldots, n;$ \\
+		 $A$ è definita negativa se e solo se $(-1)^kd_k > 0$ per ogni $k=1,\ldots, n;$ \\
+		 negli altri casi è indefinita
+	\end{teo}
+	\begin{teo}
+		Sia $f\in C^2(\Omega),\Omega \subset\R^2$ aperto,  $(x_0,y_0)\in\Omega$. Allora se
+		\[
+			Df(x_0,y_0) = 0, \ \ \ detD^2 f(x_0,y_0) > 0, \ \ f_{xx}(x_0,y_0)>0
+		.\] 
+		allora $(x_0,y_0)$ è un punto di minimo relativo per $f$ in $\Omega$ \\
+		Se invece
+		\[
+			Df(x_0,y_0) = 0, \ \ \ detD^2 f(x_0,y_0) > 0, \ \ f_{xx}(x_0,y_0)<0
+		.\] 
+		allora $(x_0,y_0)$ è un punto di massimo relativo per $f$ in $\Omega$\\
+		Infine se 
+		\[
+			Df(x_0,y_0) = 0, \ \ \ detD^2 f(x_0,y_0) < 0
+		.\] 
+		Allora  $(x_0,y_0)$ è un punto di sella per $f$
+	\end{teo}
+	\subsection{Calcolo differenziale per funzioni a valori vettoriali}
+	\begin{defi}[Derivabilità e matrice Jacobiana]
+		Sia $f:\Omega\subseteq\R^n \rightarrow\R^m$ una funzione definita nell'insieme $\Omega$ aperto e sia $x_0\in\Omega$. Diremo che $f$ è derivabile in $x_0$ se ogni sua componente è derivabile. Le derivate parziali delle componenti saranno raccolte in una matrice $m\times n$
+		\[
+			Df(x_0) = \left(\frac{\partial f_i}{\partial x_j}(x_0) \right)^{n,m}_{i,j=1}
+		.\] 
+		che prende il nome di matrice  Jacobiana di $f$ nel punto $x_0$
+	\end{defi}
+	\begin{defi}[Differenziabilità]
+		Sia $f:\Omega\subseteq\R^n \rightarrow \R^m$ una funzione definita nell'insieme $\Omega$ aperto e sia $x_0\in\Omega$. Diremo che $f$ è differenziabile in $x_0$ se esiste una matrice $A\in M_{m\times n}$ tale che
+		 \[
+			 \lim_{h \rightarrow 0} \frac {f(x_0 + h) - f(x_0) - Ah}{||h||} = 0
+		.\] 
+	\end{defi}
+	\begin{teo}[Differenziabilità delle funzioni composte]
+		Se $f$ e $g$ sono differenziabili allora
+		\[
+		D(f\circ g)(x_0) = Df(g(x_0))Dg(x_0)
+		.\] 
+	\end{teo}
+	\begin{defi}[Jacobiano]
+		Se $f:\Omega\subseteq\R^n \rightarrow\R^n$ è una funzione derivabile in $x_0\in\Omega$, la matrice Jacobiana è quadrata. Il suo determinante viene indicato con $J_f(x_0) = det Df(x_0)$ e prende il nome di determinante Jacobiano o, semplicemente, Jacobiano
+	\end{defi}
+	\begin{defi}[Diffeomorfismo]
+		Una funzione $f:\Omgea\subset \R^n \rightarrow\tilde\Omega\subset\R^n$ è un diffeomorfismo di $\Omega$ in $\tilde\Omega$ se è una funzione  $C^1(\Omega,\R^n)$ invertibile con inversa $f^{-1}\in C^1(\tilde\Omega, \R^n)$
+	\end{defi}
+	\begin{teo}[Invertibilità locale]
+		Una funzione $f\in C^1(\Omega,\R^n)$ $\Omega$aperto,  $x_0\in\Omega$ take che $J_f(x_0) \neq 0$ è un diffemorfismo locale in $x_0$
+	\end{teo}
+	\begin{coro}[Teorema della mappa aperta]
+		Se $f\in C^1(\Omega,\R^n), \Omega$ aperto, è tale che  $J_f(x)\neq 0$ per ogni  $x\in\Omega$, allora  $f$ è una mappa aperta, ovvero manda aperti in aperti
+	\end{coro}
+	\begin{teo}
+		Sia $f\in C^1(\Omega,\R^m), \Omega\subseteq \R^n\times \R^m$ aperto,  $(x_0,y_0)\in\Omega$ tale che \\
+		$(1) \ f(x_0,y_0) = 0$\\
+		$(2) \ detD_yf(x_0,y_0)\neq 0$ \\
+		Allora esistono un intorno $U$ di $x_0$ in $\R^n$, un intorno  $A$ di $(x_0,y_0)$ in $\R^n\times\R^m$ e una funzione  $g\in C^1(U;\R^m)$ tali che per ogni  $(x,y)\in A$ si ha
+		 \[
+		f(x,y) = 0 \Leftrightarrow y = g(x)
+		.\] 
+	\end{teo}
+	\begin{defi}[Varietà grafico]
+		Una varietà grafico di dimensione $k$ in $\R^n$ è un insieme della forma
+		 \[
+			 \Sigma = \{(x,y)\in\R^n:x\in\Omega, y = f(x_1,\ldots,x_k)\}
+		.\] 
+		dove $\Omega\subseteq\R^k$ e $f:\Omega \rightarrow\R^{n-k}$
+	\end{defi}
+	\begin{defi}[k-varietà differenziabile]
+		Sia $U$ un aperto di $\R^n$ e sia $g\in C^1(U,\R^{n-k})$,  $k<n$. Allora la $k$-varietà differenziabile in  $\R^n$ definita da  $g$ è l'insieme
+		 \[
+			 \Sigma := \{x\in U: g(x) = 0\text{ e }Dg(x)\text{ ha rango } n-k\}
+		.\] 
+	\end{defi}
+	\begin{defi}[Spazio tangente]
+		Sia $\Sigma$ una $k$-varietà differenziabile in $\R^n$ e sia $x_0\in\Sigma$. Lo spazio tangente a $\Sigma$ in $x_0$ è
+		\[
+			T_\Sigma(x_0):=\{h\in\R^n: \exists \tilde \varphi\in C^1((-\delta,\delta),\Sigma)\text{ regolare, t.c. } \tilde \varphi(0) = x_0\text{ e } \varphi'(0) = h\}
+		.\] 
+	\end{defi}
+	\begin{prop}
+		Sia $g\in C^1(U,\R^{n-k}),U\subseteq\R^n$ aperto, una funzione tale che il rango della matrice Jacobiana $Dg$ sia uguale a $n-k$ in $U$ e sia
+		 \[
+			 \Sigma = \{x\in U: g(x) = 0\}
+		.\] 
+		Allora lo spazio tangente $T_\Sigma (x_0)$ a $\Sigma$ in  $x_0\in U$ coincide con il sottospazio $kerDg(x_0)$ ossia
+		\[
+			T_\Sigma (x_0) = \{h\in\R^n: Dg(x_0)h = 0\}
+		.\] 
+	\end{prop}
+	\begin{defi}[Spazio normale]
+	Sia $\Sigma$ una $k$-varietà differenziabile in $\R^n$. Lo spazio normale a  $\Sigma$ in $x_0$ è il completamento ortogonale $T^\perp_\Sigma(x_0)$ al sottospazio $T_\Sigma(x_0)$ in $\R^n$
+\end{defi}
+\subsection{Ottimizzazione vincolata}
+\begin{defi}[Punti di estremo vincolato]
+	Sia $f:\Omega \rightarrow \R$ una funzione definita in un sottoinsieme $\Omega$ di $\R^n$ e sia $\Sigma \subseteq\Omega$. Diremo che  $x_0\in \Sigma$ è un punto di minimo di $f$ vincolato in $\Sigma$ se esiste un intorno $U$ di $x_0$ tale che $f(x_0)\leq f(x) \ \ \forall x\in U\cap \Sigma$
+\end{defi}
+\begin{teo}[Moltiplicatori di Lagrange]
+	Sia $\Sigma\subset\R^n$ una  $k$-varietà differenziabile della forma $\Sigma = \{x\in\R^n: g(x) = 0\}$ dove  $g\in C^1(U,\R^{n-k}$ è una funzione tale che il rango  $Dg$ è uguale a $n-k$ su $\Sigma$. Supponiamo che $x_0\in\Sigma$ sia un punto di massimo o minimo vincolato in $\Sigma$ per la funzione  $f\in C^1(B_r(x_0)).$ Allora esiste $\Lambda = (\lambda_1,\ldots,\lambda_{n-k})\in\R^{n-k}$ tale che
+	\[
+		Df(x_0) = \lambda_1(Dg_1(x_0) + \ldots + \lambda_{n-k}Dg_{n-k}(x_0)
+	.\] 
+	Tale $\Lambda$ prende il nome di moltiplicatore di Lagrange
+\end{teo}
+\end{document}
