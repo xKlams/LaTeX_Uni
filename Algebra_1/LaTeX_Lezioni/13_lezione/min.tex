@@ -1,0 +1,174 @@
+\documentclass[12px]{article}
+
+\title{Lezione 13 Algebra I}
+\date{2024-11-12}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Azione di coniugio}
+	\begin{defi}
+		Se $G$ gruppo e $a,b,g\in G$ tali che:
+		 \[
+			 a = gbg^{-1}
+		.\] 
+		diremo che $a,b$ sono coniugati
+	\end{defi}
+	\begin{defi}
+		$G$ gruppo. Allora $G$ agisce su se stesso tramite l'azione di coniugio\\
+		\begin{aligned}
+			&G\times G \rightarrow G\\
+			&g.f = gfg^{-1}
+		\end{aligned}
+	\end{defi}
+	\textbf{Esercizio}\\
+	Verificare che è un'azione\\
+	\begin{teo}
+		$G$ gruppo\\
+		$1)$ elementi coniugati hanno lo stesso ordine\\
+		$2)$ $|O_a| = [G:C(a)]$ dove\\
+		$C(a):=\{g\in G|ga = ag\}\leq G$ (centralizzatore di  $a$)
+		$3)$ equazione delle classi\\
+		$\displaystyle|G| = |Z(G)| = \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}$
+	\end{teo}
+	\begin{dimo}
+		1) Siano $a,b,g\in G$ tali che  $a = gbg^{-1}$ supponiamo che  $b^k = e \ \ \ k\in\Z$\\
+		Allora $a^k = (gbg^{-1})\cdot\ldots\cdot(gbg^{-1}) = gb^kg^{-1} = e$\\
+		Quindi $ord(a)\leq ord(b)$.\\
+		Per simmetria b =  $g^{-1}ag \Rightarrow ord(b)\leq ord(a)$ \\
+		Allora $ord(a) = ord(b)$\\
+		2)Osserviamo che \\
+		\begin{aligned}
+			C(a)=& {g\in G|ga = ag\}\\
+			=&\{g\in G | gag^{-1} = a\}\\
+			=& Stab_a
+		\end{aligned}
+		Ricordiamo che :\\
+		$|O_a|\cdot |Stab_a| = |G|$\\
+		$ \Rightarrow |O_a| = \frac {|G|}{|Stab_a|} = [G : C(a)]$ \\
+		3) se $a\in Z(G)$ allora  $O_a = \{a\}$ poiché\\
+		$\forall g\in G$ si ha $g\codt a  = gag^{-1} = agg^{-1} = a$\\
+		Ricordiamo che  $G$ ammette una partizione in $G$-orbite
+		\[
+		|G| = |Z(G)| + \sum_{O_a\not\subseteq Z(G)} |O_a|
+		.\] 
+		Dal punto (2) $ \Rightarrow  |O_a| = \frac{|G|}{|C(a)|}$ 
+		\[
+			|G| = |Z(G)| + \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}
+		.\] 
+		\textbf{Esempio} (dalla nuova scheda)\\
+		$n\geq 3$ intero dispari  $G = D_n$\\
+		$Z(D_n) = \{Id\}$ infatti  $\rho^i\sigma = \sigma \rho^{n-i}$\\
+		Quindi\\
+		$1) O_\sigma = \{Id\}$\\
+		$2) O_{\rho^i} = ?$ \\
+		Idea $|O_{\rho^i}| = [D_n : C(\rho^i)]$ \\
+		$C(\rho') = \{\rho^i | i = 0,\ldots,n-1\}$ \\
+		$ \Rightarrow |C(\rho^i)| \geq n$ \\
+		Dato che $C(\rho^i)\leq D_n$ allora  $|C(\rho^i)| = n$ oppure  $|C(\rho^i) = 2n$\\
+		Ma  $\sigma\rho^i = \rho^{n-i}\sigma\neq\rho^i\sigma \ \ \forall 0<i<n$\\
+		 $ \Rightarrow |O(\rho^i)| = n$ \\
+		 Quindi \\
+		 $O_{\rho^i} = [D_n:C(\rho^i)] = \frac{2n}n = 2$ \\
+		 Basta ora trovate un altro elemento coniugato a $\rho^i \ \ (0<i<n)$
+		  \[
+			  \sigma\rho^i\sigma^{-1} = \rho^{n-i}\sigma\sigma^{-1} = \rho^{n-i}
+		 .\] 
+		 quindi $O_{\rho^i} = \{\rho^i, \rho^{n-i}\} \ \ \forall 0< i< n$\\
+		 $3) O_\sigma = \{\sigma, ?\}$\\
+		 Studiamo $C(\sigma)$\\
+		  $\sigma$ non commuta con $\rho^i \ \ \forall 0 < i  <n$\\
+		  Se $\sigma$ commuta con $\sigma\rho^i \ \ con 0<i<n$\\
+		  Allora  $\sigma$ commuta anche con il prodotto $\sigma(\sigma\rho^i) = \rho^i$ assurdo \lightning \\
+		  $C(\sigma) = \{Id, \sigma\}$\\
+		  Quindi  $|O|_\sigma| = [D_n:C(\sigma)] = \frac{2n}2 = n$\\
+		  $ \Rightarrow O_\sigma = \{\sigma\rho^i | 0\leq i < n\}$\\
+		  Equazione delle classi.\\
+		  $|D_n| = |Z(D_n)| + \sum_{O_a\not\subseteq Z(D_n)}|O_a|$\\
+		   \[
+		  2n = 1 + 2 + \ldots + 2 + n
+		  .\] 
+
+
+
+	\end{dimo}
+	\begin{teo}
+		$G$ gruppo tale che $|G| = p^k \ \ p$ primo $k>0$.\\
+		Allora:\\
+		1) $Z(G)\neq \{e\}\\$
+		2) $[G:Z(G)] \neq p$
+	\end{teo}
+	\begin{dimo}
+		1) \textbf{IDEA} equazioni delle classi
+		\[
+			|G| - |Z(G)| = \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{C(a)}
+		.\] 
+		modulo  $(p)$ avremmo
+		 \[
+		|Z(G)|\equiv_p 0 
+		.\] 
+		$|Z(G)| \neq 1 \Rightarrow Z(G) \neq \{e\}$ \\
+		Attenzione, $\warning \frac {|G|}{C(a)} = 1 \Rightarrow C(a) = G \Rightarrow a\in Z(G) \Rightarrow O_a = \{a\}\subseteq Z(G)$\\
+		Supponiamo per assurdo che\\
+		$[G:Z(G)] = p$ \\
+		$ \Rightarrow \frac{|G|}{|Z(G)|} = p \Rightarrow |Z(G)| = p^{k-1}$ \\
+		Consideriamo $g\inG\setminus Z(G)$\\
+		$ \Rightarrow C(g)\supseteq Z(G)\cup \{g\}$ \\
+		$ \Rightarrow  \Rightarrow |C(g) = p^{k-1} + 1$ \\
+		$ \Rightarrow |C(g)| = p^k \Rightarrow C(g) = G\\$ 
+		$ \Rightarrow g\in Z(G)$ assurdo
+	\end{dimo}
+	\begin{coro}[Classificazione dei gruppi di oridine $p^2$]
+		$G$ gruppo tale che $|G| = p^2$ con  $p$ primo.\\
+		Allora $G\cong C_{p^2}$ oppure $G\cong C_p\times C_p$
+	\end{coro}
+	\begin{dimo}
+		\textbf{IDEA CHIAVE} Se $|G| = p^2$ allora  $G$ è abeliano.\\
+		Infatti dal teorema:\\
+		$\cdot$ $Z(G)\neq\{e\}$\\
+		$\cdot |Z(G)|\neq p$ perché avremmo $[G:Z(G)]=p$\\
+		allora per Lagrnage\\
+		$|Z(G)| = p^2 \Rightarrow Z(G) = G \Rightarrow  G$ abeliano\\
+		Ora se $\exists g\in G$ tale che  $ord(g) = p^2$ allora  $G\sim G_{p^2}$\\
+		Se invece non esistono elementi di ordine  $p^2$ allora tutti gli elementi  $(\neq e)$ in $G$ hanno ordine $p$\\
+		Sia $h\in G$ tale che $h\neq e \Rightarrow H:=<h>$ con $|H| = p$\\
+		Sia  $k\in G\setminus H$\\
+		 $ \Rightarrow K := <k> \ \ con |K|  = p$ \\
+		 Verifichiamo che $G$ è prodotto diretto interno di $H$ e $K$\\
+		  $\cdot H\normale G$ e $K\normale G$ (poiché $G$ abeliano)\\
+		  $H\cap K = \{e\}$ Infatti:\\
+		 \[\begin{cases}
+			H\cap K \eq K\\
+			H\cap K\neq K
+		\end{cases} \Rightarrow |H\cap K| = 1.\]
+		$HK = ?$\\
+		$|HK| = \frac{|H||K|}{|H\cap K|} = \frac{p^2}1 = p^2$\\
+		 $ \Rightarrow HK = G$ \\
+		 Allora $G\cong H\times K\cong C_p\times C_p$
+		
+	\end{dimo} 
+	\textbf{Osservazione} (per $p = 2$ )\\
+	$G = C_4$ oppure $G\cong K_4 \cong \Z/(2)\times\Z/(2)$\\
+	 \textbf{Osservazione}\\
+	 $p = 3$ $|G| = 0$ allora\\
+	  $G\cong C_9$ oppure $G\cong C_3\times C_3$\\
+	  \textbf{Esempio}(Classi di coniugio in $S_n$) \\
+	  Due permutazioni in $S_n$ sono coniugate se e solo se hanno stessa struttura ciclica
+	
+	  \begin{dimo}
+	  	1) $\tau = (a_1,\ldots, a_n)\in S_n$ un $k$-ciclo $\sigma \in S_n$\\
+		Studio ora  $\sigma \tau\sigma^{-1}$ e la sua azione sull'insieme  $\{\sigma(1),\ldots, \sigma(n)\}$\\
+		Se  $\tau(j) = j$\\
+		$ \Rightarrow \sigma \tau \sigma^{-1}(\sigma(j)) = \sigma\tau(j) = \sigma (j)$ \\
+		Se $j = a_i$ per qualche $1\leq i\leq k \Rightarrow \tau (j) = \tau (a_i) = a_{i + 1 \ mod(k)}$ \\
+		$\sigma\tau\sigma^{-1}(\sigma(a_i)) = \sigma\tau(a_i) = \sigma (a_{i + 1 \ mod(k)})$\\
+		Allora \\
+		$\sigma\tau\sigma^{-1} = (\sigma(a_1),\sigma(a_2),\ldots, \sigma(a_k))$\\
+		$2)$ Se $\tau = \tau_1\cdot\ldots\cdott_h$ con $\tau_i \ k_i$-ciclo\\
+		Allora\\
+		$\sigma\tau\sigma^{-1} = \sigma\tau_1\cdot\ldots\cdot\tau_h\sigma^{-1} = (\sigma\tau_1\sigma^{-1})\ldots(\sigma\tay_h\sigma^{-1})$
+	  \end{dimo}
+\end{document}
