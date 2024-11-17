@@ -1,0 +1,95 @@
+\documentclass[12px]{article}
+
+\title{Svolgimento Esercizi Per il primo esonero\\
+Analisi II}
+\date{2024-11-15}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Curve}
+	\subsection{Verificare che una curva sia semplice}
+	Per verificare che una curva sia semplice basta verificare che
+	 \[
+	\varphi(a) \neq \varphi(b) \ \ \ \forall a\neq b
+	.\] 
+	Per fare ciò la via più semplice e comune è quella di dimostrare che una delle componenti del vettore in uscita è strettamente monotona.
+	\subsection{Rettificabilità di una curva}
+	Per verificare che una curva è rettificabile ci basta sia almeno $C^1$.
+	Alternativamente possiamo verirficare che sia Lipschitziana, ovvero
+	\[
+		|| \varphi(t) - \varphi(s)|| \leq L(t-s) \ \ \forall t,s\in[a,b]
+	.\]
+con $L > 0$.
+	Per calcolare la sua lunghezza dobbiamo risolvere.
+	\[
+	L( \gamma) = \int_a^b ||\varphi(t)'||dt
+	.\] 
+	\subsection{Verificare che una curva sia regolare}
+	Per verificare che una curva sia regolare ci basta verificare che
+	\[
+	|| \varphi'(t)||\neq 0 \ \ \forall t\in \Omega
+	.\] 
+	\section{Derivate e ottimizzazione}
+	\subsection{Differenziabilità}
+	Per verificare che una funzione sia differenziabile in $x_0$ è necessario che esista il limite:
+	\[
+		\lim_{h \rightarrow 0}\frac{f(x_0 + h) - f(x_0) - \langle v, h \rangle }{||h||} = 0
+	.\] 
+	Dove se la funzione è derivabile,  $v$ viene sostituito con il gradiente della funzione in $x_0$
+	\subsection{Esercizio}
+	Esempio
+	\[
+	f(x,y) = \begin{cases}
+		\frac{x^3y-xy^3}{x^2 + y^2} &\text{ se } (x,y)\neq(0,0)\\
+		0 &\text{ se } (x,y) = (0,0)
+	\end{cases}
+	.\] 
+	1) Verificare che la funzione sia continua e derivabile in $(0,0)$:\\
+	Per verificare questo ci basta calcolare li limite per $||(x,y)|| \rightarrow 0$ della funzione quando è diversa da 0, e successivamente maggiorarla con qualcosa che tende a zero, in questo caso possiamo maggiorarla così
+	\[
+		\left|\frac{x^3y-xy^3}{x^2 + y^2}\right|\leq x^2\left|\frac{xy}{x^2 + y^2}\right| + y^2\left|\frac{xy}{x^2 + y^2}\right|\leq x^2 + y^2
+	.\] 
+	quindi per il teorema del confronto possiamo concludere che la funzione è continua in 0.\\
+	2)Continuità delle derivate parziali.\\
+	Per questo il procedimento è analogo, ci basta calcolare la derivata parziale e verificare che il limite in 0 sia 0\\
+	3) Verificare che le derivate seconde miste esistano in $(0,0)$e siano diverse:\\
+	Per verificare l'esistenza ci basta risolvere il limite
+	\[
+		\lim_{k \rightarrow 0}\frac{f_x(0,k)}k = \lim_{k \rightarrow 0} \frac{-k^3}{k^3} = -1 = f_{xy}(0,0)
+	.\] 
+	Più in generale il limite è della forma 
+	\[
+		\lim_{k \rightarrow 0}\frac{f(x_0 + ke_i)-f(x_0)}{k}
+	.\] 
+	che in questo caso risulta essere:\\
+	\[
+		\lim_{k \rightarrow 0}\frac{f(0,0 + k)-f(0,0)}{k}= 
+\lim_{k \rightarrow 0}\frac{f(0,k)}{k}
+	
+	.\] 
+	\section{Ottimizzazione Vincolata}
+	\subsection{Metodi comuni}
+	Data una funzione $f$ e un vincolo $\Sigma$ Ci sono 2 modi di procedere, il primo è trovare quando il gradiente si annulla per $f$ e vedere se il punto è \underline{interno} a $\Sigma$, se lo è si analizza la matrice Hessiana per capire se è massimo o minimo, successivamente si parametrizza il bordo di $\Sigma$ con delle curve e si cerca quando la derivata della composizione tra  $f$ e la curva si annulla, così si trovano punti critici sul bordo.\\
+	Alternativamente, dopo aver cercato tramite il gradiente, si può utilizzare il metodo dei moltiplicatori di Lagrange.\\
+	La condizione che si va a cercare diventa quindi
+	\[
+	Df(x_0,y_0) = \lambda Dg(x_0,y_0)
+	.\] 
+che caratterizza i punti  stazionari della funzione $f$ soggetti al vincolo $g(x,y) = 0$ che è equivalente, in due dimensioni, alla formulazione:
+\[
+	\begin{cases}
+		
+det \matrice{
+	f_x(x_0,y_0) & g_x (x_0,y_0)\\
+f_y(x_0,y_0) & g_y (x_0,y_0)} = 0\\
+g(x_0,y_0) = 0
+	\end{cases}
+.\] 
+È importante fare delle considerazioni preliminari prima di iniziare con questi metodi:\\
+\subsection{Discussione preliminare}
+Bisogna verificare che l'insieme $\Sigma$ sia chiuso e limitato e che $f$ sia di classe $C^1$, in questo caso possiamo utilizzare il Teorema di Weierstrass, che ci dice che $f$ ammette in $\Sigma$ punti di massimo ed i minimo assoluti, che vanno scelti tra i punti stazionari interni a $\Sigma$, i punti stazionari vincolati alla frontiera di $\Sigma$ e i punti non regolari alla frontiera di  $\Sigma$
+\end{document}
