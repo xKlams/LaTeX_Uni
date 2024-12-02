@@ -1,0 +1,34 @@
+\documentclass[12px]{article}
+
+\title{Lezione 17 Algebra I}
+\date{2024-11-26}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Ricordo (Lagrange)}
+	$f(x) = a_nx^n + \ldots + a_1 x + a_0\in \Z[x]$ tale che $a_n \not\equiv_p 0$ con  $p > 1$ primo \\
+	Allora  $f(x)\equiv_p 0$ ammette al più  $n$ soluzioni
+	\begin{coro}[Esercizio]
+	Dimostrare che se $p$ primo e $d | (p-1)$ allora  $x^d -1 \equiv_p 0$ ammette esattamente  $d $ soluzioni
+\end{coro}
+\begin{dimo}[Soluzione]
+	Abbiamo che se $d  (p-1)$ allora $(x^d -1) | (x^{p-1} - 1)$\\
+	$  \Rightarrow x^{p-1} = (x^d-1)f(x)$\\
+	dove $f$ è di grado $(p-1-d)$ \\
+	Ora  $x^{p-1}\equiv_p 1$ ammette  $p-1$ soluzioni distinte per il piccolo teorema di Fermat. Le soluzioni sono  $1,2,\ldots, p-1$\\
+	Se una di tali soluzioni non risolve  $f(x)\equiv_p 0$ allora risolve  $x^d-1\equiv_p 0$ (Sto usando il fatto che  $\Z/(p)$ è un dominio d'integrità [prodotto commutativo e se il prodotto tra due numeri è 0 allora o uno o l'altro sono 0])\\
+	Dato che $ f(x)\equiv_p 0$ ammette al più $p-1-d$ soluzioni distinte deduciamo che $x^d - 1\equiv_p$ ammette almeno $d = (p-1)-(p-1-d)$ soluzioni distinte in  $\Z/(p)$.\\
+	D'altra parte per l'esercizio precedente ne ammette al più $d$, e quindi segue la tesi.
+\end{dimo}
+\begin{coro}[Esercizio]
+	$p> 1$ primo, $d | (p-1)$ Allora, esistono esattamente $\phi(d)$ interi, distinti in $U_p$, di ordine $d$ in $U_p$
+\end{coro}
+\begin{dimo}[Soluzione]
+	Introduco $S_d = \{k\in \Z | ord_{U_p}([k]) = d, \ \ 1\leq k\leq p-1\}$\\
+	La tesi è equivalente a dimostrare che  $|S_d| = \phi(d)$
+\end{dimo}
+\end{document}
