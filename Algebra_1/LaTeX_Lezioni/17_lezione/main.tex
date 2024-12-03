@@ -90,7 +90,41 @@ Inoltre $\exists P\in Syl_p(G) \Rightarrow P\leq G$  \\
 Abbiamo verificato che:\\
 $\cdot P\cap Q = \{e\}$\\
  $\cdot |PQ| = |G| \Rightarrow PQ = G$ \\
- $ \Rightarrow G\cong Q\semi P \cong C_q\semi C_p$
-
+ $ \Rightarrow G\cong Q\semi P \cong C_q\semi C_p$\\
+ dove $\phi : C_p \rightarrow Aut C_q\cong C_{q-1}$\\
+ $\cot$ se $p\not | q-1 \Rightarrow \phi$ è banale $ \Rightarrow G\cong C_q\times C_p\cong C_{pq}$\\
+ $\cdot$ se $p | q-1 \Rightarrow \phi$ potrebbe essere non banale $ \Rightarrow ord_{Aut(C_q)}(\phi_P) = p \Rightarrow Im(\phi)\subseteq Aut(C_q)\cong C_{q-1}$ con $|Im(\phi)| = p$\\
+ Sappiamo che  $C_{q-1}$ contiene un unico sottogruppo di ordine $p$ $ \Rightarrow Im(\phi)$ non dipende da $\phi$ (a meno che $\phi$ non banale)\\
+ $ \Rightarrow $ A meno di "precomporre" $\phi$ con un automorfismo di $C_q$ la mappa $C_p \rightarrow Aut(C_q)\cong C_{q-1}$ è univocamente determinata\\
+ \textbf{Concretamente:}\\
+ Dati $\phi,\phi': C_p \rightarrow Aut(C_q)$ non banali $ \Rightarrow $ esiste $B\in Aut(C_p)$ tale che $\phi' = \phi\cdot B \Rightarrow C_q\semi C_p\cong C_q\semi C_p$ quindi esiste un'unica classe d'isomorfismo non ciclica\\
+ \textbf{Esercizi [Scheda 9]}\\
+ \begin{defi}
+	 Una successione esatta corta di gruppi è una coppia di omomorfismi\\ $H \xrightarrow r G \xrightarrow \pi K$ dove $r$ iniettivo $\pi$ suriettivo e $Im(r) = ker(\pi)$
+	 \begin{itemize}
+		 \item $G$ si dice estensione di $K$ tramite $H $
+		 \item la successione spezza se $\exists s:K \xrightarrow{} G$ omomorfismo tale che  $\pi\cdot s = Id$
+		 \item $S$, se esiste, si chiama sezione
+	 \end{itemize}
+ \end{defi}
+	 \textbf{Esempi}\\
+	 Costruire una successione esatta corta (SEC) di $Q_8$ che estende $K_4$ tramite $C_2$\\
+	 \textbf{Soluzione}\\
+ \[\{Id,\rho\} = C_2 \xrightarrow r Q_8 \xrightarrow \pi K_4\]\\
+ $r$ per essere iniettiva deve mandare $\rho$ che è di ordine 2 in un elemento di ordine 2.\\
+ $ord(r(\rho)) = 2 \Rightarrow r(\rho) = -1$ 
+ \begin{aligned}
+ 	Id \rightarrow 1\\
+	\rho \rightarrow -1
+ \end{aligned}\\
+ Considero la proiezione al quoziente $Q_8 \rightarrow Q_8/\{\pm 1\} \cong K_4$\\
+ $ \Rightarrow $ basta prendere $\pi: Q_8 \rightarrow Q_8/ \{\pm 1\}\cong K_4$\\
+ 2) Non spezza!:\\
+ Se spezzasse dato che una sezione è necessariamente iniettiva (esercizio), ma non esistono omomorfismi iniettivi da $K_4$ in $Q_8$\\
+ 3) \begin{aligned}
+	 $\Z \xrightarrow r&\R \rightarrow S^1\leq C^* $\\
+	 $ n \rightarrow &2\pi n\\
+			 &\theta \rightarrow e ^{i\theta}$
+ \end{aligned} \\è una SEC che non spezza
 
 \end{document}

@@ -1,0 +1,180 @@
+\documentclass[12px]{article}
+
+\title{Lezione 18 Algebra I}
+\date{2024-11-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Altre informazioni sulle SEC}
+	\begin{defi}[spezza]
+		Una successione esatta corta $H \rightarrow G \rightarrow K$ spezza se $\exists S: K \rightarrow G$ omomorfismo t.c. $\pi\circ S = Id_K$
+	\end{defi}
+	\textbf{Osservzione}\\
+	Una sezione è iniettiva\\
+	\textbf{Esempio:}\\
+	$H,K$ gruppi $G:= H\semi K$\\
+	per qualche  $\phi : K \rightarrow Aut(H) \Rightarrow $ \\
+	\begin{aligned}
+		$ H \xrightarrow r &H\semi K \xrightarrow \pi K \\
+		h \rightarrow &(h,e_K)\\
+			      & (h,k) \rightarrow k$
+	\end{aligned} è una SEC che spezza\\
+	$\cdot r$ è iniettiva\\
+	$\cdot \pi$ è suriettiva\\
+	$\cdot Im(r) = \{(h,e_K) | h\in H\} = ker(\pi)$\\
+	 $\cdot$ spezza perchè \begin{aligned}
+		 $S: &K \rightarrow H\semi K$
+		     &k \rightarrow (e_K, k)
+	 \end{aligned}\\
+	 è una sezione:\\
+	 \[
+		 (\pi\cdot S)(k) = \pi(e_H,k) = k \ \ \ \forall k\in K
+	 .\] 
+	\textbf{Esercizio scheda 9}\\
+	Data una SEC $H \xrightarrow r G \xrightarrow K$ con $S:K \rightarrow G$ che  spezza $ \Rightarrow G\cng H\semi K$ \\
+	\textbf{Soluzione:}\\
+	Osservo che:\\
+	$\cdot r(H)\leq G \leadsto \cdot r(H) = ker(\pi)\normal G$\\
+	 $\cdot S(K)\leq G \leadsto \cdot r(H)\cap S(K) = \{e_G\}$\\
+	 $  \Rightarrow $ Sia $x\in r(H)\cap S(K) \Rightarrow \exists h\in H, \exists k\in K$\\
+	 $t.c. x = r(h) = S(k)$\\
+	 Applicando $\pi:$\\
+	 $e_K = \pi(r(h)) = \pi(S(k)) = k \ \Rightarrow \ x = S(k) = S(e_K) = e_G$ \\
+	 $\cdot r(H)\cdot S(K) = G$\\
+	 $g\in G \leadsto \pi(g)\in K \leadsto f = S(\pi(g))\in S(K)\leq G$ \\
+	 Vorremmo ora scrivere $g$ come un'elemento in $r(H)$ per $f$\\
+	 Basta quindi mostrare che  $gf^{-1}\in Im(r)$ ma  $Im(r) = ker(\pi)$\\
+	 Applicando  $\pi: \pi(gf^{-1}) = \pi(g)\pi(f^{-1}) = \pi(g)\pi(S(\pi(g^{-1}))) = \pi(g)\cdot(\pi\circ S)(\pi(g^{-1}))= \pi(gg^{-1}) = e_K$\\
+	 Sapendo che  $f^{-1} = (S(\pi(g)))^{-1}$ e che $(\pi\circ S) = Id_K$\\
+	 Quindi  $gf^{-1}\in ker(\pi) = Im(r) \Rightarrow \exists h\in H$ t.c. $gf^{-1} = r(h) \Rightarrow g = r(h)g = r(h)S(\pi(g))$ \\
+	 \text{ }\storto \ni \ \ \ \ \ \storto\ni\\
+	 $Im(r) \  Im(S)$ \\
+	 $\cdot$ Deduciamo che $G\cong r(H)\semi S(K)\cong H\semi K$\\
+	 poiché  $r$ e $S$  iniettive $ \Rightarrow H\cong r(H)$ e $ K\cong S(K)$
+	 \subsection{Quaternioni}\\
+	 $i^2 = j^2 = k^2 = ijk = -1$\\
+	 $\mathbb H = \{a + bi + cj + dk | i^2 = j^2 = k^2 = -1, ijk = -1, a,b,c,d\in \R\}$\\
+	 è uno spazio vettoriale di dimensione 4. \\
+	 Dalla scheda 9 segue che  $\mathbb H^* = \mathbb H\setminus\{0\}$ è un gruppo moltiplicativo.\\
+	 \begin{defi}
+	 	$n\geq 2 \ \ Dic_n:= <a,j> \leq \mathbb H^*$ dove  $a = \cos(\frac \pi n) + i\sin(\frac \pi n)\in \mathbb H^*$
+	 \end{defi}
+	 \textbf{Osservazione}\\
+	 $(a)$ è un gruppo ciclico di ordine $2n$\\
+	  \textbf{Osservazione}\\
+	  $n = 2 \leadsto a = \cos(\frac \pi 2 ) + i \sin (\frac \pi 2) = i \ \ \Rightarrow  \ \ Dic_2 = <i,j> = \{\pm 1,\pm i, \pm j,\pm k\} = Q_8$ \\
+	  \subsection{Gruppi diciclici}\\
+	  $Dic_n = <a,j>\leq\mathbb H^*$\\
+	  1)  $ord(a) = 2n \ \ \ ord(j) = 4$\\
+	  2) Mostrare  $j^2a^m = a^m + n = a^m j^2$\\
+	   \textbf{Soluzione}\\
+	   $j^2 = -1$ e $a^n = -1$ tutti i membri delle uguaglianze sono quindi  $-a^m$\\
+	   3) Mostrare  $j^{\pm 1} a^m = a^{-m} j^{\pm 1}$\\
+	   \textbf{Soluzione }\\
+	   $j^-1 = -j$\\
+	   $ ja^m = j(cos(\frac{m\pi}{n}) + i\sin(\frac{m\pi}n) = \cos(\frac{m \pi}{n}))= \cos (\frac{-m\pi}{n}) + i\sin(-\frac{m\pi}{n}) = a^{-m}j\\
+	   \Rightarrow j a^m - a^{-m} j \Rightarrow -ja^m = a^{-m}(-j) \Rightarrow j^{-1} a^m = a^{-m}j^{-1}$ \\
+	   6) Mostrare che ogni elemento in $Dic_n$ può scriversi come $a^m j^k$ con  $0\leq m < 2n$  $0\leq j\leq 1$ segue dalle relazioni precedenti  $ \Rightarrow Dic_n = \{a^m | 0\leq m < 2n\}\cup \{a^m_j | 0\leq m < 2n\}$ \\$ \Rightarrow (6): |Dic_n| = 4n$ \\
+	   $8) $ Mostrare che esiste una SEC\\
+	   $C_{2n} \xrightarrow{r} Dic_n \rightarrow {\pi} C_2$\\
+	   $\rho \rightarrow a$\\
+	   $\cdot r(\rho) L= a \Rightarrow r$ iniettiva\\
+	   $\cdot \pi : Dic_n \rightarrow C_2$\\
+	   Vorrei verificare proiezione al quoziente.\\
+	   In effetti  $r(C_{2n}) = <a>\normale Dic_n$ perchè\\
+	   $[Dic_n : <a>] = 2$ \ \ \begin{aligned}
+		   $\pi : &Dic_m \rightarrowC_2 = <\sigma>\\
+			  &a^m \rightarrow e\\
+			  a^m j \rightarrow \sigma$
+
+	   \end{aligned} 
+	   9) Mostrare che \underline {non} si spezza 
+	   \textbf{Soluzione}\\
+	   Mi chiedo se esiste una sezione $S: C_2 \rightarrow Dic_n$\\
+	   Se $S$ esiste allora $S(\sigma) =a^m j$ per qualche $0\leq m < 2n$\\
+	   $ord(a^mj)= 4 \leadsto (a^mj)(a^mj) = a^{m-m}j\cdotj = j^2 = -1\\
+	    \Rightarrow ord(S(\sigma))\neq ord(\sigma) \Rightarrow $ assurdo\\
+	    10) Mostrare che esiste unna SEC\\
+	    $ C_n \xrightarrow r Dic_n \xrightarrow \pi C_4$ ds n dispari:\\
+
+	    \begin{tikzpicture}
+
+% Disegna la circonferenza
+\draw[thick] (0,0) circle(1);
+\draw[thick, ->] (-1.5,0) -- (1.5,0) node[below right] {\(x\)};
+\draw[thick, ->] (0,-1.5) -- (0,1.5) node[above right] {\(y\)};
+% Definizione degli angoli per i tre raggi
+\foreach \angle/\label in {15/a, 45/a^2, 75/a^3} {
+    % Disegna il raggio
+    \draw[thick] (0,0) -- (\angle:1);
+    % Aggiungi l'etichetta
+    \node at (\angle:1.2) {\(\label\)};
+}
+\draw[thick] (0,0) -- (180:1)\\
+	\node at (-1.8,0.3) {\(-1=a^m\)}
+
+\end{tikzpicture}\\
+$C_n = <\rho> \xrightarrow r Dic_n\\
+\text{    }\ \ \ \ \ \ \ \ \ \ \ \rho \rightarrow a^2$\\
+$\pi : Dic_n \rightarrow C_4 = <r> \ \ \pi(a^m) =$ \begin{cases}
+	Id \ \ \text{se }m\equiv_2 0\\
+	r^2 \ \ \text {se }m\equiv_2 1
+\end{cases}\\
+ $\pi(a^mj) =$ \begin{cases}
+	rm \ \ \text{se }m\equiv_2 0\\
+	r^3m \ \ \text {se }m\equiv_2 1
+\end{cases}\\
+\textbf{Osservazione}\\
+$r^2 = \pi(j^2) = \pi(a^n) = \begin{cases}
+	Id \ \ \text{se } n \text{ pari}\\
+	r^2 \ \ \text{se } n \text{ pari}\\
+\end{cases}$\\
+2) $n \geq 3$ dispari\\
+Dimosrtare che $Dic_n\cong C_n\semi C_4$ per qualche $\phi:C_4 \rightarrow Aut(C_n)$\\
+\textbf{Soluzione:}\\
+Costruiamo $S: C_4 \rightarrow Dic_n$\\
+$\cdot$ dobbiamo solo definire $S(r) = j$\\
+$\cdot \ S$  omomorfismo\\
+$\cdot \pi\circ S(r) = \pi (j) = r$\\
+ \begin{defi}
+	 Un gruppo $G$ si dice semplice se i suoi unici sottogruppi normali sono $\{e\}$ e $G$\\
+\end{defi}
+\textbf{Esempio:}\\
+$\cdot Q_8$ non è semplice\\
+$\cdot A_3\cong C_3$ è semplice\\
+$\cdot A_4$ non è semplice;\\
+Ricordo:\\
+per $A_4$ sia ha $n_3 = 4$ e $n_2 = 1 \Rightarrow A_4$  contiene un unico $2$-Sylow ("sottogruppo di oridne 4") che quindi è normlae
+\[
+	V = \{ Id, (12)(34), (13)(24), (14)(23)\} \leadsto V\normale A_4
+.\] 
+\begin{prop}
+	$A_n$ è semplice $\forall n\geq 5$\\
+\end{prop}
+	 $\cdot$ Strategia: Vogliamo procedere per passi dimostrando che:\\
+	 1) $\{e\}\neq H\normale A_n \Rightarrow H$ contiene un $3$-ciclo\\
+	 2) Se $H$ contiene un $3$-ciclo $ \Rightarrow $ li contiene tutti\\
+	 3)  $A_n$ con  $n\geq 5$ è generato dai  $3$-cicli\\
+	 
+\begin{lemm}
+	$\{e\}\neq H\normale A_n$ Allora\\
+	 $H$ contiene almeno un $3$-ciclo oppure (almeno un prodtotto di trasposizioni disgiunte)
+\end{lemm}
+\begin{dimo}
+	Sia $\sigma\in H, \sigma\neq Id \Rightarrow \sigma = \sigma_1\circ\sigma_2\circ\ldots\circ\sigma_k$ \\
+	con $\sigma_i$ cicli disgiunti.\\
+	Caso I: $\sigma_1$ è $m$ ciclo con $m\geq 4$  $\sigma_1 = (a_1a_2a_3\ldots)$\\
+	$\tay:= (a_1a_2a_3)\sigma(a_1a_2a_3)^{-1}\in H \Rightarrow \sigma\tau^{-1}$\in H\\
+	$ \Rightarrow \sigma\tau^{-1} = \sigma (a_1a_2a_3a)\sigma^{-1}(a_1a_2a_3)^{-1} = (\sigma(a_1)\sigma(a_2)\sigma(a_3))$ \\
+	$= (a_2a_3a_4)(a_1a_3a_2)=(a_1a_4a_2)(a_3)\in H$\\
+	Caso II $m = 3$ per casa\\
+	Caso I : $m = 2$ per casa 
+\end{dimo}
+
+
+
+\end{document}

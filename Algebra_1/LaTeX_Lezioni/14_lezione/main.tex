@@ -1,0 +1,150 @@
+\documentclass[12px]{article}
+
+\title{Lezione 14 Algebra I}
+\date{2024-12-02}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Classi coniugate in $S_n$}
+	\begin{teo}[Fondamentale]
+		Due permutazioni in $S_n$ sono coniugate se e solo se hanno la stessa struttura ciclica
+	\end{teo}
+	\begin{dimo}[Già iniziata nella lezione precedente]
+		Avevamo dimostrato che se $\tau = (a_1, \ldots, a_n)\in S_n$ e $\sigma\in S_n$\\
+		 Allora\\
+		 $\sigma\tau\sigma^{-1} = (\sigma (a_1), \ldots, \sigma (a_k))$\\
+		 Da questo abbiamo dedotto che date $\sigma, \tau\in S_n$  qualsiasi, allora:\\
+		 $\sigma\tau\sigma^{-1}$ ha la stessa struttura ciclica di $\tau$\\
+		 $\cdot$ Vogliamo ora dimostrare il viceversa, ovvero: Date $\tau,\omega\in S_n$ vogliamo costruire  $\sigma$ tale che $\sigma\tau\sigma^{-1} = \omega$ ( $\tau,\omega$ con la stessa struttura ciclica)\\
+		 Per ipotesi, $\tau = \tau_1\ldots tau_h$ e $\omega = \omega_1\ldots\omega_h$ dove $h\geq 1, \tau_i,\omega_i$ sono  $k_i-cicli$\\
+		 Denotiamo  $\tau_i = (a_1^i\ldotsa^i_{k_i}), \omega = (b_1^i\ldots b_{k_i})$\\
+		 Possiamo definire $\sigma$ esplicitamente\\
+		 Infatti\\
+		 $\sigma\tau_i\sigma^{-1} = (\sigma(a_1^i)\ldots\sigma(a_{k_i}^i)$\\
+		 Quindi\\
+		 Definiamo $\sigma := \{\sigma (a_j^i) = b_j^i \ \ \forall i\in\{1,\ldots, h\}, j\in \{1,\ldots,k\}, \sigma (t) = t $ se $t\neq a_j^i\}$\\
+		 Allora $\sigma\tau_i\sigma^{-1} = \omega_i \ \ \forall i = h$\\
+		 $ \Rightarrow \sigma\tau\sigma^{-1} = \sigma\tau_1\ldots\tau_h\sigma^{-1}$ \\
+		 $= (\sigma\tau_1\sigma^{-1})\ldots(\sigma\tau_h\sigma^{-1})\\
+		 =\omega_1\ldots\omega_h = \omega$
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Dato che la dimostrazione è costruttiva, è molto utile per risolvere gli esercizi.
+	\section{Il gruppo p-Sylow}
+	\textbf{Idea}\\
+	Prendiamo un gruppo finito.\\
+	Esistono sottogruppi di un dato ordine (divisore di $|G|$)?\\
+	Il risultato parziale che abbiamo è dato dal Teorema di Cauchy:\\
+	Se  $\exists p$ primo e divide  $|G|$, allora:\\
+	 $\exists H\leq G$ t.c. $|H| = p$ \\
+	 Sylow, va avanti secondo questo filone:\\\newpage
+	 \begin{defi}
+		 Sia $G$ gruppo finito, $p,r,m\in\Z_{>0} t.c.$\\
+		  $\cdot |G| = p^r\cdot m$\\
+		   $\cdot p$ primo \hfill (ogni gruppo finito ha queste caratteristiche)\\
+		   $\cdot MCD(p,m) = 1$\\
+	 Un sottogruppo di ordine $p^r$ in $G$ si chiama $p-Sylow$\\
+	 L'insieme dei  $p-Sylow$ si denota con $Syl_p(G)$\\
+	 \end{defi}
+	 \begin{teo}[I Teorema di di Sylow  (1862-1872)]
+	 	Se $G$ gruppo finito, $p$ primo che divide $|G|$, Allora:\\
+		 $Syl_p(G)\neq \emptyset$
+	 \end{teo}
+	 \begin{dimo}
+		 Sia $X:= \{S\subseteq G:\ |S| = p^r\}$\\
+		 Definisco un azione\\
+		  \begin{aligned}
+			  G&\times X\rightarrow X\\
+			  (&g,s) \rightarrow gS = \{gs|s\in S\}
+		 \end{aligned}\\
+		 Dalle osservazioni $ \Rightarrow p \not | \ |X|$ \\
+		 D'altra parte, $x$ si decompone in $G$-orbite\\
+		 Inoltre $|O_S|\cdot|Stab_S| = |G| = p^r\cdot m$\\
+		  $ \Rightarrow \exists$ almeno un elemento $\underline S\in X$t.c.  $\underline S|\not\equiv_p 0$\\
+		  Allora  
+		   \[
+			   \frac{|O_{\underline S}|}{|O_{\underline S}|}\cdot |Stab_{\underline S}| = \frac{p^r\cdot m}{|O_{\underline S}|}\in \Z
+		  .\] 
+		  Da cui segue che $|Stab_{\underline S}|\equiv_{p^r} 0$ \\
+		  $p^r\leq |Stab_{\underline S}$\\
+	  L'idea ora è di dimostrare che $Stab_{\underline S}\in Syl_p(G)$\\
+	  Essendo uno stabilizzatore, è sicuramente un sottogruppo, quindi basta dimostrare che $|Stab_{\underline S}|\leq p^r$\\
+	  \textbf{Osservazione/Esercizio}\\
+	  $\exists$ applicazione iniettiva, $Stab_{\underline S} \rightarrow p$ definita fissando un elemento qualsiasi $\underline s\in S$ \\
+	   \begin{aligned}
+		   &Stab_{\underline S} \rightarrow \underline S\\
+		   & g \rightarrow g\underline s
+	  \end{aligned}\\
+	  dimostrare che questa funzione è iniettiva, questo porta alla conclusione che $|Stab_{\underline S}|\leq |\underline S| = p^r$ dato che  $\underline S\in X$
+	 \end{dimo}
+	 \textbf{Esempio}\\
+	 Sia $|G| = 12  = 2^2\cdot 3 = 3 \cdot 4$\\
+	 Dal  I Teorema di Sylow segue:\\
+	  $\cdot Syl_2(G)\neq 0 \Rightarrow \exists H\leq G : |H| = 4$ \\
+	  $\cdot Syl_3(G)\neq 0 \Rightarrow \exists H\leq G : |H| = 3$ \\
+	  \textbf{Osservazione}\\
+	  $\cdot X = O_{S_1}\circ O_{S_2}\circ\ldots\cric O_{S_r}$\\
+	  $ \Rightarrow |X| = \sum^r_{j=1} |O_{S_j}|$ Ma $|X|\not\equiv_p 0$\\
+	  \textbf{Idea}\\
+	  $G$ gruppo, $|G| = p^r \cdotm$\\
+	  $MCD(p,m) = 1, p$ primo, $p,r,m\in\Z_{>0}$ \\
+	  Per il I teorema sappiamo che $(1) Syl_p(G)\neq 0$.\\
+	  il  II Teorema ci dirà che $(2)$ Tutti i $p-Sylow$ sono tra loro coniugati.\\
+	  Il (2) ci dice che $ \rightarrow$ Un $p$-Sylow è normale se e solo se è l'unico $p$-Sylow.\\
+	  Quanti sono i $p$-Sylow? Analogamente $n_p := |Syl_p(G)| = ?$\\
+	  \begin{teo}[II Teorema di Sylow]
+		  Dati $H_1, H_2\in Syl_p (G), \exists g\in G$ t.c. \ \ $g H_1 g^{-1} = H_2$\\
+	  \end{teo}
+	  \begin{dimo}
+		  	L'enunciato è equivalente a dimostrare che la seguente azione è transitiva.
+			\begin{center}
+				\begin{aligned}
+					G\times  Syl_p(G) &\rightarrow Syl_p (G)\\
+					(g, H) \hspace{20px}&\rightarrow gHg^{-1}
+				\end{aligned}
+			\end{center}
+			o equivalentemente, che esiste un'unica orbita.\\
+			Per assurdo supponiamo che esistano due orbite distinte, $O_H^G$ e $O_K^G$.\\
+			 \textbf{Passo 1}\\
+			 Denotiamo con $Stab_H^G$ lo stabilizzatore di $H$ rispetto a questa azione
+			 \[
+			 \begin{cases}
+				 |G| = |O^G_H|\cdot |Stab_H^G| = |O^G_H|\cdot[Stab_H^G:H]\cdot |H|\\
+				 H\leq Stab_H^G
+			 \end{cases}
+			 .\] 
+			 Quindi $p \not |  \ |O^G_H|$\\
+			 \textbf{Passo 2}\\
+			 Restringiamo l'azione\\
+			 \begin{center}
+			 	\begin{aligend}
+					K\times O^G_H & \rightarrow O_H^G\\
+					(k,S) & \rightarrowk S k^{-1}
+			 	\end{aligend}
+			 \end{center}\\
+			 Rispetto a questa azione abbiamo orbite diverse.\\
+			 In particolare\\
+			 $|O_H^G| = O_{H_1}^K\cup\ldots\cup O_{H_r}^K$\\
+			 \begin{aligned}
+			 $	
+			 \Rightarrow |O^G_H| &= \sum^r_{i=1} |O_{H_i}^K|\\
+					     & = \sum^r_{i=1} \frac{|K|}{Stab_{H_i}^K}\\
+					     & = \sum^r_{i=1} \frac{ p^r}{|Stab_{H_i}|}
+			 $\end{aligned}\\
+			 Dato che $p \not | |O_H^G|$ deduciamo che $\exists H_i$ t.c. \  $|O^K_{H_i}| = 1$\\
+			 $ \Rightarrow 1 = |O^K_{H_i}|= [K:Stab_{H_i}^G]$ \\
+			 Quindi $K$ stabilizza $H_i$\\
+			 $ \Rightarrow kH_ik^{-1} = H_i \ \ \forall k\in K$\\
+			 $ \Rightarrow KH_i = H_i K$ \\
+			 \textbf{Passo 3}
+			 $KH_i = H_i K \Rightarrow KH_i\leq G$ \\
+			 $\displaystyle|KH_i| = \frac{|K|\cdot |H_i|}{|K\cap H_i|} = \frac {p^{2r}}{p^s}$ \ \ con  $s<r$ (poichè altrimenti $K = H_i$)\\
+			 $|KH_i| = p^{2r-s} = p^{r + t}$ con $t > r$\\
+			 Ma  $|KH_i|$ divide $|G| = p^r m$ per Lagrange (assurdo)
+
+	  \end{dimo}
+\end{document}
