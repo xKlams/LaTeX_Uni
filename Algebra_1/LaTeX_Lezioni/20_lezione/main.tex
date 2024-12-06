@@ -1,0 +1,182 @@
+\documentclass[12px]{article}
+
+\title{Lezione 20 Algebra I}
+\date{2024-12-05}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Argomenti dell'esonero}
+	Al massimo ci sta qualcosa sugli anelli
+	\section{Gli anelli}
+	\begin{defi}
+		Un anello $(R$, $+$, $\cdot)$ è un insieme $R$ dotato di due operazioni, $+,\cdot$ che soddisfano le seguenti:
+		\begin{enumerate}
+			\item $(R, + )$ è un gruppo abeliano
+			\item L'operazione $\cdot$ è associativa $(a\cdot b\cdot c = (a\cdot b)\cdot c = a\cdot (b\cdot c) \ \ \ \forall a,b,c\in R) $ 
+			\item $\exists 1\in R $ tale che $1\cdot a  = a \cdot 1  = a \ \ \forall a\in R$ $(R$ è unitario$)$
+			\item Vale la legge distributiva \\$ (a + b)\cdot c= a\cdot c + b\cdot c$ \\
+				$c\cdot (a + b) = c\cdot a + c\cdot b \ \ \forall a,b,c\in R$
+		\end{enumerate}
+\textbf{Nota}\\
+Artin richiede  anche la commutatività
+
+	\end{defi}
+	\begin{defi}
+		Un anello $(\R,+,\cdot)$ si dice commutativo se 
+		\[
+		a\cdot b = b\cdot a \ \ \forall a,b\in R
+		.\] 
+	\end{defi}
+	\textbf{Esempi}\\
+	$1)(\Z, + , \cdot ) $ è un anello commutativo\\
+	$2) Mat_{2\times 2}(\mathbb Q)$ è un anello non commutativo\\
+	\begin{defi}[Dominiio d'integrità]
+		Un dominio d'integrità è un anello commutativo tale che
+		\begin{enumerate}
+			\item $0\neq 1$
+			\item  $\forall a,b\in R$ tale che $a\cdot b = 0$ si ha  $a = 0$ oppure $b = 0$
+		\end{enumerate}\\
+		$0$ denota l'elemento neutro del gruppo $(R,+)$\\
+		Si dice che $R$ non ha divisori dello $0$
+	\end{defi}
+	\textbf{Esempio:}\\
+	$R = \{e\}$\\
+	 $e + e = e$\\
+	  $e\cdot e = e$\\
+	   $(R,+,\cdot)$ è un anello che soddisfa $0 =1$\\
+	   Si chiama Anello Banale (Zero Ring) \\
+	   \textbf{Esercizio}\\
+	   $(R,+,\cdot)$ anello\\
+	   $1)$ dimostrare che  \[a \cdot 0 =0\cdot a  = 0 \ \ \forall a\in R\]
+   $2)$ dimostrare che  \[(-a)\cdot b = a\cdot (-b) = - (a \cdot b)\]\\
+   $3)$ se $0 = 1$ allora  $R$ è l'anello banale (ovvero $|R| = 1$)\\
+    \begin{defi}
+   	$(R, + ,\cdot)$ anello.\\
+	Un sottoanello di $R$ è un sottoinsieme $A\subseteq R$ tale che:\\
+	\begin{enumerate}
+		\item $(A,+) \leq (R,+)$
+		\item $1\in A$
+		\item $A$ è chiuso rispetto all'operazione  $\cdot$
+	\end{enumerate}
+   \end{defi}
+\textbf{Esempi}\\
+$M\geq 2$ intero\\
+ $(\Z/(m), + )$ gruppo abeliano\\
+$(\Z/(m), + , \cdot)$ è un anello commutativo\\
+IN generale non è un dominio d'integrità.\\
+Ad esempio se  $m=6 $\\
+$[2][3]=[6]=[0]$\\
+quindi  $[2]$ e $[3]$ sono divisori di $[0]$ in $\Z/(6)$
+\begin{prop}
+	$m\geq 2 $ è intero allora $\Z/(m)$ è un dominio d'integrità se e solo se $m$ è primo
+\end{prop}
+\begin{dimo}
+	Se $m$ non è primo allora esistono $1<a,b < m$ tali che $m = a\codt b$\\
+	Allora  $[a]\cdot[b] = [m] = [0]$ e  $[a]$ è un divisore dello zero\\
+	Viceversa se $m$ è primo dobbiamo dimostrare che non esistono zero divisori \\
+	Considero $[a]\in\Z/(m)$ con $[a]\neq [0]$\\
+	Assumo che  $0< a < m$ \\
+	Allora $MCD(a,m) = 1$\\
+	$ \Rightarrow (a) + (m) = (1) =\Z$ \\
+	$ \Rightarrow \exists k,h\in \Z$ tali che $ka + hm = 1$\\
+	$ \Rightarrow [k]\cdot [a] = [1]\in \Z/(m)$\\
+	Ora se esiste $[b]\in \Z/(m)$ tale che\\
+	$[a]\cdot[b] = [0]$\\
+	$ \Rightarrow [k]\cdot[a]\cdot[b] = [k]\cdot [0]\\
+	\Rightarrow [b] = [0]\\
+	\Rightarrow  [a]$  non è zero divisore
+\end{dimo}
+\textbf{Osservazione}\\
+Abbiamo dimostrato che se $a\in R$ ammette un inverso moltiplicativo allora  $R$ è un dominio d'integrità (assumendo "solo" che $R$ sia anello commutativo)\\
+\begin{defi}
+	Un anello $(R,+, \cdot)$ si dice corpo se\\
+	 $0\neq 1$\\
+	 $\forall a\in R, \ \exists a^{-1}\in R$ t.c.\\
+	 $a^{-1} \cdot a = a\cdot a^{-1} = 1$ 
+	 $a^{-1}$ si dice inverso moltiplicativo
+\end{defi}
+\begin{defi}
+	Un campo è un corpo commutativo
+\end{defi}
+\textbf{Osservazione}\\
+Se $(R, +,\cdot)$ anello $a\in R$ che ammette inverso moltiplicativo  $a^{-1}\in R $ Allora $a$ non è zero divisore\\
+Infatti se $\exists b \in R$ t.c.  $a\cdot b = 0$ \\
+$0 = a^{-1}\cdot (a\cdot b) = a^{-1}\cdot a\cdot b = (a^{-1}\cdot a) \cdot b = b$\\
+$1\cdot b = 0 \Rightarrow  b = 0$ \\
+ $ \Rightarrow a$ non è divisore di $0$\\
+  \begin{coro}
+ 	Ogni campo è un dominio d'integrità 
+ \end{coro}
+ \begin{dimo}
+	 $\forall a\in R$ esiste  $a^{-1} \Rightarrow R$ dominio d'integrità
+ \end{dimo}
+ \textbf{Osservazione}\\
+ \begin{document}
+
+\begin{center}
+	\begin{tikzpicture}
+
+\node (field) at (0, 2) {CAMPO};
+\node (ring) at (-2, -2) {ANELLO};
+\node (integralDomain) at (2, 0) {DOMINIO D'INTEGRITÀ};
+\node (commutativeRing) at (2, -2) {ANELLO COMMUTATIVO};
+\node (corpo) at (-2, 0) {CORPO};
+
+\draw[->, double, <=10pt] (field) -- (corpo);
+\draw[->, double] (corpo) -- (ring) node[midway, above left] {};
+\draw[->] (field) -- (integralDomain) node[midway, above right] {};
+\draw[->] (integralDomain) -- (commutativeRing) node[midway, right] {};
+\draw[->] (ring) -- (commutativeRing) node[midway, below left] {};
+
+\end{tikzpicture}
+\end{center}
+\textbf{Esempio:}
+1) $\mathbb H$ quaternioni è un corpo\\
+infatti $i^2 = j^2 = k^2 = ijk = -1$  $q\in \mathbb H$ \\
+$\leadsto q = x + yi + zj + wk\in \mathbb H, \ \ x,y,z,w\in \R$\\
+ $\leadsto \overline q := x-yi - zj - wk$ (coniugato)\\
+ $\leadsto |q|^2 = q\overline q = x^2 + y^2 + z^2 + w^2 $\\
+ $\leadsto q\cdot \frac {\overline q}{|q|^2} = 1$
+ quindi tutti invertibili (tranne 0)  $ \Rightarrow \mathbb H$ è un corpo
+ \begin{prop}
+ 	Ogni dominio d'integrità finito è un campo
+ \end{prop}
+ \begin{dimo}
+	 $(R,+,\cdot)$ dominio finito. Dato $a\in R\setminus\{0\}$ vogliamo dimostrare che esiste  $a^{-1}$\\
+	  \textbf{Idea:}\\
+	  considero la funzione 
+	  \begin{aligned}
+		  \varphi_a : &R \rightarrow R\\
+		      &b \rightarrow a\cdot b
+	  \end{aligned}
+	  $ \varphi_a$ è iniettiva. Infatti $\varphi_a$ è un omomorfismo di gruppi\\
+	  $(R,+) \rightarrow (R,+)$ per la distributività\\
+	  Inoltre\\
+	  $ker( \varphi_a) = \{b\in R | \varphi_a (b) = 0\} = \{b\in R | a\cdot b = 0\} = \{0\}$ (dato che $R$ è dominio)\\
+	  $ \Rightarrow  \varphi_a$ è iniettiva\\
+	  Ora dato che $|R| < +\infty$  $ \varphi_a$ è biunivoca\\ Quindi nell'immagine di $\phi_a$ abbiamo $1$\\
+	   $ \Rightarrow \exosts b \in R$ tale che $ \varphi_a(b) = 1$ ovvero $a\cdot b = 1$\\
+	    $ \Rightarrow b$ è l'inverso moltiplicativo di $a$
+ \end{dimo}
+\begin{defi}
+	Dati $(R_1, +,\cdot)$ e $(R_2,\oplus,\odot)$ anelli, un omomorfismo di anelli è una funzione $f: R_1 \rightarrow R_2$ tale che
+	\begin{enumerate}
+	\item $f(a + b) = f(a) \oplus f(b)$
+	\item  $f(a \cdot b) = f(a)\odot f(b)$
+	\item  $f(1_{R_1}) = 1_{R_2} \ \ \ \ \forall a,b\in R_1$
+	\end{enumerate}
+\end{defi}
+\subsection{Idee per gli esercizi}\\
+$1) (R,+,\codt)$ anello  $a\in R$ \\
+$0\cdot a = (0 + 0)\cdot a = 0\cdot a  + 0\cdot a$\\
+$ \Rightarrow -(0\cdot a) + (0\cdot a) = -(0\cdot a ) + (0\cdot a ) + (0\cdot a)$ \\
+$ \Rightarrow  0 = 0 \cdot a$ \\
+2) $a,b\in R$ \\
+$0 = 0\cdot b = (a + (-a)) \cdot b = a\cdot b + (-a)\cdot b$\\
+Sommando $-(a\cdot b)$ ad entrambi i membri ottengo:\\
+ $-(a\codt b) = -(a)\codt b$
+\end{document}
