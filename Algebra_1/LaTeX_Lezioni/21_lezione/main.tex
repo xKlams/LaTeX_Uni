@@ -1,0 +1,191 @@
+\documentclass[12px]{article}
+
+\title{Lezione 21 Algebra I}
+\date{2024-12-10}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Esercizi Schede}
+$G = GL_2(\C)$ \\
+$X = Mat_{2\times 2}(\C)$\\
+	\begin{aligend}
+		&G\times X \rightarrow X\\
+		&(A,B) \rightarrow A\cdot B
+	\end{aligend}
+	è un'azione tra gruppi\\
+	Studiare le orbite\\
+	\textbf{Soluzione}\\
+	$O_{\icol{0&0\\0&0}} = \lbrace\matrice{0 & 0 \\ 0& 0}\rbrace$\\
+	$O_{Id} = \{$ matrici invertibili$\}$\\
+	Restano da studiare solo i casi di matrici non invertibili e non nulle
+\\
+	Se  $det(B) = 0$ allora  $B =\matrice{x & y\\ \lambda x & \lambda y}$ \ \ \ \  $x,y,\lambda\in \C$\\
+	 $O_B = ?$\\
+	 \textbf{Caso 1}\\Se  $x = 0$  $ \Rightarrow y\neq 0$ \\
+	$ \Rightarrow  B = \matrice{0 &y\\0 & \lambda y}$\\
+	Allora scelgo \\
+	$A = \matrice{\frac 1 y & ?\\ ? & 1}$\\
+	$AB = \matrice{\frac 1 y & 0\\ -\lambda & 1}\cdot \matrice{0 &y\\0 & \lambda y} = \matrice{0 & 1\\ 0 & 0}$\\
+	Dove ho messo al posto dei punti interrogativi numeri appositi per arrivare alla matrice $e_{12}$\\
+	Quindi se $x\neq 0 \Rightarrow O_B= O_\icol{0&1\\0&0}$ \\
+	\textbf{Caso II}\\
+	Se $x\neq 0$\\
+	Scelgo  $A = \matrice{\frac 1x & 0 \\ ? & 1}$\\
+	$AB = \matrice{\frac 1x & 0 \\ - \lambda & 1} \matrice{x &y\\ \lambda x& \lambda y} = \matrice{1 & \frac yx\\ 0 & 0}\\$
+	$O_B = O_\icol{ 1 &\frac yx \\ 0 & 0 }$\\
+	La matrice $A = \matrice{0&1\\1&0}$\\
+	Scambia le righe di $B$ \\
+	$ B = \matrice { a & b \\c & d}$\\
+	$AB = \matrice{ c&b\\a&b}$\\
+	\subsection{Ideali}
+	\begin{defi}[Ideali]
+		$(R,+,\cdot)$ anello\\ 
+		Un ideale è un sottogruppo $(I,+)\leq (R,+)$ tale che
+		\begin{enumerate}
+		 \item $\forall a\in I$ \ \ $\forall x\in R $\\
+			 $ \Rightarrow x\cdot a\in I$ \hfill [Ideale Sinistro]
+		 \item $\forall a \in I \ \ \forall x\in R$\\
+			 $ \Rightarrow a\cdot x\in I$ \hfill [Ideale Destro]
+		 \item $\forall a\in I, \forall x\in R\\
+			 \Rightarrow \begin{cases}
+			 	x\cdot a \in I\\
+				a\cdot x\in I
+			\end{cases}$\hfill [Ideale bilatero]
+			
+		\end{enumerate}
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $R$ è commutativo allora un sottogruppo (additivo) $I\leq R$\\ è ideale sinistro $ \Leftrightarrow$ è un ideale destro $ \Leftrightarrow$ è un ideale bilatero.
+	\begin{nota}
+		$R$ anello $I$ ideale bilatero lo chiameremo semplicemente \textbf{ideale}
+	\end{nota}
+	\textbf{Osservazione}\\
+	$R$ anello $ \Rightarrow (R,+)$ è un gruppo abeliano\\
+	$ \Rightarrow I\subseteq R$  ideale è un sottogruppo additivo normale\\
+	\textbf{Esercizio:}\\
+	$R$ anello $I\subseteq R$ ideale $ \Rightarrow (R/I, +)$ gruppo abeliano.\\
+	Dimostrare che l'operazione  \\
+	\begin{aligned}
+		$\cdot \ : \ R&/I \times R/I \rightarrow R/I$\\
+		&$(aI,bI) \rightarrow (ab)I$ \\
+	\end{aligned}\\
+	è ben definita e dedurre che $(R/I,+,\cdot)$ è un anello.\\
+	\textbf{Esempio}\\
+	$(\R,+,\cdot)$ è un anello\\
+	 $(\Z,+) \leq (\R,+)$\\
+	  $(\Z,+,\cdot)$ è un sottoanello\\
+	  $(\Z, +,\cdot)$ non è un ideale in  $(\R,+,\cdot)$\\
+	  Infatti  $\sqrt 2 \cdot 1\not\in \Z$\\
+	   \textbf{Esempi}\\
+	   $R$ anello\\
+	   $ \Rightarrow  I=\{0\}$ è un ideale\\
+	   $ \Rightarrow I=R$ è un ideale\\
+	   \begin{defi}
+	   	$R$ anello commutativo. $I\subseteq R$ ideale\\
+		$I$ si dice primo se $I\neq R$ e $ab\in I \Rightarrow a\in I$ oppure $b\in I$
+	   \end{defi}
+	   \textbf{Esercizio}\\
+	   $R = (\Z, + , \cdot)$\\
+	   Determinare tutti gli ideali primi di $R$\\
+	   \textbf{Esercizio:}\\
+	   $R$ anello $I\subseteq R$ ideale\\
+	   Dimostrare che le seguenti sono equivalenti
+	    \begin{enumerate}
+		    \item $R/I$ è un dominio d'integrità
+		    \item  Se $a\cdot b\in I \Rightarrow a\in I$ oppure $b\in I$
+	   \end{enumerate}
+	   \begin{teo}[Omomorfismo per anelli]
+	   	Dato $\varphi: R \rightarrow S$ un omomorfismo di anelli abbiamo
+		\begin{enumerate}
+			\item $ker (\varphi)\subseteq R$ è un ideale
+			\item esiste un unico omomorfismo di anelli $\bar \varphi : R/ker(\varphi) \rightarrow S$\\
+				tale che  \textbf{TODO inserisci immagine omomorfismo schema (foto sul telefono)}
+			\item Esiste un isomorfismo di anelli\\
+				$R/ker(\varphi) \cong Im(\varphi)$
+		\end{enumerate}
+	   \end{teo}
+	   \begin{dimo}[Esercizio]
+	   	1) Basta verificare che se $x\in ker( \varphi)$ e $y\in R$
+		allora  \begin{cases}
+			$x\cdot y\in ker( \varphi)\\
+			y\cdot x\in ker( \varphi)$
+		\end{cases}\\
+		$x\in ker( \varphi) \Rightarrow \varphi(x) = 0$ \\
+		Quindi\\
+		\begin{aligned}
+			$ \cdot \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cdot \varphi(y) \\&= 0$
+		\end{aligned}\\
+		$ \Rightarrow x\cdot y\in Ker( \varphi)$ \\
+		\begin{aligned}
+			$ \cdot \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \varphi(y)\cdot 0 \\&= 0$
+		\end{aligned}\\
+		$ \Rightarrow y\cdot x\in ker( \varphi)$
+	   \end{dimo}
+	   \newpage
+	   \subsection{Caratteristica}
+	   Voglio associare ad ogni anello un numero intero che ci possa dare qualche informazione su di esso.
+	   \begin{defi}
+		   $(R,+,\cdot)$ anello.\\
+		   Considero l'omomorfismo di anelli\\
+		   \begin{aligned}
+			   $\psi:& \Z \rightarrow R\\
+			       &1 \rightarrow 1_R\\
+			       &n \rightarrow (1_R +\ldots +1_R)\\$
+		   \end{aligned}\\
+	   Osserviamo che $\psi$ è un omomorfismo di anelli\\
+	   \[
+	   \psi(n\codt m) = \psi(n)\cdot \psi(m)
+	   .\] 
+	   Infatti\\
+	   $\psi(n)\cdot\psi(m)=$\\
+	    $= (1_R+\ldots+1_R)(1_R+\ldots+1_R)$\\
+	    \text{} \ \ \ \ \ \ \ n volte \ \ \ \ \ \ \ \  \ \ m volte\\
+	     $ = 1_R(1_R+\ldots+1_R) + \ldots + 1_R(1_R+\ldots+1_R)$\\
+	     \text{} \ \ \ \ \ \ \ \ \ \  m volte \hspace{50px} \ \ \ \ \ \ \ m volte\\
+	     $ = \psi(n\cdot m)$ \\
+	     Allora $ker(\psi) = (m)\subseteq \Z$ per qualche  $m\geq 0$\\
+	      $m$ si dice caratteristica di $R$.
+	   \end{defi}
+	   \textbf{Osservazione}\\
+	   Supponiamo che $R$ abbia caratteristica positiva  $m > 0$ allora  $m = ord_{(R,+)}(1_R)$  \\
+	   \textbf{Esercizio:}\\
+	   $(R,+,\cdot)$ campo\\ 
+	   Dimostrare che la caratteristica $R$ è $0$ oppure un numero primo\\
+	   \textbf{Esempi:}\\
+	   $\R,\mathbb Q,\C$\\
+	   sono campi di caratteristica 0\\
+Mentre $\Z/(p)$ è un campo di caratteristica $p$ (con  p primo)\\
+\textbf{Esercizio}\\
+Un anello commutativo è un campo se e solo se non possiede ideali non banali\\
+\textbf{Soluzione}\\
+Supponiamo che $R$ sia un campo e sia $I\subseteq R$ un ideale  $I\neq \{0\}$\\
+Allora dobbiamo mostrare che  $I = R$.\\
+Se  $a\in I\neq\{0\}$ considero  $a^{-1}\in R$\\
+$a^{-1}\cdot a = 1\in I$ \hfill [Dato che è un ideale]\\
+Dato  $b\in R:$\\
+$b = b\cdot 1\in I$ \hfill [Dato che $1$ è nell'ideale ]\\
+Viceversa:\\
+dato $a\in R\setminus\{0\}$ dobbiamo verificare che esiste  $b\in R$ tale che  $a\cdot b = 1$ \\
+Definiamo $I := \{ a\cdot r | r\in R\}\subseteq R$\\
+$I$ è un ideale.
+Inoltre $I \neq \{0\}$ poiché $a\in I$\\
+$ \Rightarrow  I = R \Rightarrow 1\in I$ \hfill [Per ipotesi]\\
+Quindi esiste $b\in R$  tale che $a\cdot b = 1$\\
+ \textbf{Osservazione}\\
+ Se $R$ campo e $\psi: R \rightarrow S$  è un omomorfismo di anelli, allora $\psi$ è iniettivo oppure $\psi $ è l'omomorfismo nullo.\\
+ Abbiamo verificato che $ker(\psi)$ è un ideale in $R$.\\
+ Quindi:
+ \begin{itemize}
+	 \item $ker(\psi) = \{0\}$\\
+		  $ \Rightarrow $ iniettivo
+	  \item $ker (\psi) = R$\\
+		   $ \Rightarrow \psi(r) = 0 \ \ \ \forall r\in R$
+ \end{itemize}
+
+
+
+\end{document}

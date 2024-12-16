@@ -1,0 +1,147 @@
+\documentclass[12px]{article}
+
+\title{Lezione 22 Algebra I}
+\date{2024-12-15}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Esercizi delle schede}
+	\textbf{Esercizio 0.1}\\
+	$(A,+,\cdot)$ tale che
+	 \begin{enumerate}
+		 \item 1) $(A,+)$ gruppo, "non necessariamente abeliano"
+		 \item 2) $\cdot$ è associativa ed esiste $1\in A$ tale che  $1\cdot a = a \cdot 1 = a$
+		 \item Valgono le proprietà distributive
+	\end{enumerate}
+	Dimostrare che $(A,+,\cdot)$ è un anello\\
+	\textbf{Soluzione}\\
+	$x,y\in A \ \ \(1+1)\cdot(x+y) = ?$\\
+	 Primo caso:
+	  \[
+		  (1+1)(x+y)=1(x+y)+1(x+y) = x + y + x + y
+	 .\] 
+	 Secondo caso:
+	 \[
+		 (1+1)(x+y) = (1+1)(x)+(1+1)(y) = 1\cdot x + 1\cdot x + 1\cdot y  + 1\cdot y = x + x + y + y
+	 .\] 
+	 $ \Rightarrow x + y + x + y = x + x + y + y$ sommando a sinistra l inverso additivo di $x$ e a destra l'inverso di $y$ otteniamo
+	 $y + x = x + y \Rightarrow (A,+)$ abeliano.\\
+	 \textbf{Esercizio 0.2}\\
+	 Sia $(A,+,\cdot)$ anello con $x^2 = x \ \ \forall x\in A \ \ \Rightarrow A$ è commutativo\\
+	 \textbf{Soluzione}\\
+	 Studiamo $(a+a)^2:$\\
+	  $a\in A \Rightarrow a + a \in A \Rightarrow  (a+a)^2 = (a+a)$ \\
+	  ma $(a+a)^2 = a^2 + a ^2 + a^2+a^2 = a + a + a + a \Rightarrow a + a = a + a + a + a \Rightarrow a + a = 0 \Rightarrow a = -a$ \\
+	  Siano ora $a,b\in A \Rightarrow (a + b) = (a+b)^2= a^2 + ab + ba + b^2 = a + ab + ba + b \Rightarrow 0 = ab + ba \Rightarrow ab = -ba = ba$ \\
+	  \textbf{Esercizio 0.3}\\
+	  $A$ anello tale che $(x\cdot y)^2 = x^2 \cdot y^2 \ \ \forall x,y\in A \Rightarrow A$ è commutativo\\
+	  \textbf{Soluzione}\\
+	  Notazione: $[x,y] := x\cdot y - y\cdot x$ "Braket di Lie"\\
+	  Dati  $x,y\in A$ vogliamo dimostrare $[x,y] = 0$\\
+	   $(x\cdot y)^2= x^2y^2$ ovvero $x\cdot y \cdot x\cdot y = x^2 \cdot y^2$\\
+	    $ \Rightarrow x^2\cdot y^2 - x\cdot y \cdot x \cdot y = 0 \Rightarrow x\cdot(x\codt y - y\cdot x)\cdot y = 0\\
+	    \Rightarrow x
+	    x\cdot [x,y]\cdot y = 0$ \\
+	    \textbf{Osservazione:}\\
+	    $[1,y] = 0$ e $[x,y] = 0$\\
+	    La relazione precedente è verificata per  $x + 1, y\in A \Rightarrow (x+1)\cdot [x,y]\cdot y = 0 \Rightarrow  x\cdot [x,y]\cdot y + 1\cdot[x,y]\cdot y = 0 \Rightarrow [x,y]\cdot y = 0\ \ \ \forall x,y\in A \Rightarrow $ tale relazione è verificata per $x,y + 1\in A \Rightarrow [x, y + 1] \cdot (y + 1) = 0 \Rightarrow [x,y]\cdot y + [x,y] \cdot 1  =0 $\\
+	    \textbf{Esercizio 0.4}\\
+	    $A$ anello $I\subseteq A$, ideale, $1\in I$ dimostrare che  $I=A$\\
+	     \textbf{Soluzione:}\\
+	     $a\in A \Rightarrow a = a\cdot 1\in I$ \\
+	     \textbf{Esercizio}\\
+	     $A\in M_{2\times 2}(\mathbb Q)$ anello non commutativo $ \Rightarrow$ gli unici ideali bilateri di $A$ sono $\{\icol{0&0\\0&0}\}$ e $A$\\
+	      \textbf{Soluzione}\\
+	     Sia $I\subseteq A$ un ideale bilatero tale che  $I\neq \{\icol{0&0\\0&0}\} \Rightarrow \exists \icol{a&b\\c&d}\in I \neq \{\icol{0&0\\0&0}\}$ .\\
+	     Vogliamo che $g\icol{a&b\\c&d}g^{-1}\in I \ \ \forall g\in GL_2(\mathbb Q)\in A$\\
+	      $  \Rightarrow $ possiamo assumere $a\neq 0$\\
+	     $ \Rightarrow $ considero $\icol {1/a & 0 \\0 & 0}\icol{a&b\\c&d}\in I$  \Rightarrow  $\icol{1 & b/a\\0&0}\in I \Rightarrow \icol{1 & b/a\\0&0}\icol{1&0\\0&0}\in I $ \\
+	     $ \Rightarrow \icol{1&0\\0&0}\in I$, basta dimostrare che $\icol{0&0\\0&1}\in I \Rightarrow \icol{0&1\\1&0}\icol{1&0\\0&0}\in I \Rightarrow \icol{0&0\\1&0}\in I$ \\
+	     $ \Rightarrow \icol{0&0\\1&0}\icol{0&1\\1&0}\in I \Rightarrow \icol{0&0\\0&1}\in I$ \\
+	     $\icol{1&0\\0&0} + \icol{0&0\\0&1} = \icol{1&0\\0&1}\in I \Rightarrow I\in A$ 
+	     \begin{defi}
+	     	$A \subseteq R$ sottoanello di un anello $R, b\in R$\\
+		$A[b] = \{a_0 + a_1b + a_2b^2 + \ldots + a_nb^m|a_i\in A, n\in \Z_{>0}\}$
+	     \end{defi}
+	     \textbf{Osservazione}\\
+	     Se $b\in A \Rightarrow A = A[b]$ \\
+	     $\cdot$ in generale $A\subseteq A[b]$\\
+	     \textbf{Esempi:}\\
+	     $A = \Z; \ R = \C$\\
+	     $\Z[i] = \{a_0 + a_1i + \ldots + a_n i^n | a_j\in \Z, n\in \Z_{>0}\} = \{m + ni|m,n\in \Z\}$\\
+	     \textbf{Esercizio}\\
+	     $(\Z,+,\cdot)$ anello\\
+	     $\Z[i] = \{m + ni|m,n\in \Z\}\subseteq \C$\\
+	     Mostrare:\\
+	     $1) \Z[i]$ è un sottoanello di $\C$\\
+	      \textbf{Soluzione}\\
+	      $(\Z[i], +)$ è un sottogruppo,  $Z[i]$ è chiuso rispetto a $\cdot$ per distributività\\
+	      $2) A\subseteq Z[i]$ sottoanello, dimostrare che  $A = \Z \vee \exists l\in \Z_{>0}$ tale che $A = \{m + nki|m,n\in \Z\}$\\
+	       \textbf{Soluzione}\\
+	       Un sottoanello $A\subseteq \Z[i]$ contiene $1 = 1 + 0_i \Rightarrow  Z\subseteq A$ \\
+	       Quindi $A = \Z \vee \exists x + yi\ion A$ con $y\neq 0$\\
+	       $(A,+)$ sottogruppo di $\Z[i] \Rightarrow -x-yo\in A$ \\
+	       Quindi possiamo assumere $y > 0 \Rightarrow y\cdot i \in A$ \\
+	       con $y > 0$, infatti $\Z\subset A \Rightarrow -x + (x + iy)\in A$, \\
+	       $k := \min\{y\in \Z_{>0}|y_i\in A\} \Rightarrow $ considero $a + bi\in A$ vogliamo che  $k | b \Rightarrow b = qk + r $ con $0\leq r < k$\\
+	       Moltiplichiamo per  $i \Rightarrow b_i = qk_i + r_i$ \\
+	       $ \Rightarrow r_i = b_i - qk_i \in A \Rightarrow k\leq r$ oppure $r = 0$\hfill poiché $r|k$\\
+	       $ \Rightarrow  k|b \Rightarrow b = nk \Rightarrow  A\subseteq \{m + nki | m,n\in \Z\}$ \\
+	       Il viceversa è facile
+	       \begin{itemize}
+		       \item $Z\subseteq A$
+		       \item $K_i\subseeteq A  \Rightarrow nk_i\in A \ \ \forall n\in \Z \Rightarrow m + nk_i\in A\forall m,n\in \Z$
+	       \end{itemize}\\
+	       \textbf{Osservazione}\\
+	       $(\mathbb Q, + \cdot)$ anello\\
+	       $S:=$ insieme di numeri primi $\Z_S := \{\frac mn\in \mathbb Q |$ i fattori primi di  $n$ sono in $S\}$\\
+	       $\Z_S = Z[\frac 1p|p\in S]\subseteq \mathbb Q$\\
+	       \textbf{Esercizio}\\
+	       $1)$ Dimostrare che $\Z_S$ è un sottoanello di $\mathbb Q$\\
+	        $\cdot (\Z_S,+)$ è un sottogruppo di $\mathbb Q$
+		 \[
+			 \frac {m_1}{n_1} + \frac {m_2}{n_2} = \frac{n_2m_1+n_1m_2}{n_1n_2}\in \Z_S \text{ ed è chiuso rispetto agli opposti}
+		.\] 
+		$\cdot \ Z_S$ è chiuso rispetto a $\cdot$ \\
+		\[
+			\fram {m_1}{n_1}\cdot\frac{m_2}{n_2} = \frac{m_1\cdot m_2}{n_1n_2}\in \Z_S
+		.\] 
+		$\cdot 1\in \Z_S$\\
+		 $ 2)$ Dimostrare che ogni sottoanello di $\Q$ è di tale forma per qualche insieme $S$  $A\subseteq Q$ sottoanello quindi $1\in A \Rightarrow  A\subseteq A \Rightarrow  A = Z = Z_\phi \vee \Z\subsetneq A$ \\
+		 $ \Rightarrow $ se $\Z\subsetneq A \Rightarrow \exists r\in A\setminus\Z \Rightarrow r \frac mn\in \mathbb Q$ \\
+		 con $n > 1$ e possiamo assumere che $MCD(m,n) = 1$\\
+		  $ \Rightarrow 1 = mx + ny$ con $x,y\in \Z$ \hfill (Bezout)\\
+		  Dividiamo per $n:$  $\frac 1n = rx + y$ Ora:\\
+		  $x,y\in \Z\subseteq A$ e $r\in A \Rightarrow  \frac 1n = ex + y\in A \Rightarrow \frac an = a\cdot \frac 1n \in A\ \ \forall a\in \Z$ \\
+		  $ \Rightarrow n> 1 \Rightarrow  n\cdot p_1\cdot\ldots\cdot p_k$ \\
+		  Scelgo $a = p_2\cdot\ldots\cdot p_k\in \Z \Rightarrow \frac {1}{p_1} = \frac an\in A$ \\
+		  $ \Rightarrow \frac{1}{p_j}\in  A \ \ \forall j= 1,\ldots, k.\\$
+		  Chiamo $S = \{p\in Z | p\text{ primo tale che } \frac 1p\in A\} $ \\
+		  $Z_S = Z[\frac 1p | p\in S] = A$\\
+		   \begin{defi}
+		  	$(A,+,\cdot)$ anello commutativo $I,J\subseteq A$ ideali di $A.$ \\
+			$I\cdot J = \{ \sum^n_{\alpha=1} a_\alpha \cdot b_\alpha| a_\alpha \in I, b_\alpha\in K, n\in \Z_{>0}\}$ 
+
+		  \end{defi}
+		  \textbf{Esercizio:}\\
+		  1)Dimostrare che $I\cdot J$ è un ideale.\\
+		  \textbf{Soluzione}\\
+		  $I\cdot J$ è un sottogruppo additivo inoltre $\forall x\in A \ \ x\cdot \sum_{finita}a_\alpha b_\alpha = \sum (x\codt a_\alpha)b_\alpha = \sum a_\alpha'\cdot b_\alpha$\\
+		  $2) I\cap J$ è un ideale di $A$ \\
+		  \textbf{Soluzione}\\
+		  $\cdot I\cap J$ è un sottogruppo di $(A,+)$ perchè intersezione di sottogruppi\\
+		  $\cdot x\in A$ e $b\in I\cap J \Rightarrow \begin{cases}
+		  	x\cdot b \in I\\
+			x\codt b \in K
+		  \end{cases} \Rightarrow x\cdot b \in I\cap J$ \\
+		  $3) I\cdot J \subseteq I\cap J $\\
+		   \begin{cases}
+		  	a\in I\\
+			b\in J
+		\end{cases} $ \Rightarrow  a\cdot b \in I\cap J$ ora $I\cap J$ è un sottogruppo di $(A,+) \Rightarrow \sum_{finita}a_\alpha b_\alpha\in I\cap J$
+
+\end{document}
