@@ -103,7 +103,14 @@ $X = Mat_{2\times 2}(\C)$\\
 		\begin{enumerate}
 			\item $ker (\varphi)\subseteq R$ è un ideale
 			\item esiste un unico omomorfismo di anelli $\bar \varphi : R/ker(\varphi) \rightarrow S$\\
-				tale che  \textbf{TODO inserisci immagine omomorfismo schema (foto sul telefono)}
+				tale che  
+				\[
+\begin{tikzcd}
+R \arrow[r, "\varphi"] \arrow[d, "\pi"'] & S  \\
+R/ker(\varphi)\arrow[ur, "\bar\varphi"']
+\end{tikzcd}
+\]
+
 			\item Esiste un isomorfismo di anelli\\
 				$R/ker(\varphi) \cong Im(\varphi)$
 		\end{enumerate}

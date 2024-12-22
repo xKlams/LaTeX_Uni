@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
 \title{Dispense Algebra I\\[5px] \normalsize Prima parte del corso}
-\date{2024-12-05}
+\date{2024-12-22}
 \author{Federico De Sisti}
 
 \input{../../setup.tex}
@@ -15,27 +15,13 @@
 
 
 	\section{Preambolo}
-	Siamo giunti ad un nuovo capitolo della nostra vita, talvolta per andare avanti bisogna guardarsi un po'indietro, ed è per questo che propongo ora una lista delle passate mogli di Alberto Agostinelli, la quale anima è più pura rispetto a quella del passato corso di Geometria I, ma non abbastanza per non essere citato in questo testo:\\[10px]
-Alessia\\
-Beatrice\\
-Camilla\\
-Chiara\\
-Elisa\\
-Federica\\
-Francesca\\
-Gaia\\
-Giulia\\
-Ilaria\\
-Laura\\
-Martina\\
-Nicole\\
-Sara\\
-Sofia\\
-Valentina\\
-Vittoria\\
-Eleonora\\
-\vfill \ \\
-Speciali ringraziameti vanno fatti ad Andrea Duca, magnifico sulle parallele
+	Siamo giunti a un nuovo capitolo della nostra vita. A volte, per andare avanti, è necessario guardarsi un po' indietro; altre volte, per dimostrare un teorema, bisogna osare e andare oltre l'uso delle semplici ipotesi, arrivando persino a utilizzare la stessa tesi che vogliamo comprovare. L'algebra, in fondo, non è solo una raccolta di regole e teoremi, ma un modo per guardare il mondo con nuovi occhi e trovare connessioni inaspettate tra idee apparentemente lontane.\\[10px]
+	Questa dispensa non è solo un supporto didattico, ma un piccolo viaggio da percorrere insieme, fatto di curiosità, sfide e, perché no, qualche sorriso lungo il cammino. Alberto, con il suo cuore così grande, riesce a infondere a tutti noi un po' della sua energia: la stessa che distribuisce periodicamente nell’aula 1, per evitare che esploda di entusiasmo.\\[10px]
+	Un ringraziamento speciale va alla redazione, che con impegno e creatività ha reso tutto questo possibile: Marco (dai capelli lunghi, anche se, da quando hanno aperto un barbiere a Civita, un po' meno lunghi), Gabriel (sempre nel flusso, come un’equazione ben bilanciata), Fabio (compagno di merende a mensa, con cui ogni pausa si trasforma in un momento memorabile) e Simone (che, quando riesci a incontrarlo, sa sempre come strapparti un sorriso).\\[10px]
+	E infine, un augurio a Simone affinché possa finalmente avere la meglio sul suo nemico più temuto: LPC. Perché, in fondo, ogni battaglia può essere vinta con la giusta determinazione e un pizzico di algebra.\\[10px]
+Buona lettura e buon viaggio in questo affascinante mondo che, come una funzione complessa, nasconde sempre qualcosa di meraviglioso appena dietro l’angolo.\ \\ \vfill \ \\
+	P.S. Se non avete stampato queste dispense tramite l'autore siete un mucchio di stronzi.\\
+	P.P.S. Si ringrazia OpenAI per l'immensa saggezza nella formulazione di questo preambolo, con qualche dritta, sorprende sempre.
 \newpage
 
 	\section{Cosa c'è su e-leaning di Francesco Mazzini}
@@ -65,7 +51,7 @@ IN. Hernstein: Algebra (difficile)\\
 	dato  $g\in G$ denotiamo con: \\
 	1) g^0 = e\\
 	2) g^1 = g\\
-	3) g^n = g\cdot\ldots\cdot g
+	3) g^n = g\cdot\ldots\cdot g\\
 	4) g^{-n} = (g^{-1})^n
 
 \end{nome}
@@ -80,7 +66,7 @@ Con questa notazione:\\
 \textbf{Esempi}\\
 1) $(\mathbb Z, + ), (\mathbb Q, + ), (\R, +)$\\
 2)  $GL_n(\K) = \lbrace{A\in Mat_{n\times n}(\K) | det(A) \neq 0\rbrace$ con prodotto\\
-	3) $SL_n(\K) = \lbrace{A\in Mat_{nn}(\K) | det(A) = 1\rbrace$\\
+	3) $SL_n(\K) = \lbraceA\in Mat_{nn}(\K) | det(A) = 1\rbrace$\\
 4) $X$ insieme\\
 \text{ } \hspace{90px} $S_X = \lbrace$ funzioni  $X \rightarrow X$ invertibili$\rbrace$\\
 \textbf{Speciale}
@@ -89,20 +75,19 @@ Allora chiamiamo
  \[
 S_n = S_X
 .\] 
-(è i lgruppo di permutazioni su $n$ elementi)\\
+(è il gruppo di permutazioni su $n$ elementi)\\
 Si chiama gruppo simmetrico
 \begin{defi}[Gruppo diedrale]
-	$n\geq 3$ Consideriamo l'n-agono regoalre nel piano (3-agono, triangolo)\\
+	$n\geq 3$ Consideriamo l'n-agono regolare nel piano (3-agono, triangolo)\\
 	 $D_n$ è l'insieme delle simmetrie del piano che preservano l' $n$-agono\\
 	 Si chiama gruppo diedrale, l'operazione è la composizione
 \end{defi}
 \textbf{Esempio:}\\
-Per $n=3$ abbiamo  $D_3$\\
-\textbf{TODO INSERISCI DISEGNO gruppo diedrale}\\
+Per $n=3$ abbiamo  $D_3 = \{e, \rho, \rho^2, \sigma, \sigma\rho, \sigma\rho^2\}$\\
 \textbf{Esercizio}\\
 Determina gli inversi e tutti i possibili prodotti degli elementi di $D_3$
 \begin{defi}[Gruppo Abeliano]
-	$(G,\codt)$ gruppo si dice Abeliano se l'operazione è commutativa \[f\cdot g = g\cdot f)\]
+	$(G,\codt)$ gruppo si dice Abeliano se l'operazione è commutativa \[f\cdot g = g\cdot f\]
 \end{defi}
 \begin{defi}[Gruppo finito]
 	$(G,\cdot)$ gruppo si dice finito se la sua cardinalità è finita \[|G| < +\infty\]
@@ -111,26 +96,26 @@ Determina gli inversi e tutti i possibili prodotti degli elementi di $D_3$
 	L$(G,\cdot)$ gruppo, l'ordine di $G$ è $|G|$
 \end{defi}
 \begin{defi}[Ordine di un elemento]
-	$ord(g) = \min \lbrace{n\in \mathbb N | g^n = e\rbrace$\\
+	$ord(g) = \min \lbrace n\in \mathbb N | g^n = e\rbrace$\\
 		se $\cancel\exists n\in \mathbb N$  tale che $ g^n = e$\ \ \  poniamo  \ \ $ord(g) = +\infty$
 \end{defi}
 \begin{defi}[Gruppo ciclico]
-	$n\geq 3$ consideriamo  $C_n$ l'insieme delle isometrie del piano che preservano l' $n$-agono e preservano l'orientazione, questo si chiama gruppo cicliclo
+	$n\geq 3$ consideriamo  $C_n$ l'insieme delle isometrie del piano che preservano l' $n$-agono e preservano l'orientazione, questo si chiama gruppo ciclico.
 \end{defi}
 \textbf{Esempio}\\
-Nel caso di $n = 3$ abbiamo solamente 3 elementi: identità, e le due rotazioni (ordine dispari)
+Nel caso di $n = 3$ abbiamo solamente 3 elementi: identità, e le due rotazioni (ordine dispari)\\
 \textbf{Esercizi}\\
 1) si dimostri che l'elemento neutro in un gruppo è unico\\
 2) si dimostri che ogni elemento in un gruppo ammette un unico elemento inverso\\
 per casa\\
-1) Trvoare un'applicazione biunivoca $S_3 \rightarrow D_3$\\
+1) Trovare un'applicazione biunivoca $S_3 \rightarrow D_3$\\
 2) Dimostrare che non esiste un'applicazione biunivoca $S_4 \rightarrow D_4$\\
-3) Dimostrare che i seguenti nkn sono gruppi\\
-$\cdot Mat_{n\times n} (\K)$ con prodotto riche per colonne\\
+3) Dimostrare che i seguenti non sono gruppi\\
+$\cdot Mat_{n\times n} (\K)$ con prodotto righe per colonne\\
  $\codt GL(\K)$ con somma tra matrici\\
  $\codt \mathbb Z \mathbb Q \R con il prodotto$\\
   \begin{prop}
-	  $(G, \cdot)$ gruppi finito, Allora ogni elemento ah ordine finito
+	  $(G, \cdot)$ gruppo finito, Allora ogni elemento ha ordine finito
  \end{prop}
  \begin{dimo}
  	$g\in G$ Considero il sottoinsieme
@@ -147,11 +132,11 @@ $\cdot Mat_{n\times n} (\K)$ con prodotto riche per colonne\\
 	Quindi $n = s-t\geq 1$ e $g^n = e $ $ \Rightarrow ord(g) \leq n < +\infty $
  \end{dimo}
  \begin{defi}[Sottogruppo]
- 	$(G, \cdot)$ gruppo $H\subseteq$ G sottosinsieme, si dice che H è un sottogruppo se $(H,\cdot)$ è un gruppo.\\
+ 	$(G, \cdot)$ gruppo $H\subseteq$ G sottoinsieme, si dice che H è un sottogruppo se $(H,\cdot)$ è un gruppo.\\
 	In tal caso scriveremo $H \leq G$
  \end{defi}
  \textbf{Osservazione}\\
- $(G,\cdot)$ gruppo,  $G\subseteq G$ sottoinsieme allora  $H\leq G$se H è chiuso rispettto a $\cdot$ \\e  $H$ è chiuso rispetto agli inversi \\(se  $g, h\in G \Rightarrow g\cdot h\in H$ e se $h\in H \Rightarrow h^{-1}\in H)$
+ $(G,\cdot)$ gruppo,  $G\subseteq G$ sottoinsieme allora  $H\leq G$se H è chiuso rispetto a $\cdot$ \\e  $H$ è chiuso rispetto agli inversi \\(se  $g, h\in G \Rightarrow g\cdot h\in H$ e se $h\in H \Rightarrow h^{-1}\in H)$
 
  \begin{prop}
  	$(G, \cdot)$ gruppo $H\subseteq G$ sottoinsieme con  $|H| < +\infty$ Allora:\\
@@ -189,7 +174,7 @@ $\cdot Mat_{n\times n} (\K)$ con prodotto riche per colonne\\
 	.\] 
 	In tal caso scriveremo 
 	\[
-	f\equiv g \ \ \ mod \ \ \ H
+		f\equiv g \ \ \ mod \ \ \ H \ \text{ oppure } f\equiv_H g
 	.\] 
   \end{defi}
   \textbf{Esercizio}\\
@@ -218,7 +203,7 @@ Dimostrare che esiste un'applicazione biunivoca tra $H \rightarrow gH\ \ \ \fora
 	\end{itemize}
 	\end{nota}
 	\textbf{Esempi importanti}\\
-	$(G,\cdot) = (\mathbb Z, +)$
+	$(G,\cdot) = (\mathbb Z, +)$\\
 	$H = (m) = \lbrace a m | a\in \mathbb Z\rbrace$ con m fissato\\
 	 $G/H = \mathbb Z/(m)$ \\\
 	 \textbf{Attenzione}\\
@@ -298,17 +283,7 @@ Dimostrare che $H_1\leq S_3$ \underline{non} è normale, mentre $H_2\leq S_3$ è
 	H \trianglelefteq G
 	.\] 
 \end{nota}
-\textbf{Esercizio}\\
-$H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \rightarrow gH\\
-	&g \rightarrow g\cdot h\end{*aligend}\\
-	\textbf{Soluzione}\\
-	$ \phi$ è suriettiva per definizione di $gH$\\
-	è anche iniettiva infatti se  $h_1,h_1\in H$ soddisfano 
-	\[
-		gh_1 = gh_2 \ \ 
-	.\] 
-	allora $h_1 = h_2$ (per la legge di cancellazione)\\
-	\textbf{Ossercazione}\\
+	\textbf{Osservazione}\\
 	$(G,\cdot)$ gruppo\\
 	$H\leq G$ Allora
 	 \[
@@ -325,7 +300,7 @@ $H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \ri
 	\end{defi}
 	\textbf{Osservazione}\\
 	$H\leq G$ sottogruppo\\
-	Se  $G$ è abeliano allora  $H\leq G$\\
+	Se  $G$ è abeliano allora  $H\normale G$\\
 	Il viceversa è falso! Possono esistere sottogruppi normali in gruppi non abeliani\\
 	\begin{prop}
 		$(G,\cdot)$ gruppo $H\leq G$ allora
@@ -337,7 +312,7 @@ $H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \ri
 		Basta ricordare che la cardinalità di ciascun laterale sinistro è pari a $|H|$
 	\end{dimo}
 	\textbf{Osservazione}\\
-	$\displaystyle H\subseteq G => [G:H] = \frac {|G|}{|H|}$\\
+	$\displaystyle H\leq G => [G:H] = \frac {|G|}{|H|}$\\
 	\begin{teo}[Lagrange]
 		$(G,\cdot)$ gruppo $H\leq G$ Allora l'ordine di  $H$ divide l'ordine di  $G$
 	\end{teo}
@@ -382,7 +357,7 @@ $H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \ri
 		$H\cap K$ è chiuso rispetto all'operazione e agli inversi poiché sia $H$ che $K$ che lo sono 
 	\end{dimo}
 	\textbf{Esercizio}\\
-	Esibire due sottogruppi $H,J\leq G$ tali che  $H\cup K$ non è un gruppo\\
+	Esibire due sottogruppi $H,K\leq G$ tali che  $H\cup K$ non è un gruppo\\
 	\newpage
 	\begin{defi}
 		Dati $H,K\leq G$ definiamo il \underline {sottoinsieme}\\
@@ -423,7 +398,7 @@ $H\leq G$ sottogruppo dimostrare che l'applicazione  \begin{*aligend}&\phi:H \ri
 	 \[
 	<H,K> := <H\cup K>
 	.\] \\
-	$\cdot g_1,\ldtos,g_n\in G$\\
+	$\cdot g_1,\ldots,g_n\in G$\\
 	\[
 	<g_1,\ldots, g_n> := <\lbrace{g_1,\ldots, g_n\rbrace >
 	.\] 
@@ -446,7 +421,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
 	\[
 		m := \min\lbrace n\in\mathbb Z | n\geq 1, n\in H\rbrace
 	.\] 
-	Vogliamo verificare che $H = (m)$ Sicureamente $(m)\subseteq H$ poich\e H\leq \mathbb Z\\
+Vogliamo verificare che $H = (m)$ Sicuramente $(m)\subseteq H$ poich\e $H\leq \mathbb Z$\\
 	Viceversa supponiamo che  $\exists n\in Hx(n)$.\\
 	Allora
 	 \[
@@ -458,7 +433,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
  \end{dimo}
  \begin{prop}
  	$a,b\in \mathbb Z$, Allora:\\
-	$1) (a)\cap (b) = (n)$ dove $m := mcm\lbrace a,b\rbrace$\\
+	$1) (a)\cap (b) = (m)$ dove $m := mcm\lbrace a,b\rbrace$\\
 	$2) (a) + (b) = (d)$ dove  $d := MCD\lbrace a, b \rbrace$
 
  \end{prop}
@@ -471,7 +446,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
 	 $2)a+b\leq \mathbb Z \Rightarrow (a) + (b) = (d')$ per teorema\\
 	 Dobbiamo verificare che $d' = d$ \\
 	 \[
-		 (d) = (a)+(b)\supseteq (a) \Rightarrow d'|a ( d'\text{ divide }a)
+		 (d') = (a)+(b)\supseteq (a) \Rightarrow d'|a \ \ ( d'\text{ divide }a)
 	 .\] 
 	 \[ \Rightarrow  \begin{cases}
 	 	d'|a\\
@@ -518,7 +493,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
  \begin{prop}
  	$n\geq 3$ Allora:\\
 	 $1)D_n = <\rho,\sigma >$\\
-	 Dove  $\sigma$ è una rotazione qualsiasi  $(\sigma \in D_n\setminus C_n)$ \\
+	 Dove  $\sigma$ è una simmetria qualsiasi  $(\sigma \in D_n\setminus C_n)$ e $\rho = \frac{2\pi}{n}$ \\
 	 $2)\rho^i \sigma = \sigma \rho^{n-i}$ 
  \end{prop}
  \begin{dimo}
@@ -546,7 +521,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
 		$3) N\normale G$\\ 
 		 $4)$ L'operazione $G/N\times G/N \rightarrow G/N$ \\
 		 è ben posta \ \ \ \ \ \ \ $(fN,gN) \rightarrow fgN$ \\
-		 o equivalentemente $N\backslash G\times n\backslash G \rightarrow n\backslash G$\\
+		 o equivalentemente $N\backslash G\times N\backslash G \rightarrow N\backslash G$\\
 		 \text{} \hspace{90px} $(Nf,Ng) \rightarrow Nfg$
 
 	\end{prop}
@@ -569,7 +544,7 @@ dato $a\in \mathbb Z$ si ha  $(a)\leq \mathbb Z$\\
 		.\] 
 		Il che è equivalente a dire che $gN = Ng$ la prima condizione mi dice $G/N\subseteq G/N$ e la seconda dell'arbitrarietà di  $g$\\
 		 $G/N\subseteq G/N$\\
-		 3  \rightarrow 4\\
+		 3  \rightarrow 4$\\
 		 Dati $f$ e $g\in G$ abbiamo
 		 \[
 			 (Nf)(Ng) = (fN)(Ng) = fNg = (fN)g = (Nf)g = Nfg
@@ -705,7 +680,7 @@ $	\pi: G \rightarrow G/H\\
 \text{}\ \ \ g \rightarrow gH$\\
 chi è $ker(\pi)$\\
  ker(\pi) = \lbrace g\in G | gH = H\rbrace = \lbrace g\in G | g\in H\rbrace = H$
-    \end{dimo}\\
+    \end{dimo}\newpage \ \\
      \textbf{Esempio}\\
      $det: GL_n(\K) \rightarrow K^*$\\
      $ker(det) := \lbrace A\in GL_n(\K) | det(A) = 1\rbrace = SL_n(\K)\\
@@ -2075,7 +2050,7 @@ $N = <\rho> \normale D_n \hfill [D_n:N] = 2$\\
 	$ \Rightarrow a^{p-1}(p-1)!\equiv_p (p-1)$ Dato che $MCD(p,(p_1)) = 1$ abbiamo $a^{p-1}\equiv_p 1$
 \end{dimo}
 	 \begin{coro}
-		$A\geq 1 $ p primo $ \Rightarrow ap \equiv_p a$ \\
+		$a\geq 1 $ p primo $ \Rightarrow a^p \equiv_p a$ \\
 	\end{coro}
 	\begin{dimo}
 		Se $MCD(a,p) = 1 $ segue dal piccolo teorema di Fermat\\
@@ -2133,7 +2108,7 @@ $N = <\rho> \normale D_n \hfill [D_n:N] = 2$\\
 			 \item Se $ n= 2^k \Rightarrow \phi(n) = 2^k - 2^{k-1} = 2^{k-1}$
 			 \item $n > 2 \Rightarrow k > 1 \Rightarrow k-1 > 0 \Rightarrow 2 | \phi(n)$ 
 			 \item Se $n\neq 2^k \Rightarrow \exists p$ primo e dispari tale che $p | n \Rightarrow n = p_1^{k_1}\cdot\ldots\cdot p_r^{k_r}$  con $p = p_j$ per qualche  $j\leq r \Rightarrow \phi(p_j^{k_j})|\phi(n)$. Ma $\phi(p_j^{k_j})= p^{k_j}-p^{k_j-1} = p^{k_j-1}(p-1)$\\
-				 $ \Rightarrow (p_j - 1_ | \phi (p_j^{k_j}). $Ma $p_j$ è dispari $ \Rightarrow 2 | (p_j-1) \Rightarrow 2 | \phi(n)$
+				 $ \Rightarrow (p_j - 1) | \phi (p_j^{k_j}). $Ma $p_j$ è dispari $ \Rightarrow 2 | (p_j-1) \Rightarrow 2 | \phi(n)$
 		 	
 		 \end{itemize}
 		 \begin{teo}[Waring 1770, Lagrange 1771]
@@ -2142,8 +2117,8 @@ $N = <\rho> \normale D_n \hfill [D_n:N] = 2$\\
 \begin{dimo}
 	Studiare le soluzioni di $x^2 - 1 \equiv_p 0$\\
 	$(x^2-1)\equiv_p (x-1)(x+1)\equiv_p 0$\\
-	Quindi $x-1\equiv_p 0$ opprure  $x + 1\equiv_p 0$\\
-	ovvero deduciamo che gli unici elemnti in  $U_p$ di ordine $\leq 2 $ sono $[1]$ e $[p-1]$\\
+	Quindi $x-1\equiv_p 0$ oppure  $x + 1\equiv_p 0$\\
+	ovvero deduciamo che gli unici elementi in  $U_p$ di ordine $\leq 2 $ sono $[1]$ e $[p-1]$\\
 	Nel prodotto  $[(p-1)!]$ compaiono tutti gli elementi di $U_p \Rightarrow $   ogni elemento di $U_p$ diverso da  $1$ e $p-1$ oppure con il suo inverso ("moltiplicativo")
 \end{dimo}
 \subsection{funzione di Eulero}
@@ -2383,7 +2358,7 @@ Ricordo
 	.\] 
 	Bisogna determinare $m_1, m_2$\\
 	\textbf{Idea:} Sfruttare l´identità di Bezoit: $(n_1) + (n_2) = (MCD(n_1,n_2)) = (1)$\\
-	obiettivo: $n_1\cdot e + n_2\cdot s = 1$\\
+	obiettivo: $n_1\cdot r + n_2\cdot s = 1$\\
 	Nel nostro caso cerco $110 \cdot r + 73\cdot s = 1$  \ \ $r,s\in\Z$\\
  Perché è importante
  $110\cdot r \equiv 1\ mod(73)$\\
@@ -2436,13 +2411,14 @@ dalla seconda
 \[
 x\equiv_2 1
 .\] 
+Quindi concludiamo che è impossibile
 \pene \\
 \textbf{Nuovo Esercizio}\\
 \begin{cases}
 	3x\equiv_{15} 6\\
 	7x\equiv_9 2
 \end{cases}\\
-Non posso usare $TCB$ studio $3x\equiv_{15} 6$ \\
+Non posso usare $TCR$ studio $3x\equiv_{15} 6$ \\
 \begin{gather*}
 	3x\equiv 6 + 15k\\
 	\storto \Leftrightarrow\\
@@ -2567,13 +2543,13 @@ $X = Mat_{n,m}(\R)$\\
 \begin{defi}
 	Data un'azione di un gruppo $G$ su un insieme $X$ si dice transitiva se
 	 \[
-		 \forall x,y\in X \ \exist g\in G \text{ tale che } g.x = y
+		 \forall x,y\in X \ \exists g\in G \text{ tale che } g.x = y
 	.\] 
 \end{defi}
 \begin{defi}
 	Un'azione si dice semplicemente transitiva se 
 	\[
-		\forall x,y\in X \ \ \exist g\in G\text{ tale che } g.x = y
+		\forall x,y\in X \ \ \exists ! g\in G\text{ tale che } g.x = y
 	.\] 
 \end{defi}
 \textbf{Esercizio:}\\
@@ -2758,9 +2734,9 @@ La seconda congruenza significa\\
 		$G$ gruppo\\
 		$1)$ elementi coniugati hanno lo stesso ordine\\
 		$2)$ $|O_a| = [G:C(a)]$ dove\\
-		$C(a):=\{g\in G|ga = ag\}\leq G$ (centralizzatore di  $a$)
+		$C(a):=\{g\in G|ga = ag\}\leq G$ (centralizzatore di  $a$)\\
 		$3)$ equazione delle classi\\
-		$\displaystyle|G| = |Z(G)| = \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}$
+		$\displaystyle|G| = |Z(G)| + \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}$
 	\end{teo}
 	\begin{dimo}
 		1) Siano $a,b,g\in G$ tali che  $a = gbg^{-1}$ supponiamo che  $b^k = e \ \ \ k\in\Z$\\
@@ -2770,10 +2746,10 @@ La seconda congruenza significa\\
 		Allora $ord(a) = ord(b)$\\
 		2)Osserviamo che \\
 		\begin{aligned}
-			C(a)=& {g\in G|ga = ag\}\\
+			C(a)=& \{g\in G|ga = ag\}\\
 			=&\{g\in G | gag^{-1} = a\}\\
 			=& Stab_a
-		\end{aligned}
+		\end{aligned}\\
 		Ricordiamo che :\\
 		$|O_a|\cdot |Stab_a| = |G|$\\
 		$ \Rightarrow |O_a| = \frac {|G|}{|Stab_a|} = [G : C(a)]$ \\
@@ -2785,7 +2761,7 @@ La seconda congruenza significa\\
 		.\] 
 		Dal punto (2) $ \Rightarrow  |O_a| = \frac{|G|}{|C(a)|}$ 
 		\[
-			|G| = |Z(G)| + \sum_{O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}
+			|G| = |Z(G)| + \sum_{a \ | \ O_a\not\subseteq Z(G)}\frac{|G|}{|C(a)|}
 		.\] 
 		\textbf{Esempio} (dalla nuova scheda)\\
 		$n\geq 3$ intero dispari  $G = D_n$\\
@@ -2945,13 +2921,13 @@ La seconda congruenza significa\\
 		 Dalle osservazioni $ \Rightarrow p \not | \ |X|$ \\
 		 D'altra parte, $x$ si decompone in $G$-orbite\\
 		 Inoltre $|O_S|\cdot|Stab_S| = |G| = p^r\cdot m$\\
-		  $ \Rightarrow \exists$ almeno un elemento $\underline S\in X$t.c.  $\underline S|\not\equiv_p 0$\\
+		  $ \Rightarrow \exists$ almeno un elemento $\underline S\in X$t.c.  $\underline |S|\not\equiv_p 0$\\
 		  Allora  
 		   \[
 			   \frac{|O_{\underline S}|}{|O_{\underline S}|}\cdot |Stab_{\underline S}| = \frac{p^r\cdot m}{|O_{\underline S}|}\in \Z
 		  .\] 
 		  Da cui segue che $|Stab_{\underline S}|\equiv_{p^r} 0$ \\
-		  $p^r\leq |Stab_{\underline S}$\\
+		  $p^r\leq |Stab_{\underline S}|$\\
 	  L'idea ora è di dimostrare che $Stab_{\underline S}\in Syl_p(G)$\\
 	  Essendo uno stabilizzatore, è sicuramente un sottogruppo, quindi basta dimostrare che $|Stab_{\underline S}|\leq p^r$\\
 	  \textbf{Osservazione/Esercizio}\\
@@ -2968,7 +2944,7 @@ La seconda congruenza significa\\
 	  $\cdot Syl_2(G)\neq 0 \Rightarrow \exists H\leq G : |H| = 4$ \\
 	  $\cdot Syl_3(G)\neq 0 \Rightarrow \exists H\leq G : |H| = 3$ \\
 	  \textbf{Osservazione}\\
-	  $\cdot X = O_{S_1}\circ O_{S_2}\circ\ldots\cric O_{S_r}$\\
+	  $\cdot X = O_{S_1}\circ O_{S_2}\circ\ldots\circ O_{S_r}$\\
 	  $ \Rightarrow |X| = \sum^r_{j=1} |O_{S_j}|$ Ma $|X|\not\equiv_p 0$\\
 	  \textbf{Idea}\\
 	  $G$ gruppo, $|G| = p^r \cdotm$\\
@@ -3013,7 +2989,7 @@ La seconda congruenza significa\\
 			 \begin{aligned}
 			 $	
 			 \Rightarrow |O^G_H| &= \sum^r_{i=1} |O_{H_i}^K|\\
-					     & = \sum^r_{i=1} \frac{|K|}{Stab_{H_i}^K}\\
+					     & = \sum^r_{i=1} \frac{|K|}{|Stab_{H_i}^K|}\\
 					     & = \sum^r_{i=1} \frac{ p^r}{|Stab_{H_i}|}
 			 $\end{aligned}\\
 			 Dato che $p \not | |O_H^G|$ deduciamo che $\exists H_i$ t.c. \  $|O^K_{H_i}| = 1$\\
@@ -3028,7 +3004,7 @@ La seconda congruenza significa\\
 			 Ma  $|KH_i|$ divide $|G| = p^r m$ per Lagrange (assurdo)
 
 		\begin{coro}
-			$p$ primo che divide $|G|$ allora  $H\in Syl(G)$ è normale se e solo se\\ $n_p = |Syl_p(G)| = 1$
+			$p$ primo che divide $|G|$ allora  $H\in Syl_p(G)$ è normale se e solo se\\ $n_p = |Syl_p(G)| = 1$
 		\end{coro}
 		\textbf{Osservazione}\\
 		è importante sapere se $n_p = 1$ perché l'esistenza di sottogruppi normali spesso permette di realizzare un gruppo come prodotto semidiretto
@@ -3042,7 +3018,7 @@ La seconda congruenza significa\\
 			\item $MCD(p,m) = 1$
 		\end{itemize}
 		Allora:\\
-		1) $n_P = [G:N_G(H)]$ dove  $H\in Syl_p(G)$ \\
+		1) $n_p = [G:N_G(H)]$ dove  $H\in Syl_p(G)$ \\
 		2) $m\equiv_{n_p} 0$\\
 		3)  $n_p\equiv_p 1$
 	\end{teo}
@@ -3129,10 +3105,8 @@ La seconda congruenza significa\\
 	\subsection{Applicazioni di Sylow}
 	Possiamo (ri)-dimostrare un vecchio risultato
 	\begin{teo}[Cauchy]
-		$G$ gruppo finito, $p$ primo che divide $|G|$ allora\\
-		 \[
-			 \Exists g\in G\text{ tale che } $ord(g) = p$
-		.\] 
+		$G$ gruppo finito, $p$ primo che divide $|G|$ allora 
+			 $\exists g\in G\text{ tale che } ord(g) = p$
 		
 	\end{teo}
 	\begin{dimo}
@@ -3166,13 +3140,13 @@ La seconda congruenza significa\\
 		  2) Se  $p | q-1$ allora  $G\cong C_q\semi C_p$
 	\end{teo}
 	\begin{dimo}
-		Studio $n_p$ \\
+		Studio $n_q$ \\
 		\begin{cases}
-			p = m \equiv_{nq} 0\\
+			p = m \equiv_{n_q} 0\\
 			n_q \equiv_q 1
 		\end{cases}\\
 		$ \Rightarrow $ \begin{cases}
-			n_q =1 \text { oppure } m_q = p\\
+			n_q =1 \text { oppure } n_q = p\\
 			\text{ seconda esclude } n_q = p \text{ perchè } p < q
 
 		\end{cases}\\
@@ -3215,7 +3189,8 @@ $ \Rightarrow G\cong P\times Q\cong C_p\times C_q\cong C_{pq}$
 		$\cdot$ se $p\not  | q + 1$ allora $G\cong C_{pq}$\\
 		 $\cdot$ se $p | q + 1$ allora $ G\cong C_q\semi C_p$
 	\end{teo}
-	\textbf{Inserisci tabella fino ad ordine 9}
+	\textbf{Osservazione}\\
+	Il professore ha costruito una tabella fino all'ordine 9\\
 	\begin{coro}
 		$q > 2$ primo, $G$ gruppo di ordine $2q$\\
 		Allora $G\cong C_{2q}$ oppure $G\cong D_q$
@@ -3507,12 +3482,12 @@ Dove la prima congruenza la sappiamo da teoremi precedenti, la seconda viene dat
 	Assumiamo che  $a$ non sia un quadrato perfetto, Allora esistono infiniti primi per cui $a $ è una radice prima
 \end{congettura}
 \textbf{Osservazione}\\
-Oggi sappiamo che la congettura di Artin è vera per infiniti interi $a$, ma non è noto quali
+Oggi sappiamo che la congettura di Artin è vera per infiniti interi $a$, ma non è noto quali\\
 \textbf{Esercizio:}
 $p > 1$ primo\\
 Sia  $a = x^2$ con  $x\in\Z$\\
 Dimostrare che se  $[a]\in U_p$\\
-allora  $ord_{U_p}([a]_\neq p- 1$\\
+allora  $ord_{U_p}([a])\neq p- 1$\\
 \textbf{Esercizio} [classificazione dei gruppi di ordine $pq$]\\
 Dimostrare che tutti i gruppi non ciclici di ordine $pq$ con  $p\neq q$ primi, sono fra loro isomorfi e non abeliani\\
 \textbf{Soluzione}\\
@@ -3537,7 +3512,7 @@ $\cdot P\cap Q = \{e\}$\\
 	 Una successione esatta corta di gruppi è una coppia di omomorfismi\\ $H \xrightarrow r G \xrightarrow \pi K$ dove $r$ iniettivo $\pi$ suriettivo e $Im(r) = ker(\pi)$
 	 \begin{itemize}
 		 \item $G$ si dice estensione di $K$ tramite $H $
-		 \item la successione spezza se $\exists s:K \xrightarrow{} G$ omomorfismo tale che  $\pi\cdot s = Id$
+		 \item la successione spezza se $\exists S:K \xrightarrow{} G$ omomorfismo tale che  $\pi\circ S = Id$
 		 \item $S$, se esiste, si chiama sezione
 	 \end{itemize}
  \end{defi}
@@ -3996,7 +3971,7 @@ Abbiamo dimostrato che se $a\in R$ ammette un inverso moltiplicativo allora  $R$
 	Un anello $(R,+, \cdot)$ si dice corpo se\\
 	 $0\neq 1$\\
 	 $\forall a\in R, \ \exists a^{-1}\in R$ t.c.\\
-	 $a^{-1} \cdot a = a\cdot a^{-1} = 1$ 
+	 $a^{-1} \cdot a = a\cdot a^{-1} = 1$ \\
 	 $a^{-1}$ si dice inverso moltiplicativo
 \end{defi}
 \begin{defi}
@@ -4083,5 +4058,327 @@ $ \Rightarrow  0 = 0 \cdot a$ \\
 2) $a,b\in R$ \\
 $0 = 0\cdot b = (a + (-a)) \cdot b = a\cdot b + (-a)\cdot b$\\
 Sommando $-(a\cdot b)$ ad entrambi i membri ottengo:\\
- $-(a\codt b) = -(a)\codt b$
+ $-(a\codt b) = -(a)\codt b$\\
+ %lezione 21
+	\textbf{Esercizi Schede}\\
+$G = GL_2(\C)$ \\
+$X = Mat_{2\times 2}(\C)$\\
+	\begin{aligend}
+		&G\times X \rightarrow X\\
+		&(A,B) \rightarrow A\cdot B
+	\end{aligend}
+	è un'azione tra gruppi\\
+	Studiare le orbite\\
+	\textbf{Soluzione}\\
+	$O_{\icol{0&0\\0&0}} = \lbrace\matrice{0 & 0 \\ 0& 0}\rbrace$\\
+	$O_{Id} = \{$ matrici invertibili$\}$\\
+	Restano da studiare solo i casi di matrici non invertibili e non nulle
+\\
+	Se  $det(B) = 0$ allora  $B =\matrice{x & y\\ \lambda x & \lambda y}$ \ \ \ \  $x,y,\lambda\in \C$\\
+	 $O_B = ?$\\
+	 \textbf{Caso 1}\\Se  $x = 0$  $ \Rightarrow y\neq 0$ \\
+	$ \Rightarrow  B = \matrice{0 &y\\0 & \lambda y}$\\
+	Allora scelgo \\
+	$A = \matrice{\frac 1 y & ?\\ ? & 1}$\\
+	$AB = \matrice{\frac 1 y & 0\\ -\lambda & 1}\cdot \matrice{0 &y\\0 & \lambda y} = \matrice{0 & 1\\ 0 & 0}$\\
+	Dove ho messo al posto dei punti interrogativi numeri appositi per arrivare alla matrice $e_{12}$\\
+	Quindi se $x\neq 0 \Rightarrow O_B= O_\icol{0&1\\0&0}$ \\
+	\textbf{Caso II}\\
+	Se $x\neq 0$\\
+	Scelgo  $A = \matrice{\frac 1x & 0 \\ ? & 1}$\\
+	$AB = \matrice{\frac 1x & 0 \\ - \lambda & 1} \matrice{x &y\\ \lambda x& \lambda y} = \matrice{1 & \frac yx\\ 0 & 0}\\$
+	$O_B = O_\icol{ 1 &\frac yx \\ 0 & 0 }$\\
+	La matrice $A = \matrice{0&1\\1&0}$\\
+	Scambia le righe di $B$ \\
+	$ B = \matrice { a & b \\c & d}$\\
+	$AB = \matrice{ c&b\\a&b}$\\
+	\subsection{Ideali}
+	\begin{defi}[Ideali]
+		$(R,+,\cdot)$ anello\\ 
+		Un ideale è un sottogruppo $(I,+)\leq (R,+)$ tale che
+		\begin{enumerate}
+		 \item $\forall a\in I$ \ \ $\forall x\in R $\\
+			 $ \Rightarrow x\cdot a\in I$ \hfill [Ideale Sinistro]
+		 \item $\forall a \in I \ \ \forall x\in R$\\
+			 $ \Rightarrow a\cdot x\in I$ \hfill [Ideale Destro]
+		 \item $\forall a\in I, \forall x\in R\\
+			 \Rightarrow \begin{cases}
+			 	x\cdot a \in I\\
+				a\cdot x\in I
+			\end{cases}$\hfill [Ideale bilatero]
+			
+		\end{enumerate}
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $R$ è commutativo allora un sottogruppo (additivo) $I\leq R$\\ è ideale sinistro $ \Leftrightarrow$ è un ideale destro $ \Leftrightarrow$ è un ideale bilatero.
+	\begin{nota}
+		$R$ anello $I$ ideale bilatero lo chiameremo semplicemente \textbf{ideale}
+	\end{nota}
+	\textbf{Osservazione}\\
+	$R$ anello $ \Rightarrow (R,+)$ è un gruppo abeliano\\
+	$ \Rightarrow I\subseteq R$  ideale è un sottogruppo additivo normale\\
+	\textbf{Esercizio:}\\
+	$R$ anello $I\subseteq R$ ideale $ \Rightarrow (R/I, +)$ gruppo abeliano.\\
+	Dimostrare che l'operazione  \\
+	\begin{aligned}
+		$\cdot \ : \ R&/I \times R/I \rightarrow R/I$\\
+		&$(aI,bI) \rightarrow (ab)I$ \\
+	\end{aligned}\\
+	è ben definita e dedurre che $(R/I,+,\cdot)$ è un anello.\\
+	\textbf{Esempio}\\
+	$(\R,+,\cdot)$ è un anello\\
+	 $(\Z,+) \leq (\R,+)$\\
+	  $(\Z,+,\cdot)$ è un sottoanello\\
+	  $(\Z, +,\cdot)$ non è un ideale in  $(\R,+,\cdot)$\\
+	  Infatti  $\sqrt 2 \cdot 1\not\in \Z$\\
+	   \textbf{Esempi}\\
+	   $R$ anello\\
+	   $ \Rightarrow  I=\{0\}$ è un ideale\\
+	   $ \Rightarrow I=R$ è un ideale\\
+	   \begin{defi}
+	   	$R$ anello commutativo. $I\subseteq R$ ideale\\
+		$I$ si dice primo se $I\neq R$ e $ab\in I \Rightarrow a\in I$ oppure $b\in I$
+	   \end{defi}
+	   \textbf{Esercizio}\\
+	   $R = (\Z, + , \cdot)$\\
+	   Determinare tutti gli ideali primi di $R$\\
+	   \textbf{Esercizio:}\\
+	   $R$ anello $I\subseteq R$ ideale\\
+	   Dimostrare che le seguenti sono equivalenti
+	    \begin{enumerate}
+		    \item $R/I$ è un dominio d'integrità
+		    \item  Se $a\cdot b\in I \Rightarrow a\in I$ oppure $b\in I$
+	   \end{enumerate}\newpage \ \\
+	   \begin{teo}[Omomorfismo per anelli]
+	   	Dato $\varphi: R \rightarrow S$ un omomorfismo di anelli abbiamo
+		\begin{enumerate}
+			\item $ker (\varphi)\subseteq R$ è un ideale
+			\item esiste un unico omomorfismo di anelli $\bar \varphi : R/ker(\varphi) \rightarrow S$\\
+				tale che  
+				\[
+\begin{tikzcd}
+R \arrow[r, "\varphi"] \arrow[d, "\pi"'] & S  \\
+R/ker(\varphi)\arrow[ur, "\bar\varphi"']
+\end{tikzcd}
+\]
+
+			\item Esiste un isomorfismo di anelli\\
+				$R/ker(\varphi) \cong Im(\varphi)$
+		\end{enumerate}
+	   \end{teo}
+	   \begin{dimo}[Esercizio]
+	   	1) Basta verificare che se $x\in ker( \varphi)$ e $y\in R$
+		allora  \begin{cases}
+			$x\cdot y\in ker( \varphi)\\
+			y\cdot x\in ker( \varphi)$
+		\end{cases}\\
+		$x\in ker( \varphi) \Rightarrow \varphi(x) = 0$ \\
+		Quindi\\
+		\begin{aligned}
+			$ \cdot \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cdot \varphi(y) \\&= 0$
+		\end{aligned}\\
+		$ \Rightarrow x\cdot y\in Ker( \varphi)$ \\
+		\begin{aligned}
+			$ \cdot \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \varphi(y)\cdot 0 \\&= 0$
+		\end{aligned}\\
+		$ \Rightarrow y\cdot x\in ker( \varphi)$
+	   \end{dimo}
+	   \newpage
+	   \subsection{Caratteristica}
+	   Voglio associare ad ogni anello un numero intero che ci possa dare qualche informazione su di esso.
+	   \begin{defi}
+		   $(R,+,\cdot)$ anello.\\
+		   Considero l'omomorfismo di anelli\\
+		   \begin{aligned}
+			   $\psi:& \Z \rightarrow R\\
+			       &1 \rightarrow 1_R\\
+			       &n \rightarrow (1_R +\ldots +1_R)\\$
+		   \end{aligned}\\
+	   Osserviamo che $\psi$ è un omomorfismo di anelli\\
+	   \[
+	   \psi(n\codt m) = \psi(n)\cdot \psi(m)
+	   .\] 
+	   Infatti\\
+	   $\psi(n)\cdot\psi(m)=$\\
+	    $= (1_R+\ldots+1_R)(1_R+\ldots+1_R)$\\
+	    \text{} \ \ \ \ \ \ \ n volte \ \ \ \ \ \ \ \  \ \ m volte\\
+	     $ = 1_R(1_R+\ldots+1_R) + \ldots + 1_R(1_R+\ldots+1_R)$\\
+	     \text{} \ \ \ \ \ \ \ \ \ \  m volte \hspace{50px} \ \ \ \ \ \ \ m volte\\
+	     $ = \psi(n\cdot m)$ \\
+	     Allora $ker(\psi) = (m)\subseteq \Z$ per qualche  $m\geq 0$\\
+	      $m$ si dice caratteristica di $R$.
+	   \end{defi}
+	   \textbf{Osservazione}\\
+	   Supponiamo che $R$ abbia caratteristica positiva  $m > 0$ allora  $m = ord_{(R,+)}(1_R)$  \\
+	   \textbf{Esercizio:}\\
+	   $(R,+,\cdot)$ campo\\ 
+	   Dimostrare che la caratteristica $R$ è $0$ oppure un numero primo\\
+	   \textbf{Esempi:}\\
+	   $\R,\mathbb Q,\C$\\
+	   sono campi di caratteristica 0\\
+Mentre $\Z/(p)$ è un campo di caratteristica $p$ (con  p primo)\\
+\textbf{Esercizio}\\
+Un anello commutativo è un campo se e solo se non possiede ideali non banali\\
+\textbf{Soluzione}\\
+Supponiamo che $R$ sia un campo e sia $I\subseteq R$ un ideale  $I\neq \{0\}$\\
+Allora dobbiamo mostrare che  $I = R$.\\
+Se  $a\in I\neq\{0\}$ considero  $a^{-1}\in R$\\
+$a^{-1}\cdot a = 1\in I$ \hfill [Dato che è un ideale]\\
+Dato  $b\in R:$\\
+$b = b\cdot 1\in I$ \hfill [Dato che $1$ è nell'ideale ]\\
+Viceversa:\\
+dato $a\in R\setminus\{0\}$ dobbiamo verificare che esiste  $b\in R$ tale che  $a\cdot b = 1$ \\
+Definiamo $I := \{ a\cdot r | r\in R\}\subseteq R$\\
+$I$ è un ideale.
+Inoltre $I \neq \{0\}$ poiché $a\in I$\\
+$ \Rightarrow  I = R \Rightarrow 1\in I$ \hfill [Per ipotesi]\\
+Quindi esiste $b\in R$  tale che $a\cdot b = 1$\\
+ \textbf{Osservazione}\\
+ Se $R$ campo e $\psi: R \rightarrow S$  è un omomorfismo di anelli, allora $\psi$ è iniettivo oppure $\psi $ è l'omomorfismo nullo.\\
+ Abbiamo verificato che $ker(\psi)$ è un ideale in $R$.\\
+ Quindi:
+ \begin{itemize}
+	 \item $ker(\psi) = \{0\}$\\
+		  $ \Rightarrow $ iniettivo
+	  \item $ker (\psi) = R$\\
+		   $ \Rightarrow \psi(r) = 0 \ \ \ \forall r\in R$
+ \end{itemize}
+ %lezione 22
+
+	\subsection{Esercizi delle schede}
+	\textbf{Esercizio 0.1}\\
+	$(A,+,\cdot)$ tale che
+	 \begin{enumerate}
+		 \item 1) $(A,+)$ gruppo, "non necessariamente abeliano"
+		 \item 2) $\cdot$ è associativa ed esiste $1\in A$ tale che  $1\cdot a = a \cdot 1 = a$
+		 \item Valgono le proprietà distributive
+	\end{enumerate}
+	Dimostrare che $(A,+,\cdot)$ è un anello\\
+	\textbf{Soluzione}\\
+	$x,y\in A \ \ \(1+1)\cdot(x+y) = ?$\\
+	 Primo caso:
+	  \[
+		  (1+1)(x+y)=1(x+y)+1(x+y) = x + y + x + y
+	 .\] 
+	 Secondo caso:
+	 \[
+		 (1+1)(x+y) = (1+1)(x)+(1+1)(y) = 1\cdot x + 1\cdot x + 1\cdot y  + 1\cdot y = x + x + y + y
+	 .\] 
+	 $ \Rightarrow x + y + x + y = x + x + y + y$ sommando a sinistra l inverso additivo di $x$ e a destra l'inverso di $y$ otteniamo
+	 $y + x = x + y \Rightarrow (A,+)$ abeliano.\\
+	 \textbf{Esercizio 0.2}\\
+	 Sia $(A,+,\cdot)$ anello con $x^2 = x \ \ \forall x\in A \ \ \Rightarrow A$ è commutativo\\
+	 \textbf{Soluzione}\\
+	 Studiamo $(a+a)^2:$\\
+	  $a\in A \Rightarrow a + a \in A \Rightarrow  (a+a)^2 = (a+a)$ \\
+	  ma $(a+a)^2 = a^2 + a ^2 + a^2+a^2 = a + a + a + a \Rightarrow a + a = a + a + a + a \Rightarrow a + a = 0 \Rightarrow a = -a$ \\
+	  Siano ora $a,b\in A \Rightarrow (a + b) = (a+b)^2= a^2 + ab + ba + b^2 = a + ab + ba + b \Rightarrow 0 = ab + ba \Rightarrow ab = -ba = ba$ \\
+	  \textbf{Esercizio 0.3}\\
+	  $A$ anello tale che $(x\cdot y)^2 = x^2 \cdot y^2 \ \ \forall x,y\in A \Rightarrow A$ è commutativo\\
+	  \textbf{Soluzione}\\
+	  Notazione: $[x,y] := x\cdot y - y\cdot x$ "Braket di Lie"\\
+	  Dati  $x,y\in A$ vogliamo dimostrare $[x,y] = 0$\\
+	   $(x\cdot y)^2= x^2y^2$ ovvero $x\cdot y \cdot x\cdot y = x^2 \cdot y^2$\\
+	    $ \Rightarrow x^2\cdot y^2 - x\cdot y \cdot x \cdot y = 0 \Rightarrow x\cdot(x\codt y - y\cdot x)\cdot y = 0\\
+	    \Rightarrow x
+	    x\cdot [x,y]\cdot y = 0$ \\
+	    \textbf{Osservazione:}\\
+	    $[1,y] = 0$ e $[x,y] = 0$\\
+	    La relazione precedente è verificata per  $x + 1, y\in A \Rightarrow (x+1)\cdot [x,y]\cdot y = 0 \Rightarrow  x\cdot [x,y]\cdot y + 1\cdot[x,y]\cdot y = 0 \Rightarrow [x,y]\cdot y = 0\ \ \ \forall x,y\in A \Rightarrow $ tale relazione è verificata per $x,y + 1\in A \Rightarrow [x, y + 1] \cdot (y + 1) = 0 \Rightarrow [x,y]\cdot y + [x,y] \cdot 1  =0 $\\
+	    \textbf{Esercizio 0.4}\\
+	    $A$ anello $I\subseteq A$, ideale, $1\in I$ dimostrare che  $I=A$\\
+	     \textbf{Soluzione:}\\
+	     $a\in A \Rightarrow a = a\cdot 1\in I$ \\
+	     \textbf{Esercizio}\\
+	     $A\in M_{2\times 2}(\mathbb Q)$ anello non commutativo $ \Rightarrow$ gli unici ideali bilateri di $A$ sono $\{\icol{0&0\\0&0}\}$ e $A$\\
+	      \textbf{Soluzione}\\
+	     Sia $I\subseteq A$ un ideale bilatero tale che  $I\neq \{\icol{0&0\\0&0}\} \Rightarrow \exists \icol{a&b\\c&d}\in I \neq \{\icol{0&0\\0&0}\}$ .\\
+	     Vogliamo che $g\icol{a&b\\c&d}g^{-1}\in I \ \ \forall g\in GL_2(\mathbb Q)\in A$\\
+	      $  \Rightarrow $ possiamo assumere $a\neq 0$\\
+	     $ \Rightarrow $ considero $\icol {1/a & 0 \\0 & 0}\icol{a&b\\c&d}\in I$  \Rightarrow  $\icol{1 & b/a\\0&0}\in I \Rightarrow \icol{1 & b/a\\0&0}\icol{1&0\\0&0}\in I $ \\
+	     $ \Rightarrow \icol{1&0\\0&0}\in I$, basta dimostrare che $\icol{0&0\\0&1}\in I \Rightarrow \icol{0&1\\1&0}\icol{1&0\\0&0}\in I \Rightarrow \icol{0&0\\1&0}\in I$ \\
+	     $ \Rightarrow \icol{0&0\\1&0}\icol{0&1\\1&0}\in I \Rightarrow \icol{0&0\\0&1}\in I$ \\
+	     $\icol{1&0\\0&0} + \icol{0&0\\0&1} = \icol{1&0\\0&1}\in I \Rightarrow I\in A$ 
+	     \begin{defi}
+	     	$A \subseteq R$ sottoanello di un anello $R, b\in R$\\
+		$A[b] = \{a_0 + a_1b + a_2b^2 + \ldots + a_nb^m|a_i\in A, n\in \Z_{>0}\}$
+	     \end{defi}
+	     \textbf{Osservazione}\\
+	     Se $b\in A \Rightarrow A = A[b]$ \\
+	     $\cdot$ in generale $A\subseteq A[b]$\\
+	     \textbf{Esempi:}\\
+	     $A = \Z; \ R = \C$\\
+	     $\Z[i] = \{a_0 + a_1i + \ldots + a_n i^n | a_j\in \Z, n\in \Z_{>0}\} = \{m + ni|m,n\in \Z\}$\\
+	     \textbf{Esercizio}\\
+	     $(\Z,+,\cdot)$ anello\\
+	     $\Z[i] = \{m + ni|m,n\in \Z\}\subseteq \C$\\
+	     Mostrare:\\
+	     $1) \Z[i]$ è un sottoanello di $\C$\\
+	      \textbf{Soluzione}\\
+	      $(\Z[i], +)$ è un sottogruppo,  $Z[i]$ è chiuso rispetto a $\cdot$ per distributività\\
+	      $2) A\subseteq Z[i]$ sottoanello, dimostrare che  $A = \Z \vee \exists l\in \Z_{>0}$ tale che $A = \{m + nki|m,n\in \Z\}$\\
+	       \textbf{Soluzione}\\
+	       Un sottoanello $A\subseteq \Z[i]$ contiene $1 = 1 + 0_i \Rightarrow  Z\subseteq A$ \\
+	       Quindi $A = \Z \vee \exists x + yi\ion A$ con $y\neq 0$\\
+	       $(A,+)$ sottogruppo di $\Z[i] \Rightarrow -x-yo\in A$ \\
+	       Quindi possiamo assumere $y > 0 \Rightarrow y\cdot i \in A$ \\
+	       con $y > 0$, infatti $\Z\subset A \Rightarrow -x + (x + iy)\in A$, \\
+	       $k := \min\{y\in \Z_{>0}|y_i\in A\} \Rightarrow $ considero $a + bi\in A$ vogliamo che  $k | b \Rightarrow b = qk + r $ con $0\leq r < k$\\
+	       Moltiplichiamo per  $i \Rightarrow b_i = qk_i + r_i$ \\
+	       $ \Rightarrow r_i = b_i - qk_i \in A \Rightarrow k\leq r$ oppure $r = 0$\hfill poiché $r|k$\\
+	       $ \Rightarrow  k|b \Rightarrow b = nk \Rightarrow  A\subseteq \{m + nki | m,n\in \Z\}$ \\
+	       Il viceversa è facile
+	       \begin{itemize}
+		       \item $Z\subseteq A$
+		       \item $K_i\subseeteq A  \Rightarrow nk_i\in A \ \ \forall n\in \Z \Rightarrow m + nk_i\in A\forall m,n\in \Z$
+	       \end{itemize}\\
+	       \textbf{Osservazione}\\
+	       $(\mathbb Q, + \cdot)$ anello\\
+	       $S:=$ insieme di numeri primi $\Z_S := \{\frac mn\in \mathbb Q |$ i fattori primi di  $n$ sono in $S\}$\\
+	       $\Z_S = Z[\frac 1p|p\in S]\subseteq \mathbb Q$\\
+	       \textbf{Esercizio}\\
+	       $1)$ Dimostrare che $\Z_S$ è un sottoanello di $\mathbb Q$\\
+	        $\cdot (\Z_S,+)$ è un sottogruppo di $\mathbb Q$
+		 \[
+			 \frac {m_1}{n_1} + \frac {m_2}{n_2} = \frac{n_2m_1+n_1m_2}{n_1n_2}\in \Z_S \text{ ed è chiuso rispetto agli opposti}
+		.\] 
+		$\cdot \ Z_S$ è chiuso rispetto a $\cdot$ \\
+		\[
+			\fram {m_1}{n_1}\cdot\frac{m_2}{n_2} = \frac{m_1\cdot m_2}{n_1n_2}\in \Z_S
+		.\] 
+		$\cdot 1\in \Z_S$\\
+		 $ 2)$ Dimostrare che ogni sottoanello di $\Q$ è di tale forma per qualche insieme $S$  $A\subseteq Q$ sottoanello quindi $1\in A \Rightarrow  A\subseteq A \Rightarrow  A = Z = Z_\phi \vee \Z\subsetneq A$ \\
+		 $ \Rightarrow $ se $\Z\subsetneq A \Rightarrow \exists r\in A\setminus\Z \Rightarrow r \frac mn\in \mathbb Q$ \\
+		 con $n > 1$ e possiamo assumere che $MCD(m,n) = 1$\\
+		  $ \Rightarrow 1 = mx + ny$ con $x,y\in \Z$ \hfill (Bezout)\\
+		  Dividiamo per $n:$  $\frac 1n = rx + y$ Ora:\\
+		  $x,y\in \Z\subseteq A$ e $r\in A \Rightarrow  \frac 1n = ex + y\in A \Rightarrow \frac an = a\cdot \frac 1n \in A\ \ \forall a\in \Z$ \\
+		  $ \Rightarrow n> 1 \Rightarrow  n\cdot p_1\cdot\ldots\cdot p_k$ \\
+		  Scelgo $a = p_2\cdot\ldots\cdot p_k\in \Z \Rightarrow \frac {1}{p_1} = \frac an\in A$ \\
+		  $ \Rightarrow \frac{1}{p_j}\in  A \ \ \forall j= 1,\ldots, k.\\$
+		  Chiamo $S = \{p\in Z | p\text{ primo tale che } \frac 1p\in A\} $ \\
+		  $Z_S = Z[\frac 1p | p\in S] = A$\\
+		   \begin{defi}
+		  	$(A,+,\cdot)$ anello commutativo $I,J\subseteq A$ ideali di $A.$ \\
+			$I\cdot J = \{ \sum^n_{\alpha=1} a_\alpha \cdot b_\alpha| a_\alpha \in I, b_\alpha\in K, n\in \Z_{>0}\}$ 
+
+		  \end{defi}
+		  \textbf{Esercizio:}\\
+		  1)Dimostrare che $I\cdot J$ è un ideale.\\
+		  \textbf{Soluzione}\\
+		  $I\cdot J$ è un sottogruppo additivo inoltre $\forall x\in A \ \ x\cdot \sum_{finita}a_\alpha b_\alpha = \sum (x\codt a_\alpha)b_\alpha = \sum a_\alpha'\cdot b_\alpha$\\
+		  $2) I\cap J$ è un ideale di $A$ \\
+		  \textbf{Soluzione}\\
+		  $\cdot I\cap J$ è un sottogruppo di $(A,+)$ perchè intersezione di sottogruppi\\
+		  $\cdot x\in A$ e $b\in I\cap J \Rightarrow \begin{cases}
+		  	x\cdot b \in I\\
+			x\codt b \in K
+		  \end{cases} \Rightarrow x\cdot b \in I\cap J$ \\
+		  $3) I\cdot J \subseteq I\cap J $\\
+		   \begin{cases}
+		  	a\in I\\
+			b\in J
+		\end{cases} $ \Rightarrow  a\cdot b \in I\cap J$ ora $I\cap J$ è un sottogruppo di $(A,+) \Rightarrow \sum_{finita}a_\alpha b_\alpha\in I\cap J$
+
+
 \end{document}

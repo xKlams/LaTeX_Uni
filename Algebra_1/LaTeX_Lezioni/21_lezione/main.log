@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.11.12)  10 DEC 2024 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2024.11.12)  22 DEC 2024 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1227,38 +1227,34 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 101.
 
-Overfull \hbox (5.87373pt too wide) in paragraph at lines 105--107
-\OT1/cmr/m/it/10 tale che \OT1/cmr/bx/it/10 TODO in-serisci im-mag-ine omo-mor-fismo schema (foto
- []
-
-./main.tex:113: Missing $ inserted.
+./main.tex:120: Missing $ inserted.
 <inserted text> 
                 $
-l.113 		allora  \begin{cases}
+l.120 		allora  \begin{cases}
                              
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:114: Missing $ inserted.
+./main.tex:121: Missing $ inserted.
 <inserted text> 
                 $
-l.114 			$x\cdot
+l.121 			$x\cdot
                  y\in ker( \varphi)\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:116: Missing $ inserted.
+./main.tex:123: Missing $ inserted.
 <inserted text> 
                 $
-l.116 		\end{cases}
+l.123 		\end{cases}
                    \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:116: Missing $ inserted.
+./main.tex:123: Missing $ inserted.
 <inserted text> 
                 $
-l.116 		\end{cases}
+l.123 		\end{cases}
                    \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1267,29 +1263,29 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:120: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:127: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 			$
+l.127 			$
            \cdot \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cd...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:120: Missing $ inserted.
+./main.tex:127: Missing $ inserted.
 <inserted text> 
                 $
-l.120 			$
+l.127 			$
            \cdot \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cd...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:120: Missing } inserted.
+./main.tex:127: Missing } inserted.
 <inserted text> 
                 }
-l.120 			$
+l.127 			$
            \cdot \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cd...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1297,27 +1293,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:120: Missing $ inserted.
+./main.tex:127: Missing $ inserted.
 <inserted text> 
                 $
-l.120 			$ \cdot
+l.127 			$ \cdot
                  \ \varphi(x\cdot y) &= \varphi(x)\cdot \varphi(y) \\&= 0\cd...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:120: Missing { inserted.
+./main.tex:127: Missing { inserted.
 <inserted text> 
                 {
-l.120 			$ \cdot \ \varphi(x\cdot y) &
+l.127 			$ \cdot \ \varphi(x\cdot y) &
                                       = \varphi(x)\cdot \varphi(y) \\&= 0\cd...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:120: Missing } inserted.
+./main.tex:127: Missing } inserted.
 <inserted text> 
                 }
-l.120 ...\varphi(y) \\&= 0\cdot \varphi(y) \\&= 0$
+l.127 ...\varphi(y) \\&= 0\cdot \varphi(y) \\&= 0$
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1325,27 +1321,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:121: Missing { inserted.
+./main.tex:128: Missing { inserted.
 <inserted text> 
                 {
-l.121 		\end{aligned}
+l.128 		\end{aligned}
                      \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:121: Missing $ inserted.
+./main.tex:128: Missing $ inserted.
 <inserted text> 
                 $
-l.121 		\end{aligned}
+l.128 		\end{aligned}
                      \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:121: Missing $ inserted.
+./main.tex:128: Missing $ inserted.
 <inserted text> 
                 $
-l.121 		\end{aligned}
+l.128 		\end{aligned}
                      \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1354,29 +1350,29 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:124: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:131: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 			$
+l.131 			$
            \cdot \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \var...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:124: Missing $ inserted.
+./main.tex:131: Missing $ inserted.
 <inserted text> 
                 $
-l.124 			$
+l.131 			$
            \cdot \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \var...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:124: Missing } inserted.
+./main.tex:131: Missing } inserted.
 <inserted text> 
                 }
-l.124 			$
+l.131 			$
            \cdot \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \var...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1384,27 +1380,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:124: Missing $ inserted.
+./main.tex:131: Missing $ inserted.
 <inserted text> 
                 $
-l.124 			$ \cdot
+l.131 			$ \cdot
                  \ \varphi(y\cdot x) &= \varphi(y)\cdot \varphi(x) \\&= \var...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:124: Missing { inserted.
+./main.tex:131: Missing { inserted.
 <inserted text> 
                 {
-l.124 			$ \cdot \ \varphi(y\cdot x) &
+l.131 			$ \cdot \ \varphi(y\cdot x) &
                                       = \varphi(y)\cdot \varphi(x) \\&= \var...
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:124: Missing } inserted.
+./main.tex:131: Missing } inserted.
 <inserted text> 
                 }
-l.124 ...\varphi(x) \\&= \varphi(y)\cdot 0 \\&= 0$
+l.131 ...\varphi(x) \\&= \varphi(y)\cdot 0 \\&= 0$
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1412,27 +1408,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:125: Missing { inserted.
+./main.tex:132: Missing { inserted.
 <inserted text> 
                 {
-l.125 		\end{aligned}
+l.132 		\end{aligned}
                      \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:125: Missing $ inserted.
+./main.tex:132: Missing $ inserted.
 <inserted text> 
                 $
-l.125 		\end{aligned}
+l.132 		\end{aligned}
                      \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:125: Missing $ inserted.
+./main.tex:132: Missing $ inserted.
 <inserted text> 
                 $
-l.125 		\end{aligned}
+l.132 		\end{aligned}
                      \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1440,31 +1436,31 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:127: Missing $ inserted.
+./main.tex:134: Missing $ inserted.
 <inserted text> 
                 $
-l.127 	   \end{dimo}
+l.134 	   \end{dimo}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./main.tex:127: LaTeX Error: \begin{dimo} on input line 111 ended by \end{dimostrazione}.
+./main.tex:134: LaTeX Error: \begin{dimo} on input line 118 ended by \end{dimostrazione}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 	   \end{dimo}
+l.134 	   \end{dimo}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:127: Missing $ inserted.
+./main.tex:134: Missing $ inserted.
 <inserted text> 
                 $
-l.127 	   \end{dimo}
+l.134 	   \end{dimo}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1473,59 +1469,59 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./main.tex:127: LaTeX Error: \begin{document} ended by \end{dimo}.
+./main.tex:134: LaTeX Error: \begin{document} ended by \end{dimo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 	   \end{dimo}
+l.134 	   \end{dimo}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./main.tex:127: Extra \endgroup.
+./main.tex:134: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.127 	   \end{dimo}
+l.134 	   \end{dimo}
                     
 Things are pretty mixed up, but I think the worst is over.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--128
+Underfull \hbox (badness 10000) in paragraph at lines 119--135
 
  []
 
 [4]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 131.
+(mdframed)              on input line 138.
 
 
-./main.tex:135: Package amsmath Error: \begin{aligned} allowed only in math mode.
+./main.tex:142: Package amsmath Error: \begin{aligned} allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.135 			   $
+l.142 			   $
              \psi:& \Z \rightarrow R\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./main.tex:135: Missing $ inserted.
+./main.tex:142: Missing $ inserted.
 <inserted text> 
                 $
-l.135 			   $
+l.142 			   $
              \psi:& \Z \rightarrow R\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:135: Missing } inserted.
+./main.tex:142: Missing } inserted.
 <inserted text> 
                 }
-l.135 			   $
+l.142 			   $
              \psi:& \Z \rightarrow R\\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1533,27 +1529,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:135: Missing $ inserted.
+./main.tex:142: Missing $ inserted.
 <inserted text> 
                 $
-l.135 			   $\psi
+l.142 			   $\psi
                  :& \Z \rightarrow R\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:135: Missing { inserted.
+./main.tex:142: Missing { inserted.
 <inserted text> 
                 {
-l.135 			   $\psi:&
+l.142 			   $\psi:&
                     \Z \rightarrow R\\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:137: Missing } inserted.
+./main.tex:144: Missing } inserted.
 <inserted text> 
                 }
-l.137 ...     &n \rightarrow (1_R +\ldots +1_R)\\$
+l.144 ...     &n \rightarrow (1_R +\ldots +1_R)\\$
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1561,27 +1557,27 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./main.tex:138: Missing { inserted.
+./main.tex:145: Missing { inserted.
 <inserted text> 
                 {
-l.138 		   \end{aligned}
+l.145 		   \end{aligned}
                         \\
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./main.tex:138: Missing $ inserted.
+./main.tex:145: Missing $ inserted.
 <inserted text> 
                 $
-l.138 		   \end{aligned}
+l.145 		   \end{aligned}
                         \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./main.tex:138: Missing $ inserted.
+./main.tex:145: Missing $ inserted.
 <inserted text> 
                 $
-l.138 		   \end{aligned}
+l.145 		   \end{aligned}
                         \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1590,12 +1586,12 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--140
+Underfull \hbox (badness 10000) in paragraph at lines 139--147
 
  []
 
-./main.tex:141: Undefined control sequence.
-l.141 	   \psi(n\codt
+./main.tex:148: Undefined control sequence.
+l.148 	   \psi(n\codt
                       m) = \psi(n)\cdot \psi(m)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1608,15 +1604,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 84F9191E90D491FD5BC7C55C7967A7D0;335.
  ) 
 Here is how much of TeX's memory you used:
- 28143 strings out of 476034
- 586576 string characters out of 5792853
+ 28248 strings out of 476034
+ 589151 string characters out of 5792853
  1868388 words of memory out of 6000000
- 48095 multiletter control sequences out of 15000+600000
+ 48200 multiletter control sequences out of 15000+600000
  522492 words of font info for 73 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 121i,9n,121p,494b,569s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,16n,121p,494b,1385s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (6 pages, 204402 bytes).
+Output written on main.pdf (6 pages, 202120 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  112 compressed objects within 2 object streams
