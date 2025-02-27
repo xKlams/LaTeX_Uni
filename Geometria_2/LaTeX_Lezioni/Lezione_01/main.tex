@@ -1,0 +1,176 @@
+\documentclass[12px]{article}
+
+\title{Lezione 1 Geometria 2}
+\date{2025-02-27}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Informazioni pratiche}
+	Giovedì esercitazioni\\
+	Ci sono gli esercizi settimanali! Alcuni di questi sono da sapere per l'orale\\
+	Se vogliamo essere avvertiti per urgenze possiamo mandare una mail\\
+	C'è il sito del corso\\
+	Per la maggior parte del corso di studia su Topologia di Marco Manetti\\
+	\textbf{Esami:}\\
+	Ci sono 2 esoneri\\
+	L'esame è scritto e orale\\
+	\textbf{Prerequisiti}\\
+	1) Familiarità con le funzioni continue\\
+	2) Un po' di teoria dei gruppi\\
+	3) Derivate di applicazioni in più variabili\\[10px]
+	Il corso è diviso in 3 parti:\\
+	1)Topologia generale\\
+	2) Topologia algebrica\\
+	3) Geometria differenziale\\
+	\section{Topologia Generale}
+	\subsection{Introduzione}
+	Nasce per studiare sottoinsiemi di $\R^n$, cosa posso fare con un sottoinsieme di  $R^n$ con un applicazione continua?\\
+	Studieremo:\\
+	1) Proprietà dei sottoinsiemi di $\R^n$, come ad esempio la compattezza, da un punto di vista astratto.\\
+	2) Applicheremo le stesse proprietà ad insiemi dotati di "geometria" meno intuitiva\\
+	Ad esempio la topologia generale si applica in 
+	\begin{itemize}
+		\item Analisi
+		\item Algebra
+		\item Logica
+	\end{itemize}
+	\textbf{Esempio}\\
+	In $\R^2$ prendiamo \\
+	 \[
+		 X = \R\times\{0,1\}
+	.\] 
+	%TODO inserisci grafico delle rette parallele all'asse x passanti per 00 e 01\\
+	Poniamo, in maniera informale, questa relazione d'equivalenza:
+	\[
+		(x,0)\sim (x,1) \ \ \ \ \forall x\in\R
+	.\] 
+	Il quoziente "assomiglia" ad una sola retta, gli elementi equivalenti vengono "appiccicati".\\
+Seconda relazione d'equivalenza:
+\[
+	(x,0)\sim(x,1) \text{   solo per   } x\leq 0
+.\] 
+$X/\sim$ in questo caso assomiglia a :\\
+%TODO aggiungi immagine diapasol
+Terza relazione d'equivalenza:
+\[
+	(x,0)\sim (x,1) \text{    solo per    } x < 0
+.\] 
+%TODO aggiungi immagine pisello (due punti nello stesso posto)
+Una specie di analogo della figura precedente, ma il punto $[0,0]$ è raddoppiato
+\begin{defi}[Funzioni continue]
+	Dati $X\subseteq \R^n$ e  $Y\subseteq \R^m$ insiemi qualsiasi, si definisce continua un'applicazione  $f:X \rightarrow Y$ se 
+	\[
+		\forall p\in X \ \ \forall \epsilon >0\ \ \exists\delta>0\ \  \text {se} \ \ x\in X\ \  \text {soddisfa}
+	.\] 
+	\[
+		||x-p||<\delta \ \ \text{allora} \ \ ||f(x)-f(p)||<\epsilon
+	.\] 
+\end{defi}
+\begin{defi}[Omeomofrismo]
+	Data $f: X \rightarrow Y$ si dice omeomorfismo se è biettiva, continua,\\ e $f^{-1} :Y \rightarrow X$ è continua.
+\end{defi}
+\textbf{Osservazione}\\
+In topologia generale gli omeomorfismo hanno un ruolo analogo agli isomorfismi in algebra e algebra lineare.\\
+\textbf{Esempio:}\\
+1) $[0,1]$ (in  $\R$) è omeomorfo ad $[a,b] \ \ \forall a,b\in \R$ con $a<b$\\
+ad esempio\\
+\begin{center}
+\begin{aligned}
+	f:[0,1] \rightarrow [a,b]\\
+	  &t \rightarrow (1-t)a + tb
+\end{aligned}
+\end{center}
+è biettiva, continua e $f^{-1}$ è continua.\\
+2) $S^1 = \{(x,y)\in \R^2|x^2 + y^2 = 1 \}$ e $Q = \{(x,y)\in\R^2 | max\{|x|,|y|\} = 1\}$\\
+%TODO inserisci immagine quadrato
+Per esempio possiamo normalizzare i punti del quadrato
+\begin{center}
+\begin{aligend}
+	&Q \rightarrow S^1\\
+	&p \rightarrow\frac {p}{||p||}
+\end{aligend}
+\end{center}
+che è continua, biettiva e ha inversa continua.\\
+3)$[0,1]\cup]2,3]$ non è omeomorfo a  $[0,2]$\\
+ad esempio \\\begin{aligned}
+	f:[0,1]&\cup]2,3] \rightarrow[0,2] \\
+	&x \rightarrow \begin{cases}
+		x \ \ \ \ \text{se} \ x\leq 1\\
+		x - 1 \ \ \text{ se} \ x> 1
+	\end{cases}
+\end{aligned}\\
+Con l'analisi matematica si dimostra facilmente che non esiste alcuna biezione con inversa continua.\\
+\textbf{Osservazione}\\
+In algebra se $f$ è un omomorfismo biettivo allora $f^{-1}$ è un omomorfismo.\\
+In topologia se $f$ è continua e biettiva, $f^{-1}$ non è sempre continua.\\
+4) $]0,1[$ è omeomorfo a $]a,b[$  $\forall a,b\in\R$  $a < b$\\
+Inoltre  $]0,1[$ è omeomorfo a $]0,+\infty[$\\
+ad esempio tramite\\
+ \begin{aligned}
+	 ]0,&+\infty[ \rightarrow ]0,1[\\
+	    & x \rightarrow e^{-x}
+\end{aligned}\\
+5)$]0,+\infty[$ è omeomorfo a $\R$, ad esempio tramite $ x \rightarrow log(x)$\\
+6) $]0,1[$ non è omeomorfo a $[0,1]$\\
+7) $S^n = \{p\in\R^{n+1} |\ \  ||p|| = 1\}$\\
+$S^n\setminus\{(0,\ldots,0,1)\}$ è omeomorfo a $\R^n$
+%TODO inserisci disegno circonferenza senza un punto
+Ad esempio tramite la proiezione stereografica (esercizio: vedere la formula)\\
+8) Ci sono molti esempi di figure omeomorfe fra loro, ma un omeomorfismo esplicito è difficile, ad esempio.\\
+un $l$-agono regolare qualsiasi (in  $\R^n$) e un  $r$-agono qualsiasi sono omeomorfi ($\forall\ l,r\geq 3)$ \\
+9)  $\R^n$ e $\R^m$ sono omeomorfi se e solo se  $n = m$ (è un teorema difficile, nel corso vedremo la dimostrazione per qualche esponente specifico, $n\leq 2$)\\
+Vediamo due riformulazioni della continuità.
+\begin{defi}
+$A\subseteq \R^n$ si dice aperto se 
+\[
+	\forall p\in A \ \ \exitst \varepsilon > 0 \ \ | \ \ \text{se}\ \  x\in \R^n
+.\] 
+\[
+	\text{soddisfa } \  ||x-p|| <\espilon \ \text{ allora } x\in A
+.\] 
+\end{defi}
+\begin{nota}
+	$B_\varepsilon (p) = \{x\in\R^n| \ ||x-p|| < \epsilon\}$\\
+	è la palla aperta di centro $p$ e raggio $\varespilon$
+\end{nota}
+\begin{defi}
+	Sia $X\subseteq \R^n$ e  $p\in \R^n$ p si dice aderente a $X$ se  $\forall \espilon>0 \ \exists x\in X \  | \ ||x-p||<\epsilon$
+	%TODO aggiungi disegno palla storta 
+	(chiaramente se $p\ini X$  allora è aderente a $X$, basta prendere  $x = p$)
+\end{defi}
+\textbf{Esempio:}\\
+$1\in\R$ è aderente a $X = [0,1[$\\
+ \begin{prop}
+	Sia $f:\R^n \rightarrow\R^m$ Sono equivalenti:
+	\begin{enumerate}
+		\item $f$ è continua
+		\item $\forall Z\subseteq \R^n \ \ \forall p\in \R^n$ se $p$ è aderente a $Z$\\ allora  $f(p)$ è aderente a $f(Z)$ 
+		\item $\forall A\subseteq \R^m$ se  $A$ è aperto, allora $f^{-1}(A)$ è aperto.
+	\end{enumerate}
+\end{prop}
+\begin{dimo}
+	$1) \Rightarrow  2)$ \\
+	Siano $Z\subseteq\R^n, p\in\R^n$ suppongo $p$ aderente a  $Z$, dimostriamo che  $f(p)$ è aderente a $f(Z)$\\
+	%TODO aggiungi immagine palla in quadrato
+	Sia  $\epsilon > 0 $ qualsiasi, sia $\delta > 0 $, dalla continuità di  $f$ in $p$. Dato che $p$ è aderente a $Z$ esiste  $z\in Z$  tale che  $||z-p|| < \delta$.\\
+	Allora  $f(z)$ è un punto di $f(Z)$ e  $||f(p)-f(z)|| < \varepsilon$.\\
+	 $2) \Rightarrow 3)$ \\
+	 Sia $A\subseteq \R^m$ aperto, dimostriamo che $f^{-1}(A)$ è aperto, dimostriamo che $f^{-1}(A)$ è aperto in $\R^m$\\
+	 %TODO aggiungi immagine\\
+	 Sia  $p\in f^{-1}(A)$ sia $f(p)\in A$\\
+	 Per assurdo supponiamo.\\
+	 $\forall \varespilon > 0 \exists q\in\R^n$ fuori da  $f^{-1}(A)$ ma  $||p-q|| < \varepsilon$.\\
+	 Allora $p$ è aderente a  $\R^m\setminus f^{-1}(A)$.\\
+	 Segue, per 2),  $f(p)$ è aderente a $f(\R^n\setminus f^{-1}(A))$\\
+	 quindi per ogni  $\eta > 0$ esistono punti a distanza  $< \eta$ non in  $f(\R^n\setminus f^{-1}(A))$ punti che non vanno in $A$\\
+	 allora  $f(p)$ è aderente a $\R^m\setminus A$. Questo è assurdo perché  $A$ è aperto\\
+	 La terza implicazione la vediamo lunedì
+\end{dimo}
+
+
+
+\end{document}

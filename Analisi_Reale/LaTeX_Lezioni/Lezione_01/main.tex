@@ -1,0 +1,158 @@
+\documentclass[12px]{article}
+
+\title{Lezione 1 Analisi Reale}
+\date{2025-02-26}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Introduzione al corso}
+	\subsection{Regole varie}
+	Esoneri validi solamente per il primo appello\\
+	3 esoneri\\
+	Con le prove di esonero possiamo essere esonerati dall'orale.\\
+	Lo scritto vale solamente per l'orale successivo.\\
+	L'orale sono 2/3 domande tra definizioni, esempi, teoremi, cose sbagliate agli scritti.\\
+	\subsection{Inizio lezione}
+	Il corso sarà sulla teoria dell'integrazione/teoria della misura.\\
+	La teoria dell'integrazione è il primo passo dell'analisi infinitesimale, la derivata è un'operazione che viene ben definita grazie al teorema fondamentale del calcolo integrale\\
+	Viene formalizzata relativamente tardi, la prima sistemazione teorica è stata quella di Riemann (quella studiata in Analisi I).\\
+	Dal punto di vista teorico ha vari problemi. Questa teoria è stata subito soppiattata da una nuova teoria di integrazione, quella di Lebesgue (1902).\\
+	Uno dei punti fondamentali da cui partire è quello delle Serie di Fourier.\\
+	\subsection{Serie di Fourier}
+	Già nel XIIX secolo Fourier riusciva a risolvere varie equazioni differenziali, riguardanti fenomeni fisici.\\
+	Parliamo ora di modelli "ondulosi"\\
+	Parliamo della \textbf{corda vibrante}: continua in 1D, con moti ondulatori\\
+	%Inserisci immagine dal corsoi, segmento ondultao tra 0 e pi
+	$u:[0,\pi] \times [0,+\infty)\rightarrow\R$\\
+	\text{}\ \ $(x, t) \rightarrow u(x,t)$\\
+	Equazione della corda vibrante:
+	\begin{cases}\\
+		$\frac{\partial ^2 u}{\partial t^2} - \frac{\partial ^2}{\partial x^2}u = 0$\\
+	$u(0,t) = u(\pi,t) = 0 \ \ \ \forall t \geq 0$\\
+	$u(x,0) = h_0(x), \ \frac{\partial u}{\partial t} = h_1(x) \ \ \forall x\in (0,\pi)$
+	\end{cases}\\
+	Condizioni di compatibilità:
+	\[
+	h_0(0) = h_1(0) = h_0(\pi) = h_1(\pi) = 0
+	.\] \newpage
+	\subsection{Due principi:}
+	- esistenza di onde stazionarie:\\
+	$u(x,t) = \psi(t)\phi(x)$ variabili separate\\
+	- sovrapposizione: \\
+	$u_1,u_2$ soluzioni $ \Rightarrow \ \ u_1 + u_2$ soluzione\\
+	\subsection{Onde stazionarie}
+	$\frac {\partial ^2 u}{\partial t^2} = \psi''(t)\phi(x) = \psi(t)\phi''(x) = \frac {\partial^2}{\partial x^2}u$\\
+	$ \Rightarrow \frac {\psi''(t)}{\psi(t)} = \frac{\phi''(x)}{\phi(x)}$ \\
+	$ \Rightarrow \frac {\psi''(t)}{\psi (t)} = \text {costante} \ = \frac{\phi''(x)}{\phi(x)}$\\[10px]
+	\textbf{Spiegazione:}\\
+	$\psi''(t) = -m^2\psi(t)$\\
+	$\psi(t) = a_m\cos(mt) + b_m\sin(mt) \ \ \ \ a_m,b_m\in \R$\\
+	$\phi(x) = A_m\cos(mt) + B_m\sin(mt) \ \ \ \ A_m,B_m\in \R$\\[20px]
+	$u(x,t) = \psi(t)\phi(x) = (a_m \cos(mt) + b_m\cos(mt)) (\cancel{A_m\cos(mt)} + B_m\sin(mt))$\\
+	$ \Rightarrow u(0,t) = 0 = \psi(t)A_m \Rightarrow A_m = 0$ \\
+	$(u(\pi,t) = 0 = \psi_m(t)B_m\sin(m\pi) \Rightarrow  m\in \mathbb N$ \\
+	$ \Rightarrow u(x,t) = (a_m(\cos(mt) + b_m\sin(mt))B_m\sin(mx)$
+	Tutti gli $m$ interi mi danno una soluzione, quindi anche la loro somma è soluzione (principio di sovrapposizione).
+	\[
+	u(x,t) = \sum_{m=0}^\infty (a_mcos(mt) + b_m\sin(mt))B_m\sin(mx)
+	.\] 
+	\[
+	=\sum^\infty_{m=1} (\alpha_m\cos(mt) + \beta_m\sin(mt))\sin(mx)
+	.\] 
+	Dove $\alpha_m:=a_mB_m $ e  $\beta_m:=b_mB_m$\\
+	 \textbf{Condizioni Iniziali:}\\
+	 \begin{aligend}
+	 &\displaystyle u(x,0) = \sum^\infty_{m=0} \alpha_m\sin(mx) = h_0(x) \ \ \foral x\in (x,\pi)\\
+	 &\frac{\partial u}{\partial t} (\alpha, 0) = \sum^\infty_{m=0} m\beta_m\sin(mx) = h_1(x)
+	 	
+	 \end{aligend}
+	 \textbf{Come trovare $\alpha_m, \beta_m$ }\\
+	 $ \displaystyle \rightarrow\int_0^\pi\sin(nx)\sin(mx)dx = \begin{cases}
+	 	0 \ \ \ \ m\neq b\\
+		\frac{1} {2\pi} \ \ \ m = n
+	 \end{cases}$\\
+	 $\displaystyle\leadsto \int^m_0 h_0(x)\sin(mx)dx = \int_0^\pi \sum^\infty_{l=0}\alpha_l\sin(lx)\sin(mx)dx = \frac {1}{2\pi} \alpha_m$ (coefficienti di Fourier)\\
+	 Passaggi al limite sotto il segno di integrale:\\
+	 La teoria di Riemann non permette quasi mai di fare questi passaggi. \\
+	 \textbf{Esempio:} Funzione di Dirichlet\\
+	 \[
+	 D(x) = \begin{cases}
+		 1 \ \ x\in\mathbb Q\cap [0,1]\\
+		 0 \ \ \text{altrimenti}
+	 \end{cases}
+ .\]
+ ma $D(x) = \lim_{n \rightarrow\infty} f_n(x), \ \ f_n$ Rimeann integrabile.\\
+ Numeriamo $\mathbb Q\cap [0,1] = \{q_n\}_{n\in\mathb N}$\\
+ \[
+ f_n(x) = \begin{cases}
+	 1 \ \ \text{ se } x\in\{q_0,q_1,\ldots,q_n\}\\
+	 0 \ \ \text{altriment}
+ \end{cases}
+ .\] 
+ Inoltre:\\
+ $D(x) = \lim_{k \rightarrow +\infty} \left(\lim_{j \rightarrow +\infty} cos(k!\pi x)^{2j} \right)$ Esercizio "facile"\\
+ \textbf{Esercizio difficile:}\\
+ non è possibile con una successione di funzioni continue con un parametro\\
+ \textbf{Esempio:}\\
+ $C([0,1])\ni f,g$\\
+ \[
+ d_1(f,g) = \int_0^1|f(x)-g(x)|dx
+ .\] 
+ \[
+ ||f-g||_1 = \ldots
+ .\] 
+ $(C([0,1],d_1)$ non è completo! (le successioni in questo spazio possono convergere al di fuori)\\
+ %TODO aggiungi disegno 
+ $||f_m - f_n||_1 \rightarrow 0 $ se $n,m \rightarrow + \infty$\\
+ $f_n \rightarrow f_\infty = \begin{cases}
+ 	0 \ \ x\leq \frac 12\\
+	1 \ \ x > \frac 12
+ \end{cases}$
+ \begin{teo}
+	 Il completamenteo di $(C[0,1],d_1)$ è lo spazio delle funzioni assolutamente integrabili \textbf{secondo Lebesgue}
+ \end{teo}
+ \subsection{Problema della misura} 
+ Dato $E\subseteq\R^n$ vogliamo associare la sua misura (in $\R^n$)\\
+ Stabilire la misura è come definire un integrale.\\
+  $|E| = \int X_E$\\
+  \textbf{Prerequisiti:}\\
+  \begin{enumerate}
+\item$ |[a,b]| = b-a$\\
+$|[a,b]\times[c,d]| = (d-c) \cdot (b-a)$
+ \item$ E_1\cap E_2 = \emptyset \Rightarrow |E_1\cup E_2| = |E_1| + |E_2|$
+ \item $\forall E, \forall \tau\in\R^n \ \ |E+\tau| = |E|$
+ \item[3'] $\forall E \ \ \forall \ \sigma \ \ \text{isometria} \ \ |E| = |\sigma(E)|$
+  \end{enumerate}
+  \begin{teo}[Paradosso di Banach-Tanski]
+  	in $\R^3$ non esiste nessunna funzione che soddisfa 1,2 e 3.
+  \end{teo}
+  Consideriamo la palla unitaria:
+  \[
+	  B_1 = \{x\in\R^3 : |x|\leq 1\} = A_1\cup\ldots\cup A_5
+  .\]  
+  $A_i\cap A_j = \emptyset \ \ \ \forall i\neq j$ \\
+  Troviamo $\sigma_1,\ldots,\sigma_5$ t.c.\\
+  $\sigma_1(A_1)\cup\ldots\cup\sigma_5(A_5) = B_1\cup B_1(P)$ (La sfera viene scomposta in 2 sfere con lo stesso volume della sferainiziale)\\
+  Per avere una teoria consistente dobbiamo studiare il  problema della misura rinunciando alla proprietà di additività.\\
+  \begin{ass}[della scelta]
+	  Data una famiglia di insiemi non vuoti $\{a_\lambda\}_{\lambda\in\Lambda}$ è sempre possbile trovare un insieme $E$ composto da uno e un solo elemento di ogni $A_x$
+  \end{ass}
+  Equivalentemente
+  \[
+	  \prod_{\lambda\in\Lambda} A_\lambda \neq \emptyset
+  .\] 
+  \[
+	   \prod_{\lambda\in\Lambda} A_\lambda\ni(x_\lambda)_{\lambda\in\Lambda} \Leftrightarrow x_\lambda\in A_\lambda \ \ \forall \lambda\in\Lambda
+  .\] 
+
+
+
+
+
+	
+
+\end{document}
