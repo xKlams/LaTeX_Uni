@@ -1,0 +1,119 @@
+\documentclass[12px]{article}
+
+\title{Lezione 1 Meccanica Razionale}
+\date{2025-02-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Introduzione al corso}
+	\subsection{Contatti}
+	sergio.simonella@uniroma1.it, stanza 17, mercoledì alle ore 11:00\\ 
+	\textbf{Testi consigliati}\\
+	Truesdell 1974 Essays of the history of mechanics (punto di vista critico sull'inizio della meccanica analitica)\\
+	Buttà-Negrini "Note del corso di meccanica razionale"\\
+	Arnold metodi matematici della meccanica classica
+	\subsection{Cosa è la meccanica razionale}
+	È la teoria del moto (meccanica), cerca di collegare risultati sperimentali con prove matematiche (raizonale).\\
+	\subsection{Assomi (leggi del moto)}
+	\begin{ass}
+Every body continues in its state of rest, or of uniform motion straight ahead, unless it is compelled to change that state by forces impressed upon it. 
+	\end{ass}
+	Questa è la prima legge, essenzialmente risale a Galileo 
+	\begin{ass}
+		The change of motion is proportional to the motive force impressed, and it takes place along the right line in which that force is impressed
+	\end{ass}
+	\begin{ass}
+		To each action there is always a contrary and equal reaction, or the mutual action of two bodies are always equal and directed to contrary parts
+	\end{ass}
+	1 + 2 + 3 determinano la legge del moto (intesa come evoluzione temporale del corpro)\\
+	\[
+	 t \rightarrow x(t)
+	.\] 
+	dove t è il tempo (assoluto)\\
+	$x(t)=$ configurazione spaziale (uno o più punti nello spazio fisico)\\
+	\textbf{Dato di fatto}\\
+	$ x \rightarrow x(t)$ non è esplicita (non abbiamo $x(t)$ polinomio o integrale, a meno di casi abbastanza semplici)\\
+	Sistema meccanico $ = \begin{cases}
+		\text{non integrabile (solito)}\\
+		\text{integrabile (eccezioni)}
+	\end{cases}$ \\
+	qualitativamente:\\
+	moto "caotico"\\
+	moto "regolare"\\
+	Poincaré diceva che essenzialmente ci interessava capire le loro proprietà geometriche\\
+	i moti regolari sono 16 e sono fondamentali\\
+	\begin{defi}[Sistema meccanico]
+		Sistema di $N$ "particelle" ($N\in\N$) o "punti materiali" $p_0,p_1,\ldots,p_N$ in $\R^3$ di "masse inerziali"  $m_1,m_2,\ldots, m_N \ \ m_i>0 \ i=1,\ldots,N$
+	\end{defi}
+	\begin{nota}
+		Moto $t \rightarrow P(t)$\\
+		$P(t) = (P_1(t), P_2(t), \ldots,P_N(t))$\\
+		configurazione (in coordinate cartesiane)\\
+		$x(t) = (x^{(1)}(t),\ldots,x^{(n)}(t))$\\
+		$x^{(k)}(t)\in \R^3\ \ x^{(k)}(t) = (x_1^{(k)}(t), x_2^{(k)},x_3^{(k)})\ \ k = 1,\ldots, N$\\
+		velocità \ \ $v(t) = (v^{(1)}(t), \ldots, v^{(n)}(t))$ \ \  $v^{(k)}(t) = (v_1^{(k)}(t), v_2^{(k)}(t), v_3^{(k)}(t))$\\
+		 \[
+			 v(t) = \dot x(t)  = \lim_{\varepsilon \rightarrow 0}\frac{x(t_0 + \varepsilon) - x(t)}{\varepsilon}
+		.\] 
+		accellerazione a(t) = \ldots\\
+		a(t) = \dot v(t)  = \ddot x(t) = \frac{d}{dt}v(t) = \frac{d^2}{dt^2}x(t)
+	\end{nota}
+	\textbf{Esempi:}\\
+	1)Caduta libera:\\
+	$N = 1\ \ m =1 \ \ g > 0$\\
+	 $x\in \R^3 \ \ \ \ddot x(t) = -g(0,0,1)$\\
+	 Condizioni iniziali $(x(0),\cdot x(0)) = (x_0,\cdot x_0)\ \ \ \ x_0,\cdot x_0 \in \R$\\
+	 \[
+	 \begin{cases}
+	 	\ddot x_1(t) = 0\\
+	 	\ddot x_2(t) = 0\\
+	 	\ddot x_3(t) = 0\\
+	 \end{cases} \ \ 
+	 \begin{cases}
+	 	\dot x_1(t) = \dot x_1(0)\\
+	 	\dot x_2(t) = \dot x_2(0)\\
+	 	\dot x_3(t) =\dot x_3(0) - gt\\
+	 \end{cases}
+	 \begin{cases}
+	 	x_1(t) = x_1(0) +\dot x_1(0)t\\
+	 	x_2(t) = x_2(0) +\dot x_2(0)t\\
+	 	x_3(t) =x_3(0) +\dot x_3(0)t - \frac 12gt^2\\
+	 \end{cases}
+	 .\] 
+	 2) Molla attaccata alla parete\\
+	 % TODO inserisci disegno molla attaccata al muro
+	 $\ddot x(t) = -\alpha x (t) \ \ \alpha > 0$\\
+	 $\frac{m}{m'} = \frac{\alpha'}{\alpha}$\\
+		  $m\ddot x(t) = -m\alpha x(t) = -kx(t)$ $ k > 0 $ costante\\
+		  da qui possiamo ricavare l'equazione del moto (oscillatore armonico)\\
+		  $x(t) = x(0)\cos(\sqrt\alpha t) + \frac{x(0)}{\sqrt \alpha}\sin(\sqrt\alpha t)$\\
+	3) Pianeti $N= 2$\\
+	%aggiungi immagine pianeti
+	configurazione  $x^{(1)}(t), x^{(2)}(t)$\\
+	\begin{cases}
+		
+	$m_1\ddotx^{(1)}(t) = F_{12}$\\
+	$m_2\ddotx^{(2)}(t) = F_{21}$
+	\end{cases}
+	\ \ \ 	$\displaystyle F_{12} = -F_{21} = -Gm_1m_2\frac{x^{(2)} - x^{(1)}}{|x^{(2)}-x^{(1)}|^3}$\\
+
+	\textbf{Osservazione}\\
+	I tre esempi hanno struttura "$F = ma$" con $F = -\triangledown U$\\
+	Caduta libera:\\
+	$U_g = mg x_3$\\
+	Molla: \\
+	$U_k (x) = \frac 12 k x^2$ \\
+	Pianeti\\
+	$U(x) = U(x^{(1)}, x^{(2)}) = -G\frac{m_1m_2}{|x^{(2)}-x^{(1)}}$\\
+	$F_{12} = -\triangledown_{x^{(1)}}U_G = Gm_1m_2 - \frac{1}{x^{(2)} - x^{(1)}}\frac{x^{(2)} - x^{(1)}}{|x^{(2)} - x^{(1)}|}$ \\
+	$F_{21} = -\triangledown_{x^{(2)}}U_G(x^{(1)},x^{(2)})$ \\
+	\textbf{Nota:}
+	Indice in alto indica il punto materiale, in basso indica la coordinata\\
+
+
+
+\end{document}

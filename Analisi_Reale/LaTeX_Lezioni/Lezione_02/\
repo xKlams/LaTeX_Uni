@@ -1,0 +1,48 @@
+\documentclass[12px]{article}
+
+\title{Lezione 02}
+\date{2025-02-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Prima scheda informazioni}
+	parte da recuperare\\
+	\subsection{Misure}
+	$X$ insieme non vuoto\\
+	$2^X = $  insieme delle parti di  $X$ =  $\{$ sottoinsiemi $E\subseteq X\}$\\
+	$\phi,X\in 2^X = \{\chi:X \rightarrow\{0,1\}\}$\\
+	$\chi \leftrightarrow E = \{\chi = 1\}$\\
+
+	%TODO aggiungi immagine funzione successiva
+	 $\chi_E(x) = \begin{cases}
+		 1 \ \ \text { se } x\in E\\
+		 0 \ \ \text { se } x\in X\setminus E
+	 \end{cases}$
+	 \begin{defi}
+		 Sia $X$ non vuoto. Una misura è una funzione $\mu : 2^X \rightarrow [0,+\infty]$ che soddisfa le due proprietà:\\
+		 \begin{enumerate}
+			 \item $\mu(\emptyset) = 0$
+			 \item  per ogni famiglia numerabile di sottoinsiemi $E,\{E_i\}_{i\in\N^+} \subseteq X$\\
+				 $\displaystyle E\subseteq\bigcup_{i=1}^\infty E_i \Rightarrow \mu(E)\leq \sum^\infty_{i=1}\mu(E_i)$
+		 \end{enumerate}
+		 La seconda proprietà viene chiamata sub-additività numerabile
+	 \end{defi}
+\textbf{Commenti:}\\
+1) numerabile $ \Leftrightarrow $ al più numerabile\\
+$\{E_i\}_{i\in\N^+}$ possono essere finite: $\{E_1,E_2,\ldots,E_n\}$ 
+$\N^+ = \{1,2,3,\ldots\}$\\
+2) Proprietà di monotonia: $E\subset F \Rightarrow \mu(E)\leq \mu (F)$\\
+Segue da (ii) prendendo $E_1 = F, E_2 = \emptyset, E_3=\emptyset, \ldots$\\
+3) Gli insiemi $\{E_i\}$ non sono necessariamente disgiunti\\
+4) In generale in (ii) non vale l'uguaglianza neanche se:\\ $E = E_1\cup E_2 $ con $E_1\cap E_2= \emptyset$\\
+Può accadere che $E\cap F = \emptyset$\\
+ \[
+\mu(E\cup F) < \mu(E) + \mu (F)
+.\] 
+
+	
+\end{document}

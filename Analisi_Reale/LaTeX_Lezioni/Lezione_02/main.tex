@@ -1,0 +1,218 @@
+\documentclass[12px]{article}
+
+\title{Lezione 02}
+\date{2025-02-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+\usepackage{yfonts}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Prima scheda informazioni}
+	parte da recuperare\\
+	\subsection{Misure}
+	$X$ insieme non vuoto\\
+	$2^X = $  insieme delle parti di  $X$ =  $\{$ sottoinsiemi $E\subseteq X\}$\\
+	$\phi,X\in 2^X = \{\chi:X \rightarrow\{0,1\}\}$\\
+	$\chi \leftrightarrow E = \{\chi = 1\}$\\
+
+	%TODO aggiungi immagine funzione successiva
+	 $\chi_E(x) = \begin{cases}
+		 1 \ \ \text { se } x\in E\\
+		 0 \ \ \text { se } x\in X\setminus E
+	 \end{cases}$
+	 \begin{defi}
+		 Sia $X$ non vuoto. Una misura è una funzione $\mu : 2^X \rightarrow [0,+\infty]$ che soddisfa le due proprietà:
+		 \begin{enumerate}
+			 \item $\mu(\emptyset) = 0$
+			 \item  per ogni famiglia numerabile di sottoinsiemi $E,\{E_i\}_{i\in\N^+} \subseteq X$\\
+				 $\displaystyle E\subseteq\bigcup_{i=1}^\infty E_i \Rightarrow \mu(E)\leq \sum^\infty_{i=1}\mu(E_i)$
+		 \end{enumerate}
+		 La seconda proprietà viene chiamata sub-additività numerabile
+	 \end{defi}
+\textbf{Commenti:}\\
+1) numerabile $ \Leftrightarrow $ al più numerabile\\
+$\{E_i\}_{i\in\N^+}$ possono essere finite: $\{E_1,E_2,\ldots,E_n\}$ 
+$\N^+ = \{1,2,3,\ldots\}$\\
+2) Proprietà di monotonia: $E\subset F \Rightarrow \mu(E)\leq \mu (F)$\\
+Segue da (ii) prendendo $E_1 = F, E_2 = \emptyset, E_3=\emptyset, \ldots$\\
+3) Gli insiemi $\{E_i\}$ non sono necessariamente disgiunti\\
+4) In generale in (ii) non vale l'uguaglianza neanche se:\\ $E = E_1\cup E_2 $ con $E_1\cap E_2= \emptyset$\\
+Può accadere che $E\cap F = \emptyset$\\
+ \[
+\mu(E\cup F) < \mu(E) + \mu (F)
+.\] 
+5) Comunemente quello che noi chiamiamo misura sono dette misure esterne\\
+\hline\ \\
+Esempi di misure:
+\begin{itemize}
+	\item La misura che conta: $X$\\
+		$\mathbb H^0: 2^X \rightarrow [0,+\infty]$\\
+		$\mathbb H^0(E) = \begin{cases}
+			0 \ \ E =\emptyset\\
+			n \ \ E \text{ ha n elementi}\\
+			+\infty \ \ E \text { infinito}
+		\end{cases}$
+	\item Misura delta di Dirac:\\
+		$X, \ x_0\in X$\\
+		$\delta_{x_0}: 2^X \rightarrow[0,+\infty]$\\
+		$\delta_{x_0}(E) = \begin{cases}
+			1 \ \ \text{ se } x_0\in E\\
+			0 \ \ \text { se } x_0 \not\in E
+		\end{cases}$
+\end{itemize}
+\textbf{Verifica}\\
+$\delta_{X_0}$ è una misura\\
+\textbf{Osservazione}\\
+Se $X$ è infinito allora $H^0(X) = +\infty$\\
+Viceversa  $\delta_$ da finire\\
+\subsection{Insiemi misurabili}\\
+$X \not = \emptyset, \mu$ misura su $X$\\
+ \textbf{Osservazione}\\
+ Possono esistere $E, F$ t.c.\\
+  \[
+	  E\cap F = \emptyset \text{ ma } \mu(E\cup F) < \mu (E) + \mu (F) 
+ .\] 
+ \begin{defi}[Caratheodory]
+ 	Sia $X\not = \emptyset$ e  $\mu$ misura su $X$\\
+	Un insieme  $E\subseteq X$ si dice misurabile se vale:
+	 \[
+	\mu(A) = \mu(A\cap E) + \mu (A\setminus E) \ \ \ \forall A \subseteq X
+	.\] 
+ \end{defi}
+ \textbf{Commenti:}\\
+ 1) $A = X$
+  \[
+  \mu(X) = \mu(E)  + \mu (E^c)
+ .\] 
+ 2) Vale sempre 
+ \[
+ \mu(A) \leq \mu(A\cap E) + \mu(A\setminus E)
+ .\] 
+ \begin{center}
+ \begin{aligned}
+	 E \text { è mi}&\text{surabile}\\
+	   & \storto\Leftrightarrow\\
+	 \mu(A) \geq  \mu(A\cap &E) + \mu (A\setminus E)
+
+\end{aligned}
+ \end{center}
+ \newpage
+ \begin{teo}
+ 	Sia $X \neq \emptyset$ e $\mu$ misura.
+	\begin{enumerate}
+		\item la classe degli insiemi misurabili è una $\sigma$-algebra:\\
+			1) $\emptyset, X\in M$ \\
+			2) $E\in M \Rightarrow E^c\in M$ \\
+			3) $\{E_i}_i{i\in\N^+}\subseteq M \Rightarrow \bigcup^\infty_{i=1} E_i\in M$
+		\item $\mu$ è numerabilmente additiva su M: se $\{E_i\}_{i\in N^+}$ sono disgiunti a coppie $(E_i\cap E_j = \emptyset \ \ \forall i\neq j)$ allora
+			\[
+				\left(\bigcup^\infty_{i=1}E_i \right) = \sum^\infty_{i=1}\mu(E_i)
+			.\] 
+	\end{enumerate}
+ \end{teo}
+ %TODO controlla IL TEORMA DALGI APPUNTI
+ \textbf{Commenti}\\
+ 1) M è chiuso anche per intersezioni numerabili: $E_i\in M$\\
+  \[
+	  \left(\bigcap_i E_i \right)^c = \bigcup_i E_i ^c\in M \Rightarrow \bigcap_i E_i\in M
+ .\] 
+ 2)  $\lim sup_{i \rightarrow\infty} E_i := \bigcap_{N\in\N}\bigcup_{i\geq N} E_i$\\
+  $\lim inf_{i \rightarrow\infty} E_i := \bigcup_N\in\N\bigcap_{i\geq N} E_i$
+
+ \begin{dimo}
+ 	Passo 1: $M$ è un algebra\\
+		\cdot $\emptyset\in M, X\in M$\\
+	Vado a verificare che $\forall A\subseteq X$ vale
+	\[
+	\mu(A) = \mu(A\cap \emptyset) + \mu (A\setminus\emptyset) = \mu(\emptyset) + \mu(A)
+	.\] 
+	dove sappiamo che $\my(\emptyset) = 0$\\
+	Per  $X:$
+	 \[
+	\mu(A) = \mu(A\cap X) + \mu(A\setminus X) = \mu(A) + \mu(\emptyset)
+	.\] 
+	$\cdot E \in M \Rightarrow  E^c\in M$\\
+	Vado a verificare che per ogni $A\subseteq X$ vale le proprietà di Caratheodory:
+	$\mu(A) = \mu(A\cap E^c) + \mu (A\setminus E^c) = \mu (A\setminus E ) + \mu(A\cap E)$\\
+	$\cdot \ E_2, E_2\in M \Rightarrow E_1\cup E_2\in M$
+	Considero un insieme test $A\subseteq X:$\\
+	 $\mu(A) = \mu(A\cap E_1) + \mu(A\setminus E_1)$ 
+	 \[
+	 1)\ \ \mu(A) = \mu(A\cap E_1) + \mu(A\setminus E_1)
+	 \] 
+	 \[
+	  \mu(A\cap E_1) + \mu ((A\setminus E_1)\cap E_2) + \mu((A\setminus E_1)\setminus E_2)
+	 \] 
+	 il risultato è ottenuto applicando Caratheodory al secondo termine della somma (1)\\
+\[
+\geq \mu((A\cap E_1)\cup(A\setminus E_1)\cap E_2) + \mu(A\setminus(E_1\cup E_2))
+\] 
+\[
+  \mu(A)\geq \mu(A\cap (E_1\cup E_2)) + \mu (A\setminus (E_1\cup E_2)) \Rightarrow E_1\cup E_2\in M
+\] 
+Passo 2: finita additività di $\mu$ in $M$\\
+ $E_1, E_2\in M, E_1\cap E_2 = \emptyset$\\
+ Per ogni $A\subseteq X$:\\
+  \[
+ \mu(A\cap (E_1\cup E_2)) = \mu(A\cap (E_1\cup E_2)\cap E_1) + \mu (A\cap (E_1\cup E_2)\setminus E_1)
+ \] 
+ Ottenuto sempre per Caratheodory
+ \[
+ \mu(A\cap E_1) + \cap (A\cap E_2)
+ .\] 
+ Iterando questo passaggio:\\
+ $E_1, \ldots, E_n\in M$ allora:\\
+ \[
+	 \mu(A\cap \bigcup^N_{i=1} E_i) = \sum^N_{i=1} \mu (A\cap E_i)
+ .\] 
+ \textbf{Spiegazione passaggio precedente}
+ \[
+  \mu (A\cap \bigcup^N_{i=1} E_i) = \mu (A\cap E_1) + \mu (A\cap \bigcup^N_{i=2} E_i) = \ldots = \sum^N_{i=1} \mu (A\cap E_i)
+ .\] 
+ Passo 3: mostriamo le proprietà di $\sigma$-algebra e numerabile additività\\
+ Siano $\{E_i\}_{i\in\N^+}\subseteq M$\\
+ Consideriamo gli insiemi:\\
+ $F_1:= E_1,\ \ \ \ \  F_2 = E_2\setminus E_1$\\
+ $F_3 := E_3\setminus(E_1\cup E_2)$\\
+ quindi definiamo ricorsivamente:
+ $F_k : = E_k\setminus\bigcup_{i=1} ^{k-1}$\\
+ Allora  $F_i$ sono disgiunti a coppie 
+ \[
+	 (F_i\cap F_j = \emptyset \ \ \forall i\neq j)
+ .\] 
+ \[
+	 \bigcup_{i=1}^\infty F_i = \bicup_{i=1}^\infty E_i
+ .\] 
+ $\cdot F_i\in M$\\
+ Fissiamo il test di Caratheodory $A\subseteq X, \ F_i\in M$, Passo 1: $M$ algebra\\
+   \[
+	  \mu(A) = \mu(A\cap\bigcup^N_{i=1}F_i) + \mu(A\setminus \bigcup_{i=1}^N F_i)
+ .\] 
+ Usando il passo 2: finita additività
+ \[
+	 = \sum^N_{i=1}\mu(A\cap F_i) + \mu (A\setminus\bigcup^N_{i=1}F_i)
+ \] 
+ \[
+	 \geq \sum^N_{i=1} \mu(A\cap F_i) + \mu(A\setminus\bigcup^\infty_{i=1}F_i)
+ .\] 
+ Passiamo al limite $ N \rightarrow\infty$
+\[\mu (A) \geq \lim_{N \rightarrow\infty} \sum^N_{i=1}\mu(A\cap F_i) + \mu(A\setminus \bigcup^\infty F_i) = \sum^\infty_{i=1} \mu(A\cap F_i) + \mu(A \setminus \bigcup F_i)\]
+\begin{center}
+\begin{aligend}
+	
+	&\dicentertyle\geq \mu ( A\cap \bigcup^\infty_{i=1} F_i) + \mu (A\setminus \bigcup^\infty_{i=1}F_i)\\
+	&= \mu(A\cap \bigcup^\infty E_i) + \mu(A\setminus \bigcup^\infty E_i)\\
+	& \Rightarrow \bigcup^\infty_{i=1}E_i\in M
+\end{aligend}
+\end{center}
+Se prendiamo come test $A = \bugcup^\infty_{i=1}F_i$, allora $\mu(\bigcup^\infty_{i=1}F_i)\geq \sum^\infty_{i=1}\mu(E_i)\geq \mu(\bigcup^\infty_{i=1}F_i)$\\
+$ \Rightarrow \mu(\bigcup^\infty F_i) = \sum^\infty_{i=1}\mu(F_i)$ |\
+$F_i$ sono disgiunti a coppie
+ \end{dimo}
+
+
+	
+\end{document}
