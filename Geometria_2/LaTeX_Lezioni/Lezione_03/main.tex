@@ -1,0 +1,150 @@
+\documentclass[12px]{article}
+
+\title{Lezione 3 Geometria 2}
+\date{2025-03-04}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Parte interna, chiusura,intorni}
+	\begin{defi}
+		Sia $X$ spazio topologico, sia $D\subseteq X$ un sottoinsieme, la parte interna di  $D$ è 
+		\[
+		 D^o = \bigcup_{A\subseteq D, A\text{ aperto } } A
+		.\] 
+		La chiusura di $D$ è 
+		\[
+			\overline D = \bigcap_{C\supseteq D, C \text{ chiuso}} C
+		.\] 
+		la frontiera di $D$ è
+		\[
+		 \partial D = \overline D \setminus D^o
+		.\] 
+		I punti di $D^o$ si dicono interni a $D$, quelli di $\overline D$ si chiamano aderenti a $D$.
+	\end{defi}
+	\textbf{Osservazioni}\\
+	1) $D^o$ è un aperto e  $\overline D$ è un chiuso (posso vederlo come l'intersezione tra  $\overline D$ e il complementare di $D^o$, che è chiuso)\\
+	 2) Anche $\partial D$ è chiuso perché\\
+	 $\parial D = \overline D\cap (X\setminus D^o)$ dove  $(X\setminus D^o)$ è un chiuso\\
+	  \textbf{Esempio}\\
+	  1) $X = \R$ con topologia euclidea. Sia $D = [0,1]$.\\
+	  Allora  $D^o = ]0,1[$, verifica:\\
+	  $D^o \supseteq ]0,1[: $\\
+	  La parte interna di  $D$ contiene tutti gli aperti, dato che  $]0,1[$ è un aperto è contenuto.\\A
+	  $D^o\subseteq ]0,1[$:\\
+	  supponiamo per assurdo che  $D^o\not \subseteq ]0,1[$ , allora $0\in D^o$ oppure  $1\in D^o$ ( mi limito a considerare i punti di  $D$ perché $D^o\subseteq D$).\\
+	  Supponiamo  $0\in D^o$, allora esiste  $A\subseteq \R$ aperto t.c.  $A\subseteq D, A\ni 0$ (è uno degli A della definizione).\\
+	  Allora  esiste $\varepsilon > 0$ t.c.  $]0 - \varepsilon , 0 + \varepsilon[\subseteq a \subseteq D$.\\
+	  assurdo, Analogamente  $1\not\in D^o$ quindi vale  $\subseteq$\\
+	  2)  $X = \R$ con topologia cofinita $D = [0,1]$. Allora  $D^o = \bigcup_{A\subseteq D, A \text{ aperto}}$ \\
+	  Sia  $A$ aperto.\\
+	  $A\subseteq D$ abbiamo\\
+	  $A = \emptyset $ oppure $A = \R\setminus\{\text{insieme finito}\}$\\
+	  Ma questa ultima è impossibile\\
+	  allora  $D^o = \emptyset$ in questa topologia (con questo $D$)\\
+	  esercizio: calcolare $\overline D$\\
+	  3)  $X = \R$, $T = $ topologia per cui $A$ è aperto $ \Leftrightarrow A = \emptyset$ oppure $A\ni 0$ \\
+	  Considero $\overline{\{1\}} = \{1\}$, questo insieme non contiene lo zero, quindi $\{1\}$ è esso stesso un chiuso.\\
+	  Però $\overline{\{0\}} = ?$ \\
+	  I chiusi in  $T$ sono $\R$ e i sottoinsiemi che non contengono lo  $0$. Quindi l'unico insieme chiuso che contiene $\{0\}$ è $\R$, allora $\overline{\{0\}} = \R$
+	   \begin{defi}
+	  	Sia $X$ spazio topologico, un sottoinsieme di $D\subseteq X$ si dice denso se $\overline D = X$
+	  \end{defi}
+	  \textbf{Esempio}\\
+	  $X = \R $ con topologia euclidea,\\
+	  $D = \Q$. Dimostriamo che è denso\\
+	  L'unico chiuso che contiene  $D$ è $X$ stesso.\\
+	   Sia $C\subseteq \R$ chiuso con  $C\supseteq \Q$\\
+	   sia $a\in\R\setminus C$ aperto\\
+	   allora  $\exists \varepsilon > 0 \ | \ ]a - \varepsilon, a + \varepsilon[ \subseteq \R\setminus C$ \\
+	   allora $] a - \varepsilon, a + \varepsilon[\cap \Q = \emptyset$ \\
+	   assurdo.\\
+	   Allora $a$ non esiste e $C = \R$. 
+	   \textbf{Osservazione:}\\
+	   1) Sia  $D\subseteq X$ spazio topologico\\
+	   vale:\\
+	    \[
+	   X\setminus(\overline D) = (X\setminus D)^o
+	   .\] 
+	   \begin{dimo}
+	   	Usando direttamente la definizione:\\
+		\[
+			X\setminus(\overline D) = X\setminus (\bigcap_{C\supseteq D, C \text { chiuso}}C) = \bigcup_{C\supset D, C \text { chiuso}}(X\setminus C) 
+		.\] 
+		(ultima eguaglianza per esercizio)
+		\[
+			= \bigcup_{A = X\setminus C, C\supset D, C\text{ chiuso}}A = \bigcup_{A\text{ aperto}, X\setminus A\supset D} A= \bigcup_{A\text{ aperto}, A\subseteq X\setminus D}A
+		.\] 
+	   \end{dimo}
+	   2) $D$ denso\\
+	   $\text{}\ \ \ \ \ \ \ \ \ \ \ \ \ \storto \Leftrightarrow$\\
+	   $D$ interseca ogni aperto non vuoto (esercizio)
+	   \begin{defi}
+	   	Sia $X$ spazio topologico,\\
+		$U\subseteq X, x\in U^o$\\
+		Allora  $U$ si dice intorno di $x$.\\
+		Equivalentemente, un sottoinsieme $U\subseteq X$ si dice intorno di $x\in X$ se esiste  $A\subseteq X$ aperto t.c. $x\in A\subseteq U$
+	   \end{defi}
+	   \textbf{Esempio}\\
+	   $X = \R$ topologia euclidea,  $x = 0, U = ]-1,1[$ è intorno di  $x$ (si prende ad esempio $A = U, $ o anche $A = ]-1/2,1/2[$\\
+	   Anche $V = [-1,1]\cup \{5\}$ è un intonro di 0, ad esempio  $A = ]-1/2, 1\16[\cup]3/16,7/16[$\\
+	    \textbf{Osservazione}\\
+	    $U\subseteq X$ è aperto  $ \Leftrightarrow U = U^o \Leftrightarrow U$ è  un intorno di ogni suo punto.
+	    \begin{lemm}
+Siano $X$ spazio topologico, $x\in X$ $D\subseteq X.$ Allora $x\in\overline D \Leftrightarrow \forall U$ intorno di $x$ vale $U\cap X \neq\emptyset$
+	    \end{lemm}
+	    \begin{dimo}
+	    Supponiamo $x\in\overline D$ sia $U$ intorno di $x$\\
+	    per assurdo suppongo  $D\cap U = \emptyset$
+	    %TODO se vuoi aggiungi foto marzo 4 6:27
+	    Considero  $A  \subseteq X$ aperto con $x\in A\subseteq U$\\
+	    Considero il chiuso  $X\setminus A = C$\\
+	    Abbiamo  $C\supseteq D$ perché  $D\cap U = \emptyset$ e allora anche $D\cap A = \emptyset$A\\
+	    Abbiamo  $C\supset D$ perché  $D\cap U = \emptyset$ e allora anche  $D\cap A = \emptyset $ e allora anche $D\cap A = \emptyset$. Cioè $C$ compare nella definizione di $\overliene D $ e $C\not\ni x$ perché  $x\in A$\\
+	    Ma  $x\in\overline D$ quindi  $x$ è in tutti i chiusi che contengono $D$, assurdo\\
+	    Viceversa, supponiamo $D$ intorno di $x$, per assurdo però $x\neq \overline D$, Allora esiste un chiuso  $C$ che contiene $D$ ma non $x$.\\
+	    Considero  $A = X\setminus C$ è un aperto contenente  $x$. Cioè $A$ è un intorno di $x$ e $A$ non interseca $D$; assurdo. Quindi $x\in D$ 
+	    %TODO se vuoi aggiungi immaigne 4 mar 6:36
+	    \end{dimo}
+	    \begin{defi}[Famiglia degli intorni, sistema fondamentale]
+	    	Sia $X$ spazio topologico e $x\in X$ La famiglia di tutti gli intorni di  $x$ si denota con $I(x)$.\\
+		Un sottoinsieme $J\subseteq I(x)$ è detto sistema fondamentale di intorni di $x$ (o base locale in $x$) se $\forall U\in I(x)\ \  \exists V\in J \ |\ V\subseteq U $ 
+	    \end{defi}
+	    \textbf{Esempi:}\\
+	    $X = \R$ con topologia euclidea.\\
+	     $x\in\R$ qualsiasi\\
+	     $J = \{]x - \varepsilon, x+ \varepsilon[ \ |\ \varepsilon > 0,  \ \varepsilon \in\R\} $\\
+	     è sistema fondamentale di intorni di  $x$\\
+	     $J'\{[x- \frac 1n, x + \frac 1n] \ | \ n\geq 1, \  n\in\N\}$ \\
+	     è un sistema fondamentale di interni di $x$\\
+	     \[
+		      J''= \{[x-\frac 1n, x + \frac 2n[\cup \{x + \frac 3n \} | n\geq 1, n\in\N\}\\
+	     .\] 
+	     è un sistema fondamentale di riferimento
+	      \[
+		      J'''= \{]x-\frac 1n, x + \frac 1n[\cup \{10 \} | n\geq 1, n\in\N\}\\
+	     .\] 
+	     $(10\neq x)$\\
+	     non è un sistema fondamentale di riferimento\\
+	     \subsection{Applicazioni continue}
+	     \begin{defi}
+		     Siamo $X, Y$ spazio topologico $f : X \rightarrow Y$ un'applicazione. $f$ si dice continua se $f^{-1} (A)$ è aperto (in $X$) $\forall A$ aperto ($Y$)
+	     \end{defi}
+	     \textbf{Nota (per la tesi)}\\
+	     non iniziare mai una frase con un simbolo, è facile fare errori  (lui può ma solo per essere veloce)\\
+	     \textbf{Esempi:}\\
+	     1) Se $X$ ha topologia discreta, ogni $f$ è continua (qualsiasi sia $Y$)\\
+	     2) Se  $Y$ ha una topologia banale, allora $f^{-1}(\emptyset) =\emptyset, f^{-1}(Y) = X$\\
+	     quindi ogni $f$ è continua.\\
+	     3) Supponiamo $X,Y$ con topologia cofinita e $f:X \rightarrow Y$ iniettiva\\
+	     $f^{-1}(\emptyset) = \emptyset, \ $\\
+	     gli altri aperti sono del tipo $Y\setminus\{$ insieme finito  $\} = Y\setminus\{y_1,\ldots, y_n\}$\\
+	     allora:\\
+	     $f^{-1}(Y\setminus\{y_1,\ldots,y_n\}) = X\setminus\{f^{-1}(y_1)\cup\ldots\cup f^{-1}(y_n)\}$
+	     e tutte le controimmagini di questi elementi sono o vuote o di cardinalità 1, quindi è aperto.
+
+
+\end{document}

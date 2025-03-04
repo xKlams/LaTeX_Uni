@@ -1,0 +1,128 @@
+\documentclass[12px]{article}
+
+\title{Lezione 02 Meccanica Razionale}
+\date{2025-03-04}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Meccanica Newtoniana}
+	Alla base della meccanica newtoniana c'è il tempo che è un assoluto e lo spazio euclideo tridimensionale\\
+	\begin{defi}[Spazio fisico]
+	Sia $\mathbb V_3 $ spazio vettoriale euclideo a 3 dimensioni con prodotto scalare $\langle \cdot, \cdot \rangle $\\
+	\[
+		| \overrightarrow{v}| :=\sqrt{ \langle \overrightarrow{v}, \overrightarrow{v} \rangle } \ \ \overrightarrow{v}\in\mathbb V_3
+	.\] 
+	Spazio fisico : $\mathbb E_3$ è il corrispondente spazio affine euclideo.\\(possiamo immagine l'origine come il punto d'osservazione del fenomeno)
+	\end{defi}
+	\textbf{Spazio Affine (reminder):}\\
+	$p_1,p_2\in\mathbb E_3 \ \ \exists ! \overrightarrow{v}\in\mathbb V, \overrightarrow{v}= \overrightarrow{p_1p_2}$ \\
+	$\overrightarrow{v} = p_2 - 1$\\
+	$\overrightarrow{v}\in \mathbb V_3\ \ \ p_1\in \mathbb E_3\ \ \ \exists! p_2\in \mathbb E_3 | \overrightarrow{p_1p_2} = \overrightarrow{v}$\\
+	$ \overrightarrow{p_1p_2} + \overrightarrow{p_2p_3} = \overrightarrow{p_1p_3}$ \\
+	$\mathbb E_3$ ha metrica $d(p_1,p_2) := | \overrightarrow{p_1p_2}| = \sqrt{ \langle \overrightarrow{p_1p_2}, \overrightarrow{p_1p_2} \rangle }$\\
+	Questo è lo spazio che useremo in futuro.\\
+	\begin{defi}[Sistema meccanico]
+		(guarda scorsa lezione)
+	\end{defi}
+	\begin{defi}[Sistema di riferimento dell'osservatore]
+		$O =\{0_V; e_1;e_2;e_3\}$ dove $\{e_1,e_2,e_3\}$ formano una base ortonormale \\$ \langle e_i, e_j \rangle  = \delta_{ij}$\\\
+
+	\end{defi}
+	\textbf{Osservazione}\\
+	Nel sistema $O$ dato $p\in\mathbb E_3$ \\
+	$ \overrightarrow{OP} = x_1e_1 + x_2e_2 + x_3e_3$\\
+	$x = (x_1,x_2,x_3)\in\R^3$\\
+	è la configurazione di $P$ in coordinate cartesiane\\
+	$d(p_1,p_2) = |x^{(2)} - x^{(1)}| = \sqrt{(x_3^{(2)} - x_3^{(1)})^2 + (x_2^{(2)} - x_2^{(1)})^2 + (x_1^{(2)} - x_1^{(1)})^2}$ 
+	\newpage
+	\begin{defi}[Moto] \text{} 
+\begin{enumerate}
+	\item Moto di $P$ nell'intervallo temporale $(t_1,t_2)$\\
+		$t_1,t_2\in\R\ \ t_1 < t_2$ è la funzione $t \rightarrow x(t)\in\R^3$ $t\in(t_1,t_2)$ ovvero $t \rightarrow P(t) = 0_V + x_1(t)e_1 + x_2(t)r_2 + x_3(t)e_3$ 
+	\item Orbita (o traiettoria) la curva $\{x(t)\  |\  t\in (t_1,t_2)\}$ \\
+		$($Assumiamo $x(t)\in C^k ( (t_1,t_2),\R^3) \ k\geq 2)$ A
+	\item Velocità di $P$ è la funzione $t \rightarrow v(t) := x(t) = (x_1(t),x_2(t),x_3(t))$ \\
+	ovvero $ \mathbb V\ni \overrightarrow{v}(t)= v_1(t)e_1 + v_2(t) e_2 + v_3(t)e_3 = \lim_{\varepsilon \rightarrow 0 }\frac{P(t + \varepsilon)-P_(t)}{\varepsilon}$ 
+\item Accelerazione di $P$  $t \rightarrow a(t)\in \R^3$\\
+	$a(t) := \ddot x(t) = (\ddot x_1(t), \ddot x_2(t), \ddot x_3(t)) $ ovvero\\
+$\mathbb V_3\ni \overrightarrow{a}(t) = a_1(t)e_1 + a_2(t)e_2 + a_3(t)e_3$ 
+\item Stato del sistema meccanico al tempo $t$ è la coppia $(x(t), v(t))\in\R^{6N}$
+\end{enumerate} 
+	\end{defi}
+	\begin{defi}
+		\text{}
+		\begin{enumerate}
+			\item Moto di sistema meccanico\\
+				$\{P_1,\ldots,P_n\}$ la funzione $t \rightarrow P(t)$ \ \ $t \rightarrow x(t) = (x^{(1)}(t), \ldots, x^{(N)}(t))$ è la funzione del moto di tutto il sistema\\
+				$x(t)\in \R^{3N}$ (ovvero lo spazio delle configurazioni 
+		\end{enumerate}
+		(da completare per tutti gli altri moti)
+	\end{defi}
+	\subsection{Origini delle leggi di Newton}
+	Fatto 1 [Principio di relatività galileiana]\\
+	Esistono sistemi di coordinate, detti inerziali, tali che:
+	\begin{enumerate}
+		\item Tutte le leggi della natura, a tutti gli istanti di tempo sono identiche in tutti i sistemi di coordinate inerziali;
+		\item Tutti i sistemi di coordinate in moto rettilineo uniforme rispetto ad un sistema inerziale sono anche essi inerziali 
+	\end{enumerate}
+	Il sistema di riferimento di Galileo è quello delle stelle fisse
+	\begin{defi}[Spazio delle fasi (degli stati)]
+		$\{(x,v)| x\in\R^{3N}, v\in\R^{#n}\}$
+	\end{defi}
+	Fatto 2 [Principio di determinismo]\\
+	Lo stato iniziale del sistema meccanico determina univocamente tutto il moto \\
+	Fatto 3 \\
+	Esiste una procedura empirica per definire la forza esercitata da un corpo su un altro.\\
+	\textbf{Commenti:}\\
+	Fatto 2:\\
+	Se conosco $x(t_*), v(t*) \Rightarrow $ conosco $(x(t),v(t)) \ \ \forall t$ (almeno in un intorno di $t_*$)\\
+	Data  $(x(t_0),v(t_0)) = (x_0,v_0)$ \\
+	conosco $\ddot x(t_0) = f(t_0,x_0,v_0) \ \ $ per qualche $f : A \Rightarrow \R^{3M}$ \\
+	$A\subseteq \R\times\R^{3N}\times\R^{3N}$ con f sufficientemente regolare\\
+\textbf{Esempio}\\
+$D$ aperto di $\R^{3N}$\\
+ $I\subseteq \R$ intorno di $t_0$\\
+ $f\in C^k(I\times D\times\R^{3N}; \R^{3N})$ con  $k\geq 1$\\
+ Ne segue  $\ddot x(t) = f(t,x(t), v(t)) \ \ \ \ \ \forall t$ \\
+ questa è l'equazione di Newton (Seconda legge del moto)\\
+ \begin{cases}
+ \ddot x(t) = f(t,x(t),\dot x(t))\\
+ $x(t_0) = x_0, \ \ \dot x(t_0) = v_0k$
+ \end{cases}\\
+Questa equazione di Newton sarà denotata con $E_q N$ 
+\begin{defi}[Legge di accelerazione]
+	$f$ si dice legge di accelerazione\\
+ \[
+	 f = (f^{(1)},\ldots, f^{(n)}) \ \ \ \ \ f^{(k)} = f^{(k)}(t,x,v)\in\R^3
+.\] 
+\end{defi}
+\begin{defi}[Legge di forza]
+	$F^{(k)}:=m_k f^{(k)}$ è la legge di forza\\
+	Forma equivalente con $E_qN$\\
+	 \[
+		 F^{(k)}(t,x,v) = \ddot x^{(k)}(t)m_k \ \ \ k = 1, \ldots, N
+	.\] 
+\end{defi}
+Fatto 1 $E_qN$ è invariante per cambi di coordinate inerziali
+$R = \{0_V, e_1,e_2,e_3\}, R' = \{0_V', e_1',e_2',e_3'\}$\\
+\textbf{Un po di conseguenze:}
+\begin{enumerate}
+	\item La legge del moto è costante nel tempo (se il sistema è isolato)
+	\item lo spazio è omogeneo
+	\item Lo spazio è isotropo 
+\end{enumerate}
+1)Se $x(t)$ è soluzione $(E_qN)$  $x(t + s)$ è ancora soluzione $\forall s\in \R)$\\
+ $ \Rightarrow$ in un sistema isolato $f = f(x,v)$ \\
+ 2) $(x^{(k)}(t)_{k = 1,\ldots, N}$ soluzione  $(E_qN) \Rightarrow (x^{(k)}(t) + a)_k $ è ancora soluzione $\forall a\in \R$
+ 3) $(Rx^{(k)}(t))_k \ \ $ soluzione $(E_qN) R\in SO(3)$ è ancora soluzione (invariante per rotazioni) \\
+ \textbf{Esercizio:}\\
+Dedurre la I legge di Newton dai fatti I e II\\
+$N = 1$ usando I, esiste un sistema di riferimento inerziale  $R$, il sistema è isolato\\
+ Vogliamo dimostrare che necessariamente  $\ddot x(t) = 0\ \ \ \forall t$\\
+
+
+\end{document}
