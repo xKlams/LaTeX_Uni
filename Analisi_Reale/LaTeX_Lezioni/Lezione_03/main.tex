@@ -1,0 +1,169 @@
+\documentclass[12px]{article}
+
+\title{Lezione 03 (La prima con la Leoni)}
+
+\date{2025-03-04}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Misura di Lebegque}
+	\subsection{Porprietà dellle afunzioen lunghezza di intervalli}
+	$I$ intervallo in $\R$ \\
+	$|I| = \begin{cases}
+		+\infty \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text { se } I \text { è illimitato}\\
+		sup I - inf I  \ \ \ (b - a)  \ \ \ \text{Se } I \text{ è limitato di estremi } a < b
+	\end{cases}$\\
+\textbf{Esempi di intervallo}\\
+$\emptyset = (a,a) \ \forall a \in \R$\\
+ $\R = (-\infty, \infty)$|\
+ $\{x\} = [x,x] \ \ \ \forall x\in \R$ \\
+ \textbf{Proprietà:}
+ \begin{enumerate}
+	 \item $|\emptyset  | = 0$
+	 \item monotonia\\
+		 $I\subseteq J \Rightarrow  |I| \leq |J|$
+	 \item finita additività\\
+		  $\displaystyle I = \bigcup^n_{i = 1} I_i \ \ I_i$ interevallo\\
+		  $I_i\cap I_j = \emptyset \ \ \forall i\neq j$\\
+		  $  \displaystyle \Rightarrow |I| = \sum^n_{i=1} |I_i|$
+  \end{enumerate}
+  \textbf{Nota}\\
+se $I$ illimitato\\
+$ \Rightarrow  \exists 1\leq i\leq n $ tale che $I_i$ illimitato\\
+ $ \Rightarrow |I| = +\infty = |I_i| = \sum^n_{i=1}|I_k|$ \\
+ Se $I$ limitato $ \Rightarrow  I_i$ limitato $\forall i = 1,\ldots, n$\\
+$|I| = \sum^n_{i=1}|I_i|$
+\begin{enumerate}
+	\item[4.] $I$ intervallo\\
+		$\displaystyle |I| = \sum_{n\in\Z}|I\cap [n,n+1)|$\\
+		$\displaystyle = |I| = \sum^\infty_{n=0}|I\cap [n, n + 1)| + \sum^{-\infty}_{n=0}|I\cap [n, n + 1)|$
+\end{enumerate}
+\textbf{Nota}\\
+Se $I$ illimitato \\
+$ \Rightarrow  I\cap[n,n+1] = [n,n+1) $ per infiniti indici $n\in\Z$\\
+$ \Rightarrow |I| = +\infty = \sum^{n\in\Z}|I\cap[n,n+1)|$ per infiniti n\\
+Se $I$ limitato\\
+$ \Rightarrow  I = \bigcup^k_{n = l}I\cap [n,n+1]$ per $l,k\in\Z$\\
+\begin{enumerate}
+	\item[5.] Numerabile subadditività\\
+		Se $I$ intervallo, $\{I_i\}$ successione di intervalli tale che\\
+		$I\subseteq\bigcup^\infty_{i=1} I_i$\\
+		$ \Rightarrow  |I|\leq \sum^\infty_{i=1} |I_i|$
+\end{enumerate}
+\textbf{Dimostrazione 5.}\\
+Si può assumere $I_i$ limitato $\forall i$\\
+1) caso,  $I$ compatto, $I_i$ aperti $\forall i$\\
+$I = [a,b], I_i = (a_i,b_i)$ \ \  $a_i<b_i$\\
+$I$ compatto, $\{I_i\}$ ricoprimento aperto\\
+$ \Rightarrow \exists$ sottoricoprimento finito
+\[
+	I = [a,b]\subseteq\bigcup^n_{k=1}I_{k}
+.\] 
+Dato che sono un numero finito di intervalli dico che $I_1$ è quello con l'estremo più a sinistra di tutti.\\
+si può supporre che $a_1 < a < b_1$ se $b_1 > b$ $ \Rightarrow  I\subseteq I_1 \Rightarrow |I| \leq |I_2|\leq \sum^\infty_{i=1}|I_i|$\\
+Reiterando trovo l'aperto contenente $a_1$, se questo contiene anche $b$ mi fermo sennò continuo.\\
+abbiamo quindi rinumerato $I_1,\ldots,I_n$ in modo che  $a_{i+1} < b_i < b_{i+1} \ \ \ \forall 1\leq i\leq n$\\
+ $ \sum^n_{i=1}|I| = \sum^n_{i=1}b_i -a_i = b_1-a_1 + \ldots + b_n-a_n$\\
+ notiamo che $b_1 > a_2$ quindi $b_1 - a_2 > 0$, procedendo così per ogni coppia otteniamo
+  \[
+ \geq b_n - a_1\geq b - a = |I|
+ .\] 
+ 2) caso $I$ limitato, $I_i$ limitati\\
+ $\forall\varepsilon > 0 \exists I^\varepsilon$ chiuso, $I^\varepsilon \subset I$ tale che  $ |I^\varepsilon|  = (1-\varepsilon)|I|$\\
+  $\forall i \ \ \exists I^\varepsilon_i$ aperto tale che  $I_i\subset I^\varepsilon_i$ e $| \sum^\varepsilon_{i}| = (1-\varepsilon)|I_i|$\\
+  $I^\varepsilon\subset I\subset\bigcup^\infty_{i = 1} I_i\subseteq\cup^\infty_{i=1}I^\varepsilon_i$\\
+  $I_i = \frac{1}{1-\varepsilon}|I^\varepsilon| \leq \sum^\infty_{i=1}|I^\varepsilon| = \frac{1 + \varepsilon}{1-\varepsilon} \sum^\infty_{i=1}|I_i|$\\
+  Quindi $|I|\leq \sum^\infty_{i=1}|I_i|$\\
+  3) caso $I$ illimitato, $I_i$ limitati $n\in\Z$\\
+  $n\in\Z$ \ \ $ I\cap [n, n + 1)\subseteq \bigcup^ \infty_{n=1}(I_i\cap[n,n+1))$\\
+  Quindi ho un intervallo limitato coperto da intervalli limitati\\
+  per il 2 caso
+   \[
+  |I\cap[n,n+1)|\leq \sum^\infty_{n=1} |I\cap[n,n+1)|
+  \] 
+  Per la 4)
+  \[
+  \sum_{n\in\Z} |I\cap[n,n+1)|\leq \sum_{n\in\Z} \sum^\infty_{i=1}|I_i\cap[n,n+1)|
+  \]
+  \[
+	  = \sum^\infty_{i=1} \sum_{n\in\Z} |I_i\cap[n,n+1)| 
+  \] 
+  \[
+   \sum^\infty_{i=1} |I_i|
+  .\] 
+\begin{enumerate}
+	\item[6.] numerabile additività\\
+		$I = \bigcup^\infty_{i=1} I_i, \ \ I_i\cap I_j = \emptyset\ \ \ \forall i\neq j$ \\
+		 $ \Rightarrow |I| = \sum^\infty_{i=1}|I_i|$ \\
+\end{enumerate}
+\begin{dimo}
+	$|I| \leq \sum^\infty_{i=1}|I_i|$ vero per la 5)\\
+	Ci basta dimostrare l'altro verso della disuguaglianza\\
+	 se $I$ limitato,  (con estremi $a<b$)\\
+	  $\forall k\geq 1$ consideriamo  $I_1,I_2,\ldots,I_k$ sono contenuti in $I$ e disgiunti\\
+	  questi possono essere rinumerati in modo che $a_1 < b_1\leq a_2 < b_2 \leq\ldots\leq a_k < b_k$\\
+	  $ \sum^k_{i=1}\leq b -a $\\
+	  $ \sum^k_{i=1}|I_i| = \sum^k_{i=1}(b_i - a_i)$ \\
+	  $= b_1 - a_1 + b_2 - a_2 + \ldots + b_k - a_k\leq b_k-a_1 \leq b - a= |I|$\\
+	  per lo stesso ragionamento di prima, possiamo formare coppie positive\\
+	  \[
+	  |I| \geq \sum^k_{i=1} |I_i| \ \ \forall k\geq 1
+	  .\] 
+	  \[
+	   \Rightarrow |I|\geq \sum^\infty_{i=1}|I_i|
+	  .\] 
+	  Se $I$ illimitato\\
+	  $I = \bigcup^\infty_{i=1}I_i, I_i\cap I_j = \emptyset $ se $i\neq j$\\
+	  $I\cap [n,n+1) = \bigcup^\infty_{i=1}I_i\cap[n,n+1)$\\
+	   $ \Rightarrow |I\cap[n,n+1)| = \sum^\infty_{i=1}|I_i\cap[n,n+1)|$ \\
+	   $ \Rightarrow \sum_{n\in\Z}|I\cap[n,n+1)| = \sum_{n\in\Z} \sum^\infty_{i=1}|I_i\cap[n,n+1)| = \sum^\infty_{i=1}|I_i|$\\
+\end{dimo}
+	   \begin{itemize}
+	   \item[7.]	$I$ intervallo, $x\in\R$\\
+		    $I + x$ traslato di $I$ \\
+		    $|I+x| = |I|$\\
+		    (invarianza per traslazioni)
+	   \end{itemize}
+	   \begin{defi}[Misura esterna]
+	Sia $E\subseteq \R$\\
+	Si definisce misura ( esterna) di Lebesgue di $E$ 
+	\[
+		m(E) = \inf\lbrace\sum ^\infty_{i=1} |I_i|\  :\ E\subseteq \bigcup^\infty_{i=1} I_i, I_i \text { intervalli}\rbrace
+	.\] 
+	$M:P(\R) = 2^\R \rightarrow [0,+\infty]$
+\end{defi}
+\textbf{Osservazione}\\
+Se $D\subset \E$ è un insieme nullo:
+\[
+	\forall \varepsilon >0\ \ \exists \{I_i\} \text{ successione di intervalli tale che }  D\subseteq\bigcup^\infty_{i=1}I_i \text { e } \sum^\infty_{i=1}|I_i| < \varepsilon
+.\]
+\[
+	\Leftrightarrow m(D) = 0
+.\] 
+Ricordiamo che tra gli insiemi di misura nulla, ci sono gli insiemi numerabili\\
+2) Per definire $m$ si usano ricoprimenti numerabili ma anche i ricoprimenti finiti sono ammessi,
+\[ E\subseteq \bigcup^n_{i=1}I_i = \bigcup^n_{i=1}I_i\cup\bigcup^\infty_{i = n+1}\emptyset\]
+C'è una differenza enorme tra considerare ricoprimenti finiti o ricoprimenti numerabili\\
+$E\subseteq \R$\\
+$\inf\{ \sum^\infty_{i=1}, E\subseteq\bigcup^\infty_{i=1}I_i \text { intervallo}\}\leq \inf\{ \sum^n_{i=1}|I_i|, E\subseteq\bigcup^n_{i=1}I_i, I_i\ \text{intervalli}\}$\\
+La disuguaglianza può essere stretta\\
+\textbf{Esempio}\\
+$E = \Q\cap[0,1]$\\
+è numerabile  $ \Rightarrow m(E) = 0$ \\
+Sia $\{I_1,\ldots,I_n\}$ ricoprimento finito di $E$ con intervalli\\
+$\displaystyle E  = \Q\cap[0,1]\subseteq \bigcup^n_{i=1}I_i \Rightarrow \sum^n_{i=1}|I_i|\geq 1$ \\
+Infatti\\
+$R = \Q\cap[0,1]\subseteq\bigcup^n_{i=1}I_i \Rightarrow [0,1]\subseteq^n_{i=1}I_i$ \\
+$ \Rightarrow [0,1]=\overline{\Q\cap[0,1]}$ \\
+$\displaystyle\leq (\bigcup^n_{i=1})\leq \bigcup^n_{i=1}\overline{I_i}$
+$ \Rightarrow 1 = |[0,1]| \leq \sum^n_{i=1} |\overline I_i| = \sum^n_{i=1}|I_i|$ \\
+$ \Rightarrow \inf\{ \sum^n_{i=1}|I_i|, E\subseteq \bigcup_{i=1}^n I_i, I_i $ intervallo $\} \geq 1$ ma  $E\subseteq [0,1]$\\
+$ \Rightarrow \inf\{\sum^n_{i=1}|I_i|, E\subseteq \bigcup_{i=1}^n I_i\}\leq 1$ \\
+Se avessi ricoprimenti finiti $\Q$ avrebbe misura 1, e questo non ci piace perché è un insieme numerabile, questo è il motivo per cui ammetto ricoprimenti infiniti.
+
+
+\end{document}
