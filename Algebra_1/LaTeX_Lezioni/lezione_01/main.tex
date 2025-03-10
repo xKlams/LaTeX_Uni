@@ -1,0 +1,120 @@
+\documentclass[12px]{article}
+
+\title{Lezione 1 Algebra I (Secondo semestre)}
+\date{2025-03-09}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Ideali primi e massimali}
+	\begin{defi}
+		Sia $(R, +, \cdot)$ un anello. Un ideale $I\subseteq R$ si dice primo se
+		 \begin{itemize}
+			 \item $I\neq R$
+			 \item $\forall a,b\in R$ se $a\cdot b\in I \Rightarrow a\in I \vee b\in I$
+		\end{itemize}
+	\end{defi}
+	\begin{teo}
+		$(R,+,\codt)$ anello $I\subseteq R$ ideale (bilatero). Allora l'anello quoziente $R/I$ è dominio d'integrità $ \Leftrightarrow I$ è ideale primo
+	\end{teo}
+	\begin{dimo}
+		Per ogni $a,b\in I$, la proprietà :
+		\[
+			[a]\cdot[b] = [a\cdot b] = [0] \text { in } R/I \Rightarrow [a] = [0] \vee [b] = [0] \text{ in } R/I
+		.\] 
+		è equivalente a richiedere $a\cdot b \in I  \Rightarrow a\in B \vee b\in I$
+	\end{dimo}
+	\textbf{Esempio}\\
+	$R = \C[x]/(x^2)$\\
+	Osserviamo che spazio vettoriale  $\C[x]/(x^2) = \C\oplus \C[x]$ \\
+	\textbf{Ricorda}\\
+	Gli ideali di $\C[x]/(x^2)$ sono in corrispondenza biunivoca con gli ideali di  $\C[x]$ che contengono $(x^2)$\\
+	L'ideale  $(x)\in\C[x]$ contiene $(x^2)$ e $(x)/(x^2)$ in $\C[x]/(x^2)$ è un ideale primo\\
+	Infatti:\\
+	$C[x]/(x^2)/x/(x^2)\con \C \Rightarrow $ è un corpo $ \Rightarrow  $ è un dominio d'integrità\\
+	Osserviamo che l'ideale banalae in $C[x]/(x^2)$ è  $(x^2)/(x^2)$\\
+	il quale non è primo infatti  $x\cdot x = x^2$\\
+	$ \Rightarrow [x]\cdot[x] = [x^2] = [0] $ in $C[x]/(x^2)$\\
+	 \textbf{Osservazione}\\
+	 $\C[x]/(x^2)$ si chiama
+	 \begin{itemize}
+		 \item "algebra dei numeri duali"
+		 \item "fat point" (Geometricamente è un punto)
+	 \end{itemize}
+	 \begin{defi}
+		 $(R,+,\cdot)$ anello, $I\subseteq R$ si dice ideale massimale se:\\
+		 \begin{itemize}
+			 \item $I\neq R$
+			 \item Dato un ideale $J\subseteq R$ tale che $I\subseteq J$, si ha\\
+				 $I = J \ \ \vee \ \ J = R$
+
+		 \end{itemize}
+	 \end{defi}
+	 \begin{teo}
+	 	$(R,+,\cdot)$ anello commutativo,  $I\subseteq R$ ideale\\
+		$I$ è massimale se e solo se $R/I$ è un campo
+	 \end{teo}
+	 \begin{dimo}
+		 Ricordo che esiste una corrispondenza biunivoca tra $\{$ Ideali di $R$ che  contengono $I\} \leftrightarrow\{$  ideali di  $R/I\}$\\
+		  $J -> J/I$\\
+		   $ \Rightarrow I$ massimale se e solo se $R/I$ contiene solo ideali banali\\
+		   $ \Rightarrow $ Sappiamo inoltre che (data la commutatività per ipotesi), $R/I$ contiene solo ideali banali  $ \Leftrightarrow R/I$ è banale
+	 \end{dimo}
+	 \textbf{Esercizio}\\
+	 $n\geq 1 $ intero, $(n)\subseteq \Z$ ideale in  $(\Z,+,\cdot)$\\
+	 dimostra che sono equivalenti
+	  \begin{itemize}
+		  \item $(n) $ è ideale primo\\
+		  \item $n$ è numero primo
+	 \end{itemize}
+	 \subsection{Polinomi}
+	 In questa sezione lavoriamo con anelli commutativi.\\
+	 Problema $S$ anello commutativo, $R\subseteq S$ sottoanello, $t\in S$\\
+	 Vogliamo costruire il più piccolo sottoanello $B$ di $S$ che contenga $R$ e $t$\\
+	 \textbf{Osservazione}\\
+	 Ogni sottoanello è chiuso rispetto alle operazioni.\\
+	 \begin{itemize}
+		 \item $t\in B \Rightarrow t^n = t\cdot\ldots\cdot t\in B$ ($n$ volte) \ \ $\forall n\geq 1$ intero
+		 \item  $r\in R \Rightarrow r\cdot t^n \in B$ 
+		 \item $r_1,\ldots, r_k\in R\subseteq B \Rightarrow r_0 + r_1t + \ldots r_kt^k\in B$ \\
+	 \end{itemize}
+	 Deduciamo che $R[t]\subseteq B$ dove $R[i] = \{r_0, + r_1 t + \ldots + r_k t^k \ | \ k\in\N, r_0,\ldots, r_l\in R\}$
+	 \begin{prop}
+		 $R[t]=B$
+	 \end{prop}
+	 \begin{dimo}
+		 La dimostrazione è lasciata al lettore (basta verificare che $R[t] $ è sottoanello di $S$
+	 \end{dimo}
+	 \textbf{Esempi}\\
+	 1) $R = \R, S=\C, t=i$
+	  \[
+		  R[t] = R[i] = \{r_0 + r_1i + r_2i^2 + \ldots + r_ki^k \ | r_1,\ldots,r_k\in \R\}
+	 \] 
+	 \[
+	  = \{c_0 + c_1i \ | \ c_0,c_1\in\R\} = \C
+	 .\] 
+	 Qual'è il problema? La scrittura $r_0 + r_1t + \ldots + r_kt^k$ non è unica.
+	 \begin{defi}
+	 	$R\subseteq S$ sottoanello (commutativo), $t\in S$, allora $t$ è trascendente su $R$ se la scrittura $r_0 + \ldots + r_kt^k$ è unica
+	 \end{defi}
+	 \begin{prop}
+	 	$t$ è trascendente su $R$ se e solo se $r_0 + r_1t + \ldots + r_kt^k = 0 \Leftrightarrow r_0= r_1= \ldots = r_k = 0$
+	 \end{prop}
+	 \begin{dimo}
+	 	$ (\Rightarrow )$ Se $t$ è trascendente $ \Rightarrow 0
+		\in R$ ammette scrittura unica $ \Rightarrow $ vale la proprietà\\
+		$ ( \Leftarrow)$ Se vale tale proprietà \\
+		P.A.\\
+		 $a_0 + a_1t + \ldots + a_kt^k = b_0 + b_1t + \ldots + b_ht^h$\\
+		 Assumo $k\geq h$ senza perdita di generalità\\
+		 Porto tutto a sinistra\\
+		  $(a_0 - b_0) + (a_1 - b_1)t + \ldot + (a_h - b_h)t^h + \ldots a_kt^k = 0$\\
+		  Dove tutti i termini sono gli  $r_i$ nella struttura precedente\\
+		  Per ipotesi $ \Rightarrow a_i =b_i \ \ \forall i\leq h, a_j = 0\ \forall h < j \leq k\\
+		   \Rightarrow $ la scrittura è unica 
+	 \end{dimo}
+	
+\end{document}

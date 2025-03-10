@@ -1,0 +1,148 @@
+\documentclass[12px]{article}
+
+\title{Lezione 04 Meccanica Razionale}
+\date{2025-03-07}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Ripasso sui sistemi differenziali ad un grado di libertà}
+	\[
+	\begin{cases}
+		\dot z = g(z)\\
+	z(0) = z_0
+	\end{cases}
+	.\] 
+	$g:\Omega \rightarrow\R^n$ $\|omega\subseteq\R^n$ aperto $n\in\N \\ \ z_0\in\Omega$ \ \ $t \rightarrow z(t)$ $r\in R\subseteq \R$ intorno di  $O$ definiamo questo con (SDO1)\\
+	$g =0, c\in\R, z$ soluzione globale\\
+	 $g = z^2, \frac 1z$ soluzione locale\\
+	 Sono soluzioni uniche\\
+	  \textbf{Esercizio 4 foglio 1}\\
+	  \[
+	  \begin{cases}
+	  	
+	  $\dot z = \sqrt{|z|}$ \\
+	  $z(0) = z_0$
+  \end{cases}\]
+  $z_0 = 0 \ \ z(t) = 0$ soluzione stazionaria|\\
+  $z_0 \neq 0 \ \ z_0>0$\\
+  \[
+	  t(z) = \int_{z_0}^z \frac{dy}{\sqrt y} \ \ \ z > 0
+  .\] 
+  $t(z) = 2\sqrt z - 2\sqrt {z_0}$ \\
+  $z(t) = (\sqrt z_0 + \frac t 2)^2$\\
+  $t > -2\sqrt{z_0}$ \ \ \ \ 
+  $I = (-2\sqrt z_0, + \infty)$ \\
+\textbf{Osservazione}\\
+per $z_0 = 0$ ha più soluzioni \\
+  1) $\exists$ per $z_0\in \R$ \\
+  2) $\exists !$ per $z_0\neq 0$ \\
+  \textbf{Osservazione}\\
+  Lontano dei punti singoli costruiamo una soluzione unica\\
+  Metodo "separazione variabili"\\
+  $g\in C(\Omega)$\\
+  $I_0\times \Omega_0$ intorno di $(0,z_0)$\\
+  $g(z_0)\neq 0$ Possiamo assicurare\\
+  $g|_\Omega\neq 0$\\
+   \[
+	   \frac{dz}{dt} = g(z) \ \ \ dt= \frac {dz}{g(z)} \ \ \ t(z) = \int_{z_0}^z \frac{dy}{g(y)} \ \ z\in\Omega_0
+  .\] 
+  La soluzione unica di (SDO1) è l'inversa di $t(z)$\\
+   \[
+	   A(t,z(t)) := t - \int_{z_0}^{z(t)}\frac{dy}{g(t)}
+  .\] 
+  Il problema è equivalente a 
+   \[
+  \begin{cases}
+	  \dot A = 1 - \frac{\dot z(t)}{g(z(t))} =0 \\
+	  A(0,z_0) = 0
+  \end{cases}
+  .\] 
+  Per il teorema della funzione implicita\\
+  \[
+  A(t,z(t)) = 0
+  .\] 
+  \textbf{Esercizio 3 foglio 1}\\
+  \[
+  \begin{cases}
+  	\dot z = z^2 - 1\\\
+	z(0) = z_0 \ \ \ \ \ z\in\R
+  \end{cases}
+  .\] 
+  $1) z_0\in\R$ t.c. soluzione stazionaria\\
+  $2) z_0\in \R $ tale che soluzione limitata
+	\hline \ \\
+	1) $z_0 = \pm 1\ \  \ $ p.t singolari\\
+	2) $z_0 \neq \pm 1$ \ \ $t(z) = \int_{z_0}^z \frac {dy}{y^-1}$\\
+	\[
+		t(z) = \frac 12 \int_{z_0}^z \left(\frac{1}{y-1} - \frac{1}{y_1} \right) dy = \frac 12 \log\frac{z-1}{z+1}\cdot\frac{z_0 + 1}{z_0 - 1}
+	.\] 
+	$\frac{z-1}{z+1}\alpha_0 = e^{2t}$\\
+	$z(t) = \frac{\alpha_0 + e^{2t}}{\alpha_0 - e^{2t}} = 1 + \frac{2e^{2t}}{\alpha_0 - e^{2t}}$ \\
+	Se $z_0\in(-1,1) \ \ \ \alpha_0 < 0$\\
+	la soluzione è globale e limitata\\
+	Per $z_0\in[-1,1]$ soluzione è limitata.\\
+	Negli altri casi la soluzione diverge.\\
+	\textbf{Esercizio 2}\\
+	$t \rightarrow z(t)$ periodica\\
+	$z(t) = \varphi_t(z_0)$ (evoluto al tempo t)\\
+	$\exists T > 0 \ \ \ \varphi_T(z_0) = z_0$\\
+	$y_0 = \varphi_s (z_0) \ \ \ s\in\R$\\
+	$ \varphi_T(y_0) = \varphi_T \varphi_s(z_0) = \varphi_{T+s})z_0) = \varphi_s(z_0) = y_0$
+	\section{Procedura soluzione SDO1}
+	autonomo per $n = 1$ \\
+	\textbf{Passo 1}\\
+	Punti singolari di $g = 0$ \\
+	Se $z_0$ singolare $z(t) = z_0 \ \ \ \forall t$ soluzione stazionaria\\
+	\textbf{Passo 2}\\
+	$z_0$ tale che $g(z_0) \neq 0$\\
+	$\Omega_0$ intorno di $z_0$ massimale tale che $g|_\Omega\neq 0$\\
+	 $\Omega_0\subseteq\Omega$ \ \ \ $\Omega = dom g$\\
+	  $\Omega_0 = (z_0,z_1)$\\
+	  Per $z\in\Omega_0, $ calcoliamo
+	  \[
+		  t(z)= \int_{z_0}^z\frac{dy}{g(y)}
+	  .\] 
+	  tempo di raggiungimento di $z$ (da $z_0$)\\
+	  \textbf{Passo 3}\\
+	  Invertiamo la funzione $z \rightarrow t(z)$ (monotonia)\\ Troviamo $t \rightarrow z(t)\in\Omega_0$ \\
+	  $t\in I_0$ intorno di zero\\
+	  Soluzione locale unica di (SDO1)\\
+	   \[
+		   \left(\dto z(t) = \frac{1}{t'(z)|_{z(t)}} = g(z(t)), \ \ z(0) = z(t(z_0)) = z_0 \right)
+	  .\] 
+	  Teorema della funzione implicita $ \Rightarrow$ unicità \\
+	  \textbf{Passo 4}\\
+	  Estremi.
+	  \[
+		  t_+ := \int_{z_0(t_0)}^{z_t(z_0)}\frac{dy}{gy}
+	  .\] 
+	  \[
+		  t_- := \ldots
+	  \] 
+	  $|t_\pm| = \=infty$ oppure  $|t_\pm = < \infty \begin{cases}
+		  \text{soluzione non globale } (z_\pm\in\partial\Omega) \\
+		  \text{ perdita di unicità } (z_\pm \text{ punto singolare di g } )
+	  \end{cases}$
+	  \subsection{Equilibri}
+	  SDO1 autonomi $g\in C^1(\Omega, \R^n)$\\
+	   \begin{defi}
+	  	$z$ t.c. $g(z) = 0$ punto singolare\\
+		Anche detto punto di equilibrio di SDO1. Nel caso meccanico 
+		 \[
+		0 = g(z) = (v,f(x,v))
+		.\] 
+		$(x,0)$ t.c. $f(x,0) = 0$ stato di equilibrio\\
+		 $x$ è detta configurazione di equilibrio
+	  \end{defi}
+	  \begin{defi}[Classificazione degli equilibri]
+		  Un punto di equilibrio $z_{eq}$ del $SDO1$ è:\\
+		  1) stabile se  $\forall \varepsilon > 0 $  $\bar B_\varepsilon(z_{eq})\subset \Omega, \ \exists \delta > 0$ t.c. $\forall z_0\in B_\delta (z_{eq}), z(t)\in B_\varepsilon(z_{eq}) \ \ \forall t$ \\
+		  2) asintoticamente stabile se inoltre $\exists \delta '>0 \ $ t.c.  $\forall z_0\in B_{\delta'}(z_{eq}), \ \ \lim_{t \rightarrow \infty} z(t) = z_{eq}$\\
+		  3) instabile se non è stabile
+	  \end{defi}
+  
+\end{document}

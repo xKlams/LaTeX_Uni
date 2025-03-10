@@ -1,0 +1,164 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4 Analisi Reale}
+\date{2025-03-05}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Misura di Lesbegue}
+	\textbf{Reminderi (misura di Lesbegue)}\\
+	\[
+	m(E) = \inf\{ \sum^\infty_{i=1} |I_i| \ :\ |I_i| \text{ intervalli} \ \ \ E\subseteq \bigcup^\infty_{i-1}I_i 
+	.\] 
+	\begin{prop}
+	1) $m(\emptyset) = 0$	\\
+	2) $E\subseteq F \Rightarrow m(E)\leq m(F)$ \\
+	3) subadditività numerabile, $\{E_i\}$ successione di insiemi
+	 \[
+		 m(\bigcup^\infty_{i=1}) \leq \sum^{\infty}_{i=1}m(E_i)
+	.\] 
+	4) $\forall I$ intervallo  $m(I) = |I|$\\
+	5)  $\forall E\subseteq \R, \forall x\in\R, m(E + x) = m(E)$
+	\end{prop}
+	\begin{dimo}
+		1) $m(\emptyset)\leq |\emptyset| = 0$ dato che l'insieme vuoto è un intervallo\\
+		2)  $\forall\{I_i\}$ intervalli tale che  $F\subseteq \bigcup^{\infty}_{i=1} I_i \Rightarrow \{I_i\}$   è un ricoprimento anche di $E \Rightarrow m(E) \leq \sum^{\infty}_{i=1}|I_i|$ prendendo l'inf rispetto a $\{I_i\}\ \ m(E)\leq m(F)$\\
+		3) Se $\exists i$ tale che $m(E_i) = +\infty \Rightarrow $  tesi ovvia\\
+		possiamo supporre $m(E_i) < +\infty \ \ \forall i > 1$\\
+		Dato  $\varepsilon > 0$  $\exists \{I^i_k\}_k$ intervalli tali che  $\bigcup^{\infty}_{k=1}I_k^i$ e \[ \sum^{\infty}_{k=2}|I_k^i| - \frac \varepsilon {2^i} < m(E_i)\leq \sum^{\infty}_{k=1}|I_k^i|\]\\
+		$\{I_k^i\}_{i,k}$ successione di intervalli\\
+		 $\displaystyle \bigcup^{\infty}_{i=1}E_i\subseteq \bigcup^{\infty}_{i=1}\bigcup^{\infty}_{k=1}I_k^i$ \\
+		 quindi 
+		 \[
+		 m( \bigcup^{\infty}_{i=1}E_i)\leq \sum^{\infty}_{i=1} \sum^{\infty}_{k=1}|I_k^i| \leq \sum^{\infty}_{i = 1}(m(E_i) - \frac{\varepsilon}{2^i} = \sum^{\infty}_{i = 1}m(E_i) + \varepsilon
+		 .\] 
+		 e per $ \varepsilon \rightarrow 0$
+		 \[
+		 m( \bigcup^{\infty}_{i-1}E_i)\leq \sum^{\infty}_{i=1}m(E_i)
+		 .\] 
+		 \newpage \ \\
+		 4) $E = I$  $m(E) \leq |I|$ scegliendo  $I$ stesso come sottoricoprimento \\
+		 $\forall \{ I_i\}$ successione di intervalli tale che  $I\subseteq \bigcup^{\infty}_{i=1}I_i$\\
+		 \[
+			 |I|\leq \sum^{\infty}_{i=1}|I_i| \text{ per la numerabile additività di } |\ \ | 
+		 .\] 
+		 \[
+		 \Rightarrow  |I|\leq m(I) = m(E)
+		 .\] 
+		 5) $E\subseteq \R, x\in\R$\\
+		 $\forall \{I_i\}$ successione di intervalli tale che $E\subseteq \bigcup^{\infty}_{i=1}I_i$\\
+		 \[
+		  \Rightarrow E + x \subseteq \bigcup^{\infty}_{i=1}I_i + x = \bigcup^{+\infty}_{i=1}(I_i + x)
+		 .\] 
+		 \[
+		 m(E+ x) \leq \sum^{\infty}_{i= 1}|I_i = x| = \sum^{\infty}_{i=1}|I_i|
+		 .\] 
+		 quindi sappiamo che $ \Rightarrow m(E + x) \leq m(E)$\\
+		 sappiamo che $E = E+x - x$\\
+		  \[
+		  m(E) = m(E + x -x )\leq m(E + x)
+		  .\] 
+		  $ \Rightarrow m(E) = m(E + x)$ \\
+
+
+	\end{dimo}
+	\textbf{Osservazione}\\
+	È vero che se $\{E_i\}$ successione di insiemi disgiunti $E_i\cap E_j = \emptyset$ per $i\neq j$\\
+	 \[
+	m( \bigcup^{\infty}_{i=1} = \sum^{\infty}_{i=1}m(E_i)
+	.\]
+	è vero? In generale no.\\
+	Osserviamo che se valesse la finita additività, ovvero
+	\[
+	m(E_1\cup\ldots\cup E_n) = m(E_1) + m(E_2) + \ldots + m(E_n)
+	.\] 
+	con $E_i\cap E_j = \emptyset,\ \  i\neq j$
+	 $ \Rightarrow$ sarebbe vera anche la finita additività.\\
+	 Infatti\\
+	 \[
+		 m( \bigcup^{\infty}_{i=1})\leq \sum^{\infty}_{i=1}m(E_i) \ \ \text{ sempre vero per subadditività}
+	 .\] 
+	 Se $E_i\cap E_j = \emptyset$ per $i\neq j$ e  $\displaystyle\forall k\geq 1 \ \ m( \bigcup^{k}_{i= 1}E_i = \sum^{k}_{i=1}m(E_i)$\\
+ $\displaystyle \Rightarrow m( \bigcup^{\infty}_{i=1} \geq m( \bigcup^{k}_{ i=1}E_i) = \sum^{k}_{i=1}m(E_i) \ \Rightarrow m( \bigcup^{\infty}_{i=2}) \geq \sum^{\infty}_{i=1}m(E_i)$\\
+ Il problema che impedisce la numerabile additività è che non sempre è vero che $E_1\cap E_2\subseteq\R, \ \ E_1\cap E_2=\emptyset$
+ \[
+ m(E_1\cup E_2) = m(E_1) + m(E_2)
+ .\] 
+ perché nella famiglia di intorni ci possono essere intorni che ricoprono parte sia di $E_1$ che di $E_2$ quindi
+ \[
+ \sum^{\infty}_{i=1}|I_i|\neq \sum^{}_{i
+ \ \ \ I\cap E_2}|I_i| + \sum^{}_{i\ \ \  I_\cap E_2}|I_i|
+ .\] 
+ Tuttavia, è vero che Se $I_1,\ldots, I_n$ intervalli, $I_i\cap I_j = \emptyset $ per $i\neq j$\\
+  $m( \bigcup^{\infty}_{i=1}I_i) = \sum^{n}_{i=1}|I_i|$\\
+  Si può supporre gli $I_i$ limitati (sennò misura è infinita)\\
+  $\displaystyle I = \bigcup^{n}_{i=1}I_i \cup \bigcup^{i=1}_{n-1}J_i$
+  %TODO aggiunti immagine 17:01 marzo 5
+  \[
+  m(I) = |I| = \sum^{n}_{i=1}|I_i| + \sum^{n-1}_{i=1}|J_i| \geq m( \bigcup^{n}_{i=1}I_i) + m( \bigcup^{n-1}_{i=1}J_i)
+  \] 
+  \[
+   \leq m( \bigcup^{n}_{i=1}I_i\cup \bigcup^{n-1}_{i=1}J_i) = m(I)
+  .\] 
+  ma ciò vuol dire che sono tutte uguaglianze
+  \[
+   \Rightarrow \sum^{n}_{i=1}|I_i| = m( \bigcup^{n}_{i-1}I_i)
+  .\] 
+  se $I_i$ intervalli con $I_i\cap I_j = \emptyset \ \ i\neq j$
+
+  \begin{defi}
+  	Se $X$ un insieme non vuoto, Una misura su $X $ è una funzione 
+	\[
+		\mu: P(x) \rightarrow [0,+\infty]
+	.\] 
+	tale che
+	\begin{enumerate}
+		\item $\mu(\emptyset) = 0$
+		\item (monotonia) $E \subseteq F \Rightarrow \mu(E) \leq \mu(F) $
+		\item (subadditività) $\mu( \bigcup^{\infty}_{i=1}E_i)\leq \sum^{\infty}_{i=1}\mu(E_i)$ 
+		\item[\text{} \ \ 2.+3.] $ \Leftrightarrow E\subseteq \bigcup^{\infty}_{i=1} E_i, \ \ \mu(E)\leq \sum^{\infty}_{i=1}(E_i)$
+	\end{enumerate}
+  \end{defi}
+\textbf{Esempi di misura}\\
+$1)\ x_0 \in\R$
+\[
+	\delta_{x_0}: P(\R) \rightarrow [0,+\infty)
+.\] 
+$E\subseteq \R \ \ \delta_{x_0}(E) = \begin{cases}
+	1\ \ \ \text {se } x_0\in E\\
+	0 \ \ \ \text{se }  x_0\not\in E
+\end{cases}$
+difatti:\\
+- $\delta_{x_0}(\emptyset) = 0$\\
+- se  $E\subseteq F$ se  $x_0\not\in E \Rightarrow \delta_{x_0}(E) = 0 \leq \delta_{x_0}(F)$ \\
+se $x_0\in E \rightarrow x_0 \in F \Rightarrow \delta_{x_0}(E)=\delta_{x_0}(F) = 1 $\\
+se $\delta_{x_0}( \bigcup^{\infty}_{i=1}E_i) = 0 \Rightarrow x_0\not\in \bigcup^{\infty}_{i=1}E_i \Rightarrow x_0\not\in E \ \ \ \forall i$ \\
+se $\delta_{x_0}( \bigcup^{\infty}_{i=1}E_i) = 1 \Rightarrow \ \exists i, \ \ t.c. \ \ x_0\in E_i \Rightarrow \sum^{\infty}_{1}\delta_{x_0}(E_i)\geq 1\\$
+2) misura "che conta"\\
+$\mu^\# : P(\R) \rightarrow[0,+\infty] $\\
+\[
+ \mu^\# (E) = \begin{cases}
+	 \text{ cardinalità di } E \text { se } E \text{ è finito}\\
+	 +\infty \ \ \ \ \ \ \ \ \ \ \ \ \  \text{ se } E \text { è infinito}
+ \end{cases}
+.\] 
+\textbf{Esempio di insieme di misura di Lesbegue nulla}\\
+Non misurabile, insieme di Cantor\\
+Al passo $n=1, I_1^1 = (\frac 13, \frac 23), \ C_1= J^1_1 \cup J^1_2 = [0,\frac 13] \cup [\frac 23, 1]$\\
+Reitero così, dividendo in 3 parte tutti gli insiemi $J$ e rimuovendo gli intervalli centrali.\\
+%TODO se vuoi disegno marzo 5, 5:46
+$C_n$ è un insieme di $2^n$ intervalli chiusi, disgiunti, ogniuno di ampiezza $\frac{1}{3^n}$\\
+$C_n$ è alternato da $C_{n-1}$ eimuovendo $2^{n-1}$ intervalil aperti di ampiezza $\frac{1}{3^n}$\\
+L'insieme di Cantor è definita da  $C = \bigcap^{\infty}_{n=1}C_n = \bigcap^\infty_{n=1} \bigcup^{2^n}_{i=1}J_i^n = [0,1]\setminus \bigcup^{\infty}_{n=1} \bigcup^{2^{n-1}}_{k=1}I_k^n$\\
+\[
+m(C)\leq m(C_n) = m( \bigcup^{2^n}_{i=1}J^{n}_i) = \sum^{2^n}_{i=1}|J_i^n| = \frac{2^n}{3^n} = (\frac 23)^n
+.\] 
+$\forall x\in [0,1]$\\
+si scrive nella forma  $x = \sum^{\infty}_{i=1}\frac{x_i}{3^i}, \ \ x_i\in\{0,1,2\}$\\
+$x = \frac 13 + \frac 09 + \ldots + \frac {x_i}{3^i} + \ldots$
+	
+\end{document}

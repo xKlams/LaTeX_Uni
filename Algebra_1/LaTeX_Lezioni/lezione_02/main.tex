@@ -1,0 +1,272 @@
+\documentclass[12px]{article}
+
+\title{Lezione 2 Secondo semestre Algebra I}
+\date{2025-03-06}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Ricordo}
+$S$ anello commutativo $R\subseteq S$ sottoanello  $t\in S$\\
+Abbiamo dimostrato che  $R[t] = \{ \sum^{k}_{i=0}r_it_i \ | \ k\in \Z_{>0}, \ \ t_i\in\R\}$\\
+è il più piccolo sottoanello si $S$ contenente $\R$ e $t$ \\
+\begin{defi}
+	$t\in S$ si dice trascendente su $\R$ se per ogni $a\in\R[t]$ la scrittura
+	\[
+	s = \sum^{k}_{i=0}r_it^i
+	.\] 
+	è unica
+\end{defi}
+\textbf{Esercizio:}\\
+Dimostrare che $i\in S$ è trascendente su  $\R $ se e solo se vale la seguente condizione
+\[
+	(*) \ \ \ r_0 + r_1t + \ldots + r_k t^k = 0 \Rightarrow r_0=r_1=\ldots=r_k = 0
+.\] 
+\textbf{Soluzione}\\
+Se $t$ è trascendente allora $0\in\R$ ammette struttura polinomiale unica   $ \Rightarrow $ vale la proprietà.\\
+Viceversa suppongo che valga $(*)$. Se \\
+\[
+a_0 + a_1t + \ldots + a_k t^k = b_0 + b_1t + \ldots + b_ht^h
+.\] 
+Assumo $k \geq k$
+ \[
+	 (a_0 - b_0) + (a_1-b_1)t + \ldots + (a_h - b_h)t^h + \ldots a_kt^k = 0
+.\] 
+$(*) \Rightarrow a_0 = b_0, \ldots, a_i = b_i \ \ \forall i \leq h, \ a_j = 0 \ \ \forall h < j \leq k$ \\
+\textbf{Idea}\\
+$R$ anello commutativo\\
+$x$ simbolo\\
+\[
+	R[x] = \{ \sum^{k}_{i=0}r_ia^i \ | \ k\in\Z_{>0}, \ r_i\in\R\}
+.\]
+\textbf{Operazioni:}\\
+$\displaystyle\left( \sum^{k}_{i=1}a_ix^i \right) + \left( \sum^{h}_{i=0}b_ix^i \right) = \sum^{max(h,k)}_{i=0}(a_i + b_i)x^i\\
+\left( \sum^{h}_{i=0}a_ix^i \right) \cdot \left( \sum^{k}_{i=0 }b_ix^i \right) = \sum^{h + k}_{j = 0} \left( \sum^{}_{p + q = j}(a_p\cdot b_q) \right)$\\
+\textbf{Osservazion}\\
+Su $\R[x]$ è definita la funzione grado
+\begin{center}
+	\begin{aligned}
+		deg : &$\R[x] \rightarrow \Z_{\geq0}\\
+		      & p \rightarrow deg(p)$
+	\end{aligned}
+\end{center}
+Se $p = \sum^{k}_{i=0}a_ix^i \ \ \ a_k\neq 0$\\
+allora $deg(p) = k$ e  $p$ si dice  \textbf{monico} se $a_k = 1$ dove $k = deg(p)$\\
+\begin{teo}[Divisione Euclidea]
+	$R$ anello commutativo\\
+	$f,g\in R[x], g$ monico\\
+	Allora esistono $q,r\in\R[x]$ tali che 
+	 \[
+	f = q\cdot g + r
+	.\] 
+	con $deg(r) < def(g)$\\
+	Tali $q$ e $r$ sono unici
+\end{teo}
+\begin{dimo}
+	Procediamo per induzione su $deg(f)$\\
+	Se  $deg(f) < deg (g)$\\
+	scelgo  $q = 0$ e $f = r$\\
+	Altrimenti  \\
+	$deg(f) \geq deg(g)$\\
+	scriviamo $f = \sum^{h}_{i=0  }a_ix^i$\\
+	$g =  \left( \sum^{k-1}_{i=0}b_ix^i \right) + x^k$\\
+	Considero\\
+	\[
+		\hat f : = f - a_kx^{h + k}\cdot g
+	.\] 
+	$ \Rightarrow deg(\hat f) < deg (f)$\\
+	Per ipotesi induttiva\\
+	$\exists \hat q, \hat r\in R[x]$ tali che\\
+	$\hat f = \hat q \cdot g + \hat r$ \ \ \ con  $deg(\hat r) < deg(g)$\\
+	Allora\\
+	\[
+		f  - a_kx^{h-k}\cdot g = \hat q\cdot g + \hat r \Rightarrow g = (a_hx^{h-k} + \hat q)\cdot g + \hat r
+	.\] 
+	con $deg(r) = deg(\hat r) < deg(g)$\\
+	Supponiamo\\
+	 \[
+	f = q_1\cdot g + r_1 = q_2\cdot g + r_2
+	.\] 
+	\[
+	\Rightarrow  (q_1-q_2)\cdot g = (r_2-r_1)
+	.\] 
+	$deg(q_1-q_2)\cdot g) \geq deg(g) > deg(r_2r_1)$\\
+	$ \Rightarrow $ Assurdo\\
+	$ \Rightarrow q_1=q_2 \ \ \Rightarrow r_2= r_1$
+\end{dimo}
+\begin{teo}
+	$R$ anello commutativo\\
+	$\phi: R \rightarrow S$ omomorfismo di anelli $r\in S$\\
+	Allora esiste un unico omomorfismo di anelli  $\bar \phi: R[x] \rightarrow S$ tale che
+\begin{enumerate}
+	\item $\bar\phi(x) = t$\\
+	\item $\bar\phi|_R = 0$
+\end{enumerate}
+\end{teo}
+\begin{dimo}
+	Le richieste danno $\var\phi:$
+	 \[
+		 \bar\phi \left( \sum^{k}_{i=0}r_ix^i \right) = \sum^{k}_{i=0}\phi(r^i)t^i
+	.\] 
+\end{dimo}
+\textbf{Osservazione}\\
+Stiamo dicendo che esiste l'omomorfismo $R \rightarrow R[x]$ dato dall'inclusione
+\[
+\begin{tikzcd}
+R \arrow[r, "\phi"] \arrow[d, " \text{i} "] & S \\
+R[x] \arrow[ru, "\exists \bar{\phi}", dashed]
+\end{tikzcd}
+\]
+\textbf{Esercizio}\\
+$R$ anello commutativo\\
+$R[x]$ anello commutativo\\
+$R[x][y]$ anello commutativo\\
+\[
+	\sum^{k}_{j=0} \left( \sum^{m_i}_{i =0}a_{ij}x^i \right)y^j
+.\] 
+E se procediamo al contrario?\\
+$R[y][x]$ è uguale a quello precedente?\\
+\[
+	\sum^{k}_{j=0} \left( \sum^{m_i}_{i =0}a_{ij}y^i \right)x^j
+.\] 
+Dimostrare che esiste un isomorfismo di anelli 
+\[
+	\psi :R[x][y] \rightarrow R[y][x]
+.\] 
+che soddisfa
+\begin{enumerate}
+	\item $\psi(r) = r_1$
+	\item $\psi(x) = x$
+	\item  $\psi(y) = y$
+\end{enumerate}
+\textbf{Soluzione}\\
+%TODO aggiugni grafico
+%TODO Aggiungi grafico
+\begin{center}
+\begin{tikzpicture}
+  % Nodes
+  \node (R) at (0,4) {$R$};
+  \node (Ryx) at (2,4) {$R[y][x]$};
+  \node (Rx) at (0,2) {$R[x]$};
+  \node (Rxy) at (0,0) {$R[x][y]$};
+
+  % Arrows
+  \draw[->] (R) -- (Rx) node[midway, left] {\tilde \nu};                    % Vertical arrow from R to R[x]
+  \draw[->] (R) -- (Ryx);                   % Horizontal arrow from R to R[y][x]
+  \draw[down hook, ->] (Rx) -- (Rxy);                  % Vertical arrow from R[x] to R[x][y]
+  \draw[dotted,thick, <-] (Ryx) to  [hook] (Rxy); % Curved arrow from R[y][x] to R[x][y]
+  \draw[red, dotted,thick,  ->] (Rx) to  (Ryx);     % Two-way arrow between R[x] and R[y][x]
+\end{tikzpicture}
+\end{center}
+
+esiste un omomorfismo $\psi$ con le proprietà cercate.\\
+Per dimostrare che $\psi$ è un \underline{iso}morfismo basta costruire l'inverso in modo analogo.
+\begin{prop}
+	$R$ anello commutativo $R$ dominio d'integrità se e solo se $R[x]$ dominio d'integrità
+\end{prop}
+\begin{dimo}
+	Chiaramente se $R[x]$ è dominio d'integrità allora lo è anche  $R$\\
+	Viceversa siano $f,g\in R[x] \setminus\{0\}$ allora il coefficiente di grado massimo di $f\codt g$ è il prodotto dei coefficienti di grado massimo di $f$ e di $g$. Quindi se $R$ dominio $ \Rightarrow f\cdot g\neq 0$
+
+\end{dimo}
+\newpage
+\section{Domini Euclidei}
+\begin{defi}
+	$R$ anello commutativo\\
+	\[
+		\nu : R \rightarrow\Z_{>0} \text{ funzione tale che}
+	.\] 
+	\begin{enumerate}
+		\item $P(r) =0 \Leftrightarrow r= 0$\\
+		\item dati $a,b,c\in\R$ tali che $b\neq 0$ e  $c = a\cdot b$ allora
+			 \[
+			\nu (c)\geq \nu(a)
+			.\] 
+		\item $\forall f,g\in R$ con  $g\neq 0$ esistono $q,r\in R$ tali che 
+			 \[
+			g = q\cdot g + r
+			.\] 
+			dove $\nu(r) < \nu (q)$
+	\end{enumerate} 
+	Tale $\nu$ si chiama si valutazione e $(R,\nu)$ si chiama dominio Euclideo
+\end{defi}
+\textbf{Esempio}\\
+$\mathbb K$ campo  $(\mathbb K[x],\nu)$ è un dominio euclideo dove $\nu(p) = deg(p) + 1$ e  $\nu(0) = 0$ \\
+$(\Z,\nu)$ è un domino euclideo dove $\nu(n) = |n|$\\
+$\mathbb K$ campo  $(\mathbb K,\nu)$ dominio euclideo dove $\nu(0) = 0$ e  $\nu(r) = 1 \  \forall r\in\mathbb K\setminus\{0\}$ \\
+\textbf{Esercizio}\\
+Dimostrare che $(\Z[i], \nu)$ è domino euclideo dove $\nu[a+ib] = a^2 + b^2$\\
+ \textbf{Esempio}\\
+ $f = 4 + 3i, \  \ g = 3 + 2i\neq 0$ Cerco  $q,r\in\Z[i] $ tale che $f = q\cdot g + r$ e  $\nu(e)<\nu(g) = 13$\\
+ \textbf{Idea generale}
+ \[
+	 \frac{a + ib}{c = id} = \alpha + i\beta \ \ \ \alpha,\beta\in\Q
+ .\] 
+ \begin{defi}
+ 	$R$ anello commutativo.\\
+	Definiamo gli insiemi $U_i$ iterativamente\\
+	 \begin{gather*}
+		 U_0 = \{0\}\subseteq \R\\
+		 U_{i+1} = \{p\in\R | U_i  \rightarrow \R/(p) \ \text{ è suriettivo}\}\cup \{0\}
+	\end{gather*}
+ \end{defi}
+ \textbf{Osservazione 1}\\
+ L'omomorfismo $U_i \rightarrow R/(p)$ è la composizione\\
+ \[
+	 U_i \xrightarrow{inc} R \xrightarrow{\pi} R/(p)
+ .\] 
+ \textbf{Osservazione 2}\\
+ La suriettività di $U_i \rightarrow R/(p)$ significa 
+ \[
+	 \forall f\in R \ \exists q\in R, \ r \in U_i\ \ \text{ tali che } f - q\cdot p = r
+ .\] 
+ ovvero $f = q \cdot p + r$ \\
+ \textbf{Osservazione 3/esercizio}\\
+ $U_i\subseteq U_{i+1} \ \ \forall i\geq 0$ \\
+ \textbf{Osservazione 4}\\
+ Chi è $U_1$?\\
+ $U_1 = \{p\in R | \{0\} \rightarrow R/(p)$ è suriettiva$\}$\\
+ $\{q\in R \  | \ (p) = R\}$ \\
+ $\{p\in R \ | \ p$ invertibile$\}$\\
+ \begin{teo}
+	 $R$ dominio d'integrità, Allora $R$ è un dominio euclideo se e solo se \[R = \bigcup^{+\infty}_{i=0}U_i.\]
+ \end{teo}
+ \begin{dimo}
+ 	Supponiamo che $(R,\nu)$ sia un dominio Euclideo.\\
+	$Im(\nu) = \{0,a_0,a_1,\ldots,a_n,\ldots\}\subseteq\Z_{\geq0}$\\
+con $\{a_k\}$ successione strettamente crescente.\\
+Definiamo
+\[
+	V_i = \{p\in R  \ | \ \nu(p) \leq a \}
+.\] 
+In particolare $V_0 = \{0\}$\\
+\[
+R = \bigcup^{+\infty}_{i =0 }V_i
+.\] 
+La tesi segue verificando che $V_i = U_i \ \ \forall i\geq 0$ (esercizio)\\
+Viceversa: Se $R = \bigcup^{+\infty}_{i =0}U_i$\\
+vogliamo definire $\nu: R \rightarrow\Z_{>0}$\\
+tale che $(R,\nu)$ dominio Euclideo, Dato $r\in \R$  $\exists i\geq 0$ tale che $r\in U_{i+1}\setminus U_o$ \\
+Definiamo $\nu(t) = i+1$ \\
+Si possono verificare le 3 proprietà di $\nu$.\\
+Vediamo $(2)$: dati  $a,b,c\in R$ con  $b\neq 0$ tali che  $c = a + b$\\
+vogliamo misurare  $\nu(c) \geq \nu(a)$\\
+ $(c)\subseteq(a)$\\
+  $ \Rightarrow R/(a) \Rightarrow R/(a)/(a)/(c)\cong R/(a)$ \\
+  Se $U_i \rightarrow R/(c)$ è suriettiva\\
+  allora $U_i \rightarrow R/(c) \rightarrow R/(a)$ è suriettiva\\
+  Ovvero
+  \[
+	  c\in U_{i+1} \Rightarrow a\in U_{i+1}
+  .\] 
+  quindi 
+   \[
+	   \nu(c) = i + 1 \Rightarrow  c \in U_{i+1} \Rightarrow a\in U_{i+1} \Rightarrow \nu(a)\leq i+1 = \nu(c)
+  .\] 
+ \end{dimo}
+
+
+\end{document}

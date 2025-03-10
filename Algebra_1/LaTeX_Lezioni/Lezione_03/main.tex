@@ -1,0 +1,127 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4 Algebra I}
+\date{2025-03-10}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Seconda parte della lezione}
+	\textbf{Domanda:}\\
+	Cosa cambia in $\K[2]$ quando  $\K$ è un campo?\\
+	$u_1 = \K$ \\
+	Chi è $u_2 ?$\\
+	$p\in u_2$ se e solo se
+	\[
+		\K \rightarrow \K[x]/(p) \ \text{ è suriettiva}
+	.\] 
+	se e solo se $deg(p) = 1 \vee deg(p) = 0$\\
+	In generale\\
+	$\forall i\geq 1$ \ \  $u_{i+1}\setminus u_i$ è l'insieme dei polinomi di grado $i$
+	\textbf{Attenzione} $\K[x,y]$ non è domino euclideo.\\
+	$u_1 = \K$\\
+	 $u_2 = ?$\\
+	 \begin{defi}
+	 	$R$ anello commutativo, Dati $r_1,\ldots, r_k\in R$ chiamiamo
+		\[
+			(r_1,\ldots,r_k) = \{ \sum^{k}_{i=1}a_ir_i \ | \ k\in Z_{\geq 1}\ \ a_i\in R\}
+		.\] 
+Ideale generato da $r_1,\ldots, r_k$ in $R$\\
+	 \end{defi}
+\textbf{Osservazione}\\
+$(r_1,\ldots, r_k)$ è il più piccolo ideale di $R$ contenente $r_1,\ldots,r_k$
+\begin{defi}[Ideale principale]
+	$R$ anello commutativo $I\subseteq R$ ideale, si dice principale se $\exists \ r\in R$ tale che $I = (r)$
+\end{defi}
+\begin{defi}
+	$R$ anello commutativo.
+	\begin{itemize}
+		\item $R$ si dice Anello a ideali principali se tutti i suoi ideali sono principali.
+		\item  $R$ si dice dominio a ideali principali se è un dominio d'integrità e un anello a ideali principali.
+	\end{itemize}
+\end{defi}
+\textbf{Esempio}\\
+$R = (\Z,+,\cdot)$ è un dominio a ideali principali.\\
+\textbf{Esercizio}\\
+Trovare un anello a ideali principali che non sia un dominio\\
+$n\in\Z$,  $n$ composto\\
+$ \Rightarrow \Z/(n)$ è un anello a ideali principali che non è un dominio
+\begin{prop}
+	$\K$ campo. $R = \K[x]$ è un dominio a ideali principali
+\end{prop}
+\begin{dimo}
+	$\K[x]$ è dominio d'integrità poiché $\K$ lo è.\\
+	Sia $I\subseteq R[x]$ ideale ,  $I\neq \{0\}$\\
+	Sia $f\in I\setminus\{0\}$ di grado minimo in  $I$\\
+	Vogliamo dimostrare che  $I = (f)$
+	 \begin{itemize}
+		 \item $(f) \subseteq I$, infatti se $f\in I$ allora $q\cdot f\in I \ \ \forall q\in \K[x]$
+		 \item  $I\subseteq (f),$ infatti $g\in I$ usiamo la divisione per  $f$\\
+			  $ \Rightarrow g = q\cdot f + r$ con $deg(r) < deg(f) \Rightarrow r = g - q\cdot f \in I$ \\
+			  $ \Rightarrow r =0 \Rightarrow g = q\cdot f\in (f)$
+	\end{itemize}
+
+\end{dimo}
+\textbf{Esercizio}\\
+Dimostrare che se
+\begin{itemize}
+	\item $R$ dominio d'integrità
+	\item $R[x]$ dominio a ideali principali
+\end{itemize}
+Allora $R$ è un campo\\
+\textbf{Soluzione}\\
+Dobbiamo verificare che dato $a\in R\setminus\{0\}$ esiste l'inverso moltiplicativo.\\
+Consideriamo l'ideale $(a,x)\subseteq R[x]$\\
+$R[x]$ a ideali principali $ \Rightarrow \exists p\in R[x]$ tale che $(p) = (a,x)$\\
+Quindi:
+\begin{gather*}
+	\Rightarrow a = q_1\cdot p\\
+	 \Rightarrow x = q_2\cdot p \ \rightarrow \ ax = \tilde q_2\cdot p
+\end{gather*}
+Deduciamo che $q_1$ e $p$ sono entrambi costanti.\\
+Infatti il termine di grado più alto del prodotto $q_1\cdot p$ è il prodotto dei termini direttivi di $p$ e di $q_1$ (Stiamo usando il fatto che $R$ sia dominio d'integrità)\\
+Se $p$ costante\\
+\[
+	\Rightarrow q_2 = hx \text{ con } h\cdot p = 1
+\] 
+$p$ invertibile $ \Rightarrow  (p) = R[x]$ \\
+$ 1\in (a,x) \Rightarrow $ esistono $s,t\in R[x]:$
+ \[
+1 = a\cdot s + t\cdot x \Rightarrow s = \sum^{}_{i\geq 0}s_ix^i \Rightarrow a s_0 = 1
+.\] 
+\textbf{Esercizio/Proposizione}\\
+$R$ dominio a ideali principali. $I$ ideale, Se $I$ è primo, allora $I$ è massimale.\\
+\textbf{Soluzione}\\
+$ I = (p)\subseteq R$\\
+ $I$ primo. Supponiamo che esista un ideale $J = (q)\subseteq R$ tale che  $I\subseteq J$\\
+  $I\subseteq J \Rightarrow (p)\subseteq (q) \Rightarrow  p = a\cdot q$ per qualche $a\in R$\\
+   $I$ primo $ \Rightarrow a\in I$ oppure $q\in I$
+   \begin{center}
+   	
+    \begin{aligned}
+	    $q\in I &\Rightarrow q\in (p) \\
+		    & \Rightarrow  (q)\subseteq(p)\\
+		    & \Rightarrow 	J = I\\$
+   \end{aligned}
+   \end{center}
+   \begin{center}
+   	\begin{aligend}
+		$a\in I &\Rightarrow a\in (p)\\
+			& \Rightarrow a = k\cdot p \text { per qualche } k\in R\\
+			& \Rightarrow p = a\cdot q = p\cdot k\cdot q\\
+			& \Rightarrow p\cdot (1-k\cdot q)= 0\\
+			& \Rightarrow 1 + k\cdot q = 0 \Rightarrow q$ invertibile\\
+			&$ J = R$
+   	\end{aligend}
+   \end{center}
+   \begin{coro}
+   	$R$ dominio a ideali principali (PID) allora un ideale è primo se e solo se è massimale
+   \end{coro}
+   \begin{dimo}
+   	Resta da verificare che $I$ massimale $ \Rightarrow I$ primo\\
+	$I$ massimale $ \Rightarrow R/I$ campo $ \Rightarrow R/I$ dominio integrità $ \Rightarrow I$ primo 
+   \end{dimo}
+\end{document}

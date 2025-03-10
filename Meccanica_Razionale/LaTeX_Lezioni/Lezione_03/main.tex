@@ -1,0 +1,196 @@
+\documentclass[12px]{article}
+
+\title{Lezione 3 Meccanica Razionale}
+\date{2025-03-05}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Relatività e Determinismo $ \Rightarrow $ Prima legge di Newton}
+	Sia $R$ un sistema di riferimento t.c.  $R = \{0_V, e_1,e_2,e_3\}$\\
+	Un signore nell'origine misura le coordinate di un punto $P$ nel tempo.\\
+	$R'=\{0_V', e_1',e_2',e_3'\}$ è un secondo osservatore in un piano traslato $(N=1)$\\
+	Il determinismo ci dice che sapendo la situazione iniziale del punto  $P$ posso ricavare il moto.\\
+	Vogliamo dimostrare la prima legge di newton, ovvero $\ddot x = 0$
+	\begin{dimo}
+ In $R$ \ \ \ $\ddot x = f(x,\dot x)$	\\
+ In $R'$ \ \ \  $\ddot y = f(y,\dot y)$ per la relatività.\\
+ %TODO aggiungi foto 5 marzo 13:27 se ti va
+ $ \overline{OO'}$ ha coordinate $ \overline{x} + \overline{v}t$ al tempo $t, \overline{x}, \overline{v}\in\R^3$\\
+ $ \overline{O'P}$ ha coordinate $Ry \ \ R\in SO(3)$\\
+  \[
+ x = \overline{x} + \overline{v}t + Ry, \ \ \ \dot x = \overline{v} + R\dot y, \ \ \ \ddot x = R\ddot y
+ .\] 
+ \[
+	 \underline{Rf(y,\dot y)} = R\ddot y = \ddot x = f(x,\dot x) =\underline{ f( \overline{x} + \overline{v}t + Ry, \overline{v} + R\dot y)}
+ .\] 
+ $\overline v = 0 \ \ \ R = I_3$\\
+  $f(y,\dot y ) = f(\bar x + y, \dot y) \ \ \ \forall \bar x \in \R^3 \ \ \ f(x,y) = \tilde f(v) \ \ \ \tilde f:\R^3 \rightarrow\R^3$\\
+  \[
+  \tilde f(v) = \tilde f ( \bar v + R v) \ \ \ \forall\bar v \in \R^3 \ \ \forall R\in SO(3)
+  .\] 
+  $\tilde f$ è costante ed è invariante per rotazioni $ \Rightarrow \tilde f = 0$ (esercizio) 
+\end{dimo}
+\begin{defi}[Sistema meccanico conservativo]
+	Sistema meccanico per il quale $\exists U$\\
+	 \[
+		 U: D \rightarrow\R \ \ \ D\subseteq \R^{3N} \ \ \text{aperto}
+	.\] 
+	(spazio delle configurazioni)\\
+	$U\in C^2(D)$ tale che la legge di forza ha la forma gradiente.\\
+	 \[
+		 F^{(k)}(x) = -\triangledown_{X^{(k)}}U(x) \ \ \ \ k = 1,\ldots, N
+	.\] 
+	$U$ è detta energia potenziale
+	\[(F^{(k)}_i = n_k \ddot x^{(k)}_i = -\frac{\partial U}{\partial x_i^{(k)}}(x) \  \ \ k=1,\ldots,N, \ \ i=1,2,3) \]
+\end{defi}
+\newpage
+\textbf{Esempi}\\
+$N = 1$ grave, molla $\ldots$\\
+$N = 2$ \ \  $D = \R^6\setminus\{x^{(1)}=x^{(2)}\}$,  $U(x^{(1)},x^{(2)}) = \frac{-m_1m_2}{|x^{(2)} -x^{(1)}|}$\\
+\[
+	f^{(1)}(x^{(1)}, x^{(2)}) = -\triangldown_{x^{(1)}}U(x^{(1)}, x^{(2)}) = m_1m_2\frac{x^{(2)} - x^{(1)}}{|x^{(2)} - x^{(1)}|}
+.\] 
+$N = 3$ \ \  $U(x) = -\frac{m_1m_2}{|x^{(2)} - x^{(1)}|} -\frac{m_1m_3}{|x^{(3)} - x^{(1)}|} - \frac{m_2m_3}{|x^{(3)} - x^{(2)}|}$\\
+$D = \R^9\setminus $ diagonali\\
+\begin{defi}
+	In un sistema conservativo, l'energia totale $H = T + U$
+	 \[
+		 T := \frac 12 \sum^N_{k=1} m_k |v^{(k)}|^2 \ \ \text{ energia cinetica totale}
+	.\] 
+	\[
+		T = \sum^N_{k=1} T^{(k)} \ \ \ \text{ energia cinetica di } P_k
+	.\] 
+\end{defi}
+\begin{teo}[Conservazione dell'energia]
+	In un sistema conservativo, $H$ è costante sulle traiettorie.
+\end{teo}
+\begin{dimo}
+	$\displaystyle\diff {}{t}H(x(t),\dot x(t)) = \diff{}{t} T(\dot x(t)) + \diff{}{t}U(x(t))= \\ \sum^N_{k=1}m_k \langle \dot x^{(k)}(t), \ddot x^{(k)} \rangle  + \sum^N_{k=1} \langle \triangledown_{x^{(k)}}U(x(t)), \dot x^{(k)}(t) \rangle \\
+	= \sum^N_{k=1} \langle \dot x ^{(k)}(t)	, m_k\ddot x^{(k)}(t) + \triangledown _{x^{(k)}}U(x(t))  \rangle  = 0$ \\ 
+	Dato che il secondo termine del prodotto scalare è nullo.
+\end{dimo}
+\begin{defi}[Lavoro]
+	Il lavoro del sistema meccanico da $t_1$ a $t_2> t_1$ è
+	\[
+		L_{t_1 \rightarrow t_2} := \sum^N_{k=1} \int_{t_1}^{t_2}dt \langle F^{(k)}, x^{(k)} \rangle 
+	.\] 
+\end{defi}
+\textbf{Osservazione}\\
+Nel caso conservativo
+\[
+	L_{t_1 \rightarrow t_2}  = U(x,t_1) - U(x,t_2)
+.\] 
+\begin{teo}[Forze vive]
+	\[
+		T(\dot x(t_2)) - T(\dot x(t_1)) = L_{t_1 \rightarrow t_2}
+	.\] 
+\end{teo}
+La dimostrazione è simile al teorema di conservazione dell'energia\\
+\textbf{Esercizio}(Oscillatore armonico)\\
+$m \ddot x = -k x \ \ \ k > 0 \ \ \ x\iu \R$\\
+(i) si dimostri che il sistema è conservativo\\
+(ii) si trovino le traiettorie nello spazio delle fasi ("curve di fase")\\
+(iii) Dedurre dal teorema di conservazione dell'energia (senza usare l'($E_qN$)) la legge del moto $t \rightarrow x(t)$\\
+\textbf{Svolgimento}\\
+$H(x,v) = \frac 12 mv^2 + \frac 12 k x^2$\\
+ \[
+	 \diff{}{t}H(x(t),\dot x(t)) = m\dot x\ddot x + kx\dot x = 0 \ \ \forall t
+.\] 
+(ii)
+%TODO aggiungi grafico 5 marzo 14 33
+\textbf{Osservazione}\\
+Gli insiemi di livello $H$ sono invarianti per la dinamica
+\[
+	\Gamma_E = \{(x,v) | H(x,v)=E\}
+.\] 
+$E\in\R$ livello di energia,\\
+se $E< 0 \ \ \Gamma_E = \emptyset$, non ci sono moti\\
+se  $E = 0$ \ \  $\Gamma_E = \{((0,0)\}$ moto stazionario\\
+se $E > 0$ \ \  $\Gamma_E = \{(x,v) | \frac 12 mv^2 + \frac 12 kx^2 = E\}$ \\
+$a = \sqrt{\frac{2E}k} \ \ b = \sqrt{\frac{2E}{m}}$ moto periodico.\\
+(iii) $E = 0$  $x(t) = 0 \ \ \forall t$\\
+Sia  $E > 0$
+ \[
+ E = \frac 12 m\dot x ^2 + \frac 12 k \cdot x^2 \ \ \forall t
+.\] 
+\[
+	\cdot x = \pm\sqrt\frac 2m \sqrt{E-\frac 12kx^2}
+.\] 
+\[
+	x_0,v_0 \ \ x_0\ni \left(-\sqrt{\frac{2E}{k}},\sqrt{\frac{2E}k} \right) \ \ v_0>0 
+.\] 
+$t(x) = \sqrt{\frac m_2}\int_{x_0}^x\frac{dy}{\sqrt{E-\frac k 2y^2}}$\\
+$x_0\in \left(-\sqrt{\frac{2E}{k}},\sqrt{\frac{2E}k} \right)$
+\[
+t(x) = \frac 1b \int_{x_0}^x dy \frac{1}{\sqrt{1-\frac{y^2}{a^2}}}\]
+\[
+	\frac ab\int^{x/a}_{x_0/a}dy\frac{1}{\sqrt{1 + y^2}} = \frac ab (cos^{-1}\frac {x_0}a -cos^{-1}\frac xa)
+.\] 
+$cos^{-1}(\frac xa) = cos^{-1}(\frac {x_0}{a}) - \omega t$\\
+$\omega = \frac ba = \sqrt{\frac km}\ \ \ \alpha_0 = cos^{-1}(\frac{ x_0}{a})$ \\
+$x(t) = a\cos(\alpha_0 - \omega t)$\\
+$x(t) = x_0\cos(\omega t) + \frac {v_0}\omega\sin(\omega t) \ \ \ t\in\R$
+\textbf{Osservazione} [Isocromia delle oscillazioni]\\
+il periodo $T = \frac {2\pi}\omega$ non dipende da $E$ (specialità di $U$ )\\
+\textbf{Esercizio}\\
+Si ripeta per $k < 0 $\\
+\subsection{SDO1: Teoria Generale}
+Studiamo 
+\[
+\begin{cases}
+	\dot z = g(t,z)\\
+	z(t_0) = z_0
+\end{cases}
+.\] 
+Pbm Cauchy per sistemi differenziali I ordine in forma normale\\
+$t_0\in\R \ \ z_0\in\Omega\ \ \Omega\subseteq \R^n$\\
+Cerca $t \rightarrow z(t_0)$ \ \ \ $I\subseteq \R$ intorno  $t_0$\\
+campo $g: I\time \Omega \rightarrow\R^n$\\
+\textbf{Osservazione 1}\\
+è caso particolare $z = (x,v)$\\
+$z = (z_1,z_2,\ldots,z_{6N}) = (x_1,x_2,\ldots,x_{3N}, v_1,\ldots,v_{3N})$\\
+$z_0 = (x_0,v_0)\in\Omega$\\
+$\Omega$ spazio delle fasi $\Omega = D\times \R^{3N}$\\
+$g: I\times D\times \R^{3N} \rightarrow \R^{6N}$\\
+$g(t,z,) = (v,f(t,x,v))\\$
+\textbf{Osservazione 2}\\
+(EqN) per sistema isolato (SDO1) è "autonomo"\\
+\[
+\begin{cases}
+	\dot z = g(z)\\
+	z(0) = z_0
+\end{cases}
+.\] 
+dove ho scelto $t_0 = 0$ senza perdita di generalità\\
+(se $t \rightarrow z(t)$ soluzione (SDO1)\\
+$t -> z(t-t_0)$ soluzione di $ \begin{cases}
+	\dot z = g(z)\\
+	z(t_0) = z_0
+\end{cases}$\\
+\begin{defi}[SDO1]
+	ammette soluzione locale se $\exists I_0$ intorno di $t_0,$ $\delta > 0 $\\
+	e  $ \varphi : I_0 \rightarrow B_\delta (z_0)$ t.c.\\
+	\[
+	\begin{cases}
+		\dot \varphi(t) = g(t, \varphi(t)) \ \ \ \ \ \forall t\in I_0\\
+		\varphi(t_0) = z_0
+	\end{cases}
+	.\] 
+	Globale se posso estendere a $I_0 = \R$
+\end{defi}
+\begin{teo}
+	$\exists !$ soluzione locale/globale (SDO1)
+\end{teo}
+\subsection{SDO1: Casi integrabili}
+\textbf{Esempi}\\
+1)$g = 0 \ \ z(t) = z_0 \ \ \forall t$\\
+2) $g = z$\\
+$z(t) = z_0 e^t \ \ \ \forall t$\\
+per $z_0 = 0$ soluzione stazionaria $z(t) = 0$\\
+ $(z: g(z) = 0, \ \ $ p.t: singolare del campo $z_0$ sing \ \ $z(t) = z_0) $
+%primo esercizio scheda o qualcosa dle genere foto 5 marzo 5 54
+\end{document}

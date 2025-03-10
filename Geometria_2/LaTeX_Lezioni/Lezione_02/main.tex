@@ -1,0 +1,158 @@
+\documentclass[12px]{article}
+
+\title{Lezione 02 Geometria II}
+\date{2025-03-08}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Spazi Topologici}
+	\begin{defi}[Topologia]
+		Sia $X$ un insieme, $T\subset P(X)$\\
+		 $T$ è detta Topologia se:
+		 \begin{enumerate}
+			 \item $X,\emptyset\in T$
+			 \item Unione di una famiglia qualsiasi di elementi in  $T$ è un elemento di $T$ 
+			 \item intersezione di 2 elementi qualsiasi di $T$ è un elemento di $T$.
+		 \end{enumerate}
+		 In tal caso gli elementi di $T$ sono detti aperti di $T$.\\
+		 La coppia $(X,T)$ è detta \textbf{spazio topologico} (o anche semplicemente insieme $X$)
+	\end{defi}
+	\textbf{Osservazione}
+	\begin{itemize}
+		\item Famiglia qualsiasi vuol dire infinita numerabile, o finita, o non numerabile, o anche vuota
+		\item L'intersezione di una famiglia finita di elementi di $T$ è ancora un elemento di $T$ 
+		\item Possiamo interscambiare la precedente affermazione e la proprietà 3 della definizione
+	\end{itemize}
+	\textbf{Nota}
+	\begin{itemize}
+		\item "intervallo aperto" = $]a,b[\subseteq\R$ come al solito
+		\item aperto = elemento della topologia $T$
+	\end{itemize}
+	\textbf{Esempi}
+	1) Ogni insieme è dotato almeno delle seguenti topologia
+	\begin{enumerate}
+		\item $T = \{X,\emptyset\}$, detta \textbf{topologia banale}
+		\item $T = P(x)$, detta \textbf{topologia discreta}
+	\end{enumerate}
+	Osserviamo che, nella topologia discreta, $\{x\}$ è aperto $\forall x\in X$\\
+	2)  $X = \R^n$\\
+	$T = \{ A\subseteq X \ | \ \forall a\in A \ \exists \varepsilon > 0 \ t.c. \ B_\varepsilon(a)\subseteq A\}$ è la topologia euclidea\\
+	La dimostrazione del fatto che sia una topologia è un esercizio per casa\\
+	3) Sia $X$ insieme, $p\in X$. Definiamo  $T = \{A\subseteq X \ | \ p\in A, $ oppure $A = \emptyset\}$  $T$ è una topologia\\
+	4) $X$ insieme, poniamo $T = \{A\subseteq X \ | \ X\setminus A $ è finito, oppure $A = \emptyset\}$\\
+$T$ è una topologia, detta \textbf{topologia cofinita}\\
+\begin{defi}
+	Sia $(X,T)$ spazio topologico, $C\subseteq X$ è chiuso se $X\setminus C$ è aperto 
+\end{defi}
+\begin{lemm}[Proprietà degli insiemi chiusi]
+Per gli insiemi chiusi di qualunque topologia valgono:
+	\begin{enumerate}
+		\item $X,\emptyset$ sono chiusi
+		\item intersezione di una famiglia qualsiasi di chiusi è un chiuso
+		\item Unione finita di chiusi è un chiuso
+	\end{enumerate}
+\end{lemm}
+\begin{dimo}
+	1. ovvio\\
+	2. $\displaystyle x\setminus \left( \bigcap_{i\in I}C_i \right) = \bigcup^{i\in I}_{X\setminus C_i}$ che è unione di aperti\\
+	3. $(X\setminus(C\cup D)) = (X\setminus C)\cap (X\setminus D)$ che è intersezione di 2 aperti.
+\end{dimo}
+\textbf{Osservazione}\\
+In uno spazio topologico ci sono insiemi sia aperti che chiusi (clopen = closed + open)\\
+\textbf{Esempio}\\
+$X = \R$\\ 
+Il sottoinsieme  $[0,1]$ è chiuso in topologia euclidea\\
+è chiuso e aperto in topologia discreta\\
+non è chiuso in topologia banale\\
+non è chiuso in topologia cofinita, e neanche aperto\\
+\begin{defi}
+	Sia $X$ spazio topologico con topologia $T$. Sia $B\subseteq T$  $B$ è detta base se ogni aperto si può scrivere come unione di elementi di $B$
+\end{defi}
+\textbf{Esempi}
+\begin{enumerate}
+	\item Sia $T$ topologia su $X, \Rightarrow B=T$ è una base
+	\item Sia $T$ topologia discreta su $X, B = \{\{x\} \ | \ x\in X\}$  è una base di $T$
+	\item Sia  $X = \R$, $T = $ topologia euclidea. $B = \{]a,b[ | a < b \in \R\}$ è una base di  $T$\\
+		Infatti  $B\subseteq T$ perché $]a,b[$ è aperto in topologia euclidea. Inoltre ogni aperto si può scrivere come unione di elementi di $B$\\
+		 \begin{dimo}
+			Sia $A\in T$ euclidea su $\R$\\
+			$ \Rightarrow \forall p\in A\ \ \ \exists \varepsilon > 0 $ t.c. \ \ $]p-\varepsilon, p + \varepsilon[ \subseteq A$\\
+			$ \Rightarrow A = \bigcup_{p\in A} ]p-\varepsilon, p + \varepsilon[\ \in B$
+		\end{dimo}
+\end{enumerate}
+\textbf{Osservazione}\\
+Data $B$ base di $T$ topologia, la topologia $T$ è determinata da $B$ Infatti:
+\[
+	T = \{\text { unione arbitraria di elementi di } B\}
+.\] 
+\begin{prop}
+	Sia $X$ insieme, $B\subseteq P(X)$ famiglia di sottoinsiemi di  $X$. Esiste $T$ topologia t.c. $B$ è sua base se e solo se
+	\begin{enumerate}
+		\item $X$ è unione di elementi di $B$
+		\item  $\forall A,A'\in B, A\cap A'$ è unione di elementi di $B$
+	\end{enumerate}
+\end{prop}
+\begin{dimo}
+	$( \Rightarrow )$ \\
+	$\exists T$ topologia di cui $B$ è base (per ipotesi)\\
+	\begin{itemize}
+		\item $ \Rightarrow $ $X\in T$ e $B$ è base di $T \Rightarrow $ (1) vera
+\item $ \Rightarrow A$ e $A'\in T \Rightarrow A\cap A'\in T \Rightarrow $ (2) vera
+	\end{itemize}
+	$ ( \Leftarrow )$ \\
+	Definisco $T = $ unioni arbitrarie di elementi di $B$ e verifico che sia una topologia
+	\begin{itemize}
+		\item $X\in T, \emptyset\in T \Rightarrow $ (1) vera ($\emptyset\in T$ perché $\emptyset = \emptyset\cup\emptyset\cup\ldots )$
+		\item Per costruzione di  $T$, unioni di elementi di $T$ sono elementi di $T\ \Rightarrow \ $ (3) vera
+		\item $D,E\in T \Rightarrow D = \bigcup_{i\in I} A_i, E = \bigcup_{i\in J}A'_j, \ \ A_i,A'_j\in B \  \ \forall i,j$ \\
+			$ \Rightarrow D\cap E = \bigcup^{}_{i\in I, j\in J}(A_i\cap A'_j)$
+	\end{itemize}
+	\textbf{Osservazione:}\\
+	Ciascuno $A_i\cap A'_j$ è unione di elementi di $B.$ \\
+	$ \Rightarrow D\cap E$ è unione di elementi di $B$\\
+	 $ \Rightarrow T $ è topologia (e $B$ sua base per costruzione)
+\end{dimo}
+\textbf{Osservazione}\\
+La proprietà (2) è equivalente a:
+\[
+	\forall A,A'\in B, \ \ \forall p\in A\cap A' \ \exists D\in B \ \text{ t.c } p\in D\subseteq A\cap A'
+.\] 
+\textbf{Esempio}\\
+Sia $\mathbb \mathbb{K}$ un campo, consideriamo $x = \mathbb \K^n$, Dato  $f\in \mathbb K[x_1,\ldots,x_n]$\\
+Poniamo $x_f = \{p\in\mathbb K^n \ | \ f(p)\neq 0\}$\\
+$ \Rightarrow  B = \{x_f \ | \ f\in \mathbb K[x_1,\ldots,x_n]\}$ \\
+(esempio: $x = \r, n = 1, \mathbb k = \r, \ f(x) = (x-1)(x-2) \leadsto x_f= \R\setminus\{1,2\}$)
+(esempio: $X = \R, n = 2, \mathbb K = \R^2, \ f(x,y) = x^2 + y^2 - 1, x_f = \R^2\setminus S^1)\\$
+Allora $B$ è base di una topologia $T$ su $X$\\
+Verifichiamo usando la proposizione precedente\\
+ $X = X_f, f = 1$ polinomio costante, allora (1) ok\\
+ Prendiamo $A, A'\in B$ studiamo $A\cap A'$\\
+ $A = x_f, \ A'=x_g$ con $f,g \in \mathbb K[x_1,\ldots,x_n]$, Allora\\
+ $A\cap A' = X_{fg}$ è essa stessa un elemento di $B$ quindi (2) ok \\
+ per la proposizione precedente $ \Rightarrow \exists$ topologia $T$\\
+ La topologia così definita è detta la topologia di Zariski in  $\mathbb K^n$
+	\textbf{Esempio}\\
+	$\K = \R, n = 1$\\
+	$\R\setminus\{1,2\}$ è aperto in topologia euclidea e in topologia di Zariski.\\
+	$[0,1]\subseteq\R$ è chiuso in topologia euclidea, è chiuso in topologia di zariski? Esercizio per casa\\
+
+	\begin{defi}
+		$T_1,T_2$ topologie su $X$, $T_1$ è detta più fine di $T_2$ se $T_2\subseteq T_1$
+	\end{defi}
+	\textbf{Osservazione}\\
+	Prese 2 topologie a caso, non è detto che siano confrontabili.\\
+	\textbf{Esempio}\\
+	La topologia banale è la meno fine di tutte, Quella discreta è la più fine.\\
+	\begin{propo}
+		Siano $ T_1,T_2$ topologie su $X$. Allora\\
+		$T_1\cap T_2$ è una topologia.\\
+		Inoltre $T = T_1\cap T_2$ è meno fine di $T_1$ e meno fine di $T_2$
+	\end{propo}
+	\begin{dimo}
+		Esercizio lasciato al lettore
+	\end{dimo}
+\end{document}
