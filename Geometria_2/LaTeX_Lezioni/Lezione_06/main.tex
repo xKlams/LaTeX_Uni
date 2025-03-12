@@ -1,0 +1,176 @@
+\documentclass[12px]{article}
+
+\title{Lezione 6 Geometria 2}
+\date{2025-03-11}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{boh}
+	\textbf{Osservazione:}\\
+	Sia $X$ spazio topologico, $Y\subseteq X$ con topologia di sottospazio $T_Y$ .\\
+	Considero l'inclusione di $Y$ in $X$ come applicazione
+
+	\begin{center}
+		\begin{aligned}
+			i : &Y \rightarrow X\\
+			    &y \rightarrow y
+		\end{aligned}
+	\end{center}
+	$i$ è costruita (mettendo su $Y$ la topologia $T_Y$). Verifica: sia  $B\subseteq X$ aperto\\
+	la controimmagine è $i^{-1}(B)$ Questo è aperto in topologia di sottospazio.\\
+	Sia  $T$ una topologia su $Y$ ( non necessariamente = $T_Y$ ), suppongo che $i: Y \rightarrow X $ sia continua anche usando $T$ come topologia su $Y$ \\
+	Allora $\forall B\subseteq X$ aperto, $i^{-1}(B)$ è aperto in $Y$ cioè $i^{-1}(B)\in T$. \\
+	Al variare di $B$ aperto in $X$, gli insiemi $i^{-1}(B)$ formano  $T_Y$, quindi $T_y \subseteq T$.\\
+	Possiamo considerare la famiglia di tutte le topologie su  $Y$ per cui l'inclusione è continua. L'intersezione di esse è contenuta in $T_Y$  perché $ T_Y$ è una di esse, e contiene $T_Y$ perché ogni $T$ siffatta contiene $T_Y$. \\
+	Quindi $T_Y$ è la topologia meno fine fra quelle per cui $i$ è continua. 
+	\begin{prop}
+		Sia $f: X \rightarrow Z$ applicazione continua fra spazi topologici, sia $Y\subseteq X$ con topologia di sottospazio, allora $f|_Y:Y \rightarrow Z$ è continua
+	\end{prop}
+	\begin{dimo}
+		Usiamo l'inclusione $i:X \rightarrow Y$ e osserviamo $f|_Y:Y \rightarrow Z$ concateno con\\
+		 \[
+			 f\circ i: Y \xrightarrow{i} X \xrightarrow{f} Z
+		.\] 
+		$f$ e $i$ sono continue, lo è anche $f\circ i$
+	\end{dimo}
+	\begin{prop}
+		Siano $X$ spazio topologico, $Y\subseteq X$ con topologia di sottospazio, $Z$ spazio topologico e $f : Z \rightarrow Y$.\\
+		Consideriamo l'estensione del codominio di $f$ da $Y$ a $X$ che è l'applicazione  $i\circ f :Z\xrightarrow{f} Y \xrightarrow{i} X$\\
+		Allora $f$ è continua se e solo se $i\circ f$ è continua.
+	\end{prop}
+	\begin{dimo}
+		%TODO disegno 11 marzo 5:44
+		$ ( \Rightarrow )$ ovvio poiché $i\circ f$ è composizione di applicazioni continue\\
+		$ ( \Leftarrow)$ Sia $A\subseteq Y$ aperto, scegliamo $B\subseteq X$ aperto tale che $B\cap Y = A$.\\
+		Allora  $f^{-1}(A) = (i\circ f)^{-1}(B)$ \\
+		poiché chiedere che $z\in Z$ vada in $A$ tramite $f$ è equivalente a richiedere che vada in $B$.\\
+		Allora $f^{-1}(A)$ è aperto per continuità di $i\circ f$
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Data in generale $f: Z \rightarrow X$ spesso la si restringe all'immagine
+	\begin{center}
+		\begin{aligned}
+			\tilde f: &Z \rightarrow Im(f)\\
+				  & z - f(z)
+		\end{aligned}
+	\end{center}
+	vale $f$ continua  $ \Leftrightarrow \tilde f$ continua, perché posso considerare l'inclusione 
+	\[
+	 i: Im(f) \rightarrow X
+	.\]  
+	e allora $f = i \circ \tilde f$\\
+	 \textbf{Esempio:}\\
+	 $X = \R$ con topologia euclidea.\\
+	 $Y = [0,1[$ con topologia di sottospazio
+	 \[
+	  Z = ]0,1[ \ \ (\subseteq Y)
+	 .\] 
+	 Sia verifica facilmente (esercizio) che la chiusura di $Z$ in $Y$ è $[0,1[$e la chiusura di $Z$ in $X$ è $[0,1]$ \\
+	 Le chiusure sono diverse, ma
+	 \[
+	  [0,1[ = [0,1]\cap Y
+	 .\] 
+	 dove il primo intervallo è in $Y$ e il secondo intervallo in $X$\\
+	 Questo si generalizza.
+	 \begin{lemm}
+	 	Sia $X$ spazio topologico, $Y\subseteq X$ con topologia di sottospazio, $Z\subseteq Y$ la chiusura di $Z$ in $Y$ è uguale a $Y$ intersecato la chiusura di $Z$ in $X$
+	 \end{lemm}
+	 \begin{dimo}
+		 Chiusura di $Z $ in $Y = \displaystyle \bigcap_{\substack{C\subseteq Y,\\ C\text{ chiuso in } Y,\\ C\supseteq Z}}C = \ldots $ \\
+		 Per ogni tale $C$ scelgo un $D\subseteq X$ chiuso in $X$ tale che $C = D\cap Y$\\
+		  \[
+			  \ldots = \bigcap_{\substack{C\subset U,\\ C\text{ chiuso in } Y,\\ C\supseteq Z,\\ D\subseteq X,\\ D \text{ chiuso in } X \\ t.c. \ D\cap Y = C}}D\cap Y 
+		 .\] 
+		 \[
+			 = \bigcap_{\substack{D'\subseteq X,\\ D'\text{ chiuso in } X,\\ D'\supset Z}}D'\cap Y
+		 .\] 
+		 L'ultima uguaglianza vale perché ogni $D$ della prima intersezione compare fra i $D$ della seconda intersezione, Per ogni $D'$ della seconda seconda intersezione considero $C = D'\cap Y$ che è in  $Y$, chiuso in $Y$, contenente $Z$, quindi compare fra i  $C$ della prima intersezione; ad esso corrisponde un $D$ della prima intersezione, che soddisfa $D\cap Y = C =D'\cap Y.$\\
+		 Quindi per ogni  $D'$ della seconda intersezione esiste un $D$ della prima con la stessa intersezione con $Y$, ovvero  $D\cap Y = D'\cap Y$, Quindi vale l'uguaglianza.\\
+		 L'uguaglianza prosegue:\\
+		  \[
+			  = \left( \bigcap_{\substack{D'\subsetteq Z,\\ D'\text{ chiuso in } X,\\ D'\supseteq Z}} D' \right)\cap Y
+		 .\] 
+		 dove la parentesi è la chiusura di $Z$ in $X$
+	 \end{dimo}
+	 \textbf{Osservazione}\\
+	 Attenzione: non vale un enunciato analogo con la parte interna.\\
+	 Ad esempio $X = \R$ cn topologia euclidea $Y = \Z$  $Z= \{0\}$\\
+	 La parte interna di  $Z$ in $X$ è vuota, perché $Z$ non contiene alcun aperto di $\R$\\
+	 Invece la topologia di sottospazio su  $Y$ è la topologia discreta e $Z$ è aperto in $Y$.\\
+	 Quindi  $Z$ è la propria parte interna come sottoinsieme di $Y$.
+	 \begin{defi}
+	 	Sia $f: X \Rightarrow Y $ un'applicazione continua fra spazi topologici, $f$ è un'inversione topologica se la restrizione
+		\begin{center}
+			\begin{aligned}
+				\tilde f: &X \rightarrow f(X)\\
+					  &x \rightarrow f(x)
+			\end{aligned}
+		\end{center}
+		è un omeomorfismo, dove su $f(X)\subseteq Y$ metto la topologia di sottospazio.
+	 \end{defi}
+	 \textbf{Esempio}\\
+	 1) Considero 
+	 \begin{center}
+	 	\begin{aligned}
+			&\R \rightarrow \R \\
+			&x \rightarrow (x,0)
+	 	\end{aligned}
+	 \end{center}
+	 (qui $\R, \R^2$con topologia euclidea) è un immersione, la verifica è per esercizio.\\
+	 2) 
+	 \begin{center}
+	 	\begin{aligned}
+			$f : $&$[0,2\pi[ \rightarrow \C$\\
+			   & $t \rightarrow e^{it}$
+	 	\end{aligned}
+	 \end{center}
+	 Su $[0,2\pi[\subseteq \R$\\
+	 metto la topologia di sottospazio indotta dalla topologia euclidea su  $\R,$ su $\C = \R^2$ metto la topologia euclidea\\
+	 È continua, iniettiva e $f([0,2\pi[) = S^1 = \{z\in\C \ | \ |z|=1\}$\\
+	 Questa  $f$ non è un'immersione, infatti $[0,\pi[$ è aperto nel dominio, ma $f([0,2[)$ non è aperto in $S_1$ con topologia di sottospazio.
+	 %TODO aggiungi figura 6:40
+	 quel chiuso dovrebbe essere interesezione tra la circonferenza e un aperto di $\R^2$, Ciò non è possibile perchè ci sarebbe un intorno su un estremo della circonferenza.\\
+	 \subsection{Prodotti topologici}
+	 Siano $P,Q$ spazi topologici.\\
+	 vogliamo definire una topologia "naturale" su $P\times Q$.\\
+	  \textbf{Esempio:}\\
+Considero $P = Q = \R$ con topologia euclidea
+ \[
+ P\times Q = \R\times \R = \R^2
+.\] 
+La topologia su $\R^2$ sarà quella euclidea. Considero ad esempio
+\[
+	U \subseteq \R\text{ aperto}, \ \ V\subseteq\R\text{ aperto}
+.\] 
+il prodotto $U\times V$ sarà aperto in  $\R^2$, posso pensare che questa sia quindi la mia topologia, ma vediamo qualche esempio con la topologia euclidea.\\
+Ad esempio  $U = ]a,b[ \ \ \ V = ]c,d[$, allora  $U\itimes V = ]a,b[\times]c,d[$ è un rettangolo aperto\\
+Anche un disco aperto in  $\R^2$ è aperto in topologia euclidea, ma non riesco a scriverlo con questo prodotto  $U\times V$ con $U\subseteq \R, \ V\subseteq \R$\\
+Potrei prendere
+ \[
+	 B = \{U\times V \ | \ \ \substack{U\subseteq \R \text{ aperto },\\ \hspace{-3px}V\subseteq\R\text{ aperto }}\}
+.\] 
+come base per la topologia su $\R\times\R$
+ \begin{defi}
+	Siano $P,Q$ spazi topologici, la topologia prodotto su $P\times Q$ è la meno fine fra quelle per cui le proiezioni:
+	\begin{center}
+		\begin{aligned}
+			p:& P\times Q \rightarrow P\\
+			  &(a,b) \rightarrow a\\
+			q:&P\times Q \rightarrow Q\\
+			  &(a,b) \rightarrow b
+		\end{aligned}
+	\end{center}
+	Sono continue.
+\end{defi}
+\textbf{Osservazione}\\
+Esistono topologie su $P\times Q$ tali che  $p$ e $q$ sono continue, per esempio la topologia discreta su $P\times Q$\\
+La topologia prodotto è l'intersezione di tutte le topologia per cui  $p$ e $q$ sono continue.
+\begin{teo}
+	
+\end{teo}
+
+\end{document}

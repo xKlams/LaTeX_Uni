@@ -1,0 +1,164 @@
+\documentclass[12px]{article}
+
+\title{Lezione 6 Analisi Reale}
+\date{2025-03-11}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Insieme di Vitali}
+	\textbf{Controesempio all'additività di m}\\
+	Insieme di Vitali\\
+	In $\R$ consideriamo la relazione d'equivalenza
+	\[
+	x,y\in\R \ \ \ x\sim y \ \Leftrightarrow \ x-y\in\Q
+	.\] 
+	sia $[x]$ la classe di equivalenza di un elemento $x\in \R$\\
+	 \[
+		 [x] = \{y\in \R \ | \ x\sim y\} = x + \Q
+	.\] 
+	$V$ insieme di Vitali è costruito scegliendo un elemento in $[0,1]$ da ogni classe d'equivalenza.  $V\subseteq[0,1], \ x\in V$ \\
+	$\forall x\in[0,1] \Rightarrow \exists \hat x\in V$ tale che $x\sim \hat x \Leftrightarrow x-\hat x \in \Q \Rightarrow x - \hat x = q\in\Q$ \\
+	$ \Rightarrow x=\hat x + q\in V + q$ dove $q\in\Q\cap [-1,1]$\\
+	 $-1\leq x - \hat x \leq x\leq 1$ \\
+	 Quindi abbiamo dimostrato
+	 \[
+		 [0,1]\subseteq \bigcup^{}_{q\in\Q\cap[-1,1]} V + q\subseteq[-1,2]
+	 .\] 
+	 L'osservazione cruciale è che tutti questi insiemi sono disgiunti\\
+	 siano $q_1,q_2\in \Q\cap [-1,1]$\\
+	 se $V+ q_1\cap V + q_2\neq \emtyset$\\
+	 $ \Rightarrow \exists x_1,x_2\in\Q $ tale che 
+	 \[
+	 x_1 + q_1 =x_2 + q_2
+	 .\] 
+	 \[
+	 x_1 -x_2 = q_1 + q_2\in\Q
+	 .\] 
+	 Ciò vuol dire che $x_1\sim x_2$ che è assurdo dato che in $V$ prendiamo solo un rappresentate per ogni classe di equivalenza.\\
+	 Ciò vuol dire che $\cup_{i\in\Q\cap[-1,1]}$ è unione numerabile di insiemi disgiunti\\
+	  \textbf{Vediamo la misura di questo insieme}\\
+	  $\displaystyle m([0,1]) = 1 \leq mi \left(\bigcup_{q\in\Q\cap[-1,1]}V + 1 \right)$ per monotonia\\
+	  Supponiamo che valga l'additività. \ \hfill (1)
+	  \[
+		  = \sum^{}_{q\in Q\cap[-1, 1]}m (V + q)
+	  .\] 
+	  \[
+		  = \sum^{}_{} m(V) \leq m([-1,2]) = 3
+	  .\] 
+	  $\displaystyle 1 \leq \sum^{}_{q\in\Q\cap[-1,1]}m(V)\leq 3$ \\
+	  Però le due disuguaglianze indicano che $m(V) > 0$ e $m(V) = 0$ (la somma deve essere di termini positivi, e deve essere finita), che è assurdo. Ma qualunque sottoinsieme di $\R$ ha una misura, quindi l'assurdo deriva dal fatto che utilizziamo l'additività (1).\\[10px]
+	  Tuttavia non vogliamo rinunciare all'additività, possiamo quindi considerare l'insieme degli insiemi per cui vale l'additività della misura.\\
+	  \begin{defi}[Caratheodory]
+	  	$X$ insieme non vuoto $\mu$ misura su $X$\\
+		Un insieme  $E\subseteq X$ si dice $\mu$-misurabile se $\forall F\subseteq X \text { si ha }$
+		\[
+			 \mu(F) = \mu(F\cap E) + \mu(F\setminus E) 
+		.\] 
+		Ovvero $E$ spezza additivamente ogni altro insieme
+	  \end{defi}
+	  \textbf{Osservazione}\\
+	  \begin{enumerate}
+		  \item $E\subseteq X$ è  $\mu$ misurabile $ \Leftrightarrow$ $\mu(F)\geq \mu(F\cap E) + \cap (F\setminus E) \ \ \forall F\subseteq X$\\
+			  perché $\geq$ è sempre vero per la subadditività\\
+			  Quindi si può anche supporre $\mu(F)< + \infty$
+		  \item La definizione di misurabilità è simmetrica per  $E$ e $E^c = X\setminus E$,  $E$ misurabile $ \Leftrightarrow\mu(F)\geq \mu(F\cap E) + \mu (F\setminus E) = \mu(F\setminus E^c) + \mu(F\cap E^c)$\\
+			  che è la misura che dovrei testare per $E^c$ \\
+			  Quindi $E$ è $\mu$-misurabile $ \Leftrightarrow \ E^c$ è $\mu$-misurabile
+		  \item Se $\mu(E) = 0  \Rightarrow  E $ è $\mu$-misurabile.\\
+			  $\forall F\subseteq X$\\
+			  $\mu(F\cap E)+ \mu(F\setminus E)\leq \cancel{\mu(E)} + \mu(F) \Rightarrow E$ è $\mu$-misurabile.\\
+	  \end{enumerate}
+			  Indicheremo con $\eta_\mu$ la classe dei sottoinsiemi  $\mu$-misurabili\\
+			  $\eta_\mu = \{E\subseteq X \ | \ E \ \ \mu$-misurabile $\} = \{\emptyset, X, \ldots\}$
+\newpage
+			  \begin{teo}
+				  Sia $\mu$ una misura su $X$, $\eta_\mu$ la classe degli insiemi $\mu$-misurabili, Allora:
+				  \begin{enumerate}
+					  \item se $\{E_i\}_{i\in\N}\subset \eta_\mu \Rightarrow \bigcup^{+\infty}_{i = 1}E_i\in\eta_\mu$ 
+					  \item Se $\{E_i\}_{i\in\N}\subset \eta_\mu$ tale che $E_i\cap E_j = \emptyset $ se $i\neq j$\\
+						   $ \Rightarrow \mu \left( \bigcup^{\infty}_{i = 1}E)i)  = \sum^{+\infty}_{i = 1}\mu(E_i)$ 
+						   \item  Se $\{E_i\}_{i\in\N}\subset\eta_\mu$\\
+							   tale che  $E_1\sunbseteq E_2\subseteq\dots\subseteq E_i\subseteq E_{i+1}\subseteq \ldots$\\
+							   $ \Rightarrow \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) = \lim_{i \rightarrow\infty)\mu(E_i)$
+						   \item Se $\{E_i\}}_{i\in\N}\subset \eta_\nu$\\
+								   tale che $E_1\supseteq E_2\supseteq\ldots\subseteq E_i\supseteq E_{i+1}\supseteq\ldots$\\
+								   e $\mu(E_1) < +\infty$\\
+								   $\mu \left( \bigcup^{\infty}_{i=1} E_i \right) = \lim_{i  \rightarrow\infty}\mu(E_i)$
+
+				  \end{enumerate}
+			  \end{teo}
+	\begin{dimo}
+		Primo passo, l'unione finita di numerabili è misurabile\\
+		\[
+		E_1,E_2\in\eta_\mu \ \ th: \ E_1\cup E_2\in \eta_\mu
+		.\] 
+		$\forall F\subseteq X$\\
+		 $\mu(F) = \mu(F\cap E_1) + \mu(F\setminus E_1) = \mu(F\cap E_1) + \mu(F\setminus E_1\cap E_2) + \u(F\setminus E_1\setminus E_2) \geq \mu(F\cap E_1\cup (F\setminus E_1\cap E_2)) + \mu (F\setminus(E_1\cup E_2)) = \mu(F\cap(E_1\cup E_2)) + \mu(F\setminus (E_1\cup E_2))$\\
+		 per subadditività\\
+		 Induttivamente:\\
+		 se $\displaystyle E_1, \ldots, E_k\in\eta_\mu \Rightarrow \bigcup^{k}_{i=1}E_i = \bigcup^{k-1}_{i=1}E_i\cup E_k\in\eta_\mu$ \\
+		 Se $E_1,\ldots, E_k\in\eta_\mu \Rightarrow E^c_1,\ldots,E_k^c \in\eta_\mu \Rightarrow \bigcup^{k}_{i=1}E^c\in\eta_\mu \Rightarrow (\bigcup^{k}_{i=1}E_i^c)^c\in\eta_\mu$\\
+		 Secondo passo finita additività:\\
+		 $E_1,\ldots,E_k\in\eta_\mu, \ \ E_1,\ldots,E_k$ disgiunti\\
+		 $\mu \left( \bigcup^{k}_{i=1}E_i \right) = \mu( \bigcup^{k}_{i=1}E_i\cap E_k) + \mu \left( \bigcup^{k}_{i=1}\setminus E_k) = \mu(E_k) + \mu \left( \bigcup^{k-1}_{i-1}E_i)$\\
+		terzo passo: Numerabile additività\\
+		$\{E_i\}\subset\eta_\mu, E_i\cap E_j = \emptyset \ \ \forall i\neq j$\\
+		 \[
+		\sum^{+\infty}_{i=1}\mu(E_i)\geq \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) \geq \mu \left( \bigcup^{k}_{i=1}E_i \right) = \sum^{k}_{i=1}\mu (E_i) \ \ \forall k
+		.\] 
+		\[
+		 \Rightarrow  \sum^{+\infty}_{i=1}\mu(E_i)\geq \mu( \bigcup^{+\infty}_{i=1} \mu(E_i)\geq\mu \left( \bigcup^{+\infty}_{i=1}E_i \right)\geq \sum^{+\infty}_{i=1}\mu(E_i)
+		.\] 
+		Osserviamo che $\{E_i\}_{i\in\N}\subset\eta_\mu,$ disgiunti\\
+		$F\subseteq X$\\
+		 $ \Rightarrow \mu \left(F\cap \bigcup^{k}_{i=1}E_i \right) = \mu \left( \bigcup^{k}_{i-1}F\cap E \right$\\
+			 e $\mu(F\cap \bigcup^{+\infty}_{i=1}E_i = \sum^{+\inftu}_{i=1}\mu(F\cap E_i)$	\\
+			 quarto passo\\
+			 $\{E_i\}_{i\in\N}\in \eta_\mu$\\
+			  $E_1\subseteq E_2\subseteq\ldots$\\
+			  $ \Rightarrow \mu ( \bigcup^{+\infty}_{i=1}E_i = \lim_{i \rightarrow +\infty} \mu(E_i)$\\
+			  $ \bigcup^{k}_{i=1}E_i = E_1\cup E_2\setminus E_2\cup E_\ldots\cup2\setminus E_2\ldots\cup E_k\setminus E_{k-1}$\\
+			  $ \bigcup^{+\infty}_{i=1}E_i = E_1\cup \bigcup^{+\infty}_{i=2}E-i\setimnus E_{i-1}$\\
+			  $\{E_1,E_i\setminus E_{i-1}\}_{i\geq 2}$\\
+			  successione di insiemi disgiunti e misurabili.\\
+			  $E_i\setminus E_{i+1} = E_i\cap (E_{i-1})^c$\\
+			  per il passo $3$ \ \ $\displaystyle \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) = \mu(E_1) + \sum^{+\infty}_{i = 2}\mu (E_i\setminus E_{i-1})\\
+			  = \mu(E_1) + \sum^{+\infty}_{i=2}(\mu(E_i) - \mu (E_{i-1}))$\\
+			  $E_i = E_{i-1}\cup E_i\setminus E_{i-1}$\\
+			  $ \Rightarrow \mu (E_i) = \mu (E_{i-1}) + \mu (E_i\setminus E_{i-1})$
+			  \[
+				  \mu( \bigcup^{+\infty}_{i=1}E_i) = \mu(E_1) + \lim_{k \rightarrow + \infty} \sum^{k}_{i=2}(\mu(E_i) - \mu (E_{i-1})) 
+			  .\] 
+			  \[
+			   = \mu(E_2) + \lim_{k \rightarrow +\infty} ( \cancel{\mu(E_2)} - \mu (E_1) + \cancel{\mu (E_3)} - \cancel{\mu (E_2)} + \ldots + \mu (E_k) - \cancel{\mu(E_{k-1})}
+	   			  .\] 
+			  Inoltre:\\
+			  se $E_1\subseteq\ldots \ \ \{E_i\}_{i\in\N}\subset\eta_\mu$ \\
+			  $\forall F\subseteq X$\\
+			  $\mu \left(F\cap \bigcup^{+\infty}_{i = 1}E_i \right) = \lim_{i \rightarrow +\infty} \mu(F\cap E_i)$\\
+			  Quinto passo\\
+			  $\{E_i\}_{i\in\N}\subset \eta_\mu$\\
+			   $E_2\supseteq E_2\supseteq \ldots$ \ \ \ $\mu(E_1) < +\infty$\\
+			   $E_1\semtinus E_2\subseteq E_1\setminus E_3$\subseteq\ldots\\
+			   \[
+				   \mu \left( \bigcup^{+\infty}_{i = 1} E_1 \setminus E_{i} \right) = \lim_{i \rightarrow +\infty}\mu(E_1\setminus E_i)  = \lim_{i \rightarrow +\infty} (\mu(E_1) - \mu (E_i)) = \mu(E_1) - \lim_{i \rightarrow + \infty} \mu (E_i)
+			   .\] 
+			   sesto passo\\
+			   $\{E_i\}\subset \eta_\mu$\\
+			    $ \bigcup^{+\infty}_{i=1}E_i\in\eta_\mu$\\
+			    $\forall F\subseteq X$\\
+			     $\mu (F\cap \bigcup^{+\infty}_{i = 1}E_i) + \mu (F\setminus \bigcup^{+\infty}_{i = 1}E_i) = \mu (F\cap  \bigcup^{+\infty}_{i= 1}B_k ) + \mu (F\setminus  \bigcup^{+\infty}_{k=1}B_k)$\\
+			     $B_j = \bigcup^{k}_{i =1} E_i$\\
+			     $B_1\subseteq B_2\subseteq\ldots$\\
+			     $ \bigcup^{+\infty}_{k = 1}B_k = \bigcup^{+\infty}_{i = 1}E_i$ \\
+			     $\lim_{k \rightarrow +\infty} \mu (F\cap B_k) = \lim _{k \rightarrow +\infty} \mu (F\setminus B_k)$\\
+			     $ = \lim_{k \rightarrow +\inftu} (\mu(F\cap B_k)  + \mu(F\setminus B_k)) = \mu (F)$
+	\end{dimo}
+	
+	
+	
+\end{document}

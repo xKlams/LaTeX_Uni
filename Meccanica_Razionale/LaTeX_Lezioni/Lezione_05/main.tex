@@ -1,0 +1,119 @@
+\documentclass[12px]{article}
+
+\title{Lezione 5 Meccanica Razionale}
+\date{2025-03-11}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Problemi differenziali}
+	Stiamo studiando problemi del tipo
+	\[
+	 \begin{cases}
+	 	\dot z = g(z)\\
+		z(0) = z_0
+	 \end{cases}
+	.\] 
+	$g\in C_1(\Omega, \R^n)$\\
+	$\Omega\subseteq \R^n$ aperto\\
+	$g(Zq) = 0$ punto di equilibrio\\
+	$Z_q= $ \begin{cases}
+		\text{stabile (se  $(0,0)$ per ogni oscillatore armonico)}\\
+		\text{Instabile  (se $(0,0)$ per repulsione lineare $m\ddot x = \gamma x \ \ \gamma > 0$)}\\
+		\text{asimmetricamente stabile (sistema meccanico con "attrito")
+}\end{cases} 
+\textbf{Osservazione}\\
+$z_{eq}$ stabile  $  \Leftrightarrow \sup_{t\in \R^+} | z(t) - z_{eq}| \xrightarrow{z_0 \rightarrow z_eq} 0\\$
+Proprietà di uniforme (nel tmepo) continuità nei dati iniziali\\
+dove $z(t)$ soluzione di  $SDO1$ con dato iniziale  $z_0$\\
+\textbf{Osservazione 2}\\
+$z_{eq}$ asintoticamente stabile per sistema meccanico con potenziale  $U\in C^2(D)$  $(D$ aperto di $\R^{3N})$. Allora  $H$ non si conserva. $z_0 = (x_0,v_0)\in B_{\delta'}(z_{eq})$\\
+Supponiamo $H(x_0,v_0) = H(x(t), v(t))\ \ \forall \ t\in\R' $\\
+$H(x_0,v_0) = \lim_{t \rightarrow + \infty} H((x(t),v(t)) = H(x_{eq},0) = U(x_{eq}) \Rightarrow  H$ costante in $B_{\delta '} (z_{eq})$ Assurdo \\
+	Abbiamo trovato un punto di equilibrio, vogliamo capire se questo è stabile
+	\subsection{Metodi per lo studio degli equilibri}
+	\begin{enumerate}
+		\item Linearizzazione (Sviluppo in serie di Taylor)\\
+		$g(z) = g(z_{eq}) + D_g(z_{eq})(z-z_{eq}) + R(z) \ \ R(z) = o(|z-z_{eq}|$\\
+		dove $D_g(z(eq)) = L$ matrice del campo linearizzata.\\
+		$\eta := z - z_{eq},\ \ \ \eta_0 := z_0 - z_{eq}$\\
+		\begin{cases}
+			\ \dot\eta = L\eta + R(\eta + z_{eq})\ \\ \eta(0) = \eta_0
+		\end{cases}\\
+		Abbiamo quindi un SDO1 linearizzato\\
+		di tipo oscillatore armonico (autovalori a parte reale negativa) o di tipo repulsione (un autovalore a parte reale positiva)\\
+		se un autovalore a parte reale nulla, boh\\[10px]
+ Se posso trascurare $R$ deduco il comportamento intorno a $\mu = 0$
+\item Lyapunov $"W"$ funzione di Lyapunov\\
+	\newpage
+	\begin{teo}
+		Sia $U\subset \Omega$ intorno di  $z_{eq}, W\in C(U,\R)$, differenziabile in  $U\setminus\{z_{eq}\}$ e tale che  $W(z_{eq}) = 0, \ W|_{U\setminus\{z_{eq}\}}>0$\\
+		Allora: 
+		 \begin{enumerate}
+			 \item se $\dot W(z) \leq 0\ \ \ \forall z\in U\setminus\{z_{eq}\} \Rightarrow  z_{eq}$ stabile.
+			 \item se $\dot W(z) < 0 \ \ \forallz\in U\setminus\{z_{eq}\} \Rightarrow  z_{eq} $ è asintoticamente stabile.
+		\end{enumerate}
+	\end{teo}
+	\begin{dimo}
+		(a) Sia $\varepsilon > 0$ arbitrario tale che $\overline B_\varepsilon (z_{eq})\subset U\subset \Omega$\\
+		$\displaystyle\alpha : = \min_{\partial B_\varepsilon(z_{eq})} W > 0$\\
+		$\Exists U'\subset B_\varepsilon (z_{eq})$ aperto tale che $W|_{U'} < \alpha$ e  $z_{eq}\in U'$ \\
+		Sia $\delta > 0 $ tale che $B_\delta (z_{eq})\subseteq U'$  e sia  $z_0\in B_\delta(z_{eq})\ \ \ z_0\neq z_{eq}$ \\
+		Sia $z(t)$ soluzione di SDO1 con dato iniziale  $z_0$\\
+		Supponiamo $\exists \tau > 0$ tale che  $z(t) \in B_\varepsilon (z_{eq}) \ \ \forall t\in [0,\tau)$\\
+		e  $z(\tau) \in \partial B_\varepsilon (z_{eq})$. Allora  $W(z(\tau))\geq \alpha$. Assurdo  $z_{eq}$ stabile (b) negli appunti.
+	\end{dimo}
+	Come cerco $W$?\\
+	Cerco forme quadratiche, energia o quantità conservata
+	 \begin{coro}
+		 Sia $x_{eq}$ posizione equilibrio di un sistema meccanico conservativo con $U\in C^2(D)$\\
+		 $x_{eq}$ è minimo (stretto) di $U \Rightarrow x_{eq}$ stabile.
+	 \end{coro}
+	 \begin{dimo}
+		 $W := T(v) + U(x) - U(x_{eq})$ è funzione di Lyapanov per lo stato  $(x_eq, 0)$\\
+		 Infatti  $\dot W = \dot H = 0 \ \forall t$\\
+		 e inoltre  $W(x_{eq}, 0 ) = 0$ e $W > 0$ in un intorno di  $(x_{eq}, 0)$
+	 \end{dimo}
+	\end{enumerate}
+	\textbf{Esercizio Famoso (Letka-Volterra)}\\
+	$x,y$ concentrazione di preda, predatore\\
+	$\alpha,\beta,\gamma,\delta > 0$\\
+	\begin{cases}
+	  \dot x = \alpha x - \beta xy\\
+	 \dot y =  -\gamma y + \delta xy
+	\end{cases}\\
+	$\alpha$ è la riproduzione delle prede, $\beta$ quanto vengono mangiate, $\gamma$ quanto muoiono i predatori, $\delta$ i predatori vengono favoriti dall'uccisione delle prede\\
+Questo è un sistema differenziale di ordine 1, si studino i punti id equilibrio.\\
+\begin{cases}
+	
+$\alpha x - \beta xy = 0$\\
+$-\gamma y + \deltaxy = 0$
+\end{cases}
+$z_{eq,1} = (0,0)$
+$z_{eq,2} = (\frac\gamma\delta,\frac\alpha\beta)$\\
+ \textbf{Equilibrio 1} $(0,0)$\\
+ Linearizzata di $g(x,y) = (\alpha x - \beta x y, -\gamma y + \delta x y )$,  \\$L = Dg(z_{eq}) = \matrice{\alpha - \beta y & -\beta x\\ \delta y & -\gamma + \delta x}$\\
+ $Dg(0,0) = \matrice{\alpha & 0 \\ 0 & -\gamma}$  $\alpha$ è positiva, quindi è di tipo "repulsore", $(0,0)$ è instabile\\
+ $E_q(\frac\gamma\delta,\frac\alpha\beta)$ \\
+$Dg(\frac\gamma\delta, \frac\alpha\beta) = \matrice{0 & -\beta\frac\gamma\delta\\\delta\frac\alpha\beta & 0}$\\
+autovalori immaginari puri, quindi il metodo linearizzato non è utile.\\
+  $H(x,y) := \delta x + \beta y-\gamma\ln x-\alpha \ln y $ \\
+  $-\gamma\frac{x}{\dot x} -\alpha\frac{y}{\dot y} + \delta\dot x + \beta \dot y  = \delta (\alpha x - \beta xy) + \beta(-\gamma y + \delta xy) - \gamma(\alpha - \beta y)-\alpha(-\gamma + \delta x ) = 0$\\
+  $\dot H = \frac{d}{dt} H(x(t), y(t)) =0 $\ \ \  $W(x,y) = := H(x,y) - H(\frac \gamma\delta, \frac\alpha\beta)$\\
+  Se  $z_{eq,2}$ è un punto minimo stretto di  $W$, allora $W$ è Lyapunov e $z_{eq,2} $ stabile \\
+  $\triangledown W = (\delta - \frac \gamma x, \beta - \frac \alpha y), \triangledown W(z_{eq,2}) = (0,0)$ 
+ \\
+ \[
+	 D^2 W = \matrice{\frac\gamma {x^2} & 0 \\ 0 & \frac{\alpha}{y^2}}
+ .\] 
+ $D^2W(z_{eq,2}) = \matrice{\frac{\delta^2}{\gamma} & 0 \\ 0 & \frac{\beta^2}\alpha}$ Per il teorema di Lyap.  $ \Rightarrow (\frac\gamma\delta, \frac\alpha\beta)$ stabile
+
+
+
+
+
+	
+	\end{document}
