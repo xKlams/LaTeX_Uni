@@ -1,0 +1,673 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\title{Compendio Lezioni del Corso: Meccanica_Razionale/}
+\date{\today}
+\author{Federico De Sisti}
+\include{../../../setup.tex}
+\begin{document}
+\maketitle
+\maketitle
+	\newpage
+	\section{Introduzione al corso}
+	\subsection{Contatti}
+	sergio.simonella@uniroma1.it, stanza 17, mercoledì alle ore 11:00\\ 
+	\textbf{Testi consigliati}\\
+	Truesdell 1974 Essays of the history of mechanics (punto di vista critico sull'inizio della meccanica analitica)\\
+	Buttà-Negrini "Note del corso di meccanica razionale"\\
+	Arnold metodi matematici della meccanica classica
+	\subsection{Cosa è la meccanica razionale}
+	È la teoria del moto (meccanica), cerca di collegare risultati sperimentali con prove matematiche (raizonale).\\
+	\subsection{Assomi (leggi del moto)}
+	\begin{ass}
+Every body continues in its state of rest, or of uniform motion straight ahead, unless it is compelled to change that state by forces impressed upon it. 
+	\end{ass}
+	Questa è la prima legge, essenzialmente risale a Galileo 
+	\begin{ass}
+		The change of motion is proportional to the motive force impressed, and it takes place along the right line in which that force is impressed
+	\end{ass}
+	\begin{ass}
+		To each action there is always a contrary and equal reaction, or the mutual action of two bodies are always equal and directed to contrary parts
+	\end{ass}
+	1 + 2 + 3 determinano la legge del moto (intesa come evoluzione temporale del corpro)\\
+	\[
+	 t \rightarrow x(t)
+	.\] 
+	dove t è il tempo (assoluto)\\
+	$x(t)=$ configurazione spaziale (uno o più punti nello spazio fisico)\\
+	\textbf{Dato di fatto}\\
+	$ x \rightarrow x(t)$ non è esplicita (non abbiamo $x(t)$ polinomio o integrale, a meno di casi abbastanza semplici)\\
+	Sistema meccanico $ = \begin{cases}
+		\text{non integrabile (solito)}\\
+		\text{integrabile (eccezioni)}
+	\end{cases}$ \\
+	qualitativamente:\\
+	moto "caotico"\\
+	moto "regolare"\\
+	Poincaré diceva che essenzialmente ci interessava capire le loro proprietà geometriche\\
+	i moti regolari sono 16 e sono fondamentali\\
+	\begin{defi}[Sistema meccanico]
+		Sistema di $N$ "particelle" ($N\in\N$) o "punti materiali" $p_0,p_1,\ldots,p_N$ in $\R^3$ di "masse inerziali"  $m_1,m_2,\ldots, m_N \ \ m_i>0 \ i=1,\ldots,N$
+	\end{defi}
+	\begin{nota}
+		Moto $t \rightarrow P(t)$\\
+		$P(t) = (P_1(t), P_2(t), \ldots,P_N(t))$\\
+		configurazione (in coordinate cartesiane)\\
+		$x(t) = (x^{(1)}(t),\ldots,x^{(n)}(t))$\\
+		$x^{(k)}(t)\in \R^3\ \ x^{(k)}(t) = (x_1^{(k)}(t), x_2^{(k)},x_3^{(k)})\ \ k = 1,\ldots, N$\\
+		velocità \ \ $v(t) = (v^{(1)}(t), \ldots, v^{(n)}(t))$ \ \  $v^{(k)}(t) = (v_1^{(k)}(t), v_2^{(k)}(t), v_3^{(k)}(t))$\\
+		 \[
+			 v(t) = \dot x(t)  = \lim_{\varepsilon \rightarrow 0}\frac{x(t_0 + \varepsilon) - x(t)}{\varepsilon}
+		.\] 
+		accellerazione a(t) = \ldots\\
+		a(t) = \dot v(t)  = \ddot x(t) = \frac{d}{dt}v(t) = \frac{d^2}{dt^2}x(t)
+	\end{nota}
+	\textbf{Esempi:}\\
+	1)Caduta libera:\\
+	$N = 1\ \ m =1 \ \ g > 0$\\
+	 $x\in \R^3 \ \ \ \ddot x(t) = -g(0,0,1)$\\
+	 Condizioni iniziali $(x(0),\cdot x(0)) = (x_0,\cdot x_0)\ \ \ \ x_0,\cdot x_0 \in \R$\\
+	 \[
+	 \begin{cases}
+	 	\ddot x_1(t) = 0\\
+	 	\ddot x_2(t) = 0\\
+	 	\ddot x_3(t) = 0\\
+	 \end{cases} \ \ 
+	 \begin{cases}
+	 	\dot x_1(t) = \dot x_1(0)\\
+	 	\dot x_2(t) = \dot x_2(0)\\
+	 	\dot x_3(t) =\dot x_3(0) - gt\\
+	 \end{cases}
+	 \begin{cases}
+	 	x_1(t) = x_1(0) +\dot x_1(0)t\\
+	 	x_2(t) = x_2(0) +\dot x_2(0)t\\
+	 	x_3(t) =x_3(0) +\dot x_3(0)t - \frac 12gt^2\\
+	 \end{cases}
+	 .\] 
+	 2) Molla attaccata alla parete\\
+	 % TODO inserisci disegno molla attaccata al muro
+	 $\ddot x(t) = -\alpha x (t) \ \ \alpha > 0$\\
+	 $\frac{m}{m'} = \frac{\alpha'}{\alpha}$\\
+		  $m\ddot x(t) = -m\alpha x(t) = -kx(t)$ $ k > 0 $ costante\\
+		  da qui possiamo ricavare l'equazione del moto (oscillatore armonico)\\
+		  $x(t) = x(0)\cos(\sqrt\alpha t) + \frac{x(0)}{\sqrt \alpha}\sin(\sqrt\alpha t)$\\
+	3) Pianeti $N= 2$\\
+	%aggiungi immagine pianeti
+	configurazione  $x^{(1)}(t), x^{(2)}(t)$\\
+	\begin{cases}
+		
+	$m_1\ddotx^{(1)}(t) = F_{12}$\\
+	$m_2\ddotx^{(2)}(t) = F_{21}$
+	\end{cases}
+	\ \ \ 	$\displaystyle F_{12} = -F_{21} = -Gm_1m_2\frac{x^{(2)} - x^{(1)}}{|x^{(2)}-x^{(1)}|^3}$\\
+
+	\textbf{Osservazione}\\
+	I tre esempi hanno struttura "$F = ma$" con $F = -\triangledown U$\\
+	Caduta libera:\\
+	$U_g = mg x_3$\\
+	Molla: \\
+	$U_k (x) = \frac 12 k x^2$ \\
+	Pianeti\\
+	$U(x) = U(x^{(1)}, x^{(2)}) = -G\frac{m_1m_2}{|x^{(2)}-x^{(1)}}$\\
+	$F_{12} = -\triangledown_{x^{(1)}}U_G = Gm_1m_2 - \frac{1}{x^{(2)} - x^{(1)}}\frac{x^{(2)} - x^{(1)}}{|x^{(2)} - x^{(1)}|}$ \\
+	$F_{21} = -\triangledown_{x^{(2)}}U_G(x^{(1)},x^{(2)})$ \\
+	\textbf{Nota:}
+	Indice in alto indica il punto materiale, in basso indica la coordinata\\
+
+% -------------------- Fine Lezione 1 --------------------
+
+\maketitle
+	\newpage
+	\section{Meccanica Newtoniana}
+	Alla base della meccanica newtoniana c'è il tempo che è un assoluto e lo spazio euclideo tridimensionale\\
+	\begin{defi}[Spazio fisico]
+	Sia $\mathbb V_3 $ spazio vettoriale euclideo a 3 dimensioni con prodotto scalare $\langle \cdot, \cdot \rangle $\\
+	\[
+		| \overrightarrow{v}| :=\sqrt{ \langle \overrightarrow{v}, \overrightarrow{v} \rangle } \ \ \overrightarrow{v}\in\mathbb V_3
+	.\] 
+	Spazio fisico : $\mathbb E_3$ è il corrispondente spazio affine euclideo.\\(possiamo immagine l'origine come il punto d'osservazione del fenomeno)
+	\end{defi}
+	\textbf{Spazio Affine (reminder):}\\
+	$p_1,p_2\in\mathbb E_3 \ \ \exists ! \overrightarrow{v}\in\mathbb V, \overrightarrow{v}= \overrightarrow{p_1p_2}$ \\
+	$\overrightarrow{v} = p_2 - 1$\\
+	$\overrightarrow{v}\in \mathbb V_3\ \ \ p_1\in \mathbb E_3\ \ \ \exists! p_2\in \mathbb E_3 | \overrightarrow{p_1p_2} = \overrightarrow{v}$\\
+	$ \overrightarrow{p_1p_2} + \overrightarrow{p_2p_3} = \overrightarrow{p_1p_3}$ \\
+	$\mathbb E_3$ ha metrica $d(p_1,p_2) := | \overrightarrow{p_1p_2}| = \sqrt{ \langle \overrightarrow{p_1p_2}, \overrightarrow{p_1p_2} \rangle }$\\
+	Questo è lo spazio che useremo in futuro.\\
+	\begin{defi}[Sistema meccanico]
+		(guarda scorsa lezione)
+	\end{defi}
+	\begin{defi}[Sistema di riferimento dell'osservatore]
+		$O =\{0_V; e_1;e_2;e_3\}$ dove $\{e_1,e_2,e_3\}$ formano una base ortonormale \\$ \langle e_i, e_j \rangle  = \delta_{ij}$\\\
+
+	\end{defi}
+	\textbf{Osservazione}\\
+	Nel sistema $O$ dato $p\in\mathbb E_3$ \\
+	$ \overrightarrow{OP} = x_1e_1 + x_2e_2 + x_3e_3$\\
+	$x = (x_1,x_2,x_3)\in\R^3$\\
+	è la configurazione di $P$ in coordinate cartesiane\\
+	$d(p_1,p_2) = |x^{(2)} - x^{(1)}| = \sqrt{(x_3^{(2)} - x_3^{(1)})^2 + (x_2^{(2)} - x_2^{(1)})^2 + (x_1^{(2)} - x_1^{(1)})^2}$ 
+	\newpage
+	\begin{defi}[Moto] \text{} 
+\begin{enumerate}
+	\item Moto di $P$ nell'intervallo temporale $(t_1,t_2)$\\
+		$t_1,t_2\in\R\ \ t_1 < t_2$ è la funzione $t \rightarrow x(t)\in\R^3$ $t\in(t_1,t_2)$ ovvero $t \rightarrow P(t) = 0_V + x_1(t)e_1 + x_2(t)r_2 + x_3(t)e_3$ 
+	\item Orbita (o traiettoria) la curva $\{x(t)\  |\  t\in (t_1,t_2)\}$ \\
+		$($Assumiamo $x(t)\in C^k ( (t_1,t_2),\R^3) \ k\geq 2)$ A
+	\item Velocità di $P$ è la funzione $t \rightarrow v(t) := x(t) = (x_1(t),x_2(t),x_3(t))$ \\
+	ovvero $ \mathbb V\ni \overrightarrow{v}(t)= v_1(t)e_1 + v_2(t) e_2 + v_3(t)e_3 = \lim_{\varepsilon \rightarrow 0 }\frac{P(t + \varepsilon)-P_(t)}{\varepsilon}$ 
+\item Accelerazione di $P$  $t \rightarrow a(t)\in \R^3$\\
+	$a(t) := \ddot x(t) = (\ddot x_1(t), \ddot x_2(t), \ddot x_3(t)) $ ovvero\\
+$\mathbb V_3\ni \overrightarrow{a}(t) = a_1(t)e_1 + a_2(t)e_2 + a_3(t)e_3$ 
+\item Stato del sistema meccanico al tempo $t$ è la coppia $(x(t), v(t))\in\R^{6N}$
+\end{enumerate} 
+	\end{defi}
+	\begin{defi}
+		\text{}
+		\begin{enumerate}
+			\item Moto di sistema meccanico\\
+				$\{P_1,\ldots,P_n\}$ la funzione $t \rightarrow P(t)$ \ \ $t \rightarrow x(t) = (x^{(1)}(t), \ldots, x^{(N)}(t))$ è la funzione del moto di tutto il sistema\\
+				$x(t)\in \R^{3N}$ (ovvero lo spazio delle configurazioni 
+		\end{enumerate}
+		(da completare per tutti gli altri moti)
+	\end{defi}
+	\subsection{Origini delle leggi di Newton}
+	Fatto 1 [Principio di relatività galileiana]\\
+	Esistono sistemi di coordinate, detti inerziali, tali che:
+	\begin{enumerate}
+		\item Tutte le leggi della natura, a tutti gli istanti di tempo sono identiche in tutti i sistemi di coordinate inerziali;
+		\item Tutti i sistemi di coordinate in moto rettilineo uniforme rispetto ad un sistema inerziale sono anche essi inerziali 
+	\end{enumerate}
+	Il sistema di riferimento di Galileo è quello delle stelle fisse
+	\begin{defi}[Spazio delle fasi (degli stati)]
+		$\{(x,v)| x\in\R^{3N}, v\in\R^{#n}\}$
+	\end{defi}
+	Fatto 2 [Principio di determinismo]\\
+	Lo stato iniziale del sistema meccanico determina univocamente tutto il moto \\
+	Fatto 3 \\
+	Esiste una procedura empirica per definire la forza esercitata da un corpo su un altro.\\
+	\textbf{Commenti:}\\
+	Fatto 2:\\
+	Se conosco $x(t_*), v(t*) \Rightarrow $ conosco $(x(t),v(t)) \ \ \forall t$ (almeno in un intorno di $t_*$)\\
+	Data  $(x(t_0),v(t_0)) = (x_0,v_0)$ \\
+	conosco $\ddot x(t_0) = f(t_0,x_0,v_0) \ \ $ per qualche $f : A \Rightarrow \R^{3M}$ \\
+	$A\subseteq \R\times\R^{3N}\times\R^{3N}$ con f sufficientemente regolare\\
+\textbf{Esempio}\\
+$D$ aperto di $\R^{3N}$\\
+ $I\subseteq \R$ intorno di $t_0$\\
+ $f\in C^k(I\times D\times\R^{3N}; \R^{3N})$ con  $k\geq 1$\\
+ Ne segue  $\ddot x(t) = f(t,x(t), v(t)) \ \ \ \ \ \forall t$ \\
+ questa è l'equazione di Newton (Seconda legge del moto)\\
+ \begin{cases}
+ \ddot x(t) = f(t,x(t),\dot x(t))\\
+ $x(t_0) = x_0, \ \ \dot x(t_0) = v_0k$
+ \end{cases}\\
+Questa equazione di Newton sarà denotata con $E_q N$ 
+\begin{defi}[Legge di accelerazione]
+	$f$ si dice legge di accelerazione\\
+ \[
+	 f = (f^{(1)},\ldots, f^{(n)}) \ \ \ \ \ f^{(k)} = f^{(k)}(t,x,v)\in\R^3
+.\] 
+\end{defi}
+\begin{defi}[Legge di forza]
+	$F^{(k)}:=m_k f^{(k)}$ è la legge di forza\\
+	Forma equivalente con $E_qN$\\
+	 \[
+		 F^{(k)}(t,x,v) = \ddot x^{(k)}(t)m_k \ \ \ k = 1, \ldots, N
+	.\] 
+\end{defi}
+Fatto 1 $E_qN$ è invariante per cambi di coordinate inerziali
+$R = \{0_V, e_1,e_2,e_3\}, R' = \{0_V', e_1',e_2',e_3'\}$\\
+\textbf{Un po di conseguenze:}
+\begin{enumerate}
+	\item La legge del moto è costante nel tempo (se il sistema è isolato)
+	\item lo spazio è omogeneo
+	\item Lo spazio è isotropo 
+\end{enumerate}
+1)Se $x(t)$ è soluzione $(E_qN)$  $x(t + s)$ è ancora soluzione $\forall s\in \R)$\\
+ $ \Rightarrow$ in un sistema isolato $f = f(x,v)$ \\
+ 2) $(x^{(k)}(t)_{k = 1,\ldots, N}$ soluzione  $(E_qN) \Rightarrow (x^{(k)}(t) + a)_k $ è ancora soluzione $\forall a\in \R$
+ 3) $(Rx^{(k)}(t))_k \ \ $ soluzione $(E_qN) R\in SO(3)$ è ancora soluzione (invariante per rotazioni) \\
+ \textbf{Esercizio:}\\
+Dedurre la I legge di Newton dai fatti I e II\\
+$N = 1$ usando I, esiste un sistema di riferimento inerziale  $R$, il sistema è isolato\\
+ Vogliamo dimostrare che necessariamente  $\ddot x(t) = 0\ \ \ \forall t$\\
+
+% -------------------- Fine Lezione 2 --------------------
+
+\maketitle
+	\newpage
+	\subsection{Relatività e Determinismo $ \Rightarrow $ Prima legge di Newton}
+	Sia $R$ un sistema di riferimento t.c.  $R = \{0_V, e_1,e_2,e_3\}$\\
+	Un signore nell'origine misura le coordinate di un punto $P$ nel tempo.\\
+	$R'=\{0_V', e_1',e_2',e_3'\}$ è un secondo osservatore in un piano traslato $(N=1)$\\
+	Il determinismo ci dice che sapendo la situazione iniziale del punto  $P$ posso ricavare il moto.\\
+	Vogliamo dimostrare la prima legge di newton, ovvero $\ddot x = 0$
+	\begin{dimo}
+ In $R$ \ \ \ $\ddot x = f(x,\dot x)$	\\
+ In $R'$ \ \ \  $\ddot y = f(y,\dot y)$ per la relatività.\\
+ %TODO aggiungi foto 5 marzo 13:27 se ti va
+ $ \overline{OO'}$ ha coordinate $ \overline{x} + \overline{v}t$ al tempo $t, \overline{x}, \overline{v}\in\R^3$\\
+ $ \overline{O'P}$ ha coordinate $Ry \ \ R\in SO(3)$\\
+  \[
+ x = \overline{x} + \overline{v}t + Ry, \ \ \ \dot x = \overline{v} + R\dot y, \ \ \ \ddot x = R\ddot y
+ .\] 
+ \[
+	 \underline{Rf(y,\dot y)} = R\ddot y = \ddot x = f(x,\dot x) =\underline{ f( \overline{x} + \overline{v}t + Ry, \overline{v} + R\dot y)}
+ .\] 
+ $\overline v = 0 \ \ \ R = I_3$\\
+  $f(y,\dot y ) = f(\bar x + y, \dot y) \ \ \ \forall \bar x \in \R^3 \ \ \ f(x,y) = \tilde f(v) \ \ \ \tilde f:\R^3 \rightarrow\R^3$\\
+  \[
+  \tilde f(v) = \tilde f ( \bar v + R v) \ \ \ \forall\bar v \in \R^3 \ \ \forall R\in SO(3)
+  .\] 
+  $\tilde f$ è costante ed è invariante per rotazioni $ \Rightarrow \tilde f = 0$ (esercizio) 
+\end{dimo}
+\begin{defi}[Sistema meccanico conservativo]
+	Sistema meccanico per il quale $\exists U$\\
+	 \[
+		 U: D \rightarrow\R \ \ \ D\subseteq \R^{3N} \ \ \text{aperto}
+	.\] 
+	(spazio delle configurazioni)\\
+	$U\in C^2(D)$ tale che la legge di forza ha la forma gradiente.\\
+	 \[
+		 F^{(k)}(x) = -\triangledown_{X^{(k)}}U(x) \ \ \ \ k = 1,\ldots, N
+	.\] 
+	$U$ è detta energia potenziale
+	\[(F^{(k)}_i = n_k \ddot x^{(k)}_i = -\frac{\partial U}{\partial x_i^{(k)}}(x) \  \ \ k=1,\ldots,N, \ \ i=1,2,3) \]
+\end{defi}
+\newpage
+\textbf{Esempi}\\
+$N = 1$ grave, molla $\ldots$\\
+$N = 2$ \ \  $D = \R^6\setminus\{x^{(1)}=x^{(2)}\}$,  $U(x^{(1)},x^{(2)}) = \frac{-m_1m_2}{|x^{(2)} -x^{(1)}|}$\\
+\[
+	f^{(1)}(x^{(1)}, x^{(2)}) = -\triangldown_{x^{(1)}}U(x^{(1)}, x^{(2)}) = m_1m_2\frac{x^{(2)} - x^{(1)}}{|x^{(2)} - x^{(1)}|}
+.\] 
+$N = 3$ \ \  $U(x) = -\frac{m_1m_2}{|x^{(2)} - x^{(1)}|} -\frac{m_1m_3}{|x^{(3)} - x^{(1)}|} - \frac{m_2m_3}{|x^{(3)} - x^{(2)}|}$\\
+$D = \R^9\setminus $ diagonali\\
+\begin{defi}
+	In un sistema conservativo, l'energia totale $H = T + U$
+	 \[
+		 T := \frac 12 \sum^N_{k=1} m_k |v^{(k)}|^2 \ \ \text{ energia cinetica totale}
+	.\] 
+	\[
+		T = \sum^N_{k=1} T^{(k)} \ \ \ \text{ energia cinetica di } P_k
+	.\] 
+\end{defi}
+\begin{teo}[Conservazione dell'energia]
+	In un sistema conservativo, $H$ è costante sulle traiettorie.
+\end{teo}
+\begin{dimo}
+	$\displaystyle\diff {}{t}H(x(t),\dot x(t)) = \diff{}{t} T(\dot x(t)) + \diff{}{t}U(x(t))= \\ \sum^N_{k=1}m_k \langle \dot x^{(k)}(t), \ddot x^{(k)} \rangle  + \sum^N_{k=1} \langle \triangledown_{x^{(k)}}U(x(t)), \dot x^{(k)}(t) \rangle \\
+	= \sum^N_{k=1} \langle \dot x ^{(k)}(t)	, m_k\ddot x^{(k)}(t) + \triangledown _{x^{(k)}}U(x(t))  \rangle  = 0$ \\ 
+	Dato che il secondo termine del prodotto scalare è nullo.
+\end{dimo}
+\begin{defi}[Lavoro]
+	Il lavoro del sistema meccanico da $t_1$ a $t_2> t_1$ è
+	\[
+		L_{t_1 \rightarrow t_2} := \sum^N_{k=1} \int_{t_1}^{t_2}dt \langle F^{(k)}, x^{(k)} \rangle 
+	.\] 
+\end{defi}
+\textbf{Osservazione}\\
+Nel caso conservativo
+\[
+	L_{t_1 \rightarrow t_2}  = U(x,t_1) - U(x,t_2)
+.\] 
+\begin{teo}[Forze vive]
+	\[
+		T(\dot x(t_2)) - T(\dot x(t_1)) = L_{t_1 \rightarrow t_2}
+	.\] 
+\end{teo}
+La dimostrazione è simile al teorema di conservazione dell'energia\\
+\textbf{Esercizio}(Oscillatore armonico)\\
+$m \ddot x = -k x \ \ \ k > 0 \ \ \ x\iu \R$\\
+(i) si dimostri che il sistema è conservativo\\
+(ii) si trovino le traiettorie nello spazio delle fasi ("curve di fase")\\
+(iii) Dedurre dal teorema di conservazione dell'energia (senza usare l'($E_qN$)) la legge del moto $t \rightarrow x(t)$\\
+\textbf{Svolgimento}\\
+$H(x,v) = \frac 12 mv^2 + \frac 12 k x^2$\\
+ \[
+	 \diff{}{t}H(x(t),\dot x(t)) = m\dot x\ddot x + kx\dot x = 0 \ \ \forall t
+.\] 
+(ii)
+%TODO aggiungi grafico 5 marzo 14 33
+\textbf{Osservazione}\\
+Gli insiemi di livello $H$ sono invarianti per la dinamica
+\[
+	\Gamma_E = \{(x,v) | H(x,v)=E\}
+.\] 
+$E\in\R$ livello di energia,\\
+se $E< 0 \ \ \Gamma_E = \emptyset$, non ci sono moti\\
+se  $E = 0$ \ \  $\Gamma_E = \{((0,0)\}$ moto stazionario\\
+se $E > 0$ \ \  $\Gamma_E = \{(x,v) | \frac 12 mv^2 + \frac 12 kx^2 = E\}$ \\
+$a = \sqrt{\frac{2E}k} \ \ b = \sqrt{\frac{2E}{m}}$ moto periodico.\\
+(iii) $E = 0$  $x(t) = 0 \ \ \forall t$\\
+Sia  $E > 0$
+ \[
+ E = \frac 12 m\dot x ^2 + \frac 12 k \cdot x^2 \ \ \forall t
+.\] 
+\[
+	\cdot x = \pm\sqrt\frac 2m \sqrt{E-\frac 12kx^2}
+.\] 
+\[
+	x_0,v_0 \ \ x_0\ni \left(-\sqrt{\frac{2E}{k}},\sqrt{\frac{2E}k} \right) \ \ v_0>0 
+.\] 
+$t(x) = \sqrt{\frac m_2}\int_{x_0}^x\frac{dy}{\sqrt{E-\frac k 2y^2}}$\\
+$x_0\in \left(-\sqrt{\frac{2E}{k}},\sqrt{\frac{2E}k} \right)$
+\[
+t(x) = \frac 1b \int_{x_0}^x dy \frac{1}{\sqrt{1-\frac{y^2}{a^2}}}\]
+\[
+	\frac ab\int^{x/a}_{x_0/a}dy\frac{1}{\sqrt{1 + y^2}} = \frac ab (cos^{-1}\frac {x_0}a -cos^{-1}\frac xa)
+.\] 
+$cos^{-1}(\frac xa) = cos^{-1}(\frac {x_0}{a}) - \omega t$\\
+$\omega = \frac ba = \sqrt{\frac km}\ \ \ \alpha_0 = cos^{-1}(\frac{ x_0}{a})$ \\
+$x(t) = a\cos(\alpha_0 - \omega t)$\\
+$x(t) = x_0\cos(\omega t) + \frac {v_0}\omega\sin(\omega t) \ \ \ t\in\R$
+\textbf{Osservazione} [Isocromia delle oscillazioni]\\
+il periodo $T = \frac {2\pi}\omega$ non dipende da $E$ (specialità di $U$ )\\
+\textbf{Esercizio}\\
+Si ripeta per $k < 0 $\\
+\subsection{SDO1: Teoria Generale}
+Studiamo 
+\[
+\begin{cases}
+	\dot z = g(t,z)\\
+	z(t_0) = z_0
+\end{cases}
+.\] 
+Pbm Cauchy per sistemi differenziali I ordine in forma normale\\
+$t_0\in\R \ \ z_0\in\Omega\ \ \Omega\subseteq \R^n$\\
+Cerca $t \rightarrow z(t_0)$ \ \ \ $I\subseteq \R$ intorno  $t_0$\\
+campo $g: I\time \Omega \rightarrow\R^n$\\
+\textbf{Osservazione 1}\\
+è caso particolare $z = (x,v)$\\
+$z = (z_1,z_2,\ldots,z_{6N}) = (x_1,x_2,\ldots,x_{3N}, v_1,\ldots,v_{3N})$\\
+$z_0 = (x_0,v_0)\in\Omega$\\
+$\Omega$ spazio delle fasi $\Omega = D\times \R^{3N}$\\
+$g: I\times D\times \R^{3N} \rightarrow \R^{6N}$\\
+$g(t,z,) = (v,f(t,x,v))\\$
+\textbf{Osservazione 2}\\
+(EqN) per sistema isolato (SDO1) è "autonomo"\\
+\[
+\begin{cases}
+	\dot z = g(z)\\
+	z(0) = z_0
+\end{cases}
+.\] 
+dove ho scelto $t_0 = 0$ senza perdita di generalità\\
+(se $t \rightarrow z(t)$ soluzione (SDO1)\\
+$t -> z(t-t_0)$ soluzione di $ \begin{cases}
+	\dot z = g(z)\\
+	z(t_0) = z_0
+\end{cases}$\\
+\begin{defi}[SDO1]
+	ammette soluzione locale se $\exists I_0$ intorno di $t_0,$ $\delta > 0 $\\
+	e  $ \varphi : I_0 \rightarrow B_\delta (z_0)$ t.c.\\
+	\[
+	\begin{cases}
+		\dot \varphi(t) = g(t, \varphi(t)) \ \ \ \ \ \forall t\in I_0\\
+		\varphi(t_0) = z_0
+	\end{cases}
+	.\] 
+	Globale se posso estendere a $I_0 = \R$
+\end{defi}
+\begin{teo}
+	$\exists !$ soluzione locale/globale (SDO1)
+\end{teo}
+\subsection{SDO1: Casi integrabili}
+\textbf{Esempi}\\
+1)$g = 0 \ \ z(t) = z_0 \ \ \forall t$\\
+2) $g = z$\\
+$z(t) = z_0 e^t \ \ \ \forall t$\\
+per $z_0 = 0$ soluzione stazionaria $z(t) = 0$\\
+ $(z: g(z) = 0, \ \ $ p.t: singolare del campo $z_0$ sing \ \ $z(t) = z_0) $
+%primo esercizio scheda o qualcosa dle genere foto 5 marzo 5 54
+
+% -------------------- Fine Lezione 3 --------------------
+
+\maketitle
+	\newpage
+	\section{Ripasso sui sistemi differenziali ad un grado di libertà}
+	\[
+	\begin{cases}
+		\dot z = g(z)\\
+	z(0) = z_0
+	\end{cases}
+	.\] 
+	$g:\Omega \rightarrow\R^n$ $\|omega\subseteq\R^n$ aperto $n\in\N \\ \ z_0\in\Omega$ \ \ $t \rightarrow z(t)$ $r\in R\subseteq \R$ intorno di  $O$ definiamo questo con (SDO1)\\
+	$g =0, c\in\R, z$ soluzione globale\\
+	 $g = z^2, \frac 1z$ soluzione locale\\
+	 Sono soluzioni uniche\\
+	  \textbf{Esercizio 4 foglio 1}\\
+	  \[
+	  \begin{cases}
+	  	
+	  $\dot z = \sqrt{|z|}$ \\
+	  $z(0) = z_0$
+  \end{cases}\]
+  $z_0 = 0 \ \ z(t) = 0$ soluzione stazionaria|\\
+  $z_0 \neq 0 \ \ z_0>0$\\
+  \[
+	  t(z) = \int_{z_0}^z \frac{dy}{\sqrt y} \ \ \ z > 0
+  .\] 
+  $t(z) = 2\sqrt z - 2\sqrt {z_0}$ \\
+  $z(t) = (\sqrt z_0 + \frac t 2)^2$\\
+  $t > -2\sqrt{z_0}$ \ \ \ \ 
+  $I = (-2\sqrt z_0, + \infty)$ \\
+\textbf{Osservazione}\\
+per $z_0 = 0$ ha più soluzioni \\
+  1) $\exists$ per $z_0\in \R$ \\
+  2) $\exists !$ per $z_0\neq 0$ \\
+  \textbf{Osservazione}\\
+  Lontano dei punti singoli costruiamo una soluzione unica\\
+  Metodo "separazione variabili"\\
+  $g\in C(\Omega)$\\
+  $I_0\times \Omega_0$ intorno di $(0,z_0)$\\
+  $g(z_0)\neq 0$ Possiamo assicurare\\
+  $g|_\Omega\neq 0$\\
+   \[
+	   \frac{dz}{dt} = g(z) \ \ \ dt= \frac {dz}{g(z)} \ \ \ t(z) = \int_{z_0}^z \frac{dy}{g(y)} \ \ z\in\Omega_0
+  .\] 
+  La soluzione unica di (SDO1) è l'inversa di $t(z)$\\
+   \[
+	   A(t,z(t)) := t - \int_{z_0}^{z(t)}\frac{dy}{g(t)}
+  .\] 
+  Il problema è equivalente a 
+   \[
+  \begin{cases}
+	  \dot A = 1 - \frac{\dot z(t)}{g(z(t))} =0 \\
+	  A(0,z_0) = 0
+  \end{cases}
+  .\] 
+  Per il teorema della funzione implicita\\
+  \[
+  A(t,z(t)) = 0
+  .\] 
+  \textbf{Esercizio 3 foglio 1}\\
+  \[
+  \begin{cases}
+  	\dot z = z^2 - 1\\\
+	z(0) = z_0 \ \ \ \ \ z\in\R
+  \end{cases}
+  .\] 
+  $1) z_0\in\R$ t.c. soluzione stazionaria\\
+  $2) z_0\in \R $ tale che soluzione limitata
+	\hline \ \\
+	1) $z_0 = \pm 1\ \  \ $ p.t singolari\\
+	2) $z_0 \neq \pm 1$ \ \ $t(z) = \int_{z_0}^z \frac {dy}{y^-1}$\\
+	\[
+		t(z) = \frac 12 \int_{z_0}^z \left(\frac{1}{y-1} - \frac{1}{y_1} \right) dy = \frac 12 \log\frac{z-1}{z+1}\cdot\frac{z_0 + 1}{z_0 - 1}
+	.\] 
+	$\frac{z-1}{z+1}\alpha_0 = e^{2t}$\\
+	$z(t) = \frac{\alpha_0 + e^{2t}}{\alpha_0 - e^{2t}} = 1 + \frac{2e^{2t}}{\alpha_0 - e^{2t}}$ \\
+	Se $z_0\in(-1,1) \ \ \ \alpha_0 < 0$\\
+	la soluzione è globale e limitata\\
+	Per $z_0\in[-1,1]$ soluzione è limitata.\\
+	Negli altri casi la soluzione diverge.\\
+	\textbf{Esercizio 2}\\
+	$t \rightarrow z(t)$ periodica\\
+	$z(t) = \varphi_t(z_0)$ (evoluto al tempo t)\\
+	$\exists T > 0 \ \ \ \varphi_T(z_0) = z_0$\\
+	$y_0 = \varphi_s (z_0) \ \ \ s\in\R$\\
+	$ \varphi_T(y_0) = \varphi_T \varphi_s(z_0) = \varphi_{T+s})z_0) = \varphi_s(z_0) = y_0$
+	\section{Procedura soluzione SDO1}
+	autonomo per $n = 1$ \\
+	\textbf{Passo 1}\\
+	Punti singolari di $g = 0$ \\
+	Se $z_0$ singolare $z(t) = z_0 \ \ \ \forall t$ soluzione stazionaria\\
+	\textbf{Passo 2}\\
+	$z_0$ tale che $g(z_0) \neq 0$\\
+	$\Omega_0$ intorno di $z_0$ massimale tale che $g|_\Omega\neq 0$\\
+	 $\Omega_0\subseteq\Omega$ \ \ \ $\Omega = dom g$\\
+	  $\Omega_0 = (z_0,z_1)$\\
+	  Per $z\in\Omega_0, $ calcoliamo
+	  \[
+		  t(z)= \int_{z_0}^z\frac{dy}{g(y)}
+	  .\] 
+	  tempo di raggiungimento di $z$ (da $z_0$)\\
+	  \textbf{Passo 3}\\
+	  Invertiamo la funzione $z \rightarrow t(z)$ (monotonia)\\ Troviamo $t \rightarrow z(t)\in\Omega_0$ \\
+	  $t\in I_0$ intorno di zero\\
+	  Soluzione locale unica di (SDO1)\\
+	   \[
+		   \left(\dto z(t) = \frac{1}{t'(z)|_{z(t)}} = g(z(t)), \ \ z(0) = z(t(z_0)) = z_0 \right)
+	  .\] 
+	  Teorema della funzione implicita $ \Rightarrow$ unicità \\
+	  \textbf{Passo 4}\\
+	  Estremi.
+	  \[
+		  t_+ := \int_{z_0(t_0)}^{z_t(z_0)}\frac{dy}{gy}
+	  .\] 
+	  \[
+		  t_- := \ldots
+	  \] 
+	  $|t_\pm| = \=infty$ oppure  $|t_\pm = < \infty \begin{cases}
+		  \text{soluzione non globale } (z_\pm\in\partial\Omega) \\
+		  \text{ perdita di unicità } (z_\pm \text{ punto singolare di g } )
+	  \end{cases}$
+	  \subsection{Equilibri}
+	  SDO1 autonomi $g\in C^1(\Omega, \R^n)$\\
+	   \begin{defi}
+	  	$z$ t.c. $g(z) = 0$ punto singolare\\
+		Anche detto punto di equilibrio di SDO1. Nel caso meccanico 
+		 \[
+		0 = g(z) = (v,f(x,v))
+		.\] 
+		$(x,0)$ t.c. $f(x,0) = 0$ stato di equilibrio\\
+		 $x$ è detta configurazione di equilibrio
+	  \end{defi}
+	  \begin{defi}[Classificazione degli equilibri]
+		  Un punto di equilibrio $z_{eq}$ del $SDO1$ è:\\
+		  1) stabile se  $\forall \varepsilon > 0 $  $\bar B_\varepsilon(z_{eq})\subset \Omega, \ \exists \delta > 0$ t.c. $\forall z_0\in B_\delta (z_{eq}), z(t)\in B_\varepsilon(z_{eq}) \ \ \forall t$ \\
+		  2) asintoticamente stabile se inoltre $\exists \delta '>0 \ $ t.c.  $\forall z_0\in B_{\delta'}(z_{eq}), \ \ \lim_{t \rightarrow \infty} z(t) = z_{eq}$\\
+		  3) instabile se non è stabile
+	  \end{defi}
+
+% -------------------- Fine Lezione 4 --------------------
+
+\maketitle
+	\newpage
+	\section{Problemi differenziali}
+	Stiamo studiando problemi del tipo
+	\[
+	 \begin{cases}
+	 	\dot z = g(z)\\
+		z(0) = z_0
+	 \end{cases}
+	.\] 
+	$g\in C_1(\Omega, \R^n)$\\
+	$\Omega\subseteq \R^n$ aperto\\
+	$g(Zq) = 0$ punto di equilibrio\\
+	$Z_q= $ \begin{cases}
+		\text{stabile (se  $(0,0)$ per ogni oscillatore armonico)}\\
+		\text{Instabile  (se $(0,0)$ per repulsione lineare $m\ddot x = \gamma x \ \ \gamma > 0$)}\\
+		\text{asimmetricamente stabile (sistema meccanico con "attrito")
+}\end{cases} 
+\textbf{Osservazione}\\
+$z_{eq}$ stabile  $  \Leftrightarrow \sup_{t\in \R^+} | z(t) - z_{eq}| \xrightarrow{z_0 \rightarrow z_eq} 0\\$
+Proprietà di uniforme (nel tmepo) continuità nei dati iniziali\\
+dove $z(t)$ soluzione di  $SDO1$ con dato iniziale  $z_0$\\
+\textbf{Osservazione 2}\\
+$z_{eq}$ asintoticamente stabile per sistema meccanico con potenziale  $U\in C^2(D)$  $(D$ aperto di $\R^{3N})$. Allora  $H$ non si conserva. $z_0 = (x_0,v_0)\in B_{\delta'}(z_{eq})$\\
+Supponiamo $H(x_0,v_0) = H(x(t), v(t))\ \ \forall \ t\in\R' $\\
+$H(x_0,v_0) = \lim_{t \rightarrow + \infty} H((x(t),v(t)) = H(x_{eq},0) = U(x_{eq}) \Rightarrow  H$ costante in $B_{\delta '} (z_{eq})$ Assurdo \\
+	Abbiamo trovato un punto di equilibrio, vogliamo capire se questo è stabile
+	\subsection{Metodi per lo studio degli equilibri}
+	\begin{enumerate}
+		\item Linearizzazione (Sviluppo in serie di Taylor)\\
+		$g(z) = g(z_{eq}) + D_g(z_{eq})(z-z_{eq}) + R(z) \ \ R(z) = o(|z-z_{eq}|$\\
+		dove $D_g(z(eq)) = L$ matrice del campo linearizzata.\\
+		$\eta := z - z_{eq},\ \ \ \eta_0 := z_0 - z_{eq}$\\
+		\begin{cases}
+			\ \dot\eta = L\eta + R(\eta + z_{eq})\ \\ \eta(0) = \eta_0
+		\end{cases}\\
+		Abbiamo quindi un SDO1 linearizzato\\
+		di tipo oscillatore armonico (autovalori a parte reale negativa) o di tipo repulsione (un autovalore a parte reale positiva)\\
+		se un autovalore a parte reale nulla, boh\\[10px]
+ Se posso trascurare $R$ deduco il comportamento intorno a $\mu = 0$
+\item Lyapunov $"W"$ funzione di Lyapunov\\
+	\newpage
+	\begin{teo}
+		Sia $U\subset \Omega$ intorno di  $z_{eq}, W\in C(U,\R)$, differenziabile in  $U\setminus\{z_{eq}\}$ e tale che  $W(z_{eq}) = 0, \ W|_{U\setminus\{z_{eq}\}}>0$\\
+		Allora: 
+		 \begin{enumerate}
+			 \item se $\dot W(z) \leq 0\ \ \ \forall z\in U\setminus\{z_{eq}\} \Rightarrow  z_{eq}$ stabile.
+			 \item se $\dot W(z) < 0 \ \ \forallz\in U\setminus\{z_{eq}\} \Rightarrow  z_{eq} $ è asintoticamente stabile.
+		\end{enumerate}
+	\end{teo}
+	\begin{dimo}
+		(a) Sia $\varepsilon > 0$ arbitrario tale che $\overline B_\varepsilon (z_{eq})\subset U\subset \Omega$\\
+		$\displaystyle\alpha : = \min_{\partial B_\varepsilon(z_{eq})} W > 0$\\
+		$\Exists U'\subset B_\varepsilon (z_{eq})$ aperto tale che $W|_{U'} < \alpha$ e  $z_{eq}\in U'$ \\
+		Sia $\delta > 0 $ tale che $B_\delta (z_{eq})\subseteq U'$  e sia  $z_0\in B_\delta(z_{eq})\ \ \ z_0\neq z_{eq}$ \\
+		Sia $z(t)$ soluzione di SDO1 con dato iniziale  $z_0$\\
+		Supponiamo $\exists \tau > 0$ tale che  $z(t) \in B_\varepsilon (z_{eq}) \ \ \forall t\in [0,\tau)$\\
+		e  $z(\tau) \in \partial B_\varepsilon (z_{eq})$. Allora  $W(z(\tau))\geq \alpha$. Assurdo  $z_{eq}$ stabile (b) negli appunti.
+	\end{dimo}
+	Come cerco $W$?\\
+	Cerco forme quadratiche, energia o quantità conservata
+	 \begin{coro}
+		 Sia $x_{eq}$ posizione equilibrio di un sistema meccanico conservativo con $U\in C^2(D)$\\
+		 $x_{eq}$ è minimo (stretto) di $U \Rightarrow x_{eq}$ stabile.
+	 \end{coro}
+	 \begin{dimo}
+		 $W := T(v) + U(x) - U(x_{eq})$ è funzione di Lyapanov per lo stato  $(x_eq, 0)$\\
+		 Infatti  $\dot W = \dot H = 0 \ \forall t$\\
+		 e inoltre  $W(x_{eq}, 0 ) = 0$ e $W > 0$ in un intorno di  $(x_{eq}, 0)$
+	 \end{dimo}
+	\end{enumerate}
+	\textbf{Esercizio Famoso (Letka-Volterra)}\\
+	$x,y$ concentrazione di preda, predatore\\
+	$\alpha,\beta,\gamma,\delta > 0$\\
+	\begin{cases}
+	  \dot x = \alpha x - \beta xy\\
+	 \dot y =  -\gamma y + \delta xy
+	\end{cases}\\
+	$\alpha$ è la riproduzione delle prede, $\beta$ quanto vengono mangiate, $\gamma$ quanto muoiono i predatori, $\delta$ i predatori vengono favoriti dall'uccisione delle prede\\
+Questo è un sistema differenziale di ordine 1, si studino i punti id equilibrio.\\
+\begin{cases}
+	
+$\alpha x - \beta xy = 0$\\
+$-\gamma y + \deltaxy = 0$
+\end{cases}
+$z_{eq,1} = (0,0)$
+$z_{eq,2} = (\frac\gamma\delta,\frac\alpha\beta)$\\
+ \textbf{Equilibrio 1} $(0,0)$\\
+ Linearizzata di $g(x,y) = (\alpha x - \beta x y, -\gamma y + \delta x y )$,  \\$L = Dg(z_{eq}) = \matrice{\alpha - \beta y & -\beta x\\ \delta y & -\gamma + \delta x}$\\
+ $Dg(0,0) = \matrice{\alpha & 0 \\ 0 & -\gamma}$  $\alpha$ è positiva, quindi è di tipo "repulsore", $(0,0)$ è instabile\\
+ $E_q(\frac\gamma\delta,\frac\alpha\beta)$ \\
+$Dg(\frac\gamma\delta, \frac\alpha\beta) = \matrice{0 & -\beta\frac\gamma\delta\\\delta\frac\alpha\beta & 0}$\\
+autovalori immaginari puri, quindi il metodo linearizzato non è utile.\\
+  $H(x,y) := \delta x + \beta y-\gamma\ln x-\alpha \ln y $ \\
+  $-\gamma\frac{x}{\dot x} -\alpha\frac{y}{\dot y} + \delta\dot x + \beta \dot y  = \delta (\alpha x - \beta xy) + \beta(-\gamma y + \delta xy) - \gamma(\alpha - \beta y)-\alpha(-\gamma + \delta x ) = 0$\\
+  $\dot H = \frac{d}{dt} H(x(t), y(t)) =0 $\ \ \  $W(x,y) = := H(x,y) - H(\frac \gamma\delta, \frac\alpha\beta)$\\
+  Se  $z_{eq,2}$ è un punto minimo stretto di  $W$, allora $W$ è Lyapunov e $z_{eq,2} $ stabile \\
+  $\triangledown W = (\delta - \frac \gamma x, \beta - \frac \alpha y), \triangledown W(z_{eq,2}) = (0,0)$ 
+ \\
+ \[
+	 D^2 W = \matrice{\frac\gamma {x^2} & 0 \\ 0 & \frac{\alpha}{y^2}}
+ .\] 
+ $D^2W(z_{eq,2}) = \matrice{\frac{\delta^2}{\gamma} & 0 \\ 0 & \frac{\beta^2}\alpha}$ Per il teorema di Lyap.  $ \Rightarrow (\frac\gamma\delta, \frac\alpha\beta)$ stabile
+
+% -------------------- Fine Lezione 5 --------------------
+
+\end{document}

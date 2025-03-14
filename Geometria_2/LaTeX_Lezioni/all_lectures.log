@@ -1,0 +1,4197 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.1.27)  12 MAR 2025 17:05
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**all_lectures.tex
+(./all_lectures.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen141
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count198
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks19
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks20
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks21
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count271
+\l__pdf_internal_box=\box53
+) (./all_lectures.aux)
+\openout1 = `all_lectures.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
+./all_lectures.tex:7: Missing $ inserted.
+<inserted text> 
+                $
+l.7 \maketitle
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+./all_lectures.tex:7: Missing $ inserted.
+<inserted text> 
+                $
+l.7 \maketitle
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:7: Missing } inserted.
+<inserted text> 
+                }
+l.7 \maketitle
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:7: Extra }, or forgotten \endgroup.
+\@maketitle ...note \thanks {\LARGE \@title \par }
+                                                  \vskip 1.5em{\large \lines...
+l.7 \maketitle
+              
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: No \author given.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 11--27
+
+ []
+
+./all_lectures.tex:29: Undefined control sequence.
+<recently read> \R 
+                   
+l.29 	Nasce per studiare sottoinsiemi di $\R
+                                            ^n$, cosa posso fare con un sott...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:31: Undefined control sequence.
+<recently read> \R 
+                   
+l.31 	1) Proprietà dei sottoinsiemi di $\R
+                                           ^n$, come ad esempio la compattez...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:40: Undefined control sequence.
+<recently read> \R 
+                   
+l.40 	In $\R
+            ^2$ prendiamo \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+./all_lectures.tex:42: Undefined control sequence.
+l.42 		 X = \R
+              \times\{0,1\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:47: Undefined control sequence.
+l.47 		(x,0)\sim (x,1) \ \ \ \ \forall x\in\R
+                                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+./all_lectures.tex:62: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 \begin{defi}
+                 [Funzioni continue]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:63: Undefined control sequence.
+l.63 	Dati $X\subseteq \R
+                         ^n$ e  $Y\subseteq \R^m$ insiemi qualsiasi, si defi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:63: Undefined control sequence.
+l.63 	Dati $X\subseteq \R^n$ e  $Y\subseteq \R
+                                              ^m$ insiemi qualsiasi, si defi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:70: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.70 \end{defi}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:71: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 \begin{defi}
+                 [Omeomofrismo]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:73: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 \end{defi}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:77: Undefined control sequence.
+<recently read> \R 
+                   
+l.77 1) $[0,1]$ (in  $\R
+                        $) è omeomorfo ad $[a,b] \ \ \forall a,b\in \R$ con...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:77: Undefined control sequence.
+l.77 ... omeomorfo ad $[a,b] \ \ \forall a,b\in \R
+                                                  $ con $a<b$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--79
+
+ []
+
+
+./all_lectures.tex:81: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 	f
+       :[0,1] \rightarrow [a,b]\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:81: Missing $ inserted.
+<inserted text> 
+                $
+l.81 	f
+       :[0,1] \rightarrow [a,b]\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:83: Missing $ inserted.
+<inserted text> 
+                $
+l.83 \end{aligned}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:86: Undefined control sequence.
+l.86 2) $S^1 = \{(x,y)\in \R
+                            ^2|x^2 + y^2 = 1 \}$ e $Q = \{(x,y)\in\R^2 | max...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:86: Undefined control sequence.
+l.86 ...\R^2|x^2 + y^2 = 1 \}$ e $Q = \{(x,y)\in\R
+                                                  ^2 | max\{|x|,|y|\} = 1\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:90: LaTeX Error: Environment aligend undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 \begin{aligend}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:91: Misplaced alignment tab character &.
+l.91 	&
+       Q \rightarrow S^1\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./all_lectures.tex:91: Missing $ inserted.
+<inserted text> 
+                $
+l.91 	&Q \rightarrow
+                     S^1\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./all_lectures.tex:91: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 	&Q \rightarrow S^1\\
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:91: Missing $ inserted.
+<inserted text> 
+                $
+l.91 	&Q \rightarrow S^1\\
+                          
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:91: Missing } inserted.
+<inserted text> 
+                }
+l.91 	&Q \rightarrow S^1\\
+                          
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:91: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.91 	&Q \rightarrow S^1\\
+                          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./all_lectures.tex:92: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.92 	&
+       p \rightarrow\frac {p}{||p||}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./all_lectures.tex:92: Missing $ inserted.
+<inserted text> 
+                $
+l.92 	&p \rightarrow
+                    \frac {p}{||p||}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./all_lectures.tex:93: LaTeX Error: \begin{center} on input line 89 ended by \end{aligend}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 \end{aligend}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:93: Missing $ inserted.
+<inserted text> 
+                $
+l.93 \end{aligend}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./all_lectures.tex:98: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 	f
+       :[0,1]&\cup]2,3] \rightarrow[0,2] \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:98: Missing $ inserted.
+<inserted text> 
+                $
+l.98 	f
+       :[0,1]&\cup]2,3] \rightarrow[0,2] \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:103: Missing $ inserted.
+<inserted text> 
+                $
+l.103 \end{aligned}
+                   \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:108: Undefined control sequence.
+l.108 ...è omeomorfo a $]a,b[$  $\forall a,b\in\R
+                                                  $  $a < b$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:112: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.112 	 ]
+         0,&+\infty[ \rightarrow ]0,1[\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:112: Missing $ inserted.
+<inserted text> 
+                $
+l.112 	 ]
+         0,&+\infty[ \rightarrow ]0,1[\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:114: Missing $ inserted.
+<inserted text> 
+                $
+l.114 \end{aligned}
+                   \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:115: Undefined control sequence.
+<recently read> \R 
+                   
+l.115 5)$]0,+\infty[$ è omeomorfo a $\R
+                                        $, ad esempio tramite $ x \rightarro...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:117: Undefined control sequence.
+l.117 7) $S^n = \{p\in\R
+                        ^{n+1} |\ \  ||p|| = 1\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:118: Undefined control sequence.
+<recently read> \R 
+                   
+l.118 ...nus\{(0,\ldots,0,1)\}$ è omeomorfo a $\R
+                                                  ^n$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:122: Undefined control sequence.
+<recently read> \R 
+                   
+l.122 un $l$-agono regolare qualsiasi (in  $\R
+                                              ^n$) e un  $r$-agono qualsiasi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:123: Undefined control sequence.
+<recently read> \R 
+                   
+l.123 9)  $\R
+             ^n$ e $\R^m$ sono omeomorfi se e solo se  $n = m$ (è un teorem...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:123: Undefined control sequence.
+<recently read> \R 
+                   
+l.123 9)  $\R^n$ e $\R
+                      ^m$ sono omeomorfi se e solo se  $n = m$ (è un teorem...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:125: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 \begin{defi}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:126: Undefined control sequence.
+l.126 $A\subseteq \R
+                    ^n$ si dice aperto se
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+./all_lectures.tex:128: Undefined control sequence.
+l.128 	\forall p\in A \ \ \exitst
+                                  \varepsilon > 0 \ \ | \ \ \text{se}\ \  x\...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:128: Undefined control sequence.
+l.128 ...silon > 0 \ \ | \ \ \text{se}\ \  x\in \R
+                                                  ^n
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:131: Undefined control sequence.
+l.131 	\text{soddisfa } \  ||x-p|| <\espilon
+                                             \ \text{ allora } x\in A
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:133: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 \end{defi}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:134: LaTeX Error: Environment nota undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 \begin{nota}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:135: Undefined control sequence.
+l.135 	$B_\varepsilon (p) = \{x\in\R
+                                    ^n| \ ||x-p|| < \epsilon\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:136: Undefined control sequence.
+<recently read> \varespilon 
+                            
+l.136 ...perta di centro $p$ e raggio $\varespilon
+                                                  $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:137: LaTeX Error: \begin{document} ended by \end{nota}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 \end{nota}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:138: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \begin{defi}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:139: Undefined control sequence.
+l.139 	Sia $X\subseteq \R
+                         ^n$ e  $p\in \R^n$ p si dice aderente a $X$ se  $\f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:139: Undefined control sequence.
+l.139 	Sia $X\subseteq \R^n$ e  $p\in \R
+                                        ^n$ p si dice aderente a $X$ se  $\f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:139: Undefined control sequence.
+l.139 ...dice aderente a $X$ se  $\forall \espilon
+                                                  >0 \ \exists x\in X \  | \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:141: Undefined control sequence.
+l.141 	(chiaramente se $p\ini
+                              X$  allora è aderente a $X$, basta prendere  ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:142: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.142 \end{defi}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:144: Undefined control sequence.
+l.144 $1\in\R
+             $ è aderente a $X = [0,1[$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:145: LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.145  \begin{prop}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:146: Undefined control sequence.
+l.146 	Sia $f:\R
+                ^n \rightarrow\R^m$ Sono equivalenti:
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:146: Undefined control sequence.
+l.146 	Sia $f:\R^n \rightarrow\R
+                                ^m$ Sono equivalenti:
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:149: Undefined control sequence.
+l.149 		\item $\forall Z\subseteq \R
+                                    ^n \ \ \forall p\in \R^n$ se $p$ è ader...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:149: Undefined control sequence.
+l.149 ...orall Z\subseteq \R^n \ \ \forall p\in \R
+                                                  ^n$ se $p$ è aderente a $...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:150: Undefined control sequence.
+l.150 		\item $\forall A\subseteq \R
+                                    ^m$ se  $A$ è aperto, allora $f^{-1}(A)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:152: LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.152 \end{prop}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:153: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.153 \begin{dimo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:155: Undefined control sequence.
+l.155 	Siano $Z\subseteq\R
+                          ^n, p\in\R^n$ suppongo $p$ aderente a  $Z$, dimost...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:155: Undefined control sequence.
+l.155 	Siano $Z\subseteq\R^n, p\in\R
+                                    ^n$ suppongo $p$ aderente a  $Z$, dimost...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:160: Undefined control sequence.
+l.160 	 Sia $A\subseteq \R
+                          ^m$ aperto, dimostriamo che $f^{-1}(A)$ è aperto,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:160: Undefined control sequence.
+<recently read> \R 
+                   
+l.160 ...ostriamo che $f^{-1}(A)$ è aperto in $\R
+                                                  ^m$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:164: Undefined control sequence.
+l.164 	 $\forall \varespilon
+                             > 0 \exists q\in\R^n$ fuori da  $f^{-1}(A)$ ma ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:164: Undefined control sequence.
+l.164 	 $\forall \varespilon > 0 \exists q\in\R
+                                               ^n$ fuori da  $f^{-1}(A)$ ma ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:165: Undefined control sequence.
+<recently read> \R 
+                   
+l.165 	 Allora $p$ è aderente a  $\R
+                                     ^m\setminus f^{-1}(A)$.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:166: Undefined control sequence.
+l.166 	 Segue, per 2),  $f(p)$ è aderente a $f(\R
+                                                  ^n\setminus f^{-1}(A))$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:167: Undefined control sequence.
+l.167 ... punti a distanza  $< \eta$ non in  $f(\R
+                                                  ^n\setminus f^{-1}(A))$ pu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:168: Undefined control sequence.
+<recently read> \R 
+                   
+l.168 	 allora  $f(p)$ è aderente a $\R
+                                        ^m\setminus A$. Questo è assurdo pe...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:170: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.170 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[4] [5]
+
+./all_lectures.tex:177: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177 	\begin{defi}
+                   [Topologia]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:187: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:196: Undefined control sequence.
+l.196 ...m "intervallo aperto" = $]a,b[\subseteq\R
+                                                  $ come al solito
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:206: Undefined control sequence.
+l.206 	2)  $X = \R
+                  ^n$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:212: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.212 \begin{defi}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:214: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 \end{defi}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:215: LaTeX Error: Environment lemm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \begin{lemm}
+                  [Proprietà degli insiemi chiusi]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:222: LaTeX Error: \begin{document} ended by \end{lemm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \end{lemm}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:223: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.223 \begin{dimo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:227: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:231: Undefined control sequence.
+l.231 $X = \R
+             $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:236: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236 \begin{defi}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:238: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 \end{defi}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[6]
+./all_lectures.tex:243: Undefined control sequence.
+l.243 	\item Sia  $X = \R
+                         $, $T = $ topologia euclidea. $B = \{]a,b[ | a < b ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:243: Undefined control sequence.
+l.243 ...gia euclidea. $B = \{]a,b[ | a < b \in \R
+                                                  \}$ è una base di  $T$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:245: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245 		 \begin{dimo}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:246: Undefined control sequence.
+<recently read> \R 
+                   
+l.246 			Sia $A\in T$ euclidea su $\R
+                                     $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:249: LaTeX Error: \begin{enumerate} on input line 240 ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 		\end{dimo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:256: LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 \begin{prop}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:262: LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \end{prop}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:263: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 \begin{dimo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
+
+ []
+
+[7]
+
+./all_lectures.tex:282: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 \end{dimo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:289: Undefined control sequence.
+<argument> \K 
+              
+l.289 ...}$ un campo, consideriamo $x = \mathbb \K
+                                                  ^n$, Dato  $f\in \mathbb K...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 292.
+
+./all_lectures.tex:292: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.292 (esempio: $x = \r,
+                         n = 1, \mathbb k = \r, \ f(x) = (x-1)(x-2) \leadsto...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 292.
+
+./all_lectures.tex:292: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.292 (esempio: $x = \r, n = 1, \mathbb k = \r,
+                                                \ f(x) = (x-1)(x-2) \leadsto...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./all_lectures.tex:292: Undefined control sequence.
+l.292 ... \r, \ f(x) = (x-1)(x-2) \leadsto x_f= \R
+                                                  \setminus\{1,2\}$)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:293: Undefined control sequence.
+l.293 (esempio: $X = \R
+                       , n = 2, \mathbb K = \R^2, \ f(x,y) = x^2 + y^2 - 1, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:293: Undefined control sequence.
+l.293 (esempio: $X = \R, n = 2, \mathbb K = \R
+                                              ^2, \ f(x,y) = x^2 + y^2 - 1, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:293: Undefined control sequence.
+l.293 ... \R^2, \ f(x,y) = x^2 + y^2 - 1, x_f = \R
+                                                  ^2\setminus S^1)\\$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:303: Undefined control sequence.
+<recently read> \K 
+                   
+l.303 	$\K
+           = \R, n = 1$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:303: Undefined control sequence.
+l.303 	$\K = \R
+               , n = 1$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:304: Undefined control sequence.
+<recently read> \R 
+                   
+l.304 	$\R
+          \setminus\{1,2\}$ è aperto in topologia euclidea e in topologia d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:305: Undefined control sequence.
+l.305 	$[0,1]\subseteq\R
+                        $ è chiuso in topologia euclidea, è chiuso in topo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--306
+
+ []
+
+
+./all_lectures.tex:307: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.307 	\begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:309: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.309 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:314: LaTeX Error: Environment propo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.314 	\begin{propo}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:318: LaTeX Error: \begin{document} ended by \end{propo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.318 	\end{propo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:319: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.319 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:321: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[8]
+
+./all_lectures.tex:328: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.328 	\begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:342: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.342 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:346: Undefined control sequence.
+<recently read> \parial 
+                        
+l.346 	 $\parial
+                 D = \overline D\cap (X\setminus D^o)$ dove  $(X\setminus D^...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:348: Undefined control sequence.
+l.348 	  1) $X = \R
+                   $ con topologia euclidea. Sia $D = [0,1]$.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:354: Undefined control sequence.
+l.354 ...$0\in D^o$, allora esiste  $A\subseteq \R
+                                                  $ aperto t.c.  $A\subseteq...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:357: Undefined control sequence.
+l.357 	  2)  $X = \R
+                    $ con topologia cofinita $D = [0,1]$. Allora  $D^o = \bi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:360: Undefined control sequence.
+l.360 	  $A = \emptyset $ oppure $A = \R
+                                        \setminus\{\text{insieme finito}\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:364: Undefined control sequence.
+l.364 	  3)  $X = \R
+                    $, $T = $ topologia per cui $A$ è aperto $ \Leftrightar...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:367: Undefined control sequence.
+<recently read> \R 
+                   
+l.367 	  I chiusi in  $T$ sono $\R
+                                  $ e i sottoinsiemi che non contengono lo  ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:367: Undefined control sequence.
+<recently read> \R 
+                   
+l.367 ...nsieme chiuso che contiene $\{0\}$ è $\R
+                                                  $, allora $\overline{\{0\}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:367: Undefined control sequence.
+l.367 ...}$ è $\R$, allora $\overline{\{0\}} = \R
+                                                  $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:368: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 	   \begin{defi}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:370: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.370 	  \end{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:372: Undefined control sequence.
+l.372 	  $X = \R
+                 $ con topologia euclidea,\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:373: Undefined control sequence.
+l.373 	  $D = \Q
+                $. Dimostriamo che è denso\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:375: Undefined control sequence.
+l.375 	   Sia $C\subseteq \R
+                            $ chiuso con  $C\supseteq \Q$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:375: Undefined control sequence.
+l.375 ...C\subseteq \R$ chiuso con  $C\supseteq \Q
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:376: Undefined control sequence.
+l.376 	   sia $a\in\R
+                     \setminus C$ aperto\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:377: Undefined control sequence.
+l.377 ...varepsilon, a + \varepsilon[ \subseteq \R
+                                                  \setminus C$ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:378: Undefined control sequence.
+l.378 ... a - \varepsilon, a + \varepsilon[\cap \Q
+                                                   = \emptyset$ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:380: Undefined control sequence.
+l.380 	   Allora $a$ non esiste e $C = \R
+                                         $.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--384
+
+ []
+
+[9]
+
+./all_lectures.tex:387: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.387 	   \begin{dimo}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--389
+
+ []
+
+
+./all_lectures.tex:396: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 	   \end{dimo}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:398: Undefined control sequence.
+l.398 ...$\text{}\ \ \ \ \ \ \ \ \ \ \ \ \ \storto
+                                                   \Leftrightarrow$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:400: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.400 	   \begin{defi}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:405: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.405 	   \end{defi}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:407: Undefined control sequence.
+l.407 	   $X = \R
+                 $ topologia euclidea,  $x = 0, U = ]-1,1[$ è intorno di  $...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:408: Undefined control sequence.
+l.408 ...intonro di 0, ad esempio  $A = ]-1/2, 1\1
+                                                  6[\cup]3/16,7/16[$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:411: LaTeX Error: Environment lemm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.411 	    \begin{lemm}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:413: LaTeX Error: \begin{document} ended by \end{lemm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.413 	    \end{lemm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:414: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.414 	    \begin{dimo}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:421: Undefined control sequence.
+<recently read> \overliene 
+                           
+l.421 ... compare nella definizione di $\overliene
+                                                   D $ e $C\not\ni x$ perch�...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:426: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.426 	    \end{dimo}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:427: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.427 	    \begin{defi}
+                       [Famiglia degli intorni, sistema fondamentale]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:430: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.430 	    \end{defi}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:432: Undefined control sequence.
+l.432 	    $X = \R
+                  $ con topologia euclidea.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:433: Undefined control sequence.
+l.433 	     $x\in\R
+                   $ qualsiasi\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:434: Undefined control sequence.
+l.434 ... |\ \varepsilon > 0,  \ \varepsilon \in\R
+                                                  \} $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:436: Undefined control sequence.
+l.436 ...n, x + \frac 1n] \ | \ n\geq 1, \  n\in\N
+                                                  \}$ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--438
+
+ []
+
+[10]
+./all_lectures.tex:439: Undefined control sequence.
+l.439 ...[\cup \{x + \frac 3n \} | n\geq 1, n\in\N
+                                                  \}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:443: Undefined control sequence.
+l.443 ...+ \frac 1n[\cup \{10 \} | n\geq 1, n\in\N
+                                                  \}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--447
+
+ []
+
+
+./all_lectures.tex:448: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.448 	     \begin{defi}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:450: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.450 	     \end{defi}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[11]
+./all_lectures.tex:471: Undefined control sequence.
+l.471 	 D^2 = \{(x,y)\in\R
+                          ^2 | \sqrt {x^2 + y^2 }\leq 1\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:474: Undefined control sequence.
+l.474 		Q = \{(x,y)\in\R
+                        ^2 | |x|\leq 1, |y|\leq 1\} = [0,1]\times[0,1]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[12]
+./all_lectures.tex:506: Undefined control sequence.
+<recently read> \froall 
+                        
+l.506 ...^{-1}(Y\setminus A) $ chiuso \ \ $\froall
+                                                   A\subseteq Y$ aperto $ \L...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:507: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.507 	\begin{defi}
+                   [Continuità]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:512: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.512 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:514: LaTeX Error: Environment teo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.514 	\begin{teo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:521: LaTeX Error: \begin{document} ended by \end{teo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.521 	\end{teo}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:522: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.522 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:548: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:549: LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.549 	\begin{prop}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:551: LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.551 	\end{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:552: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.552 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[13]
+
+./all_lectures.tex:567: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.567 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[14]
+
+./all_lectures.tex:569: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.569 	\begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:576: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.576 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:578: Undefined control sequence.
+<recently read> \R 
+                   
+l.578 	$\R
+          $ con topologia euclidea, $f : \R \rightarrow\R$ applicazione cost...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:578: Undefined control sequence.
+l.578 	$\R$ con topologia euclidea, $f : \R
+                                            \rightarrow\R$ applicazione cost...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:578: Undefined control sequence.
+l.578 ...topologia euclidea, $f : \R \rightarrow\R
+                                                  $ applicazione costante $f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:578: Undefined control sequence.
+l.578 ...ne costante $f(x) = q \ \ \forall x\in \R
+                                                  $.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:579: Undefined control sequence.
+<recently read> \R 
+                   
+l.579 	Questa $f$ non è aperta, perché $\R
+                                            $ è aperto in $\R$ e  $f(\R) = ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:579: Undefined control sequence.
+<recently read> \R 
+                   
+l.579 ... è aperta, perché $\R$ è aperto in $\R
+                                                  $ e  $f(\R) = \{q\}$ non �...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:579: Undefined control sequence.
+l.579 ..., perché $\R$ è aperto in $\R$ e  $f(\R
+                                                  ) = \{q\}$ non è aperto i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:583: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.583 		$
+         p : &\R^2 \rightarrow\R$\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:583: Missing $ inserted.
+<inserted text> 
+                $
+l.583 		$
+         p : &\R^2 \rightarrow\R$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:583: Missing } inserted.
+<inserted text> 
+                }
+l.583 		$
+         p : &\R^2 \rightarrow\R$\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:583: Missing { inserted.
+<inserted text> 
+                {
+l.583 		$p : &
+              \R^2 \rightarrow\R$\\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:583: Missing $ inserted.
+<inserted text> 
+                $
+l.583 		$p : &
+              \R^2 \rightarrow\R$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:583: Undefined control sequence.
+l.583 		$p : &\R
+                ^2 \rightarrow\R$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:583: Undefined control sequence.
+l.583 		$p : &\R^2 \rightarrow\R
+                                $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:583: Missing } inserted.
+<inserted text> 
+                }
+l.583 		$p : &\R^2 \rightarrow\R$
+                                 \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:583: Missing $ inserted.
+<inserted text> 
+                $
+l.583 		$p : &\R^2 \rightarrow\R$\\
+                                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:583: Undefined control sequence.
+\math@cr@@@ ...t@ {&\kern -\alignsep@ }\fi \next@ 
+                                                  \cr 
+l.583 		$p : &\R^2 \rightarrow\R$\\
+                                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:583: Missing { inserted.
+<inserted text> 
+                {
+l.583 		$p : &\R^2 \rightarrow\R$\\
+                                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:584: Missing } inserted.
+<inserted text> 
+                }
+l.584 		$
+         (x&,y) \rightarrow x$
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:584: Missing { inserted.
+<inserted text> 
+                {
+l.584 		$(x&
+            ,y) \rightarrow x$
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:584: Missing $ inserted.
+<inserted text> 
+                $
+l.584 		$(x&
+            ,y) \rightarrow x$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:584: Missing } inserted.
+<inserted text> 
+                }
+l.584 		$(x&,y) \rightarrow x$
+                              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:585: Missing { inserted.
+<inserted text> 
+                {
+l.585 	\end{aligned}
+                    \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:585: Missing $ inserted.
+<inserted text> 
+                $
+l.585 	\end{aligned}
+                    \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:585: Missing $ inserted.
+<inserted text> 
+                $
+l.585 	\end{aligned}
+                    \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:586: Undefined control sequence.
+l.586 	$(\R
+           ^2, \R$ con topologia euclidea $)$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:586: Undefined control sequence.
+l.586 	$(\R^2, \R
+                 $ con topologia euclidea $)$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:588: Undefined control sequence.
+<recently read> \R 
+                   
+l.588 	è un chiuso in $\R
+                          ^2$, ma $p(C) =   \R\setminus\{0\}$ non è chiuso.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:588: Undefined control sequence.
+l.588 	è un chiuso in $\R^2$, ma $p(C) =   \R
+                                              \setminus\{0\}$ non è chiuso.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--589
+
+ []
+
+./all_lectures.tex:590: Undefined control sequence.
+<recently read> \R 
+                   
+l.590 	$C$ è chiuso di  $\R
+                            ^2$ perché $C$ è uguale a $f^{-1}(\{1\})$ dove \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:592: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.592 		$
+         f:\R^2 &\rightarrow\R$\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:592: Missing $ inserted.
+<inserted text> 
+                $
+l.592 		$
+         f:\R^2 &\rightarrow\R$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:592: Missing } inserted.
+<inserted text> 
+                }
+l.592 		$
+         f:\R^2 &\rightarrow\R$\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:592: Undefined control sequence.
+l.592 		$f:\R
+             ^2 &\rightarrow\R$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:592: Missing $ inserted.
+<inserted text> 
+                $
+l.592 		$f:\R^
+              2 &\rightarrow\R$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:592: Missing { inserted.
+<inserted text> 
+                {
+l.592 		$f:\R^2 &
+                 \rightarrow\R$\\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:592: Undefined control sequence.
+l.592 		$f:\R^2 &\rightarrow\R
+                              $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:592: Missing } inserted.
+<inserted text> 
+                }
+l.592 		$f:\R^2 &\rightarrow\R$
+                               \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:592: Missing $ inserted.
+<inserted text> 
+                $
+l.592 		$f:\R^2 &\rightarrow\R$\\
+                                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:592: Undefined control sequence.
+\math@cr@@@ ...t@ {&\kern -\alignsep@ }\fi \next@ 
+                                                  \cr 
+l.592 		$f:\R^2 &\rightarrow\R$\\
+                                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:592: Missing { inserted.
+<inserted text> 
+                {
+l.592 		$f:\R^2 &\rightarrow\R$\\
+                                 
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:593: Missing } inserted.
+<inserted text> 
+                }
+l.593 		$
+         (x,y)	& \rightarrow xy$
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:593: Missing { inserted.
+<inserted text> 
+                {
+l.593 		$(x,y)	&
+                 \rightarrow xy$
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:593: Missing $ inserted.
+<inserted text> 
+                $
+l.593 		$(x,y)	&
+                 \rightarrow xy$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:593: Missing } inserted.
+<inserted text> 
+                }
+l.593 		$(x,y)	& \rightarrow xy$
+                                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:594: Missing { inserted.
+<inserted text> 
+                {
+l.594 	\end{aligned}
+                    \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:594: Missing $ inserted.
+<inserted text> 
+                $
+l.594 	\end{aligned}
+                    \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:594: Missing $ inserted.
+<inserted text> 
+                $
+l.594 	\end{aligned}
+                    \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:595: Undefined control sequence.
+l.595 ...tti $f $ è continua e $\{1\}\subseteq \R
+                                                  $ è un chiuso.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--596
+
+ []
+
+
+./all_lectures.tex:597: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597 	\begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:598: Undefined control sequence.
+l.598 ...$ un insieme e $d:X\times X \rightarrow\R
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:608: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.608 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:618: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 	\begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:621: Undefined control sequence.
+l.621 ...di centro $x$ e raggio $\varepsilon\in \R
+                                                  _{>0}$ è: \\$B_\varepsilo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15]
+
+./all_lectures.tex:626: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.626 	\end{defi}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:634: LaTeX Error: Environment lemm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.634 	\begin{lemm}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:638: Undefined control sequence.
+l.638 ...ilon (p) \ | \ p\in X, \varepsilon \in \R
+                                                  _{>0}\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:642: LaTeX Error: \begin{document} ended by \end{lemm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.642 	\end{lemm}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:643: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.643 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:645: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.645 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:647: Undefined control sequence.
+<recently read> \R 
+                   
+l.647 ...nerale si comportano in modo simile a $\R
+                                                  & n$ con distanza euclidea...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:647: Misplaced alignment tab character &.
+l.647 ...erale si comportano in modo simile a $\R&
+                                                   n$ con distanza euclidea,...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./all_lectures.tex:652: Undefined control sequence.
+l.652 	Ad esempio  $X = \R
+                          $ con distanza  $d(x,y) = \begin{cases}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:656: Undefined control sequence.
+l.656 	Considero $\{p\in\R
+                           \ | \ d(p,x)\leq 1\} = \R$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:656: Undefined control sequence.
+l.656 ...idero $\{p\in\R \ | \ d(p,x)\leq 1\} = \R
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:658: Undefined control sequence.
+l.658 	Questo vale  $\forall x\in \R
+                                    $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:663: Undefined control sequence.
+l.663 ...w \  \forall \varepsilon > 0 \ \ \exitsts
+                                                   \delta > 0 \ | \ $ se $d(...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:665: LaTeX Error: Environment coro undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.665 	   \begin{coro}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:667: Undefined control sequence.
+l.667 ...e $\forall p\in X \ \ \forall \varepslion
+                                                   > 0\ \ \exists \delta > 0...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:668: LaTeX Error: \begin{document} ended by \end{coro}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.668 	   \end{coro}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:669: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.669 	   \begin{dimo}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:672: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.672 	   \end{dimo}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:673: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.673 	   \begin{defi}
+                      [Distanze equivalenti]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:675: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.675 	   \end{defi}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:676: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.676 	   \begin{defi}
+                      [Spazio topologico metrizzabile]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:678: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.678 	   \end{defi}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[16]
+
+./all_lectures.tex:680: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.680 	   \begin{defi}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:682: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.682 	   \end{defi}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:684: Undefined control sequence.
+l.684 	   1) $X = \R
+                    $ con topologia euclidea\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:690: Undefined control sequence.
+<recently read> \R 
+                   
+l.690 	   non è aperto in  $\R
+                                = X$, ma è aperto in  $Y$ in topologia di s...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:697: LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.697 \begin{tikzpicture}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:700: Undefined control sequence.
+l.700     \draw
+               [thick] (-3,0) -- (3,0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:703: Undefined control sequence.
+l.703     \draw
+               [thick, decoration={brace, mirror, raise=5pt}, decorate] (-1,...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:706: Undefined control sequence.
+l.706     \filldraw
+                    (0,0) circle (2pt) node[below] {$0$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:707: Undefined control sequence.
+l.707     \filldraw
+                    (2,0) circle (2pt) node[below] {$1$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:710: Undefined control sequence.
+l.710     \draw
+               [thick] (0,-0.5) -- (2,-0.5);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:711: Undefined control sequence.
+l.711     \draw
+               [thick] (2,-0.5) -- (2,0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:712: Undefined control sequence.
+l.712     \draw
+               [dashed] (0,-0.5) -- (0,0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:715: Undefined control sequence.
+l.715     \node
+               [below] at (1,-0.5) {\small $(0,1]$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:716: Undefined control sequence.
+l.716     \node
+               [right] at (3,0) {$\mathbb{R}$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:719: Undefined control sequence.
+l.719     \node
+               [below] at (-1.5,-1) {\small $( B'' )$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:721: LaTeX Error: \begin{center} on input line 696 ended by \end{tikzpicture}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.721 \end{tikzpicture}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:724: Undefined control sequence.
+<recently read> \R 
+                   
+l.724 	   $J$ non è aperto in $\R
+                                  $ perché  $\forall\varepsilon > 0 \exists...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:724: Undefined control sequence.
+<recently read> \R 
+                   
+l.724 ...rall\varepsilon > 0 \exists$ punti di $\R
+                                                  $, a distanza $< \varepsil...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:726: Undefined control sequence.
+l.726 	   2) $X = \R
+                    $ con topologia euclidea, sia $Y = \Z$ con topologia di ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:726: Undefined control sequence.
+l.726 ...= \R$ con topologia euclidea, sia $Y = \Z
+                                                  $ con topologia di sottosp...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:727: Undefined control sequence.
+l.727 	   Anche $]-\frac 12, \frac 12[\cap \Z
+                                              = \{0\}$ è aperto.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:729: Undefined control sequence.
+l.729 	   $]n - \frac {12}, n + \frac 12[\cap \Z
+                                                 = \{n\} \ \ \forall n\in \Z...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:729: Undefined control sequence.
+l.729 ...ac 12[\cap \Z = \{n\} \ \ \forall n\in \Z
+                                                  $ è aperto in  $\Z$ in to...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:729: Undefined control sequence.
+<recently read> \Z 
+                   
+l.729 ...\} \ \ \forall n\in \Z$ è aperto in  $\Z
+                                                  $ in topologia di sottospa...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:730: Undefined control sequence.
+l.730 	   3) $X = \R
+                    ^2$ con topologia euclidea, $Y = \R \times \{0\}$, l'ass...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:730: Undefined control sequence.
+l.730 ...X = \R^2$ con topologia euclidea, $Y = \R
+                                                   \times \{0\}$, l'asse  $x...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 724--731
+
+ []
+
+
+./all_lectures.tex:733: LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.733 \begin{tikzpicture}
+                         [scale=1]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:735: Undefined control sequence.
+l.735     \draw
+               [->] (-1,0) -- (2,0) node[right] {$x$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:738: Undefined control sequence.
+l.738     \draw
+               [->] (0,-1) -- (0,2) node[above] {$y$};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:741: Undefined control sequence.
+l.741     \draw
+               [very thick] (0,0) -- (1,0);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:744: Missing number, treated as zero.
+<to be read again> 
+                   (
+l.744     \fill (
+                 0,0) circle (2pt) node[below left] {$0$};
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./all_lectures.tex:744: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   (
+l.744     \fill (
+                 0,0) circle (2pt) node[below left] {$0$};
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+[17]
+./all_lectures.tex:745: Missing number, treated as zero.
+<to be read again> 
+                   (
+l.745    \fill (
+                1,0) circle (2pt) node[below] {$1$};
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./all_lectures.tex:745: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   (
+l.745    \fill (
+                1,0) circle (2pt) node[below] {$1$};
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./all_lectures.tex:748: Undefined control sequence.
+l.748     \draw
+                (1,0) circle (2pt);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:749: LaTeX Error: \begin{center} on input line 732 ended by \end{tikzpicture}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.749 \end{tikzpicture}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:751: Undefined control sequence.
+l.751 ...ttospazio, ad esempio  $B = ]0,1[\times\R
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--764
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
+
+ []
+
+[18]
+
+./all_lectures.tex:784: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.784 			i
+           : &Y \rightarrow X\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:784: Missing $ inserted.
+<inserted text> 
+                $
+l.784 			i
+           : &Y \rightarrow X\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:786: Missing $ inserted.
+<inserted text> 
+                $
+l.786 		\end{aligned}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./all_lectures.tex:795: LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.795 	\begin{prop}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:797: LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.797 	\end{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:798: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.798 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 788--800
+
+ []
+
+
+./all_lectures.tex:804: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.804 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:805: LaTeX Error: Environment prop undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.805 	\begin{prop}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:809: LaTeX Error: \begin{document} ended by \end{prop}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.809 	\end{prop}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:810: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.810 	\begin{dimo}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:817: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.817 	\end{dimo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:822: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.822 			\tilde
+                f: &Z \rightarrow Im(f)\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:822: Missing $ inserted.
+<inserted text> 
+                $
+l.822 			\tilde
+                f: &Z \rightarrow Im(f)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:824: Missing $ inserted.
+<inserted text> 
+                $
+l.824 		\end{aligned}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:832: Undefined control sequence.
+l.832 	 $X = \R
+               $ con topologia euclidea.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[19]
+
+./all_lectures.tex:844: LaTeX Error: Environment lemm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.844 	 \begin{lemm}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:846: LaTeX Error: \begin{document} ended by \end{lemm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.846 	 \end{lemm}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:847: LaTeX Error: Environment dimo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.847 	 \begin{dimo}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 841--850
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--859
+
+ []
+
+./all_lectures.tex:860: Undefined control sequence.
+<recently read> \subsetteq 
+                           
+l.860 ... D'\text{ chiuso in } X,\\ D'\supseteq Z}
+                                                  } D' \right)\cap Y
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:863: LaTeX Error: \begin{document} ended by \end{dimo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.863 	 \end{dimo}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./all_lectures.tex:866: Undefined control sequence.
+l.866 	 Ad esempio $X = \R
+                          $ cn topologia euclidea $Y = \Z$  $Z= \{0\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:866: Undefined control sequence.
+l.866 ...io $X = \R$ cn topologia euclidea $Y = \Z
+                                                  $  $Z= \{0\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:867: Undefined control sequence.
+<recently read> \R 
+                   
+l.867 ...ché $Z$ non contiene alcun aperto di $\R
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:870: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.870 	 \begin{defi}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[20]
+
+./all_lectures.tex:874: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.874 				\tilde
+                 f: &X \rightarrow f(X)\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:874: Missing $ inserted.
+<inserted text> 
+                $
+l.874 				\tilde
+                 f: &X \rightarrow f(X)\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:876: Missing $ inserted.
+<inserted text> 
+                $
+l.876 			\end{aligned}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./all_lectures.tex:879: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.879 	 \end{defi}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:884: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.884 			&
+          \R \rightarrow \R \\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:884: Missing $ inserted.
+<inserted text> 
+                $
+l.884 			&
+          \R \rightarrow \R \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:884: Undefined control sequence.
+l.884 			&\R
+             \rightarrow \R \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:884: Undefined control sequence.
+l.884 			&\R \rightarrow \R
+                            \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:886: Missing $ inserted.
+<inserted text> 
+                $
+l.886 	 	\end{aligned}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:888: Undefined control sequence.
+<recently read> \R 
+                   
+l.888 	 (qui $\R
+                , \R^2$con topologia euclidea) è un immersione, la verifica...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:888: Undefined control sequence.
+l.888 	 (qui $\R, \R
+                    ^2$con topologia euclidea) è un immersione, la verifica...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:892: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.892 			$
+          f : $&$[0,2\pi[ \rightarrow \C$\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:892: Missing $ inserted.
+<inserted text> 
+                $
+l.892 			$
+          f : $&$[0,2\pi[ \rightarrow \C$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:892: Missing } inserted.
+<inserted text> 
+                }
+l.892 			$
+          f : $&$[0,2\pi[ \rightarrow \C$\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:892: Missing { inserted.
+<inserted text> 
+                {
+l.892 			$f : $&
+                $[0,2\pi[ \rightarrow \C$\\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:892: Missing } inserted.
+<inserted text> 
+                }
+l.892 			$f : $&$
+                 [0,2\pi[ \rightarrow \C$\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:892: Missing $ inserted.
+<inserted text> 
+                $
+l.892 			$f : $&$[0,2\pi
+                        [ \rightarrow \C$\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:892: Undefined control sequence.
+l.892 			$f : $&$[0,2\pi[ \rightarrow \C
+                                        $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:892: Missing $ inserted.
+<inserted text> 
+                $
+l.892 			$f : $&$[0,2\pi[ \rightarrow \C$\\
+                                           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:892: Undefined control sequence.
+\math@cr@@@ ...t@ {&\kern -\alignsep@ }\fi \next@ 
+                                                  \cr 
+l.892 			$f : $&$[0,2\pi[ \rightarrow \C$\\
+                                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:892: Missing { inserted.
+<inserted text> 
+                {
+l.892 			$f : $&$[0,2\pi[ \rightarrow \C$\\
+                                           
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:893: Missing } inserted.
+<inserted text> 
+                }
+l.893 			   & $
+               t \rightarrow e^{it}$
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:893: Missing $ inserted.
+<inserted text> 
+                $
+l.893 			   & $t \rightarrow
+                             e^{it}$
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:894: Missing { inserted.
+<inserted text> 
+                {
+l.894 	 	\end{aligned}
+                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./all_lectures.tex:894: Missing $ inserted.
+<inserted text> 
+                $
+l.894 	 	\end{aligned}
+                      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:894: Missing $ inserted.
+<inserted text> 
+                $
+l.894 	 	\end{aligned}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./all_lectures.tex:896: Undefined control sequence.
+l.896 	 Su $[0,2\pi[\subseteq \R
+                                $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:897: Undefined control sequence.
+<recently read> \R 
+                   
+l.897 ... indotta dalla topologia euclidea su  $\R
+                                                  ,$ su $\C = \R^2$ metto la...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:897: Undefined control sequence.
+<recently read> \C 
+                   
+l.897 ...dalla topologia euclidea su  $\R,$ su $\C
+                                                   = \R^2$ metto la topologi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:897: Undefined control sequence.
+l.897 ... topologia euclidea su  $\R,$ su $\C = \R
+                                                  ^2$ metto la topologia euc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:898: Undefined control sequence.
+l.898 ...iniettiva e $f([0,2\pi[) = S^1 = \{z\in\C
+                                                   \ | \ |z|=1\}$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:901: Undefined control sequence.
+<recently read> \R 
+                   
+l.901 ...e tra la circonferenza e un aperto di $\R
+                                                  ^2$, Ciò non è possibile...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 896--902
+
+ []
+
+./all_lectures.tex:906: Undefined control sequence.
+l.906 Considero $P = Q = \R
+                           $ con topologia euclidea
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:908: Undefined control sequence.
+l.908  P\times Q = \R
+                     \times \R = \R^2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:908: Undefined control sequence.
+l.908  P\times Q = \R\times \R
+                               = \R^2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:908: Undefined control sequence.
+l.908  P\times Q = \R\times \R = \R
+                                   ^2
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:910: Undefined control sequence.
+<recently read> \R 
+                   
+l.910 La topologia su $\R
+                         ^2$ sarà quella euclidea. Considero ad esempio
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:912: Undefined control sequence.
+l.912 	U \subseteq \R
+                     \text{ aperto}, \ \ V\subseteq\R\text{ aperto}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:912: Undefined control sequence.
+l.912 ...bseteq \R\text{ aperto}, \ \ V\subseteq\R
+                                                  \text{ aperto}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:914: Undefined control sequence.
+<recently read> \R 
+                   
+l.914 il prodotto $U\times V$ sarà aperto in  $\R
+                                                  ^2$, posso pensare che que...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:915: Undefined control sequence.
+l.915 ...]a,b[ \ \ \ V = ]c,d[$, allora  $U\itimes
+                                                   V = ]a,b[\times]c,d[$ è ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:916: Undefined control sequence.
+<recently read> \R 
+                   
+l.916 Anche un disco aperto in  $\R
+                                   ^2$ è aperto in topologia euclidea, ma n...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:916: Undefined control sequence.
+l.916 ... prodotto  $U\times V$ con $U\subseteq \R
+                                                  , \ V\subseteq \R$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:916: Undefined control sequence.
+l.916 ...es V$ con $U\subseteq \R, \ V\subseteq \R
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[21]
+./all_lectures.tex:919: Undefined control sequence.
+<argument> U\subseteq \R 
+                         \text { aperto },\\ \hspace {-3px}V\subseteq \R \te...
+l.919 ...\hspace{-3px}V\subseteq\R\text{ aperto }}
+                                                  \}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:919: Undefined control sequence.
+<argument> ...to },\\ \hspace {-3px}V\subseteq \R 
+                                                  \text { aperto }
+l.919 ...\hspace{-3px}V\subseteq\R\text{ aperto }}
+                                                  \}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:921: Undefined control sequence.
+<recently read> \R 
+                   
+l.921 come base per la topologia su $\R
+                                       \times\R$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./all_lectures.tex:921: Undefined control sequence.
+l.921 come base per la topologia su $\R\times\R
+                                               $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./all_lectures.tex:922: LaTeX Error: Environment defi undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.922  \begin{defi}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:926: Package amsmath Error: \begin{aligned} allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.926 			p
+          :& P\times Q \rightarrow P\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./all_lectures.tex:926: Missing $ inserted.
+<inserted text> 
+                $
+l.926 			p
+          :& P\times Q \rightarrow P\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./all_lectures.tex:930: Missing $ inserted.
+<inserted text> 
+                $
+l.930 		\end{aligned}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+./all_lectures.tex:933: LaTeX Error: \begin{document} ended by \end{defi}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.933 \end{defi}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:937: LaTeX Error: Environment teo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.937 \begin{teo}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./all_lectures.tex:939: LaTeX Error: \begin{document} ended by \end{teo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.939 \end{teo}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[22] (./all_lectures.aux) ) 
+Here is how much of TeX's memory you used:
+ 1792 strings out of 476034
+ 25738 string characters out of 5792854
+ 1863388 words of memory out of 6000000
+ 22271 multiletter control sequences out of 15000+600000
+ 523277 words of font info for 75 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 56i,16n,62p,410b,200s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on all_lectures.pdf (22 pages, 260840 bytes).
+PDF statistics:
+ 172 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,854 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\title{Compendio Lezioni del Corso: Analisi_Reale/}
+\date{\today}
+\author{Federico De Sisti}
+\include{../../../setup.tex}
+\begin{document}
+\maketitle
+\maketitle
+	\newpage
+	\section{Introduzione al corso}
+	\subsection{Regole varie}
+	Esoneri validi solamente per il primo appello\\
+	3 esoneri\\
+	Con le prove di esonero possiamo essere esonerati dall'orale.\\
+	Lo scritto vale solamente per l'orale successivo.\\
+	L'orale sono 2/3 domande tra definizioni, esempi, teoremi, cose sbagliate agli scritti.\\
+	\subsection{Inizio lezione}
+	Il corso sarà sulla teoria dell'integrazione/teoria della misura.\\
+	La teoria dell'integrazione è il primo passo dell'analisi infinitesimale, la derivata è un'operazione che viene ben definita grazie al teorema fondamentale del calcolo integrale\\
+	Viene formalizzata relativamente tardi, la prima sistemazione teorica è stata quella di Riemann (quella studiata in Analisi I).\\
+	Dal punto di vista teorico ha vari problemi. Questa teoria è stata subito soppiattata da una nuova teoria di integrazione, quella di Lebesgue (1902).\\
+	Uno dei punti fondamentali da cui partire è quello delle Serie di Fourier.\\
+	\subsection{Serie di Fourier}
+	Già nel XIIX secolo Fourier riusciva a risolvere varie equazioni differenziali, riguardanti fenomeni fisici.\\
+	Parliamo ora di modelli "ondulosi"\\
+	Parliamo della \textbf{corda vibrante}: continua in 1D, con moti ondulatori\\
+	%Inserisci immagine dal corsoi, segmento ondultao tra 0 e pi
+	$u:[0,\pi] \times [0,+\infty)\rightarrow\R$\\
+	\text{}\ \ $(x, t) \rightarrow u(x,t)$\\
+	Equazione della corda vibrante:
+	\begin{cases}\\
+		$\frac{\partial ^2 u}{\partial t^2} - \frac{\partial ^2}{\partial x^2}u = 0$\\
+	$u(0,t) = u(\pi,t) = 0 \ \ \ \forall t \geq 0$\\
+	$u(x,0) = h_0(x), \ \frac{\partial u}{\partial t} = h_1(x) \ \ \forall x\in (0,\pi)$
+	\end{cases}\\
+	Condizioni di compatibilità:
+	\[
+	h_0(0) = h_1(0) = h_0(\pi) = h_1(\pi) = 0
+	.\] \newpage
+	\subsection{Due principi:}
+	- esistenza di onde stazionarie:\\
+	$u(x,t) = \psi(t)\phi(x)$ variabili separate\\
+	- sovrapposizione: \\
+	$u_1,u_2$ soluzioni $ \Rightarrow \ \ u_1 + u_2$ soluzione\\
+	\subsection{Onde stazionarie}
+	$\frac {\partial ^2 u}{\partial t^2} = \psi''(t)\phi(x) = \psi(t)\phi''(x) = \frac {\partial^2}{\partial x^2}u$\\
+	$ \Rightarrow \frac {\psi''(t)}{\psi(t)} = \frac{\phi''(x)}{\phi(x)}$ \\
+	$ \Rightarrow \frac {\psi''(t)}{\psi (t)} = \text {costante} \ = \frac{\phi''(x)}{\phi(x)}$\\[10px]
+	\textbf{Spiegazione:}\\
+	$\psi''(t) = -m^2\psi(t)$\\
+	$\psi(t) = a_m\cos(mt) + b_m\sin(mt) \ \ \ \ a_m,b_m\in \R$\\
+	$\phi(x) = A_m\cos(mt) + B_m\sin(mt) \ \ \ \ A_m,B_m\in \R$\\[20px]
+	$u(x,t) = \psi(t)\phi(x) = (a_m \cos(mt) + b_m\cos(mt)) (\cancel{A_m\cos(mt)} + B_m\sin(mt))$\\
+	$ \Rightarrow u(0,t) = 0 = \psi(t)A_m \Rightarrow A_m = 0$ \\
+	$(u(\pi,t) = 0 = \psi_m(t)B_m\sin(m\pi) \Rightarrow  m\in \mathbb N$ \\
+	$ \Rightarrow u(x,t) = (a_m(\cos(mt) + b_m\sin(mt))B_m\sin(mx)$
+	Tutti gli $m$ interi mi danno una soluzione, quindi anche la loro somma è soluzione (principio di sovrapposizione).
+	\[
+	u(x,t) = \sum_{m=0}^\infty (a_mcos(mt) + b_m\sin(mt))B_m\sin(mx)
+	.\] 
+	\[
+	=\sum^\infty_{m=1} (\alpha_m\cos(mt) + \beta_m\sin(mt))\sin(mx)
+	.\] 
+	Dove $\alpha_m:=a_mB_m $ e  $\beta_m:=b_mB_m$\\
+	 \textbf{Condizioni Iniziali:}\\
+	 \begin{aligend}
+	 &\displaystyle u(x,0) = \sum^\infty_{m=0} \alpha_m\sin(mx) = h_0(x) \ \ \foral x\in (x,\pi)\\
+	 &\frac{\partial u}{\partial t} (\alpha, 0) = \sum^\infty_{m=0} m\beta_m\sin(mx) = h_1(x)
+	 	
+	 \end{aligend}
+	 \textbf{Come trovare $\alpha_m, \beta_m$ }\\
+	 $ \displaystyle \rightarrow\int_0^\pi\sin(nx)\sin(mx)dx = \begin{cases}
+	 	0 \ \ \ \ m\neq b\\
+		\frac{1} {2\pi} \ \ \ m = n
+	 \end{cases}$\\
+	 $\displaystyle\leadsto \int^m_0 h_0(x)\sin(mx)dx = \int_0^\pi \sum^\infty_{l=0}\alpha_l\sin(lx)\sin(mx)dx = \frac {1}{2\pi} \alpha_m$ (coefficienti di Fourier)\\
+	 Passaggi al limite sotto il segno di integrale:\\
+	 La teoria di Riemann non permette quasi mai di fare questi passaggi. \\
+	 \textbf{Esempio:} Funzione di Dirichlet\\
+	 \[
+	 D(x) = \begin{cases}
+		 1 \ \ x\in\mathbb Q\cap [0,1]\\
+		 0 \ \ \text{altrimenti}
+	 \end{cases}
+ .\]
+ ma $D(x) = \lim_{n \rightarrow\infty} f_n(x), \ \ f_n$ Rimeann integrabile.\\
+ Numeriamo $\mathbb Q\cap [0,1] = \{q_n\}_{n\in\mathb N}$\\
+ \[
+ f_n(x) = \begin{cases}
+	 1 \ \ \text{ se } x\in\{q_0,q_1,\ldots,q_n\}\\
+	 0 \ \ \text{altriment}
+ \end{cases}
+ .\] 
+ Inoltre:\\
+ $D(x) = \lim_{k \rightarrow +\infty} \left(\lim_{j \rightarrow +\infty} cos(k!\pi x)^{2j} \right)$ Esercizio "facile"\\
+ \textbf{Esercizio difficile:}\\
+ non è possibile con una successione di funzioni continue con un parametro\\
+ \textbf{Esempio:}\\
+ $C([0,1])\ni f,g$\\
+ \[
+ d_1(f,g) = \int_0^1|f(x)-g(x)|dx
+ .\] 
+ \[
+ ||f-g||_1 = \ldots
+ .\] 
+ $(C([0,1],d_1)$ non è completo! (le successioni in questo spazio possono convergere al di fuori)\\
+ %TODO aggiungi disegno 
+ $||f_m - f_n||_1 \rightarrow 0 $ se $n,m \rightarrow + \infty$\\
+ $f_n \rightarrow f_\infty = \begin{cases}
+ 	0 \ \ x\leq \frac 12\\
+	1 \ \ x > \frac 12
+ \end{cases}$
+ \begin{teo}
+	 Il completamenteo di $(C[0,1],d_1)$ è lo spazio delle funzioni assolutamente integrabili \textbf{secondo Lebesgue}
+ \end{teo}
+ \subsection{Problema della misura} 
+ Dato $E\subseteq\R^n$ vogliamo associare la sua misura (in $\R^n$)\\
+ Stabilire la misura è come definire un integrale.\\
+  $|E| = \int X_E$\\
+  \textbf{Prerequisiti:}\\
+  \begin{enumerate}
+\item$ |[a,b]| = b-a$\\
+$|[a,b]\times[c,d]| = (d-c) \cdot (b-a)$
+ \item$ E_1\cap E_2 = \emptyset \Rightarrow |E_1\cup E_2| = |E_1| + |E_2|$
+ \item $\forall E, \forall \tau\in\R^n \ \ |E+\tau| = |E|$
+ \item[3'] $\forall E \ \ \forall \ \sigma \ \ \text{isometria} \ \ |E| = |\sigma(E)|$
+  \end{enumerate}
+  \begin{teo}[Paradosso di Banach-Tanski]
+  	in $\R^3$ non esiste nessunna funzione che soddisfa 1,2 e 3.
+  \end{teo}
+  Consideriamo la palla unitaria:
+  \[
+	  B_1 = \{x\in\R^3 : |x|\leq 1\} = A_1\cup\ldots\cup A_5
+  .\]  
+  $A_i\cap A_j = \emptyset \ \ \ \forall i\neq j$ \\
+  Troviamo $\sigma_1,\ldots,\sigma_5$ t.c.\\
+  $\sigma_1(A_1)\cup\ldots\cup\sigma_5(A_5) = B_1\cup B_1(P)$ (La sfera viene scomposta in 2 sfere con lo stesso volume della sferainiziale)\\
+  Per avere una teoria consistente dobbiamo studiare il  problema della misura rinunciando alla proprietà di additività.\\
+  \begin{ass}[della scelta]
+	  Data una famiglia di insiemi non vuoti $\{a_\lambda\}_{\lambda\in\Lambda}$ è sempre possbile trovare un insieme $E$ composto da uno e un solo elemento di ogni $A_x$
+  \end{ass}
+  Equivalentemente
+  \[
+	  \prod_{\lambda\in\Lambda} A_\lambda \neq \emptyset
+  .\] 
+  \[
+	   \prod_{\lambda\in\Lambda} A_\lambda\ni(x_\lambda)_{\lambda\in\Lambda} \Leftrightarrow x_\lambda\in A_\lambda \ \ \forall \lambda\in\Lambda
+  .\]
+
+% -------------------- Fine Lezione 1 --------------------
+
+\maketitle
+	\newpage
+	\subsection{Prima scheda informazioni}
+	parte da recuperare\\
+	\subsection{Misure}
+	$X$ insieme non vuoto\\
+	$2^X = $  insieme delle parti di  $X$ =  $\{$ sottoinsiemi $E\subseteq X\}$\\
+	$\phi,X\in 2^X = \{\chi:X \rightarrow\{0,1\}\}$\\
+	$\chi \leftrightarrow E = \{\chi = 1\}$\\
+
+	%TODO aggiungi immagine funzione successiva
+	 $\chi_E(x) = \begin{cases}
+		 1 \ \ \text { se } x\in E\\
+		 0 \ \ \text { se } x\in X\setminus E
+	 \end{cases}$
+	 \begin{defi}
+		 Sia $X$ non vuoto. Una misura è una funzione $\mu : 2^X \rightarrow [0,+\infty]$ che soddisfa le due proprietà:
+		 \begin{enumerate}
+			 \item $\mu(\emptyset) = 0$
+			 \item  per ogni famiglia numerabile di sottoinsiemi $E,\{E_i\}_{i\in\N^+} \subseteq X$\\
+				 $\displaystyle E\subseteq\bigcup_{i=1}^\infty E_i \Rightarrow \mu(E)\leq \sum^\infty_{i=1}\mu(E_i)$
+		 \end{enumerate}
+		 La seconda proprietà viene chiamata sub-additività numerabile
+	 \end{defi}
+\textbf{Commenti:}\\
+1) numerabile $ \Leftrightarrow $ al più numerabile\\
+$\{E_i\}_{i\in\N^+}$ possono essere finite: $\{E_1,E_2,\ldots,E_n\}$ 
+$\N^+ = \{1,2,3,\ldots\}$\\
+2) Proprietà di monotonia: $E\subset F \Rightarrow \mu(E)\leq \mu (F)$\\
+Segue da (ii) prendendo $E_1 = F, E_2 = \emptyset, E_3=\emptyset, \ldots$\\
+3) Gli insiemi $\{E_i\}$ non sono necessariamente disgiunti\\
+4) In generale in (ii) non vale l'uguaglianza neanche se:\\ $E = E_1\cup E_2 $ con $E_1\cap E_2= \emptyset$\\
+Può accadere che $E\cap F = \emptyset$\\
+ \[
+\mu(E\cup F) < \mu(E) + \mu (F)
+.\] 
+5) Comunemente quello che noi chiamiamo misura sono dette misure esterne\\
+\hline\ \\
+Esempi di misure:
+\begin{itemize}
+	\item La misura che conta: $X$\\
+		$\mathbb H^0: 2^X \rightarrow [0,+\infty]$\\
+		$\mathbb H^0(E) = \begin{cases}
+			0 \ \ E =\emptyset\\
+			n \ \ E \text{ ha n elementi}\\
+			+\infty \ \ E \text { infinito}
+		\end{cases}$
+	\item Misura delta di Dirac:\\
+		$X, \ x_0\in X$\\
+		$\delta_{x_0}: 2^X \rightarrow[0,+\infty]$\\
+		$\delta_{x_0}(E) = \begin{cases}
+			1 \ \ \text{ se } x_0\in E\\
+			0 \ \ \text { se } x_0 \not\in E
+		\end{cases}$
+\end{itemize}
+\textbf{Verifica}\\
+$\delta_{X_0}$ è una misura\\
+\textbf{Osservazione}\\
+Se $X$ è infinito allora $H^0(X) = +\infty$\\
+Viceversa  $\delta_$ da finire\\
+\subsection{Insiemi misurabili}\\
+$X \not = \emptyset, \mu$ misura su $X$\\
+ \textbf{Osservazione}\\
+ Possono esistere $E, F$ t.c.\\
+  \[
+	  E\cap F = \emptyset \text{ ma } \mu(E\cup F) < \mu (E) + \mu (F) 
+ .\] 
+ \begin{defi}[Caratheodory]
+ 	Sia $X\not = \emptyset$ e  $\mu$ misura su $X$\\
+	Un insieme  $E\subseteq X$ si dice misurabile se vale:
+	 \[
+	\mu(A) = \mu(A\cap E) + \mu (A\setminus E) \ \ \ \forall A \subseteq X
+	.\] 
+ \end{defi}
+ \textbf{Commenti:}\\
+ 1) $A = X$
+  \[
+  \mu(X) = \mu(E)  + \mu (E^c)
+ .\] 
+ 2) Vale sempre 
+ \[
+ \mu(A) \leq \mu(A\cap E) + \mu(A\setminus E)
+ .\] 
+ \begin{center}
+ \begin{aligned}
+	 E \text { è mi}&\text{surabile}\\
+	   & \storto\Leftrightarrow\\
+	 \mu(A) \geq  \mu(A\cap &E) + \mu (A\setminus E)
+
+\end{aligned}
+ \end{center}
+ \newpage
+ \begin{teo}
+ 	Sia $X \neq \emptyset$ e $\mu$ misura.
+	\begin{enumerate}
+		\item la classe degli insiemi misurabili è una $\sigma$-algebra:\\
+			1) $\emptyset, X\in M$ \\
+			2) $E\in M \Rightarrow E^c\in M$ \\
+			3) $\{E_i}_i{i\in\N^+}\subseteq M \Rightarrow \bigcup^\infty_{i=1} E_i\in M$
+		\item $\mu$ è numerabilmente additiva su M: se $\{E_i\}_{i\in N^+}$ sono disgiunti a coppie $(E_i\cap E_j = \emptyset \ \ \forall i\neq j)$ allora
+			\[
+				\left(\bigcup^\infty_{i=1}E_i \right) = \sum^\infty_{i=1}\mu(E_i)
+			.\] 
+	\end{enumerate}
+ \end{teo}
+ %TODO controlla IL TEORMA DALGI APPUNTI
+ \textbf{Commenti}\\
+ 1) M è chiuso anche per intersezioni numerabili: $E_i\in M$\\
+  \[
+	  \left(\bigcap_i E_i \right)^c = \bigcup_i E_i ^c\in M \Rightarrow \bigcap_i E_i\in M
+ .\] 
+ 2)  $\lim sup_{i \rightarrow\infty} E_i := \bigcap_{N\in\N}\bigcup_{i\geq N} E_i$\\
+  $\lim inf_{i \rightarrow\infty} E_i := \bigcup_N\in\N\bigcap_{i\geq N} E_i$
+
+ \begin{dimo}
+ 	Passo 1: $M$ è un algebra\\
+		\cdot $\emptyset\in M, X\in M$\\
+	Vado a verificare che $\forall A\subseteq X$ vale
+	\[
+	\mu(A) = \mu(A\cap \emptyset) + \mu (A\setminus\emptyset) = \mu(\emptyset) + \mu(A)
+	.\] 
+	dove sappiamo che $\my(\emptyset) = 0$\\
+	Per  $X:$
+	 \[
+	\mu(A) = \mu(A\cap X) + \mu(A\setminus X) = \mu(A) + \mu(\emptyset)
+	.\] 
+	$\cdot E \in M \Rightarrow  E^c\in M$\\
+	Vado a verificare che per ogni $A\subseteq X$ vale le proprietà di Caratheodory:
+	$\mu(A) = \mu(A\cap E^c) + \mu (A\setminus E^c) = \mu (A\setminus E ) + \mu(A\cap E)$\\
+	$\cdot \ E_2, E_2\in M \Rightarrow E_1\cup E_2\in M$
+	Considero un insieme test $A\subseteq X:$\\
+	 $\mu(A) = \mu(A\cap E_1) + \mu(A\setminus E_1)$ 
+	 \[
+	 1)\ \ \mu(A) = \mu(A\cap E_1) + \mu(A\setminus E_1)
+	 \] 
+	 \[
+	  \mu(A\cap E_1) + \mu ((A\setminus E_1)\cap E_2) + \mu((A\setminus E_1)\setminus E_2)
+	 \] 
+	 il risultato è ottenuto applicando Caratheodory al secondo termine della somma (1)\\
+\[
+\geq \mu((A\cap E_1)\cup(A\setminus E_1)\cap E_2) + \mu(A\setminus(E_1\cup E_2))
+\] 
+\[
+  \mu(A)\geq \mu(A\cap (E_1\cup E_2)) + \mu (A\setminus (E_1\cup E_2)) \Rightarrow E_1\cup E_2\in M
+\] 
+Passo 2: finita additività di $\mu$ in $M$\\
+ $E_1, E_2\in M, E_1\cap E_2 = \emptyset$\\
+ Per ogni $A\subseteq X$:\\
+  \[
+ \mu(A\cap (E_1\cup E_2)) = \mu(A\cap (E_1\cup E_2)\cap E_1) + \mu (A\cap (E_1\cup E_2)\setminus E_1)
+ \] 
+ Ottenuto sempre per Caratheodory
+ \[
+ \mu(A\cap E_1) + \cap (A\cap E_2)
+ .\] 
+ Iterando questo passaggio:\\
+ $E_1, \ldots, E_n\in M$ allora:\\
+ \[
+	 \mu(A\cap \bigcup^N_{i=1} E_i) = \sum^N_{i=1} \mu (A\cap E_i)
+ .\] 
+ \textbf{Spiegazione passaggio precedente}
+ \[
+  \mu (A\cap \bigcup^N_{i=1} E_i) = \mu (A\cap E_1) + \mu (A\cap \bigcup^N_{i=2} E_i) = \ldots = \sum^N_{i=1} \mu (A\cap E_i)
+ .\] 
+ Passo 3: mostriamo le proprietà di $\sigma$-algebra e numerabile additività\\
+ Siano $\{E_i\}_{i\in\N^+}\subseteq M$\\
+ Consideriamo gli insiemi:\\
+ $F_1:= E_1,\ \ \ \ \  F_2 = E_2\setminus E_1$\\
+ $F_3 := E_3\setminus(E_1\cup E_2)$\\
+ quindi definiamo ricorsivamente:
+ $F_k : = E_k\setminus\bigcup_{i=1} ^{k-1}$\\
+ Allora  $F_i$ sono disgiunti a coppie 
+ \[
+	 (F_i\cap F_j = \emptyset \ \ \forall i\neq j)
+ .\] 
+ \[
+	 \bigcup_{i=1}^\infty F_i = \bicup_{i=1}^\infty E_i
+ .\] 
+ $\cdot F_i\in M$\\
+ Fissiamo il test di Caratheodory $A\subseteq X, \ F_i\in M$, Passo 1: $M$ algebra\\
+   \[
+	  \mu(A) = \mu(A\cap\bigcup^N_{i=1}F_i) + \mu(A\setminus \bigcup_{i=1}^N F_i)
+ .\] 
+ Usando il passo 2: finita additività
+ \[
+	 = \sum^N_{i=1}\mu(A\cap F_i) + \mu (A\setminus\bigcup^N_{i=1}F_i)
+ \] 
+ \[
+	 \geq \sum^N_{i=1} \mu(A\cap F_i) + \mu(A\setminus\bigcup^\infty_{i=1}F_i)
+ .\] 
+ Passiamo al limite $ N \rightarrow\infty$
+\[\mu (A) \geq \lim_{N \rightarrow\infty} \sum^N_{i=1}\mu(A\cap F_i) + \mu(A\setminus \bigcup^\infty F_i) = \sum^\infty_{i=1} \mu(A\cap F_i) + \mu(A \setminus \bigcup F_i)\]
+\begin{center}
+\begin{aligend}
+	
+	&\dicentertyle\geq \mu ( A\cap \bigcup^\infty_{i=1} F_i) + \mu (A\setminus \bigcup^\infty_{i=1}F_i)\\
+	&= \mu(A\cap \bigcup^\infty E_i) + \mu(A\setminus \bigcup^\infty E_i)\\
+	& \Rightarrow \bigcup^\infty_{i=1}E_i\in M
+\end{aligend}
+\end{center}
+Se prendiamo come test $A = \bugcup^\infty_{i=1}F_i$, allora $\mu(\bigcup^\infty_{i=1}F_i)\geq \sum^\infty_{i=1}\mu(E_i)\geq \mu(\bigcup^\infty_{i=1}F_i)$\\
+$ \Rightarrow \mu(\bigcup^\infty F_i) = \sum^\infty_{i=1}\mu(F_i)$ |\
+$F_i$ sono disgiunti a coppie
+ \end{dimo}
+
+% -------------------- Fine Lezione 2 --------------------
+
+\maketitle
+	\newpage
+	\section{Misura di Lebegque}
+	\subsection{Porprietà dellle afunzioen lunghezza di intervalli}
+	$I$ intervallo in $\R$ \\
+	$|I| = \begin{cases}
+		+\infty \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text { se } I \text { è illimitato}\\
+		sup I - inf I  \ \ \ (b - a)  \ \ \ \text{Se } I \text{ è limitato di estremi } a < b
+	\end{cases}$\\
+\textbf{Esempi di intervallo}\\
+$\emptyset = (a,a) \ \forall a \in \R$\\
+ $\R = (-\infty, \infty)$|\
+ $\{x\} = [x,x] \ \ \ \forall x\in \R$ \\
+ \textbf{Proprietà:}
+ \begin{enumerate}
+	 \item $|\emptyset  | = 0$
+	 \item monotonia\\
+		 $I\subseteq J \Rightarrow  |I| \leq |J|$
+	 \item finita additività\\
+		  $\displaystyle I = \bigcup^n_{i = 1} I_i \ \ I_i$ interevallo\\
+		  $I_i\cap I_j = \emptyset \ \ \forall i\neq j$\\
+		  $  \displaystyle \Rightarrow |I| = \sum^n_{i=1} |I_i|$
+  \end{enumerate}
+  \textbf{Nota}\\
+se $I$ illimitato\\
+$ \Rightarrow  \exists 1\leq i\leq n $ tale che $I_i$ illimitato\\
+ $ \Rightarrow |I| = +\infty = |I_i| = \sum^n_{i=1}|I_k|$ \\
+ Se $I$ limitato $ \Rightarrow  I_i$ limitato $\forall i = 1,\ldots, n$\\
+$|I| = \sum^n_{i=1}|I_i|$
+\begin{enumerate}
+	\item[4.] $I$ intervallo\\
+		$\displaystyle |I| = \sum_{n\in\Z}|I\cap [n,n+1)|$\\
+		$\displaystyle = |I| = \sum^\infty_{n=0}|I\cap [n, n + 1)| + \sum^{-\infty}_{n=0}|I\cap [n, n + 1)|$
+\end{enumerate}
+\textbf{Nota}\\
+Se $I$ illimitato \\
+$ \Rightarrow  I\cap[n,n+1] = [n,n+1) $ per infiniti indici $n\in\Z$\\
+$ \Rightarrow |I| = +\infty = \sum^{n\in\Z}|I\cap[n,n+1)|$ per infiniti n\\
+Se $I$ limitato\\
+$ \Rightarrow  I = \bigcup^k_{n = l}I\cap [n,n+1]$ per $l,k\in\Z$\\
+\begin{enumerate}
+	\item[5.] Numerabile subadditività\\
+		Se $I$ intervallo, $\{I_i\}$ successione di intervalli tale che\\
+		$I\subseteq\bigcup^\infty_{i=1} I_i$\\
+		$ \Rightarrow  |I|\leq \sum^\infty_{i=1} |I_i|$
+\end{enumerate}
+\textbf{Dimostrazione 5.}\\
+Si può assumere $I_i$ limitato $\forall i$\\
+1) caso,  $I$ compatto, $I_i$ aperti $\forall i$\\
+$I = [a,b], I_i = (a_i,b_i)$ \ \  $a_i<b_i$\\
+$I$ compatto, $\{I_i\}$ ricoprimento aperto\\
+$ \Rightarrow \exists$ sottoricoprimento finito
+\[
+	I = [a,b]\subseteq\bigcup^n_{k=1}I_{k}
+.\] 
+Dato che sono un numero finito di intervalli dico che $I_1$ è quello con l'estremo più a sinistra di tutti.\\
+si può supporre che $a_1 < a < b_1$ se $b_1 > b$ $ \Rightarrow  I\subseteq I_1 \Rightarrow |I| \leq |I_2|\leq \sum^\infty_{i=1}|I_i|$\\
+Reiterando trovo l'aperto contenente $a_1$, se questo contiene anche $b$ mi fermo sennò continuo.\\
+abbiamo quindi rinumerato $I_1,\ldots,I_n$ in modo che  $a_{i+1} < b_i < b_{i+1} \ \ \ \forall 1\leq i\leq n$\\
+ $ \sum^n_{i=1}|I| = \sum^n_{i=1}b_i -a_i = b_1-a_1 + \ldots + b_n-a_n$\\
+ notiamo che $b_1 > a_2$ quindi $b_1 - a_2 > 0$, procedendo così per ogni coppia otteniamo
+  \[
+ \geq b_n - a_1\geq b - a = |I|
+ .\] 
+ 2) caso $I$ limitato, $I_i$ limitati\\
+ $\forall\varepsilon > 0 \exists I^\varepsilon$ chiuso, $I^\varepsilon \subset I$ tale che  $ |I^\varepsilon|  = (1-\varepsilon)|I|$\\
+  $\forall i \ \ \exists I^\varepsilon_i$ aperto tale che  $I_i\subset I^\varepsilon_i$ e $| \sum^\varepsilon_{i}| = (1-\varepsilon)|I_i|$\\
+  $I^\varepsilon\subset I\subset\bigcup^\infty_{i = 1} I_i\subseteq\cup^\infty_{i=1}I^\varepsilon_i$\\
+  $I_i = \frac{1}{1-\varepsilon}|I^\varepsilon| \leq \sum^\infty_{i=1}|I^\varepsilon| = \frac{1 + \varepsilon}{1-\varepsilon} \sum^\infty_{i=1}|I_i|$\\
+  Quindi $|I|\leq \sum^\infty_{i=1}|I_i|$\\
+  3) caso $I$ illimitato, $I_i$ limitati $n\in\Z$\\
+  $n\in\Z$ \ \ $ I\cap [n, n + 1)\subseteq \bigcup^ \infty_{n=1}(I_i\cap[n,n+1))$\\
+  Quindi ho un intervallo limitato coperto da intervalli limitati\\
+  per il 2 caso
+   \[
+  |I\cap[n,n+1)|\leq \sum^\infty_{n=1} |I\cap[n,n+1)|
+  \] 
+  Per la 4)
+  \[
+  \sum_{n\in\Z} |I\cap[n,n+1)|\leq \sum_{n\in\Z} \sum^\infty_{i=1}|I_i\cap[n,n+1)|
+  \]
+  \[
+	  = \sum^\infty_{i=1} \sum_{n\in\Z} |I_i\cap[n,n+1)| 
+  \] 
+  \[
+   \sum^\infty_{i=1} |I_i|
+  .\] 
+\begin{enumerate}
+	\item[6.] numerabile additività\\
+		$I = \bigcup^\infty_{i=1} I_i, \ \ I_i\cap I_j = \emptyset\ \ \ \forall i\neq j$ \\
+		 $ \Rightarrow |I| = \sum^\infty_{i=1}|I_i|$ \\
+\end{enumerate}
+\begin{dimo}
+	$|I| \leq \sum^\infty_{i=1}|I_i|$ vero per la 5)\\
+	Ci basta dimostrare l'altro verso della disuguaglianza\\
+	 se $I$ limitato,  (con estremi $a<b$)\\
+	  $\forall k\geq 1$ consideriamo  $I_1,I_2,\ldots,I_k$ sono contenuti in $I$ e disgiunti\\
+	  questi possono essere rinumerati in modo che $a_1 < b_1\leq a_2 < b_2 \leq\ldots\leq a_k < b_k$\\
+	  $ \sum^k_{i=1}\leq b -a $\\
+	  $ \sum^k_{i=1}|I_i| = \sum^k_{i=1}(b_i - a_i)$ \\
+	  $= b_1 - a_1 + b_2 - a_2 + \ldots + b_k - a_k\leq b_k-a_1 \leq b - a= |I|$\\
+	  per lo stesso ragionamento di prima, possiamo formare coppie positive\\
+	  \[
+	  |I| \geq \sum^k_{i=1} |I_i| \ \ \forall k\geq 1
+	  .\] 
+	  \[
+	   \Rightarrow |I|\geq \sum^\infty_{i=1}|I_i|
+	  .\] 
+	  Se $I$ illimitato\\
+	  $I = \bigcup^\infty_{i=1}I_i, I_i\cap I_j = \emptyset $ se $i\neq j$\\
+	  $I\cap [n,n+1) = \bigcup^\infty_{i=1}I_i\cap[n,n+1)$\\
+	   $ \Rightarrow |I\cap[n,n+1)| = \sum^\infty_{i=1}|I_i\cap[n,n+1)|$ \\
+	   $ \Rightarrow \sum_{n\in\Z}|I\cap[n,n+1)| = \sum_{n\in\Z} \sum^\infty_{i=1}|I_i\cap[n,n+1)| = \sum^\infty_{i=1}|I_i|$\\
+\end{dimo}
+	   \begin{itemize}
+	   \item[7.]	$I$ intervallo, $x\in\R$\\
+		    $I + x$ traslato di $I$ \\
+		    $|I+x| = |I|$\\
+		    (invarianza per traslazioni)
+	   \end{itemize}
+	   \begin{defi}[Misura esterna]
+	Sia $E\subseteq \R$\\
+	Si definisce misura ( esterna) di Lebesgue di $E$ 
+	\[
+		m(E) = \inf\lbrace\sum ^\infty_{i=1} |I_i|\  :\ E\subseteq \bigcup^\infty_{i=1} I_i, I_i \text { intervalli}\rbrace
+	.\] 
+	$M:P(\R) = 2^\R \rightarrow [0,+\infty]$
+\end{defi}
+\textbf{Osservazione}\\
+Se $D\subset \E$ è un insieme nullo:
+\[
+	\forall \varepsilon >0\ \ \exists \{I_i\} \text{ successione di intervalli tale che }  D\subseteq\bigcup^\infty_{i=1}I_i \text { e } \sum^\infty_{i=1}|I_i| < \varepsilon
+.\]
+\[
+	\Leftrightarrow m(D) = 0
+.\] 
+Ricordiamo che tra gli insiemi di misura nulla, ci sono gli insiemi numerabili\\
+2) Per definire $m$ si usano ricoprimenti numerabili ma anche i ricoprimenti finiti sono ammessi,
+\[ E\subseteq \bigcup^n_{i=1}I_i = \bigcup^n_{i=1}I_i\cup\bigcup^\infty_{i = n+1}\emptyset\]
+C'è una differenza enorme tra considerare ricoprimenti finiti o ricoprimenti numerabili\\
+$E\subseteq \R$\\
+$\inf\{ \sum^\infty_{i=1}, E\subseteq\bigcup^\infty_{i=1}I_i \text { intervallo}\}\leq \inf\{ \sum^n_{i=1}|I_i|, E\subseteq\bigcup^n_{i=1}I_i, I_i\ \text{intervalli}\}$\\
+La disuguaglianza può essere stretta\\
+\textbf{Esempio}\\
+$E = \Q\cap[0,1]$\\
+è numerabile  $ \Rightarrow m(E) = 0$ \\
+Sia $\{I_1,\ldots,I_n\}$ ricoprimento finito di $E$ con intervalli\\
+$\displaystyle E  = \Q\cap[0,1]\subseteq \bigcup^n_{i=1}I_i \Rightarrow \sum^n_{i=1}|I_i|\geq 1$ \\
+Infatti\\
+$R = \Q\cap[0,1]\subseteq\bigcup^n_{i=1}I_i \Rightarrow [0,1]\subseteq^n_{i=1}I_i$ \\
+$ \Rightarrow [0,1]=\overline{\Q\cap[0,1]}$ \\
+$\displaystyle\leq (\bigcup^n_{i=1}I_i)\leq \bigcup^n_{i=1}\overline{I_i}$
+$ \Rightarrow 1 = |[0,1]| \leq \sum^n_{i=1} |\overline I_i| = \sum^n_{i=1}|I_i|$ \\
+$ \displaystyle\Rightarrow \inf\{ \sum^n_{i=1}|I_i|, E\subseteq \bigcup_{i=1}^n I_i, I_i $ intervallo $\} \geq 1$ ma  $E\subseteq [0,1]$\\
+$ \displaystyle\Rightarrow \inf\{\sum^n_{i=1}|I_i|, E\subseteq \bigcup_{i=1}^n I_i, I_i\text{ intervallo }\}\leq 1$ \\
+Se avessi ricoprimenti finiti $\Q$ avrebbe misura 1, e questo non ci piace perché è un insieme numerabile, questo è il motivo per cui ammetto ricoprimenti infiniti.
+
+% -------------------- Fine Lezione 3 --------------------
+
+\maketitle
+	\newpage
+	\subsection{Misura di Lesbegue}
+	\textbf{Reminderi (misura di Lesbegue)}\\
+	\[
+	m(E) = \inf\{ \sum^\infty_{i=1} |I_i| \ :\ |I_i| \text{ intervalli} \ \ \ E\subseteq \bigcup^\infty_{i-1}I_i 
+	.\] 
+	\begin{prop}
+	1) $m(\emptyset) = 0$	\\
+	2) $E\subseteq F \Rightarrow m(E)\leq m(F)$ \\
+	3) subadditività numerabile, $\{E_i\}$ successione di insiemi
+	 \[
+		 m(\bigcup^\infty_{i=1}) \leq \sum^{\infty}_{i=1}m(E_i)
+	.\] 
+	4) $\forall I$ intervallo  $m(I) = |I|$\\
+	5)  $\forall E\subseteq \R, \forall x\in\R, m(E + x) = m(E)$
+	\end{prop}
+	\begin{dimo}
+		1) $m(\emptyset)\leq |\emptyset| = 0$ dato che l'insieme vuoto è un intervallo\\
+		2)  $\forall\{I_i\}$ intervalli tale che  $F\subseteq \bigcup^{\infty}_{i=1} I_i \Rightarrow \{I_i\}$   è un ricoprimento anche di $E \Rightarrow m(E) \leq \sum^{\infty}_{i=1}|I_i|$ prendendo l'inf rispetto a $\{I_i\}\ \ m(E)\leq m(F)$\\
+		3) Se $\exists i$ tale che $m(E_i) = +\infty \Rightarrow $  tesi ovvia\\
+		possiamo supporre $m(E_i) < +\infty \ \ \forall i > 1$\\
+		Dato  $\varepsilon > 0$  $\exists \{I^i_k\}_k$ intervalli tali che  $\bigcup^{\infty}_{k=1}I_k^i$ e \[ \sum^{\infty}_{k=2}|I_k^i| - \frac \varepsilon {2^i} < m(E_i)\leq \sum^{\infty}_{k=1}|I_k^i|\]\\
+		$\{I_k^i\}_{i,k}$ successione di intervalli\\
+		 $\displaystyle \bigcup^{\infty}_{i=1}E_i\subseteq \bigcup^{\infty}_{i=1}\bigcup^{\infty}_{k=1}I_k^i$ \\
+		 quindi 
+		 \[
+		 m( \bigcup^{\infty}_{i=1}E_i)\leq \sum^{\infty}_{i=1} \sum^{\infty}_{k=1}|I_k^i| \leq \sum^{\infty}_{i = 1}(m(E_i) - \frac{\varepsilon}{2^i} = \sum^{\infty}_{i = 1}m(E_i) + \varepsilon
+		 .\] 
+		 e per $ \varepsilon \rightarrow 0$
+		 \[
+		 m( \bigcup^{\infty}_{i-1}E_i)\leq \sum^{\infty}_{i=1}m(E_i)
+		 .\] 
+		 \newpage \ \\
+		 4) $E = I$  $m(E) \leq |I|$ scegliendo  $I$ stesso come sottoricoprimento \\
+		 $\forall \{ I_i\}$ successione di intervalli tale che  $I\subseteq \bigcup^{\infty}_{i=1}I_i$\\
+		 \[
+			 |I|\leq \sum^{\infty}_{i=1}|I_i| \text{ per la numerabile additività di } |\ \ | 
+		 .\] 
+		 \[
+		 \Rightarrow  |I|\leq m(I) = m(E)
+		 .\] 
+		 5) $E\subseteq \R, x\in\R$\\
+		 $\forall \{I_i\}$ successione di intervalli tale che $E\subseteq \bigcup^{\infty}_{i=1}I_i$\\
+		 \[
+		  \Rightarrow E + x \subseteq \bigcup^{\infty}_{i=1}I_i + x = \bigcup^{+\infty}_{i=1}(I_i + x)
+		 .\] 
+		 \[
+		 m(E+ x) \leq \sum^{\infty}_{i= 1}|I_i = x| = \sum^{\infty}_{i=1}|I_i|
+		 .\] 
+		 quindi sappiamo che $ \Rightarrow m(E + x) \leq m(E)$\\
+		 sappiamo che $E = E+x - x$\\
+		  \[
+		  m(E) = m(E + x -x )\leq m(E + x)
+		  .\] 
+		  $ \Rightarrow m(E) = m(E + x)$ \\
+
+
+	\end{dimo}
+	\textbf{Osservazione}\\
+	È vero che se $\{E_i\}$ successione di insiemi disgiunti $E_i\cap E_j = \emptyset$ per $i\neq j$\\
+	 \[
+	m( \bigcup^{\infty}_{i=1} = \sum^{\infty}_{i=1}m(E_i)
+	.\]
+	è vero? In generale no.\\
+	Osserviamo che se valesse la finita additività, ovvero
+	\[
+	m(E_1\cup\ldots\cup E_n) = m(E_1) + m(E_2) + \ldots + m(E_n)
+	.\] 
+	con $E_i\cap E_j = \emptyset,\ \  i\neq j$
+	 $ \Rightarrow$ sarebbe vera anche la finita additività.\\
+	 Infatti\\
+	 \[
+		 m( \bigcup^{\infty}_{i=1})\leq \sum^{\infty}_{i=1}m(E_i) \ \ \text{ sempre vero per subadditività}
+	 .\] 
+	 Se $E_i\cap E_j = \emptyset$ per $i\neq j$ e  $\displaystyle\forall k\geq 1 \ \ m( \bigcup^{k}_{i= 1}E_i = \sum^{k}_{i=1}m(E_i)$\\
+ $\displaystyle \Rightarrow m( \bigcup^{\infty}_{i=1} \geq m( \bigcup^{k}_{ i=1}E_i) = \sum^{k}_{i=1}m(E_i) \ \Rightarrow m( \bigcup^{\infty}_{i=2}) \geq \sum^{\infty}_{i=1}m(E_i)$\\
+ Il problema che impedisce la numerabile additività è che non sempre è vero che $E_1\cap E_2\subseteq\R, \ \ E_1\cap E_2=\emptyset$
+ \[
+ m(E_1\cup E_2) = m(E_1) + m(E_2)
+ .\] 
+ perché nella famiglia di intorni ci possono essere intorni che ricoprono parte sia di $E_1$ che di $E_2$ quindi
+ \[
+ \sum^{\infty}_{i=1}|I_i|\neq \sum^{}_{i
+ \ \ \ I\cap E_2}|I_i| + \sum^{}_{i\ \ \  I_\cap E_2}|I_i|
+ .\] 
+ Tuttavia, è vero che Se $I_1,\ldots, I_n$ intervalli, $I_i\cap I_j = \emptyset $ per $i\neq j$\\
+  $m( \bigcup^{\infty}_{i=1}I_i) = \sum^{n}_{i=1}|I_i|$\\
+  Si può supporre gli $I_i$ limitati (sennò misura è infinita)\\
+  $\displaystyle I = \bigcup^{n}_{i=1}I_i \cup \bigcup^{i=1}_{n-1}J_i$
+  %TODO aggiunti immagine 17:01 marzo 5
+  \[
+  m(I) = |I| = \sum^{n}_{i=1}|I_i| + \sum^{n-1}_{i=1}|J_i| \geq m( \bigcup^{n}_{i=1}I_i) + m( \bigcup^{n-1}_{i=1}J_i)
+  \] 
+  \[
+   \leq m( \bigcup^{n}_{i=1}I_i\cup \bigcup^{n-1}_{i=1}J_i) = m(I)
+  .\] 
+  ma ciò vuol dire che sono tutte uguaglianze
+  \[
+   \Rightarrow \sum^{n}_{i=1}|I_i| = m( \bigcup^{n}_{i-1}I_i)
+  .\] 
+  se $I_i$ intervalli con $I_i\cap I_j = \emptyset \ \ i\neq j$
+
+  \begin{defi}
+  	Se $X$ un insieme non vuoto, Una misura su $X $ è una funzione 
+	\[
+		\mu: P(x) \rightarrow [0,+\infty]
+	.\] 
+	tale che
+	\begin{enumerate}
+		\item $\mu(\emptyset) = 0$
+		\item (monotonia) $E \subseteq F \Rightarrow \mu(E) \leq \mu(F) $
+		\item (subadditività) $\mu( \bigcup^{\infty}_{i=1}E_i)\leq \sum^{\infty}_{i=1}\mu(E_i)$ 
+		\item[\text{} \ \ 2.+3.] $ \Leftrightarrow E\subseteq \bigcup^{\infty}_{i=1} E_i, \ \ \mu(E)\leq \sum^{\infty}_{i=1}(E_i)$
+	\end{enumerate}
+  \end{defi}
+\textbf{Esempi di misura}\\
+$1)\ x_0 \in\R$
+\[
+	\delta_{x_0}: P(\R) \rightarrow [0,+\infty)
+.\] 
+$E\subseteq \R \ \ \delta_{x_0}(E) = \begin{cases}
+	1\ \ \ \text {se } x_0\in E\\
+	0 \ \ \ \text{se }  x_0\not\in E
+\end{cases}$
+difatti:\\
+- $\delta_{x_0}(\emptyset) = 0$\\
+- se  $E\subseteq F$ se  $x_0\not\in E \Rightarrow \delta_{x_0}(E) = 0 \leq \delta_{x_0}(F)$ \\
+se $x_0\in E \rightarrow x_0 \in F \Rightarrow \delta_{x_0}(E)=\delta_{x_0}(F) = 1 $\\
+se $\delta_{x_0}( \bigcup^{\infty}_{i=1}E_i) = 0 \Rightarrow x_0\not\in \bigcup^{\infty}_{i=1}E_i \Rightarrow x_0\not\in E \ \ \ \forall i$ \\
+se $\delta_{x_0}( \bigcup^{\infty}_{i=1}E_i) = 1 \Rightarrow \ \exists i, \ \ t.c. \ \ x_0\in E_i \Rightarrow \sum^{\infty}_{1}\delta_{x_0}(E_i)\geq 1\\$
+2) misura "che conta"\\
+$\mu^\# : P(\R) \rightarrow[0,+\infty] $\\
+\[
+ \mu^\# (E) = \begin{cases}
+	 \text{ cardinalità di } E \text { se } E \text{ è finito}\\
+	 +\infty \ \ \ \ \ \ \ \ \ \ \ \ \  \text{ se } E \text { è infinito}
+ \end{cases}
+.\] 
+\textbf{Esempio di insieme di misura di Lesbegue nulla}\\
+Non misurabile, insieme di Cantor\\
+Al passo $n=1, I_1^1 = (\frac 13, \frac 23), \ C_1= J^1_1 \cup J^1_2 = [0,\frac 13] \cup [\frac 23, 1]$\\
+Reitero così, dividendo in 3 parte tutti gli insiemi $J$ e rimuovendo gli intervalli centrali.\\
+%TODO se vuoi disegno marzo 5, 5:46
+$C_n$ è un insieme di $2^n$ intervalli chiusi, disgiunti, ogniuno di ampiezza $\frac{1}{3^n}$\\
+$C_n$ è alternato da $C_{n-1}$ eimuovendo $2^{n-1}$ intervalil aperti di ampiezza $\frac{1}{3^n}$\\
+L'insieme di Cantor è definita da  $C = \bigcap^{\infty}_{n=1}C_n = \bigcap^\infty_{n=1} \bigcup^{2^n}_{i=1}J_i^n = [0,1]\setminus \bigcup^{\infty}_{n=1} \bigcup^{2^{n-1}}_{k=1}I_k^n$\\
+\[
+m(C)\leq m(C_n) = m( \bigcup^{2^n}_{i=1}J^{n}_i) = \sum^{2^n}_{i=1}|J_i^n| = \frac{2^n}{3^n} = (\frac 23)^n
+.\] 
+$\forall x\in [0,1]$\\
+si scrive nella forma  $x = \sum^{\infty}_{i=1}\frac{x_i}{3^i}, \ \ x_i\in\{0,1,2\}$\\
+$x = \frac 13 + \frac 09 + \ldots + \frac {x_i}{3^i} + \ldots$
+
+% -------------------- Fine Lezione 4 --------------------
+
+\maketitle
+	\newpage
+	\section{Qui manca la parte precedente della lezione}
+	$f s.c.i \Leftrightarrow f^{-1}(a, + \infty))$  aperto $\forall a\in \R$\\
+	 \begin{dimo}
+		 $ \displaystyle(\Rightarrow) $ $f(x) \leq \lim_{x \rightarrow x_0}\inf f(x)$ \\
+		 $c-\in\{f > a\} \Leftrightarrow f(x_0) > a \Rightarrow \lim_{x->x_0}\inf(fx)\geq f(x_0) > a \Rightarrow \inf(fx)> a$ per $\delta$ sufficientemente piccolo\\
+		 $  \Rightarrow f(x) > a$ per $|x-x_0|<\delta$\\
+		 $ \Rightarrow (x_0-\delta, x_0 + \delta)\subset \{f > a\}$ \\
+		 $ \Rightarrow \{f>a\}$ aperto\\[10px]
+		 $ ( \Leftarrow)  \x_0\in\R \ \ \forall a < f(x_0) \ \ x_0\in\{f > a\}$\\
+		 $ \Rightarrow \exists \delta > 0$ t.c. $f(x) > a \ \ \forall \ \ x\in(x_0-\delta,x_0 + \delta)$\\
+		 $ \Rightarrow \liminf_{x \rightarrow x_0| \ \geq \ \inf_{0 < |x-x_0| < \delta} f(x) > a$\\
+			 $ \Rightarrow  \liminf_{x \rightarrow x_0} \geq a \ \ \forall a< f(x_0)$\\
+			 $\liminf_{x \rightarrow x_0} f(x) \geq f(x_0)$\\
+			 $  \Rightarrow f$ \ \ s.c.i\\
+			 \textbf{Esercizio 7}
+			 $f: [a,b] \rightarrow\R$ limitata\\
+			 $\omwg$
+
+	\end{dimo}
+
+% -------------------- Fine Lezione 5 --------------------
+
+\maketitle
+	\newpage
+	\section{Insieme di Vitali}
+	\textbf{Controesempio all'additività di m}\\
+	Insieme di Vitali\\
+	In $\R$ consideriamo la relazione d'equivalenza
+	\[
+	x,y\in\R \ \ \ x\sim y \ \Leftrightarrow \ x-y\in\Q
+	.\] 
+	sia $[x]$ la classe di equivalenza di un elemento $x\in \R$\\
+	 \[
+		 [x] = \{y\in \R \ | \ x\sim y\} = x + \Q
+	.\] 
+	$V$ insieme di Vitali è costruito scegliendo un elemento in $[0,1]$ da ogni classe d'equivalenza.  $V\subseteq[0,1], \ x\in V$ \\
+	$\forall x\in[0,1] \Rightarrow \exists \hat x\in V$ tale che $x\sim \hat x \Leftrightarrow x-\hat x \in \Q \Rightarrow x - \hat x = q\in\Q$ \\
+	$ \Rightarrow x=\hat x + q\in V + q$ dove $q\in\Q\cap [-1,1]$\\
+	 $-1\leq x - \hat x \leq x\leq 1$ \\
+	 Quindi abbiamo dimostrato
+	 \[
+		 [0,1]\subseteq \bigcup^{}_{q\in\Q\cap[-1,1]} V + q\subseteq[-1,2]
+	 .\] 
+	 L'osservazione cruciale è che tutti questi insiemi sono disgiunti\\
+	 siano $q_1,q_2\in \Q\cap [-1,1]$\\
+	 se $V+ q_1\cap V + q_2\neq \emtyset$\\
+	 $ \Rightarrow \exists x_1,x_2\in\Q $ tale che 
+	 \[
+	 x_1 + q_1 =x_2 + q_2
+	 .\] 
+	 \[
+	 x_1 -x_2 = q_1 + q_2\in\Q
+	 .\] 
+	 Ciò vuol dire che $x_1\sim x_2$ che è assurdo dato che in $V$ prendiamo solo un rappresentate per ogni classe di equivalenza.\\
+	 Ciò vuol dire che $\cup_{i\in\Q\cap[-1,1]}$ è unione numerabile di insiemi disgiunti\\
+	  \textbf{Vediamo la misura di questo insieme}\\
+	  $\displaystyle m([0,1]) = 1 \leq mi \left(\bigcup_{q\in\Q\cap[-1,1]}V + 1 \right)$ per monotonia\\
+	  Supponiamo che valga l'additività. \ \hfill (1)
+	  \[
+		  = \sum^{}_{q\in Q\cap[-1, 1]}m (V + q)
+	  .\] 
+	  \[
+		  = \sum^{}_{} m(V) \leq m([-1,2]) = 3
+	  .\] 
+	  $\displaystyle 1 \leq \sum^{}_{q\in\Q\cap[-1,1]}m(V)\leq 3$ \\
+	  Però le due disuguaglianze indicano che $m(V) > 0$ e $m(V) = 0$ (la somma deve essere di termini positivi, e deve essere finita), che è assurdo. Ma qualunque sottoinsieme di $\R$ ha una misura, quindi l'assurdo deriva dal fatto che utilizziamo l'additività (1).\\[10px]
+	  Tuttavia non vogliamo rinunciare all'additività, possiamo quindi considerare l'insieme degli insiemi per cui vale l'additività della misura.\\
+	  \begin{defi}[Caratheodory]
+	  	$X$ insieme non vuoto $\mu$ misura su $X$\\
+		Un insieme  $E\subseteq X$ si dice $\mu$-misurabile se $\forall F\subseteq X \text { si ha }$
+		\[
+			 \mu(F) = \mu(F\cap E) + \mu(F\setminus E) 
+		.\] 
+		Ovvero $E$ spezza additivamente ogni altro insieme
+	  \end{defi}
+	  \textbf{Osservazione}\\
+	  \begin{enumerate}
+		  \item $E\subseteq X$ è  $\mu$ misurabile $ \Leftrightarrow$ $\mu(F)\geq \mu(F\cap E) + \cap (F\setminus E) \ \ \forall F\subseteq X$\\
+			  perché $\geq$ è sempre vero per la subadditività\\
+			  Quindi si può anche supporre $\mu(F)< + \infty$
+		  \item La definizione di misurabilità è simmetrica per  $E$ e $E^c = X\setminus E$,  $E$ misurabile $ \Leftrightarrow\mu(F)\geq \mu(F\cap E) + \mu (F\setminus E) = \mu(F\setminus E^c) + \mu(F\cap E^c)$\\
+			  che è la misura che dovrei testare per $E^c$ \\
+			  Quindi $E$ è $\mu$-misurabile $ \Leftrightarrow \ E^c$ è $\mu$-misurabile
+		  \item Se $\mu(E) = 0  \Rightarrow  E $ è $\mu$-misurabile.\\
+			  $\forall F\subseteq X$\\
+			  $\mu(F\cap E)+ \mu(F\setminus E)\leq \cancel{\mu(E)} + \mu(F) \Rightarrow E$ è $\mu$-misurabile.\\
+	  \end{enumerate}
+			  Indicheremo con $\eta_\mu$ la classe dei sottoinsiemi  $\mu$-misurabili\\
+			  $\eta_\mu = \{E\subseteq X \ | \ E \ \ \mu$-misurabile $\} = \{\emptyset, X, \ldots\}$
+\newpage
+			  \begin{teo}
+				  Sia $\mu$ una misura su $X$, $\eta_\mu$ la classe degli insiemi $\mu$-misurabili, Allora:
+				  \begin{enumerate}
+					  \item se $\{E_i\}_{i\in\N}\subset \eta_\mu \Rightarrow \bigcup^{+\infty}_{i = 1}E_i\in\eta_\mu$ 
+					  \item Se $\{E_i\}_{i\in\N}\subset \eta_\mu$ tale che $E_i\cap E_j = \emptyset $ se $i\neq j$\\
+						   $ \Rightarrow \mu \left( \bigcup^{\infty}_{i = 1}E)i)  = \sum^{+\infty}_{i = 1}\mu(E_i)$ 
+						   \item  Se $\{E_i\}_{i\in\N}\subset\eta_\mu$\\
+							   tale che  $E_1\sunbseteq E_2\subseteq\dots\subseteq E_i\subseteq E_{i+1}\subseteq \ldots$\\
+							   $ \Rightarrow \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) = \lim_{i \rightarrow\infty)\mu(E_i)$
+						   \item Se $\{E_i\}}_{i\in\N}\subset \eta_\nu$\\
+								   tale che $E_1\supseteq E_2\supseteq\ldots\subseteq E_i\supseteq E_{i+1}\supseteq\ldots$\\
+								   e $\mu(E_1) < +\infty$\\
+								   $\mu \left( \bigcup^{\infty}_{i=1} E_i \right) = \lim_{i  \rightarrow\infty}\mu(E_i)$
+
+				  \end{enumerate}
+			  \end{teo}
+	\begin{dimo}
+		Primo passo, l'unione finita di numerabili è misurabile\\
+		\[
+		E_1,E_2\in\eta_\mu \ \ th: \ E_1\cup E_2\in \eta_\mu
+		.\] 
+		$\forall F\subseteq X$\\
+		 $\mu(F) = \mu(F\cap E_1) + \mu(F\setminus E_1) = \mu(F\cap E_1) + \mu(F\setminus E_1\cap E_2) + \u(F\setminus E_1\setminus E_2) \geq \mu(F\cap E_1\cup (F\setminus E_1\cap E_2)) + \mu (F\setminus(E_1\cup E_2)) = \mu(F\cap(E_1\cup E_2)) + \mu(F\setminus (E_1\cup E_2))$\\
+		 per subadditività\\
+		 Induttivamente:\\
+		 se $\displaystyle E_1, \ldots, E_k\in\eta_\mu \Rightarrow \bigcup^{k}_{i=1}E_i = \bigcup^{k-1}_{i=1}E_i\cup E_k\in\eta_\mu$ \\
+		 Se $E_1,\ldots, E_k\in\eta_\mu \Rightarrow E^c_1,\ldots,E_k^c \in\eta_\mu \Rightarrow \bigcup^{k}_{i=1}E^c\in\eta_\mu \Rightarrow (\bigcup^{k}_{i=1}E_i^c)^c\in\eta_\mu$\\
+		 Secondo passo finita additività:\\
+		 $E_1,\ldots,E_k\in\eta_\mu, \ \ E_1,\ldots,E_k$ disgiunti\\
+		 $\mu \left( \bigcup^{k}_{i=1}E_i \right) = \mu( \bigcup^{k}_{i=1}E_i\cap E_k) + \mu \left( \bigcup^{k}_{i=1}\setminus E_k) = \mu(E_k) + \mu \left( \bigcup^{k-1}_{i-1}E_i)$\\
+		terzo passo: Numerabile additività\\
+		$\{E_i\}\subset\eta_\mu, E_i\cap E_j = \emptyset \ \ \forall i\neq j$\\
+		 \[
+		\sum^{+\infty}_{i=1}\mu(E_i)\geq \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) \geq \mu \left( \bigcup^{k}_{i=1}E_i \right) = \sum^{k}_{i=1}\mu (E_i) \ \ \forall k
+		.\] 
+		\[
+		 \Rightarrow  \sum^{+\infty}_{i=1}\mu(E_i)\geq \mu( \bigcup^{+\infty}_{i=1} \mu(E_i)\geq\mu \left( \bigcup^{+\infty}_{i=1}E_i \right)\geq \sum^{+\infty}_{i=1}\mu(E_i)
+		.\] 
+		Osserviamo che $\{E_i\}_{i\in\N}\subset\eta_\mu,$ disgiunti\\
+		$F\subseteq X$\\
+		 $ \Rightarrow \mu \left(F\cap \bigcup^{k}_{i=1}E_i \right) = \mu \left( \bigcup^{k}_{i-1}F\cap E \right$\\
+			 e $\mu(F\cap \bigcup^{+\infty}_{i=1}E_i = \sum^{+\inftu}_{i=1}\mu(F\cap E_i)$	\\
+			 quarto passo\\
+			 $\{E_i\}_{i\in\N}\in \eta_\mu$\\
+			  $E_1\subseteq E_2\subseteq\ldots$\\
+			  $ \Rightarrow \mu ( \bigcup^{+\infty}_{i=1}E_i = \lim_{i \rightarrow +\infty} \mu(E_i)$\\
+			  $ \bigcup^{k}_{i=1}E_i = E_1\cup E_2\setminus E_2\cup E_\ldots\cup2\setminus E_2\ldots\cup E_k\setminus E_{k-1}$\\
+			  $ \bigcup^{+\infty}_{i=1}E_i = E_1\cup \bigcup^{+\infty}_{i=2}E-i\setimnus E_{i-1}$\\
+			  $\{E_1,E_i\setminus E_{i-1}\}_{i\geq 2}$\\
+			  successione di insiemi disgiunti e misurabili.\\
+			  $E_i\setminus E_{i+1} = E_i\cap (E_{i-1})^c$\\
+			  per il passo $3$ \ \ $\displaystyle \mu \left( \bigcup^{+\infty}_{i=1}E_i \right) = \mu(E_1) + \sum^{+\infty}_{i = 2}\mu (E_i\setminus E_{i-1})\\
+			  = \mu(E_1) + \sum^{+\infty}_{i=2}(\mu(E_i) - \mu (E_{i-1}))$\\
+			  $E_i = E_{i-1}\cup E_i\setminus E_{i-1}$\\
+			  $ \Rightarrow \mu (E_i) = \mu (E_{i-1}) + \mu (E_i\setminus E_{i-1})$
+			  \[
+				  \mu( \bigcup^{+\infty}_{i=1}E_i) = \mu(E_1) + \lim_{k \rightarrow + \infty} \sum^{k}_{i=2}(\mu(E_i) - \mu (E_{i-1})) 
+			  .\] 
+			  \[
+			   = \mu(E_2) + \lim_{k \rightarrow +\infty} ( \cancel{\mu(E_2)} - \mu (E_1) + \cancel{\mu (E_3)} - \cancel{\mu (E_2)} + \ldots + \mu (E_k) - \cancel{\mu(E_{k-1})}
+	   			  .\] 
+			  Inoltre:\\
+			  se $E_1\subseteq\ldots \ \ \{E_i\}_{i\in\N}\subset\eta_\mu$ \\
+			  $\forall F\subseteq X$\\
+			  $\mu \left(F\cap \bigcup^{+\infty}_{i = 1}E_i \right) = \lim_{i \rightarrow +\infty} \mu(F\cap E_i)$\\
+			  Quinto passo\\
+			  $\{E_i\}_{i\in\N}\subset \eta_\mu$\\
+			   $E_2\supseteq E_2\supseteq \ldots$ \ \ \ $\mu(E_1) < +\infty$\\
+			   $E_1\semtinus E_2\subseteq E_1\setminus E_3$\subseteq\ldots\\
+			   \[
+				   \mu \left( \bigcup^{+\infty}_{i = 1} E_1 \setminus E_{i} \right) = \lim_{i \rightarrow +\infty}\mu(E_1\setminus E_i)  = \lim_{i \rightarrow +\infty} (\mu(E_1) - \mu (E_i)) = \mu(E_1) - \lim_{i \rightarrow + \infty} \mu (E_i)
+			   .\] 
+			   sesto passo\\
+			   $\{E_i\}\subset \eta_\mu$\\
+			    $ \bigcup^{+\infty}_{i=1}E_i\in\eta_\mu$\\
+			    $\forall F\subseteq X$\\
+			     $\mu (F\cap \bigcup^{+\infty}_{i = 1}E_i) + \mu (F\setminus \bigcup^{+\infty}_{i = 1}E_i) = \mu (F\cap  \bigcup^{+\infty}_{i= 1}B_k ) + \mu (F\setminus  \bigcup^{+\infty}_{k=1}B_k)$\\
+			     $B_j = \bigcup^{k}_{i =1} E_i$\\
+			     $B_1\subseteq B_2\subseteq\ldots$\\
+			     $ \bigcup^{+\infty}_{k = 1}B_k = \bigcup^{+\infty}_{i = 1}E_i$ \\
+			     $\lim_{k \rightarrow +\infty} \mu (F\cap B_k) = \lim _{k \rightarrow +\infty} \mu (F\setminus B_k)$\\
+			     $ = \lim_{k \rightarrow +\inftu} (\mu(F\cap B_k)  + \mu(F\setminus B_k)) = \mu (F)$
+	\end{dimo}
+
+% -------------------- Fine Lezione 6 --------------------
+
+\end{document}
