@@ -1,0 +1,253 @@
+\documentclass[12px]{article}
+
+\title{Lezione 7 Geometria 2}
+\date{2025-03-17}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Cotntinuo sulla topologia prodotto}
+	\begin{teo}
+		Siano $P,Q$ spazio topologico, sia $P\times Q$ con topologia prodotto
+		\begin{enumerate}
+			\item $B = \{ U\times V \ | \ U\subseteq P\ \ \text{ aperto },  V\subset Q$ aperto  $\}$ è una base della topologia prodotto.
+			\item Per ogni  $x_0\in P , y_0\in Q$ le applicazioni
+				\begin{center}
+					\begin{aligned}
+						
+						p|_{P\times \{y_0\}} : P&\times\{y_0\} \rightarrow P\\
+									&(x,y_0) \rightarrow x
+					\end{aligned}
+				\end{center}
+				\begin{center}
+					\begin{aligned}
+						
+						p|_{\{x_0\}\times Q} : &\{x_0\} \times Q\rightarrow P\\
+									&(x_0,y) \rightarrow y
+					\end{aligned}
+				\end{center}
+				sono omomorfismi (dove $P\times\{y_0\}$ e $\{x_0\}\times Q$  hanno topologia di sottospazio)\\
+			\item le proieizoni $p : P\times Q \rightarrow P$\\
+				$q: P\times Q \rightarrow Q$\\
+				sono aperte
+			\item Sia $X$ spazio topologico $f : X \rightarrow P\times Q$\\
+				allora $f$ è continua se e solo se lo sono le sue componenti $p\circ f $ e $q\circ f$
+		\end{enumerate}
+	\end{teo}
+	\begin{dimo}
+		1) Dimostriamo prima di tutto che esiste una topologia $T$ su $P\times Q$ che ha  $B$ per base.\\
+		Verifichiamo le condizioni date in una proposizione precedente\\
+		a)  $P\times Q$ dev'essere unione di  elementi di  $B$, è vero perché  $P\times Q\in B$ \\
+		b) Siano $U,U'\subseteq P$ aperti,  $V,V'\subseteq Q$ aperti, allora l'intersezione.\\
+		\[
+			(U\times V)\cap (U'\times V')
+		.\] 
+		(è l'intersezione di due elementi qualsiasi di $B$) si deve poter scrivere come unione di elementi di  $B$:
+		 \[
+			 (U\cap U')\times (V\cap V')
+		.\] 
+		quindi questa intersezione è un elemento di $B$.\\
+		Abbiamo dimostrato che esiste  $T$ che ha $B$ per base.\\
+		Confrontiamo $T$ con la topologia con la topologia prodotto. Prima cosa: dimostriamo che $p$ e $q$ sono continue se su $P\times Q$ mettiamo $T$.\\
+		Vediamo $p:P\times Q \rightarrow P$\\
+		sia $A\subseteq P$ aperto, allora $p^{-1}(A) = A\times Q$\\
+		è un aperto di $T$, Quindi $p$ è continua.\\
+		Analogamente $q$ è continua.\\
+		Segue $T$ è più fine della topologia prodotto (per definizione della topologia prodotto).\\
+		$T \spuseteq $ topologia prodotto\\
+		Dimostriamo $T\subseteq $ topologia prodotto\\
+		Dimostriamo che $B\subseteq $ topologia prodotto\\
+Siano $U\subseteq P$ aperto,  $V\subseteq Q$ aperto\\
+quindi  $Y\times V\in B$ allora:
+ \[
+ U\times Q = p^{-1}(U)
+.\] 
+dev'essere aperto anche in topologia prodotto.\\
+Anche $P\times V = q^{-1}(V)$ dev'essere aperto in topologia prodotto.\\
+ \[
+ U\times V = (U\times Q) \cap (P\times V)
+ .\] 
+ unione arbitraria di aperti è aperta, quindi $T\subseteq$ topologia prodotto.\\
+ Quindi $B$ è base della topologia prodotto\\[10px]
+ 2) Dimostriamo che 
+ \[
+	 p|_{P\times\{y_0\}} P\times\{y_0\} \rightarrow P
+ .\] 
+ è omeomorfismo.\\
+ Quest'applicazione è biettiva, è continua perché è restrizione (su un sottospazio) di un'applicazione continua\\
+ Dobbiamo dimostrare che l'inversa è continua\\
+ \begin{center}
+	 \begin{aligned}
+
+		 $\varphi :& P \rightarrow P\times \{y_0\}\\
+			  &x \rightarrow (x,y_0)$
+	 \end{aligned}
+ \end{center}
+Basta verificare che le controimmagini di elementi della base sono aperti (esercizi settimanali).\\
+Inoltre una base del sottospazio $P\times \{y_0\}$ è ottenuta intersecando gli elementi elementi dalla base $B$ al sottospazio (esercizi settimanali). Sia $U\times V \in B$ ( $U\subseteq P$ aperto, $V\subseteq Q$ aperto) e considero
+\[
+	A = (U\times V) \cap (P\times \{y_0\})
+.\] 
+%TODO inserisci immagine che non hai
+Abbiamo $A = \begin{cases}
+	U\times \{y_0\} \ \ \text{ se } y_0\in V\\
+	\emptyset \ \ \ \  \ \ \ \ \ \ \ \ \text{ se } y_0\not\in V
+\end{cases}$ \\
+allora $ \varphi^{-1}(A) = \begin{cases}
+	U \ \ \ \ \text{se} \ y_0\in V\\
+	\emptyset \ \ \ \ \ \text{se} \ y_0\not\in V
+\end{cases}$ 
+In entrambi i casi ho un aperto di $P$\\
+segue che  $p|_{R\times\{y_0\}}$ è un omeomorfismo. Analogamente lo è anche $q|_{\{x_0\}\times Q}$ \\[20px]
+3)Dimostriamo che $p,q$ sono aperti\\
+%TODO aggiungi immagini che non hai 
+Su $A\subseteq P\times Q$ aperto considero
+ \[
+ A = \bigcup_{y_0\in Q}A\cap (P\times  y_0\})
+.\] 
+ \[
+ p(A) = \bigcup_{y_0\in Q}p(A\cap (P\times  y_0\}))
+.\] 
+\[
+	= \bigcup_{y_0\in Q} p|_{P\times\{y_0\}} (A\cap (P\times\{y_0\}))
+.\] 
+Ora l'insieme $A\cap (P\times\{y_0\})$ è aperto nel sottospazio $P\times \{y_0\}$, e $p|_{P\times\{y_0\}}$ è omemorfismo. \\
+quindi $p|_{P\times\{y_0\}}(A\cap(P\times\{y_0\}))$ è aperto di $P$.\\
+Segue:  $p(A)$ aperto in $P$. Cioè $p$ è aperta analogamente q è aperta \\
+4) Abbiamo 
+%TODO aggiungi immagine 4 26
+Se $f$ è continua allora lo sono le mappe $p\circ f, q\circ f$\\
+Viceversa, supponiamo  $p\circ f$ continua. ALlora dimostriamo  $f$ continua. Di nuovo usiamo $B$, quindi  $U = \subseteq P$ aperto, $V\subseteq Q$ aperto, dimostriamo che $f^{-1}(U\times V)$ è aperto in $X$. Abbiamo
+ \[
+ f^{-1}(U\times V) = (p\circ f)^{-1}(U)\cap (q\times f)^{-1}(V)
+.\] 
+è aperto per continuità di $p\circ f$ e $q\circ f$\\
+\end{dimo}
+ \textbf{Osservazione}\\
+ Siano $P,Q$ spazi topologici, siano  $B_P$ base della topologia di  $P$ e  $B_Q$ base della topologia di $Q$ allora
+  \[
+	  \{U\times V| U\in B_P, \ \ V\in B_Q\}
+ .\] 
+ è una base della topologia prodotto.\\
+ \textbf{Esempi}\\
+ 1) $P = Q = \R$ con topologia euclidea prendiamo le basi  $B_P = B_Q = \{]a,b[\ |\ a,b\in \R \ a< b\}$ della topologia euclidea su  $\R$\\
+ Per l'osservazione  $\{]a,b[\times]c,d[\ | a,b,c,d\in\R \ \ a < b,\ c < d\}$\\
+ è base della topologia prodotto su  $\R^2 = \R\times \R$\\
+ Sappiamo anche che questa è una base della topologia euclidea su  $\R^2$ quindi questa è la topologia prodotto.\\
+ ANalogamente, la topologia euclidea su  $\R^n$ è la topologia prodotto su 
+  \[
+	  \R^n = \R^{n-1}\times\R
+ .\] 
+ 2) Considero $\R $ con topologia di Zarinksi, allora la topologia prodtto su
+ \[
+	 \R^2 = \R\times \R
+ .\] 
+ dove ogni $\R$ ha la topologia di Zarinski non è la topologia di Zarinksi su $\R^2$\\
+ \begin{defi}[Spazi di Hausdoff]
+ 	Uno spazio topologico $X$ si dice di Hausdoff (o T2) se $\forall x,y\in X$ con  $x\neq y, \ \exists U$  intorno di  $x, V $  intorno di $y$  t.c.  $U$ \cap V = \emptyset.
+ \end{defi}
+ \textbf{Esempi}\\
+ 1) Ogni spazio metrico è T2, basta prendere $U = B_{d(x,y)/2}(x)$ $V = B_{d(x,y)/2}(y)$\\
+ 2) $X = \emptyset$ di Hausdoff\\
+3) $X$ qualsiasi con topologia banale  allora:
+\begin{itemize}
+	\item se $|X|\leq 1$ allora  $X$ è T2
+	\item se  $|X| \geq 2$ allora  $X$ non è T2
+\end{itemize}
+4) Se $X$ ha topologia cofinita.
+\begin{itemize}
+	\item se $X$ è un insieme finito allora la topologia è discreta e $X$ è T2
+	\item se $X$ è infinito allora $X $ non è T2.
+\end{itemize}
+\textbf{Osservazione}\\
+Dati $x,y\in X$ con  $x\neq y$\\
+se esistono intorni  $U$  di $x, V$ di  $y$ con $U\cap V = \emptyset$ allora esistono aperti  $(x\in)A(\subseteq U)$ e  $(y\in )B(\subseteq V)$ e sono disgiunti.\\
+Quindi  $X$ è T2 se e solo se $\forall x,y\in X$ con $x\neq y$  $\exists U $ intorno aperto di $x$ $V$ intorno aperto di $y$ con $U\cap V = \emptyset$
+ \begin{lemm}
+	Se $X$ spazio topologico è T2, tutti i suoi sottoinsiemi finiti sono chiusi.
+\end{lemm}
+\begin{dimo}
+	Sia $x\in X$ per ogni  $y\in X$ scegliamo intorni aperti 
+	 \[
+	U\ni x, V\ni y
+	.\] 
+	con $U\cap V= \emptyset$ $V\not\ni x$, quindi  $V\subseteq (X\setminus \{x\})$ \\
+	Cioè $X\setminus \{x\}$ è intorno di ogni suo punto.\\
+	Segue  $\{x\}$ è chiuso.\\
+	Allora tutti i sottoinsiemi finiti sono chiusi
+\end{dimo}
+\begin{prop}
+	Sottospazi e prodotti di spazi di Hausdoff sono di Hausdoff
+\end{prop}
+\begin{dimo}
+	Sia $X$ T2 sia $Y\subseteq X$ sottospazio.
+	%TODO Aggiungi immagine 17 18\\
+	Siano $y,y'\in Y$ con $y\neq y'$\\
+	Scegliamo  $U\ni y, U'\ni y'$ aperti in  $X$ e disgiunti $U\cap U' = \emptyset$\\
+	allora  $U\cap Y$ e $U'\cap Y$ sono aperti in  $Y, $ disgiunti, e contengono rispettivamente $y$ e $y'$, Allora  $Y$ è T2.\\
+	Siano ora $P,Q$ spazi topologici, entrambi T2, siano  $(a,b)\neq (c,d)\in P\times Q$\\
+	Supponiamo  $a\neq c$ \\
+siano $U\ni a, U'\ni x$ aperti in  $P$, $U\cap U' = \emptyset$. Allora  $U\times Q$ e  $U'\times Q$ sono aperti disgiunti contenenti $(a,b)$ e $(c,d)$ rispettivamente.\\
+Se $a  = c$ allora $b\neq d$  e la dimostrazione è analoga con spazi del tipo $P\times U, P\times U' $
+\end{dimo}
+\begin{teo}
+	Sia $X$ spazio topologia, considero $X\times X$ con topologia prodotto e la diagonale  $\Delta = \{(a,a)\in X\times X \ | \ a\in X\}$\\
+	Vale:  $X$ T2 se e solo se  $\Delta$ è chiusa in $X\times X$
+\end{teo}
+Idea intuitiva dell'enunciato, parte  $\Rightarrow$ .\\
+sia $x\in X$ un punto che "si muove" (ad esempio è un termine di una successione).\\
+Supponiamo  $x$ "tende" ad un limite $a\in X$, cioè entra progressivamente in ogni intorno di  $a$. Se  $x$ "tende" anche a $b\in X$ e  $X$ è T2, allora $a = b$ (perché se $a\neq b$ allora hanno intorni disgiunti).\\
+Allora potrò dire che $(x,x)$ "tende" alla coppia $(a,b)$ e la proprietà T2 implica $a = b$, cioè la diagonale  $\{(x,x) \ | \ $ è chiusa $\}$\\
+\begin{dimo}
+	$ \Rightarrow $ suppongo $X $ T2, dimostriamo che $(X\times X)\setminus\Delta$ è aperto in topologia prodotto\\
+	Sia $(x,y)\in (X\times X)\setminus \Delta,$ cioè  $x\neq y$\\
+	Siano  $U, V$ aperti di $X$ disgiunti con  $U\ni x, V\ni y$, allora  $U\times V$ è aperto in $X\times X$, contiene  $(x,y)$\\
+	Inoltre  $(U\times V)\cap \Delta = \emptyset$, perché 
+	 \[
+		 (U\times V)\cap \Delta = \{(z,z)\in X\times X \ | \ z \in U \ \ z\in V\}
+	.\] 
+	è vuoto perché $z$ apparterrebbe a $U\cap V = \emptyset$\\
+	Quindi  $(X\times X)\setminus \Delta$\\ è intorno di ogni suo punto, cioè è chiuso\\
+	$ (\Leftarrow)$ Suppongo $\Delta$ chiuso, cioè $(X\times X)\setminus\Delta$ aperto di $X\times X$. Siano  $x\neq y$ di $X$, allora $(x,y)\in (X\times X)\setminus\Delta$\\
+	Per la base  $B$ vista per la topologia prodotto esiste  $U\times V\subseteq(X\times X)\setminus\Delta$\\
+	tale che  $U\times V$ aperto di $X, U\times V\ni (x,y)$. Allora  $U\cap V = \emptyset$ \\
+	(ragionamento di prima, non esistono punti come z). Inoltre $x\in U$,  $y\in V$. Segue  $X$ è T2.
+\end{dimo}
+\textbf{Osservazione}\\
+Ricordo $C = \{(x,y)\in \R^2\ | \ xy = 1\}$\\
+è chiusa perché  $ C = f^{-1}(\{1\})$ \\
+dove 
+\begin{center}
+	\begin{aligned}
+		$f: \R^2 &\rightarrow\R\\
+		(x,y) &\rightarrow xy$
+	\end{aligned}
+\end{center}
+Pi	u in generale siano $X,Y$ spazi topologici  $f :X \rightarrow Y$ continua. Suppongo $Y$ di Hausdoff e sia $y\in Y$\\
+Allora  $\{y_0\}$ è chiuso in $Y$, quindi
+ \[
+	 \{x\in X\ | \ f(x) = y_0\} = f^{-1}(\{y_0\}) \ \ \text{ è chiuso}
+.\] 
+\begin{coro}
+	$X,Y$ spazi topologici.\\
+	Siano $f,g: X \rightarrow Y$ continue, e l'insieme
+	\[
+	 C = \{x\in X\ | \ f(x) = g(x)\}
+	.\] 
+	Se $Y$ è $T2$ allora  $C$ è chiuso in $X$.
+\end{coro}
+\begin{dimo}
+Consideriamo
+\begin{center}
+	\begin{aligned}
+		$\varphi : X & \rightarrow Y\ \ \times \ \ Y\\
+			    x & \rightarrow (f(x), g(x)) $
+	\end{aligned}
+\end{center}
+Per il primo teorema della lezione, questa è continua. Allora $C = \varphi^{-1}(\Delta)$ che è la diagonale in $Y\times Y$\\
+Ma la diagonale è chiusa quindi  $C$ è chiuso
+\end{dimo}
+\end{document}

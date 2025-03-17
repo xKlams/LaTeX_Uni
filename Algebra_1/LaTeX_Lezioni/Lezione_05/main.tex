@@ -1,0 +1,170 @@
+\documentclass[12px]{article}
+
+\title{Lezione 5 Algebra 1}
+\date{2025-03-17}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{PID $\Rightarrow$ UFD}
+	\textbf{Esercizio}\\
+	Dimostrare che Euclideo $ \Rightarrow  $ PID\\
+	\textbf{Suggerimento}\\
+	$R$ dominio d'integrità\\
+	Per l'esistenza è lo stessa usata per verificare che $\K[x]$ è un PID.\\
+	 \textbf{Ricordo}\\
+	 \begin{defi}
+		 $a\in R\setminus\{0\}$ non invertibile
+		  \begin{itemize}
+			  \item $a$ primo se $a | bc \Rightarrow a|b$ oppure $a|c$
+			  \item irriducibile se  $a = bc$ allora $a$ associato a $c$ oppure $a$ associato a $c$
+		 \end{itemize}
+	 \end{defi}
+	 \textbf{Osservazione 1}\\
+	 $a\in R$ primo $ \Rightarrow $ a irriducibile\\
+	 \textbf{Osservazione 2}\\
+	 $a\in R$ primo  $ \Leftrightarrow$ $(a)\subseteq R$ primo se  $R$ domino d'integrità\\
+	 \textbf{Osservazione 3}\\
+	 $R$ dominio PID,  $a\in R$ irriducibile  $ \Rightarrow  (a)\subseteq R$ ideale massimale.\\
+	 \textbf{Osservazione 4}\\
+	 $R = \K[x,y]$  $PID$  $a = x\in R$\\
+	 $(a) = (x)\subseteq\K[x,y]$ \\
+	 $J = (x,y)\neq K[x,y]$  $(x)\subsetneq J$\\
+	  $(x)$ non è massimale nonostante il suo generatore sia irriducibile.\\
+	  \begin{defi}[Dominio a fattorizzazione unica]
+	  	$R$ dominio a fattorizzazione unica se:
+		\begin{enumerate}
+		\item ogni elemento si fattorizza in irriducibili.
+		\item tale fattorizzazione è unica a meno di permutazioni e irriducibili associati.
+		\end{enumerate}
+	  \end{defi}
+	  \begin{teo}
+	  	$R$ UFD se e solo se:
+		\begin{enumerate}
+			\item ogni irriducibile in $R$ è primo in $R$.
+		\item Data una successione in  $R$ $a_1,a_2,\ldots a_n, \ldots$ tale che \\ $a_{i+1}|a_i \ \ \forall a_i\in\Z_{>0}$ 
+			allora $\exists \underline i\in \Z_{>0}$ tale che $a_h,a_k$ associati $\forall h,k\geq\underline i$
+		\end{enumerate}
+	  \end{teo}
+	  \begin{teo}
+		  $R$ dominio a ideali principali.\\
+		  Allora $R$ è dominio a fattorizzazione unica
+	  \end{teo}
+	  \begin{dimo}
+	  	L'idea è sfruttare il teorema precedente.
+		\begin{enumerate}
+			\item Sia $a\in R$ irriducibile\\
+				 $ \Rightarrow (a)\subseteq R$ ideale massimale\\
+				 $ \Rightarrow (a)\subseteq R$ ideale primo\\
+				 $ \Rightarrow a\in R$ primo.
+			 \item Consideriamo una successione in $ R$:\\
+				 $a_1,\ldots,a_n,\ldots$ tale che $a_{i+1} | a_i \ \ \forall i\in \Z_{>0}$\\
+				 Voglio vedere che questa stabilizza (diventa una catena stazionaria)\\
+				 Considero gli ideali  $(a_i)$, abbiamo  $(a_i)\subseteq (a_{i+1}) \ \ \forall i\geq 1$\\
+				 Definiamo  $I:= \bigcup_{i=1}^{+\infty}(a_i)$ che è un ideale in $R$ \\
+				 Infatti:\\
+				 dati $r\in R$ e  $b\in I$ avremmo $b\in (a_i)$ per qualche indice $i$ \\
+				 $ \Rightarrow r,b\in(a_i)\subseteq I$ \\[10px]
+				 dati $b_1,b_2\in I$ \\
+				 $ \Rightarrow b_1\in(a_{i_1}), \ b_2\in (a_{i_2})$ \\
+				 assumendo $i_1\leq i_2$ \\
+				 $ \Rightarrow (a_{i_1})\subseteq (a_{i_2})$ \\
+				 $ \Rightarrow b_i\in(a_{i_2})$ \\
+				 $ \Rightarrow b_1 + b_2\in (a_{i_2})\subseteq I$ \\[10px]
+				 Allora $I\subseteq R$ è un ideale principale:\\
+				  $\exists a\in R$ tale che $(a)\in I$
+				  \begin{itemize}
+					  \item 
+				  Quindi  $(a) = \bigcup^{\infty}_{i=1}(a_i)$ \\
+				  da cui $(a_i)\subseteq (a) \Rightarrow a | a_i$ \ \ \ $\forall i\in \Z_{>0} .$
+			  \item D'altra parte \\
+				  $a\in (a) = \bigcup^{+\infty}_{i=1}(a_i)\ \Rightarrow \ \exists \undelrine i \in \Z_{>0} $ tale che $a\in (a_{\underline i })\subseteq (a_h) \ \ \forall h\geq \underline i$ \\
+				  da cui $a_h \ | \ a \ \ \forall h\geq \underline i $
+
+				  \end{itemize}
+				  Deduciamo $a, a_h$ associati $\forall h\geq \underline i$\\
+				  Quindi  $\forall h,k\geq \underline i$\\
+				   $ \begin{cases}
+					   a,a_h \ \ \text{assocaiti}\\
+					   a,a_k \ \ \text{assocaiti}
+				   \end{cases}$
+				   $ \Rightarrow a_h,a_k$ associati\\
+		\end{enumerate}
+		Dal teorema segue che $R$ è UFD.
+	  \end{dimo}
+	  \begin{coro}
+		  $\Z[i]$ è UFD
+	  \end{coro}
+	  \begin{dimo}
+		  $\Z[i]$ è Euclideo  $ \Rightarrow Z[i]$ è $PID$  $ \Rightarrow \Z[i]$ è $ UFD$
+	  \end{dimo}
+	  \textbf{Problema:}\\
+	  Quali primi di $\Z$ sono primi in  $\Z[i]?$\\
+	   \textbf{Esercizio (standard)}\\
+	   $R = \Q[x]$\\
+	    $I = (x^3 + x^2-x-1,x^4-2x^2+1,x^5-x^3)$\\
+	    Determinare un generatore dell'ideale  $I$\\
+	    Cerco un polinomio  $p\in\Q[x]$ che divida i 3 generatori\\
+	     \begin{defi}
+		     $R$ dominio d'integrità $a,b\in R\setminus\{0\}$ \\
+		     diremo che $c\in R$ è massimo comun divisore  $c = MCD(a,b)$ se:
+		      \begin{itemize}
+			      \item $c| a$ e \ \ $c| b$
+			      \item $\forall d\in R : \begin{cases}
+			      	d|a\\
+				d|b
+			      \end{cases}$ si ha $d|c$
+		     \end{itemize}\\
+		     $c\in R$ si dice minimo comune multiplo,  $c = mcm(a,b)$ se:
+		      \begin{itemize}
+			      \item $a|c $ e  $b|c$
+			      \item $\forall d\in R :\ \ \begin{cases}
+			      	a | d \\ b | d
+			      \end{cases}$ si ah $c | d $
+		     \end{itemize}
+
+	    \end{defi}
+	    \textbf{Esercizio}\\
+	    dimostriamo che se $R$ è $UFD$ allora esiste  $MCD$ e  $mcm$ \\
+	    \textbf{Soluzione}\\
+	    dati $a,b\in R\setminus\{0\}$\\
+	    consideriamo  $a = \varepsilon\cdot r_1\cdot\ldots\cdot r_h$\\
+	    $b = \eta \cdot s_1\cdot\ldots\cdot s_k$\\
+	    con $\varepsilon,\eta\in R$ invertibili, $r_i,s_i\in R$ irriducibili\\
+	     \textbf{Idea}\\
+	     raggruppare gli irriducibili associati fra loro e costruire $c = MCD(a,b)$ come segue\\
+	     $c = r_{i_1}^{t_1}\cdot r_{i_2}^{t_2}\cdot\ldots\cdote_{i_m}^{t_m}$\\
+	     Chi sono $t_i$ e gli  $r_{i_j}$?\\
+	     $r_{i_j}$ sono gli irriducibili associati ad almeno uno degli irrazionali di  $b$\\
+	      $t_i$ è il minimo tra gli esponenti con cui il corrispondente irriducibile compare nelle fattorizzazioni di $a $ e di $b$ \\
+	      \textbf{Osservazione}\\
+	      $MCD$ e  $mcm$ non sono unici in generale. \\
+	      \textbf{Osservazione}\\
+	      $(\Z[i],\nu)$\\
+	      $\nu(a + ib) = a^2 + b^2\ \ \ \ \forall a,b\in \Z$ \\
+	       $v(a + i 0) = a^2$ \\
+	       \textbf{Osservazione} \\
+	       $z = a +ib\in\Z[i]$ tale che  $v(z)\in\Z$ è primo in  $\Z$\\
+	       Allora  $z$ è primo in $\Z[i]$\\
+	       Infatti se  $z = \alpha\cdot \beta$\\
+	       $ \Rightarrow \nu (z) = \nu(\alpha)\cdot \nu (\beta)$ \\
+	       Allora se $\nu(z)$ primo in  $\Z \rightarrow v(\alpha) = 1$\\
+	       $ \Rightarrow \alpha$ invertibile in $\Z[i]$\\
+	       $ \Rightarrow z$ irriducibile in $\Z[i]$\\
+	       $ \Rightarrow z$ primo in $\Z[i]$ \\
+	       \textbf{Problema}\\
+	       $p\in \Z$ primo  $ \Rightarrow p\in \Z[i] $ è primo?\\
+	        \textbf{Idea}\\
+		$p\in\Z$ primo  $ \Rightarrow \nu(p) = p^2$ \\
+		Se $p$ è irriducibile in $\Z[i]$\\
+		 $ \Rightarrow p= (a_1+ib_1)(a_2 + ib_2)$\\
+		 $ \Rightarrow p^2 = (a^2_1 + b_1^2)(a_2^2+b_2^2)$ \\
+		 \textbf{Osservazione}\\
+		 Modulo $(4)$ gli unici quadrati sono  $0$ e $1$ Mentre se  $p\equiv_4 3$ allora non può essere somma di quadrati $ \Rightarrow  $ non può essere irriducibile.
+
+
+
+\end{document}
