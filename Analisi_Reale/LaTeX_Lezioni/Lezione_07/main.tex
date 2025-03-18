@@ -1,0 +1,144 @@
+\documentclass[12px]{article}
+
+\title{Lezione 07 Analisi Reale}
+\date{2025-03-18}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{$\sigma$-algebra}
+	\begin{defi}
+		$X$ insieme non vuoto, Una famiglia $\eta\subseteq P(X)$ si dice  $\sigma$-algebra su $X$ se 
+		 \begin{enumerate}
+			 \item $\emptyset, X\in \eta$
+			 \item  $E\in \eta \Rightarrow E^c\in\eta$ 
+			 \item $\{E_i\}\subseteq \eta \Rightarrow \bigcup^{+\infty}_{i = 1}E_i\in\eta$
+		 \end{enumerate}
+	\end{defi}
+	\textbf{Osservazione}\\
+	Se $\eta$ è $\sigma$-algebra e $\{E_i\}\subseteq \eta \Rightarrow \bigcap_{i=1}^{+\infty}E_i\in\eta$ \\
+	$E_i\in\eta \rightarrow E_i^c\in \eta \ \ \forall i$\\
+$ \Rightarrow  \bigcup^{+\infty}_{i = 1}E_i^c\in \eta \Rightarrow ( \bigcup^{+\infty}_{i=1}E_i^c)^c\in \eta\\$
+
+Una misura individua una $\sigma$-algebra\\
+\textbf{In generale}\\
+se $\mu$ è una misura su  $X$\\
+ \[
+	 \eta_\mu = \{R\subseteq X \ : \ E \text{ e } \mu-\text{misurabile}\}
+.\] 
+è una $\sigma$-algebra\\
+In particolare in $\R$ c'è la $\sigma$-algebra di Lesbegue $=$ famiglia degli insiemi misurabili secondo Lesbegue\\
+\begin{defi}
+	Sia $X$ un insieme non vuoto e sia $F\subset P(X)$ si chiama  $\sigma$-algebra generata da $F$ la $\sigma$-algebra data da 
+	\[
+		\Sigma_F = \bigcap_{\substack{\eta\text{ è algebra}\\ F\subseteq \eta}}\eta
+	.\] 
+	la più piccola $\sigma$-algebra che contiene $F$
+\end{defi}
+\begin{defi}
+	Se $(X,\iota)$ è uno spazio topologico la  $\sigma$-algebra generata da $\iota$ si dice $\sigma$-algebra di Borel
+\end{defi}
+Vogliamo ora indagare sulla $\sigma$-algebra di Lesbegue in $\R$ $\eta_m = \eta$
+ \begin{prop}
+	Se  $I\subseteq \R$ è un intervallo\\
+	 $ \Rightarrow  I \in\eta $ (è misurabile secondo Lesbegue)
+\end{prop}
+\begin{dimo}
+	$I\subseteq \R$ intervallo  $ \Rightarrow \ \ \forall F\subseteq \R \ \ m(F)\geq m(F\cap I) + m(F\setminus I)$ 
+\textbf{Primo caso}\\
+Supponiamo $I = (a,+\infty) \ \ a\in\R$\\
+Sia  $F\subseteq \R, $ con $m(F) < +\infty$ \\
+$\forall \varepsilon > 0 \ \ \exists \{I_i\}$ successione di intervalli tale che  $F\subseteq \bigcup^{+\infty}_{i=1}I_i$ e $m(F)\leq \sum^{+\infty}_{i=1}|I_i| < m(F) + \varepsilon$
+\[
+m(F) + \varepsilon > \sum^{+\infty}_{i =1}|I_i| = \sum^{+\infty}_{i=1}(|I_i\cap I| + |I\setminus I|) 
+\] 
+\[
+= \sum^{+\infty}_{i=1}|I_i\cap I| + \sum^{+\infty}_{i=1}|I_i\setminus I| \geq m(F\cap I) + m(F\setminus I)
+.\] 
+e per $\varepsilon \rightarrow 0$ si ha $m(F) \geq m(F\cap I) + m(F\setminus I)$
+$I_i  = (\alpha_i, \beta_i)$ \ \ $|I_i| = \beta_i -\alpha_i = \beta_i - a + a - \alpha_i = |I_i\cap I| + I_i\cap I|$\\
+$F\subseteq \bigcup^{+\infty}_{i = 1}I_i$\\
+$F\cap I\subseteq  \bigcup^{+\infty}_{i =1}(I_i\cap I)$\\
+$F\setminus I \subseteq \bigcup^{+\infty}_{i =1}(I_i\setminus I)$ \\
+\textbf{Quindi:}\\
+Intervalli del tipo $I= (a,+\infty)\in \eta \rightarrow I = (-\infty, a]\in\eta$\\
+$ \rightarrow (a,b]\in\eta$\\
+$[a,+\infty) = \bigcap_{n=1}^{+\infty}(a - \frac 1n, +\infty)\in \eta$\\
+$ \Rightarrow (-\infty , a)\in \eta$ \\
+$ \Rightarrow (a,b)\in \eta$ \\
+$ \Rightarrow $ vale anche per gli intervalli chiusi\\
+tutti gli intervalli sono misurabili, quindi anche tutti gli aperti.
+\end{dimo}
+\begin{teo}
+	Ogni aperto $a\subseteq\R$ è unione al più numerabile di intervalli aperti disgiunti
+\end{teo}
+\begin{coro}
+	$\sigma$-algebra di Borel in $\R$ = $\beta\subseteq\eta = $  $\sigma$-algebra di Lesbegue
+\end{coro}
+L'inclusione puo essere stretta perché  $F$ insieme misurabili con Lesbegue e non con Borel\\
+Quindi in $\R$ si ha:\\
+$B\subseteq \eta\subsetneq P(R)$, che è stretta perché e come controesempio abbiamo l'insieme di Vitali perchè non vale l'additività  $V\in P(\R)\setminus\eta$\\
+\begin{teo}[Caratterizzazione sui misurabili secondo Lesbegue]
+	Sia $E\subseteq \R$ sono equivalenti
+	 \begin{enumerate}
+		 \item $E\in\eta$
+		 \item  $\forall \varepsilon > 0 \ \ \exists A_\varepsilon\subseteq\R$ aperto $t.c.$ $E\subseteq A_\varepsilon$ e $m(A_\varepsilon\setminus E)< \varepsilon$
+		 \item  $\exists \ F\in B$ ($F$ è intersezione numerabile di aperti) tali che $E\subseteq F$ e $m(F\setminus E) = 0$
+		 \item  $\forall \varepsilon > 0 \ \exists \ C_\varepsilon$ chiuso tale che $C_\varepsilon\subseteq E$ e $m(E\setminus C_\varepsilon) < \varepsilon$
+		 \item  $\exists G\in B$ ( $G$ è unione numerabile di chiusi) tale che $G\subseteq E$ e $m(E\setminus G) = 0$
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	$1) \Rightarrow 2)$ \\
+	$Hp \ E\in \eta$\\
+	Primo caso:  $m(E) < +\infty$\\
+	$\forall\varepsilon > 0 \exists\{I_i\}$ successione di intervalli aperti tali che $E\subseteq \bigcup^{+\infty}_{i = 1}I_i^\varepsilon$ (l'insieme $A_\varepsilon$ aperto) e $ \sum^{+\infty}_{i = 1}|I_i^\varepsilon| < m(E) + \varepsilon$\\
+	$E\in \eta \Rightarrow  m(A_\varepsilon) = m(A_\varepsilon\cap E) + m(A_\varepsilon\setminus E) = \\
+	=m(E) + m(A_\varepsilon\setminus E)$ \\
+	$ \Rightarrow m(A_\varepsilon) - m(E) = m(A_\varepsilon\setminus E)$ \\
+	quindi\\
+	$(A_\varepsilon\setminus E) = m(A_\varepsilon) - m(E)\leq \sum^{+\infty}_{i = 1} m(I_i^\varepsilon) - m(E) = \sum^{+\infty}_{i = 1}|I_i^\varepsilon | -m(E) < \varepsilon $|\
+	Secondo caso: $m(E) = +\infty$ \\
+	$E = \bigcup^{+\infty}_{n= 1}E\cap (-n,n)$\\
+	$E\in\eta \Rightarrow \ \forall n E\cap (-n,n) = E_n \in \eta, \eta(E_n) < +\infty$ \\
+	applicando il primo caso \\
+	$\forall n, \ \forall\varepsilon$\\
+	 $\exists A_n^\varepsilon$ aperto tale che $A_n^\varepsilon \geq E_n$ e  $m(A_n^\varepsilon \setmins E_n) < \varepsilon$\\
+	  $A_\varepsilon = \bigcup^{+\infty}_{n=1}A_n^\varepsilon\supseteq \bigcup^{+\infty}_{n = 1}E_n = E$\\
+	  $m(A_\varepsilon\setminus E) = m(\displaystyle \bigcup^{+\infty}_{n = 1}(A_n^\varepsilon \setminus E)) \leq m( \bigcup^{+\infty}_{n = 1}(A_n^\varepsilon\setminus E_n))\leq \sum^{+\infty}_{n = 1}m(A_n^\varepsilon\setminus E_n) \leq \sum^{+\infty}_{n=1}\frac{\varepsilon}{2^n} = \varepsilone$ \\
+	  Se è misurabile c'è un aperto che lo contiene e la misura della differenza è finita\\[10px]
+	  $2) \Rightarrow  3)$ \\
+	  $Hp \ \forall \vaerpsilon > 0, \exists A_\varepsilon $ aperto, $A_\e\supseteq E$  e $m(A_\e\setminus E)< \e$\\
+	  Th  $\exists F\in B$ tale che $F \supseteq E$ e  $m(F\setminus E) = 0$\\
+	  Per  $\e = \frac 1n, \ \forall n\geq 1 \ \ \exists A_n$ aperto $t.c. \ A_n\supseteq E$ e $m(A_n\setminue E)< \frac 1n$\\
+	  $F = \bigcap^{+\infty}_{n=1}A_n\in B,\ \ F\supseteq E$ e $m(F\setminus E)\leq m(A_n\setminus E) \leq \frac 1n$\\
+	  $ \Rightarrow  n \rightarrow +\infty \ \ m(F\setminus E) = 0$\\[10px]
+	   $3) \Rightarrow 1)$ \\
+	   Hp $\exists F\in B: \ F\supseteq E $ e $m(F\semtinus E) = 0$\\
+	    $ E = F\semtinus(F\setminus E) = F\cap (F\setminus E)^c\in \eta$\\
+	     $1) \Rightarrow 4)$ \\
+	     $E\in \eta \Rightarrow E^c \in \eta \Rightarrow \forall \e > 0 \exists A_\e$ aperto\\
+	     tale che $A_\e\supseteq E^c$ e $m(A_\e\setminus E^c)<\e$\\
+	      $C_\e = A_\e^c$ è chiuso\\
+	      $E^c\subseteq A_\e \ \Rightarrow \ E\supseteq A_\e^c = C_\e$ \\
+	      $m(E\setminus C_\e) = m(E\cap C^c) = m(E\cap A_\e) = m(A_\e\setminus E^c)<\e$\\[10px]
+	      $4) \Rightarrow  5)$ \\
+	      Per $\e = \frac 1n \ \ \forall\n\in \N$\\
+	       $\exists C_n$ chiuso, $C_n \subseteq E$ tale che  $m(E\setminus C_n)< \frac 1n$\\
+	       \[
+	         G = \bigcup^{+\infty}_{n = 1}C_n\in B,  \ \ G\subseteq E
+	       .\]
+	       $m(E\setminus C) \leq m(E\setminus C_n)\leq \frac 1n \ \ \ \forall n$\\
+	       per $n \rightarrow +\infty m(E\setminus G) = 0$ \\[10px]
+	       $5) \Rightarrow  1)$ \\
+	       Hp: $\exists G \in B$ tale che $G\subseteq E$ e $m(E\setminus G) = 0$\\
+	        $ \Rightarrow E = G\cup (E\setminus G)\in \eta$ perché unione di misurabili
+
+
+
+\end{dimo}
+	
+\end{document}

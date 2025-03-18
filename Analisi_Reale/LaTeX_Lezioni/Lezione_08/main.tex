@@ -1,0 +1,151 @@
+\documentclass[12px]{article}
+
+\title{Lezione 8 Analisi Reale}
+\date{2025-03-18}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Approccio agli integrali di Lesbegue}
+	La somma infinitesima viene fatta orizzontalmente piuttosto che verticalmente.
+	%TODO aggiungi immagine 13 25
+	\begin{defi}
+		Sia $X$ un insieme non vuoto e $\eta$ una  $\sigma$-algebra in $X$.\\
+		( $(X,\eta)$ spazio misurabile)\\
+		Sia $X$ uno spazio topologico,\\
+		una funzione $f: X \rightarrow Y$ si dice misurabile se $f^{-1} (A)\in \eta \ \ \forall A\subseteq Y \ \ A$ aperto
+	\end{defi}
+	\textbf{Esempi}\\\
+	1) se $\eta = P(X)\ \Rightarrow \ $ ogni funzione $f: X \rightarrow Y$ è misurabile\\
+ Se $\eta = \{\emptyset, X\} \Rightarrow f:X \rightarrow Y$ è $\eta$-misurabile $ \Leftrightarrow$ $f$ è costante.\\
+	2) Se $X$ è spazio topologico  e se $\eta\supseteq B (Borel)$\\
+	 $f : X \rightarrow Y$ continua $ \Rightarrow  f$ misurabile\\
+	 3) $X= \R$ con topologia euclidea\\
+	  $f(x) = \gamma_E(x) = \begin{cases}
+		  1 \ \ \text{ se }  x \in E\\
+		  0 \ \ \text{ se }  x \not\in E
+	  \end{cases}$ \\
+	  $E\subseteq X$\\
+	   $A\subseteq \R$ aperto\\
+	   $f^{-1}(A) = \begin{cases}
+		   X \ \ \text{ se } 0,1\in A\\
+		   E^c \ \ \text{ se } 0\in A, 1\not\in A\\
+		   E \ \ \text{ se } 0\not \in A,1\in A\\
+		   \emptyset \ \ \text{ se } 0,1\not\in A
+	   \end{cases}\in\eta \Leftrightarrow E\in \eta$\\
+	   \begin{prop}
+	   	Se $(X,\eta)$ spazio misurabile e $f:X \rightarrow Y$\\
+		$ \Rightarrow  \{F\subseteq Y \ : \ f^{-1}(F)\in\eta\} =S$ è una $\sigma$-algebra in $Y$ \\
+		di conseguenza se $Y$ è uno spazio topologico e $f$ è $\eta$-misurabile\\
+		allora $f ^{-1}(B)\in\eta \ \ \ \forall B\in B_Y$
+	   \end{prop}
+	   \begin{dimo}
+		   $f^{-1}(\emptyset) = \emptyset\in\eta \Rightarrow \emptyset \in S$ \\
+		   $f^{-1}(Y) = X\in\eat \Rightarrow Y\in S$ \\
+		   $F\in S$ ovvero $f^{-1}(F)\in\eta$\\
+		   $f^{-1}(F^c) = f^{-1}(Y\setminus F) = X\setminus f^{-1}(F) = f^{-1}(F)^c\in \eta \Rightarrow F^c\in S$ \\
+		   Facciamo vedere che $S$ è chiusa per le unioni numerabili e abbiamo finito.\\
+		   $\{F_I\}\subset S$ ovvero  $f^{-1}(F_i) = \eta \ \ \forall_i$ \\
+		   $ \Rightarrow f^{-1}( \bigcup^{+\infty}_{i=1}F_i) = \bigcup^{+\infty}_{i = 1}f^{-1}(F_i)\in \eta = \bigcup^{+\infty}_{i=1}F_i\in S$
+	   \end{dimo}
+	   \begin{prop}
+	   	Sia $(X,\eta)$ uno spazio misurabile $f:X \rightarrow \R$\\
+		Allora $f$ è misurabile se e solo se\\
+		$ \{ x\in X \ :\ f(x) > t\}\in \eta, \ \ \forallt\in \R\\  \Leftrightarrow\{ x\in X \ :\ f(x) \geq t\}\ \ \forall t\in \R$ \\$ \Leftrightarrow$ $\{ x\in X \ :\ f(x) < t\}\in \eta, \ \ \forallt\in \R \\\Leftrightarrow\{ x\in X \ :\ f(x) \leq t\}\ \ \forall t\in \R $
+	\end{prop}
+	\begin{dimo}
+		$f$ è misurabile $ \Leftrightarrow$ $f^{-1}(B)\in \eta\ \ \forall B\subseteq \R$  $B$ boreliano\\
+		$ \Leftrightarrow f^{-1}((t,+\infty))\in\eta\ \ \ \forall t\in\R$ \\
+		$ \Leftrightarrow f^{-1}([t,+\infty))\in\eta\ \ \ \forall t\in\R$ \\
+		$ \Leftrightarrow f^{-1}((-\infty, t))\in\eta\ \ \ \forall t\in\R$ \\
+		$ \Leftrightarrow f^{-1}((-\infty, t])\in\eta\ \ \ \forall t\in\R$ \\
+	\end{dimo}
+	\begin{prop}
+		Sia $(X,\eta)$ uno spazio misurabile\\
+		 \begin{enumerate}
+			 \item Se $f,g: X \rightarrow\R$ sono misurabili\\
+				 $ \Rightarrow f + g, \lambda f \ \ \lambda\in \R, \ f\cdot g , \frac fg \ \ $ se $g\neq 0, |f|, \min\{f,g\}, \max\{f,g\}$ sono misurabili
+			 \item Se $\{f_k\}$ successione di funzioni misurabili\\
+			 $ \Rightarrow $ $\sup_k f_k, \ \inf f_k, \ \limsup_{k \rightarrow\infty} f_k, \ \liminf_{k \rightarrow+\infty} f_k$ sono misurabili\\
+			 In particolare, se $\exists \lim_{k \rightarrow\infty} f_k(x) = f(x) \Rightarrow f$ è misurabile
+
+		\end{enumerate}
+	\end{prop}
+	\begin{dimo}
+		$f,g: X \rightarrow \R$ misurabili\\
+		$\displaystyle t\in\R \ \ \{f + g > t\} = \bigcup^{}_{\substack{r,s\in\Q\\r + s = t}}\{f > r\}\cap \{g > s\}\in \eta$ perché  $f,g$ misurabili\\
+		se $x$ tale che $f(x)+ g(x) > t \Rightarrow f(x) > t = g(x)$\\
+		$ \Rightarrow \exists r\in \Q$ tale che $f(x) > r > t - g(x)$\\
+		quindi $g(x) > t - r \rightarrow\exosts s\in \Q $ tale che $g(x) > s> t-r$\\
+		 $f,g,X \rightarrow \R$ numerabili, $\lambda\in\R, f\ $ misurabile\\
+	 $ \Rightarrow\{ \lamnda f > t'\}  = \begin{cases}
+		 \{f > \frac t\lambda\} \ \ \text{ se } \lambda > 0\\
+		 \{f < \frac t \lambda \} \text { se } \lambda < 0
+	 \end{cases}$\\
+	 $f$ misurabile\\
+	 $\{f^2 > t\} = \begin{cases}
+		 X \ \ \text{ se} t < 0 \\
+	 	\{f > \sqrt t\}\cup \{f<-\sqrt t\}$ se $t \geq 0$
+	 \end{cases}
+se $f,g$ misurabili\\
+ $ \Rightarrow (f + g)^2, f^2, g^2$ sono misurabili\\
+ $ \Rightarrow fg = \frac 12 [(f+g)^2 - f^2 - g^2]$ \\[10px]
+ $f$ misurabile\\
+ $f^{+} = \max\{f(x), 0\}= f(x)$ 
+ Guarda sta dimsotrzione usl libro o ricopila dalle foto perchè è assolutametne insensato
+\end{dimo}\\[10px]
+
+	Sia $(X,\eta)$ spazio misurabile\\
+	se $\eta$ è la $\sigma$-algebra di misurabili di misura $\mu$ allora è vero che tutti gli insiemi di misura nulla appartengono a  $\eta_\mu$ \\
+	\begin{prop}
+		Sia $(X,\eta,\mu)$ spazio di misura\\
+		( $\mu$ è una misura su $X$ e $\eta$ è la $\sigma$ 0algebra di $\mu$ misurabili)\\
+		Sia $f:X \rightarrow \R$ misurabile\\
+		e sia $g: X \rightarrow\R$ tale che $f= g$ quasi ovunque (ovvero $m(\{f=g\})= 0)$ \\
+		$ \Rightarrow $ anche $g$ è $\mu$-misurabile
+	\end{prop}
+	\begin{dimo}
+		$\forall t\in \R$\\
+		$\{g > t\} = \{ g > t\}\cap \{g\neq f\}\cup\{g > t\}\setminus \{g\neq f\}$ \\
+		Il primo insieme è contenuto in $\{g\neq f\}$ quindi ha misura nulla\\
+		 $ \Rightarrow \in \eta_\mu$ \\
+		 il secondo insieme è $\{ f > t\}\cap \{f = g\}\in \eta$ perché sono un misurabile e il complementare di un misurabile.\\
+		 
+	\end{dimo}
+	\begin{coro}
+		se $f_k:X \rightarrow\R$ sono misurabili $k > 1$ ed esiste  $\lim_{k \rightarrow \infty}f(x)$ per quasi ogni $x\in X$\\
+		 $ \Rightarrow  $ la funzione limite puntuale è definita a meno di un insieme di misura nulla ed è misurabile.
+	\end{coro}
+	\begin{dimo}
+		$X_1 = \{x\in X \ \ | \ \exists \lim_{k \rightarrow + \infty}f_k(x)\} = \{x\in X\ | \ \limsup_{k \rightarrow +\infty} f_k(x) = \liminf_{k \rightarrow +\infty}f_k(x)$ è misurabile\\
+			$\mu (X\setminus X_1)= 0$
+			\[
+			\tilde f_k(x) = \begin{cases}
+				f_k(x) \ \text { se } x\in X_1\\
+				0  \ \ \ \ \ \ \text { se } x\not\in X_1
+			\end{cases}
+			.\] 
+			è misurabile $\forall k$ perché  $\tilde f_j = f_j$  quasi ovunque\\
+			$\exists \lim_{k \rightarrow +\infty}\tilde f_k(x) = f_k(x) \ \ \forall x$\\
+			quindi è misurabile
+	\end{dimo}
+	\subsection{Funzione di Lesbegue-Vitali o funzione di Cantor o scala del diavolo}
+	\[
+		L:[0,1] \rightarrow [0,1]
+	.\]
+	$\forall n \ \ [0,1] = \bigcup^{n}_{i = 1}J^n_i\cup \bigcup^{2^{k-1}}_{k = 1}I^{(k)}_i$ \\
+	gli $J$ sono intervalli chiusi, disgiunti di ampiezza $\frac 1 {3^n}$, le $I$ sono di ampiezza $\frac 1 {3^k}$\\
+	 \[
+	L_n(x) = \begin{cases}
+		0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text { se } x = 0\\
+		\text{ lineare con pendenza } (\frac 32)^2 \ \text { se  } x\in \bigcup^{2^n}_{i = 1}J_i^n \\
+		\text {costante  \ \ \ \ \ \ \ \ \ \ \  \ \ \  \ \  \ \ \ \ \ \ \ \ \    se }  x\in [0,1]\setminus \bigcup^{2^n}_{i = 1}J_i^n
+	\end{cases}
+	.\] 
+	%TODO aggiungi immagine 15 : 02
+
+
+\end{document}
