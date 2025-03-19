@@ -1,0 +1,160 @@
+\documentclass[12px]{article}
+
+\title{Lezione 8 Geometria 2}
+\date{2025-03-18}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Spazi topologici connessi}
+	\textbf{Esempio}\\
+	$\R$ con topologia euclidea,\\
+	$X = [0,1]\cup [2,3]$ sottospazio\\
+	intuitivamente è fatto da due "pezzi" gli intervalli $[0,1]$ e $[2,3]$\\
+	Come distinguere i "pezzi  di  $X$ da altri sottospazio ad esempio $[0,1/3]?$\\
+	$[0,1/3]$ è chiuso in $X$.\\
+	anche  $[0,1]$ e $[2,3]$ sono chiusi in $X$\\
+	$[0,1/2]$ non è aperto in $X$.\\
+	Invece $[0,1]$ è anche aperto in $X$ in topologia di sottospazio, infatti $[0,1]\in X \cap \ ]-1,3/2[$, dove il secondo è aperto in  $\R$\\
+	Anche $[2,3]$ è aperto in  $X$ \\
+	\begin{defi}
+		Uno spazio topologico si dice connesso se gli unici sottospazi contemporaneamente aperti e chiusi sono solo $\emptyset $ e $X$ Se  $X$ non è connesso si dice sconnesso
+	\end{defi}
+	\textbf{Esempio}\\
+	1) Se $X = \emptyset$\\
+ allora $X$ è connesso\\
+ 2) se $|X| = 1$ è connesso \\
+ 3) Anche se $X$ ha topologia banale (qualsiasi cardinalità) è connesso\\
+ 4) Se  $|X|\geq 2$ e la topologia discreta allora  $X$ è connesso\\
+ 5)  $X = [0,1]\cup [2,3]$ di prima, è sconnesso ( $[0,1]$ è contemporaneamente aperto e chiuso)\\
+ 6) $X = \R\setminus\{0\}$ (topologia di sottospazio da  $\R$ con topologia euclidea)\\
+ è sconnesso ad esempio $]-\infty, 0[$ è aperto e chiuso in  $X$.\\
+ $]-\infty, 0[ = \begin{cases}
+	 X\cap ]-\infty, 0[ \ \text{ (aperto di $\R$)}\\
+	 X\cap ]-\infty, 0] \ \text{ (chiuso di $\R$)}
+ \end{cases}$ \\
+ 7) $\Q = X$ (con topologia di sottospazio da  $\R $ con topologia euclidea)\\
+ è sconnesso, ad esempio $\Q\cap ]-\infty, \sqrt 2 [$ è contemporaneamente aperto in $\Q$\\
+ è aperto ovviamente in topologia di sottospazio\\
+ ed è anceh chiuso  $\Q\cap ]-\infty, \sqrt 2 [ = \Q\cap ]-\infty, \sqrt 2 ]$ chiuso in $\R$
+ \begin{lemm}
+ 	Sia $X$ spazio topologico allora sono equivalenti:
+	\begin{enumerate}
+		\item $X$ sconnesso
+		\item esistono aperti disgiunti non vuoti $A_1, A_2$ tali che $X = A_1\cup A_2$ 
+		\item Esistono chiusi disgiunti non vuoti tali che $X = C_1\cup C_2$
+	\end{enumerate}
+ \end{lemm}
+ \begin{dimo}
+	 $1) \Rightarrow 2)$ Sia $A\subseteq X$ aperto e chiuso $A\not\in\{\emptyset, X\}$, basta porre  $A_1 = A, \ A_2 = X\setminus A$\\
+	 $2) \Rightarrow 3)$ Poniamo $C = A_1, C_2 = A_2$\\
+	 $3) \Rightarrow  1)$ Basta prendere $A = C_1$ è anche aperto, non vuoto $\neq X$ perché $C_2 \neq 0 $
+ \end{dimo}
+ \textbf{Nota}\\
+ D'ora in poi, per i sottoinsiemi di $\R^n$ daremo per scontata la topologia di sottospazio indotta dalla topologia euclidea su $\R^n$
+ \begin{teo}
+	 $[0,1]$ è connesso
+ \end{teo}
+ \begin{dimo}
+	 Suppongo per assurdo $[0,1]$ sconnesso, usiamo il 3) del lemma, quindi esistono chiusi non vuoti disgiunti $C,D$ tale che  $[0,1] = C\cup D$\\
+	 Possiamo assumere che  $0\in C$ (altrimenti scambio i nomi)\\
+	 Consideriamo $ d = \inf D$, allora $d\in\R$  perché $D$ è limitato\\
+	 Visto che $D$ è chiuso $d = \min D$\\
+	 Inoltre  $d\neq 0 $ poiché  $C\cap D = \emptyset$\\
+	 Segue  $[0,d[\subseteq C$ ma  $C$ è chiuso e $d$ è aderente a $[0,d[$ poiché  $d\in C$ assurdo
+ \end{dimo}
+ \begin{lemm}
+	 Sia $X$ spazio topologico, sia $Y\subseteq X$ sottospazio connesso, sia $A\subseteq X$ sottoinsieme aperto e chiuso.\\
+	 Allora  $Y\subseteq A$ oppure $Y\cap A = \emptyset$
+ \end{lemm}
+ \begin{dimo}
+$A\cap Y$ è contemporaneamente aperto e chiuso in topologia di sottospazio quindi  $A\cap Y = Y$ oppure  $A\cap Y = \emptyset$
+ \end{dimo}
+ \begin{defi}
+	 Uno spazio topologico $X$ si dice connesso per archi se \\ $\forall p,q\in X\exists \alpha: [0,1] \rightarrow X$ continua tale che $\alpha(0) = p, \alpha(1) = q$ Una tale  $\alpha $ è detto cammino da $p$ a $q$
+ \end{defi}
+ \textbf{Esempio}\\
+ 1) $X = \R^n$è connesso per archi, ad esempio.\\
+ $\alpha(t) = tq + (1-t)p$\\
+ percorre il segmento  da $p$ a  $q$\\
+ 2) $S^n = \{p\in\R^{n + 1} \ | \ ||p|| = 1\}$\\
+ sfera  $n$-dimensionale \\
+ $S^{-1} = \emptyset\subseteq\R^0 =\{0\}$\\
+ $S^0 = \{1,-1\}\subseteq \R$ sconnesso\\
+ $S^1 = \{(x,y)\in\R^2\ |\ x^2 + y^2 = 1\}$\\
+ Ogni  $S^n$ è connesso per archi per ogni $n\geq 1$\\
+ Un cammino da  $p$ a $q$ è dato ad esempio da $\alpha(t) = (\cos(t\cdot s + (1-t)$\\
+ DA COMPLETARE\\
+ Suppongo $n\geq 2$, dimostro che  $S^n$ connesso per archi\\
+ Scegliamo  $V\subseteq\R^{n+1}$ sottospazio vettoriale di dimensione  $2$ contenente $p$ e $q$. Esiste un isomorfismo di spazi vettoriali  $ \varphi:V \rightarrow \R^2$ che preserva il prodotto scalare (quindi la norma) allora $ \varphi(V\cap S^n) = S^1$\\
+ Scelgo $\beta$ cammino tra $ \varphi(p)$ e $ \varphi(q)$ allora $
+ \alpha = \varphi^{-1}\circ \beta$ è camino tra $p$ e  $q$\\
+ 3) Sia   $X\subseteq \R^n$ sottoinsieme connesso, allora è connesso per archi 
+ \begin{teo}
+ 	Sia $f:C \rightarrow Y$ applicazione continua fra spazi topologici
+	\begin{enumerate}
+		\item Se $X$ è connesso allora $f(X)$ è connesso
+		\item Se $X$ è connesso per archi allora $f(X)$ è connesso per archi
+	\end{enumerate}
+ \end{teo}
+ \begin{dimo}
+ 	Supponiamo per assurdo $f(x)$ sconnesso, quindi esistono aperti non vuoti disgiunti $A,B\subseteq f(X)$ tale che $f(X) = A\cup B$\\
+	Supponiamo che la restrizione  $\tilde f : X \rightarrow f(X)$ è continua\\
+	Allora $f^{-1}(A)$ e  $f^{-1}(B)$ sono aperti in  $X$, non vuoti e disgiunti 
+	\[
+	 f^{-1}(A)\cap f^{-1}(B) = f^{-1}(A\cap B)
+	.\] 
+	Assurdo perché $X$ è connesso.\\
+	2) %TODO aggiungi immagina\\
+	Siano $p,q\in f(X)$ scegliamo  $x\in$ $f^{-1}(p), z \in f^{-1}(q)$ e $\beta : [0,1] \rightarrow X$ un cammino da $x$ a $z$ allora $f\circ \beta : [0,1] \rightarrow f(X)$ è un cammino da $p$ a $q$
+ \end{dimo}
+ \begin{coro}
+ 	Sia $X$ spazio topologico. Se $X$ è connesso per archi allora è connesso.
+ \end{coro}
+ \begin{dimo}
+ 	Suppongo per assurdo $X$ sconnesso, esistono quindi disgiunti $A,B$ non vuoti tali che $X = A\cup B$\\
+	Scegliamo  $p\in A, q\in B$ e  $\alpha$ cammino in $X$ da  $p$ a $q$.  $\alpha :[0,1] \rightarrow X$ \\
+	Per il teorema precedente $\alpha([0,1])$ è connesso di  $X$ (e  $[0,1]$ è connesso)\\
+	Osserviamo $A$ è contemporaneamente aperto e chiuso, segue $\alpha([0,1])\subseteq A$ assurdo perché  $\alpha(1) = q\in B$ oppure  $\alpha([0,1])\cap A = \emptyset$ assurdo perché  $\alpha(0) = p$
+ \end{dimo}
+ \newpage
+ \begin{prop}
+ 	Sia $I\subseteq \R$\\
+	Sono equivalenti 
+	 \begin{enumerate}
+		 \item $I$ è un intervallo 
+		 \item $I$ è connesso per archi
+		 \item $I$ è connesso
+	\end{enumerate}
+ \end{prop}
+ \textbf{Nota}\\
+ In $\R$ definiamo un intervallo se $\forall a,b\in I$  $a < b$ e  $\forall c\in \R $ tale che $a < c < b$ abbiamo  $c\in I$ 
+ \begin{dimo}
+ 	$1) \Rightarrow  2)$ 
+	Se $I$ è intervallo allora è convesso, allora è connesso per archi\\
+	$2) \Rightarrow  3)$ \\
+	Segue dal corollario precedente.\\
+	$ 3) \Rightarrow  1)$ \\
+	Supponiamo per assurdo che $I\subseteq\R $ sia connesso ma non intervallo\\
+	Allora  $\exists a,b\in I, c\in \R$ con $a<c<b, \ \ c\not\in I$\\
+	Definisco $A := I\cap ]-\infty, c[$ e  $B:= I\cap ]c, +\infty [$\\
+	aperti in  $I$ disgiunti non vuoti e  $I = A\cup B$, assurdo.
+ \end{dimo}
+ \textbf{Osservazione}\\
+ La connessione e la connessione per archi si usano per dimostrare che spazi topologici \underline{non}	 sono omeomorfi.\\
+ Ad esempio $[0,1[$ e $]0,1[$ non sono omeomorfi (fogli di esercizi)
+  \begin{lemm}
+ 	Sia $f:S^n \rightarrow\R$ continua, $n \geq 1$\\
+	Allora esiste  $p_0\in S^n$ tale che $f(p_0) = f(-p_0)$\\
+ \end{lemm}
+\begin{dimo}
+	Consideriamo\\ \begin{aligned}
+		$g:&S^n \rightarrow\R$ \\
+		$&p \rightarrow f(p) - f(-p)$
+	\end{aligned}\\
+	è continua e vale $g(-p) = -g(p)$ l'immagine di $g$ è connessa ed è sottoinsieme simmetrico di $\R$. Allora l'immagine di $g$ contiene $0\in\R$
+\end{dimo}
+\end{document}

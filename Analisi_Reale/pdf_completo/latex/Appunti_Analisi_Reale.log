@@ -1,0 +1,741 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=latex 2025.1.27)  19 MAR 2025 14:01
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Appunti_Analisi_Reale.tex
+(./Appunti_Analisi_Reale.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count193
+\l__pdf_backend_content_box=\box52
+\l__pdf_backend_model_box=\box53
+\g__pdf_backend_annotation_int=\count194
+\g__pdf_backend_link_int=\count195
+\g__pdf_backend_link_sf_int=\count196
+)
+
+LaTeX Warning: Unused global option(s):
+    [12px].
+
+(./Appunti_Analisi_Reale.aux)
+\openout1 = `Appunti_Analisi_Reale.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 8.
+ (../../LaTeX_Lezioni/Lezione_01/main.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \documentclass
+                  [12px]{article}
+? 
+(../../../setup.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \usepackage
+               {amsmath}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \usepackage
+               {tikz-cd}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \usepackage
+               {amsthm}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \usepackage
+               {mdframed}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \usepackage
+               {amssymb}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \usepackage
+               {nicematrix}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \usepackage
+               {amsfonts}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \usepackage
+               {tcolorbox}
+? 
+! Undefined control sequence.
+l.9 \tcbuselibrary
+                  {theorems}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \usepackage
+                {xcolor}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \usepackage
+                {cancel}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 \usepackage
+                {graphicx}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \usepackage
+                {rotating}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \usepackage
+                {color}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \usepackage
+                {soul}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \usepackage
+                {imakeidx}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 \usepackage
+                {wrapfig}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \usepackage
+                {blindtext}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \usepackage
+                {tikz}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \usepackage
+                {hyperref}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \usepackage
+                {mathrsfs}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \usepackage
+                {enumitem}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 \usepackage
+                {unicode-math}
+? 
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 \usepackage
+                [mathscr]{euscript}
+? 
+! Undefined control sequence.
+l.26 \hypersetup
+                {
+? 
+! Undefined control sequence.
+l.34 \graphicspath
+                  { {./images/} }
+? 
+! Undefined control sequence.
+l.35 \newtheoremstyle
+                     {break}
+? 
+! Undefined control sequence.
+l.40 \theoremstyle
+                  {break}
+? 
+\c@conge=\count197
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.42 \theoremstyle
+                  {break}
+? 
+\c@theo=\count198
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.44 \theoremstyle
+                  {break}
+? 
+\c@lemma=\count199
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.46 \theoremstyle
+                  {break}
+? 
+\c@notaz=\count266
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.48 \theoremstyle
+                  {break}
+? 
+\c@nomen=\count267
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.50 \theoremstyle
+                  {break}
+? 
+\c@defin=\count268
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.52 \theoremstyle
+                  {break}
+? 
+\c@corollario=\count269
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.54 \theoremstyle
+                  {break}
+? 
+\c@propo=\count270
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.56 \theoremstyle
+                  {break}
+? 
+\c@assio=\count271
+! Undefined control sequence.
+<recently read> \theoremstyle 
+                              
+l.58 \theoremstyle
+                  {break}
+? 
+
+! LaTeX Error: Command \* already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 \newtheorem*{dimo}{
+                        Dimostrazione}
+? 
+! Undefined control sequence.
+l.60 \theoremstyle
+                  {break}
+? 
+
+! LaTeX Error: Command \* already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \newtheorem*{es}{
+                      Esempio}
+? 
+)
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \begin{document}
+                    
+? 
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 30.
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.30 	$u:[0,\pi] \times [0,+\infty)\rightarrow\R
+                                                $\\
+? 
+! Undefined control sequence.
+<recently read> \text 
+                      
+l.31 	\text
+           {}\ \ $(x, t) \rightarrow u(x,t)$\\
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.33 	\begin{cases}\\
+                     
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 		$\frac{\partial ^2 u}{\partial t^2}
+                                           - \frac{\partial ^2}{\partial x^2...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 		$\frac{\partial ^2 u}{\partial t^2}
+                                           - \frac{\partial ^2}{\partial x^2...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.34 		$\frac{\partial ^2 u}{\partial t^2}
+                                           - \frac{\partial ^2}{\partial x^2...
+
+? 
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \over #2}
+                                               
+l.34 		$\frac{\partial ^2 u}{\partial t^2}
+                                           - \frac{\partial ^2}{\partial x^2...
+
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.37 	\end{cases}
+                 \\
+? 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 43--47
+
+ []
+
+! Undefined control sequence.
+l.50 ...tarrow \frac {\psi''(t)}{\psi (t)} = \text
+                                                   {costante} \ = \frac{\phi...
+
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.53 ...os(mt) + b_m\sin(mt) \ \ \ \ a_m,b_m\in \R
+                                                  $\\
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.54 ...os(mt) + B_m\sin(mt) \ \ \ \ A_m,B_m\in \R
+                                                  $\\[20px]
+? 
+! Undefined control sequence.
+l.55 ...x) = (a_m \cos(mt) + b_m\cos(mt)) (\cancel
+                                                  {A_m\cos(mt)} + B_m\sin(mt...
+
+? 
+! Undefined control sequence.
+l.57 ...(t)B_m\sin(m\pi) \Rightarrow  m\in \mathbb
+                                                   N$ \\
+? 
+
+! LaTeX Error: Environment aligend undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 	 \begin{aligend}
+                      
+? 
+! Misplaced alignment tab character &.
+l.69 	 &
+        \displaystyle u(x,0) = \sum^\infty_{m=0} \alpha_m\sin(mx) = h_0(x) \...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.69 	 &\displaystyle
+                      u(x,0) = \sum^\infty_{m=0} \alpha_m\sin(mx) = h_0(x) \...
+
+? 
+! Undefined control sequence.
+l.69 ...{m=0} \alpha_m\sin(mx) = h_0(x) \ \ \foral
+                                                   x\in (x,\pi)\\
+? 
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.70 	 &
+        \frac{\partial u}{\partial t} (\alpha, 0) = \sum^\infty_{m=0} m\beta...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.71 	 	
+        
+? 
+
+! LaTeX Error: \begin{document} on input line 9 ended by \end{aligend}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 	 \end{aligend}
+                    
+? 
+
+! LaTeX Error: Command \leadsto not provided in base LaTeX2e.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 	 $\displaystyle\leadsto
+                              \int^m_0 h_0(x)\sin(mx)dx = \int_0^\pi \sum^\i...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--82
+
+ []
+
+[3]
+! Undefined control sequence.
+l.84 		 1 \ \ x\in\mathbb
+                          Q\cap [0,1]\\
+? 
+! Undefined control sequence.
+l.85 		 0 \ \ \text
+                   {altrimenti}
+? 
+! Undefined control sequence.
+<recently read> \mathbb 
+                        
+l.89  Numeriamo $\mathbb
+                         Q\cap [0,1] = \{q_n\}_{n\in\mathb N}$\\
+? 
+! Undefined control sequence.
+l.89 ...$\mathbb Q\cap [0,1] = \{q_n\}_{n\in\mathb
+                                                   N}$\\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--90
+
+ []
+
+! Undefined control sequence.
+l.92 	 1 \ \ \text
+                  { se } x\in\{q_0,q_1,\ldots,q_n\}\\
+? 
+! Undefined control sequence.
+l.93 	 0 \ \ \text
+                  {altriment}
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
+
+ []
+
+
+! LaTeX Error: Environment mdframed undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.115  \begin{teo}
+                  
+? 
+
+! LaTeX Error: \begin{teo} on input line 115 ended by \end{mdframed}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117  \end{teo}
+                
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.119  Dato $E\subseteq\R
+                         ^n$ vogliamo associare la sua misura (in $\R^n$)\\
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.119 ... vogliamo associare la sua misura (in $\R
+                                                  ^n$)\\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
+
+ []
+
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.127  \item $\forall E, \forall \tau\in\R
+                                          ^n \ \ |E+\tau| = |E|$
+? 
+! Undefined control sequence.
+l.128 ...$\forall E \ \ \forall \ \sigma \ \ \text
+                                                  {isometria} \ \ |E| = |\si...
+
+? 
+
+! LaTeX Error: Environment mdframed undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130   \begin{teo}
+                   [Paradosso di Banach-Tanski]
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.131   	in $\R
+               ^3$ non esiste nessunna funzione che soddisfa 1,2 e 3.
+? 
+[4]
+
+! LaTeX Error: \begin{teo} on input line 130 ended by \end{mdframed}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132   \end{teo}
+                 
+? 
+! Undefined control sequence.
+\R ->\mathbb 
+             {R}
+l.135 	  B_1 = \{x\in\R
+                       ^3 : |x|\leq 1\} = A_1\cup\ldots\cup A_5
+? 
+
+! LaTeX Error: Environment mdframed undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141   \begin{ass}
+                   [della scelta]
+? 
+
+! LaTeX Error: \begin{ass} on input line 141 ended by \end{mdframed}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143   \end{ass}
+                 
+? 
+[5] (./Appunti_Analisi_Reale.aux) ) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 9 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 571 strings out of 476035
+ 9924 string characters out of 5792880
+ 1859385 words of memory out of 6000000
+ 21089 multiletter control sequences out of 15000+600000
+ 517247 words of font info for 48 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 34i,8n,38p,268b,241s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Appunti_Analisi_Reale.dvi (5 pages, 11808 bytes).
