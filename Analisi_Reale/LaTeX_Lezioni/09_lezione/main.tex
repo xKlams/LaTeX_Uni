@@ -1,0 +1,123 @@
+\documentclass[12px]{article}
+
+\title{Lezione 9 Analisi Reale}
+\date{2025-03-19}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Funzione di Lebesgue-Vitali}
+	$L:[0,1] \rightarrow [0,1]$ $n = 1$  $ [0,1] = [0,1/3]\cup [2/3,1]\cup (1/3,2/3)$\\
+	Al primo passo abbiamo questa situazione, gli intervalli restanti (chiusi) sono gli  $J^1_i$ e quelli rimossi (aperti) sono gli  $I^1_i$ \\
+	al passo $n=2 $ abbiamo  $[0,1] = J_1^2\cup J_2^2\cupJ_3^2\cup J_4^2\cup I_1^2\cup I_^21^2\cup I_3^2$\\
+	In generale al passo $n$-esimo abbiamo $[0,1] = \bigcup^{2^n}_{i=1}J^n_i\cup \bigcup^{2^n - 1}_{i = 1}I_i^n$ con $|J_i^n| = \frac 1{3^n}$ e  $|J_i^n| = \frac{1}{2^n}$\\
+	 $L_1(x) = \begin{cases}
+		 0 \text{ se } x = 0\\
+		 \text { lineare con pendenza} 3/2 \text{ su } J_1^1\cup J_2^1\\
+		 \text{ costante  \ \ \ \ su} I_1^1
+	 \end{cases}$\\
+	 %TODO immagine 16 24
+	 $L_2(x) = \begin{cases}
+		 0 \text{ se } x = 0\\
+		 \text { lineare con pendenza} (3/2)^2 \text{ su } \bigcup^{4}_{i=1}J_i^2\\
+		 \text{ costante  \ \ \ \ altrimenti}
+	 \end{cases}$\\
+
+	 $L_n(x) = \begin{cases}
+		 0 \text{ se } x = 0\\
+		 \text { lineare con pendenza} (3/2)^n \text{ su } \bigcup^{2^n}_{i=1}J_i^n\\
+		 \text{ costante  \ \ \ \ altrimenti}
+	 \end{cases}$
+	 \[
+		 \sup_{[0,1]}|L_{n+1}(x) - L_n(x)|
+	 .\] 
+	 \[
+		 L_{n+1}(x) = L_n(x) \ \ \forall x\in[0,1]\setminus \bigcup^{2^n}_{i=1}J_i^n
+	 .\] 
+	 \[
+		 = \sup_{x\in[0,\frac{1}{3^n}]}|L_{n+1}(x) - L_n(x)| = L_{n+1}(\frac{1}{3^{n+1}}) - L_n(\frac {1}{3^{n+1}})
+	 .\] 
+	 \[
+		 = \left(\frac 32 \right)^{n+1}\frac 1 {3^{n+1}} - \left(\frac 32 \right)^n \frac 1 {3^{n+1}}
+	 .\] 
+ \[= \frac 1 {2^{n+1}} - \frac 1 {2^n\cdot 3} = \frac {1}{2^n} \left(\frac 12 - \frac 13 \right) = \frac 16 \frac 1 {2^n}\]
+ $\forall m > n$\\
+  \[
+	  \sup_{[0,1]}|L_m(x)-L_n(x)| = \sup_{[0,1]} |L_n(x) - L_{m-1}(x) + L_{m-1}(x) - L_{m-2}(x) + \ldots + L_{n+1} - L_n(x)|
+ .\] 
+ \[
+	 \leq \sum^{m-1}_{k = n}\sup_{[0,1]} | L_{k - 1}(x) - L-k(x)| \leq \sup_{[0,1]}|L_m(x) -L_{m-1}(x)|+\ldots + \sup_{[0,1]}|L_{n+1}(x) - L_n(x)| \leq \frac 16 \sum^{m-1}_{k=n}\frac {1}{2^k} \xrightarrow{}{n \rightarrow\infty} 0 
+ .\] 
+ \[
+  \{L_n(x)\}\text { è uniformemente di Cauchy in }[0,1]
+ .\] 
+ $ \Rightarrow \exists L\in C([0,1])$ tale hce $L_n \rightarrow L$ uniformemente in $[0,1]$\\
+  $L_n(x)\leq L_n(y)\ \ \ \forall x\leq y \ \Rightarrow  \ L(x) \leq L(y)$ \\
+  $L : [0,1] \rightarrow [0,1]$ è continua, monotona crescente\\
+  $L(0) = 0, L(1) = 1$\\
+  $L$ è localmente costante su $ \bigcup^{+\infty}_{n = 1} \bigcup^{2^{n-1}}_{k = 1}I_k^m$\\
+  $x\in \bigcup^{+\infty}_{n=1} \bigcup^{2^{n-1}}_{j = 1}I_k^n\\$
+  $ \Rightarrow \exists m, \exists k \ x\in I_k^n \ \ L =  $ costante in $I_k^n \Rightarrow L'(x) = 0$ \\
+  $ \Rightarrow L $ è derivabile quasi ovunque (in $[0,1]\setminus C)$ e  $L' = 0$ quasi certamente.\\
+
+  \[
+  \int_0^1 L'(x) dx = 0 \neq L(1) - L(0)
+  .\] 
+  Integrale di Riemann perché $L'$ è discontinua in $C$, non funziona quindi il teorema fondamentale del calcolo integrale 
+  \begin{prop}
+	  $L(C) = [0,1]$ $\forall x\in X \ \  x = \sum^{+\infty}_{i = 1} \frac{x_i}{3^i}, \ \ x_i\in \{0,2\}$\\
+	  $L(x) = \sum^{+\infty}_{i=1}\frac{x_i/2}{2^i}$
+  \end{prop}
+  \begin{dimo}
+	  Primo caso $x\in C$ tale che $\exists n\geq 1 \ \ x = \sum^{n}_{i = 1}\frac { x_i} {e^i}$\\
+	  Usiamo l'induzione su $n$ \\
+	  se $n = 1 \Rightarrow x = 0$ oppure $x = \frac 23 \Rightarrow L(0) = 0 L(2/3) = L_1(2/3) = \frac 12 \Rightarrow  $ ok\\
+	  Supponiamo vero per $L( \sum^{i = 1}_{n-1}\frac { x_i}{3^i} )= \sum^{i = 1}_{n-1}\frac{x^i/2}{2^i}$\\
+	  e sia $x = \sum^{n}_{i=1}\frac{x_i}{3^i}$, con $x_n = 2$\\
+	  $L(x) = L_n(x) = L_n(x - \frac 1 {3^n} = L_n(x-\frac {2}{3^n}) + (\frac 32)^n\frac{1}{3^n}$  \\
+	  $L(x + \frac {2}{3^n}) + \frac 1 {2^n} = L( \sum^{n-1}_{i = 1}\frac{x_i}{3^i}) + \frac 1  {2^n} = \sum^{n-1}_{i=1}\frac{x_i/2}{2^i} + \frac{x/2}{2^n} = \sum^{n}_{i=1}\frac{x/2}{2^i}\\$
+	  secondo caso\\
+	  $x\in C \Rightarrow x = \sum^{+\infty}_{i = 1}\frac{x_i}{3^i} = \lim_{n \rightarrow+\infty} \sum^{n}_{i = 1}\frac { x_i}{3^i}$\\
+	  è continua\\
+	  \[
+		  \Rightarrow L(x) = \lim_{n \rightarrow +\infty} L( \sum^{n}_{i=1}\frac { x_i}{3^i}) = \lim_{n \rightarrow +\infty} \sum^{n}_{i= 1}\frac { x_i/2}{2^i} = \sum^{+\infty}_{i = 1}\frac{x_i/2}{2^i}
+	  .\] 
+	  $L(C)  = [0,1]$\\
+	  Quindi  $L$ manda un insieme di misura nulla in un insieme di misura positiva.\\
+	  \textbf{Consideriamo}\\
+	  $ \phi(x) = L(x) + x$\\
+	  $\phi: [0,1] \rightarrow [0,2]$ strettamente crescente\\
+	  $\exists \phi^{-1}:[0,2] \rightarrow[0,1]$
+	  strettamente crescente, con immagine in un intervallo $ \Rightarrow  continua$ \\
+	  $ \Rightarrow  \phi$ è un omomorfismo di $[0,1]$ in $[0,2]$  $\phi([0,1]) = \phi (C \cup \bigcup^{+\infty}_{n = 1} \bigcup^{2^{n-1}}_{i = 1}I_i^n)$\\
+	  $= \phi(C)\cup \bigcup^{+\infty}_{i = 1}\phi(I_i^n)$ insiemi misurabili e disgiunti\\
+	  $\phi(x) = 2 =m(\phi([0,1]) = m(\phi(C)) + \sum^{+\infty}_{n = 1} \sum^{2^{n-1}}_{i =1}m(\phi(I_i^n))$ \\
+$x\in I^n_i$  $ \phi(x) = x + L(x) = x + a^n_i \Rightarrow \phi(I^n_i)) = I_i^n + a^n_i$ \\
+$ \Rightarrow m( \phi(I^n_i)) = |I_i^n| = \frac {1}{3^n}$ \\
+$ = m(\phi(C))  + \frac 12 \sum^{+\infty}_{n = 1}(\frac 23)^2$ \\
+$ = m(\phi(C)) + 1$ \\
+$ \Rightarrow  m(\phi(C)) = 1$ \\
+  \end{dimo}
+$m(\phi(C)) > 0 $\\
+ $ \Rightarrow \exists V \subset \phi(C)$ tale che $V\not \in \eta$\\
+ ma $E = \phi^{-1}(V)\subset C \Rightarrow  m(E) = 0 \Rightarrow E\in\eta$ \\
+ quindi $E\in\eta $ ma  $\phi(E)\not\in \eta$
+  \begin{prop}
+ 	La $\sigma$-algebra $\eta$ non è chiusa per omeomorfismi continui
+ \end{prop}
+ \begin{dimo}
+ 	$E\in\eta$ ma  $\phi(E) = V\not\in\eta$\\
+	$E\in \eta$ se  $E\in B \Rightarrow \phi(E) = (\phi^{-1})^{-1}(E)$ \\
+	$\phi^{-1}$ è continua $ \Rightarrow  \phi^{-1} $ è misurabile secondo Lesbegue\\
+	$ \Rightarrow (\phi)^{-1}(E)\in\eta \ \ \ \forall E\in B$ \\
+da capire come finisce sta roba ( non so manco se questa sia la dimostrazione)
+ \end{dimo}
+ \begin{prop}
+ 	$\eta\setminus B\neq\emptyset$
+ \end{prop}
+
+	
+\end{document}
