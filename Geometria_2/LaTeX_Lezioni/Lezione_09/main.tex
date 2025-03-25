@@ -1,0 +1,218 @@
+\documentclass[12px]{article}
+
+\title{Lezione 09}
+\date{2025-03-24}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+\maketitle
+\newpage
+\subsection{Esonero}
+L'esonero sarà (forse) $15$ aprile ore $18:00 - 20:00$ (da confermare)\\
+\subsection{Lezione}
+Ricordo: abbiamo visto che per $n\geq 1$, ogni funzione  $f:S ^n \rightarrow\R$ continua ammette $x_0\in S^n$ t.c. $f(x_0) = f(-x_0)$\\
+\begin{coro}[Invarianza del dominio con $n = 1$,  $m$ qualsiasi]
+	Siano $A\subseteq \R^m$ aperto non vuoto, $B\subseteq \R$ aperto non vuoto. Se  $m\geq 2 $ allora  $A$ e $B$ non sono omeomorfi.
+\end{coro}
+\begin{dimo}
+	Sia $a\in A,$ sia $\varepsilon > 0 $ tale che  $B_\e(a)\subseteq A$ considero $S = \{p\in\R^n\ | \ ||p-a|| = \e/2\}$ \\
+	Allora  $S\subseteq A$ supponiamo per assurdo che esista  $g:A \rightarrow B$ omeomorfismo, allora la restrizione $g|_S:S \rightarrow \R$\\
+	questa è un'applicazione iniettiva e continua ed $S$ è omeomorfa a $S^{m-1}$, assurdo
+\end{dimo}
+\begin{prop}
+	Sia $ X$ spazio topologico sia $Y\subseteq X$ sottospazio connesso.\\
+	Sia $W\subseteq X$ tale che  $Y\subseteq W\subseteq \bar Y (=$ chiusura di  $Y$ in $X)$\\
+	Allora  $W$ è connesso.\\
+	In particolare $\bar Y$ è connessa.
+\end{prop}
+\begin{dimo}
+Per assurdo sia $W = A\cup B$ con $A,B$ disgiunti, non vuoti, aperti in  $W$\\
+%TODO se vuoi aggiungi immagine 
+Segue $A\cap Y, B\cap Y$ sono disgiunti, e sono aperti in $Y$.\\
+Infatti $A$ è intersezione $A = W \cap A'$ con  $A'\subseteq X$ aperto in  $X$, e  $B = W\cap B'$ con  $B'$ aperto.\\
+Allora  $A\cap Y = (A'\cap W)\cap Y=A'\cap Y$\\ 
+$B\cap Y = (B'\cap W)\cap Y = B'\cap Y$\\
+Visto che  $Y$ è connesso, $A\cap Y$ oppure  $B\cap Y$ è vuoto. Senza perdita di generalità ne fisso uno.\\
+Supponiamo  $A\cap Y = \emptyset$ (se è  $B\cap Y = \emptyset$ scambio i nomi)\\
+%TODO se vuoi aggiungi disegno 3:40
+Sia  $a\in A$, sappiamo che $a\in\bar Y$, cioè $a$ è adiacente a $Y$, quindi ogni intorno di  $a$ interseca $Y$, Ad esempio  $A'$. è intorno aperto di $a$ quindi $A'\cap Y\neq \emptyset$\\
+Contraddice $A'\cap Y = A\cap Y = \emptyset$.  Assurdo\\
+\end{dimo}
+\textbf{Esempio}(Spazio topologico connesso ma non connesso per archi)\\
+Pettine con la pulce\\
+Sia $Y\subseteq \R^2$\\
+%TODO aggiunti immagine 3:47
+\[Y = ([0,1]\times\{0\})\cup(\{(\frac 1n, t)\ |\ n\in\Z_{\geq 1} . \ t\in [0,1]\}\text{ \jfill il pettine}\]
+\[
+	X = Y\cup \{(0,1)\} \text{ (la pulce)}
+.\] 
+$Y$ è connesso per archi (quindi è connesso)\\
+Inoltre $(0,1)$ è aderente (per ogni raggio, c'è sempre un dente dentro la palla) a  $Y$, cioè 
+ \[
+ Y\subseteq X\subseteq \overline Y
+.\] 
+Per a proposizione precedente $X$ è connesso, Ma $X$ non è connesso per archi (V foglio di esercizi).
+Un altro esempio è il grafico di $\sin(\frac 1x)$, la chiusura del grafico comprende anche il segmento $\{0\}\times [-1,1]$ e non è connessa per archi.
+ \textbf{Nota}\\
+ La connessione si usa spesso per verificare che due spazi non sono omeomorfi, se è connesso uno e l'altro no, non possono esserlo.\\
+ \begin{prop}
+ 	Sia $f:X \rightarrow Y$ applicazione continua fra spazi topologici, supponiamo
+	\begin{enumerate}
+		\item $f$ suriettiva
+		\item $Y$ è connesso
+		\item $f^{-1}(y)$ connesso  $\forall y\in Y$
+		\item  $f$ aperta oppure chiusa.
+	\end{enumerate}
+	Allora $X$ è connesso.
+ \end{prop}
+ \textbf{Esempio:}\\
+ $X = \{a,b\}, Y = \{c\}$
+ \begin{center}
+ 	
+  \begin{aligned}
+	  $f:&X \rightarrow Y$\\
+	  $&a \rightarrow c$\\
+	  $&b \rightarrow c$
+  \end{aligned}
+ \end{center}
+ \textbf{Altro esempio}\\
+ $f:[0,1]\cup]2,3] \rightarrow [0,2]$\\
+ $c \rightarrow \begin{cases}
+	 x \ \ \text{ se } x\in [0,1]\\
+	 x - 1 \ \ \text{ se } x\in [2,3]\\
+ \end{cases}$
+ \begin{dimo}
+ 	Supponiamo per assurdo $X$ sconnesso, $A\cup B = X$  con $A,B$ aperti disgiunti, non vuoti.\\
+	Supponiamo  $f$ aperto: considero  $f(A), f(B)$ che sono aperti in  $Y$\\
+	%TODO aggiungi foto 4:26\\
+	Abbiamo  $f(A)\cup f(B) = f(A\cup B) = f(X) = Y$\\
+	 e $f(A) \neq \emptyset\neq f(B)$, cisto che  $Y$ è connesso abbiamo\\
+	 $f(A)\cap f(B)\neq \emptyset$\\
+	 Sia  $y\in f(A)\cap f(B),$ considero $f^{-1}(y)$ è connesso, l'insieme  $A$ è aperto e chiuso, interseca $f^{-1}(y)$ (poiché  $y\in f(A)$) ma $f^{-1}(y)\not\subseteq A$  (perché $y\in f(B))$ assurdo\\
+	 Il ragionamento con  $f$ chiusa è analogo.
+ \end{dimo}
+ \begin{teo}
+ 	Il prodotto di spazi topologici qualsiasi connessi, è connesso.\\
+	Analogamente il prodotto di spazi topologici connessi per archi è connesso per archi.
+ \end{teo}
+ \begin{dimo}
+	 Siano $P,Q$ spazi topologici connessi, considero $p: P\times Q \rightarrow P$\\
+	 \begin{enumerate}
+		 \item $p$ è continua e suriettiva
+		 \item $P$ è connesso
+		 \item $\forall x \in P: p^{-1}(x) = \{x\}\timees Q$ è omeomorfo a $Q$ (quindi connesso)
+		 \item $p$ è aperta
+	 \end{enumerate}
+	 Per la proposizione precedente il dominio $P\times Q$ è connesso.
+ \end{dimo}
+ \begin{defi}
+ 	Sia $X$ spazio topologico. Se un sottoinsieme  $C\subseteq X$ è connesso e massimale rispetto a queste proprietà, allora $C$ si dice componente connessa di $X$. Analogamente si definiscono le componenti connesse per archi.
+ \end{defi}
+ \textbf{Osservazione}
+ \begin{enumerate}
+	 \item Le componenti connesse sono sempre chiuse, perché la chiusura di un connesso è connesso.\\
+		 Attenzione, non sono sempre aperte ad esempio le componenti connesse di $\Q$ sono i singoli punti.
+	 \item Due componenti connesse  $C_1, C_2$ di $X$ sono uguali e disgiunte ( se due connessi si intersecano allora l'unione è connessa V esercizi settimanali)\\
+		 Lo stesso vale per le componenti connesse per archi.
+	 \item Da 2. Segue che ogni spazio topologico è unione disgiunta delle sue componenti connesse e anche unione disgiunta delle sue componenti connesse per archi.
+ \end{enumerate}
+ \subsection{Spazi topologici compatti}
+\begin{defi}
+	Sia $X$ spazio topologico $R\subseteq 2^X$.
+	\begin{enumerate}
+		\item $R$ si dice ricoprimento se $ \bigcup^{}_{A\in R}A = X$ \\
+		$R$ ricoprimento si dice aperto se $A\in R$ aperto  $\forall A\in R$ 
+	\item Se $R\subseteq 2^X$ è un ricoprimento e  $R'\subseteq R$ è anch'esso un ricoprimento, allora  $R'$ si dice sottoricoprimento.
+	\end{enumerate}
+\end{defi}
+\begin{defi}
+	Uno spazio topologico $X$ si dice compatto se ogni ricoprimento ha almeno un sottoricoprimento finito.
+\end{defi}
+\textbf{Esempi:}\\
+\begin{enumerate}
+	\item Se  $X$ è finito (con qualsiasi topologia) allora è compatto.
+	\item Se $X$ ha cardinalità qualsiasi ma topologia banale è compatto.
+	\item Se $X$ è infinito con topologia discreta allora $X$ non è compatto, basta considerare.
+		\[
+			R = \{\{x\}\ | \ x\in X\}
+		.\] 
+\end{enumerate}
+\begin{teo}
+	L'intervallo $[0,1]$ è compatto
+\end{teo}
+\begin{dimo}
+	Sia $R$ un ricoprimento aperto di $[0,1]$ (topologia di sottospazio indotta da  $R$ con topologia euclidea).\\
+	Per ogni $A\in R$ scegliamo $A'\subseteq \R$ aperto in  $\R$ tale che  $A = A'\cap [0,1]$ e consideriamo 
+	 \[
+		 S = \{A' \ | \ A\in R\} = \text{ famiglia di aperti in } \R
+	.\] 
+	l'unione contiene $[0,1]$.\\
+	Consideriamo  $Y = \{t\in [0,1] \ | \ $esiste una sottofamiglia finita di $S$ la cui unione contiene $[0,t]\}$\\
+	Chiaramente $0\in Y$, considero  $b = sup Y$\\
+	Dimostriamo che $b\in Y$\\
+	Scegliamo  $A_0\in R$ tale che $b\in A_0$ scegliamo $\e > 0 $ tale che $]b-\e,b + \e[\subseteq A_0$ \\
+	Visto la definizione di $b$ esiste $t\in Y$ tale che $b - \e < t \leq b$.\\
+	Sappiamo che esistono  $A_1,\ldots,A_n\in R$ tale che $A_1'\cup A_2'\cup\ldots\cup A_n'\supseteq [0,t],$  allora $a_0'\cup A_1'\cup\ldots\cup A_n'\supseteq [0,b]$.\\
+	Cioè $b\in Y.$ dove tutti gli $A'_i$ sono elementi di  $S$\\
+	Dimostriamo che  $b = 1$\\
+	Supponiamo per assurdo  $b < 1$. Ripetiamo la costruzione precedente richiedendo anche $b + \e < 1$. Allora  $b + \frac \e 2\in Y$ perché
+	\[
+		A_0'\cup A_1'\cup\ldots\cup A_n'\supset [0,b + \frac \e 2]
+	.\] 
+	Assurdo, quindi $b = 1$.\\
+	Da questo  $1\in Y, $ cioè esiste una sottofamiglia finita si  $S$ la cui unione contiene $[0,1]$, quindi $R$ ammette un sottoricoprimento finito. \\
+\end{dimo}
+\textbf{Osservazione:}\\
+Anche la compattezza si usa per dimostrare che due spazi topologici non sono omeomorfi, ad esempio: $\R$ e $[0,1]$ non sono omeomorfi perché $[0,1]$ è compatto e $\R $ no.
+\begin{prop}
+	Sia $X$ spazio topologico  e $Y$ sottospazio. 
+	\begin{enumerate}
+		\item Se $X$ è compatto e $Y$ è chiuso in $X$. Allora  $Y$ è compatto.
+		\item Se $X$ è T2 e $Y$ è compatto allora $Y$ è chiuso in $X$.
+	\end{enumerate}
+\end{prop}
+\textbf{Esercizio:}\\
+Cercate dei controesempi alle ipotesi.\\
+Trovare $X,Y$, con $Y$ chiuso e non compatto e trovare $X,Y$ con  $X $ con $Y$ compatto ma non chiuso in $X$\\
+Provare con controesempi facili! Magari spazi con 2 punti e  $Y$ un solo punto
+\begin{dimo}
+	\text{}
+	\begin{enumerate}
+		\item $R$ ricoprimento aperto di $Y$. \\
+			Per ogni $A\in R$ scegliamo $A'\subseteq X$ aperto in  $X$ tale che $A'\cap Y = A$.\\
+			Abbiamo $Y\subseteq \bigcup_{A\subset R}A'$ e vale\\
+			$X = \left( \bigcup^{}_{A\in R}A' \right) \cup (X\setminus Y)$\\
+			Quindi $\{A'\ | \ A\in R\}\cup\{X\setminus Y\}$ è un aperto di $X$.\\
+			Per compattezza di  $X$ esistono $A_1,\ldots,A_n\in R$ tale che 
+			\[
+			 X = A_1'\cup\ldots\cup A'_n\cup (X\setminus Y)
+			.\]
+			Allora $A_1'\cup\ldots\cup A_n'\supseteq Y$ e quindi $A_1\cup\ldots\cup A_n = Y$ \\
+			Segue $Y$ compatto.\\
+		\item 
+			Supponiamo $X$ T2, $Y$ compatto, dimostrare che  $Y$ è chiuso in $X$\\
+			Dimostriamo che  $X\semtinus Y$ è aperto.\\
+			Dimostriamo che è intorno di ciascun suo punto.\\
+			Scegliamo $q\in X\setminus Y$\\
+			consideriamo un qualsiasi  $p\in Y$ e applichiamo T2. Esistono intorni aperti $U\ni p, V\ni Q$ tale che  $U\cap V= \emptyset$\\
+			faccio variare  $p$ in $Y$ e consideriamo tutte le coppie di aperti $\overline U, V$ \\
+			Usiamo però i nomi (per non fare errori) dato che dipendono da entrambi i punti
+			\[
+				U_{p,q} \ni p , \ \ V_{p,q}\ni q
+			.\] 
+			Tuttavia il nostro $q$ è fissato, quindi possiamo chiamarli semplicemente \[
+			U_p\ni p, \ V_p\ni q
+			.\] 
+			Allora $\{U_p \ | \ p\in Y\}$ è una famiglia di aperti di  $X$ la unione contiene $Y$.\\
+			Dalla compattezza di $Y$ segue che esiste una sottofamiglia finita la cui unione contiene $Y$.
+		\[U_{p_1}\cup \ldots\cup U_{p_n}\supseteq Y.\]
+		Allora
+		\[
+			V = V_{p_1}\cap\ldots\cap V_{p_n}
+		.\] 
+		è intorno aperto di $q$ tutto contenuto in $X\setminus Y$
+	\end{enumerate}
+\end{dimo}
+\end{document}

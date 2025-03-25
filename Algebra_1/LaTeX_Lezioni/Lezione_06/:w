@@ -1,0 +1,39 @@
+\documentclass[12px]{article}
+
+\title{Lezione 6 Algebra I}
+\date{2025-03-20}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Esercizi Vari}
+	\textbf{Ricordo}\\
+	Abbiamo dimostrato che $z\in\Z[i]$ tale che $\nu(z) = p$ con  $p\in\Z$ primo\\
+	Allora $\z$ primo in $\Z[i]$\\
+	\textbf{Esercizio:}\\
+	Se $p\in\Z$ è primo tale che  $p \equiv_4 3$ dimostrare che  $p$ non è somma di due quadrati\\
+	\textbf{Soluzione}\\
+	In $\Z/(4)$ gli unici quadrati sono  $[0]$ e $[1]$\\
+Quindi se  $p = a^2 + b^2 \Rightarrow a^2 + b^2 \equiv_4 p\equiv_4 3$ Assurdo poiché $3\not\in \{[0],[1]\}$\\
+\textbf{Esercizio:}\\
+Sia  $p\in \Z$ primo  $p\equiv_4 1$. Dimostrare che esiste  $m\in\Z$ tale che $m^2\equiv_p -1$\\
+ \textbf{Soluzione Gauss:}\\
+ Ricordo che esistono radici primitive in $\Z/(p)$\\
+ Sia $r$ tale radice.\\
+ e sia  $k = ind_r(-1)\ \ \ (r^k\equiv_p (-1))$ \\
+\[r^{\frac{k(p-1)}2} \equiv_p (-1)^{\frac{p-1}2}\equiv_p 1\]
+usando il fatto che $p\equiv_4 1$ \\
+Ricordo che $ord_{U_p}(r) = p-1 \Rightarrow (p-1)|\frac{k(p-1)}2 \Rightarrow \frac{k}2$ \\
+$ \Rightarrow (r^{k/2})^2\equiv_p r^k \equiv_p -1$\\
+\textbf{Soluzione Wilson:}\\
+$(p-1)!\equiv_p -1$\\
+Ora  $\phi\equiv_4 1 \ \Rightarrow  \ p = 4n + 1, \ \ n\in\Z_{>1}$ \\
+$ \Rightarrow (4n)!\equiv_p -1$ \\
+$(4n)! = 1\cdot 2\cdot\ldots\cdot (2n)\cdot (2n+1)\cdot\ldots\cdot (4n)$\\
+ma $2n + 1 \equiv_4 -2n$ perché  $p\equiv_4 1  \Rightarrow 4n + 1 \equiv_4 1$
+
+
+\end{document}

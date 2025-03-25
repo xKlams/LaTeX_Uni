@@ -1,0 +1,165 @@
+\documentclass[12px]{article}
+
+\title{Lezione 10 Analisi Reale}
+\date{2025-03-25}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Continuando sulle funzioni misurabili}
+	\begin{defi}[Funzione semplice]
+	Sia $(X,A,\mu)$ uno spazio di misura. Una funzione semplice in  $X$ è una funzione del tipo
+	\[
+		s(x) = \sum_{i =1 }^{N}c_i\chi_{E_i}(x), \text { con }c_i\in \R, N\geq 1, E_i\in A
+	.\] 
+	con $E_i\cap E_j= \emptyset$ se  $i\neq j$ e  $ \bigcup^{N}_{i=1}E_i = X$
+\end{defi}
+\begin{teo}
+	Sia $(X,A,\mu)$ uno spazio di misura, e $f: X \rightarrow [-\infty,+\infty]$\\
+	Allora $f $ misurabile $ \Leftrightarrow \exists\{s_m\}$  successione di funzioni semplici tale che $ s_m(x) \xrightarrow{ m \rightarrow +\infty}f(x)\ \ \forall x\in X$\\
+	Inoltre
+	\begin{enumerate}
+		\item se  $f\geq 0 \Rightarrow $ si può scegliere $\{s_m\}$ tale che $s_m(x)\leq s_{m+1}(x) \ \ \ \forall x\in X, \forall m\geq 1$.
+		\item se  $f$ è limitata $ \Rightarrow s_m \rightarrow f$ uniformemente in $X$.
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	$ ( \Leftarrow)$ ovvia, perché $f$ è limite puntuale di una successione di funzioni misurabili\\[10px]
+	$ ( \Rightarrow )$ Primo caso: $f\geq 0$, limitata, si può supporre  $0\leq f(x)\leq 1\ \forall x\in X$\\
+
+	%TODO se vuoi disegno 1:33 
+	$\forall n\geq 1$ $[0,1) = \bigcup_{k=1}^{2^n}\left[ \frac{k-1}{2^n},\frac {k}{2^n} \right) $\\
+	$ E_k^n = \{\frac{k-1}{2^n}\leq f(x) < \frac {k}{2^n}\}\ \ k = 1,\ldots,2^n$\\
+	$f$ misurabile  $ \Rightarrow E_k^n$ misurabile $\forall k = 1,\ldots, 2^n, \ \forall n\geq 1$\\
+	 $E_k^ n\cap E_j^n = \emptyset$ se  $i\neq j$ e $X = \bigcup^{2^n}_{k=1}E_k^n$\\ 
+ \[s_n(x) = \sum^{2^n}_{k=1}\frac{k-1}{2^n}\chi_{E_k^n}(x)\]
+ $\forall x\in X, \forall n\geq 1\ \ \exists ! 1\leq k\leq 2^n$ tale che $x\in E_k^n$\\
+ $ \Rightarrow  0\leq s_n(x) = \frac{k-1}{2^n}\leq f(x)$ \\
+ $x\in E_k^n \Leftrightarrow \frac{k-1}{2^n} f(x) , \frac { k}{2^n}$\\
+$\frac{2(k-1)}{2^{n+1}}\leq f(x) < \frac { 2k}{2^{n+1}}$\\
+$ \Rightarrow $ sono possibili due casi
+\[
+	s_n(x) = \frac{ 2k-2}{2^{n+1}}\Leftarrow x\in E_{2k-1}^{n+1}\Leftrightarrow	\frac{2k - 2}{2^{n+1}}\leq f(x) < \frac {2k-1}{2^{n+1}}
+.\] 
+oppure \[
+	s_n(x) = \frac{ 2k-1}{2^{n+1}}\Leftarrow x\in E_{2k-1}^{n+1}\Leftrightarrow\frac{2k-1}{2^{n+1}}\leq f(x) < \frac{2k}{2^{n+1}}
+.\] 
+nel caso 1\\
+$s_n(x) = \frac{k_-1}{2^n} = s_{n+1}(x)$\\
+nel caso 2\\
+$s_n(x) = \frac {k-1}{2^n} < \frac{2k-1}{2^{n+1}}=s_{n+1}(x)$\\
+$\forall x\in X\ \ \exists ! 1\leq k\leq 2^{n+1}$\\
+tale che  $x\in E_k^n$\\
+$ \Leftrightarrow s_n(x)\leq f(x) < \frac{k}{2^n}$\\
+$0\leq f(x) - s_n(x) < \frac 1 {2^n}$\\
+$\sup_{x\in X}|f(x) - s(x)| \leq \frac{1}{2^n} $\\
+$ \Rightarrow s_m \rightarrow f$ uniformemente in $X$\\[10px]
+  $ (\Rightarrow )$ secondo caso: $f\geq 0$\\
+   $\forall n\geq 1$
+    \[
+	    E_I^n = \{f < n\},\ \  \ \ E_{II}^n = \{f\geq n\}
+   .\] 
+   $E^n_{I,k} =\{\frac{k-1}{2^n}\leq f < \frac {k}{2^n}$ \\
+	   $ \bigcup^{2^n}_{k = 1}E^n_{I,k} = E^n_I$
+	   \[
+		   s_n(x) = n\chi_{E^n_{II}}(x) + \sum^{2^n}_{k = 1}\frac { k + 1}{2^n}\chi_{E_{I,k}^n}(x)
+	   .\] 
+	   \[
+		   E_{II}^n\cup \bigcup^{2^n}_{k=1}E_{I,k}^n = X
+	   .\] 
+	   $s_n(x) \leq s_{n+1}(x) \ \ \forall x$ (come nel caso 1)\\
+	   Se $f(x) = +\infty \Rightarrow f(x) \geq m\ \ \ \forall m$ \\
+	   %TODO s eti va altra immaginae 14:01\\
+	   $ \Leftrightarrow x\in E_{II}^n$\\
+	   $ \Rightarrow s_n(x) = n \rightarrow+\infty = f(x)$ \\
+	   Se $f(x) < +\infty \Rightarrow \exists \bar n $ tale che $f(x) \leq \bar n$\\
+	   $ \Rightarrow x\in E_I^n = \bigcup^{2^n}_{k=1}E^n_{I,k}\\$
+	   $s_n(x) = \frac {k-1}{2^n} \leq f(x) < \frac{ k}{2^n}$ \\
+	   $ \Rightarrow  0 \leq f(x) - s_n(x) < \frac 1{2^n}\ \ \ \forall n\geq \bar n$ \\
+	   la convergenza non è uniforme perché $\bar n$ dipende da  $f$.\\
+	   $ \Rightarrow s_n (x) \rightarrow f(x)$\\[10px]
+Terzo caso\\
+$f$ di segno variabile\\
+$f(x) =f^+(x) - f^-(x)$\\
+$f^+(x) = max\{f(x),0\}$\\
+$f^-(x) = -min\{f(x),0\}$\\
+ $f$ misurabile $ <=> f^-, f^+$ misurabili\\
+ Per il secondo caso\\
+ $\exists \{s_n\}$ funzioni semplici  $s_n(x) \rightarrow f^+(x) \ \ \forall x$\\
+ $\{t_n\}$ funzioni semplici $t_n(x) \rightarrow f^-(x) \ \ \forall x$ \\
+ $ \Rightarrow s_n - t_n$ è funzione semplice, $s_n(x) - t_n(x) \rightarrow f(x) \ \ \forall x$
+\end{dimo}
+\begin{defi}
+	Sia $(X,A,\mu)$ spazio di misura e sia $s(x) = \sum_{i=1}^{N}c_i\chi_{E_i}(x), \ c_i\geq 0 \\$	
+	si definisce 
+	\[
+	\int_X s \ d\mu = \sum^{N}_{i=1}c_i\mu(E_i)
+	.\] 
+	dove si usa la convenzione $0 \cdot (+ \infty )= 0$\\
+	e, inoltre, $\forall E \in A$
+	 \[
+	\int_E s \ f\mu = \int_X s\cdot \chi_E \ d\mu = \sum^{N}_{i=1}c_i\mu (E\cap E_i )
+	.\] 
+	\[
+		\sum^{N}_{i=1}c_i\chi_{E_i\cap E}
+	.\] 
+	dato che $\chi_{E_i}\cdot \chi_e = \chi_{E_i\cap E}$
+\end{defi}
+\begin{defi}
+	Sia $(X,A,\mu$ spazio di misura e sia  $f:X \rightarrow[0,+\infty]$ misurabile\\
+	$ \Rightarrow \int_X f \ d\mu = \sup \{ \int_X s \ d\mu\ s$ funzione semplice $0\leq s\leq f\}$ e  $\forall E\in A$
+	 \[
+	\int_E f \ d\mu = \int_X \chi_E \ d\mu
+	.\] 
+\end{defi}
+\textbf{Proprietà immediate dell'integrazione}
+\begin{enumerate}
+	\item $f = 0$ quasi certamente in $X \Rightarrow \int_X f \ d\mu =0$
+	\item Se $N\subseteq X, \mu(N) = 0 \Rightarrow \int_N f\ d\mu = 0$ 
+	\item $0\leq f\leq g, \ \ f,g$ misurabili $ \Rightarrow \int_X f d\mu\leq\int_X g \ du$ 
+	\item Se $E,F \in A\ E\subseteq F\ \ \int_E f \ d\mu =\leq \int_F f\ d\mu$
+\end{enumerate}
+\textbf{Esempio}\\
+$f(x) = \chi_\Q(x) = \chi_\Q(x) = 0\cdot \chi_{\R\setminus\Q} \Rightarrow \int_\R f \ d\mu = 1 \mu(\Q) = 0$ \\
+$s$ funzione semplice $0\leq s \leq f$\\
+\newpage
+\begin{prop}
+	Sia $s(x)$ funzione semplice, $\geq 0$, e sia $\mu_s : A \rightarrow [0,+\infty)$\\
+	definita da 
+	\[
+	\mu_s(E) = \int_E s \ d\mu
+	.\] 
+	$\mu_s$ è una \unferline{misura} su $A$ (cioè  $\mu_S(\emptyset) = 0$ ed è additiva su misurabili disgiunti)
+\end{prop}
+\begin{dimo}
+	$\mu_s(\emptyset) = \int_\emptuset s\ d\mu = 0 $ \\
+	Siano $\{E_i\}\subset A$ disgiunti e sia  $s(x) = \sum^{N}_{k=1}c_k\chi_{F_k}(x)$ $F_k\in A\ \ F_k\cap F_j = \emptyset$ per ogni  $k\neq j\ \ \bigcup^{N}_{k=1}F_k=X$ \\
+	\[
+		\mu_s \left( \bigcup^{K}_{i-1}E_i \right) = \int_{ \bigcup^{K}_{i-1}E_i}s \ d\mu = \int_X s \chi_{ \bigcup^{K}_{i = 1}E_i} \ d\mu
+	.\] 
+	con
+	\[
+		\chi_{ \bigcup^{+K}_{i = 1}E_i} = \sum^{K}_{i = 1}\chi_{E_i}
+	.\] 
+	\[
+	x\in \bigcup^{K}_{i= 1}E_i \Leftrightarrow \exists ! i \ x\in E_i
+	.\] 
+	\[
+		\int_X s \sum^{K}_{i= 1}\chi_{E_i}\ d\mu = \int_X \sum^{K}_{i=1}s\chi_{E_i} \ d\mu = \int_X \sum^{K}_{i=1} \sum^{N}_{j=1}c_j \chi_{F_j\cap E_i} \ d\mu
+	.\] 
+	\[
+		\sum^{K}_{i=1} \sum^{N}_{j=1}c_j \mu(E_j \cap E_i)  = \sum^{K}_{i=1}\int_{E_i} s\ d\mu = \sum^{K}_{i=1}\mu_s(E_i)
+	.\] 
+	\[
+	\mu_s( \bigcup^{+\infty}_{i = 1}E_i \geq \mu_S \left( \bigcup^{k}_{i=1}E_i \right) = \sum^{K}_{i=1}\mu_s(E_i) \Rightarrow \mu_s \left( \bigcup^{+\infty}_{i =1}E_i \right) = \sum^{+\infty}_{i=1}\mu_s(E_i)
+	.\] 
+\end{dimo}
+\textbf{Osservazione}\\
+Se $N\subseteq X, \mu(N) = 0$\\
+ $ \Rightarrow  \int_N S\ d\mu = 0$ \\
+ $\mu_s(N) =0 \ \ \forall N: \mu(N) = 0$\\
+  $\mu_s << \mu$  $\mu_s$ è assolutamente continua rispetto a $\mu$.
+\end{document}

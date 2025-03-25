@@ -1,0 +1,213 @@
+\documentclass[12px]{article}
+
+\title{Lezione 6 Algebra I}
+\date{2025-03-20}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Esercizi Vari}
+	\textbf{Ricordo}\\
+	Abbiamo dimostrato che $z\in\Z[i]$ tale che $\nu(z) = p$ con  $p\in\Z$ primo\\
+	Allora $\z$ primo in $\Z[i]$\\
+	\textbf{Esercizio:}\\
+	Se $p\in\Z$ è primo tale che  $p \equiv_4 3$ dimostrare che  $p$ non è somma di due quadrati\\
+	\textbf{Soluzione}\\
+	In $\Z/(4)$ gli unici quadrati sono  $[0]$ e $[1]$\\
+Quindi se  $p = a^2 + b^2 \Rightarrow a^2 + b^2 \equiv_4 p\equiv_4 3$ Assurdo poiché $3\not\in \{[0],[1]\}$\\
+\textbf{Esercizio:}\\
+Sia  $p\in \Z$ primo  $p\equiv_4 1$. Dimostrare che esiste  $m\in\Z$ tale che $m^2\equiv_p -1$\\
+ \textbf{Soluzione Gauss:}\\
+ Ricordo che esistono radici primitive in $\Z/(p)$\\
+ Sia $r$ tale radice.\\
+ e sia  $k = ind_r(-1)\ \ \ (r^k\equiv_p (-1))$ \\
+\[r^{\frac{k(p-1)}2} \equiv_p (-1)^{\frac{p-1}2}\equiv_p 1\]
+usando il fatto che $p\equiv_4 1$ \\
+Ricordo che $ord_{U_p}(r) = p-1 \Rightarrow (p-1)|\frac{k(p-1)}2 \Rightarrow \frac{k}2$ \\
+$ \Rightarrow (r^{k/2})^2\equiv_p r^k \equiv_p -1$\\
+\textbf{Soluzione Wilson:}\\
+$(p-1)!\equiv_p -1$\\
+Ora  $\phi\equiv_4 1 \ \Rightarrow  \ p = 4n + 1, \ \ n\in\Z_{>1}$ \\
+$ \Rightarrow (4n)!\equiv_p -1$ \\
+$(4n)! = 1\cdot 2\cdot\ldots\cdot (2n)\cdot (2n+1)\cdot\ldots\cdot (4n)$\\
+ma $2n + 1 \equiv_p -2n $ perché $p = 4n + 1 \eqiuv_p 0 \Rightarrow 2n+ 1\equiv_p -2n $ \\
+quindi dopo la metà abbiamo gli stessi elementi che appaiono con segno inverso\\
+Quindi $(4n)!\equiv_p (-1)^{2n}\cdot (2n)!\cdot (2n)!\equiv_p ((2n)!)^2$\\
+Scelgo  $m = (2n)!$\\
+ \begin{prop}
+	 $p\in\Z$ primo. Allora $p$ è primo in $\Z[i] $ se e solo se $p\equiv_4 3$
+\end{prop}
+\begin{dimo}
+	Studiamo vari casi
+	\begin{enumerate}
+		\item $p = 2 = (1+i)(1-i)$ \\
+			I due fattori $1 \pm i$ sono entrambi irriducibili perché  $\nu (1\pm i) = 2 \ \text{ primo } \Rightarrow 1\pm ip$ primo in \Z[i]\\
+			$2$ non è primo in $\Z[i]$
+		\item  $p\in\Z$ primo tale che $p\equiv_4 3$\\
+			Se $p$ fosse riducibile in $\Z[i]$ allora $p = (a + ib) + (c + id)$ dove i due membri sono entrambi non invertibili.\\
+			$p^2= \nu(\phi)= \nu(a + ib)\nu (c +id) = (a^2 + b^2)(c^2+d^2)$ 
+L'unica speranza per far si che venga $p^2$ è che entrambi i membri vengano $p\\
+$ \Rightarrow Assurdo poiché $p \equiv_4 3$
+\item $p\equiv_4 1$, Per l'esercizio esiste $m\in\Z$ tale che  $m^2\equiv_p -1$\\
+	 $ \Rightarrow p | m^2 + 1 = (m+i)(m-i)$ \\
+	 Se per assurdo $p = $ primo in  $\Z[i]$\\
+	 avremmo che  $p|(m+i)$ oppure  $p | (m-i)$\\
+	 $ \Rightarrow $ Assurdo perché $\phi$ non divide le parti immaginarie  $ \Rightarrow p$ non è primo in $\Z[i]$
+	\end{enumerate}
+\end{dimo}
+\begin{coro}[Girard 1632, Fermat 1640, Eulero 1754]
+	$p\in\Z$ primo dispari. Allora  $p$ è somma di due quadrati se e solo se $p\equiv _4 1$
+\end{coro}
+\begin{dimo}
+	Abbiamo due casi 
+	\begin{enumerate}
+		\item $p\equiv_4 3$ già visto che  $p$ non è somma di due quadrati.
+		\item $p\equiv_4 1$ Sappiamo che  $p$ non è irriducibile in $\Z[i]$\\
+			 $ \Rightarrow p= w_1\cdot w_2\cdot\ldots\cdot w_k$ \\
+			 con $w_j$ irriducibile in $\Z[i]$ e  $k\geq 2$\\
+			  $ \Rightarrow p^2 = \nu(p) = \nu(w_1) \cdot \nu (w_2)\cdot \ldots\cdot \nu(w_k)  \Rightarrow  k = 2$ dato che tutti i termini sono diversi da 1 (sono irriducibili)\\
+			  $\nu(w_1) = \nu (w_2) = p \Rightarrow  p = \nu(w_1) = a^2 + b^2$ dove $w_1 = a + ib$
+	\end{enumerate}
+\end{dimo}
+ \begin{coro}
+	 $p\in\Z$ primo tale che  $p\equiv_4 1$ allora $p = z\cdot \overline z,$ dove $z\in\Z[i]$ è primo.
+ \end{coro}
+ \begin{dimo}
+ 	Dal corollario precedente abbiamo che $p = a^2 + b^2 = (a + ib)(a-ib)$ devo controllare che lo  $z $ scelto $(a + ib)$ sia irriducibile\\
+	 $p^2 = \nu(p) = \nu(a + ib)\nu(a -ib)$ e ogniuno di questi due termini ha effettivamente valutazione  $p$.
+ \end{dimo}
+ \textbf{Esercizio}\\
+ $z\in Z[i]$ è primo  se e solo se $\overline z\in\Z[i]$ è  primo.
+ \newpage
+ \begin{teo}
+	 $z\in \Z[i]$ primo. Allora una delle seguenti condizioni è verificata:
+	 \begin{enumerate}
+		 \item $\nu(z) = p$ con  $p\in\Z$ primo tale che  $p\equiv_4 1$  
+		 \item $\nu(z) = p^2$ con $p\in\Z$ primo tale che $p\equiv_4 3$
+	 \end{enumerate}
+ \end{teo}
+ \begin{dimo}
+	 Se $z\in \Z[i]$ è primo  $ \Rightarrow \nu(z) > 1$ \\
+	 $  \Rightarrow \nu(z) = p_1\cdot p_2\cdot\ldots\cdot p_k$ con $p_j\in\Z$ primo.\\
+	 Studiamo vari casi
+	  \begin{enumerate}
+		  \item $p_1 = 2 \Rightarrow  2 | v(z) \Rightarrow 2 | z\cdot \overline z \Rightarrow 2 | z$ e $2| \overline z \Rightarrow (1 \pm i)|z \Rightarrow $  Assurdo perché $z$ irriducibile
+		  \item $p_1 \equiv_4 3 \Rightarrow p_1$  primo in $\Z[i]$\\
+			   $ \Rightarrow p_1 | v(z) = z\cdot \overline z \Rightarrow  p_1 | z$ oppure $p_1 | \overline z$ quindi $ p_1$ e $z$ sono associati oppure  $p_1$ $\overline z$ sono associati ($\overline z$ irriducibile)\\
+			   $ \Rightarrow p_1^2  = \nu(p_1) = \nu(z) = \nu(\overline z)$ da qui tesi
+		   \item $p_1 \equiv_4 1$\\
+			   $ \Rightarrow p_1 = w\cdot \overline w $ con $w\in\Z[i]$ primo\\
+			   Allora  $p_1 | \nu(z) = z\cdot \overline z$\\
+			   $ \Rightarrow w | z \cdot \overline z$ \\
+			   $ \Rightarrow w,z$ associati oppure\\
+			   $w,\overline z$ associati\\
+			    $ \Rightarrow \nu(w) = \nu(z) = \nu (\overline z)$ 
+	 \end{enumerate}
+ \end{dimo}
+ \begin{coro}
+	 $a + ib\in\Z[i]$ è primo se e solo se vale una delle seguenti condizioni
+	 \begin{enumerate}
+		 \item $a = 0$ se $b\in \Z$ sia primo tale che  $b\equiv_4 3$
+		 \item  $b = 0$ se $a \in \Z$ sia primo tale che  $a \equiv_4 3$
+		 \item $a \neq 0$,  $b\neq 0$ \  $a^2 + b^2\in\Z$ è primo
+	 \end{enumerate}
+ \end{coro}
+ \begin{dimo}
+	 Se una delle condizioni vale allora $a + ib$ è primo in  $\Z[i]$ (l'ultima è vera per la valutazione).\\
+	 Viceversa: se $a + ib$ è primo in  $\Z[i]$ allora dal teorema segue che 
+	  \begin{enumerate}
+		  \item $\nu(a+ib) = pi \Rightarrow  (3)$ oppure $\nu(a + ib) = p^2$ con  $p\equiv_4 3$\\
+Nel secondo caso $a^2 + b^2 = p^2$ \\
+$ \Rightarrow  p | \nu( a + ib)$ \\
+$ \Rightarrow p | (a + ib)(a -ib)$ \\
+$ \Rightarrow p | (a + ib)$ oppure $p | (a + ib)$\\
+ $ \Rightarrow p$  associato ad $a \pm ib$\\
+  $ \Rightarrow p | a $ e $p|b$\\
+   $ \Rightarrow  \begin{cases}
+   	a = n_1p\\
+	b = n_2p
+   \end{cases}$ \\
+   $ \Rightarrow p^2 = a^2 + b^2 = n_1^2p^2 + n_2^2p^2-p^2(n_1^2 + n_2^2)$ \\
+   $  \Rightarrow \begin{cases}
+   	n_1 = \pm 1 \\ n_2 = 0$
+   \end{cases} oppure \ \ \ \begin{cases}
+   	$n_1 = 0\\
+	n_2 = \pm 1$
+   \end{cases} 
+	 \end{enumerate}
+ \end{dimo}
+ \textbf{Esempi}(Fattorizzazioni in $\Z[i]$)\\
+ fattorizzare in irriducibili, $25\in\Z[i]$\\
+  $25 = 5\cdot 5$\\
+  Quindi fattorizziamo  $5\in\Z[i]$\\
+  $5 = 4 + 1 = 2^2 + 1^2 = (2 + i)(2-i)$\\
+   \textbf{Ricorda}\\
+   La fattorizzazione è unica a meno di moltiplicazioni per l'unità\\
+   $ \Rightarrow 25 = (2+i)^2(2-i)^2$ \\[10px]
+   fattorizza in irriducibili\\
+   $ 9 - 15 i\in\Z[i]$\\
+   $ 9 - 15 i = 3(3 - 5i)$\\
+   ma $3$ è irriducibile in $Z[i]$\\
+   poiché  $3\equiv_4 3 $\\
+   Basta fattorizzare $3 - 5i$\\
+    $\nu(3-5i) = 9 + 25 = 34 = 2\cdot 17$\\
+    Assumiamo che\\
+     $(3-5i) = (1+i)(a +ib)$ con  $v(a + ib) = 17$\\
+     $(1 + i)(a + ib) = (a -b) + i(a+b) = 3 -5i$\\
+      \begin{cases}
+     	$a - b = 3$\\
+	$a - b  = -5$
+     \end{cases} \Rightarrow  \begin{cases}
+     	$a = -1$ \\ 
+	$b = -4$
+     \end{cases}\\
+     $ \Rightarrow  9 - 15i = 3\cdot (1 + i )\cdot (-1-4i)$ \\[10px]
+     Fattorizziamo $3 + 4i\in\Z[i]$\\
+      $\nu(3 + 4i) = 9 + 16 = 25 = 5^2$\\
+       $ \Rightarrow 3 + 4i = (a + ib)(c + id)$ \\
+       con $\nu(a + ib) = 5 = \nu(c + id)$\\
+        $ \Rightarrow \begin{cases}
+        	ac - bd = 3\\
+		bc + ad = 4
+        \end{cases} \\\Rightarrow  $ Per ottenere la prima uguaglianza  abbiamo bisogno di $ac = 4 $ e  $bd = 1$, otteniamo poi $bc = 2$ e $ad = 2$\\
+	Scegliamo $a = c = 2$  $b = d = 1$\\
+	$ \Rightarrow 3 + 4i  = (2 + i)^2$\\[10px]
+	Calcolare $MCD( 3 + 4i, 4 - 3i)$ in  $\Z[i]$\\
+	Osserviamo:\\
+	 $-i(3 + 4i) = -3i - i^2\cdot 3 = 4 - 3i$ \\
+	 Quindi:\\
+	 $MCD = 3 + 4i$\\
+	 \subsection{Campo dei Quozienti}
+	  $R$ dominio d'integrità.\\
+	  L'obiettivo è definire un campo, $Frac(R)$, che contiene  $R$ come sottoanello, e soddisfa certe proprietà.\\
+	  Tenendo in esempio $\Q = Frac(\Z)$ \\
+	  \textbf{Costruzione:}\\
+	  $X = \{(a,b)\ |\ a\in\R, b\in\R\setminus\{0\}\}$ \\
+	  definiamo la relazione di equivalenza\\
+	  $(a,b)\sim (c,d) \Leftrightarrow ac = bd$ in $R$\\
+	   \textbf{Esercizio}\\
+	   Dimostra che questa è una relazione d'equivalenza su $X$\\
+	   $Frac(R) = X/\sim$\\
+	   si dice campo dei quozienti o delle frazioni di $R$ con le operazioni  $+$ e $\cdot$ definite da:\\
+	    \[
+		    (a,b)\cdot(c,d) = (ac,bd)\in X
+	   .\] 
+	   \[
+		   (a,b) + (c,d) = (ad + bc,bd)\in X
+	   .\] 
+	   \textbf{Esercizio}\\
+	   1) Le operazioni sono ben definite su $Frac(R)$\\
+	   2) Verificare che  $Frac(R)$ soddisfa la seguente proprietà universale:
+	    \[
+		    \forall \text{ omomorfismo di anelli iniettivo } R \rightarrow K \text{ con } K \text{ campo} 
+	   .\] 
+	   \[
+		   \text{esiste un unico di anelli } Frac(R) \rightarrow K \text{ tale che }
+	   .\] 
+
+
+ 
+ \end{document}

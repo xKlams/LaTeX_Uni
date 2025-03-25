@@ -1,0 +1,168 @@
+\documentclass[12px]{article}
+
+\title{Lezione 10 Geometria 2}
+\date{2025-03-25}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Altre informazioni sui compatti}
+	\textbf{Ricorda:}\\
+	Un chiuso in un compatto è compatto, un compatto in un $T2$ è chiuso
+	\begin{coro}
+		Sia $\R$ con topologia euclidea, $Y\subseteq \R$ sottospazio allora  $Y$ compatto $ \Leftrightarrow Y$ chiuso e limitato.
+	\end{coro}
+	\begin{dimo}
+		$ \Rightarrow \R$ è $T2$ , se $Y$ è compatto allora $Y$ è chiuso in  $\R$. Inoltre  $Y$ è limitato perchè il ricoprimento $R = \{Y\cap ]-n,n[\ |\ n\in\Z\}$ ha sottoricoprimenti finiti.\\
+		$ \Leftarrow$ Suppongo $Y$ chiuso e limitato, quindi in $n\in\Z_{\geq 0}$ tale che  $Y\subseteq [-n,n]$.\\
+		L'intervallo  $[-n,n] $ è omeomorfo a  $[0,1]$ quindi è compatto.\\
+		Inoltre $Y$ è chiuso in $[-n,n]$ quindi è compatto
+	\end{dimo}
+	\begin{teo}
+		Sia $f:X \rightarrow Y$  applicazione continua fra spazi topologici, se $X$ è compatto allora $f(X)$ è compatto.
+	\end{teo}
+	\begin{dimo}
+		Considero la restrizione
+		\[
+		\tilde f : X \rightarrow f(X)
+		.\] 
+		è continua. $\R$ ricoprimento aperto di $f(X)$, allora
+		 \[
+			 \tilde R = \{f^{-1}(A)\ |\ A\in R\}
+		.\] 
+		è un ricoprimento aperto di $X$, quindi esiste un sottoricoprimento finito
+		\[
+			\{f^{-1} (A_1),\ldots,f^{-1}(A_n)\}
+		.\] 
+		Abbiamo, $f(f^{-1}(A)) = A\cap f(X) = A$\\
+		Quindi  $\{A_1,\ldots, A_n\}$ è sottoricoprimento finito di $R$
+	\end{dimo}
+	\begin{coro}
+		Siano $X$ spazio topologico e $f: X \rightarrow \R$ continua, se $X$ è compatto e diverso dal vuoto allora $f$ ammette massimo e minimo.
+	\end{coro}
+	\begin{dimo}
+		$f(x)(\subseteq \R)$ è compatto, $f(x)\neq 0$ e limitato, quindi  $\sup f(x) \in\R\ni\inf f(x)$. $f(X)$ è anche chiuso, quindi $\sup f(x) = \max f(x)$ e  $\inf f(x) = \min f(x)$
+	\end{dimo}
+	\subsection{Come trovare omeomorfismi}
+	Trovare esplicitamente un omeomorfismo è a volte molto rogonoso, di seguito troviamo degli strumenti per facilitare il lavoro.\\
+\begin{coro}
+	Sia $f: X \rightarrow Y$ applicazione continua fra spazi topologici. Se $X$ è compatto e $Y$ è $T2$ allora $f$ è chiusa
+\end{coro}
+\begin{dimo}
+	$Y$ è $T2$, quindi $f(C)$ è chiuso in  $Y$.
+\end{dimo}
+Otteniamo ora un fatto utilissimo.
+\begin{coro}
+	Sia $f: X \rightarrow Y $ applicazione continua fra spazi topologici. Se $X$ è compatto, $Y$ è $T2$, e $f$ è biettiva, allora $f $ è omeomorfismo
+\end{coro}
+\begin{dimo}
+	Dal corollario precedente, $f$ è chiusa. Allora è un continua, biettiva, chiusa, segue: omeomorfismo.
+\end{dimo}
+\begin{prop}
+	Sia $f : X \rightarrow Y$ applicazione continua fra spazi topologici.\\
+	Supponiamo
+	\begin{enumerate}
+		\item $f$ suriettiva.
+		\item $Y$ compatto.
+		\item $f^{-1}(y)$ compatto $\forall y\in Y$.
+		\item  $f$ chiusa.
+	\end{enumerate}
+	Allora $X$ è compatto.
+\end{prop}
+\textbf{Osservazione}\\
+La condizione analoga (4.) $f$ aperta, non è sufficiente a garantire la compattezza di $X$. (fogli di esercizi per controesempio)
+ \begin{dimo}
+	 Definiamo $A\csubseteq X$ aperto, un insieme  $A'\subseteq Y:$
+	  \[
+		  A' = \{y\in Y\ | \ f^{-1}(y)\subseteq A\}
+	 .\] 
+\textbf{Osservazione }\\
+$A'$ potrebbe essere vuoto. Però A' è aperto in $Y$, verifichiamo che $Y\setminus A'$ è chiuso in $Y:$\\
+ \[
+	 Y\setminus A' = \{z\in Y\ | \ f^{-1}(z)\not\subseteq A\} = \{z\in Y\ | \ \exists b\in X\setminus A \ | \ f(b) = z\} = f(X\setminus A).
+.\] 
+Allora $Y\setminus A'$ è chiuso perché immagine di $X\setminu A$  tramite $f$ chiusa.\\
+Sia $R$ ricoprimento aperto di $X$.\\
+Sia  $y\in Y$, considero  $f^{-1}(y)$ è compatto. Allora esistono  $A_1,\ldots,A_n\in R$ tale che $f^{-1}(y)\subseteq A_1\cup\ldots\cup A_n$, ogni $A_i$ dipende da $y$.\\
+Definiamo  $B_y = A_1\cup\ldots\cup A_n$ ($B_y$ dipende da $y$, definito come $A'$) aperto in $X$\\
+Considero $B'_y$ è non vuoto e contiene $y\in Y$ \\
+Segue:
+\[
+	\{B_y'\ | \ y\in Y\}\text{ è un ricoprimento aperto di } X
+.\] 
+Per compattezza possiamo estrarre un sottoricoprimento finito $B_1_{y_1},\ldots,B_{y_n}'$\\
+Segue $\{B_{y_1},\ldots,B_{y_n}\}$ è ricoprimento finito aperto di $X$, Ciascun  $B_y$ è unione di un numero finito di elementi di $R$, quindi è un ammette un sottoricoprimento finito.
+\end{dimo}
+\begin{prop}
+	Siano $P,Q$ spazi topologici. Se  $P$ è compatto allora la proiezioni $P\times Q \rightarrow Q$ è chiusa.
+\end{prop}
+\textbf{Osservazione:}\\
+La proposizione in realtà è un'equivalenza: $P$ è compatto $ \Leftrightarrow p :P\times Q  \rightarrow Q$ è chiusa $\forall Q $ spazio topologico.
+\begin{dimo}
+	Sia $C\subseteq P\times Q$ chiuso in topologia prodotto.\\
+	Allora $(P\times Q)\setminus C$ è aperto, vogliamo dimostrare che $Q\setminus q(C)$ è aperto, cioè che $Q \setminus q(C)$ è intorno di ogni suo punto $y\in Q\setimnus q(C)$ \\
+	$P\times \{y\} (\subseteq P\times Q)$\\
+	è omeomorfo a  $P$, quindi compatto.\\
+	Consideriamo la solita base della topologia prodotto\\$(P\times Q)\setminus C = \bigcup^{}_{i\in I}U_i\times V_i$ \\
+	Per compattezza $P\times\{y\}$ è contenuto nell'unione.\\
+$P\times \{y\}\subseteq (U_{i_1}\times V_{i_1})\cup\ldots\cup(U_{i_n}\times V_{i_n})\subseteq (P\times Q)\setminus C$\\
+Considero $V = V_{i_1}\cap\ldots\cap V_{i_n}$\\
+ \[
+	 P\times \{y\}\subseteq (U_{i_1}\times V)\cup\ldots\cup ( U_{i_n}\times V)\subseteq (P\times Q)\setminus C
+.\] 
+Allora poniamo $U = U_{i_1}\cup\ldots\cup U_{i_n}$\\
+\[
+	P\times\{y\}\subseteq U\times V \subseteq (P\times Q)\setminus C
+.\] 
+Segue: nessun punto di $V$ è la seconda coordinata di alcun punto di $C$ cioè  $y\in V\subseteq Q\setminus q(C)$\\
+Segue  $q(C)$ è chiuso.
+\end{dimo}
+\textbf{Osservazione}\\
+La dimostrazione assomiglia a quella su $T2 \Leftrightarrow \triangle$ chiusa nel prodotto (vedi teorema di Wallace sul Manetti).\\
+\begin{coro}
+	Se $P$ e $Q$ sono spazi topologici compatti allora $P\times Q$ compatto.
+\end{coro}
+\begin{dimo}
+	Applichiamo a $q: P\times Q \rightarrow Q$ la proposizione che da condizioni sufficienti alla compattezza del dominio.\\
+	Abbiamo $q$ continua, suriettiva, codominio $Q$ compatto, controimmagini $P\times \{y\}$ compatte, $q$ chiusa, per la proposizione precedente, Segue $P\times Q$ compatto
+\end{dimo}
+\textbf{Esempio}\\
+$[0,1]\times[0,1] = [0,1]^2$ è compatto, e in generale $[0,1]^n\ \ \forall n\geq 1$  è compatto.\\
+ \textbf{Osservazione}\\
+ A questo  punto si dimostra facilmente $Y\subseteq \R^n$ è compatto $ \Leftrightarrow Y$ è chiuso e limitato.
+ \subsection{Identificazioni}
+ \begin{defi}
+	 Un'applicazione $f: X \rightarrow Y$ fra spazi topologici si dice identificazione se
+	 \begin{enumerate}
+		 \item $f$ è continua e suriettiva
+		 \item Un sottoinsieme $A\subseteq Y$ qualsiasi è aperto se e solo se  $f^{-1}(A)$ è aperto in $X$
+	 \end{enumerate}
+ \end{defi}
+ \textbf{Osservazione}\\
+Se $f $ è un'identificazione allora la topologia su $Y$ è determinata da $f$ e dalla topologia su $X.$\\
+ \begin{lemm}
+	Sia $f: X \rightarrow Y$ applicazione continua fra spazi topologici.
+	\begin{enumerate}
+		\item Se $f$ è suriettiva e aperta allora è un'identificazione.
+		\item Se $f$ è suriettiva e chiusa allora è un'identificazione.
+	\end{enumerate}
+\end{lemm}
+\begin{dimo}
+	$1)$ Supponiamo  $f$ suriettiva, aperta e continua.\\
+	Sia $A\subseteq Y$ supponiamo  $f^{-1}(A)$ aperto in $X$. Dimostriamo che $A$ è aperto in $Y$.\\
+	Considero  $f(f^{-1}) = A\cap f(X) = A\cap Y = A$ aperto perché  $f$ è aperta\\
+	Il punto 2 della dimostrazione è lasciata per esercizio ma è del tutto analoga.
+\end{dimo}
+\textbf{Esempi}\\
+\begin{enumerate}
+	\item Ogni omomorfismo è identificazione.
+	\item Le proiezioni $p : P\times Q \rightarrow P$ e $q : P\times Q \rightarrow Q$ sono identificazioni.
+	\item $f:[0,1] \rightarrow \ \ \ \ \ \ S^1$\\
+		\text{}\ \ \ \ \ \ \ \ \ $t \rightarrow (\cos(2\pi t),\sin (2\pi t))$\\
+		è suriettiva e continua.\\
+		è anche chiusa perché $[0,1]$ è compatto e $S^1 $ è $T2$.
+\end{enumerate}
+\end{document}
