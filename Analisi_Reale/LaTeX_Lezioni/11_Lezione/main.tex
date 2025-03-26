@@ -1,0 +1,120 @@
+\documentclass[12px]{article}
+
+\title{Lezione 11 Analisi Reale}
+\date{2025-03-26}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Esercitazioni, Foglio 4}
+	\textbf{Esercizio 4}\\
+	$f: X \rightarrow Y$
+	\begin{enumerate}
+		\item se  $B\subseteq 2^Y$ $\sigma$-algebra di $Y$\\
+			$A = \{ f^{-1}(B), B\in B\}$ è una  $\sigma$-algebra in $X$
+	\end{enumerate}
+	\textbf{Svolgimento}\\
+	$\emptyset\in B \Rightarrow f^{-1}(\emptyset) = \emptyset$ \\
+	sia $f^{-1}(C)\in A, $ con $C\in B$ \\
+	$(f^{-1}(C))^c = X\setminus f^{-1}(C) = f^{-1}(C^c)$\\
+	$C\in B \Rightarrow  C^c\in B \Rightarrow  (f^{-1}(C))^c=f^{-1}(C^c) \in A$ \\
+	$\{f^{-1}(C_i)\}_I\geq 1, C\in B$\\
+	$ = \bigcup^{+\infty}_{i= 1}f^{-1}(C_i) = f^{-1}( \bigcup^{+\infty }_{i=1}C_i)\in A$
+	\begin{enumerate}
+		\item[2.] $A \ \sigma$-algebra in $X\\
+			B = \{B\subseteq Y \ | \ f^{-1})B_\in A\}$ è una sigma algebra in $Y$
+	\end{enumerate}
+	\textbf{Svolgimento}\\
+	$f^{-1}(\emptyset) = \emptyset \Rightarrow \emtpyset\in B$ \\
+	$C\in B \Leftrightarrow f^{-1}(C)\in A  \Rightarrow f^{-1}(C)^c \in A \Rightarrow f^{-1}(C^c)\in A \Rightarrow C^c\in B$ \\
+	$\{C_i\}\subset B \Leftrightarrow f^{-1}(C_i)\in A \ \ \forall i$\\
+	$ \Rightarrow  \bigcup^{+\infty}_{i = 1}f^{-1}(C_i) = f^{-1}( \bigcup^{+\infty}_{i = 1}C_i)\in A \Rightarrow \bigcup^{+\infty}_{i = 1}C_i\in C$ 
+	\begin{enumerate}
+		\item[3.] $X \xrightarrow{f} Y$ \\
+			$ f^{-1}(\sigma <F>)\leftarrow \sigma <F>$ con $F\subset 2^X$\\
+			\text{} \ \  \ \ \ $\storto =\\$
+			$ \sigma<f^{-1}(F)>\leftarrow F$ con $F\subset 2^X$
+	\end{enumerate}
+	\textbf{Soluzione}\\
+	Per il primo punto dell'esercizio la controimmagine della $\sigma$-algebra e comunque una $\sigma$-algebra.\\
+	$f^{-1}(\sigma<F>)\supset f^{-1}(F) \Rightarrow f^{-1}(\sigma < F>)\supseteq \sigma < f^{-1}(F)>$\\
+	$\sigma < f^{-1}(F)>\ \ \ B = \{B\subseteq Y \ | \ f^{-1}(B)\in\sigma <f^{-1}(F)>\}$\\
+	questa e`una  $\sigma$-algebra in $Y$ (punto 2)\\
+	$f^{-1}(B) \subseteq\simga <f^{-1}(F)>$ quindi sono l'una contenuta nell'altra, quindi le due  $\sigma$-algebre coincidono.\\[10px]
+\textbf{Esercizio 5}\\
+Sia $X$ un insieme $(\neq \emtpyset)$  $A$ una $\sigma$-algebra in $X$ e sia $\mu : A \rightarrow[0,+\infty]$ tale che:
+\begin{enumerate}
+	\item $\mu(\emptyset) = 0$
+	\item $\{E_i\}\subset A$, $E_i\cap E_j = \emptyset \ \ \forall i\neq j$  \\
+		$ \Rightarrow \bigcup^{+\infty}_{i = 1}E_i = \sum^{+\infty}_{i = 1}\mu(E_i)$
+\end{enumerate}
+\textbf{Osservazione}\\
+$\mu$ rimane monotona e subadditiva\\
+Infatti :\\
+$A,B\in A \ \ A\subseteq B \Rightarrow  B\setminus A\in A$ \\
+$B = A\cup B\setminus A \cup \emptyset \cup\ldots$\\
+ $ \Rightarrow  \mu(B) = \mu(A) + \mu(B\setminus A)\geq \mu(A)$ \\
+ Inoltre $\{A_i\}\subset A$,  $ \bigcup^{+\infty}_{i=1}A_i = A_1\cup A_2\setminus A_1\cup A_3\setminus (A_1\cup A_2)$ \\
+$ \bigcup^{+\infty}_{i = 1}A_i = \bigcup^{+\infty}_{i = 1}(A_i\setminus  \bigcup^{i- 1}_{k = 1} A_k)$\\
+$\mu( \bigcup^{+\infty}_{i = 1}A_i) = \sum^{+\infty}_{i = 1}\mu(A_i\setminus \bigcup^{i -1}_{k = 1}A_k )\leq \sum^{+\infty}_{i = 1}\mu(A_i)$\\
+\textbf{Esercizio}\\
+Dimostrare che $\exists \bar\mu : 2^X \rightarrow [0,+\infty]$ misura \\
+tale che $A\subseteq \sigma$-algebra dei $\bar\mu$-misurabili e $\forall A\in \mathbb A\ \ \  \bar\mu(A) = \mu(A)$ \\
+$E\subseteq X \ \ \bar (E) = \inf\{\mu(A), \ A\in \mathbb A, A\supset E\}$\\
+$\bar\mu(\emptyset)\leq \mu(\emptyset) = 0 \Rightarrow \bar\mu(\emptyset) = 0$ \\
+$E\subseteq \bigcup^{+\infty}_{i =1}E_i$ se $\exists i $ t.c.  $\bar\mu(E_i) = +\infty$\\
+Allora  $\bar\mu(E) \leq \sum^{+\infty}_{i = 1}\bar\mu(E_i) = +\infty$\\
+se $\bar\mu(E_i) < +\infty \ \ \forall i$\i\
+$\forall i \exists A_i\in A$ tale che  $E_i\subseteq A_i$\ \ \  $\bar\mu(E_i)\leq \mu(A)<\bar\mu (E_i) + \frac{\varepsilon}{2^i} \Rightarrow \bigcup^{+\infty}_{i=1}A_i\in A \Rightarrow \bar\mu(E)\leq \mu ( \bigcup^{+\infty}_{i=1}A_i)\leq \sum^{+\infty}_{i = 1}\mu(A_i)$ \\
+$\leq \sum^{+\infty}_{i = 1}\bar\mu(E_i) + \varepsilon \Rightarrow \bar\mu(E) \leq \sum^{+\infty}_{i = 1}\bar\mu (E_i)$ \\
+Se $E\in A \Rightarrow \bar\mu (E) \leq \mu(E)$ \\
+e $\forall A\in A, A\supseteq E \Rightarrow \mu(A) \geq \mu(E) \Rightarrow \bar\mu(E)\geq \mu(E) \Rightarrow \mu(E) = \bar\mu(E)$ \\
+$A\subseteq \mathbb A \Rightarrow  A  \Rightarrow A $  è $\bar\mu$-misurabile cioè $\forall F\subseteq X$ 
+\[
+\bar\mu(F) \geq \bar\mu(F\cap A) + \bar\mu(F\setminus A)
+.\] 
+Se $F\in \mathbb A \Rightarrow A,F\in\mathbb A \Rightarrow \bar\mu(F) = \mu(F) \\= \mu(F\cap A) + \mu(F\setminus A) = \bar\mu (F\cap A) +\bar \mu(F\setminus A)$\\
+se $F\not\in A, $ e  $\bar\mu(F) <\infty$\\
+ $\forall k \ \exists A_k\in \marhbb A\ | \ F\subseteq A_k, $ e  $\bar\mu(F)\leq \mu(A_k) < \bar\mu(F) + \frac 1k$\\
+ $A= \bigcap^{+\infty}_{k=1} A_k\in \mathbb A, A\supseteq F$\\
+ $\bar\mu(F)\leq \mu(A)\leq \liminf_{k \rightarrow +\infty} \mu(A_j)\leq \bar\mu(F)$\\
+ $\exists A\in\mathbb A$ tale che $\bar\mu (F) = \mu(A) \ F\subseteq A$\\
+  $\bar\mu(F) = \mu(B\cap A) + \mu(B\setminus A)\geq \bar\mu(F\cap A) + \bar\mu(F\setminus A)$\\
+  Dato che  $\exists B\in \mathbb A$ tale che $F\subseteq B$ è $\bar\mu(F) = \mu(B)$ \\[10px]
+\textbf{Esercizio 6}\\
+$f:\R \rightarrow\R$ continua\\
+$f(E)\in\eta \ \forall E\in\eta \Leftrightarrow m(f(E)) = 0 \ \forall E\ $ se $m(E) = 0$\\
+ $ ( \Rightarrow )$ sia $N$ tale  che $m(N) = 0$\\
+ per assurdo supponiamo $m(f(N)) > 0$ \\
+  $ \Rightarrow \exists V\subset f(N) \ V\not\in \eta$ (ogni insieme di misura positiva contiene un insieme non misurabile)\\
+  $f^{-1}(V)\cap N\subset N \Rightarrow  m(f^{-1}(V)\cap N) = 0 \\\Rightarrow  f^{-1}(V)\cap N\in eta \Rightarrow f(f^{-1}(V)\cap N) = V\not\in \eta$ ma dovrebbe appartenerci in quanto è immagine di un misurabile (ha misura nulla).\\
+  $ ( \Leftarrow)$\\
+   $E\in \eta$ tale che  $f(E)\in \eta$\\
+    $E\in \eta \Leftrightarrow E = B\cup N$ $m(N) = 0$ $B$ boreliano.\\
+    $B = \bigcup^{+\infty}_{n=1}C_n\subseteq E, C_n$ chiusi\\
+    $f(E) = f( \bigcup^{+\infty}_{i = 1}C_n\cup N) = \bigcup^{+\infty}_{i=1}f(C_n)\cup f(N)$ con $m(f(N)) = 0$ per ipotesi  $ \Rightarrow  f(N)\in \eta$ \\
+    Se $E $ è limitato $ \Rightarrow C_n$ sono compatti $\forall n$\\
+     $ \Rightarrow f(C_n)$ è compatto $\forall n $ ($f$ continua)\\ 
+     $ \Rightarrow  \bigcup^{+\infty}_{n=1}f(C_n)\in B\subseteq \eta$ (boerliano)\\
+     $ \Rightarrow f(E)\in \eta$ \\
+     In generale, se $E\in\eta \Rightarrow \bigcup^{+\infty}_{n-1}E\cap[-n,n]$, limitati $\forall n$  $f(E) = \bigcup^{+\infty}_{i = 1}f(E\cap[-n,n])\in\eta$ unione misurabile di misurabili.\\
+     \textbf{Esercizio 11}\\
+     $f: \R \rightarrow \R$\\
+     \[
+     f(x) = \begin{cases}
+	     0 \ \ \text{ se } x < 0 , x > 1, \ x \in[0,1]\cap \Q\\
+	     n - 1\ \ \text{ se } x\in[0,1]\setminus\Q, \ x = \sum^{+\infty}_{k = n}\frac{a_k}{10^k} \ a_n \neq 0\ \ a_k\in\{0,1,\ldots,9\}
+     \end{cases}
+     .\] 
+     le prime $n-1$ cifre sono tutte nulle, e gli $a_k$ sono le cifre del numero irrazionale\\
+     $\displaystyle x\in[0,1] a_1\neq 0 \Rightarrow x\geq \frac {a_1}{10}\geq \frac 1{10}$\\
+     Se $x\in[0,\frac{1}{10}], a_2\neq 0 \Rightarrow  x > \frac {1}{100}$ \\
+     $f(x) = \chi_{(\frac{1}{100},\frac{1}{10})\setminus \Q}$ (tra 0,01 e 0,1) \\
+     $\displaystyle f(x) = \sum^{+\infty}_{k = 2}(k-1)\chi_{(\frac{1}{10^k}, \frac{1}{10^{k-1}})\setminus \Q} = \lim_{n  \rightarrow +\infty} \sum^{n}_{k = 2}(k-1)\chi_{(\frac{1}{10^k}, \frac{1}{10^{k-1}})\setminus \Q}(x)$ \\
+     Quindi $f$ è misurabile perché limite puntuale di funzioni misurabili.
+
+
+\end{document}
