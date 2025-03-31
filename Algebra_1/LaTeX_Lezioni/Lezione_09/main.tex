@@ -1,0 +1,231 @@
+\documentclass[12px]{article}
+
+\title{Lezione 9 Algebra I}
+\date{2025-03-31}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Esercizio 14 scheda 15}
+$R$ anello commutativo. $E\subseteq R$ sottoinsieme.\\
+$V(E) := \{P\subseteq R \ | \ P$ ideale primo tale che $E\subseteq P\}$\\
+$Spec(R) = \{P\subseteq R \ |\ P$ ideale primo$\}$ (spettro di  $R$)\\
+\textbf{Obiettivi}\\
+Definire una topologia su $Spec(R)$\\
+ \textbf{Idea}\\
+ Definire gli aperti come complementari dei $V(E)$ (che saranno quindi i chiusi di $Spec(R)$)\\
+ dato un omomorfismo di anelli $f: R \rightarrow S$, definire una funzioen continua
+ \[
+ f^*:Spec(S) \rightarrow Spec(R)
+ .\] 
+ \textbf{Osservazione}\\
+ $I\subseteq R$ ideale
+ \begin{enumerate}
+	 \item $\sqrt{I}:=\{a\in R \ | \ a^n\in I$ per qualche $n\in\Z_{>0}\}$ \\
+	 $Nil(R) = \sqrt{0} = \{$elementi nilpotenti in $R\}$ (elementi che ad una certa potenza fanno 0)
+ \item $\pi : R \rightarrow R/I$
+	 \[
+		 \sqrt{I} = \pi^{-1}(Nil(R/I))
+	 .\] 
+ $[a]\in Nil(R/I) \Leftrightarrow [a]^n = [0]$ in $R/I$\\
+ $ \Leftrightarrow [a^n]=[0]$ in $R/I \Rightarrow  a^n\in I$
+\item $V(E) = V(I) = V(\sqrt{I})$ dove $I = (E)$
+ \end{enumerate}
+ \subsection{Moduli}
+ \begin{defi}
+ 	 $R$ anello, Un gruppo abeliano $(M, +)$ è un $R$-modulo sinistro tramite \\un'applicazione 
+	 \[
+	 \begin{aligned}
+		 $\cdot : &R\times M \rightarrow M$\\
+			  &(r,m) \rightarrow r\cdot m
+	 \end{aligned}
+	 .\] 
+	 se valgono le seguenti proprietà:
+	 \begin{enumerate}
+		 \item $(r + s)\cdot m = r\cdot m + s\cdot m$ \ \ $\forall r,s\in R \ \ \forall m\in M$
+		 \item  $(r\cdot s)\cdot m = r\cdot (s\cdot m) \ \ \ \forall r,s\in R\ \ \ \forall m\in M$
+		 \item $r\cdot (m + n ) = r\cdot m + r\cdot n \ \ \ \forall r\in R\ \ \forall m,n\in M$
+		 \item  $1_R\cdot m = m \ \ \ \forall m\in M$
+	 \end{enumerate}
+ \end{defi}
+ \textbf{Esempi}\\
+ \begin{enumerate}
+	 \item Se $R$ è un campo gli $R$-moduli sinistri sono gli spazi vettoriali su $R$
+	 \item  $(G,+)$ gruppo abeliano è uno $\Z$-modulo (sinistro), basta definire 
+		 \[
+		 \begin{aligned}
+			&\Z\times G \rightarrow \Z\\
+			& (n,g) \rightarrow n\cdot g
+		 \end{aligned}
+		 .\] 
+		 dove 
+		 \[
+		 $n\cdot g = \begin{cases}
+			 0 \ \ \ \text{se } n= 0\\
+			 \frac{n}{|n|}(g + \ldots + g) \ \ \  \text{se }n\neq 0
+		 \end{cases}$
+		 .\] 
+	 \item $R$ è un $R$-modulo sinistro tramite \[
+	 \begin{aligned}
+		&R\times R \rightarrow R\\
+		&(r,s) \rightarrow r\cdot s
+	 \end{aligned}
+	 .\] 
+ \item $R^n = R\times\ldots\times R \ \ \ \ n\geq 1$\\
+	 è un  $R$-modulo sinistro tramite
+	 \[
+		 \begin{aligned}
+		 &R\times R^n \rightarrow R^n \\
+		 &(r,\matrice{r_1\\\vdots\\r_n}) \rightarrow \matrice{r\cdot r_1\\\vdots\\r\cdot r_n}
+		 \end{aligned}
+	 .\] 
+ \end{enumerate}
+ \textbf{Esercizio}\\
+ $R$ anello, $M$ $R$-modulo (sinistro)\\
+ Dimostrare:
+ \begin{enumerate}
+	 \item $0_R\cdot m = 0_M\ \ \ \forall m\in M$
+	 \item  $r\cdot 0_M = 0_M \ \ \forall r\in R$
+	 \item  $-1_R)\cdot m = -m \ \ \forall m\in M$
+ \end{enumerate}
+ \begin{defi}
+ 	$R$ anello\\
+	$M,N$  $R$-moduli sinistri, Un omomorfismo di $R$-moduli è una funzione  $f: M \rightarrow N$ tale che:
+	\begin{enumerate}
+		\item $f(m + m') = f(m) + f(m')\ \ \ \ \forall m,m'\in M$
+		\item  $f(r\cdot m) = r\cdot f(m) \ \ \forall m\in M, \ \forall r\in R$
+	\end{enumerate}
+ \end{defi}
+ \begin{defi}
+ 	$M,N$ due $R$-moduli sinistri,\\
+\[Hom_R(M,N) = \{f: M \rightarrow N\ | \ f \text{ omomorfismo di } R\text{-moduli}\}\]
+ \end{defi}
+ \textbf{Esercizio:}\\
+ Se $R$ commutativo allora $Hom_R (M,N)$ è un  $R$-modulo sinistro tramite:
+ \[
+ \begin{aligned}
+	&R\times Hom_R(M,N) \rightarrow Hom_R(M,N)
+	& (r,f) \rightarrow (r\cdot f)(m) = r\cdot f(m)
+ \end{aligned}
+ .\] 
+ \textbf{Attenzione}\\
+ $R$ commutativo garantisce che $(r\cdot f)$ sia un omomorfismo $\forall r\in R \\ \forall f\in Hom_R(M,N)$\\
+ \textbf{Esempio:}\\
+ $R$ anello, $I\subseteq R$ ideale sinistro.\\
+ Allora $I$ è un $R$-modulo sinistro tramite 
+ \[
+ \begin{aligned}
+	&R\times I \rightarrow I\\
+	& (r,m) \rightarrow (r\cdot m)
+ \end{aligned}
+ .\] 
+ \textbf{Osservazione:}\\
+ $R$ anello, $M\  R$-modulo sinistro.\\
+ \[
+ End_R(M) := Hom_R(M,M)
+ .\] 
+ è un anello con le operazioni di somma tra funzioni
+ \[
+	 (f + g)(m) := f(m) + g(m)
+ .\] 
+ e prodotto dato dalla composizione. (verificare per esercizio)\\
+ \textbf{Osservazione}\\
+ $R$ anello, $M$ $R$-modulo sinistro\\
+ $\leadsto End_R(M)$ anello\\
+ \textbf{Definiamo}
+ \[
+	 \begin{aligned}
+		 \mu: &R \rightarrow End_R(M)\\
+		      &r \rightarrow \mu_r
+	 \end{aligned}
+ .\]
+ dove $\mu_r(m) = r\cdot m \ \ \ \forall r\in R, \ \ \forall m\in M$\\
+  $\mu$ è un omomorfismo di anelli.\\
+  Dobbiamo verificare:
+  \begin{enumerate}
+	  \item $\mu_{r+s} = \mu_r + \mu_s$\\
+		  $\mu_{r+s}(m) = (r+s)\cdot m = r\cdot m + s\cdot m = \mu_r(m) + \mu_s(m)\hfill \forall m\in M$ 
+	  \item  (prodotto in $R$) $\mu_{r\cdot s} = \mu_r\circ\mu_s$ (composizione di funzioni)\\
+		  $\mu_{r\cdot s}(m) = (r\cdot s)\cdot m = r\cdot (s\cdot m) = \mu_r(\mu_s(m)) = \mu_r\circ\mu_s(m) \hfill \forall m\in M$
+  \end{enumerate}
+  \begin{defi}
+  	$R$ anello, $M\ R$-modulo sinistro\\
+	Un sottogruppo abeliano  $A\subseteq M$ si dice  $R$-sottomodulo di $M$ se 
+	 \[
+		 r\cdot n \in N \ \ \forall n\in N \ \ \forall r\in R
+	.\] 
+  \end{defi}
+  \textbf{Osservazione }\\
+  Se $R$ campo e $M$ spazio vettoriale su $R$ allora i sottomoduli di $M$ sono i sottospazi vettoriali
+  \begin{defi}
+  	$R$ anello $f: M \rightarrow N$ omomorfismo di $R$-moduli sinistri
+	\begin{itemize}
+		\item Il nucleo di  $f$ è 
+			\[
+				\ker(f) = \{m\in M\ | \ f(m) = 0_N\}
+			.\] 
+		\item L'immagine di  $f$ è 
+			\[
+				Im(f) = \{ n\in n\ | \ \exists m\in M \ \ f(m) = n\}
+			.\] 
+	\end{itemize}
+  \end{defi}
+  \textbf{Esercizio}\\
+  Verificare le seguenti affermazioni:
+  \begin{enumerate}
+	  \item $\ker(f)\subseteq M$ è un $R$-sottomodulo
+	  \item $Im(f)\subseteq N$ è un  $R$-sottomodulo
+	  \item $f$ è iniettivo se e solo se $\ker(f) = \{O_M\}$
+	  \item  $f$ è suriettiva se e solo se $Im(f) = N$.
+  \end{enumerate}
+  \textbf{Obiettivo:}\
+  Teorema di omomorfismo per moduli\\
+  \textbf{Osservazione}\\
+  $R$ anello. $M$ $R$-sottomodulo sinistro.\\
+  Ogni $R$-sottomodulo $N$ di  $M$ è in particolare un sottogruppo ($N\normale M$ poiché $M$ abeliano)\\
+  Abbiamo il gruppo quoziente $M/N$ su cui definiamo la struttura di  $R$-modulo sinistro
+  \[
+  \begin{alinged}
+	&R\times M/N \rightarrow M/N\\
+	(r,m + N) \rightarrow r \cdot m + N
+  \end{alinged}
+  .\]
+  \textbf{Osservazione}\\
+  è ben definita!
+  \[
+  m - m'\in N \Rightarrow N\ni r\cdot (m-m') = r\cdot m - r\cdot m' 
+  .\]
+  \begin{teo}[di omomorfismi]
+  	$R$ anello\\
+	$f: M \rightarrow M'$ omomorfismo di $R$-moduli sinistri\\
+	$N\subseteq M\ \ R$-sottomodulo tale che $N\subseteq \ker(f)$\\
+	Allora  esiste un unico omomorfismo 
+	\[
+	\bar f :M/N \rightarrow M'
+	.\] 
+	tale che  AGGIUNGI DIAGRAMMA 2:49 sia commutativo (ovvero $\pi\circ \bar f = f$)
+  \end{teo}
+  \begin{coro}
+  	$R$ anello. $M,M'\ R$-moduli sinistri. $N\subseteq M$ $R$-sottomodulo.\\
+	Allora esiste una corrispondenza biunivoca:
+	 \[
+		 \bigg\lbrace \begin{aligned}
+			 &\text{ omomorfismi } f: M \rightarrow M' \text { t.c. }\\ &N\subseteq \ker(f)
+		 \end{aligned}\bigg\rbrace\leftrightarrow \{\text{omomorfismi} \ \bar f : M/N \rightarrow M'\}
+	.\] 
+  \end{coro}
+  \begin{dimo}[del teorema]
+  	dato il teorema di omomorfismo per gruppi, basta verificare che l'omomorfismo $\bar f$ sia $R$-lineare\\
+	Ricordo
+	\[
+	\bar f(m + N) = f(m)
+	.\] 
+	Abbiamo
+	\[
+	\bar f(r\cdot (m + N)) = \bar f(r\cdot m + N) = f(r\cdot m) = r\cdot f(m) = r\cdot \bar f(m + N)
+	.\] 
+  \end{dimo}
+\end{document}

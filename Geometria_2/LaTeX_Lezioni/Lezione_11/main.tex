@@ -1,0 +1,213 @@
+\documentclass[12px]{article}
+
+\title{Lezione 11 Geometria 2}
+\date{2025-03-31}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Altro sulle identificazioni}
+	\begin{lemm}[proprietà universale delle identificaizone]
+		SCHEMA 3:18\\
+		Sia $f:X \rightarrow Y$ identificazione fra spazi topologici, sia $Z$ spazio topologico e $g:X \rightarrow Z$ continua. Supponiamo che $g$ sia costante sulle fibre di $f$ (fibra di  $f = $ controimmagine  $f^{-1}(y)$ per $y\in Y$ ). Allora $\exists ! h: Y \rightarrow Z$ continua t.c. il diagramma commuta cioè $g = h\circ f$
+	\end{lemm}
+	\begin{dimo}
+		Per ogni $y\in Y$ scegliamo $x\in X$ tale che  $f(x) = y$ ponendo  $h(y) = g(x)$ questo definisce
+		 \[
+		h:Y \rightarrow Z
+		.\] 
+		È ben definita perché $g$ è costante sulla fibra di $f$, infatti se $x\in X $ soddisfa $f(x') = y$ allora  $x,x'\in f^{-1}(y)$ e  $g(x) = g(x') = h(y)$.\\
+		Chiara,ente questa  $h$ è unica tale che $g = h\circ f$\\
+		Verifichiamo che  $h$ è continua, sia $A\subseteq Z$ aperto. Abbiamo  $g^{-1}(A)\subseteq X$ è aperto, Inoltre $g^{-1}(A) = f^{-1}(h^{-1}(A))$\\
+		Quindi  $h^{-1}(A)$ è un sottoinsieme di $Y$ la controimmagine in $X$ è aperta. Visto che $f$ è identificazione, $h^{-1}(A)$ è aperta.
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Sia $f:X \rightarrow Y$ identificazione.\\
+	Sia $A\subseteq X$ aperto saturo, cioè  $\forall a\in A \ \ \forall b\in X. $ se  $f(a) = f(b)$ allora  $b\in A$.\\
+	Allora vale  $f^{-1}(f(A))=$ insieme dei punti di  $X$ che vanno in punti di $Y$ dove vanno anche punti di $A$\\
+	Allora  $f(A)$ è aperto in $Y$ perché la sua controimmagine è $A$\\
+	Cioè  $f$ è aperta sugli aperti saturi.
+	\subsection{Topologia quoziente}
+	\begin{defi}[Topologia quoziente]
+		Siano $X$ spazio topologico, $Y$ insieme, $f:X \rightarrow Y$ applicazione suriettiva.\\
+		La famiglia
+		\[
+			\{A\subseteq Y\ |\ f^{-1}(A) \text{ è aperto di } X\}
+		.\] 
+		questa è una topologia su $Y$ ed è detta topologia quoziente (indotta da $f)$
+	\end{defi}
+	\textbf{Esercizio}\\
+	Verificare che sia una topologia\\
+	\textbf{Osservazione}\\
+	Se su $Y$ metto la topologia quoziente allora $f $ è un'identificazione. Inoltre è l'unica topologia su $Y$ che rende $f $ un'identificazione.\\
+	\textbf{Esempi}\\
+	\begin{enumerate}
+		\item Sia $X$ spazio topologico, sia $\sim$  una relazione d'equivalenza su $X$ e consideriamo  $X/\sim = \{$ classi di equivalenza  $[x]$ con  $x\in X\}$\\
+			e l'applicazione  
+			\[
+			\begin{aligned}
+				$\pi: &X-> X/\sim$\\
+				      & $x \rightarrow [x]$
+			\end{aligned}
+			.\]  Si mette su $X/\sim$ la topologia indotta da  $\pi$\\
+		\item Considero  $X = [0,1]$ definisco
+			 \[
+			x\sim y \Leftrightarrow \begin{cases}
+				x = y \ \ \ \text{ oppure }\\
+				x,y\in\{0,1\}
+			\end{cases}
+			.\] 
+			Le classi di equivalenza sono
+			\[
+				[0] = [1], [z] \ \ \forall z\in]0,1[
+			.\] 
+			Mettiamo su $X/\sim$ la topologia quoziente\\
+			Ad esempio  $X = [0,\frac 12[\subseteq X$ è aperto in $X$. L'immagine  $\pi(C)$ è 
+			\[
+				\pi (C) = \{ [0] = [1] \} \cup \{[z]\ | \ z\in ]0,\frac 12 [\}
+			.\]  è aperto in $X/\sim$?\\
+			La sua controimmagine è  $\pi^{-1}(\pi(C))$ = punti di  $X$ equivalenti a qualche punto di $C = [0,\frac 12[\cup \{1\}$ non è aperto in $[0,1]$ Ad esempio invece\\
+			 \[
+				 \pi([0,\frac 12[\cup ]\frac 34,1])
+			.\] 
+			è un aperto in $X/\sim$. Vediamo che  $X/\sim$ è omeomorfo a  $S^1$.
+	\end{enumerate}
+	\textbf{Ricorda:} $X = [0,1]$,  $x\sim y \Leftrightarrow \begin{cases}
+		x = y \ \ \ opp.\\
+		x,y\in\{0,1\}
+	\end{cases}$ \\
+	Verifica che $X/\sim$ è omeomorfo a  $S^1$ (importante!) \\
+	Abbiamo le applicazioni:\\
+	AGGIUNGI GRAFICO 4:25\\
+	$g(t) = (\cos(2\pi t),\sin(2\pi t)) $ è continua, ed è costante sulle fibre di $\pi$\\
+	Fibre di  $\pi: \ \{z\} = [z] = \pi^{-1}([z])\ \ \ \forall z\in]0,1[$\\
+	$\pi^{-1}([0]=[1]) = [0] = [1] = \{0,1\}$\\
+	Infatti  $g(0) = g(1)$ \\
+	Per la proprietà universale delle identificazioni esiste $h: X/\sim \rightarrow S^1$ tale che $g(\pi(t)) = f(h([z])) = g(t)$ \\
+	Inoltre  $h$ è suriettiva perché lo è $g$\\
+	Si verifica facilmente che  $h$ è iniettiva perché $g$ non `e iniettiva, solo perchè $g(0) = g(1)$\\
+	Inoltre  $S^1$ è T2 (poiché è in $\R^2)$ e  $X/\sim$ è compatto poiché $X/sim = \pi(X)$ e  $X$ è compatto\\
+	\textbf{Terzo esempio}\\
+	$X = \R$ definisco  $x\sim y \Leftrightarrow x-y\in \Z$\\
+	Possiamo immaginare questo quoziente come una spirale guardata dall'alto (la retta $\R$ proiettata sul piano $x,y$ dove quelli sulla stessa fibra sono quelli a distanza 1,l'un l'altro)\\
+	 Verifichiamo che $X/\sim$ è omeomorfo a  $S^1$. Come prima abbiamo\\
+	 Inserisci immagine 4:40\\
+	 Prendo  $g(t) = (\cos(2\pi t), \sin (2 \pi t))$ come prima abbiamo l'applicazione\\
+	 $h([t] = g(t)$ è ben definita $(g(t + n) = g(t) \ \ \forall t\in \R, \ \ \forall n\in \Z)$ è continua. Anche qui  $h$ è biettiva. Vorrei che $X/\sim$ compatto, ma  $X$ non è compatto.\\
+	 Osservo che $\pi(X) = X/\sim = \pi([0,1])$ poiché ogni classe di equivalenza ha rappresentante in  $[0,1]$ \\
+	 Quindi $h$ è omeomorfismo\\
+	 \textbf{Esempio 4}\\
+	 In $\R^2$ consideriamo  $X= \R\times\{0,1\}$\\
+	 definiamo
+	  \[
+		  (x,y)\sim(x',y') \Leftrightarrow \begin{cases}
+			  (x,y) = (x',y') \ \ \ oppure\\
+			  x = x'\neq 0
+		  \end{cases}
+	 .\] 
+	 È una relazione di equivalenza per cui \\
+	 $(x,0)\sim (x,1) $ se $x\neq 0$\\
+	  $(0,0)\not\sim (0,1)$\\
+	   $X/\sim$ è uno specie di $\R$ con l'origine "raddoppiata"  \\
+	   $X/\sim$ non è T2\\
+	   Esempio di intorno  aperto di $[(0,0)]$\\
+	   $\pi(]-1.1[\times\{0\}\cup]-1,0[\cup]0,1[)\times \{1\}$ aperto saturo di  $X$ \\
+	   \textbf{Esempio 5}\\
+Dato $X$ spazio topologico e $Y\subseteq X$ sottoinsieme, spesso si considera  $\sim_Y$ su $X$:
+\[
+a\sim b \Leftrightarrow \begin{cases}
+	a = b \ \ \ opp.\\
+	a,b\in Y
+\end{cases}
+.\] 
+Lo spazio topologico $X/\sim$ è in $X$\\
+dove ho contratto i sottoinsieme  $Y$ ad un singolo punto.\\
+L'esempio 2 è ottenuto in questo modo prendendo $Y = \{0,1\}$ \\
+\textbf{Esempio}\\
+$X = \R^2$ definiamo $Y = \{p\in\R^2\ | \ ||p||^2 \leq 1\}$ e considero  $X/\sim_Y$\\
+È omeomorfo a  $S^2$. Possiamo anche prendere  $Z = \{p\in \R^2\ | \ ||p|| > 1\}$ \\
+$X/\sim_Z$ è più strano!
+ \begin{defi}
+	 Sia $X$ spazio topologico, considero $Omeo(X) = \{ f: X \rightarrow X\ | \ f$ è omeomorfismo$\}$ è un gruppo con operazione $f\circ g$ ed è elemento neutro  $Id_X$.\\
+	 Sia  $G\subseteq Omeo(X)$ un sottogruppo.\\
+ Si definisce  $x\sim y \Leftrightarrow \exists g\in G\ | \ g(x) = g\}$ (è relazione d'equivalenza (ad esempio se $x\sim y$ e $y\sim z$ allora  $\exists g\in G\ | \ g(x) = y$  $\exists h\in G \ | \ h_(y) = z$ allora $z = h(y) = h(g(x)) = (h\circ g)(x)$ da cui  $x\sim z)$ \\
+ Si definisce lo spazio topologico
+ \[
+ X/G= X/\sim
+ .\] 
+ (Le classi di equivalenza sono le orbite di $G$ su $X$)
+\end{defi}
+\textbf{Esempio}\\
+$X = \R$, poniamo 
+\[
+\begin{aligned}
+	f_n: &\R \rightarrow \R\\
+	     &x \rightarrow x + n
+\end{aligned}
+.\] 
+\[
+	G = \{f_n\ | \ n\in \Z\}
+.\]  è sottogruppo di $Omeo(X)$ infatti  $Id_X = f_0$\\
+$f_n\circ f_m = f_{n+m}$\\
+la relazione è la stessa di prima
+ \[
+x\sim y \Leftrightarrow x-y\in\Z
+.\] 
+\begin{prop}
+	Sia $X$ spazio topologico sia $G\subseteq Omeo(X)$ sottogruppo.\\
+	Allora
+	 \[
+	\begin{aligned}
+		\pi: &X \rightarrow X/G\\
+		x \rightarrow [x]
+	\end{aligned}
+	.\]  è aperta.\\
+	Inoltre se $G$ è  finito allora $\pi$ è anche chiusa.
+\end{prop}
+\begin{dimo}
+	Sia $A\subseteq X$ aperto, dimostriamo che $\pi(A)$ è aperto in $X/G$\\
+	Considero  $\pi^{-1}(\pi(A)) = \{x\in X \ | \ \pi(x)\in \pi(A)\} $\\
+	$= \{x\in X \ | \ \exists a\in A \ | \ \pi(a) = \pi(x)\}$\\
+	$ = \{x\in X \ | \ \exists g\in G \ | g(x) \in A\}$ \\
+	$ \displaystyle \bigcup^{}_{h\in G}h(A)$ con $h = g^{-1}$ \\
+	Quindi $\pi^{-1}(\pi(A))$ è unione di aperti, quindi è aperto in  $X$, quindi $\pi(A)$ è aperto in $X/G$ \\
+	La dimostrazione con $G$ finito è analoga prendendo $A\subseteq X$ chiuso.
+\end{dimo}
+\begin{teo}
+	Siano $X$ spazio topologico e $G\subseteq Omeo(X)$ sottogruppo. Suppongo $X$ T2, allora $X/G$ è T2  $ \Leftrightarrow$ $D = \{(x,g(x))\in X\times X\ | \ x\in X\ g\in G\}$ è chiuso in $X\times X$
+\end{teo}
+\textbf{Osservazione}\\
+In generale data una relazione d'equivalenza $X/\sim$ T2 non è equivalente a $\{(x,y)\ | x\sim y\}$ chiuso in $X\times X$\\
+ \textbf{Osservazione}\\
+ Siano $f:X \rightarrow Y, \ g:Z \rightarrow W$\\
+ applicazione aperta fra spazi topologici. Allora
+ \[
+ \begin{aligned}
+	 f \times g : &X\times Z \rightarrow Y\times W\\
+		      &(x,z) \rightarrow (f(x),g(x))
+ \end{aligned}
+ .\] 
+ è aperta. Ma attenzione: se $f,g$ sono identificazioni, non è detto che lo sia $f\times g$ (V foglio di esercizi)
+ \begin{dimo}
+ 	Considero
+	\[
+	\pi\times\pi:X\times X \rightarrow X/G\times X/G
+	.\] 
+	Ricordo $\pi:X \rightarrow X/G$ è aperta e suriettiva.\\
+	quindi $\pi\times\pi$ è aperta e suriettiva,\\
+	quindi  $\pi\times\pi$ è un'identificazione.\\
+	Abbiamo
+	\[
+		D = (\pi\times\pi)^{-1}(\Delta_{X/G})
+	.\] 
+	dove $\Delta_{X/G}\subseteq X/G\times X/G$ è la diagonale.\\
+	Infatti  $(x,y)\in X\times X$ soddisfa  $\pi(x) = \pi(y) \Leftrightarrow [x] = [y] \Leftrightarrow ([x],[y])\in\Delta_{X/G}$\\
+	Quindi $X/G$ è T2 $ \Leftrightarrow \Delta $ è chiuso in $X\times X$\\
+	In un'identificazione qualsiasi, un sottoinsieme del codominio è chiuso se e solo se la diagonale è chiusa.finisci lezione\\
+ \end{dimo}
+
+
+\end{document}
