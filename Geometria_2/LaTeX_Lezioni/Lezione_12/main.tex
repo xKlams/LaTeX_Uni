@@ -1,0 +1,194 @@
+\documentclass[12px]{article}
+
+\title{Lezione 12 Geometria 2}
+\date{2025-04-01}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Nuovo sito del prof}
+	Sito del corso www.sites.google.com/uniroma1.it/guidopezzini/\\
+	\subsection{Gruppi topologici}
+	\begin{defi}
+		Un gruppo topologico è un gruppo $G$ che è anche uno spazio topologico\\
+		tale che l'operazione di gruppo
+		\[
+		\begin{aligned}
+			&G\times G \rightarrow G\\
+			& (g,h) \rightarrow g\cdot h
+		\end{aligned}
+		.\] 
+		e l'inverso
+		\[
+		\begin{aligned}
+			&G \rightarrow G\\
+			& g \rightarrow g^{-1}
+		\end{aligned}
+		.\] 
+		sono applicazioni continue
+	\end{defi}
+	\textbf{Esempi}
+	\begin{enumerate}
+		\item Se $G$ è un gruppo qualsiasi diventa un gruppo topologico con topologia banale o discreta.
+		\item $(\R^n,+)$ $\R^n$ con topologia euclidea è un gruppo topologico.
+		\item  $GL(n,\R), GL(n,\C)$ con prodotto di matrici\\
+			Identifichiamo \\
+			$Mat_n(\R)$ con $\R^{n^2}$ e  $Mat_N(\C)$ con $\R^{2n^2}$\\
+			mettiamo su  $GL(n)$ la topologia di sottospazio. Allora $GL(n,\R)$ e  $Gl(n,\C)$ sono gruppi topologici 
+		\item Anche sottogruppi noti quali $Sl(n), So(n), U(n),\ldots$ \\
+			sono gruppi topologici.
+	\end{enumerate}
+	\textbf{Esercizio}(difficile)\\
+	Sia  $G$ un gruppo topologico $T2$, Sia $H\subseteq G$ un sottogruppo chiuso. Consideriamo
+	 \[
+		 G/H = \{\text{classi laterali }gH \text{ con } g\in G\}
+	.\] 
+	Ricordo: $G/H = G/\sim$\\
+	dove  $g_1\sim g_2 \Leftrightarrow g_1H = g_2H$\\
+	Dimostrare che $G/H$ è $T2$ (con la topologia quoziente)\
+	\newpage
+\subsection{Proprietà di numerabilità}
+\begin{defi}
+	Sia $X$ spazio topologico
+	 \begin{enumerate}
+		 \item $X$ si dice $1^o$-numerabile se ogni punto ha un sistema fondamentale di intorni numerabili
+		 \item $X$ si dice $2^o$-numerabile se  la sua topologia ha una base numerabile.
+		 \item $X$ si dice separabile se $X$ ha un sottoinsieme denso e numerabile.
+	\end{enumerate}
+\end{defi}
+\textbf{Esempi}
+\begin{enumerate}
+	\item $\R^n\ni p,$ sistema fondamentale di intorni e  $\{B_{\frac 1n}(p)\ | \ n\in \Z_{\geq 1}\}$\\
+		quindi $\R^n$ è $1^o $-numerabile\\
+		Base numerabile
+		\[
+			\{B_{\frac 1n}(q)\ | \ n\in \Z_{\geq 1 }, q\in \Q^n\}
+		.\] 
+		quindi $\R^n$  è $2$-numerabile. Inoltre $\Q^n$ è denso in $\R^n$ ed è numerabile quindi  $\R^n$ è separabile.
+	\item Ogni spazio topologico finito è $1^o$-numerabile, $2^o$-numerabile, separabile.
+	\item Ogni spazio topologico numerabile è separabile
+	\item Sia $X$ spazio topologico discreto, di qualsiasi cardinalità: è $1^o$-numerabile, Per ogni $x\in X$\\
+		$\{x\}$ è intorno di $x$, $\{\{x\}\}$ è un sistema fondamentale di intorni.
+
+\end{enumerate}
+\begin{lemm}
+	Ogni spazio topologico $2^o$-numerabile è $1^o$ numerabile
+\end{lemm}
+\begin{dimo}
+	Sia $B$ base numerabile, Sia $x\in X$ e consideriamo  $J = \{C\in B\ | C \ni x\}$.\\
+	Allora  $J$ è sistema fondamentale di intorni. Infatti sia $U$ intorno di x,\\
+	sia $A\subseteq X$ aperto tale che $x\in A\subseteq U$ scriviamo  $A \bigcup^{}_{i\in I}B_i$\\
+	con $B_i\in B.$ Esiste $i_0\in I\ | \ B_{i_0}\ni x$ allora $B_{i_0}\in J$ e $B_{i_0}\subseteq U$. Segue $J$ è sistema fondamentale di intorni
+\end{dimo}
+\begin{prop}
+	Ogni spazio metrico:
+	\begin{enumerate}
+	\item  è $1^o$-numerabile
+	\item se è separabile allora è $2^o$-numerabile
+	\end{enumerate}
+\end{prop}
+\begin{dimo}
+	Procediamo per ogni punto
+	\begin{enumerate}
+		\item Sia $p\in X$ $(X$ spazio metrico$)$\\
+			allora $\{B_{\frac 1n}(p)\ |\ n\in \Z_{\geq 1}\}$ è sistema fondamentale d'intorni 
+		\item Sia $E$ sottoinsieme denso numerabile di $X$, 
+			\[
+				B = \{B_{\frac 1n}(e)\ | \ e\in E\ \ n\in \Z_{\geq 1}\}
+			.\] 
+			Verifichiamo che è una base. Sia $A\subseteq X$ aperto.\\
+			Dato $a\in A$\\
+		scegliamo  $n(a)\in \Z_{\geq 1}$ tale che $B_{\frac{2}{n(a)}}(a)\subseteq A}$\\
+		Consideriamo $B_{\frac{1}{n(a)}}(a)$ e un punto  $e\in E$ tale che 
+		 \[
+			 e\in B{\frac 1 {n(a)}}(a) \ 
+		.\] 
+		ricordiamo: $B_{\frac 2{n(a)}}(a)\subseteq A.$ Allora\\
+		$B_{\frac {1}{n(a)}}(e)\ni a$\\
+		Segue  $a\in B_{\frac{1}{n(a)}}(e)\subseteq B_{\frac{2}{n(a)}}(a)\subseteq A$ per la disuguaglianza triangolare.\\
+		Chiamiamo  $e = e(a)$ Abbiamo
+		\[
+			A = \bigcup^{}_{a\in A} B_{\frac 1 {n(a)}} (e(a))
+		.\] 
+		Segue $B$ è base.
+	\end{enumerate}
+\end{dimo}
+\begin{lemm}
+	Ogni spazio topologico $2^o$-numerabile è separabile.
+\end{lemm}
+\begin{dimo}
+	Sia $B$ base numerabile, $B = \{A_1,A_2,\ldots\}$\\
+	basta scegliere $e_i\in A_i \ \ \forall i$ e porre  $E = \{e_1,e_2,\ldots\}$
+\end{dimo}
+\textbf{Esempio:}\\
+\underline{Non è vero} che ogni spazio topologico $1^o$-numerabile è separabile e $2^o$-numerabile. Ad esempio $\E$ con topologia di Sorgenfey\\
+Una base è $B = \{[a,b[\ | \ a<b\}$\\
+Quindi  $\Q$ è denso in $\R$ anche con questa topologia, quindi $\R $ è separabile.\\
+Per ogni $a\in \R$ la famiglia  $\{[a,a + \frac 1n[\ | \ n\in \Z_{\geq 1}\}$\\
+è un sistema di intorni di  $a$. Ma $\R$ con questa topologia \undelrine{non} è $2^o$-numerabile.\\
+Veridica per esercizio (suggerimento, considero $[x,x + 1[ \ \ \forall x\in \R$ e usare il fatto che $x $ è il minimo di qualsiasi sottoinsieme $A $ tale che $x\in A\subseteq[x,x+1[$\ )\\
+Segue anche che questo spazio topologico non è metrizzabile (ma è  T2)\\
+\subsection{Successioni}
+\begin{defi}
+	Sia $X$ spazio topologico.\\
+	Una successione in $X$ è un'applicazionea
+	\[ \begin{aligned}
+		a:&\Z_{\geq 1} \rightarrow X\\
+		& n \rightarrow a_n
+	\end{aligned}\]
+	Si dice che $a$ converge a $p\in X$ se $\forall U$ intorno di $p$ $\exists N\in\Z_{\geq 1}\ | \ a(n)\in U\ \ \ \foralli n\geq N$
+\end{defi}
+\textbf{Osservazione:}\\
+Se $X$ ha topologia banale ogni successione converge a ogni $p\in X$\\
+Se $X$ è $T2$ allora i limiti delle successioni sono unici se $a$ (succ.) converge a $p$ e $q$ allora $p=q$ \\
+\begin{prop}
+	Sia $X$ spazio topologico $1^o$-numerabile, Siano $A\subseteq X, p\in X$ sono equivalenti:
+	 \begin{enumerate}
+		 \item esiste una successione in $A$ che converge a $p$ 
+		 \item $p\in\overline A$
+	\end{enumerate}
+\end{prop}
+\begin{dimo}
+	$1) \Rightarrow  2)$ \\
+	Se vale 1) ogni intorno di $p$ interseca $A$ quindi $p\in \overline A$ \\
+	$2) \Rightarrow 1)$ \\
+	Supponiamo $p\in \overline A$.\\
+	Sia  $\{U_n\}$ sistema fondamentale di intorni numerabile.\\
+	Considero $\forall n\geq 1$  $U_1\cap\ldots\cap U_n$\\
+	è intorno di $p$, scelgo  $a(n)\in A\cap U_1\cap\ldots\cap U_n$\\
+	Allora la successione 
+	 \[
+		 \begin{aligned}
+		 a:&\Z_{\geq 1} A \rightarrow A\\
+		   & n \rightarrow a(n)
+		   \end{aligned}
+	.\] 
+	converge a $p$. Verifica sia $U$ intorno di  $p$ sia $N$ tale che $U_n\subseteq U$\\
+	per ogni $n\geq N$ abbiamo
+	 \[
+		 a(n)\in U_1\cap \ldots\cap U_n\cap\ldots\cap U_n
+	.\] 
+	quindi $a(n)\in U$ e la successione converge a $p$.
+\end{dimo}
+\begin{defi}[Sottosuccessioni]\
+	\text{ }
+	\begin{enumerate}
+		\item Una sottosucceisone di una successione $a: \Z_{\geq 1} \rightarrow X$\\
+			è una successione del tipo
+			\[
+			b(n) = a(f(n))
+			.\] 
+			dove $f:\Z_{\geq 1} \rightarrow \Z_{\geq 1}$ \\
+			è strettamente crescente.
+		\item Uno spazio topologico è compatto per successioni se ogni successione ha sottosuccessioni convergenti.
+	\end{enumerate}
+\end{defi}
+\textbf{Osservazioni}\\
+La compattezza e la compattezza per successioni non sono equivalenti.\\
+Esistono compatti per successioni ma non compatti. (esempio della linea lunga, long line)\\
+Esistono spazi topologici compatti ma non compatti per successioni\\
+(prodotti di infiniti spazi topologici).
+\end{document}

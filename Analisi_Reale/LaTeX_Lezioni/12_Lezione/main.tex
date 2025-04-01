@@ -1,0 +1,174 @@
+\documentclass[12px]{article}
+
+\title{Lezione 12 Analisi Reale}
+\date{2025-04-01}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Boh}
+	$(X,m,\mu)$\\
+	$s = \sum^{N}_{i = 1}c_j x_{E_j}, c_j\geq 0 \ \ \ E_j\in m$\\
+	$\int_X s d\mu = \sum^{N}_{j = 1}c_j \mu(E_j)$\\
+	$\mu_S(E) = \int_E s d\mu = \int_X s x_E d\mu = \int_X \sum^{N}_{j= 1}c_i \chi_{E_j\cap E}d\mu = \sum^{N}_{j=1}c_j\mu(E_j\cap E)$ \\
+	\begin{prop}
+		Sia $(X,m,\mu)$ spazio di misura sia  $s(x) = \sum^{N}_{j-1}c_j\chi_{E_j}(x)$ funzione semplice $\geq 0 \ \ (c_j\geq 9 \ \ \forall j)$\\
+		$ \Rightarrow  \mu_S: m \rightarrow [0,+\infty]$ \\
+		\[
+		\mu_S(E) = \int_E s d\mu\ \ \ \ \ \forall E\in m
+		.\] 
+		è una misura.
+	\end{prop}
+	\begin{dimo}
+		$\mu_S(\emptyset) = \int_\emptyset s \ d\mu = 0$\\
+		$\{F_i\}\subset m, F_i\cap F_l = \emptyset$  se  $i\neq l$\\
+		 $F = \bigcup^{+\infty}_{i = 1}F_i$\\
+		 $\mu_S (F) = \int_Fs \ d\mu = \sum^{N}_{j=1}c_j\mu(E_j\cap F) = \sum^{N}_{j = 1}c_j\mu(E_j\cap \bigcup^{+\infty}_{i=1}F_i) \\ = \sum^{N}_{j=1}c_j\mu( \bigcup^{+\infty}_{i=1}E_j\cap F_i)$\\
+		 $ = \sum^{N}_{j=1}c_j \sum^{+\infty}_{i = 1}\mu(E_j\cap F_i)$ \hfill dato che $E_j\cap F_i$ sono disgiunti e misurabili\\
+ $ = \sum^{+\infty}_{i = 1} \sum^{N}_{j=1}c_j\mu(E_j\cap F_i)$\\
+ $ = \sum^{+\infty}_{i = 1}\int_{F_i} s \ d\mu = \sum^{+\infty}_{i = 1}\mu_S(F_i)$
+	\end{dimo}
+	\\[10px]
+	I teoremi di passaggio al limite sotto il segno di integrale sono risultati che garantiscono la proprietà:\\
+	$\{f_n\}$ succesione di funzioni misurabili\\
+	$f_n(x) \rightarrow f(x)$ per q.o. $x\in X$\\
+	\[\lim_{n \rightarrow +\infty}\int_X f_n \ d\mu = \int_x \lim_{n \rightarrow +\infty} f_n \ d\mu = \int_X f\ d\mu\]
+	\textbf{Osservazione}\\
+	Per l'integrale di Riemann la validità del passaggio al limite sotto il segno d'integrale richiede la convergenza uniforme.\\
+	\textbf{Esempio}\\
+	$\Q\cap [0,1] = \{a_n\}$\\
+	$\forall n\geq 1 s_n(x) = \chi_{\{q_1,\ldots,q_n\}}$\\
+		$s_n$ è discontinua in $\{q_1,\ldots,q_n\}$\\
+		$ \Rightarrow  s_n\in R([0,1])$ \\
+		\[
+			s_n(x) \xrightarrow{n \rightarrow+\infty} \chi_{\Q\cap [0,1]}(x)
+		.\] 
+		$s_n(x)\leq s_{n+1}(x) \ \ \ \forall x\in [0,1]$\\
+		ma $\chi_{\Q\cap [0,1]}\not\in R([0,1])$
+		\begin{teo}[convergenza monotona, B. Levi]
+			Sia $(X,m,\mu)$ spazio di misura e sia $\{f_n\}$ successione di funzioni misurabili\\
+			$f_n: X \rightarrow [0,+\infty]\ \ \ \forall n$\\
+			monotona crescente $f_n(x) \leq f_{n+1}(x) \ \ \ \forall n\geq , \ q.o.$
+			 \[
+				 f(x) = \lim_{n \rightarrow+\infty} f_n(x) = \sup_{n\geq 1} f_n(x)
+			.\] 
+			$f:X \rightarrow [0,+\infty]$ definita quasi ovunque è misurabile e 
+			\[
+				\lim_{n \rightarrow+\infty} \int_X f_n\ d\mu = \int_X f \ d\mu
+			.\] 
+		\end{teo}
+		\begin{dimo}
+			$\int_X f_n\ d\mu$ è una successione numerica monotona crescente \\
+			$ \Rightarrow  \exists \lim_{n \rightarrow +\infty} \int_X f_n\ d\mu \leq \int_X f\ d\mu$ \\
+			$f_n \leq f$ \  $\forall n\ \ \int_X f_n\ d\mu\leq \int_X f \ d\mu$  \\
+			Tesi: $\lim_{n \rightarrow +\infty}\int_X f_n \ d\mu \geq \int_X f\ d \mu = \sup\{\int_X s\ d\mu. s$ Semplice $0\leq s \leq f\}\\
+			\Leftrightarrow \lim_{ n \rightarrow +\infty} \int_X f_n \ d\mu \geq \int_X s \ d\mu \ \ \ \forall s$ funzione semplice $0\leq s\leq f$\\
+			Sia  $s$ funzione semplice, $0\leq s\leq f$ Sia  $\e > 0 $ e $\forall n$
+			 \[
+				 E_n = \{ f_n\geq (1-\e)s\}
+			.\] 
+			\begin{itemize}
+				\item $E_n\in m \ \ \forall n$ perché $f_n - (1-\e)s$ è misurabile
+				\item $E_n\subseteq E_{n+1}\ \ \ \ \forall n \geq 1$ poiché  $f_n\leq f_{n+1}$
+				\item  $ \bigcup^{+\infty}_{n = 1}E_n = X$ poiché sia $x\in X$\\
+se  $s(x) = 0 \Rightarrow x\subseteq E_n \ \ \forall n$\\
+se $s(x) > 0 \Rightarrow f(x) > 0 \ \ \sup_{n\geq 1} f_n(x) \ \ \exists \bar n$ tale che \\
+$(1-\e)s\leq (1-\e) f(x) < f_{\bar n} (x)\leq f(x) \Rightarrow x\in E_{\bar n}$ \\
+$(1-\e)\int_X s \ d\mu = \mu_{(1-\e)s}(X) = \mu_{(1-\e)s} ( \bigcup^{+\infty}_{n = 1}E_n$\\
+$ = \lim_{n \rightarrow+\infty} \mu_{(1-\e)s}(E_n)$\\
+$\displaystyle = \lim_{n \rightarrow +\infty} \int_{E_n} (1-\e)s \ d\mu \leq \lim_{ n \rightarrow +\infty} \ \int_{E_n} f_n \ d\mu \leq \lim_{n \rightarrow +\infty}\int_X f_n d\mu$\\
+Per $\e \rightarrow 0$\\
+$ \Rightarrow \int_X d\ d\mu \leq \lim_{n \rightarrow +\infty}\int_X f_n\ d\mu \ \ \ \ \forall s$ \\
+$ \Rightarrow  \int_X f \ d\mu\leq \lim_{n \rightarrow +\infty}\int_X f_n \ d\mu$
+			\end{itemize}
+		
+		\end{dimo}
+		\textbf{Osservazione}\\
+		\begin{enumerate}
+			\item $f: X \rightarrow [0,+\infty]$ misurabile\\
+				$ \Rightarrow \exists \{s_n\}$ successione di funzioni misurabili tale che 
+				 \[
+				s_n(x) \rightarrow f(x) \ \ \forall x\in X
+				.\] 
+				$0\leq s_n(x)\leq s_{n+1}$
+				 \[
+				 s_n(x) = \sum^{n2^n}_{k = 1}\frac{k-1}{2^n}\chi_{\{\frac{k-1}{2^n}\leq f < \frac k{2^n}\}} + n \chi_{\{f\geq n\}}
+				.\] 
+				Per il teorema di B. Levi\\
+				 $\lim_{n \rightarrow +\infty} \int_X s_n \ d\mu = \int_X f\ d\mu$\\
+			 \item Se $f_n : X \rightarrow [0,+\infty]$ misurabile $\forall n$\\
+				 $f_n(X) \geq f_{n+1} (x) \ \ \ \forall n$\\
+				 $f(x) = \lim_{n \rightarrow + \infty} f_n(x) = \inf_{n\feq 1} f_n \geq 0$\\
+				 $\int_X f_n \ d\mu \rightarrow\int_X f \ d\mu$\\
+				 $g_n = f_1 - f_n \geq 0 \ \ \ \forall n$\\
+				  $g_n$ è monotona crescente\\
+				  $\int_X g_n \ d\mu \rightarrow \int_X \ (f_1- f)d\mu$\\
+				  $\int_X (f_1-f_n)d\mu$\\
+				  Se $\int_X f_1d\mu < +\infty$\\
+				  $ \Rightarrow  \int_X f_n\ d\mu \rightarrow \int_X f d\mu$ \\
+				  In generale non vale se $\int_X f_1\ d\mu = +\infty$\\
+				  Esempio: $f_n = \chi_{[n,+\infty)}$\\
+				  $\int_\R f_n\ dm = 1m([n,+\infty]) = +\infty$
+		\end{enumerate}
+		\begin{coro}
+			Siano $f_n: X \rightarrow [0,+\infty]$ misurabili $\forall n$
+			 \[
+			= \int_X \sum^{+\infty}_{n = 1}f_n d\mu = \sum^{+\infty}_{n = 1}\int_X d_n\ d\mu
+			.\] 
+		\end{coro}
+		\begin{dimo}
+			$f(x) = \sum^{+\infty}_{n =1}f_n(x) <+\infty$ oppure $+\infty$ $ \Rightarrow f:X \rightarrow [0, + \infty]$ è misurabile\\
+			$ = \lim_{k \rightarrow+\infty} \sum^{k}_{n = 1}f_n(x)$\\
+			$g_k(x)\leq g_{k+1}(x)\ \ \forall x$\\
+			$ \Rightarrow \int_X \lim_{k \rightarrow +\infty} g_k d\mu = \lim_{k \rightarrow +\infty}\int_X g_k \ d\mu$\\
+			$ = \int_x \sum^{+\infty}_{n = 1}f_n d \mu \ \dot = \lim_{k \rightarrow +\infty}\int_X \sum^{k}_{n = 1}f_n d\mu$ \\
+			$ = \sum^{+\infty}_{n = 1}\int_X f_n d\mu$\\
+			dove il penultimo passaggio ($\dot =$) è ancora da giustificare 
+		\end{dimo}
+		\begin{prop}
+			Siano $f,g: X \rightarrow [0,+\infty]$ misurabili\\
+			$ \Rightarrow  \int_X (f + g) d \mu = \int_X f d \mu + \int_X g d\mu$
+		\end{prop}
+	\begin{dimo}
+		primo caso: $f,g$ funzioni semplici, $f = s = \sum^{+\infty}_{j = 1}x_j\chi_{E_j}\ \ c_j \geq 0 \ E_j\in m$ disgiunti $\ \ \cup E_j = X$\\
+		$g = t = \sum^{M}_{k = 1}d_k \chi_{F_k}$ $d_k\geq 0, F_k\in m$ disgiunti  $\cup F_k = X$\\
+		 $E_j = E_j\cap X = E_j\cap \bigcup^{M}_{k = 1}F_k = \bigcup^{M}_{k= 1}E_j\cap F_k$ \\
+		 \[\displaystyle s = \sum^{N}_{j = 1}c_j\chi_{ \bigcup^{M}_{k = 1}E_j\cap F_k} = \sum^{N}_{j=1}c_j \sum^{M}_{k =1}\chi_{E_j\cap F_k}\]
+		 Vero poiché unione di insiemi disgiunti
+		 \[
+			 t = \sum^{M}_{k = 1}d_k \chi_{ \bigcup^{N}_{j =1}F_k\cap E_j}
+		 .\] 
+		 \[
+			 t = \sum^{M}_{k = 1}d_k\chi_{ \bigcup^{N}_{j = 1}F_k\cap E_j} = \sum^{M}_{k = 1}d_k \sum^{N}_{j =1} chi_{F_k\cap E_j}
+		 .\]  
+		 quindi 
+		 \[
+			 \int_X(s + t) d\mu = \int_X \sum^{N}_{j = 1} \sum^{M}_{k = 1}c_j \chi_{F_k\cap E_j} +  \sum^{M}_{k = 1} \sum^{N}_{j = 1}d_k \chi_{F_k\cap E_j}d\mu
+		 .\]  
+		 \[
+		 = \sum^{N}_{j = 1} \sum^{M}_{k =1} (c_j + d_k)\mu(F_k\cap E_j) = \int_X s \ d\mu + \int_X t \ d\mu
+		 .\] 
+		 secondo caso $f,g \geq 0$ misurabili\\
+		 $\exists s_n \uparrow f$ e  $\exists t_n \uparrow g$\hfill $(\uparrow \ =$ tende $)$\\
+		  $ \Rightarrow  s_n + t_n \uparrow f + g$\\
+		   \[
+			   \int_X (f + g) d\mu = \lim_{n \rightarrow +\infty}\int_X (s_n + t_n) d \mu = \lim_{n \rightarrow +\infty} \left(\int_X s \ d\mu + \int_X t_n d\mu \right)
+		  .\] 
+		  \[
+		  \int_X f \ d\mu+ \int_X g \ d\mu
+		  .\] 
+		\end{dimo}
+		\textbf{Esercizio}\\
+		Sia $\{a_n\}$ una successione a termini mai negativi  $a_n \geq 0$\\
+		$\{a_n\}$ può essere pensata come una funzione  \\
+		\begin{aligned}
+			$f:&\N \rightarrow [0,+\infty]\\
+			   &n \rightarrow f(n) = a_n$
+		\end{aligned}\\
+		$(\N,2^\N, \mu^*)$ \ \  $\int_\N f\ d\mu^* = ?$ dove $\mu^*$ calcola la cardinalità dei sottoinsiemi
+
+	
+\end{document}
