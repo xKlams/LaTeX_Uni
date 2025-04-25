@@ -1,0 +1,190 @@
+\documentclass[12px]{article}
+
+\title{Lezione 11 Algebra 1}
+\date{2025-04-14}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Boh}
+	\textbf{Obiettivo}\\
+	Dare un teorema di struttura per i moduli finitamente generati su $R \ PID$ \\
+	\begin{lemm}[Esercizio]
+		$R$ $PID$, $N\subseteq R^n$ sottomodulo. Supponiamo che esista un elemento  $m\in N$ tale che $m = \icol{d\\0\\\vdots\\ 0}$ di lunghezza minimale in  $N$\\ allora $l(m)$ è di lunghezza \ubderline{minima} in  $N$
+	\end{lemm}
+	Ricordiamo la definizione di lunghezza minimale:\\
+$l(m)\in R/\approx, l(m) = [d]$  $l(m)$ è un elemento minimale nell'insieme \\
+$\{l(m')\in R/\approx\ | \ m'\in N\}$\\
+\begin{dimo}
+	Sia $a  = \icol{a_1\\\vdots\\a_n}\in N\subseteq R$\\
+	Dimostriamo che $d \ |\  a_j \ \forall j\in \{1,\ldots,n\}$\\ (se vero, allora  $d \ | \ MCD(a_1,\ldots, a_n)$ quindi $[d]\preceq l(a))$ \\
+	Procediamo in due passi:
+	\begin{enumerate}
+		\item[I. Step] $d \ | \ a_1$ a priori abbiamo $d_1 = MCD(d,a_1)$ la tesi diventa $d_1=d$ \\
+			Per l'identità di Bezout, $\exists h,k\in R\ : \ d_1 = hd + ka_1$\\
+			Allora \\
+		$b:= hm + ka \in N$ (combinazione lineare di elementi in $N$)\\
+		$b = \icol{hd + ka_1\\ka_2\\\vdots\\ka_n} = \icol{d_1\\ka_2\\\vdots\\ka_n}\in N$\\
+		Quindi: $b\in N$ soddisfa\\
+		\[
+			l(b)  \preceq [d_1]\preceq [d] = l(m)
+		.\] 
+		Per la minimalità di $m$ in $N \Rightarrow  l(b) = l(m) \Rightarrow  [d_1] = [d] \Rightarrow  d \ | \ a_1$ 
+	\item[II. step]  $d \ | \ a_j \ \ \forall j\in \{1,\ldots,n\}$\\
+		Dato che  $d\ | \ a_1\ \ \ \exists h\in R$ tale che $a_1 = hd $\\
+	\[c: = (1-h)m + a\in N\]
+		Osserviamo che 
+		\[
+			c = \matrice{(1-h)d + a_1\\a_2\\\vdots\\ a_n} = \matrice{d\\a_2\\\vdots\\a_n}
+		.\] 
+		Quindi $c\in N$ soddisfa\\
+		$l(c)\preceq [d] = l(m)$\\
+		Per minimalità di $m$ in  $N$\\
+		$l(c) = [d]$\\
+		Allora  $d \ | \ a_j\ \ \ \forall j\in\{2,\ldots,n\}$
+	\end{enumerate}
+\end{dimo}
+\begin{lemm}[Esercizio]
+	Sia $R\ PID$  $N\subseteq R\oplus R^{n+1} = R\oplus R^n$ sottomodulo di  $R^n$, Supponiamo che esista un elemento di lunghezza minimale  $m = \icol{d\\0\\\vdots\\0}$\\
+	Allora esiste  un $R$-sottomodulo $N'\subseteq R^n$  tale che $N = (d)\oplus N'$
+\end{lemm}
+\begin{dimo}
+	Consideriamo $N' = \lbrace\icol{a_1\\\vdots\\a_n}\in R^n\ | \ \icol{0\\a_1\\\vdots\\a_n}\in N\rbrace$ \\
+	Consideriamo la doppia inclusione:
+	\begin{itemize}
+		\item \Lbrac $(d)\oplus N'\subseteq N$\\
+			infatti
+			 \[
+				 r_1\icol{d_1\\ 0 \\ \vdots \\ 0 } + r_2\icol{0\\a_1\\\vdots\\a_n} \in N
+			.\] 
+			poiché combinazione di elementi in $N$\\
+		\item Viceversa, verifichiamo $N\subseteq (d)\oplus N'$ \\
+			Sia $\icol{a_0\\a_1\\\vdots\\a_n}\in N$\\
+			abbiamo dimostrato nel lemma precedente che $d\ | \ a_0 \Rightarrow  a_0 = hf$ \\
+			$ \Rightarrow  \icol{a_0\\a_1\\\vdots\\a_n} = h\icol{d\\0\\\vdots\\0} + \icol{0\\a_1\\\vdots\\a_n}\in (d)\oplus N$
+	\end{itemize}
+\end{dimo}
+\newpage
+\begin{teo}[Struttura dei sottomoduli di moduli liberi di rango finito]
+	$R\ \ PID$,  $N\subseteq R^n$ sottomodulo \\
+	Allora esistono $d_1,\ldots, d_n\in R:$ 
+	\begin{enumerate}
+		\item $d_1 = \min\{l(m')\ | \ m'\in N\}$ 
+		\item $d_j\ | d_{j + 1} \ \ \ \forall j\in \{1,\ldots, n-1\}$
+		\item esiste un isomorfismo di  $R$-moduli, $\phi :R \rightarrow R^n$ tale che \\$\phi(N) = (d_1)\oplus\ldots\oplus (d_n)$
+	\end{enumerate}
+
+\end{teo}
+\begin{dimo}
+	Per induzione su $n$
+	 \begin{itemize}
+		 \item $n = 1$ allora $N\subseteq R$ è un ideale, quindi $R \ PID \Rightarrow  N = (d_1)$
+		 \item $n > 1$ assumiamo l'enunciato per sottomoduli di  $R^n$ e dimostriamolo per sottomoduli di  $R^{n+1}$\\
+			 Sia  $N\subseteq R^{n+1}$  $R$-sottomodulo\\
+			 e sia $m\in N$ un elemento di lunghezza minimale in  $N$ (sappiamo che esiste!)\\
+			 Esiste anche un isomorfismo di $R$-moduli $\phi_1: R^{n+1} \rightarrow R^{n+1}$\\
+			 tale che $\phi(m) = \icol{d_1\\0\\\vdots\\0}$\\
+			 Ora $\phi(m)$ è di lunghezza minima in  $\phi(N)$\\
+			 Quindi esiste un complementare  $N'\subseteq R^n$ tale che  \\
+			 $\phi_1(N)\cong (d_1)\oplus N'$\\
+			 Per ipotesi induttiva a meno di un isomorfismo $\phi_2 : R^n \rightarrow R^n$ abbiamo $\phi_2(N) = (d_2)\oplus\ldots\oplus (d_{n+1})$\\
+			 Abbiamo:\\
+			 $N \xrightarrow{\phi_1} (d_1)\oplus N' \xrightarrow{id \oplus \phi_2} (d)\oplus \phi_2(N') = (d_1)\oplus\ldots\oplus (d_{n+1})$
+	\end{itemize}
+\end{dimo}
+\begin{teo}[Struttura dei moduli finitamente generati su PID]
+	$R\ PID$  $M$ $R$-modulo finitamente generato \\
+	Allora esistono $d_1,\ldots d_n\in R$ tali che
+	\begin{itemize}
+		\item $d_j\ | \ d_{j+1} \ \ j\in\{1,\ldots,n-1\}$
+		\item $M\cong R/(d_1)\oplus \ldots\oplus R/(d_n)$
+	\end{itemize}
+\end{teo}
+\begin{dimo}
+	Siano $\{m_1,\ldots,m_n\}$ generatori di $M.$\\
+	Allora consideriamo l'omomorfismo suriettivo di $R$-moduli
+	 \[
+	\begin{aligned}
+		R^n &\rightarrow M\\
+		\icol{a_1\\\vdots\\a_n} &\rightarrow \sum^{j=1}_{n}a_jm_j
+	\end{aligned}
+	.\] 
+	Dal primo teorema di isomorfismo segue
+	\[
+	M\cong R^n/ker(\phi)
+	.\] 
+	Dato che $ker(\phi)$ è un $R$-sottomodulo di $R^n$ esistono  $d_1,\ldots,d_n\in R$ tali che
+	\begin{enumerate}
+		\item $d_j \ | \ d_{j+1} \ \ \forall j\in\{1,\ldots, n-1\}$
+		\item  $ker(\phi)\cong (d_1)\oplus\ldots\oplus (d_n)$
+	\end{enumerate}\\
+	$ \Rightarrow M\cong R^n/ker(\phi)\cong R/((d)\oplus\ldots\oplus (d_n))\cong R/(d_1)\oplus\ldots\oplus R/(d_n)$
+\end{dimo}
+\textbf{Osservazione:}
+\begin{enumerate}
+	\item Alcuni $d_j$ possono essere nulli o anche ripetersi.
+	\item La scelta dei $d_j$ è "unica" (esercizio)
+	\item Un gruppo abeliano $G$ ha un'unica possibile struttura di $\Z$-modulo.\\
+		Quindi i concetti di gruppo abeliano e di $\Z$-modulo sono equivalenti.
+\end{enumerate}
+\begin{coro}
+	$G$ gruppo abeliano, Allora esistono $d_1,\ldots,d_n\in \Z$ tali che 
+	\begin{enumerate}
+		\item $d_j\ | \ d_{j+1} \ \ \forall j\in \{1,\ldots, n-1\}$
+		\item $G\cong \Z/(d_1)\oplus\ldots\oplus \Z/(d_n)$
+	\end{enumerate}
+\end{coro}
+\begin{dimo}
+	Segue dal teorema con $R = \Z$
+\end{dimo}
+\textbf{Osservazione}\\
+$G$ gruppo abeliano
+\[
+\begin{aligned}
+	\Z\times G &\rightarrow G\\
+	(n,g) &\rightarrow g+ \ldots + g (\text {n volte})
+\end{aligned}
+.\] 
+\newpage
+\section{Successioni esatte corte}
+Su $R$ anello
+	\begin{defi}
+		Una successione esatta corta di $R$-moduli è una coppia di omeomorfismi 
+		\[
+			M' \xrightarrow{i} M \xrightarrow{\pi} M''
+		.\] 
+	tali che
+	\begin{enumerate}
+		\item $i$ iniettiva
+		\item $\pi$ suriettiva
+		\item $\ker(\pi) = \text{im}(i)$
+	\end{enumerate}
+	\end{defi}
+	\textbf{Esercizio}\\
+	Dimostrare che 
+	\begin{enumerate}
+		\item $M$ finitamente generato $ \Rightarrow M''$ finitamente generato.
+		\item $M', M''$ finitamente generati  $ \Rightarrow  M$ finitamente generato.
+	\end{enumerate}
+	\textbf{Soluzione}\\
+	1)$\{m_1,\ldots, m_n\}$ generatori di $M$\\
+	Allora dato che  $\pi$ è suriettiva\\
+	$\{\pi(m_1),\ldots,\pi(m_n)\}$ sono generatori di $M''$.\\
+	$\{m_1',\ldots, m_h'\}$ generatori di $M'$\\
+	$\{m_1'',\ldots,m_k''\}$ generatori di $M''$\\
+	Considero $\{m_1,\ldots, m_k\}\subseteq M$ tali che\\
+	$\pi(m_j) = m_j''\ \ \ \forall j\in \{1,\ldots,k\} $\\
+	Dimostriamo che
+	 \[
+	 \{i(m_1'),\ldots,i(m_h'), m_1,\ldots,m_k\}
+	.\] 
+	sono generatori di $M$\\
+	Sia  $m\in M$\\
+	 $\displaystyle \Rightarrow  \pi(m) = \sum^{k}_{j=1}r_jm_j''\in M'' = \pi( \sum^{k}_{j=1}r_jm_j)$\\
+	 $ \displaystyle\Rightarrow m - \sum^{k}_{j = 1}r_j m_j\in \ker (\pi) = im(i)$, che è generata da $\{ i(m_1'),\ldots,i(m_n')\}$\\
+
+	
+\end{document}

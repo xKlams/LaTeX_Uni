@@ -1,0 +1,144 @@
+\documentclass[12px]{article}
+
+\title{Lezione 15 Analisi Reale}
+\date{2025-04-16}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Convergenze varie (alberto agostinelli)}
+	\begin{defi}[Convergenza quasi uniforme]
+		$f_n \rightarrow f$ quasi uniformemente se $\forall \delta > 0 \ \ \exists F_\delta\subseteq X, F_\delta$ misurabile  $\mu(F_\delta) < \delta$\\
+	tale che   $\sup_{X\setminus F_\delta} |f_n - f| \rightarrow 0$ $(f_n \rightarrow f$ uniformemente in $X\setminus F_\delta)$
+	\end{defi}
+	\begin{prop}
+		$f_n \rightarrow f$ quasi uniformemente $ \Leftrightarrow \forall \e > 0 \mu ( \bigcup^{+\infty}_{n = k}\{|f_n - f | \geq \e \}) \xrightarrow{ k \rightarrow + \infty} 0$
+	\end{prop}
+	\begin{dimo}
+		$ ( \Rightarrow )$ \\
+		$\forall \delta > 0 \exists F_\delta \subset X, \mu(F_s) < \delta $ tale che,  $f_n \rightarrow f$ uniformemente in $X\setminus F_\delta \\\Leftrightarrow \forall \delta > 0 \exists F_\delta \subset X, \mu (F_\delta)<\delta$ \\
+		tale che $\forall \e > 0 \exists k = k(\e,\delta) \ : \ |f_n(x) - f(x)| <\e \ \ \ \forall n\geq k \ \ \ \forall x\in X\semtinsu F_\delta$\\
+		$ \Leftrightarrow \forall \delta > 0 \exists F_\delta\subset X, \mu(F_\delta) < \delta$ tale che $\forall \e>0 \exists k = k(\delta,\e)$ \\
+		\[
+		X\setminus F_\delta \subseteq \bigcap_{n=k}^{+\infty}\{|f_n-f| < \e\}
+		.\] 
+		$ \Leftrightarrow \forall \delta > 0 \ \ \exists F_\delta \subset X \ \ \mu(F_\delta)<\delta$\\
+		tale che $\forall \e > 0 \ \ \exists k = k(\e, \delta)$\\
+		 \[
+			 \left( \bigcap_{n=k}^{+\infty}\{f_n-f| < \e\})^c = \bigcup^{+\inftu}_{n=k}\{f_n-f|\geq \e\}\subseteq F_\delta
+		.\] 
+		$ \Rightarrow  \forall \delta > 0  \ \ \forall \e > 0 \ \ \ \exists k = k(\delta,\e)$ \\
+		 \[
+			 \mu( \bigcup^{+\infty}_{n=k}\{|f_n - f|\geq \e\})<\delta \Rightarrow \mu( \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq \e\}) \xrightarrow{k \rightarrow +\infty} 0
+		.\] 
+		$( \Leftarrow)$ \\
+		$\foralll \e>0 \ \ \forall \delta > 0 \ \ \ \exists k = k(\e,\delta)$ tale che \\
+		 \[
+			 \mu( \bigcup^{+\infty}_{n = k } \{|f_n-f|\geq \e\})<\delta
+		.\] 
+		$\forall j\in \N$ per  $\e = \frac 1 j, \ \ \delta = \frac\nu {2^j}, \nu > 0$ fissato\\
+		$ \Rightarrow \exists k_j = k_j(j,\nu)$ tale che $\mu ( \bigcup^{+\infty}_{n = k_j}(\{f_n-f|\geq \frac 1 j\}) < \frac \nu {2^j}$\\
+		\[
+			\Rightarrow \mu ( \bigcup^{+\infty}_{j = 1} \bigcup^{+\infty}_{n = k_j} \{ |f_n - f|\geq \frac 1 j\}) \leq \sum^{+\infty}_{j = 1}\frac \nu {2^j} = \nu
+		.\] 
+		$x\in X\setminus F_\nu$ (dove  $F_\nu$ è l'argomento della misura precedente)\\
+		$ \Rightarrow x\in \bigcap^{+\infty}_{j = 1} \bigcap^{+\infty}_{n = k_j}\{|f_n-f| < \frac 1 j\}$ \\
+		$\Rightarrow  \forall j \ \ \ \exists k_j$ tale che $|f_n(x) - f(x)| < \frac 1 j\ \ \ \forall n \geq k_j$|\
+		$ \Rightarrow  \sup_{X\setminus F_\nu}|f_n - f| \xrightarrow{n \rightarrow +\infty} 0 \Rightarrow f_n \rightarrow f$ uniformemente su $X\setminus F_\nu$\\
+		Abbiamo caratterizzato la convergenza quasi uniforme con la misura dei sopralivelli  $\forall \e > 0 $\\ 
+		conseguenza:\\
+		\[
+			f_n \rightarrow f \text{ q.u.} \Rightarrow  \begin{cases}
+				f_n \rightarrow f \ \text{ q.u.}\\
+				f_n \rightarrow f \ \text{ in misura}
+			\end{cases}
+		\] 
+		\[
+		\storto \Leftrightarrow
+		\] 
+		\[
+			\forall \e > 0 \ \ \mu \left( \bigcup^{+\infty}_{n = k}\{|f_n - f| \geq e\} \right) \xrightarrow{k \rightarrow +\infty} 0
+		.\] ma allora
+		\[
+		0 = \lim_{k \rightarrow +\infty}\mu ( \bigcup^{+\infty}_{n = k }\{|f_n - f| \geq \e\} ) = \mu ( \bigcap^{+\infty}_{k = 1} \bigcup^{+\infty}_{n = k}\{|f_n-f|\}\geq \e\})
+		.\] 
+		\[
+			\forall k \ \ \mu(\{f_k -f| \geq \e\}\leq \mu( \bigcup^{+\infty}_{n= k}\{\f_n - f| \geq \e\}) \rightarrow 0
+		.\] 
+		 $ \Rightarrow f_n \rightarrow f$  in misura
+
+	\end{dimo}
+	\begin{teo}[Egorov]
+		Sia $(X,\mu)$ spazio di misura finita (  $ \mu(X) < +\infty$ )\\
+		Allora:
+		\[
+		f_n \rightarrow f \ \ \ \ q.o.\ \ \  \Leftrightarrow \ \ \ f_n \rightarrow f \ \ \ \ q.u.
+		.\] 
+	\end{teo}
+	\begin{teo}[Vitali]
+		Sia $(X,\mu)$ uno spazio di misura  finita e siano  $f_n, f\in L^1(X)$ tale che  $f_n \rightarrow f$ quasi ovunque quasi ovunque\\
+		allora $f_n \rightarrow f $ in $L^1 \Leftrightarrow \{f_n\}$ equi-assolutamente integrabili\\ $\forall \e> 0 \ \exists \delta = \delta(\e) > 0 $ tale che
+		\[
+			\int_E |F_n|d\mu < \e \text{ se } E\in M \ \ \forall n, \mu(E) < \delta
+		.\] 
+	\end{teo}
+	\begin{dimo}
+		$ ( \Rightarrow  )$ già visto\\
+		$ ( \Leftarrow )$\\
+		$f_n \rightarrow f$ quasi ovunque + $\mu(X) < +\infty$\\
+		 $ \Rightarrow  $ (per Egorov)\\
+		 $\forall \delta > 0 \exists f_\delta\in M, \mu (F_\delta) < \delta$ tale che  $f_n \rightarrow f$ uniformemente in $X\setminus f_\delta$\\
+		 Sia  $\e > 0$ fissato\\
+		  $ \Rightarrow  $ sia $\deta = \delta ( \e)$ dato dall'ipotesi di equi-assoluta integrabilità\\
+		  e sia  $f_\delta\in M$ dato dal teorema di Egorov
+		   \[
+			   \Rightarrow  \int_X |f_n - f| d\mu = \int_{X\setminus F_\delta}|f_n - f| d\mu  + \int_{F_\delta}|f_n - f| d\mu 
+		  .\] 
+		  \[
+		  \leq \sup_{X\setminus F_\delta} |f_n-f| \mu (X\setminus F_\delta) + \int_{F_\delta}|f_n|d\mu + \int_{F_\delta}|f|d\mu
+		  .\] 
+		  \[
+			  \leq (\sup_{X\setminus F_\delta}|f_n-f|)\mu(X) + \e + \e \ \  (\text{dato che } \mu(F_\delta) < \delta )
+		  .\] 
+		  \[
+			  \Rightarrow \limsup_{n \rightarrow +\infty}\int_X |f_n - f| d\mu \leq 2\e \ \ \forall \e > 0 
+		  .\] 
+		  \[
+		  \Rightarrow  \int_X \ |f_n - f | d\mu \rightarrow 0
+		  .\] 
+	\end{dimo}
+	$f: \R \rightarrow \R \ \ (\R, m)$\\
+	$f$ continua $ \Rightarrow  f$ misurabile\\
+	$f$ continua quasi ovunque $ \Rightarrow  f$ misurabile\\
+	MANCA UNA PARTE\\
+	\[
+		D_f = \{x\in \R \ | f \text{ è discontinua in } X\}\\
+	.\] 
+	$m\mu(D_f) = 0$  $f$ è misurabile, infatti:
+	\[
+		\forall t\in \R \ \ \{f > t\} = \{f > t\}\cap D_f\cup \{f > t \} \setminus D_f
+	.\] 
+	$ \Rightarrow  $ ha misura nulla $ \Rightarrow  $ è misurabile\\
+	$x\in \{f > t\} \setminus D_f$\\
+	$\lim_{y ->x} f(y) =  \Rightarrow  f(x) > t$ e $f$ è continua in $X$\\ 
+	$ \Rightarrow  \exists \delta_x > 0 \ : \ f(y) > t \ \ \ \forall y\in (x - \delta_x, x + \delta_x)$ \\
+	$ \Rightarrow \{f > t\}\setminus D_f = \bigcup^{}_{x\in\{f > t\}\setminus D_f}(x-\delta_x, x + \delta_x)\setminus D_f = \bigcup^{}_{x\in\{f>t\}\setminus D_f}(x-\delta_x,x+\delta_x)\detminus D_f$ aperto è misurabile\\
+	$f : \R \rightarrow \R$\\
+	se $\exists g\in C(\R)$\\
+	tale che  $f = g$ quasi ovunque  $ \Rightarrow  f$ misurabile\\
+	$\exists N\subset \R, m(N) = 0$\\
+	tale che  $f = g$ in  $\R\setminus N$ \ \\
+	$\forall t\in \R \ \ \{f > t\} = \{f > t\}\setminus N \cup \{f > t\} \setminus N$ è misurabile\\
+	 $f = \chi_\Q = 0$ quasi ovunque\\
+	  $ f = g$ quasi ovunque  $\exists N, \mu (N) \ \ f = g $ in  $\R\setminus N$\\
+	  $x\in \R \setminus N$ \ \  $\lim_{y \rightarrow x} f(y)$\\
+	  $f = \chi_[0,1]$ è continua quasi ovunque ma non  può essere ugguale quasi ovunque ad una funzione continua
+	  \begin{teo}
+	  	Sia $f: \R \rightarrow R$ misurabile $  \Rightarrow  \forall \delta > 0 \ \ \exists g_\delta \in C(\R)$\\
+		tale che $m(\{f\neq g\}) < \delta$\\
+	e	$\sup_{\R}|g_\delta| \leq \sup_\R|f|$
+	  \end{teo}
+\end{document}

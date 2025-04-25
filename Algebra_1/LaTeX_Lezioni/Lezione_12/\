@@ -1,0 +1,261 @@
+\documentclass[12px]{article}
+
+\title{Lezione 12 Algebra 1}
+\date{2025-04-24}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Successioni esatte corte di moduli}
+	\textbf{Ricordo}\\
+	\begin{defi}
+		Una SEC è una coppia di omeomorfismi $R$-moduli
+		\[
+			M' \xrightarrow{i} M \xrightarrow{\pi} M''
+		.\] 
+		tali che 
+		\begin{enumerate}
+			
+			\item $i$ iniettiva
+			\item $\pi$ suriettiva
+			\item $Ker(\pi) = Im(i)$
+		\end{enumerate}
+	\end{defi}
+	Abbiamo dimostrato
+	\begin{enumerate}
+		\item Se $M$ è finitamente generato allora  $M''$ è finitamente generato.
+		\item Se M' e M'' sono finitamente generati allora M è finitamente generato.
+	\end{enumerate}
+	\textbf{Esercizio}\\
+	$R = \R[x_1,x_2,\ldots]$
+	\begin{itemize}
+		\item $M = R$ è un $R$-modulo (libero di ragno 1) su se stesso (è generato da $1_R$).
+		\item $I  = (x_1,x_2,\ldots)$\\
+			Verificate che $I$ non è finitamente generato come $R$-modulo.
+
+	\end{itemize}
+	\textbf{Obiettivo}\\
+	Studiare  il caso di (sotto) moduli su anelli Noetheriani.
+	\begin{lemm}
+		$R$ anello commutativo.\\
+		Allora $R$ è Noetheriano se e solo se ogni ideale di $R$ è finitamente generato.
+	\end{lemm}
+	\begin{dimo}
+		\begin{enuemrate}
+		\item Se $R$ è Noetheriano, assumiamo per assurdo che esista $I\subseteq R$ ideale  $\underline{non}$ finitamente generato. Sia  $r_1\in I\setminus\{0\}$\\
+			definiamo $I_1 = (r_1)\subsetneq I$\\
+			Sia $r_2\in I\setminus I_1$\\
+			definiamo $I_2 = (r_1,r_2)\subsetneq I$ \\
+			Iteriamo:\\
+			Sia $r_k \in I\setminus I_{k-1}$\\
+			definiamo  $I_k = (r_1,\ldots,r_k)\subsetneq I$\\
+			Abbiamo una catena infinita di ideali\\
+			$I_1\subsetneq I_2\subsetneq I_3\subsetneq\ldots\subsetneq I_k\subsetneq \ldots$\\
+			che contraddice l'ipotesi su $R$ 
+		\item Viceversa, supponiamo che ogni ideale di $R$ sia finitamente generato\\
+			Consideriamo una catena di ideali
+			\[
+			I_1\subseteq I_2\subseteq \ldots\subseteq I_k\subseteq\ldots
+			.\] 
+			Definiamo $I = \bigcup^{}_{k\in\Z_{\geq 1}}I_k$ 
+			$I\subseteq R$ è un ideale.\\
+			Allora $I = (r_1,\ldots,r_h)$ per qualche scelta di $r_1,\ldots,r_h\in R$\\
+			Allora $\forall j\in\{1,\ldots,h\}$ \\
+			$\exists k_j\in\Z_{\geq 1}$ tale che  $r_j\in I_{k_j}$\\
+			Definiamo  $\underline k=\max\{k_1,\ldots k_h\}$ 
+			\[
+				\Rightarrow r_j\in I_{k_j}\subseteq I_{\undelrline k} \ \ \ \forall j\in\{1,\ldots h\}
+			.\] 
+			Quindi $I = (r_1,\ldots, r_h)\subseteq I_{\underline k}\subseteq I$\\
+			$ \Rightarrow  I = I_{\underline k}$ \\
+			$ \Rightarrow  I_k  = I_{\underline k}\ \ \ \ \ \forall k\geq \underline k$ \\
+			$ \Rightarrow R$ Noetheriano
+		\end{enuemrate}
+	\end{dimo}
+	\begin{teo}
+		$R$ anello Noetheriano $M \ R$-modulo finitamente generato, Allora ogni sottomodulo di  $M$ è finitamente generato
+	\end{teo}
+	\begin{dimo}
+		\textbf{Passo I:} Studiamo il caso $M = R^n$ \\
+		Per induzione su $n$.\\
+		$n = 1$  $M = R$ e i suoi sottomoduli sono gli ideali di  $R$, che sono finitamente generati per il lemma. \\
+		$n > 1 \ \ $ Sia  $N\subseteq R^n$ sottomodulo\\
+		Consideriamo
+		\[
+		\begin{aligned}
+			R \xrightarrow{i} &R^n \xrightarrow{\pi} R^{n-1}\\
+			r \rightarrow \icol { 0\\ \vdots\\0 \\ 1} \rightarrow& \icol{a_1\\\vdots\\a_n} \rightarrow\icol{a_1\\\vdots\\a_{n-1}}
+		\end{aligned}
+		.\] 
+		\[
+		\begin{aligned}
+			R \xrightarrow i &R^n \xrightarrow \pi R^{n-1}\\
+			K = \ker(\pi|_N) \xrightarrow {i|_N} &N \xrightarrow {\pi|_N} \pi(N)
+
+		\end{aligned}
+		.\] 
+		Quindi $N$ finitamente generato\\
+		\textbf{Passo II:} $M\ R$-modulo finitamente generato\\
+		Esiste un omomorfismo suriettivo
+		\[
+		\begin{aligned}
+			R^n &\xrightarrow \phi M\\
+			 \icol{a_1\\\vdots\\a_n} &\rightarrow \sum^{n}_{j = 1}a_jm_j
+		\end{aligned}
+		.\] 
+		Sia $N\subseteq M$ sottomodulo, Definiamo
+		 \[
+			 \tilde N = \phi^{-1}(N)\subseteq R^n
+		.\] 
+		Abbiamo una SEC
+		\[
+			\ker(\phi|_{\tilde N}) \rightarrow\tilde N \xrightarrow{\phi|_{\tilde N}} N
+		.\] 
+		Quindi $\tilde N$ finitamente generato per il primo passo\\
+		 $ \Rightarrow N$ finitamente generato
+	\end{dimo}
+	\textbf{Ricordo:}
+	\begin{teo}[di struttura]
+		$R \ PID$  $M\ R$-modulo finitamente generato. Allora esistono $d_1,\ldots, d_n\in R$
+		\begin{enumerate}
+			\item $d_j\ | d_{j+1}\ \ \ \ \forall j\in \{1,\ldots,n-1\}$
+			\item  $M\cong R/(d_1)\oplus R/(d_2)\oplus \ldots\oplus R/(d_n)$
+		\end{enumerate}
+	\end{teo}
+	\textbf{Osservazione}\\
+	1) possiamo assumere  $d_j$ non invertibile $\forall j\in \{1,\ldots,n\}$\\
+	2) i  $d_j$ sono univocamente determinati a meno di associati.\\
+	3) Alcuni dei $d_j$ potrebbero essere 0.\\
+	\textbf{Esempi:}\\
+	1) $R = \Z$.\\
+	2)  $R = \K[t]$ con  $\K$ campo qualsiasi.
+	\subsection{Decomposizione primaria}
+	\begin{coro}
+		$R\ PID$,  $M\ R$-modulo finitamente generato.\\
+		Allora esistono\\
+		$h,k\in \Z_{\geq 0}, n_1,\ldots, n_k\in \Z_{\geq 1}$\\
+		e desistono primi $p_1,\ldots,p_k\in R$\\
+		tali che 
+		\[
+			M\cong R/(p_1^{n_1})\oplus\ldots\oplus R/(p_k^{n_k})\oplus R^h
+		.\] 
+	\end{coro}
+	\begin{dimo}
+		Dal teorema di struttura:\\
+		$M\cong R/(d_1)\oplus \ldots\oplus R/(d_k)\oplus R^h$ \\
+		Basta studiare il caso $R/(d)$ con  $d\neq 0$ e  $d$ non invertibile \\
+		Ricordiamo che $PID \Rightarrow  UFD$ \\
+		Quindi 
+		\[
+			d = p_1^{n_1}\cdot\ldots\cdot p_s^{n_s}$ 
+		.\] 
+		con $p_1,\ldots,p_s$ distinti\\
+		Dal teorema cinese del resto \[
+			 R/(d)\cong R/(p_1^{n_1})\oplus\ldots\oplus R/(p_s^{n_s})
+		.\] 
+	\end{dimo}
+	\section{Forma canonica razionale}
+	\textbf{Osservazione}\\
+	il dato di un $\K[t]$-modulo è equivalete al dato di una coppia $(V,T)$ dove  $V$ è un $\K$-spazio vettoriale e $T:V \rightarrow V$ applicazione $\K$-lineare\\
+	dato $M\ \ \K[t]$-modulo poniamo  $V =M$ \\
+	dove la moltiplicazione per scalari $a\in \L$ è data dalla moltiplicazione per polinomi costanti  $a\in \K[t]$\\
+Inoltre
+ \[
+\begin{aligned}
+	T: V & \rightarrow V\\
+	v & \rightarrow t\cdot v
+\end{aligned}
+.\] 
+Viceversa, data una coppia $(V,T)$ vogliamo costruire un  $\K[t]$-modulo $M$.\\
+Poniamo  $M = V$\\
+e\\
+\[
+	\begin{aligned}
+		\K[t]\times V &\rightarrow V\\
+		(p(t),v) & \rightarrow p(T)\cdot v
+	\end{aligned}
+\]
+\textbf{Osservazione}\\
+se $p(t) = t$\\
+$ \Rightarrow  (p(t),v) \rightarrow T(v)$ 
+\begin{defi}
+	Dato un polinomio monico $p(t) = t^n + a_{n-1} t^{n-1} + \ldots + a_0\in \K[t]$\\
+	La matrice compagna di  $p$ è
+	 \[
+		 C_p = \matrice{0 & 0 & \ldots & 0 & -a_0\\
+			 1 & 0 & \ldots  & 0 & -a_1\\
+			 0 & 1 & \ldots & 0& -a_2\\
+			 \vdots & \ldots & \ddots & 0 & \vdots\\
+0 & \ldots & 0 &1 & -a_{n-1}}
+	.\] 
+\end{defi}
+\textbf{Esercizio}\\
+Dimostrare che il polinomio caratteristico di $C_p$ è $p$ \\
+$ det(t iD - C_p)= p(t)$ \\
+\begin{teo}[forma canonica razionale]
+	$\K$ campo $V\ \ \K$-spazio vettoriale di dimensione finita $T\in End_\K (V,V)$\\
+	Allora esistono polinomi monici  $f_1,\ldots, f_k\in\K[t]$ ed esiste una base $B$ di $V$ tali che
+	 \begin{enumerate}
+		 \item $f_k\ | \ f_{j+1} \ \ \ \forall j\in\{1,\ldots,k-1\}$
+		 \item la matrice che rappresenta  $T$ nella base $B$ è 
+			 \[
+				 T = \matrice{C_{f_1} & 0 & 0\\ 0 &\ddots & 0 \\
+				 0 & 0 & C_{f_k}}
+			 .\] 
+		 \item il polinomio caratteristico di $T$ è $f_1,\ldots,f_k$
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	Per il teorema di struttura \\ $V\cong \K[t]/(f_1)\oplus\ldots\oplus \K[t]/(f_k)$ \hfill isomorfismo di $\K[t]$-moduli\\
+	\textbf{Osserviamo}\\
+	\begin{enumerate}
+		\item $dim_\K(V) < +\infty \Rightarrow  f_j\neq 0 \ \forall j\leq k$ 
+		\item possiamo scegliere $f_j$ monico $\forall j$
+		\item $f_j \ | \ f_{j+1}\ \ \ \forll j\in\{1,\ldots , k-1\}$\\
+	\end{enumerate}
+			Consideriamo il sottospazio 
+			 \[
+				 U_j = \K[t]/(f_j)
+			.\] 
+			scegliamo base 
+			\[
+				B_j = \{v_1^j,\ldots,v_{g_j}^j\}
+			.\] 
+			dove $g_j = deg(f_j)$ e  $v_i^j = t^{i-1}$\\
+			 $T(v_i^j) = t\cdot v^j_i= \begin{cases}
+				 v_{i+1}^j\ \ \ \forall i\in\{1,\ldots,g_j-1\}\\ 
+				 - \sum^{g_j -1}_{i = 0}a_i\cdot v_{i+1}^j \ \ i = g_j\\
+
+			 \end{cases}$
+			 dove $f_j(t) = t^{g_j} + \sum^{g_j-1}_{i=1}a_i\cdot t_i$\\
+			 Quindi:
+			 \[
+				 T = \matrice{T|_{U_1}&0&0\\0&\ddots & 0\\
+				 0 & 0 & T|_{U_k}}
+			 .\] 
+				 e $T|_{U_j} = \matrice{0 & 0 &\ldots&- a_0\\
+					 1 & 0 & \ldots & \vdots\\
+					 \vdots & \vdots & \ddots & \vdots \\
+				 0& \ldots & \ldots & -a_{n-1}} = C_{f_j}$
+\end{dimo}
+\subsection{Cayley-Hamilton}
+\begin{defi}
+	$V\ \K$-spazio vettoriale $T\in End_K(V)$\\
+	$f(t) = t^n + a_{n-1}t^{n-1} + \ldots + a_0\in\K[t]$\\
+	diremo che $T$ annulla $f$ se\\
+	\[
+		f(T) = T^n + a_{n-1}T^{n-1}+\ldots+a_1T + a_0 Id
+	.\]
+	è il polinomio nullo
+\end{defi}
+\begin{teo}[Hamilton (1853), Cayley (1858), Frobenius (1878)]
+	$\K$ campo $V$ spazio vettoriale, $T\in End_\K(V)$,  $dim_\K(V)< +\infty$\\
+	Allora  $T$ annulla il suo polinomio caratteristico
+	
+\end{teo}
+
+
+\end{document}
