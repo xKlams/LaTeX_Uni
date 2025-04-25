@@ -1,0 +1,120 @@
+\documentclass[12px]{article}
+
+\title{Lezione 13 Analisi Reale}
+\date{2025-04-25}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Lemma di Fatou}
+	\begin{lemm}[di Fatou]
+		Sia $(X, M, \mu)$ uno spazio di misura e $f_n: X \rightarrow [0,+\infty]$ successione di funzioni misurabili
+		\[
+			\int_X\liminf_{n \rightarrow+\infty} f_n d\mu \leq \liminf_{n \rightarrow +\infty} \int_X f_n d\mu
+		.\] 
+	\end{lemm}
+	\begin{dimo}
+		$\liminf_{n \rightarrow+\infty} f_n (x) = \lim_{k \rightarrow +\infty} g_k(x)$ con $0\leq g_k(x)\leq g_{k+1} (x) \ \ \forall k, \forall x$\\ 
+		e sono misurabili\\
+		$\int_X \liminf_{n \rightarrow +\infty}f_n d\mu = \int_X \lim_{k \rightarrow +\infty} g_k d\mu = \lim_{k \rightarrow +\infty} \int_X g_k d\mu$\\
+				ma $g_k\leq f_k \ \ \forall k$ \\
+				$\displaystyle \Rightarrow  \int_X g_k d\mu \leq \int_X f_k d\mu$  e applicando il $\liminf$\\
+				$\displaystyle \Rightarrow  \liminf_{k \rightarrow +\infty} \int_X g_k d\mu \leq \liminf_{k \rightarrow +\infty} \int_X f_k d\mu$ \\
+				$\displaystyle\liminf_{k \rightarrow +\infty} \int_X g_k d\mu = \lim_{k \rightarrow +\infty} \int_X g_k d\mu$ \\
+				$\displaystyle\lim_{k \rightarrow+\infty}\int_Xf_k d\mu\leq \liminf_{k \rightarrow +\infty} \int_X f_k d\mu$
+	\end{dimo}
+	\textbf{Esempio 1}\\
+	$f_n(x) = n\chi_{[0,\frac 1n]}$ funzioni misurabili  $\geq 0$\\
+	$\lim_{n \rightarrow +\infty} f_n = \begin{cases}
+		0 \ \ \text{ se }x < 0\\
+		0 \ \ \text{ se } x > 0 \\
+		+\infty \text { se } x = 0
+	\end{cases}$\\
+	$\int_\R \liminf_{n \rightarrow +\infty} f_n d\mu = \int_\R \liminf_{ n \rightarrow +\infty} f_n d\mu = 0$\\
+	$ < \liminf_{n \rightarrow +\infty} \int_\R f_n 
+	d \mu= \lim_{n \rightarrow +\infty} n \cdot \mu([0,\frac 1n]) = \lim_{n \rightarrow +\infty} 1 = 1  $\\
+	\textbf{Esempio 2}\\
+	$f_n(x) = \chi_{[n,+\infty)}(x) \rightarrow 0 \ \ \forall x\in \R$\\
+	$\int_\R f_n d\mu = +\infty \ \ \ \forall n$
+	\begin{defi}[Funzioni integrabili]
+		Sia $(X, M, \mu)$ spazio di misura e sia  $f: X \rightarrow [-\infty, +\infty]$ misurabile.\\
+		Se $\int_X f^+ d\mu < +\infty$ oppure  $\int_X f^-d\mu < + \infty$ allora  $f$ si dice integrabile e \[
+		\int_X f d\mu = \int_X f^+d\mu - \int_X f^- d\mu
+		.\] 
+		se $\int_Xf^+ d\mu , \int_X f^-d\mu < +\infty \Rightarrow  f$ si dice sommabile e $\int_X|f|d\mu < +\infty$ questo tipo di funzioni definisce
+		 \[
+			 L^1(X) = \{f: X \rightarrow [-\infty, +\infty] \text{ misurabili, }\int_X |F|d\mu < +\infty\}
+		.\] 
+	\end{defi}
+	\begin{prop}
+		Sia $(X,M,\mu)$ spazio di misura
+		 \begin{enumerate}
+			 \item Se $f$ è integrabile su $X$\\
+			 $ \Rightarrow  |\int_X f d\mu| \leq \int_X |f| d\mu$ 
+		 \item (disuguaglianza di Chebychev) \ 
+			 $f\in L^1(X) \Rightarrow  \forall t > 0 $ \\
+			 $\mu (\{|f| > t\})\leq \frac 1t\int_X |f|d\mu$
+		 \item $f\in L^1(X) \Rightarrow |f(x)|  < +\infty$ quasi ovunque in $X$ (?)
+		 \item   $f\in L^1(X), \int_X |f|d\mu = 0 \Rightarrow  f= 0$ quasi ovunque
+		 \item $f,g\in L^1(X) \rightarrow f + g \in L^1 $ ($f + g$ è definita quasi ovunque) e \\
+			  $\int_X (f + g)d\mu = \int_X fd\mu + \int_X gd\mu$
+		 \end{enumerate}
+	\end{prop}
+	\begin{dimo}
+		Dimostriamo ogni punto:
+		\begin{enumerate}
+			\item se $\int_X|f|d\mu = +\infty$ ovvio\\
+				Se  $\int_X|f|d\mu < +\infty \Rightarrow  \int_X f^+f\mu, \int_X f^{-1} < +\infty$ \\
+				$ \Rightarrow  |\int_X fd\mu | = |\int_X f^+ d\mu - \int_X f^{-1}d\mu | \leq \int_X |f^+|d\mu + \int_X |f^-|d\mu = \int_X|f|d\mu$ 
+			\item $\int_X |f|d\mu \geq \int_Xf|\chi_{\{|f|> t\}}d\mu \geq \int_X t\chi_{(\{|f|>t\})}$
+			\item  $f\in L^1(X)$\\
+				se  $|f| = +\infty = \bigcap^{+\infty}_{n = 1} \{|f| > n\}$ chiamo $E_n = \{|f|>n\}$\\
+				$E_{n+1}\subseteq E_n\subseteq\ldots\subseteq E_1$\\
+				$\mu(E_1)\leq \int_X|f|d\mu < +\infty$\\
+				$\displaystyle \Rightarrow \mu(\{|f| = -\infty\}) = \mu ( \bigcap^{+\infty}_{n=1}E_n) = \lim_{n \rightarrow +\infty} (\mu(E_n))\leq_{ n \rightarrow +\infty} \frac 1n \int_X |f|d\mu = 0$ 
+			\item $\int_X|f|f\mu= 0$\\
+				$\{|f| > 0 \} = \bigcup^{+\infty}_{n = 1}\{|f|> \frac 1n\}$ \\
+				$\mu(\{|f|>\frac 1n\})\leq n\int_X |f|d\mu = 0$\\
+				$ \Rightarrow \mu(\{|f| > 0 \} ) \leq \sum^{+\infty}_{n = 1}\mu (\{|f| > \frac 1n\}) =0 $ 
+			\item $f+ g$ è definita su  $X\setminus(\{|f| = +\infty\}\cup\{|g| = +\infty\})$ (dove il secondo insieme ha misura nulla\\
+				posso quindi calcolare il suo integrale\\
+				$\int_X(f + g)d\mu = \int_{X\setminus(\{|f| = +\infty\}\cup\{|g| = +\infty\})}(d + g)d\mu$ \\
+				$|f + g|\leq |f | + |g| \Rightarrow \int_X|f + g|d\mu \leq \int_X|f|d\mu + \int_X|g|d\mu < +\infty$ \\
+				chiamiamo $f + g = h$\\
+				 $\int_X(f + g)d\mu = \int_X h^+ -\int_Xh^-d\mu$\\
+				  $h^+-h^- = f^+-f^- + g^+-g^-$\\
+				  $ \Rightarrow  \int_x(h^+ + f^- + g^-)d\mu = \int_X(f^++g^+ + h^-)d\mu$ \\
+				  \text{}\ \ \ \ \ \ \ \ \ \ $\storto = $\\
+				   $\int_X h^+ d\mu + \int_X f^-d\mu + \int_X g^-d\mu = \int_X f^+d\mu + \int_X g^++\int_Xh^-$ \\
+				   $\int_X(f + g)d\mu = \int_X h^+d\mu-\int_Xh^-d\mu = \int_Xf^+d\mu - \int_Xf^-d\mu + \int_Xg^+d\mu - \int_Xg^-d\mu = \int_Xfd\mu + \int_Xgd\mu$
+		\end{enumerate}
+	\end{dimo}
+	\begin{teo}[convergenza dominata o Teorema di Lebesgue]
+		Sia $(X,M,\mu)$ spazio di misura e siano  $f_n: X \rightarrow [-\infty, + \infty]$ misurabili tali che $\lim_{ n \rightarrow +\infty}f_n $ per q.o. $x\in X$ se  $\exists g\in L^1(X)$ tale che  $|f_n| \leq g$ quasi ovunque in  $X \ \ \forall n\in \N$ Allora:\\
+		 \[
+		 \int_X|f_n - f| d\mu \rightarrow 0
+		 .\] 
+	\end{teo}
+	\begin{dimo}
+		$|f_n| \leq g \rightarrow f_n \in L^1(X)$ e $|f|\leq g$ quasi ovunque  $ \rightarrow f\in L^1(X)$ \\
+		$ \Rightarrow  2g - |f_n - f| \geq 0 $ quasi ovunque in $X$ (perché  $|f_n -f| \leq |f_n| + |f|\leq 2g)$\\
+		quindi puntualmente per q.o.  $x\in X$ fissato 
+		 \[
+		2g(x) - | f_n(x) -f(x)| \rightarrow 2g(x)\\
+		.\] 
+		$ \Rightarrow  $ Usando il lemma di Fatou\\
+		\[
+			\cancel{\int_X_2gd\mu}\leq \liminf_{n \rightarrow +\infty}\int_X(2g - |f_n - f|)d\mu
+		.\] 
+		sfruttiamo la linearità dell'integrale\\
+		$\liminf_{n \rightarrow +\infty}(\int_X 2g - \int_X|f_n - f|d\mu ) = \cancel{\int_X_2gd\mu} - \limsup_{ n \rightarrow +\infty} \int_X|f_n - f| d\mu$\\
+			Nota: il $\liminf$ diventa lineare nel caso dei limiti.\\
+			siccome $g\in L^1(X)$ posso semplificare
+			 \[
+				 \Rightarrow \limsup_{ n \rightarrow +\infty}\int_X|f_n - f| d\mu \leq 0
+			.\] 
+	\end{dimo}
+\end{document}
