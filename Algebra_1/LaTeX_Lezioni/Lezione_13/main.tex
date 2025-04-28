@@ -1,0 +1,216 @@
+\documentclass[12px]{article}
+
+\title{Lezione 13 Algebra I}
+\date{2025-04-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Estensioni}
+	\begin{defi}
+		$\F$ campo, Un'estensione di $\mathbb F$ è una coppia  $(\K, \varphi)$ dove $\K$ è un campo e  $ \varphi: \F \rightarrow \K$ è un omomorfismo iniettivo di anelli
+	\end{defi}
+	\begin{nota}
+		scriveremo $\F\subseteq \K$
+	\end{nota}
+	\begin{nota}
+		$p\in\Z_{>0}$ primo  $\F_p$ è il campo $(\Z/(p), + ,\cdot)$
+	\end{nota}
+	\begin{prop}
+		$\K$ è un campo, Allora $\Q\subseteq \K$ oppure esiste $p\in \Z_{\geq 0}$ primo tale che $\F_p$
+	\end{prop}
+	\begin{dimo}
+		Ricordo che esiste un unico omomorfismo di anelli $\chi : \Z \rightarrow \K$ che è definito da 
+		\[
+		\chi(1_\Z) = 1_\K
+		.\] 
+		Ricordo che 
+		\[
+		\ker (\chi) = \begin{cases}
+			0\\
+			p\ \ \ \text{ con } p\in \Z_{\geq 0} \text{ primo}
+		\end{cases}
+		.\] 
+		perché $\K$ è dominio d'integrità.\\
+		Abbiamo  $\Z/\ker(\phi)\cong im(\chi)\subseteq \K\hfill$ (sottoanello)
+		 \textbf{2 casi:}
+		 \begin{itemize}
+			 \item Se $\ker(\phi) = (p)$ allora 
+				 \[
+				 \F_p = \Z/(p)\cong im(\chi)\subseteq \K
+				 .\] quindi è un'estensione di campi
+			 \item $\ker(\phi) = (0)$ allora
+				  \[
+				 \Z\cong im(\chi)\subseteq \K
+				 .\] 
+				 non è estensione di campi ma solo un sottoanello.\\
+				 Dalla proprietà universale del campo dei quozienti \\
+				 AGGIUNGI IMMAGINE 1 34\\
+				 Quindi $\Q\subseteq \L$ è un'estensione di campi
+		 \end{itemize}
+	\end{dimo}
+	\textbf{Esercizio}\\
+	Se $\F\subseteq\K$ è estensione di campi, allora  $\K$ è un $\F$-spazio vettoriale.
+	\begin{defi}
+		Il grado di un'estensione $\F\subseteq\K$ è \[
+			[\K:\F] = \dim_\F(\K)
+		.\] 
+	\end{defi}
+	\textbf{Esempio}\\
+	$\R\subseteq\C$ estensione  $[\C:\R] = 2$ infatti  $\{1,i\}$ è una base di  $\C$ come $\R$ spazio vettoriale.\\
+	\textbf{esempio:}\\
+	$\F$ campo, $\K = Frac(\F[x]) = \F(x)$\\
+	$\F\subseteq\F[x]\subseteq\F(x) = \K$\\
+	Dimostrare che \\
+	$[\K:\F] = +\infty$\\
+	 \begin{prop}
+		Siano $\F\subseteq\K$ e $\K\subseteq \Le$ estensioni di campi. Allora 
+		\[
+			[\Le:\F] = [\Le:\K]\cdot [\K:\F]
+		.\] 
+	\end{prop}
+	\begin{dimo}
+		È sufficiente studiare il caso $ \begin{cases}
+			[\Le:\K] = m\\
+			[\K:\F] = n
+		\end{cases}$\\
+		dato che il caso in cui i gradi sono infiniti è banale.\\
+		Dobbiamo dimostrare che $[\Le:\F] = m\cdot n$\\
+		$B_{\Le,\K} = \{v_1,\ldots,v_m\}$ \hfill base di $\Le$ su  $\K$\\
+		$B_{\K,\F} = \{w_1,\ldots,w_n\}$ \hfill base di $\K$ su  $\F$\\
+		Dimostriamo che una base  di $\Le$ su $\F$ è \\
+		$B_{\Le,\F} = \{w_j,v_i\}_{\substack{j = 1,\ldots, n\\ i = 1,\ldots ,m}}$
+		\begin{itemize}
+			\item 	$B_{\Le, \F}$ è un insieme di generatori.\\
+				Infatti $h\in \Le$\\
+				$ \Rightarrow  l = \sum^{m}_{i = 1}b_iv_i$ con $b_i\in \K = \sum^{m}_{i=i} \sum^{n}_{j=1} a_{ij}(w_jv_i)$ 
+			\item $B_{\Le, \F}$ è un insieme di vettori lineramente indipendenti. Infatti:
+				 \[
+					 \sum^{}_{i,j}a_{ij}(w_jv_i) = 0
+				.\] 
+				\[
+					\Rightarrow \sum^{m}_{i=1} \left( \sum^{n }_{j=1}a_{ij}w_j \right) v_i = 0
+				.\] 
+				è una combinazione lineare in $\L$ a coefficienti in $\K$ di $v_1,\ldots, v_m$\\
+Quindi:\\
+\[
+	\sum^{n}_{j=1}a_{ij}w_j = 0 \ \ \ \forall i\in\{1,\ldots,m\}
+.\] 
+da cui $a_{ij} = 0 \ \ \ \foraall i,j$ poiché i $w_j$ sono linearmente indipendenti su $\F$
+		\end{itemize}
+	\end{dimo}
+	\begin{nota}
+		$\F\subseteq\K$ estensione, $S\subseteq\K$ sottoinsieme\\
+		Denotiamo:
+		\begin{enumerate}
+			\item $\F[S]$ il più piccolo sottoanello di  $\K$ contenente $\F$ ed $S$
+			\item  $\F(S) = Frac(\F[S])$
+		\end{enumerate}
+	\end{nota}
+	\textbf{Esercizio}\\
+	Dimostrare che $\F(S)$ è il più piccolo sottocampo di $\K$ contenente $\F$ e $S$.\\
+	 $\F(S)$ è l'intersezione di tutti i tali sottocampi (contenenti $\F$ e  $S$).\\
+	 \begin{defi}
+	 	$\F\subseteq\K$ estensione,  $s\in \K$ si dice
+		 \begin{itemize}
+			 \item algebrico su $\F$ se esiste un polinomio  $\f\in \F[x]$ tale che  $f(s) = 0$
+			 \item trascendente su $\F$ se non è algebrico su $\F$
+		\end{itemize}
+	 \end{defi}
+	 \textbf{Esempi:}
+	 $\Q\subseteq \C$
+	 \begin{itemize}
+		 \item $\pi$ è trascendente su $\Q$
+		 \item  $i$ è algebrico su $\Q $ poichè soddisfa $x^2 + 1$
+		 \item  $e^\pi$ è trascendente su $\Q$
+		 \item  $\pi^e$ non è noto se sia algebrico o trascendente su  $\Q$
+	 \end{itemize}
+	 \begin{defi}
+	 	$\F\subseteq \K$ estensione $s\in\K$ definiamo
+		\[
+			\begin{aligned}
+				\psi_s: &\F[x] \rightarrow \K\\
+					& f \rightarrow f(s)
+			\end{aligned}
+		.\] 
+		$\psi_s$ si dice omomorfismo di valutazione su $s$
+	 \end{defi}
+	 \textbf{Esercizio}\\
+	 Dimostrare che $\psi_s$ è un omomorfismo di anelli.\\
+	 \textbf{Esercizio}\\
+	 Dimostrare che $\im(\psi_s) = \F[s]$
+	 \textbf{Osservazione}\\
+	 Se $s$ è algebrico su $\F$ esiste un unico polinomio monico $p\in\F[x]$ tale che  $\ler(\psi_s) = (p).$\\
+	 Infatti  $\F[x]$ è un PID\\
+	 quindi $\ker(\psi_s)\subseteq\F[x]$ è generato da un solo elemento\\
+	 L'unicità segue dal fatto che lo scegliamo monico.\\
+	  \begin{defi}
+	 	$\F\subseteq \K$ estensione se $\K$ algebrico su $\F$.\\
+		Allora il polinomio dell'osservazione si dice polinomio minimo di $s$ su $\F$
+	 \end{defi}
+	 \textbf{Osservazione}\\
+	 $\F\subseteq \K$ estensione,  $s\in\K$ trascendente su $\F$. Allora $\ker(\psi_s)= \{0\}$
+	  \begin{prop}
+		  $\F\subseteq\K$ estensione $s\in\K$ trascendente, Allora $[\K:\F] = \infty$
+	 \end{prop}
+	 \begin{dimo}
+		 $\psi_s: \F[x] \rightarrow\K$\\
+		 è iniettivo \\
+		 $ \Rightarrow \F[x]\cong im(\psi_s) = \F[s]$ \\
+		 $ \Rightarrow  F(x)\cong Frac(\F[s]) = \F(s)$ \\
+		 $ \Rightarrow [\F(s): \F] = \infty$\\
+		 Ma $\F_(s)\subseteq \K$ quindi $[\K:\F] = \infty$
+	 \end{dimo}
+	 \begin{coro}
+		 $\F\subseteq \K$ estensione tale che  $[\K:\F] < -\infty$ Allora tutti gli elementi di  $\K$ sono algebrici su $\F$
+	 \end{coro}
+	 \textbf{Esempio:}\\
+	 \begin{enumerate}
+		 \item tutti gli elementi di $\C$ sono algebrici su $ \R$ poiché $[\C:\R] = 2$\\
+		 \item  $\pi$ trascendente su $\Q \Rightarrow [\R:\Q] = \infty$
+	 \end{enumerate}
+	 \begin{prop}
+	 	$\F\subseteq \K$ estensione $s\in\K$ algebrico su $\F$.\\
+		Allora:
+		\begin{enumerate}
+			\item $\F(s) = \F[s]\cong \F[x]/(p)$ dove $p$ è il polinomio minimo di $s$ su $\F$
+			\item  $[\F(s):\F] = deg(p) < \infty$
+		\end{enumerate}
+	 \end{prop}
+	 \begin{dimo}
+		 1)$\psi_s: \F[x] \rightarrow \K$\\
+		  \[
+			  \F[x]/(p) = \F[x]/\ker(\psi_s)\cong im(\psi_s) = \F[s]
+		 .\] 
+		 Per verificare che $\F(s) = \F[s]$ è sufficiente dimostrare che  $\F[s]$ è un campo\\
+		 Ora $\F[s]\subseteq \K \Rightarrow \F[s]$  dominio d'integrità.\\
+		 $ \Rightarrow  \F[s]\cong \F[x]/(p)$ quindi $(p)$\\
+		 è un ideale primo in  $\F[x]$\\
+		 Ma in un PID un ideale è primo se e solo se è massimale\\
+		 Quindi  $\F[x]/(p)$ è un campo.
+		 2) Una base di $\F[x](p)$ come  $\F$-spazio vettoriale è $\{1,x,x^2,\ldots,x^{\deg(p)-1}\}$\\
+		 $ \Rightarrow [\F(s):\F] = deg(p)$
+	 \end{dimo}
+	 \begin{coro}
+	 	$\F\subseteq\K$ estensione
+		\begin{itemize}
+			\item $s\in\K$ è algebrico $ \Leftrightarrow[\F(s):\F]<\infty$
+			\item $s\in\K$ è trascendente  $ \Leftrightarrow[\F(s):\F] =\infty$
+		\end{itemize}
+	 \end{coro}
+\textbf{Esercizi}
+\begin{enumerate}
+	\item $\F\subseteq\K$ estensione,  $s\in\K$ algebrico su $\F$ Allora il suo polinomio minimo è irriducibile in  $\F[x]$
+	\item[Sol:] Abbiamo visto che $(p)\subseteq\F[x]$ è massimale $ \Rightarrow  p $ è irriducibile.
+	\item $\F\subseteq\K$ estensione, $f\in\F[x]$ irriducibile e monico, se $s\in\K$ soddisfa $f(s) = 0$ allora  $f$ è il polinomio minimo di $s$ su $\F$
+	\item[Sol:] Sia  $p\in\F[x]$ il polinomio minimo di  $s$ su $\F$. Allora:  $f\in(p)$\\
+		$ \Rightarrow p\ | \ f$ in $\F[x]$\\
+		Ma l'ipotesi di irriducibilità di  $f$ implica che $p,f$ associati ed essendo entrambi monici $ \Rightarrow  f = p$ 
+	\item Dimostrare che se $\K$ è campo finito allora  $|\K| = p^n$ dove  $p,n\in\Z_{\geq 0}$ e $p$ primo.
+
+\end{enumerate}
+
+\end{document}
