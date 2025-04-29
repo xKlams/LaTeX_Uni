@@ -1,0 +1,268 @@
+\documentclass[12px]{article}
+
+\title{Lezione 13 Geometria 2}
+\date{2025-04-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Successioni di Cauchy}
+	\begin{defi}[Successione di Cauchy]
+		Sia $X$ spazio metrico, $a$ successione in $X$. $a$ è di Cauchy se 
+		\[
+		\forall \e > 0\ \  \exists \ \ N \ | \ d(a_m,a_n) < \e \ \ \forall n,m\geq N
+		.\] 
+	\end{defi}
+	\textbf{Osservzioni:}
+	\begin{enumerate}
+		\item Se una successione è convergente allora è di Cauchy.
+		\item Se una successione di Cauchy $a$ ha una sottosuccessione di Cauchy, allora $a$ è convergente. (verifica per esercizio)
+	\end{enumerate}
+	\begin{defi}[Spazio metrico completo]
+		Uno spazio metrico è completo se ogni successione di Cauchy è convergente.
+	\end{defi}
+	\begin{teo}
+		$\R^n$ è completo
+	\end{teo}
+	\begin{dimo}
+		Sia $a$ successione di Cauchy in $\R^n$, scegliamo  $N\in \Z$\\ tale che  $d(a_n,a_m) < 1\ \ \ \ \forall n,m\geq N$ \\
+		Sia $\{||a(1)||, ||a(2)||,\ldots, ||a(N)||\}$ e sia $R$ il massimo di quest'insieme.\\
+		Allora $D = \overline {B_{R + 1}(0)} = \{p\in\R^n\ | \ ||p|| \leq R + 1\}$\\
+		contiene  $a(n) \ \ \forall n\in\Z_{\geq 1}$\\
+		Sappiamo che  $D$ è compatto, è anche spazio metrico $ \Rightarrow$  è $1^o$ è primo numerabile, quindi $D$ è compatto per successioni.\\
+		Segue: $a$ ha una sottosuccessione convergente per l'osservazione 2), la successione converge.
+	\end{dimo}
+	\subsection{Compattezza in spazi metrici}
+	\begin{defi}
+		Uno spazio metrico $X$ si dice totalmente limitato se $\forall r\in\R_{>0} \ \exists\ x_1,\ldots,x_n\in X$ tale che $\displaystyle X = \bigcup^{n}_{i=1}B_r(x_i)$ $(n$ e i punti $x_1,\ldots,x_n$ possono dipendere da $r)$
+	\end{defi}
+	\begin{lemm}
+		Ogni spazio metrico totalmente limitato è separabile. (quindi è anche $2^o$-numerabile)
+	\end{lemm}
+	\begin{dimo}
+		Dato $m\in\Z_{\geq 1}$ considero  $E_m\subseteq X$ sottoinsieme finito tale che $X$ è ricoperto da palle aperte di centro i punti di $E_n$ e raggio $\frac 1m$. \\
+		Considero $E = \bigcup^{+\infty}_{n= 1}E_n$ \\
+		$E$ è numerabile ed è denso perchè ogni $x\in X $ è a distanza $< \frac 1m$ da qualceh punto doi $E$ e questo vale $\forall m\in \Z_{\geq 1}$
+	\end{dimo}
+	\begin{teo}
+		Sia $X$ spazio metrico. Sono equivalenti:
+		\begin{enumerate}
+			\item $X$ compatto
+			\item $X$ compatto per successioni
+			\item $X $ completo e totalmente limitato
+		\end{enumerate}
+	\end{teo}
+	\begin{dimo}
+		Dimostriamo ogni impliazione
+		\begin{enumerate}
+			\item[ $1)\Rightarrow 2)$] $X $ è $1^o $-numerabile, quindi se è compatto allora è compatto per successioni
+			\item [$2) \Rightarrow  3)$] Supponiamo $X$ compatto per successioni, ogni successione di Cauchy ammette sottosuccessione convergente, quindi  $X$ è completo. Dimostriamo che $X $ è totalmente limitato per assurdo, cioè $\exists r > 0 $ tale che  $X $ non è unione di un numero finito di palle aperte di raggio $r$.\\
+				Costruiamo una successione  $a$ in $X$:\\
+				$a(1)\in X$ a piacere\\
+				 $a(2)\in X\setminus B_r(a(1))\neq \emptyset$\\
+				  $a(3)\in  X\setminus (B_r(a(1))\cup B_r(a(2)))$\\
+				  $a(n)\in X\setminus \bigcup^{n-1}_{k=1}B_r(a(k))\neq \emptyset$ per ipotesi\\
+				  Abbiamo $d(a(n),a(m))\geq r \ \ \forall n,m$ quindi  $a $ non è di Cauchy e non lo è nessuna sottosuccessione $ \Rightarrow $ Allora nessuna sottosuccessione è convergente: assurdo.
+			  \item[ $3) \Rightarrow  1)$ ] $X$ completo e totalmente limitato. Per il lemma $X$ è separabile e $2^o$-numerabile\\
+				  Dimostriamo $2)$ e seguirà anche $1)$.\\
+				  Sia  $a$ successione in $X$, consideriamo per ogni $m\in\Z_{\geq 1}$ un insieme finito  $E_m\subseteq X$ tale che 
+				  \[
+					  X = \bigcup^{}_{e\in E_m}B_{2^{-m}}(e)
+				  .\] 
+				  Per $m = 1$ scelgo una  $e_1\in E_1$ tale che $B_{2^{-1}}(e)$ contiene  $a(n)$ per infiniti valori di  $n$.\\
+				  Scelgo anche  $k_1\in\Z_{\geq 1}$ tale che $a(k_1)\in B_{2^{-1}}(e_1)$\\
+				  Per $m = 2$ scelgo  $e_2\in E_2$ tale che $B_{2^{-1}}(e)\cap B_{2^{-2}}(e_2)$ contiene $a(n)$ per infiniti valori di $n$ e scelgo  $k_2 > k_1$ tale che $a(k_2)\in B_{2^{-1}}(e_1)\cap B^{2^{-2}}(e_2)$\\
+				  Iterando ottengo una sottosuccessione $a(k_l)$ che è di Cauchy (esercizio con la disuguaglianza  triangolare)\\
+				  quindi la sottosuccessione converge.\\
+				  Segue $2)$ e anche $1)$.
+		\end{enumerate}
+	\end{dimo}
+	\section{Topologia Algebrica}
+	\textbf{Obiettivo}\\
+	associarea  ogni spazio topologico oggetti algebrici (gruppi, spazi vettoriali, moduli, anelli, ecc..) in modo che prorietà topologiche corrispondano a proprietà algebriche.\\
+	Esempi di applicazioni:
+	\begin{enumerate}
+		\item $\R^2$ e $\R^2\setminus\{0\}$ non sono omeomorfi: dimostrazione?
+		\item $\pro^2_\R$ e  $S^1\times S^1$ non sono omeomorfi, dimostrazione? 
+		\item Sia $U\subseteq \R^2$ aperto,  $A,B: U \rightarrow \R$ di classe $C^\infty$.\\
+			Supponiamo,  $\frac{\partial A}{\partial y}=\frac{\partial B}{\partial x}$\\
+			Domanda: esiste  $f$ di classe $C^\infty$ tale che  $A = \frac{\partial f}{\partial x}, \ B = \frac{\partial f}{\partial y}?$\\
+			Risposta: dipende da  $U$ (e anche da $A, B$).\\
+			Ad esempio se $U = \R^2$ f esiste $\forall A, \forall B$\\ se $U = \R^2\setminus\{0\}$ allora no\\
+			ad esempio $A = \frac{y}{x^2+y^2}, B = \frac{-x}{x^2 + y^2}$\\
+			non sono derivate parziali di alcuna  $f:\R^2\setminus\{0\} \rightarrow \R$\\
+			($f$ esiste localmente ma non globalmente)
+	\end{enumerate}
+	\newpage
+	\subsection{Gruppo fondamentale}
+	\begin{defi}
+		\ \\[-30px]
+		\begin{enumerate}
+			\item Sia $X$ spazio topologico, siano $a,b\in X$. Denotiamo con  \\$\Omega (X,a,b) = \{\alpha:[0,1] \rightarrow X\ | \ \alpha$ continua, $\alpha(0) = a, \alpha(1) = b\}$ \\
+		l'insieme dei cammini in $X$ da $a$ a $b$
+	\item  Dati $a,b,c\in X$ e cammini $\alpha\in\Omeg(X,a,b)$ e  $\beta\in\Omega(X,b,c)$ è definita la giunzione\\
+		 $\alpha\star\beta\in\Omega(X,a,c)$ con la formula
+		  \[
+			  (a\star b)(t) = \begin{cases}
+				  \alpha(2t) \ \ \ \ \ \text{ se } t\in[0,\frac 12]\\
+				  \beta (2t-1) \ \ \text{ se } t\in[\frac 12, 1]
+			  \end{cases}
+		 .\] 
+		\end{enumerate}
+		Inoltre si definisce l'inversione $i(\alpha\in\Omega(X,b,a)$ ponendo $i(\alpha)(t) = \alpha(1 - t)$
+	\end{defi}
+	\begin{defi}
+		Siano $X$ spazio topologico, $a,b\in X$ Due cammini  $\alpha,\beta\in\Omega(X,a,b)$ sono equivalenti
+	se esiste $F:[0,1]\times[0,1] \rightarrow X $continua tale che
+	\begin{enumerate}
+		\item $F(t,0) = \alpha(t) \ \ \forall t$
+		\item $F(t,1) = \beta(t) \ \ \forall t$
+		\item $F(0,s) = a,\ \ \ \ \  F(1,s) = b\ \ \forall s\in [0,1]$
+	\end{enumerate}
+	In tal caso si scrive $\alpha \sim \beta$ e una tale  $F$ si dice omotopia di cammini da $\alpha$ a $\beta$.
+\end{defi}
+\textbf{Osservazione:}\\
+L'equivalenza di cammini è una relazione di equivalenza.\\
+Verifica:
+\begin{enumerate}
+	\item $\alpha\sim\alpha$ basta prendere $F(t,s) = \alpha(t)$
+	\item se $\alpha\sim\beta$ con omotopia di cammini  $F$ da $\alpha$ a $\beta $ allora $\tilde F (t,s) = F(t,1-s)$ è un'omotopia di cammini da  $\beta$ a $\alpha$, quindi $\beta\sim\alpha.$
+	\item Se  $\alpha\sim \beta $ tramite  $F$, e $\beta\sim \gamma$ tramite $G$ allora 
+		\[
+		H(t,s) = \begin{cases}
+			F(t,2s) \ \ s\in [0,\frac 12]\\
+			G(t,2s - 1) \ \ s\in[\frac 12, 1]
+		\end{cases}
+		.\] 
+		è un'omotopia di cammini da $\alpha $ a $\gamma$
+\end{enumerate}
+\textbf{Esempio:}\\
+Sia $X\subseteq \R^n$ sottoinsieme convesso non vuoto\\
+AGGIUNGI IMMAGINE 4:54\\
+Siano $a,b\in X$ qualsiasi e $\alpha,\beta\in \Omega(X,\alpha,\beta)$ qualsiasi.\\
+Allora $\alpha\sim \beta$,  $F(t,s) = (1-s)\alpha(t) + s\beta(t)$ \\
+(è ben definita e ha valori in $X$ perché $X $ è convesso)\\
+\textbf{Osservazione}\\
+L'equivalenza di cammini è compatibile con la giunzione:\\
+se $\alpha\sim\alpha', \beta\sim\beta'$  $\alpha\star\beta$ è definita,\\
+Allora $(\alpha\star\beta)\sim(\alpha'\star\beta')$\\
+Siano  $F$ omotopia di cammini da $\alpha$ a $\alpha'$ e  $G$ da $ \beta$ a $\beta'$, allora:  \[H(t,s) = \begin{cases}
+	F(2t,s) \ \ t\in[0,\frac 12]\\
+	G(2t - 1, s) \ \ t\in[\frac 12, 1]
+\end{cases}.\]
+è omotopia di cammini da $\alpha\star\beta$ a $\alpha'\star\beta'$\\
+Analogamente  $i(\alpha)\sim i(\alpha')$ 
+\begin{lemm}
+	Siano $X$ spazio topologico $a,b\in X$  $\alpha\in \Omega(X,a,b)$, sia  $\Phi: [0,1] \rightarrow [0,1]$ continua tale che $\Phi(0) = 0, \ \Phi(1) = 1$. Allora $\beta = \alpha\circ \Phi$ è equivalente ad  $\alpha$
+\end{lemm}
+\begin{dimo}
+	$\alpha(\Phi(t)) = \beta(t)$ Un'omotopia di cammini da  $\alpha$ a $\beta $ è $F(t,s) = \alpha((1-s)t + s\Phi(t))$
+\end{dimo}
+In generale la giunzione di cammini non è associativa\\
+$(\alpha\star(\beta\star\gamma))(t)= \begin{cases}
+	\alpha(2t)\ \ t\in[0,\frac 12]\\
+	\beta (4t-2)\ \ t\in [\frac 12, \frac 34]\\
+	\gamma(4t - 3)\ \ t\in[\frac 34, 1]
+\end{cases}$ \\
+$((\alpha\star\beta)\star\gamma)(t)= \begin{cases}
+	\alpha(4t) \ \ t\in[0,\frac 14]\\
+	\beta(4t - 1) \ \ t\in[\frac 14,\frac 12]\\
+	\gamma(2t - 1) \ \ t\in[\frac 12, 1]
+\end{cases}$
+\begin{lemm}
+	Sia $X$ spazio topologico, siano $a,b,c,d\in X$,  $\alpha\in\Omega(X,a,b), \beta\in \Omega (X,b,c), \gamma\in\Omega(X,c,d)$ allora
+	 \[
+		 (\alpha\star\beta)\star\gamma\sim\alpha\star(\beta\star\gamma)
+	.\] 
+\end{lemm}
+\begin{dimo}
+	Basta usare il lemma, con
+	\[
+	\Phi(t) = \begin{cases}
+		2t \ \ \ \ \ t\in[0,\frac 14]\\
+		t + \frac 14 \ \ t\in [\frac 14, \frac 12]\\
+		\frac{t + 1}{2}\ \ \ \ t\in [\frac 12, 1]
+	\end{cases}
+	.\] 
+	è continua e soddisfa:
+	\[
+		((\alpha\star\beta)\star\gamma)(t) = (\alpha\star(\beta\star\gamma))(\phi(t))
+	.\] 
+\end{dimo}
+\begin{defi}[Cammino costante]
+	Siano $X$ spazio topologico e $a\in X$, definiamo il cammino costante
+	 \[
+		 \begin{aligned}
+		 	
+			 1_a:&[0,1] \rightarrow X\\
+			     &t \rightarrow a
+		 \end{aligned}
+	.\] 
+	$1_a\in\Omega(X,a,a)$
+\end{defi}
+\begin{lemm}
+	Siano $X$ spazio topologico, $a,b\in X$,  $a\in \Omega(X,a,b).$ Allora sono definite le giunzioni  $1_a\star\alpha$ e $\alpha\star 1_b$ e valgono 
+	\[
+	1_a\star\alpha \sim\alpha\sim\alpha\star 1_b
+	.\] 
+	$\alpha\star i(\alpha)\sim 1_a$\\
+	 $i(\alpha)\star\alpha\sim 1_a$
+\end{lemm}
+\begin{dimo}
+	Le prime due equivalenze si ottengono con riparametrizzazioni\\
+	$(1_a*\alpha)(t) = \alpha(\Phi(t))$ con $\Phi(t) = \begin{cases}
+		0\ \ \ t\in[0,\frac 12]\\
+		2t - 1\ \ t\in[\frac 12,1]
+	\end{cases}$\\
+	$(\alpha\star 1_b)(t) = \alpha(\psi(t))$
+	con  $\psi(t) = \begin{cases}
+		2t \ \ t\in[0,\frac 12]\\
+		1 \ \ t\in[\frac 12 ,1]
+	\end{cases}$\\
+	Dimostriamo la terza equivalenza\\
+	Scelgo $s\in[0,1]$ percorro  $\alpha$ fino ad un certo punto (che dipende da $s$) poi sto fermo per un po', poi torno indietro lungo $i(\alpha)$\\
+	AGGIUNGI IMMAGINE 5 42\\
+	Con quest'idea la formula è 
+	 \[
+	F(t,s) = \begin{cases}
+		\alpha(2t) \ \ t\in[0,\frac 12s]\\
+		\alpha(s) \ \ t\in[\frac 12s, 1 - \frac 12s]\\
+		\alpha(2-2t) \ \ t\in [1 - \frac 12s, 1]
+	\end{cases}
+	.\] 
+	Questa è omotopia di cammini da $1_a$ a $\alpha\star i(\alpha)$.\\
+	L'ultima equivalenza segue dalla terza, scambiando $\alpha$ con $i(\alpha)$ $a$ con $b$ e usando  $i(i(\alpha)) = \alpha$
+\end{dimo}
+\begin{defi}[Gruppo fondamentale]
+	Sia $X$ spazio topologico e $a\in X.$ Il quoziente  $\Omega(X,a,a)/\sim=\pi_1(X,a)$ è detto gruppo fondamentale di $X$ con punto base $a$.\\
+	Dato  $\alpha\in\Omega(X,a,a)$ useremo la solita notazione\\
+	$[\alpha]\in\pi_1(X,a)$
+\end{defi}
+\begin{teo}
+	Nella definizione precedente $\pi_1(X,a)$ è un gruppo con operazione
+	\[
+		[\alpha]\cdot[\beta] = [\alpha\star\beta]
+	.\] 
+	elemento neutro $[1_a]$ e inverso $[\alpha]^{-1} = [i(\alpha)]$
+\end{teo}
+\begin{dimo}
+	Già fatta.
+\end{dimo}
+\begin{nota}
+	Scriveremo semplicemente $[\alpha\star\beta\star\gamma]$ invece di  $[(\alpha\star\beta)\star\gamma]$ (l'ordine è importante per i cammini ma non per le classi)
+\end{nota}
+\textbf{Esempi:}
+\begin{enumerate}
+	\item $X = \{a\}$, c'è un solo cammino ed è $1_a\in \Omega(X,a,a)$ quindi $\pi_1(X,a) = \{[1_a]\}$ è il gruppo banale.
+	\item $X = \R^n, a = $ qualsiasi  $\in\R^n$\\
+		Ci sono tanti cammini chiusi con punto base $a$, ma sono tutti equivalenti dato che  $\R^n $ è convesso, quindi
+		\[
+			\pi_1(\R^n,a) = \{[1_a]\}
+		.\] 
+		è banale.
+	\item Analogamente, se $X\in\R^n$ è convesso, allora  $\pi_1(X,a)$ è banale
+\end{enumerate}
+\end{document}

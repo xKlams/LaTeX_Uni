@@ -1,0 +1,37 @@
+\documentclass[12px]{article}
+
+\title{Lezione 13 Geometria 2}
+\date{2025-04-28}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Successioni di Cauchy}
+	\begin{defi}[Successione di Cauchy]
+		Sia $X$ spazio metrico, $a$ successione in $X$. $a$ è di Cauchy se 
+		\[
+		\forall \e > 0\ \  \exists \ \ N \ | \ d(a_m,a_n) < \e \ \ \forall n,m\geq N
+		.\] 
+	\end{defi}
+	\textbf{Osservzioni:}
+	\begin{enumerate}
+		\item Se una successione è convergente allora è di Cauchy.
+		\item Se una successione di Cauchy $a$ ha una sottosuccessione di Cauchy, allora $a$ è convergente. (verifica per esercizio)
+	\end{enumerate}
+	\begin{defi}[Spazio metrico completo]
+		Uno spazio metrico è completo se ogni successione di Cauchy è convergente.
+	\end{defi}
+	\begin{teo}
+		$\R^n$ è completo
+	\end{teo}
+	\begin{dimo}
+		Sia $a$ successione di Cauchy in $\R^n$, scegliamo  $N\in \Z$\\ tale che  $d(a_n,a_m) < 1\ \ \ \ \forall n,m\geq N$ \\
+		Sia $\{||a(1)||, ||a(2)||,\ldots, ||a(N)||\}$ e sia $R$ il massimo di quest'insieme.\\
+		Allora $D = \overline {B_{R + 1}(0)} = \{p\in\R^n\ | \ ||p|| \leq R + 1\}$\\
+		contiene  $a(n) \ \ \forall n\in\Z_{\geq 1}$\\
+		Sappiamo che  $D$ è compatto, è anche spazio metrico $ \Rightarrow$  è $1^o$ è primo numerabile, quindi $D$ è compatto per successioni.
+	\end{dimo}
+\end{document}
