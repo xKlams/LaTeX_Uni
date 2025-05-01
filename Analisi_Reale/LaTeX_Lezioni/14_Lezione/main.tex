@@ -1,0 +1,27 @@
+\documentclass[12px]{article}
+
+\title{Lezione 14 Analisi Reale}
+\date{2025-04-29}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Boh}
+	\begin{prop}
+		$(X,\mu)$ spazio di misura; $f_n, f: X \rightarrow[-\infty,+\infty]$ finite quasi ovunque; $f_n \rightarrow f \ \ q.o. \Leftrightarrow \ \forall \e>0\ \ \ \mu( \bigcap_{k=1}^{+\infty} \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \e\})=0$
+	\end{prop}
+	\begin{dimo}
+		$ ( \Rightarrow )$ Già visto \\
+		$( \Leftarrow)$  $\forall y \ \ \mu( \bigcap^{+\infty}_{n = 1} \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \frac 1y\}) = 0 \\\Rightarrow  \mu( \bigcup^{+\infty}_{y = 1} \bigcap^{+\infty}_{k =1} \bigcup^{+\infty}_{n = k}\{\ |f_n-f|\geq \frac 1y\}) := \mu(N) = 0$\\
+		$x\in X\setminus N \Leftrightarrow x\in \bigcap^{+\infty}_{y = 1} \bigcup^{+\infty}_{k = 1} \bigcap^{+\infty}_{n=k}\{|f_n-f| <\frac 1y\}$\\
+		Vuol dire che $\forall y \ \ \exists k_y$ (dipendente da  $y$) tale che $|f_n(x) -f(x)| < \frac 1y$\\
+		 $\forall n\geq k_y \Rightarrow  f_n(x) \rightarrow f(x) \Rightarrow  f_n \rightarrow f$ quasi ovunque
+	\end{dimo}
+	Se io so che $\forall \e > 0 \ \ \mu(\{f_n-f|\geq\e\}) \xrightarrow{ n \rightarrow + \infty} 0 \Leftrightarrow ?$\\
+	$\forall \e > 0 \ \ \mu( \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \e\}) \xrightarrow{n \rightarrow +\infty} 0 \Leftrightarrow ?$\\
+	È una condizione più forte o debole?
+	
+\end{document}
