@@ -1,0 +1,67 @@
+\documentclass[12px]{article}
+
+\title{Lezione 16 Analisi Reale}
+\date{2025-05-01}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{altri teoremi}\\
+	\begin{teo}[Lisin]
+		$f:\R \rightarrow \R$ misurabile $ \Rightarrow \forall \delta > 0 \exists g_\delta \in C(\R)\ | \ m(\{f\neqg\})< \delta\ \ \ \sup |g_\delta|\leq \sup|f|$
+	\end{teo}
+	\begin{dimo}
+		Procediamo per passi:
+		\begin{enumerate}
+			\item $s:[a,b] \rightarrow \R$ semplice.\\
+				Tesi: $\forall \delta \exists F\subseteq[a,b]\ | \ m([a,b]\setminus F) < \delta, s|_F$ continua\\
+				$\exists n\in \N, c\in\R^n, E\subseteq M^n\ | \ s(x) = \sum^{n}_{k = 1}c_k\chi_{E_n}(x)$ SPDG $E_k\cap E_h = \emptyset \ \ \forall h,k$ \\
+				$\forall \delta > 0 , k\in[n]\exists F_k\subseteq E_k$ chiuso $\ | \ m(E_k\setminus F_k) < \frac\delta n$\\
+				$\displaystyle \Rightarrow  F := \bigcup^{n}_{k=1}F_k, \ \ m([a,b]\setminus F) = m( \bigcup^{n}_{k=1}E_k \bigcup^{n}_{k=1}F_k) \leq \sum^{n}_{k=1}m(E_k\setminus \bigcup^{n}_{k=1}F_k) = \sum^{n}_{k=1}m(E_k\setminus F_k) < \delta$ \\
+				$s|_F$ continua  $pK$
+			\item $f:[a,b] \rightarrow \R$ misurabile\\
+				Obiettivo: $\forall \delta\in (0,+\infty)\exists F\subseteq[a,b]\ | \ m([a,b]\setminus F) <\delta, f)_F\in C(F)$ \\
+				La dimostrazione è poco chiara. Guarda da Spadaro.
+
+		\end{enumerate}
+
+	\end{dimo}
+	\subsection{Spazi L^p}
+	$(X,\mu)$ spazio di misura\\
+	$L^p(X) = L^p(X,\mu):=\{f:X \rightarrow \overline\R$ misurabile $| \ \int_X|f|^p d\mu < +\infty\}$\\
+	$f(x) = \frac{\chi_{|x|\geq 1}(x)}{|x|}\in L^p(\R)?$\\
+	$\int_\R|f(x)|^pd\mu = 2\int_1^+\infty \frac{1}{x^p}d m = 2\frac{x^{1-p}}{1-p}|^{+\infty}_{p=1}= \begin{cases}
+		+\infty \ \ \ p\leq 1\\
+		\frac{2}{1-p}\ \ \ p > 1
+	\end{cases} \Rightarrow f\in L^p\ \ \forall p > 1$ \\
+$\displaystyle f(x) = x^{-\frac 12}\in L^p((0,1)) \Leftrightarrow\int_0^1 x^{-\frac p 2}dx < +\infty\ \ \Leftrightarrow\ \ \frac{2x^{\frac{2-p}{2}}}{2-p}|^1_{x=0} < +\infty\ \  \ \Leftrightarrow \frac{2-p}{2} > 0 \Leftrightarrow p < 2$
+	\begin{lemm}[Disugualgianza di convessità]
+		$\forall a,b\in[0,+\infty)$
+		\begin{enumerate}
+			\item (Disuguaglianza di Young)\\
+				$ab\leq \frac{a^p}{p} + \frac{b^{p'}}{p'} \ \ \ \forall p,p'\in\R\ |\ \frac 1p + \frac 1 {p'} = 1\ \ \ (p' = \frac{p}{p-1})$
+			\item  $a^p + b^p \leq (a+p)^p\leq 2^{p-1}(a^p + b^p)\forall p\in [1,+\infty)$
+			\item  $a^p + b^p\geq (a+b)^p\geq 2^{p-1}(a^p + b^p)\ \ \ \forall p\in (0,1)$
+		\end{enumerate}
+	\end{lemm}
+	\begin{dimo}
+		\begin{enumerate}
+			\item $\ln(x)$ concava $\forall x\in (0,+\infty)$\\
+				$\ln(\frac 1pa^p + \frac_1{p'}b^{p'})\geq \frac 1p \ln(a^p) + \frac 1{p'}\ln(b^p) = \ln(a)+\ln(b) = \ln(ab)$\\
+				$ \Rightarrow  \frac 1p a^p + \frac 1{p'}b^{p'}\geq ab$ 
+			\item $p\geq 1 \Rightarrow f(x) = x^p, x\in[0,+\infty)$ convessa\\
+				\[
+					\frac{1}{2^p}(a+b)^p(\frac 12 a + \frac 12 b)^p\leq \frac 12 a^p + \frac 12 b^p = \frac 12 (a^p + b^p)\ \ \ (ottimale, a= b \Rightarrow  =)
+				.\] 
+				$b=0 \Rightarrow  a^p + b^p\leq (a+b)^p \ \ \ \forall p\geq 1$ \\
+				$b > 0 \Rightarrow  f(x) = (x+1)^p - x^p -1$ \\
+				$ \Rightarrow  f'(x) = p(x+1)^{p-1}-px^{p-1} = (x+1)^{p-1}-x^{p-1}\geq 0\ \ \forall x\geq 0, p\geq 1$ \\
+				$ \Rightarrow f \nearrow, f(0)= 0 \Rightarrow f\geq 0\ \ \forall x\geq 0$ \\
+			$ \Rightarrow  (\frac ab + 1)^p-(\frac ab)^p-1 = f(\frac ab) \geq 0$ \\
+		$ \Rightarrow  (\frac ab + 1)^p \geq (\frac ab)^p + 1$
+		\end{enumerate}
+	\end{dimo}
+\end{document}
