@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
-\title{Lezione 16 Analisi Reale}
-\date{2025-05-01}
+\title{Lezione 15 Analisi Reale}
+\date{2025-04-16}
 \author{Federico De Sisti}
 
 \input{../../../setup.tex}
@@ -9,59 +9,136 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{altri teoremi}\\
-	\begin{teo}[Lisin]
-		$f:\R \rightarrow \R$ misurabile $ \Rightarrow \forall \delta > 0 \exists g_\delta \in C(\R)\ | \ m(\{f\neqg\})< \delta\ \ \ \sup |g_\delta|\leq \sup|f|$
+	\subsection{Convergenze varie (alberto agostinelli)}
+	\begin{defi}[Convergenza quasi uniforme]
+		$f_n \rightarrow f$ quasi uniformemente se $\forall \delta > 0 \ \ \exists F_\delta\subseteq X, F_\delta$ misurabile  $\mu(F_\delta) < \delta$\\
+	tale che   $\sup_{X\setminus F_\delta} |f_n - f| \rightarrow 0$ $(f_n \rightarrow f$ uniformemente in $X\setminus F_\delta)$
+	\end{defi}
+	\begin{prop}
+		$f_n \rightarrow f$ quasi uniformemente $ \Leftrightarrow \forall \e > 0 \mu ( \bigcup^{+\infty}_{n = k}\{|f_n - f | \geq \e \}) \xrightarrow{ k \rightarrow + \infty} 0$
+	\end{prop}
+	\begin{dimo}
+		$ ( \Rightarrow )$ \\
+		$\forall \delta > 0 \exists F_\delta \subset X, \mu(F_s) < \delta $ tale che,  $f_n \rightarrow f$ uniformemente in $X\setminus F_\delta \\\Leftrightarrow \forall \delta > 0 \exists F_\delta \subset X, \mu (F_\delta)<\delta$ \\
+		tale che $\forall \e > 0 \exists k = k(\e,\delta) \ : \ |f_n(x) - f(x)| <\e \ \ \ \forall n\geq k \ \ \ \forall x\in X\semtinsu F_\delta$\\
+		$ \Leftrightarrow \forall \delta > 0 \exists F_\delta\subset X, \mu(F_\delta) < \delta$ tale che $\forall \e>0 \exists k = k(\delta,\e)$ \\
+		\[
+		X\setminus F_\delta \subseteq \bigcap_{n=k}^{+\infty}\{|f_n-f| < \e\}
+		.\] 
+		$ \Leftrightarrow \forall \delta > 0 \ \ \exists F_\delta \subset X \ \ \mu(F_\delta)<\delta$\\
+		tale che $\forall \e > 0 \ \ \exists k = k(\e, \delta)$\\
+		 \[
+			 \left( \bigcap_{n=k}^{+\infty}\{f_n-f| < \e\})^c = \bigcup^{+\inftu}_{n=k}\{f_n-f|\geq \e\}\subseteq F_\delta
+		.\] 
+		$ \Rightarrow  \forall \delta > 0  \ \ \forall \e > 0 \ \ \ \exists k = k(\delta,\e)$ \\
+		 \[
+			 \mu( \bigcup^{+\infty}_{n=k}\{|f_n - f|\geq \e\})<\delta \Rightarrow \mu( \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq \e\}) \xrightarrow{k \rightarrow +\infty} 0
+		.\] 
+		$( \Leftarrow)$ \\
+		$\foralll \e>0 \ \ \forall \delta > 0 \ \ \ \exists k = k(\e,\delta)$ tale che \\
+		 \[
+			 \mu( \bigcup^{+\infty}_{n = k } \{|f_n-f|\geq \e\})<\delta
+		.\] 
+		$\forall j\in \N$ per  $\e = \frac 1 j, \ \ \delta = \frac\nu {2^j}, \nu > 0$ fissato\\
+		$ \Rightarrow \exists k_j = k_j(j,\nu)$ tale che $\mu ( \bigcup^{+\infty}_{n = k_j}(\{f_n-f|\geq \frac 1 j\}) < \frac \nu {2^j}$\\
+		\[
+			\Rightarrow \mu ( \bigcup^{+\infty}_{j = 1} \bigcup^{+\infty}_{n = k_j} \{ |f_n - f|\geq \frac 1 j\}) \leq \sum^{+\infty}_{j = 1}\frac \nu {2^j} = \nu
+		.\] 
+		$x\in X\setminus F_\nu$ (dove  $F_\nu$ è l'argomento della misura precedente)\\
+		$ \Rightarrow x\in \bigcap^{+\infty}_{j = 1} \bigcap^{+\infty}_{n = k_j}\{|f_n-f| < \frac 1 j\}$ \\
+		$\Rightarrow  \forall j \ \ \ \exists k_j$ tale che $|f_n(x) - f(x)| < \frac 1 j\ \ \ \forall n \geq k_j$|\
+		$ \Rightarrow  \sup_{X\setminus F_\nu}|f_n - f| \xrightarrow{n \rightarrow +\infty} 0 \Rightarrow f_n \rightarrow f$ uniformemente su $X\setminus F_\nu$\\
+		Abbiamo caratterizzato la convergenza quasi uniforme con la misura dei sopralivelli  $\forall \e > 0 $\\ 
+		conseguenza:\\
+		\[
+			f_n \rightarrow f \text{ q.u.} \Rightarrow  \begin{cases}
+				f_n \rightarrow f \ \text{ q.u.}\\
+				f_n \rightarrow f \ \text{ in misura}
+			\end{cases}
+		\] 
+		\[
+		\storto \Leftrightarrow
+		\] 
+		\[
+			\forall \e > 0 \ \ \mu \left( \bigcup^{+\infty}_{n = k}\{|f_n - f| \geq e\} \right) \xrightarrow{k \rightarrow +\infty} 0
+		.\] ma allora
+		\[
+		0 = \lim_{k \rightarrow +\infty}\mu ( \bigcup^{+\infty}_{n = k }\{|f_n - f| \geq \e\} ) = \mu ( \bigcap^{+\infty}_{k = 1} \bigcup^{+\infty}_{n = k}\{|f_n-f|\}\geq \e\})
+		.\] 
+		\[
+			\forall k \ \ \mu(\{f_k -f| \geq \e\}\leq \mu( \bigcup^{+\infty}_{n= k}\{\f_n - f| \geq \e\}) \rightarrow 0
+		.\] 
+		 $ \Rightarrow f_n \rightarrow f$  in misura
+
+	\end{dimo}
+	\begin{teo}[Egorov]
+		Sia $(X,\mu)$ spazio di misura finita (  $ \mu(X) < +\infty$ )\\
+		Allora:
+		\[
+		f_n \rightarrow f \ \ \ \ q.o.\ \ \  \Leftrightarrow \ \ \ f_n \rightarrow f \ \ \ \ q.u.
+		.\] 
+	\end{teo}
+	\begin{teo}[Vitali]
+		Sia $(X,\mu)$ uno spazio di misura  finita e siano  $f_n, f\in L^1(X)$ tale che  $f_n \rightarrow f$ quasi ovunque quasi ovunque\\
+		allora $f_n \rightarrow f $ in $L^1 \Leftrightarrow \{f_n\}$ equi-assolutamente integrabili\\ $\forall \e> 0 \ \exists \delta = \delta(\e) > 0 $ tale che
+		\[
+			\int_E |F_n|d\mu < \e \text{ se } E\in M \ \ \forall n, \mu(E) < \delta
+		.\] 
 	\end{teo}
 	\begin{dimo}
-		Procediamo per passi:
-		\begin{enumerate}
-			\item $s:[a,b] \rightarrow \R$ semplice.\\
-				Tesi: $\forall \delta \exists F\subseteq[a,b]\ | \ m([a,b]\setminus F) < \delta, s|_F$ continua\\
-				$\exists n\in \N, c\in\R^n, E\subseteq M^n\ | \ s(x) = \sum^{n}_{k = 1}c_k\chi_{E_n}(x)$ SPDG $E_k\cap E_h = \emptyset \ \ \forall h,k$ \\
-				$\forall \delta > 0 , k\in[n]\exists F_k\subseteq E_k$ chiuso $\ | \ m(E_k\setminus F_k) < \frac\delta n$\\
-				$\displaystyle \Rightarrow  F := \bigcup^{n}_{k=1}F_k, \ \ m([a,b]\setminus F) = m( \bigcup^{n}_{k=1}E_k \bigcup^{n}_{k=1}F_k) \leq \sum^{n}_{k=1}m(E_k\setminus \bigcup^{n}_{k=1}F_k) = \sum^{n}_{k=1}m(E_k\setminus F_k) < \delta$ \\
-				$s|_F$ continua  $pK$
-			\item $f:[a,b] \rightarrow \R$ misurabile\\
-				Obiettivo: $\forall \delta\in (0,+\infty)\exists F\subseteq[a,b]\ | \ m([a,b]\setminus F) <\delta, f)_F\in C(F)$ \\
-				La dimostrazione è poco chiara. Guarda da Spadaro.
-
-		\end{enumerate}
-
+		$ ( \Rightarrow  )$ già visto\\
+		$ ( \Leftarrow )$\\
+		$f_n \rightarrow f$ quasi ovunque + $\mu(X) < +\infty$\\
+		 $ \Rightarrow  $ (per Egorov)\\
+		 $\forall \delta > 0 \exists f_\delta\in M, \mu (F_\delta) < \delta$ tale che  $f_n \rightarrow f$ uniformemente in $X\setminus f_\delta$\\
+		 Sia  $\e > 0$ fissato\\
+		  $ \Rightarrow  $ sia $\deta = \delta ( \e)$ dato dall'ipotesi di equi-assoluta integrabilità\\
+		  e sia  $f_\delta\in M$ dato dal teorema di Egorov
+		   \[
+			   \Rightarrow  \int_X |f_n - f| d\mu = \int_{X\setminus F_\delta}|f_n - f| d\mu  + \int_{F_\delta}|f_n - f| d\mu 
+		  .\] 
+		  \[
+		  \leq \sup_{X\setminus F_\delta} |f_n-f| \mu (X\setminus F_\delta) + \int_{F_\delta}|f_n|d\mu + \int_{F_\delta}|f|d\mu
+		  .\] 
+		  \[
+			  \leq (\sup_{X\setminus F_\delta}|f_n-f|)\mu(X) + \e + \e \ \  (\text{dato che } \mu(F_\delta) < \delta )
+		  .\] 
+		  \[
+			  \Rightarrow \limsup_{n \rightarrow +\infty}\int_X |f_n - f| d\mu \leq 2\e \ \ \forall \e > 0 
+		  .\] 
+		  \[
+		  \Rightarrow  \int_X \ |f_n - f | d\mu \rightarrow 0
+		  .\] 
 	\end{dimo}
-	\subsection{Spazi L^p}
-	$(X,\mu)$ spazio di misura\\
-	$L^p(X) = L^p(X,\mu):=\{f:X \rightarrow \overline\R$ misurabile $| \ \int_X|f|^p d\mu < +\infty\}$\\
-	$f(x) = \frac{\chi_{|x|\geq 1}(x)}{|x|}\in L^p(\R)?$\\
-	$\int_\R|f(x)|^pd\mu = 2\int_1^+\infty \frac{1}{x^p}d m = 2\frac{x^{1-p}}{1-p}|^{+\infty}_{p=1}= \begin{cases}
-		+\infty \ \ \ p\leq 1\\
-		\frac{2}{1-p}\ \ \ p > 1
-	\end{cases} \Rightarrow f\in L^p\ \ \forall p > 1$ \\
-$\displaystyle f(x) = x^{-\frac 12}\in L^p((0,1)) \Leftrightarrow\int_0^1 x^{-\frac p 2}dx < +\infty\ \ \Leftrightarrow\ \ \frac{2x^{\frac{2-p}{2}}}{2-p}|^1_{x=0} < +\infty\ \  \ \Leftrightarrow \frac{2-p}{2} > 0 \Leftrightarrow p < 2$
-	\begin{lemm}[Disugualgianza di convessità]
-		$\forall a,b\in[0,+\infty)$
-		\begin{enumerate}
-			\item (Disuguaglianza di Young)\\
-				$ab\leq \frac{a^p}{p} + \frac{b^{p'}}{p'} \ \ \ \forall p,p'\in\R\ |\ \frac 1p + \frac 1 {p'} = 1\ \ \ (p' = \frac{p}{p-1})$
-			\item  $a^p + b^p \leq (a+p)^p\leq 2^{p-1}(a^p + b^p)\forall p\in [1,+\infty)$
-			\item  $a^p + b^p\geq (a+b)^p\geq 2^{p-1}(a^p + b^p)\ \ \ \forall p\in (0,1)$
-		\end{enumerate}
-	\end{lemm}
-	\begin{dimo}
-		\begin{enumerate}
-			\item $\ln(x)$ concava $\forall x\in (0,+\infty)$\\
-				$\ln(\frac 1pa^p + \frac_1{p'}b^{p'})\geq \frac 1p \ln(a^p) + \frac 1{p'}\ln(b^p) = \ln(a)+\ln(b) = \ln(ab)$\\
-				$ \Rightarrow  \frac 1p a^p + \frac 1{p'}b^{p'}\geq ab$ 
-			\item $p\geq 1 \Rightarrow f(x) = x^p, x\in[0,+\infty)$ convessa\\
-				\[
-					\frac{1}{2^p}(a+b)^p(\frac 12 a + \frac 12 b)^p\leq \frac 12 a^p + \frac 12 b^p = \frac 12 (a^p + b^p)\ \ \ (ottimale, a= b \Rightarrow  =)
-				.\] 
-				$b=0 \Rightarrow  a^p + b^p\leq (a+b)^p \ \ \ \forall p\geq 1$ \\
-				$b > 0 \Rightarrow  f(x) = (x+1)^p - x^p -1$ \\
-				$ \Rightarrow  f'(x) = p(x+1)^{p-1}-px^{p-1} = (x+1)^{p-1}-x^{p-1}\geq 0\ \ \forall x\geq 0, p\geq 1$ \\
-				$ \Rightarrow f \nearrow, f(0)= 0 \Rightarrow f\geq 0\ \ \forall x\geq 0$ \\
-			$ \Rightarrow  (\frac ab + 1)^p-(\frac ab)^p-1 = f(\frac ab) \geq 0$ \\
-		$ \Rightarrow  (\frac ab + 1)^p \geq (\frac ab)^p + 1$
-		\end{enumerate}
-	\end{dimo}
+	$f: \R \rightarrow \R \ \ (\R, m)$\\
+	$f$ continua $ \Rightarrow  f$ misurabile\\
+	$f$ continua quasi ovunque $ \Rightarrow  f$ misurabile\\
+	MANCA UNA PARTE\\
+	\[
+		D_f = \{x\in \R \ | f \text{ è discontinua in } X\}\\
+	.\] 
+	$m\mu(D_f) = 0$  $f$ è misurabile, infatti:
+	\[
+		\forall t\in \R \ \ \{f > t\} = \{f > t\}\cap D_f\cup \{f > t \} \setminus D_f
+	.\] 
+	$ \Rightarrow  $ ha misura nulla $ \Rightarrow  $ è misurabile\\
+	$x\in \{f > t\} \setminus D_f$\\
+	$\lim_{y ->x} f(y) =  \Rightarrow  f(x) > t$ e $f$ è continua in $X$\\ 
+	$ \Rightarrow  \exists \delta_x > 0 \ : \ f(y) > t \ \ \ \forall y\in (x - \delta_x, x + \delta_x)$ \\
+	$ \Rightarrow \{f > t\}\setminus D_f = \bigcup^{}_{x\in\{f > t\}\setminus D_f}(x-\delta_x, x + \delta_x)\setminus D_f = \bigcup^{}_{x\in\{f>t\}\setminus D_f}(x-\delta_x,x+\delta_x)\detminus D_f$ aperto è misurabile\\
+	$f : \R \rightarrow \R$\\
+	se $\exists g\in C(\R)$\\
+	tale che  $f = g$ quasi ovunque  $ \Rightarrow  f$ misurabile\\
+	$\exists N\subset \R, m(N) = 0$\\
+	tale che  $f = g$ in  $\R\setminus N$ \ \\
+	$\forall t\in \R \ \ \{f > t\} = \{f > t\}\setminus N \cup \{f > t\} \setminus N$ è misurabile\\
+	 $f = \chi_\Q = 0$ quasi ovunque\\
+	  $ f = g$ quasi ovunque  $\exists N, \mu (N) \ \ f = g $ in  $\R\setminus N$\\
+	  $x\in \R \setminus N$ \ \  $\lim_{y \rightarrow x} f(y)$\\
+	  $f = \chi_[0,1]$ è continua quasi ovunque ma non  può essere ugguale quasi ovunque ad una funzione continua
+	  \begin{teo}
+	  	Sia $f: \R \rightarrow R$ misurabile $  \Rightarrow  \forall \delta > 0 \ \ \exists g_\delta \in C(\R)$\\
+		tale che $m(\{f\neq g\}) < \delta$\\
+	e	$\sup_{\R}|g_\delta| \leq \sup_\R|f|$
+	  \end{teo}
 \end{document}

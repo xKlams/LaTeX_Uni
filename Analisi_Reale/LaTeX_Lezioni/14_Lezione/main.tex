@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
 \title{Lezione 14 Analisi Reale}
-\date{2025-04-29}
+\date{2025-04-09}
 \author{Federico De Sisti}
 
 \input{../../../setup.tex}
@@ -9,126 +9,100 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{Boh}
-	\begin{prop}
-		$(X,\mu)$ spazio di misura; $f_n, f: X \rightarrow[-\infty,+\infty]$ finite quasi ovunque; $f_n \rightarrow f \ \ q.o. \Leftrightarrow \ \forall \e>0\ \ \ \mu( \bigcap_{k=1}^{+\infty} \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \e\})=0$
-	\end{prop}
-	\begin{dimo}
-		$ ( \Rightarrow )$ Già visto \\
-		$( \Leftarrow)$  $\forall y \ \ \mu( \bigcap^{+\infty}_{n = 1} \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \frac 1y\}) = 0 \\\Rightarrow  \mu( \bigcup^{+\infty}_{y = 1} \bigcap^{+\infty}_{k =1} \bigcup^{+\infty}_{n = k}\{\ |f_n-f|\geq \frac 1y\}) := \mu(N) = 0$\\
-		$x\in X\setminus N \Leftrightarrow x\in \bigcap^{+\infty}_{y = 1} \bigcup^{+\infty}_{k = 1} \bigcap^{+\infty}_{n=k}\{|f_n-f| <\frac 1y\}$\\
-		Vuol dire che $\forall y \ \ \exists k_y$ (dipendente da  $y$) tale che $|f_n(x) -f(x)| < \frac 1y$\\
-		 $\forall n\geq k_y \Rightarrow  f_n(x) \rightarrow f(x) \Rightarrow  f_n \rightarrow f$ quasi ovunque
-	\end{dimo}
-	Se io so che $\forall \e > 0 \ \ \mu(\{f_n-f|\geq\e\}) \xrightarrow{ n \rightarrow + \infty} 0 \Leftrightarrow ?$\\
-	$\forall \e > 0 \ \ \mu( \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \e\}) \xrightarrow{n \rightarrow +\infty} 0 \Leftrightarrow ?$\\
-	È una condizione più forte o debole?
-	Osserviamo che $ \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq \e\}$ forma una successione decrescente $( F_1\supseteq F_2\supseteq\ldots)$\\
-	$\mu( \bigcap^{+\infty}_{n=1}F_n^\e = \mu ( \bigcap^{+\infty}_{n=1} \bigcup^{+\infty}_{n=k}\{|f_n-f|\geq \e\})\leq \lim_{ n \rightarrow +\infty}\ \mu( \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq \e\})$\\
-		Se poi diventano di misura finita (da un certo punto in poi) vale $=$\\
-		 \begin{defi}
-			 $f_n, f : X \rightarrow[-\infty,+\infty]$ misurabili finite quasi ovunque; $f_n \rightarrow f$ in misura se $\forall \e>0 \ \ \ \ \mu(\{|f_n-f|\geq\e\}) \xrightarrow{n \rightarrow +\infty} 0$
-		\end{defi}
-		\begin{prop}
-			Sia $(X,\mu)$ spazio di misura finita $(\mu(X) < +\infty)$. Se $f_n, f : X \rightarrow [-\infty, + \infty]$ misurabili, finite quasi ovunque $ \Rightarrow $ $f_n \rightarrow f$ in misura
-		\end{prop}
-		\begin{dimo}
-			Per la proposizione precedente:\\ $\forall \e > 0 , f_n \rightarrow f$ q.o. $ \Leftrightarrow \mu( \bigcap^{+\infty}_{k = 1} \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq\e\}) = 0$\\
-			ma questo per ipotesi è uguale a
-			\[
-				\limsup_{n \rightarrow +\infty}\mu(\{|f_n-f|\geq\e\})\leq\lim_{ k \rightarrow+\infty }\mu( \bigcup^{+\infty}_{n = k} \{|f_n-f|\geq \e\}) = 0
-			.\]  
-			se il $\limsup = 0 \Rightarrow  \lim = 0$  Quindi $\mu(\{f_n-f|\geq \e\}) \rightarrow 0 $
-		\end{dimo}
-		\begin{prop}
-			Se $f_n, f \in L^1(X,\mu); f_n \rightarrow f$ in $L^1(X) \Rightarrow  f_n \rightarrow f$ in misura
-		\end{prop}
-		\begin{dimo}
-			$\forall \e > 0$
-			\[
-				
-				\e\mu(\{|f_n-f|\geq\e\})\leq\int_{\{|f_n-f|\geq\e\}}|f_n-f|d\mu\leq\int_X|f_n-f| d\mu \rightarrow 0
-			.\]
-			$ \Rightarrow  f_n \rightarrow f$ in misura
-		\end{dimo}
-		$f_n \rightarrow f$ in misura $\substack{?\\ \Rightarrow }f_n \rightarrow f$ quasi ovunque\\
-		$\mu(\{|f_n-f|\geq\e\}) \rightarrow 0$ \\
-		definiamo $g_n := |f_n-f|$,  $f_n : X \rightarrow [0,+\infty] \Rightarrow \mu(\{g_n > \e\}) \rightarrow 0 \substack{?\\ \Rightarrow}  g_n \rightarrow 0 $ quasi ovunque\\
-		L'insieme di sopralivello può muoversi sull'asse $x$. Non è detto che fissata $x$ allora le successioni di funzioni tendano a $0$.\\
-		 \textbf{Esempio}\\\
-		 $\forall n$ dividiamo  $[0,1] $ in  $2^n$ intervalli di ampiezza  $\frac{1}{2^n}$\\
-		 $I_{n,m} = [\frac{k-1}{2^n},\frac{k}{2^n}) \ \ 1\leq k\leq 2^n$\\
-		 $\{\chi_{I_{k,n}}\}_{1\leq k\leq 2^n, n\geq 1}$ successione di funzioni misurabili secondno $Lebesgue$ su  $[0,1]$. Cosa succede per  $ n \rightarrow +\infty$ C'è convergenza solo a $0$\\
-		 $\forall \e > 0, n(\{X_{I_{n,k}}\geq \e\}) = \begin{cases}
-				 \emptyset\ \ \ \text{ se } \e > 1\\
-				 \frac 1 {2^n} = m(I_{k,n})\ \  \ \text{ se } 0 < \e < 1
-			 \end{cases} \xrightarrow{ n \rightarrow +\infty}$\\
-			 $ \Rightarrow  \chi_{I_{n,k}} \xrightarrow{ n \rightarrow +\infty} 0$ in misura.\\
-		 $\forall x\in [0,1), \chi_{I_{k,n}}(x) = 1$ per infiniti indici \\
+	\subsection{Integrali dipendenti da un parametro}
+		$(X,\mu)$ spazio di misura
 		 \[
-			 \int_{[0,1)}|\chi_{I_k,n}|dm = m(I_{k,n}) = \frac {1}{2^n} \xrightarrow{ n \rightarrow +\infty} 0
-
-			 
-		 .\] 
-		 \[
-			 \chi_{I_{k,n}} \rightarrow 0 \ \ \ \text{ in } L^1([0,1])
-		 .\] 
-	Quindi c'è anche la convergenza in $L^1$\\
-	Quindi la convergenza in misura (e in  $L^1$ ) $\cancel{ \Rightarrow  }$ convergenza puntuale (quasi ovunque)\\
-	Ma $\{\chi_{I_{n,m}}$ ha un'estratta che converge puntualmente a  $0$
-		 \[
-			 \chi_{I_{n,m}} = \chi_{[0,\frac{1}{2^n})} \rightarrow 0 \ \ \text{q.o. in } [0,1)
+			 f : I\times X \rightarrow [-\infty,+\infty]
 		.\] 
+		$I$ intervallo di $\R$, tale che 
+		 \begin{itemize}
+			 \item per quasi ogni $x\in X$\\
+				  $t\in I \rightarrow f(t,x), f(\cdot, x)$ continua
+			  \item $\forall t\in I\ \ f(t,\cdot)\in L^1(X,\mu)$
+				   \[
+				  h(t) = \int_Xf(t,x)d\mu(x)
+				  .\] 
+		\end{itemize}
 		\begin{teo}
-			Siano $f_n, f: X \rightarrow [-\infty, +\infty]$ misurabili, finite quasi ovunqe. Se $f_n \rightarrow f$ in misura $ \Rightarrow  \exists $ sottosuccessione $\{f_{n_k}\}$ tale che  $f_{n_k} \rightarrow f$ quasi ovunque
+			Sia $(X,\mu)$ spazio di misura, $I\subseteq \R$ intervallo e $f: I\times X \rightarrow [-\infty, +\infty]$
+			\begin{enumerate}
+				\item se  $f(\cdot,x)$ è continua su  $I$ per quasi ogni $x\in X\ \ f(t,\cdot)\in L^1(X)\ \ \forall t\in I$  e  $\exists g\in L^1(X)$ t.c.  $|f(t,x)|\leq g(x) \ \ \ \forall t\in I$ per quasi ogni  $x\in X$\\
+			 $ \Rightarrow  $ la funzione $h(t) = \int_Xf(t,x)d\mu$ è continua su $I$
+		 \item Se per quasi ogni $x\in X, \ \ f(\cdot, x)$ è derivabile su $I$ e se $\exists g_1\in L^1(X)$ tale che 
+			 \[
+				 |\frac{\partial f}{\partial t}(t,x)|\leq g_1(x)\ \ \ \text{ per q.o. }x\in X\ \ \forall t\in I
+			 .\] 
+			 $ \Rightarrow h$ è derivabile e 
+			 \[
+				 h'(t) = \int_X\frac{\partial f}{\partial t}(t,x)d\mu(x)
+			 .\] 
+			\end{enumerate}
+			stiamo dicendo che la derivata dell'integrale è l'integrale della derivata.
 		\end{teo}
-		\begin{dimo}[Errata]
-			$a_n\geq 0, a_n \rightarrow 0\ \ \sum^{+\infty}_{n =1}a_n < +\infty$ no!\\
-			$\e > 0 $ fissato, $\forall k \ \exists n_k$ tale che  $\mu(\{|f_n-f|\geq \e\})< \frac{1}{2^k}$\\
-			$\displaystyle \Rightarrow  \mu(\{|f_n-f|\geq \e\}) < \frac 1 {2^n} \Rightarrow  \mu( \bigcup^{+\infty}_{n = 1}\{|f_{n_k}-f|\geq\e\})\leq \sum^{+\infty}_{n=1}\mu(\{|f_{n_k}-f|\geq\e\})\leq \sum^{+\infty}_{n=1}\frac{1}{2k} < + \infty$ \\
-			\[
-				\mu( \bigcup^{+\infty}_{n =j }\{|f_{n_k}-f|\geq \e\})\leq \sum^{+\infty}_{k=j}\frac{1}{2^k} \rightarrow 0
-			.\] 
-			\[
-				\Rightarrow \mu( \bigcap^{+\infty}_{j = 1} \bigcup^{+\infty}_{n = j}\{|f_{n_k}-f|\geq \e\}) = \lim_{j \rightarrow +\infty}\mu( \bigcup^{+\infty}_{n = j}\{|f_{n_k}-f|\geq\e\}) =0 
-			.\] 
-			Dov'è l'errore? Qui l'estratta dipende da $\e$, invece io voglio un'estratta che valga $\forall \e > 0$. In questo caso presa un'estratta questa vale  $\forall \e'\geq \e$. Quindi voglio sostituire  $\e$ con una cosa infinitesima. La dimostrazione è lasciata per esercizio.
-	\end{dimo}
-	\begin{coro}
-		Se $f_N, f\in L^1(X,\mu), f_n \rightarrow f$ in $L^1 \Rightarrow \exists$ estratta $\{f_{n_k}\}$ tale che $f_{n_k} \rightarrow f$ quasi ovunque.
-	\end{coro}
-	\begin{dimo}
-		$f_n \rightarrow$ in $L^1 \Rightarrow  f_n \rightarrow f $ in misura \hfill (disuguaglianza di Chebychev (?))\\
-		$ \Rightarrow  \exists \{f_{n_k}\}: f_{n_k} \rightarrow f$ quasi ovunque.
-	\end{dimo}
-	\textbf{Osservazione}\\
-	In generale non tutta $\{f_n\}$ converge puntualmente. Per esempio  $\chi_{I_{n,k}}$\\
-	 \textbf{Osservazione}\\
-	 Se $\mu(X) = +\infty, f_n \rightarrow f$ quasi ovunque  $ \Rightarrow  f_n \rightarrow $ in misura?\\
-	 $\mu( \bigcap^{+\infty}_{k= 1} \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq\e\}) =0$\\
-Può essere che si formino tutte misure finite e l'intersezione faccia $0$.\\
-In generale non vale per esempio  $f_n = \chi_{[n,+\infty)}, f_n(x) \rightarrow 0 \ \ \forall x\in \R$\\
-Ma $m(\{f_n>\e\}) = +\infty$ per  $\e < 1\ \ \Rightarrow  \ \ f_n \cancel \rightarrow 0 $ in misura\\
-Ma quindi bisogna che i sottoinsiemi vadano a $+\infty$, quindi di un ambiente di misura infinita.\\
-Se  $\mu(X)< +\infty, f_n \rightarrow f$  quasi ovunque $ \Leftrightarrow \mu( \bigcap^{+\infty}_{k = 1} \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq\e\}) = 0 = \lim_{ n \rightarrow +\infty} \mu ( \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq\e\})$\\
-$ \Rightarrow  \forall \delta > 0 \ \exists k = k(\delta, \e)$ tale che $\mu ( \bigcup^{+\infty}_{n = k}\{|f_n-f|\geq\e\})<\delta$\\
-$x\in X\setminus F_{\delta, \e} \Leftrightarrow x\in \bigcap^{+\infty}_{n=k}\{|f_n-f|<\e\} \Leftrightarrow |f_n(x)-f(x)| < \e \ \ \forall n\geq k$\\
-Abbiamo trovato il $k$ per cui l'ultima disequazione è piccola. Questo è vero $\forall x$. Ma allora  $\sup_{X\setminus F_{\delta,\e}}|f_n-f| < \e \ \ \forall n\geq k \Rightarrow  f_n \rightarrow f$ uniformemente in $X\setminus F_\delta$ 
-\begin{defi}
-	Siano $(X,\mu)$ uno spazio di misura  e  $f_n , f: X \rightarrow [-\infty, +\infty]$ misurabili finita quasi ovunque si dice $f_n \rightarrow f$ quasi uniformemente se $\forall \delta > 0 \ \ \exists F_\delta \subset X, F_\delta$ misurabile,  $\mu(F_\delta) < \delta$ tale che  $f_n \rightarrow f$ uniforme in $X\setminus F_\delta$.
-\end{defi}
-\textbf{Esempio}\\
-$f_n(x) = x^n, \ \ x\in [0,1]$\\
-$f_n(x) \xrightarrow{ n \rightarrow+\infty} \begin{cases}
-	0 \ \ \ 0\leq x < 1\\
-	1 \ \ \ \text{se } x = 1
-\end{cases}=f(x)$\\
-$\sup_{[0,1]}|f_n-f| = \sup_{0\leq x\leq 1}|f_n-f| = 1$\\
-Se tolgo  $1, \sup_{[0,1)}|f_n-f| = \sup_{[0,1)}x^n = 1$ comunque le cose vanno male!\\
-Dobbiamo togliere un intorno di  $1 \Rightarrow \sup_{[0,1-\delta]}|f_n-f| = \sup_{[0,1-\delta]}x^n = (1-\delta)^n \xrightarrow{n \rightarrow +\infty}0 $ \\
-$ \Rightarrow  f_n \rightarrow 0 $ uniformemente in $[0,1-\delta]\forall \delta > 0 $
-\begin{teo}[Erogv]
-	Se $\mu(X) < + \infty$, $f_n \rightarrow f$ quasi uniformemente $ \Leftrightarrow f_n \rightarrow f $ quasi ovunque
-\end{teo}
-È per questo che non si può passare al limite sotto l'integrale(serve la convergenza uniforme), si ha al di fuori di un insieme di misura piccola $ \Rightarrow  $ serve almeno una dominazione
+		\begin{dimo}
+			Da recupearare (Chat con Alberto Agostinelli)
+		\end{dimo}
+		\textbf{Osservazione}\\
+		$f: I\times X \rightarrow [-\infty, +\infty]$ \\
+		nelle ipotesi del teorema continua in $t_0\in I$ e  $|f(t,x)| \leq g(x) \ \ \forall t\in I$ quasi ovunque in  $X$.\\
+		Posso considerare non tutti gli  $t\in I$ ma selezionar e i $t$ in sottointervalli di $I$ quindi in un intorno di $t_0$per avere la continuità in $ t_0$\\
+		\subsection{Assoluta continuità dell'integrale}
+			Ricordiamo che $s$ funzione semplice $s\geq 0$\\
+			 $\forall E\in M$ e definiamo
+			  \[
+				  \mu_s(E) = \int_Esd\mu \Rightarrow \mu_S \text{ è una misura}
+			 .\]  
+			 adesso se $f\in L^1(X)$\\
+			 $\mu_f(E) = \int_E|f|d\mu$ è una misura su  $X$\\
+			  $\mu_f(E) = 0\ \ \forall E\in M$  tale che  $\mu(E) = 0$
+		\begin{teo}[Assoluta continutià dell'integrale]
+sia $f\in L^1(X)$\\
+ $ \Rightarrow  \forall \e > 0 \ \ \exists \ \ \delta = \delta(\e, f) > 0$ tale che $\int_E|f|d \mu < \e \ \ \forall E\in M, \ \ \mu(E) < \delta$\\
+ enunciato più "suggestivo":
+ \[
+ \lim_\mu(E) \rightarrow 0 \ \ \int_E|f|d\mu = 0
+ .\] 
+
+		\end{teo}
+		il punto sta nel fatto che sti cazzi di chi è $E$ basta che la sua misura tenda a $0$
+		 \begin{dimo}
+			non la scrivo, mancano 3 giorni all'esonero, parla con Alberto Agostinelli.
+		\end{dimo}
+		\textbf{Osservazione}\\
+		Sia $\{f_n\}\subset L^1(X)$\\
+		 $ \Rightarrow  \forall \e > 0 \exists \delta = \delta(\e,f_n) = \delta (\e,n)$ tale che $\int_E |f_n|d\mu < \e $ se  $\mu(E) < \delta (\e ,n)$\\
+		 Se  $\exists f\in L^1(X)$ tale che \\
+		 $f_n \rightarrow f$ in $L^1(X)$ ( $\int_X|f_N-f|d\mu \rightarrow 0)$\\
+		 $ \Rightarrow  $ la proprietà di assoluta continuità dell'integrale e`verificata uniformemente rispetto a $n$\\
+		  $\forall \e > 0 \ \ \exists \delta_f(\e)$\\
+		  tale che $\int_E|f|d\mu < \e \ \ $ se  $\mu(E) < \delta_f$\\
+		   $\displaystyle\int_E|f_n|d\mu \leq \int_E|f_n-f|d\mu + \int_E|f|d\mu\leq \int_X|f_n-f|d\mu + \int_E|f|d\mu < \e + \e$\\
+		   $ \displaystyle\Rightarrow $  per $\delta = \min\{\delta_{f_1},\ldots,\delta_{f_{n_\e}}, \delta_f\} > 0 $\\
+		   $\displaystyle\int_E |f|d\mu < 2\e$ se  $\mu(E) < \delta \forall n\in \N$\\[10px]
+		   Piccolo conto apparentemente poco utile:\\
+		   \textbf{Riscrittura delle convergenza quasi ovunqe}\\
+		   $(X,\mu)$ spazio di misura\\
+		   $f_n,f: X \rightarrow [-\infty , + \infty]$ finite  quasi ovunque $f_n \rightarrow f $quasi ovunque\\
+		   $ \Leftrightarrow \exists N\subset X, \mu(N) = 0 $ tale che $f_n(x) \rightarrow f(x)\ \ \forall x\in X\setminus N$\\
+		   $ \Leftrightarrow \exists N\subset X\ \ \mu(N)$ tale ceh $\forall \e > 0 \ \ \exists k = k(x,\e)$ tale che 
+		    \[
+		   |f_n(x) - f(x)| < \e \ \ \ \forall n\geq k \ \ \ \forall x\inb X\setminus B
+		   .\] 
+		   $ \Leftrightarrow \exists N\subset X, \mu(N) = 0$ tale che 
+		   \[
+			   X\setminus N\subseteq \bigcup^{+\infty}_{k = 1} \bigcap^{+\infty}_{n = k}\{|f_n-f| < \e\} 
+		   .\] 
+		   $ \Leftrightarrow \e > 0 $
+		   \[
+			   \left( \bigcup^{+\infty}_{k= 1} \bigcap^{+\infty}_{n = k }\{|f_n-f| < \e\} \right)^c\subseteq N
+		   .\] 
+		   ovvero
+		   \[
+			   \left( \bigcap^{+\infty}_{k= 1} \bigcup^{+\infty}_{n = k }\{|f_n-f| \geq \e\} \right)\subseteq N
+		   .\] 
+		   quindi tutta sta roba ha misura nulla poiché contenuta in $N$ che ha misura nulla.\\
+
+		 
+
+	
 \end{document}
