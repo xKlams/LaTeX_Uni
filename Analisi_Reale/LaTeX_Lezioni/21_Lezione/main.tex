@@ -1,0 +1,157 @@
+\documentclass[12px]{article}
+
+\title{Lezione 21 Analisi Reale}
+\date{2025-05-14}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{boh}
+	\[
+		\frac 1p + \frac 1 {p'} = 1
+	.\] 
+	$g\in L^{p'}(X)$ questa induce un funzionale lineare continuo  $L_g : L^p(X) \rightarrow \R$ $f\in L^p(X) \rightarrow L_f(g) = \int_Xfg\ d\mu$\\
+	$|L_g(f)| = |\int_X f\cdot g d\mu | \leq \int_X |f||g|d\mu \leq \|g\|_{p'}\|f\|_p\hfill$ Per Holder\\
+	$ \Rightarrow  L_g$ è limitato, quindi continuo.
+	\[
+		\|L_g\| = \sup_{\substack{f\in L^p(X)\\ \|f\|_p =1}} |L_f(g)| = \sup_{\substack{f\in L^p(X)\\f\neq 0}}\frac{|L_g(f)|}{\|f\|_p}\leq \|g\|_{p'}
+	.\] 
+	$f = |g|^{\frac{p'}{p}-1}g$\\
+	$|f| = |g|^{\frac{p'}{p}}$\\
+	$\int_X|f|^pd\mu = \int_X|g|^{p'}d\mu < +\infty$\\
+	 $ \Rightarrow d\in L^p$ 
+	 \[
+		 \|f\|_p = (\int_X|g|^{p'}d\mu)^{1/p} = \|g\|_{p'}^{\frac {p'}p} = \|g\|_{p'}^{\frac 1{p'}}
+	 .\] 
+	 \[
+		 L_g(f) = \int_Xfgd\mu = \int_X|g|^{\frac{p'}{p}} 
+	 .\] 
+	 \begin{gather*}
+		 \int_X|g|^{\frac {p'}{p} + 1}d\mu = \int_X|g|^{\frac 1{p'} + 1}d\mu = \int_X|g|^{p'}d\mu\\ = \|g\|_{p'}^{p'} = \|g\|_p\|g\|_{p'}^{p'} = \|g\|_{p'}\|g\|_{p'}^{p'-1} \\= \|g\|_{p'}\|g\|_{p'}^{\frac {1}{p'}} = \|g\|_{p'}\|f\|_p\\
+		 \Rightarrow  \frac {|L_g_(f)|}{\|f\|_{p'}} = \|g\|_{p'} \Rightarrow  \|L_g\|=\|g\|_{p'}
+	 \end{gather*}
+	  \begin{aligned}
+		  $i : $ & $L^{p'}(X) \rightarrow (L^p(X))'\\
+			 &g \rightarrow L_g$
+	 \end{aligned}
+	 $\|i(g)\| = \|L_g\| = \|g\|_{p'}$ (isometria)\\
+	 Il teorema di rappresentazione di Resz dice che $i$ è suriettiva $ (\forall p\in [1, + \infty))$, ovvero
+	 \[
+		 (L^p(X))' = i(L^{p'}(X))
+	 .\] 
+	 con isomorfismo isometrico\\
+	 $ \Rightarrow  (L^p(X))'\equiv L^{p'}(X)$ \\
+per $p = 2 \ \ \ g\in L^2(X)$  $ \Rightarrow g$  induce un funzionale su $L^2(X)$ 
+\[
+f\in L^2(X) \rightarrow \int_Xgf \ d\mu
+.\] 
+Per $p = 2$ abbiamo in realtà una funzione \\
+ \[
+	 \begin{aligned}
+		 L^2(X)\times L^2(X) &\rightarrow \R\\
+		 (f,g) &\rightarrow \int_X fg \ d\mu
+	 \end{aligned}
+.\]  
+che è bilineare, simmetrica  e definita positiva. ($(f,f) \rightarrow \int_X f^2 d\mu \geq 0 \ \ = 0  \Leftrightarrow f = 0 \ \ q.o.$ \\
+$ \Rightarrow  $ la forma bilineare
+\[
+	(f,g) \rightarrow \int_Xfg\ d \mu
+.\] 
+è un prodotto scalare che indicheremo come $(f,g)$\\
+\textbf{Ricordo:}\\
+$V$ spazio vettoriale con prodotto scalare $(\cdot, \cdot )$  $ \Rightarrow  V$ si dice spazio euclideo e $\sqrt{(f,f)} = \|f\|$ è una norma\\
+ Se $V$ è completo rispetto alla norma indotta da  $(\cdot,\cdot) \Rightarrow  V$ si dice spazio di Hilbert.\\
+ \textbf{Osservazione}\\
+ $\sqrt {(f,f)} = \sqrt{\int_X fd\mu}= (\int_Xf^2 d \mu)^{1/2} = \|f\|_2$\\
+  $ \Rightarrow  L^2(X)$ è uno spazio di Hilbert (già dimostrato che con questa norma è completo)
+  \begin{teo}[Identità del parallelogramma]
+  	Sia $(V,\|\ \|)$ uno spazio normato, Allora $V$ è uno spazio euclideo $ \Leftrightarrow f,g\in V$
+	\[
+	\|f + g\|^2 + \|f-g\|^2 = 2(\|f\|^2 + \|g\|^2)
+	.\] 
+  \end{teo}
+  \begin{dimo}
+  	Idea: $(f,g) := \frac 12 (\|f+g\|^2 - \|f\|^2 - \|g\|^2)$\\
+	è un prodotto scalare.
+  \end{dimo}
+  \textbf{Osservazione}\\
+  Per gli spazi $L^p(X)$  $L^2$ è l'unico spazio di Hilbert perché  $\| \ \|_p$ non verifica l'identità del parallelogramma  per $p\neq 2$\\
+  \begin{teo}[della proiezione]
+  	Sia $H$ uno spazio di Hilbert e sia  $C\subseteq H$ un convesso, chiuso, non vuoto. \\
+	$ \Rightarrow  \forall f\in H\ \ \exists ! u\in C$ tale che $\displaystyle\|u-f\| = \min_{v\in C}\|f-v\|$  $ (u := p_C(f))$ Inoltre  $u  = p_C(f) \Leftrightarrow \begin{cases}
+		u\in C$\\
+	$(f-u,v-u) \leq  0 \ \ \forall v\in C$
+	\end{cases}
+  \end{teo}
+  \begin{dimo}
+  	esistenza:\\
+	se $f\in C\ \ \Rightarrow u =f $\\
+	se $f\not \in C$\ \ Th: \ $\inf_{v\in C}\|f-v\| = \min_{v\in C}\|f-v\|$\\
+	$d = \inf_{v\in C}\|f-c\|$\\
+	Esiste una successione minimizzante  $\{v_n\}\subset C$ tale che  $\|f-v_n\| \rightarrow d$ \\
+	Dimostriamo che $\{v_n\}$ è di Cauchy.\\
+	$v_n,v_m\in C$ convesso  \\ $ \displaystyle\Rightarrow \frac{v_n + v_m}{2}\in C \Rightarrow  d^2\leq \|f-\frac{v_m + v_n}{2}\|^2 = \|\frac{f-v_n}2 + \frac {f - v_m}2\|^2$ \\
+	\[
+	= \frac 12 (\|f-v_n\|^2 + \|f-v_m\|^2) - \|\frac{f-v_n}2-\frac{f-v_m}2\|^2
+	.\] 
+	\[
+	= \frac 12(\|f-v_n\|^2 + \|f-v_m\|^2) - \frac 14\|v_m-v_n\|^2
+	.\] 
+	$ \Rightarrow  \frac 14\|v_m - v_n\|^2\leq \frac 12 (\|f-v_n\|^2 + \|f-v_m\|^2) - d^2 \xrightarrow{n,m \rightarrow +\infty} 0$ \\
+	dato che $\|f-v_n\| \rightarrow d^2$ e $\|f-v_m\| \rightarrow d^2$\\
+	$ \Rightarrow  \{v_n\}$ di Cauchy\\
+	$H$ Hilbert $ \Rightarrow  \exists u = \lim_{n \rightarrow +\infty} v_n$,\ \ \ \ \  $\{v_n\}\subset C, C$ chiuso $ \Rightarrow  u\in C$ \\
+	$\|u-f\| = \lim_{n \rightarrow +\infty} \|v_n-f\| = d$\\
+	\textbf{Unicità:}\\
+	Siano $u_1,u_2\in C$ tale che $\|u_1-f\| = \|u_2-f\| = d = \min_{v\in C}\|f-v\|$\\
+	$ \Rightarrow  \frac{u_1 + u_2}2\in C$ e $d^2 \leq \|f-\frac{u_1+u_2}2\|^2 = \|\frac{f- u_1}2 + \frac {f-u_2}2\|^2\\
+	= \frac 12(\|f-u_1\|^2 + \|f-u_2\|^2) = \|\frac{f-u_1}2 - \frac {f-u_2}2\|^2$\\
+	$d^2 - \frac{\|u_2-u_1\|^2}{4} \Rightarrow \frac{\|u_1-u_2\|^2}{4}\leq 0 \Rightarrow  u_1=u_2$ \\
+	\textbf{Caratterizzazione:}\\
+	Sia $u = p_C(f) \Leftrightarrow \|u-f\| = \min_{v\in C}\|f-v\|$ con $u\in C$\\
+	$ \Rightarrow  \forall v\in C \ \|u-f\|^2 \leq \|f-((1-\lambda)u + \lambda v)\|^2$ $\forall \lambda \in [0,1]$\\
+	$\|f - u + \lambda(u-v)\|^2 = \|f-u\|^2 + \lambda^2\|u-v\|^2 + 2\lambda (f-u,u-v)$\\
+	Quindi
+	 \[
+		 \cancel{\|u-f\|^2}\leq \cancel{\|f-u\|^2} + \lambda^2\|u-v\|^2 + 2\lambda (f-u,u-v)
+	.\] 
+	$ \Rightarrow  \cancel{ \lambda}(f-u,u-v)\leq \lambda\cancel{^2}\|u-v\|^2 \ \ \forall \kambda \in (0,1]$ \\
+	per $ \lambda \rightarrow 0^+$\\
+	$ \Rightarrow  (f - u, v - u) \leq 0 \ \ \ \forall v\in C$ \\
+	Viceversa, sia $u\in C$ tale che  $(f-u, u-v)\leq 0 \ \ \ \forall v\in C$ \\
+	 $ \Rightarrow \|f-u\|^2 - \|f-v\|^2 $ con $v\in C$\\
+	  \[
+	 \|f-u\|^2 -\|f-v\|^2 = \|u^2\| - 2(f,u) - \|v\|^2 + 2(f,v) = \|u\|^2 - \|v\|^2 + 2(f,v-u)
+	 \] 
+	 \[
+	 \|u\|^2 - \|v\|^2(f-u,v-u) + 2(u,v+u)\leq -\|u\|^2 - \|v\|^2 + 2(u,v) = -\|u-v\|^2\leq 0
+	 \] 
+	 $ \Rightarrow  \|f-u\|\cancel{^2} \leq \|f-v\|\cancel{^2} \ \ \forall v\in C$
+  \end{dimo}
+  \begin{coro}
+  	Sia $H$ uno spazio di Hilbert e sia $M\subset H$ un sottospazio vettoriale chiuso.\\
+	$ \Rightarrow  \forall f\in H \ \ \exists ! u\in M$ tale che $\|u-f\| = \min_{v\in M}\|f-v\|$\\
+	e  $u = p_M(f) \Leftrightarrow u\in M, (f-u,v) = 0 \ \ \forall v\in M (f-u\in M^\perp)$
+  \end{coro}
+  \begin{dimo}
+  	Dal teorema della proiezione $\exists u\in M \ \ u = p_M(f)$ e  $u = p_M(f)\\ \Leftrightarrow \begin{cases}
+  		u\in M\\
+		(f-u,v-m) \leq 0 \ \ \forall v\in M
+  	\end{cases}$\\
+	$\forall v\in M$\\
+	 $ \Rightarrow  u + v\in M$ perché $ M$ sottospazio\\
+	 $ \Rightarrow  $ $(f-u,v)\leq 0 \ \ \forall v\in M$
+	 ma anche $-v\in M$\\
+	  $-(f-u,v)\geq 0$  $\forall v\in M$\\
+	   $ \Rightarrow  (f-u,v) = 0\ \ \forall v\in M$ \\
+	   Viceversa \\
+	   se $u\in M $ tale che  $(f-u,v) = 0 \ \ \forall v\in M \Rightarrow  v-u\in M \ \ \forall v\in M$   \\
+	   $(f-u,v-u) = 0 \ \ \forall v\in M \Rightarrow  u = p_M(f)$
+  \end{dimo}
+  \textbf{Osservazione}\\
+  Se ci chiede la proiezione e non riusciamo bene a trovare la proiezione, ci si fa un idea e si verifica se soddisfa la caratterizzazione
+
+\end{document}

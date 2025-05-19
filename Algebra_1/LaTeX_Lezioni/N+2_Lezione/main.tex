@@ -1,0 +1,220 @@
+\documentclass[12px]{article}
+
+\title{Lezione N + 2 Algebra I}
+\date{2025-05-19}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Applicazioni dell'altra volta}
+	\[
+	\begin{aligned}
+		\psi:\mathcal F_{\K,\F} &\rightarrow \mathcal G_{\K\F}\\
+					(\F\subseteq\Le\subseteq\K) &\rightarrow G(\K,\Le)
+	\end{aligned}
+	.\] 
+	\[
+	\begin{aligned}
+		 \mathcal F_{\K,\F} &\leftarrow \mathcal G_{\K,\F}: \Phi\\
+		(\F\subseteq\K_H\subseteq\K) &\leftarrow (\G\leq G(\K,\F))
+	\end{aligned}
+	.\] 
+	\subsection{Il teorema di Galois}
+	\textbf{Esercizio:}\\
+	$\F\subseteq \K$ un campo di spezzamento di  $f\in\F[x]$.\\
+	Siano  $\alpha,\beta\in\K$ radici di un polinomio irriducibile $p\in\F[x]$.\\
+	Allora  $\exists\sigma\in G(\K,\F)$, tale che  $\sigma(\alpha)=\beta$
+	 \textbf{Soluzione}\\
+	 Sappiamo che $\exists \psi: \F(\alpha) \rightarrow \F(\beta)$ isomorfismo di anelli tale che:\\
+	 \[
+	 \psi|_\F=Id \ \ e \  \ \psi(\alpha) = \beta
+	 .\] 
+	 AGGIUNGI FOTO 19 MARZO 1 20 \\
+	 Ora:
+	 \begin{itemize}
+		 \item $\F(\alpha)\subseteq\K$ è campo di spezzamento di $f\in\F(\alpha)[x]$
+		 \item  $\F(\alpha)\substack{\cong\\\phi}\F(\beta)\subseteq\K$ campo di spezzamento di  $f\in \F(\alpha)[x]$
+	 \end{itemize}
+	 Quindi dall'unicità (non canonica) dei campi di spezzamento esiste l'isomorfismo $\sigma$ cercato.\\
+	 \hline\ \\
+	 \textbf{Esercizio:}\\
+	 $\F\subseteq\K$ estensione Galoisiana di grado finito. Allora 
+	  \[
+		  |G(\K,\F)| = [\K:\F]
+	 .\] 
+	 \textbf{Soluzione}\\
+	 $|G(\K,|F)| = [\K:\K_{G(\K,\F)}] = [\K:\F]\ \ \hfill \square$\\
+	 \hline\ \\
+	 \textbf{Esercizio:}\\
+	 $\F\subseteq\K$ estensione normale e di grado finito. \\
+	 Data un'estensione $\F\subseteq\Le\subseteq\K$
+	  \begin{enumerate}
+		  \item dimostrare che da $\Le\subseteq\K$ è estensione normale
+		  \item esibire un esempio in cui $\F\subseteq\Le$ \underline{non} è normale
+	  \end{enumerate}
+	 \textbf{Soluzione:}
+ \begin{enumerate}
+	 \item $\F\subseteq\K$ è campo di spezzamento per  $f\in F[x]$.\\
+		 Allora  $\Le\subseteq\K$ è campo di spezzamento di  $f\in \Le[x]$ 
+	 \item $\Q\subseteq\Q(\sqrt[3]{2}, \omega)$ dove  $\omega = \frac {-1 + i\sqrt 3}{2}\in\A$ tale estensione è campo di spezzamento di $x^3-2\in\Q[x]$  \\
+		 Scegliamo $\Le = \Q(\sqrt[3]2)$ $\Q\subseteq\Le$ non è normale, infatti, $\sqrt[3]2, \sqrt[3]2\cdot\omega$ sono coniugati su  $\Q$, eppure  $\sqrt[3]2\cdot\omega\not\in\Q(\sqrt[3]2)$
+\end{enumerate}
+\begin{lemm}
+	$\F\subseteq\K$ estensione Galoisiana di grado finito.  $\F\subseteq\Le\subseteq\K$ estensione intermedia.\\
+	Allora sono equivalenti due condizioni:
+	 \begin{enumerate}
+		 \item $\F\subseteq\Le$ estensione normale
+		 \item  $\sigma|_\Le\in G(\Le, \F)$ \ \ $\forall \sigma\in G(\K,\F)$\\
+			 $($ovvero  $\sigma(l)\subseteq\Le\ \ \forall\sigma \in G(\K,\F))$
+	 \end{enumerate}
+\end{lemm}
+\begin{dimo}
+	$1) \Rightarrow 2)$ \\
+	Siano $\sigma\in F(\K,\F), \ \  l\in\Le$\\
+	Allora  $l,\sigma(l)$ sono coniugati $ \Rightarrow  \sigma(l)\in \Le$ poiché $\F\subseteq\Le$ è normale\\
+	 $ 2) \Rightarrow 1)$ siano $k\in\K,l\in\Le$ due elementi coniugati su  $\F$\\
+	  $ \Rightarrow  \exists \sigma\in G(\K,\F)$ tale che $k=\sigma(l)\in\Le \hfill$ (esercizio 1)\\
+	  Quindi $\F\subseteq\Le$ normale
+\end{dimo}
+\begin{teo}[Galois, 1846]
+	$\F\subseteq\K$ estensione Galoisiana di grado finito. $\F\subseteq\Le\subseteq\K$ estensione intermedia. Allora:
+	 \begin{enumerate}
+		 \item $\psi$ e  $\Phi$ sono una l'inversa dell'altra
+		 \item  $|G(\K,\Le)| = [\K:\Le]$
+		 \item  $[G(\K,\F):H] = [\K_H:\F]$
+		 \item $G(\K,\Le)\leq G(\K,\F)$ è normale se e solo se  $\F\subseteq\Le$ è normale
+		 \item Se  $\F\subseteq\Le$ è normale allora
+			  \[
+				  \frac{G(\K,\F)}{G(\K,\Le)}\cong G(\Le,\F)
+			 .\] 
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	$1)$ Già visto\\
+	 $2)$ Basta applicare uno degli esercizi di oggi all'estensione Galoisiana di grado finito  $\L\subseteq\K$ \\
+	 $3)$  $[G(\K,\F):H] = \frac{|G(\K, \F)|}{|H|}= \frac{|G(\K,\F)|}{|G(\K,\K_H)|}  \substack{(2)\\ =}\frac{[\K:\F]}{[\K:\K_H]} = [\K_H:\F]$ 
+	 $4)$ dal lemma  $\F\subseteq\Le$ normale se e solo se  $\sigma|_\Le\in G(\Le,\F)\ \ \ \forall\sigma\in G(\K,\F)$\\
+	  $ \Leftrightarrow \forall \tau\in G(\K,\Le)$ e $\forall \sigma \in G(\K,\F)$ si ha  $\tau \circ \sigma|_\Le = \sigma|_\Le$\\
+	  $ \Leftrightarrow (\sigma^{-1}\circ\tau\circ\sigma)|_\Le = Id_\Le$\\
+	  $ \Leftrightarrow \sigma^{-1}G(\K,\Le)\sigma\subseteq G(\K,\Le)\ \ \ \forall \sigma\in G(\K,\F)$\\
+	  $5)$ Definiamo l'omomorfismo
+	  \[
+	  \begin{aligned}
+		  g:  G(\K,\F) & \rightarrow G(\Le, \F)\\
+		  \sigma & \rightarrow \sigma|)\Le
+	  \end{aligned}
+	  .\] 
+	  $g$ è ben definito per il lemma
+	  \begin{itemize}
+		  \item $\ker(g) = \{\sigma\in G(\K,\F)\ | \ \sigma|_\Le = id_\Le\} = G(\K,\Le)$
+		  \item verifichiamo che  $g$ suriettiva dato $\psi\in G(\Le,\F)$ abbiamo\\
+			  INSERISCI IMMAGINE 2 05 19 MAGGIO\\
+			  $F\subseteq\K$ campo di spezzamento di  $f\in \F[x]$. Allora 
+			  \begin{itemize}
+				  \item $\Le\subseteq \K$ campo di spezzamento di  $f\in \Le[x]$
+				  \item $\Le \substack{\cong\\\psi}\Le\subseteq\K$ campo di spezzamento per  $f\in \Le[x]$ 
+			  \end{itemize}
+			  $ \Rightarrow  \exist\omega\in G(\K,\F)$ tale che $g(\sigma) = \psi$
+	  \end{itemize}
+Dal teorema di isomorfismo tra anelli segue la tesi
+\end{dimo}
+\textbf{Esercizio}\\
+$G$ gruppo, $|G| = 2^n$  $n\in \Z_{\geq 1}$. Allora  $\exists G\leq G$ tale che  $[G:H] =2$\\
+ \textbf{Esempio:}\\
+ $f(x) = x^3 - 2\in \Q[x]$ \\
+ $\Q\subseteq\Q(\sqrt[3]2,\omega) = \K$,  $\omega = \frac{-1 + i\sqrt 3}2\in\A$\\
+ è estensione Galoisiana di grado finito,\\
+ Elenchiamo tutti gli elementi di  $G(\K,\Q)$
+  \[
+ \rho: \begin{cases}
+ 	\omega \rightarrow \omega\\
+	$\sqrt[3] 2 \rightarrow \sqrt[3] 2\omega$
+ \end{cases}\ \ \ \omega: \begin{cases}
+ 	\omega \rightarrow \omega^2\\
+	\sqrt[3]2 \rightarrow \sqrt[3]2
+
+ \end{cases}
+ \] 
+ \[
+ \rho^2 = \begin{cases}
+ 	\omega \rightarrow \omega\\
+	\sqrt[3] 2 \rightarrow \sqrt[3]2\omega^2
+ \end{cases} 
+ \ \ \ \ \sigma^2 = \rho^3 = Id
+ \] 
+ \[
+ \sigma\rho^2 = \rho\sigma : \begin{cases}
+ 	\omega \rightarrow\omega^2\\
+	\sqrt[3]2 \rightarrow \sqrt[3]2\omega
+ \end{cases}
+ \] 
+ \[
+ \rho^2\sigma = \sigma\rho : \begin{cases}
+ 	\omega \rightarrow \omega^2\\
+	\sqrt[3]2 \rightarrow \sqrt[3]2\omega^2
+ \end{cases}
+ \] 
+	$G(\K:\Q) = <\rho,\sigma>\cong S_3\cong D_3$ \\
+	AGGIUNGI IMMAGINE 2 33\\
+	Elenchiamo tutte le estensioni intermedie
+	\[
+		\K_{<\rho,\sigma>} = \Q
+	.\] 
+	\[
+		\K_{<\rho>} = \Q(\omega)
+	.\] 
+	AGGIUNGI IMMAGINE 2 38
+	\subsection{Teorema fondamentale dell'algebra}
+	\begin{teo}
+		$\C$ è algebricamente chiuso
+	\end{teo}}
+	\begin{dimo}
+		Procediamo per passi.
+		\begin{enumerate}
+			\item $\R\subseteq\K$ estensione Galoisiana finita allora  $2 \ | \ [\K:\R]$ \\
+				Infatti un polinomio $f\in \R[x]$ di grado dispari soddisfa
+				 \[
+					 \lim_{x \rightarrow \pm\infty}f(x) = \pm\infty
+				.\] 
+				$\Rightarrow$ esiste una radice di $f$\hfill (Bolzano)\\
+				 $ \Rightarrow  f$ non è irriducibile.\\
+				 L'estensione $\R \subseteq\K$ è semplice \hfill (teorema elemento primitivo)\\
+				 $ \Rightarrow  [\K:\R]$ è il grado di un polinomio irriducibile in $\R[x]$
+			 \item  $\R\subseteq\K$ estensione Galoisiana finita.\\
+				 Allora  $[\K:\R] = 2^n$ con  $n\in \Z_{\geq 0}$\\
+				 Infatti:
+				  \[
+					  2 \ | \ [\K:\R] = |G(\K,\R)|
+				 .\] 
+				 $ \Rightarrow  \exists H\in Syl_2(G(\K,\R))\hfill $ (Sylow)\\
+				 $ \displaystyle\Rightarrow [\K_H: \R] = \frac{[\K:\R]}{[\K:\K_H]} = \frac{|G(\K,\R)|}{|G(\K,\K_H)|} = \frac{|G(\K,\R)|}{|H|}$ \\
+				 \underline{non} è divisibile per $2$!\\
+				  $ \Rightarrow  \K_H = \R$.\\
+				  $ \Rightarrow  H = G(\K,\K_H)=G(\K,\R)$ \\
+				  $ \Rightarrow |G(\K,\R)| = |H| = 2^n$ 
+			  \item $\C\subseteq\K$ campo di spezzamento di  $f\in \C[x]$. Allora  $\C = \K$.\\
+				  Infatti:\\
+				  $2^n = [\K:\R] = [\K:\C]\cdot[\C:\R] = [\K:\C]\cdot 2$\\
+				  $ \Rightarrow  [\K:\C] = 2^{n-1}$ \\
+				  Dobbiamo dimostrare che $n = 1$\\
+Se  $ n > 1$
+ \[
+	 |G(\K,\C)| = 2^{n-1}
+.\] 
+$ \Rightarrow  \exists H\leq G(\K,\C)$ di indice 2.\\
+$ \Rightarrow  \displaystyle [\K_H: \C] = \frac {[\K:\C]}{[\K:\K_H]} = \frac {|G(\K,\C)|}{|G(\K,\K_H)|} = \frac{|G(\K,\C)|}{|H|} = [G(\K,\C):H] = 2$ \\
+$C\subseteq \K_H$ è estensione semplice\\
+$ \Rightarrow  \exists\alpha\in\K_H:$
+\[
+	\C\subseteq\C[\alpha] = \K_H
+.\] 
+e il polinomio minimo p di $\alpha$ su $\C$ ha grado $[\K_h:\C] = 2$ \\
+Quindi $p\in\C[x]$ è irriducibile e di grado 2, assurdo.\\
+ $ \Rightarrow  n = 1 \Rightarrow \K = \C$
+		\end{enumerate}
+
+	\end{dimo}
+\end{document}

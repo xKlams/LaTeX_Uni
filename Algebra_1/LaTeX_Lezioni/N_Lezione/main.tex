@@ -1,0 +1,174 @@
+\documentclass[12px]{article}
+
+\title{Lezione N Algebra 1}
+\date{2025-05-12}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Campi Finiti}
+	PARTE CHE MANCA\\
+	\begin{teo}
+		Siano $p,n\in \Z_{\geq 1}$ con  $p$ primo. Allora esiste un campo $\F$ tale che $|\F| = p^n$ inoltre  $\F$ è unico a meno di isomorfismo
+	\end{teo}
+	\begin{dimo}
+		L'unicità segue dalla proposizione e dall'unicità (non canonica)	dei campi di spezzamento\\
+		\textbf{Esistenza}: Sia $\F_p\subseteq\mathbb L$ un campo di spezzamento del polinomio  $f(x) = x^p-x\in\F_p[x]$\\
+		Definiamo:
+		\[
+			\F = \{l\in \mathbb L\ | \ l^p = l\}\subseteq\mathbb L\text{ sottoinsieme}
+		.\] 
+		\begin{itemize}
+			\item $f'(x) = -1\in \F_p[x]$ \\
+				 $f$ e $f'$ sono coprimi\\
+				 $ \Rightarrow  f $ è primo di radici multiple
+			 \item Allora $|\F| = deg(f) = p^n$.
+			 \item  $\F$ è un campo. Infatti $\forall l_1,l_2\in \mathbb L$ $(l_1 + l_2)^{p^n} = l_1^{p^n} + l_2^{p^n} = l_1 + l_2$\\
+				 $(l_1\cdot l_2)^{p^n} = l_1^{p^n}\cdot l_2^{p^n} = l_1 \cdot l_2$\\
+				 $(l_1^{-1})^{p^n} = (l_1^{p^n})^{-1} = l_1^{-1}$
+		\end{itemize}
+		Quindi $\F = \mathbb L$
+	\end{dimo}
+	\begin{teo}
+		$|\mathbb F| = p^n$\\
+		Allora  $ U_{\F}$ è un gruppo ciclico
+	\end{teo}
+	\begin{dimo}
+		$U_{\F}= \F\setminus \{0\}$ con il prodotto con operazione\\
+		È un gruppo abeliano finito \\
+		$ \Rightarrow{\text{per teorema di struttura}} $ $\exists $ $d_1,\ldots,d_r\in \Z_{\geq 1}$ non nulli e non necessariamente distinti tali che.
+		\[
+			U_\F = C_{d_1}\times\ldots\times C_{d_r}
+		.\] 
+		dove ogni $C_{d_i}$ sono gruppi ciclici generato da  $p_i$ di ordine $d_i$ \\
+		Inoltre  $d_j\ |\ d_{j+1}\ \ \forall j\in \{1,\ldots,r-1\}$\\
+		Quindi  $(p_k^k)^{d_r}= id$\\
+		ovvero tutti gli elementi di  $U_\F$ soddisfano il polinomio  $x^{d_r} - 1\in \F[x]$\\
+		Quindi  $|U_\F| \leq deg(x^{d_r}-1) = d_r$\\
+		Deduciamo  $r = 1$\\
+		$ \Rightarrow  U_\F = C_{d_1}$ che è ciclico
+	\end{dimo}
+	\subsection{Estensioni normali}
+	\begin{defi}
+		$\F\subseteq\K$ estensione di campi.
+		 \begin{enumerate}
+			 \item Due elementi $\alpha, \beta\in\K$ algebrici su  $\F$, si dicono coniugati se hanno lo stesso polinomio minimo.
+			 \item $\F\subseteq \K$ si dice estensione normale se è chiusa rispetto ai coniugati.
+		\end{enumerate}
+	\end{defi}
+	\textbf{Osservazione:}\\
+	Un'estensione $\F\subseteq\K$  è normale se e solo se ogni polinomio irriducibile in  $\F[x]$ che ammette una radice in  $\K$. Si decompone come prodotto di fattori lineari in  $\K[x]$\\
+ \begin{teo}
+	$\F\subseteq\K$ estensione. Allora sono equivalenti:
+	 \begin{enumerate}
+		 \item $\F\subseteq\K$ normale  $[\K:\F]< +\infty$
+		 \item  $\exists f\in \F[x]$ tale che  $\F\subseteq\K$ sia un campo di spezzamento di  $f$
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	$1) \Rightarrow  2)$ \\
+	$[\K:\F] = n < +\infty \Rightarrow  \exists \{\alpha_1,\ldots,\alpha_n\}\subseteq\K$ base di $\K$ come $\F$-spazio vettoriale\\
+	$ \Rightarrow \F\subseteq\F(\alpha_1,\ldots,\alpha_k) = \K$\\
+	Essendo finita, l'estensione è algebrica.\\
+	Poniamo $p_j\in\F[x]$ polinomio minimo di  $\alpha_j, \ \ \forall j\in\{1,\ldots,n\}$ Per l'ipotesi di normalità  $p_j$ si decompone in fattori lineari in $\K[x], \ \ \forall j\in\{1,\ldots,n\}$\\
+	Definiamo:
+	 \[
+		 f(x) = p_1(x) \cdot\ldots p_k(x)\subseteq\F[x]
+	.\] 
+	$f$ si decompone in fattori lineari in $\K[x]$\\
+	Inoltre ogni estensione intermedia  $\F\subseteq\mathbb L\subseteq\K$ tale che  $f$ si decomponga come prodotto di fattori lineari in $\mathbb L[x]$ soddisfa  $a_j\in\mathbb L \ \ \forall j\in\{1,\ldots,n\}\ \Rightarrow  \ \mathbb L = \K$  \\
+	 $2) \Rightarrow  1)$ \\
+	 dalle ipotesi  $ \Rightarrow  [\K:\F]<+\infty$ \\
+	 Consideriamo $g\in \F[x]$ irriducibile con $\alpha\in\K$ radice di  $g$ \\
+	 Consideriamo un campo di spezzamento $\F\subseteq \K \subseteq \mathbb L$ del polinomio  $f\cdot g$ Sia  $\beta\in\mathbb L$ radice di  $g$ dobbiamo dimostrare  che $\beta\in\K$\\
+	 Abbiamo  $\F(\alpha)\cong \F(\beta)$ \\
+	 quindi $[\F(\alpha):\F] = [\F(\beta):\F]$\\
+	 Inoltre $\F(\alpha)\subseteq \K(\alpha)$ e  $\F(\beta)\subseteq\K(\beta)$\\
+	 Sono entrambi campi di spezzamento di $f$.\\
+	 pensando  $f\in\F_(\alpha)[x]$ e $f\in\F(\beta)[x]$ rispettivamente.\\
+	 Dall'unicità dei campi di spezzamento:\\
+	 IMMAGINE 14 30\\
+	 In particolare  $[\K(\alpha): \F(\alpha)] = [\K(\beta):\F(\beta)]$\\
+	 $[\K(\alpha):\K][\K:\F] = [\K(\alpha):\F]$\\
+	 $=[\K(\beta): \F(\beta)][\F(\beta):\F] = [\K(\beta):\F] = [\K(\beta):\K][\K:\F]$\\
+	 da cui:
+	 \[
+		 [\K(\beta):\K] = [\K(\alpha):\K] = 1
+	 .\] 
+	 $ \Rightarrow  \beta \in\K$
+\end{dimo}
+\subsection{Estensioni semplici e separabili}
+\begin{defi}
+	$\F\subseteq\K$ estensione
+	 \begin{enumerate}
+		 \item $k\in\K$ si dice separabile su $\F$ se è algebrico e il suo polinomio minimo è separabile.
+		 \item  $\F\subseteq\K$ si dice estensione separabile se ogni elemento di  $\K$ è separabile in $\F$
+		 \item  $\F\subseteq\K$ si dice estensione semplice se  $\exists \alpha\in\K$ tale che $\F\subseteq\F(\alpha) = \K$
+	\end{enumerate}
+\end{defi}
+\textbf{Osservazione}
+\begin{itemize}
+	\item se $char(\F) = 0$ allora ogni estensione algebrica è separabile
+	\item $\Q\subseteq\Q(i,\sqrt 2)$ è semplice (scegliere $\alpha = \sqrt{i}\in\Q(i,\sqrt 2)$
+\end{itemize}
+\begin{prop}
+	$\F$ campo infinito. $\F\subseteq \K$ estensione.\\
+	 $a,b\in\K$ separabili su  $\F$\\
+	 Allora esiste  $\alpha\in\K$ tale che
+	  \[
+	 \F(\alpha) = \F(a,b)
+	 .\] 
+\end{prop}
+\begin{dimo}
+	Sia $f,g$ i polinomi minimi in  $\F[x]$ di  $a$ e $b$.\\
+	Per ipotesi sono entrambi privi di radici multiple.\\
+	Siano:
+	 \[
+	a_1,\ldots, a_n\ \ \ \ e \ \ \ \ b_1,\ldots, b_m
+	.\] 
+	le radici di $f$ e  $g$ in $\mathbb L$\\
+	 dove $\F\subseteq\K\subset \mathbb L$\\
+	 un'ulteriore estensione dove  $f$ e $g$ si spezzano in fattori lineari.\\
+	 Supponiamo $a_1=a$, $b_1 = b$\\
+	 Studiamo l'equazione $a + \lambda b = a_i + \lambda b_j$\\
+	 nella variabile $ \lambda$ al variare di $i\in\{1,\ldots,n\}, \ j\in \{2,\ldots,m\}$\\
+	 Ogniuna di tali equazioni ammette l'unica soluzione 
+	  \[
+		  \lambda = \frac{a_i-a}{b-b_j}\in\mathbb L
+	 .\] 
+	 Essendo $|\F| = +\infty$ esiste  $\gamma \in \F$ che non sia soluzione di alcune delle precedenti  $n\cdot(m-1)$ equazioni.\\
+	 Definiamo
+	  \[
+	 \alpha = a  + \gamma b\in \F(a,b)
+	 .\] 
+	 Quindi $\F(\alpha)\subseteq\F(a,b)$\\
+	 Resta da verificare che  $\F(a,b)\subseteq\F(\alpha)$ è sufficiente mostrare che  $b\in\F(\alpha)$ \\
+	  $(a = \alpha - \gamma b)$\\
+	  Consideriamo
+	   \[
+		   h(x) = f(\alpha - \gamma x)\in \F(\alpha)[x]
+	  .\] 
+	  $h(\alpha - \gamma b) = f(a) = 0$\\
+	  $h(b_j) = f(\alpha - \gamma b_j) = f(a + \gamma n - \gamma b_j)\neq 0$ dato che l'argomento della funzione non è un  $a_i$\\
+	  Deduciamo 
+	   \[
+	  MCD(h(x),g(x)) =(x - b) \ \ \ in \ \ \mathbb L[x]
+	  .\] 
+	  Se per assurdo $MCD(h(x), g(x)) = 1$ in  $\F(\alpha)[x]$ avremmo un'identità di Bezout a coefficienti in $\F(\alpha)\subseteq\mathbb \L$ \\
+	  $ \Rightarrow  $ sarebbero coprimi anche in $\mathbb L [x]$\\
+	  Quindi 
+	  \[
+		  (x,b)\in\F(\alpha)[x] \Rightarrow  b\in\F(\alpha)
+	  .\] 
+\end{dimo}
+\begin{coro}
+	$\F$ campo infinito. Allora ogni estensione di $\F$ separabile e finita è semplice
+\end{coro}
+\begin{dimo}
+	segue iterando la proposizione
+\end{dimo}
+
+\end{document}

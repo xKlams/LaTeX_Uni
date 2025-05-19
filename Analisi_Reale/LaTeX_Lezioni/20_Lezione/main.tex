@@ -1,0 +1,129 @@
+\documentclass[12px]{article}
+
+\title{Lezione 20 Analisi Reale}
+\date{2025-05-13}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{manca un aparte della lezione}
+	\subsection{parte nuova}
+	\begin{dimo}
+		$f\in L^p(\R), \ \e > 0 $\\
+		$f_n = f\chi_{[-n,n]}$ è a supporto compatto\\
+		 $f_n(x) \rightarrow f(x)$ quasi ovunque\\
+		 $|f_n| \leq |f|$ in  $\R \Rightarrow  f_n \rightarrow f$ in $L^p$\\
+		 quindi  $\exists  f_1\in L^p(\R)$, con supporto compatto tale che $\|f-f_1\|_p < \frac \e 3$ \\
+		 $T_j(f_1)(x) = \begin{cases}
+			 f_1 (x)\ \ \ \text{ se } |f_1| < j\\
+			 j \ \ \ \text{ se } f_1(x) > j\\
+			 -j \ \ \ \text{ se } f_1(x) < -j
+		 \end{cases}$\\
+		 $|T_j(f_1)|\leq j \Rightarrow  T_j (f_1)\in L^\infty (\R)\cap L^p(\R)$ \\
+		 $T_j(f_1) \rightarrow f_1$ in $L^p(\R)$ convergenza dominata.\\
+		 primo passo  $\exists f_1\in L^p(\R)$ supporto compatto tale che $\|f-f_1\|_p < \frac \e 3$\\
+		 secondo passo $\exists f_2 \in L^\infty(\R)$ supporto compatto tale che $\|f_2- f_1\|_p \leq \frac\e 3$\\
+		 terzo passo: supp$f_2\subset [-k,k]$\\
+		 dal teorema di Lusin (e dalla sua dimostrazione)\\
+		 $\forall \delta > 0 \exists g_\delta : [-k,k] \rightarrow \R$ continua\\
+	 tale che $m(\{f_2\neq g_\delta\}) < \delta$\\
+	 $\sup_{[-k,k}|g_\delta|\leq \|f_k\|_\infty$ e  $g_\delta(k) = g_\delta(-k) = 0$\\
+	 estenendo a zero $g_\delta$ fuori di  $[-k,k]$ si ottiene  $g\in C_1(\R)$\\
+	 tale che $\|f_2 - g\|_p^p = \int_\R |f_2-g|^pd m = \int_{[-k,k]\cap\{f_2\neq g\}}|f_2-g|^pd m \leq (\|g\|_\infty + \|f_2\|_\infty)^p m (\{f_2\neq g\}) \leq 2^p\|f_2\|^p < \left(\frac \e 3 \right)^p$ per $\delta$ sufficientemente piccolo.\\
+	 Quindi  $\exists g\in C_0(\R)$ tale che 
+	 \[
+	 \|f-g\|_p\leq \|f-f_2\|_p + \|f_1-f\|_p + \|f_2-g\|_p < \e
+	 .\] 
+
+	\end{dimo}
+	\textbf{Domanda:}\\
+	Potrebbe esserci un risultato analogo in $L^\infty$?\\
+	 \textbf{Osservazione}\\
+	 Il risultato di densità si scrive in simboli\\
+	 $\overline{C_c(\R)}^{\|\ \|_p} = L^p(\R)$ \  $1\leq p < +\infty$ \\
+	 $\overline{C_c(\R)}^{\|\ \|_p} = C_0(\R) = \{f: \R \rightarrow \R: f$ continua e $\lim_{|x| \rightarrow +\infty} f(x) =0 \}$ \\
+	 Dimostrazione per esercizio
+	
+	 \begin{defi}
+	 	Uno spazio metrico $Y$\\
+		si dice separabile se ammette un sottoinsieme denso numerabile (esempio  $\R$ è separabile, $R^n$ è separabile $\forall n \feq 1$)  \\
+	 \end{defi}
+	 \begin{teo}
+		 $L^p(\R)$ è separabile per  $1\leq p < +\infty$\\
+		  $L^\infty(\R)$ non è separabile
+	 \end{teo}
+	 \begin{dimo}
+		 $D = \{s(x) = \sum^{N}_{i=1}q_ix_{(a_i,b_i)}$, $a_i < b_i, a_i,b_i,q_i\in \Q\}$ è numerabile\\
+		 Sia $f\in L^p(\R)$ con  $1\leq p < +\infty$ e sia $\e > 0 $\\
+		  $\exists g\in C_c(\R) $(continua a supporto compatto) tale che  $\|f-g\|_p < \frac \e 2$\\
+		  sia  $k\in \N$ tale che  $supp \ g\subset (-k,k)$\\
+		   $g$ è uniformemente continua \hfill(supporto compatto + continua)\\
+		   $\forall \eta > 0 \exists \delta_\eta > 0 $ tale che 
+		    \[
+		   |g(x_1)-g(x_2)| <\eta \ \ \ \forall x_1,x_2\in \R , \ |x_1-x_2| < \delta_\eta
+		   .\] 
+		   suddividiamo $[-k,k]$ in sottointervalli di ampiezza  $\frac 1j < \delta_\eta$ mediante i punti  $-k + \frac i j$  $0\leq i \leq 2kj$A\\
+		    $\forall 0 \leq i \leq 2k_j -1$\\
+		    Scegliamo  $x\in (-k + \frac i j, -k + \frac { i + 1}j)$ e $q_i\in \Q$ tale che  $|q-g(x)| < \eta$\\
+		    $s(x) = \sum^{2kj - 1}_{i = 0}q_i\chi_{(-k + \frac  i j, -k + \frac {i+1}j)}(x)\in D$\\
+		    $\displaystyle\|g-s\|^p_p = \int_{[-k,k]}|g-s|^pd m = \sum^{2kj -1}_{i=0}\int_{[-k+\frac ij, -k + \frac {i+1}j]}|g-q_i|^p$ \\
+		    $\exists x\in [2k + \frac ij, -k + \frac {i+1}j]$ tale che  $|g(x) - q_i| < \eta$\\
+		    $\forall g\in [-k + \frac ij, -k + \frac {i + 1}j] \ \ |y-x | < \frac 1 j < \delta_\eta$\\
+		     $ \Rightarrow  |g(y)-q_i| \leq |g(y)-g(x)| +|g(x)-q_1| < 2\eta$ \\
+		     Tornando quindi all'equazione precedente
+
+		    $\displaystyle\|g-s\|^p_p = \int_{[-k,k]}|g-s|^pd m = \\\sum^{2kj -1}_{i=0}\int_{[-k+\frac ij, -k + \frac {i+1}j]}|g-q_i|^p\ \leq (2\eta)^p\frac ij 2kj < \left(\frac e 2 \right)^p$  per $\eta$ sufficientemente piccolo.
+			    
+	 \end{dimo}
+	 \textbf{Osservazione}\\
+	 $L^\infty(\R)$ non è separabile, sia  $\{\omega_r\}_r$ famiglia più che numerabile di sottoinsiemi tali che  $\omga_r\subset \R, \ \omega_r\in\eta$ per  $r\neq s$\\
+	  $m(\omega_r\setminus \omega_s)$ oppure  $m(\omega_s\setminus \omega_r) > 0 $ \\
+	  esempio\\
+	   $\omega_r = (-r, r) \ \ r > 0 $\\
+	   se  $r < s$  $m(\omega_s\setminus\omega_r) = ([(-s,-r] \cup [r,s)) > 0 $ \\
+	   $\{\chi_{\omega_r}\}_{r > 0 }\subset L^\infty(\R)$\\
+	   $\|\chi_{\omega_r} - \chi_{\omega_s}\|_\infty  = 1$\\
+   $\{B_{\frac 12}(\chi_{\omega_r})\}$ sono disgiunte in  $L^\infty (\R)$\\
+   Sia  $D$ denso in $L^\infty(\R)$\\
+   $\forall r \ \ \exists f_r\in D\cap B_{\frac 12} (\chi_{\omega_r})$ se  $r\neq s \Rightarrow f_s \neq f_r$ \\
+   $ \Rightarrow  D $ è più che misurabile
+   $(V_0, \|\ \|_{V_1}), (V_2, \|\ \|_{V_2})$  spazi vettoriali normati\\
+   $L: V_1 \rightarrow V_2$ operatore lineare.\\
+   \begin{defi}
+	   $L$ si dice limitato se $\exists C \geq 0$ tale che  $\| L(v)\|_{V_2} \leq C\|v\|_{V_1} \ \ \ \forall v\in V_1$
+   \end{defi}
+   \begin{teo}
+   	Sia $L$ operatore lineare $L$ è limitata $ \Leftrightarrow$ L è continua.
+   \end{teo}
+   \begin{dimo}
+	   $ ( \Rightarrow )$ Sia $L$ limitato $\forall v_1,v_2\in V_1\ \ \|L(v_1)- L(v_2)\|_{V_2} = \leq L(v_1+v_2)\|_{V_2} \leq C\|v_1 - v_2\|_{V_1} \Rightarrow  L $  è lipschitziano.\\
+	   $ ( \Leftarrow )$ sia  $L$ continuo.\\ 
+	   Poiché $L(0) = 0\ \ \ \forall \e > 0 \exists\delta > 0$ tale che  $\|L(V)\|_{V_2} < \e$ se $\|v\|_{V_1} < \delta$\\
+   $\frac \delta 2 \frac {v}{\|v\|_{V_1}}\in V_1$ e $\|\frac \delta 2\frac {v}{\|v\|_{V_1}} = \frac \delta 2 < \delta$\\
+   $ \Rightarrow  \|L(\frac\delta 2 \frac v {\|v\|_{V_1}})\|_{V_2} < \e$ \\
+   $\frac \delta {2\|v\|_{V_1}}\|L(V)\|_{V_2} < \e$\\
+   $ \Rightarrow  \|L(v)\|_{V_2} < \frac {2\e} \delta\|v\|_{V_1} \ \ \forall v\in V_1$\\
+   $ \Rightarrow  L $ è limitato
+   \end{dimo}
+   $L(V_1,V_2) = \{L:V_1 \rightarrow V_2\ : \ L$ lineare e continuo$\}$\\
+   spazio vettoriale\\
+   $L\in L(V_1,V_2)$\\
+   $ \Rightarrow  \|L(v)\|_{V_2}\leq C\|v\|_{V_1}$ \\
+   $ \Rightarrow  \frac {\|L(v)\|_{V_2}}{\|v\|_{V_1}}\leq C \ \ \forall v\in V_1\setminus\{0\}$\\
+   $ \Rightarrow  \sup_{v\in V_1\setminus\{0\}}\frac {\|L(v)\|_{V_2}}{\|v\|_{V_1}} < +\infty$ \\
+   $\|L\| = \sup_{v\in V_1\setminus\{0\}}\frac {\|L(v)\|_{V_2}}{\|v\|_{V_1}}$\\
+   $=\sup_{v\in V_1\setminus\{0\}}\|L(\frac v {\|v\|_{V_1}})\|_{V_2} = \sup_{\substack{v\in V_1\\ \|v\|_{V_1} = 1}}\|L(v)\|_{V_2}$
+   \begin{teo}
+   $(L(V_1,V_2), \|\ \|)$ è uno spazio vettoriale normato \\
+   se $(V_2, \|\ \|_{V_2})$ è di Banach $ \Rightarrow  (L(V_1,V_2), \|\ \|)$ è di Banach.
+   \end{teo}
+   \begin{dimo}
+   	per esercizio
+   \end{dimo}
+   In particolare $L(V_1, \R) = \{L : V_1 \rightarrow \R$ lineare continua $\}$ è uno spazio di Banach\\
+   $V_1' = V_1^*$ spazio dueale di $V_1$\\
+   Guarda foto 13 maggio 3 03
+\end{document}

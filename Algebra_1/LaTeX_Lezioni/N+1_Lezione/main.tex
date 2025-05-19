@@ -1,0 +1,322 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+1 Algebra 1}
+\date{2025-05-15}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Teorema dell'elemento primitivo}
+	\textbf{Ricordo:} Abbiamo dimostrato
+	\begin{teo}
+		$\F$ campo infinito, allora ogni estensione separabile di grado finito è semplice
+	\end{teo}
+	\begin{teo}[elemento primitivo]
+		$\F$ campo. Ogni estensione separabile di grado finito di $\F$ è semplice
+	\end{teo}
+	\begin{dimo}
+		si tratta di studiare il caso $|\F| < +\infty$. Sappiamo che il gruppo moltiplicativo $U_\F = \F\setminus\{0\}$  è ciclico. \\
+		Sia ora $\F \in \K$ estensione finita\\
+		 $ \Rightarrow \exists \alpha\in \K$  tale che $U_\K = <\alpha> \Rightarrow  \F\subseteq\F(\alpha) = \K$  
+	\end{dimo}
+	\textbf{Osservazione}\\
+	Nel caso finito non abbiamo usato l'ipotesi di estensione separabile\\
+	Il prossimo risultato è dimostrato da Galois$(1831)$ di  Steinitz$(1910)$ 
+	\section{Teoria di Galois}
+\begin{defi}
+	$\varphi: \F \rightarrow\K$ estensione di campi\\
+	$\overline \varphi_\K :\K \rightarrow \overline \K$ chiusura algebrica\\
+	Un $\F$-omomorfismo di $\K$ è un estensione  $\psi : \K \rightarrow \overline\K$ tale che il diagramma (INSERISCI IMMAGINE 4 30), sia commutativo.
+\end{defi}
+\textbf{Esercizio:}\\
+L'insieme $I(\K,\F)$ degli  $\F$-omomorfismi di  $\K$ non dipende dalla scelta di $\ovrline \varphi_\K$\\
+ \textbf{Esempio:}\\
+ $\Q\hookrightarrow \Q(\sqrt[3]{2})\hookrightarrow \A$\\
+ dove la prima freccia è $ \varphi$ e la seconda è $\overline\phi_k$\\
+ il polinomio minimo di  $\sqrt[3]{2}$ è  $x^3-2\in\Q[x]$\\
+ $x^3-2=(x-\sqrt[3]{2})(x -\sqrt[3]{2}\omgea)(x-\sqrt[3]2\omega^2)$\\
+ dove $\omega = \frac{-1+i\sqrt{3}}{2}\in\A$\\
+ L'estensione 
+  \[
+ \begin{aligned}
+	 \psi : &\Q(\sqrt[3]{2}) \rightarrow \A\\
+		&\sqrt[3]2 \rightarrow \sqrt[3]{2}\omega
+ \end{aligned}
+ .\] 
+ \begin{prop}
+ 	Sia $\F\subseteq\K$ estensione separabile e di grado finito, allora 
+	 \[
+		 |I(\K,\F)| = [\K:\F]
+	.\] 
+ \end{prop}
+ \begin{dimo}
+ 	Dal teorema dell'elemento primitivo $\exists \alpha\in\K$ tale che  $\F\subseteq\F(\alpha) = \K$ \\
+	Sia $ \psi\in I(\K,\F)$ \\
+	$\psi$ è univocamente determinato da $\psi(\alpha)$
+	 \begin{itemize}
+		 \item dimostriamo che $\alpha, \psi(\alpha)$ sono coniugati\\
+			 sia  $f\in\F[x]$ il polinomio minimo di  $\alpha$, allora $0=\psi(0)=\psi(f(\alpha)) = f(\psi(\alpha))$  \\
+			 $ \Rightarrow  f$ è il polinomio minimo di $\psi(\alpha)$
+		 \item per ogni radice  $\beta$ di $f$ l'applicazione
+			 \[
+			 \begin{aligned}
+				 \psi_{\beta }&:\K\setminus \F(\alpha) \rightarrow \overline\K\\
+					      &\alpha \rightarrow \psi_\neta(\alpha) = \beta
+			 \end{aligned}
+			 .\] 
+			 è un omomorfismo di anelli (con $im(\psi_\beta) = \F(\beta))$
+		 \item Dato che  $\F\subseteq\K$ è estensione separabile  $ \Rightarrow f$ ammette $\deg(f)$ radici distinte, quindi
+			  \[
+				  |I(\K,\F)| = deg(f) = [\K:\F]
+			 .\] 
+	\end{itemize}
+ \end{dimo}
+ \begin{defi}[Gruppo di Galois]
+ 	$\F\subseteq K$ estensione. Il suo gruppo di Galoi s è $(G(\K,\F),\circ)$ dove
+	 \[
+		 G(\K,\F) = \{\sigma: \K \rightarrow \K \ | \ \sigma \text{ è isomorfismo di anelli e }\sigma|_\F = id_\F\}
+	.\] 
+	e $\circ$ è la composizione
+ \end{defi}
+ \textbf{Osservazione:}\\
+ Data l'estensione $ \varphi: \F \rightarrow \K$ e dato $\omega: \K  \rightarrow\K$ scriveremo $\omega|_\F = id_\F$intendendo che, inserisci diagramma, è un diagramma commutativo.
+  \begin{prop}
+ 	$\F\subseteq\L$ estensione 
+	 \[
+	|G(\K,\F)|\leq |I(\K,\F)|
+	.\] 
+ \end{prop}
+ \begin{dimo}
+ 	Costruiamo un'applicazione iniettiva fra insiemi\\
+	\begin{aligned}
+		$G(\K,\F) &\rightarrow I(\K,\F)$\\
+			  &inserisci immagine
+	\end{aligned}\\
+	dove $\overline \varphi_\K: \K \rightarrow\overline\K$ è una chiusura algebrica fissata\\
+	\begin{itemize}
+	\item$X$ è ben definita poiché $\sigma\in G(\K,\F)$ allora\\
+	INSERISCI IMMAGINE 4 58\\
+è un diagramma commutativo
+\item Inoltre $X$ è iniettiva poiché.\\
+	$X(\sigma_1) = X(\sigma_2)$\\
+	$ \Rightarrow \overline\phi_\K = \sigma_1 = \overline\sigma_\K = \sigma_2 \Rightarrow  \sigma_1 = \sigma_2$  
+	\end{itemize}
+ \end{dimo}
+ \begin{coro}
+ 	$\F\subseteq\K$ estensione separabile di grado finito, allora
+	 \[
+		 |G(\K,\F)|\leq [\K:\F]
+	.\] 
+ \end{coro}
+ \begin{dimo}
+ 	questo segue dalle proposizioni precedenti.
+ \end{dimo}
+ \begin{defi}
+ 	$\K$ campo  $H\leq Aut(\K)$\\
+	Poniamo
+	\[
+		\K_H:=\{k\in\K\ |\ \omega(k) = k \forall\sigma\in H\}
+	.\] 
+	si dice campo fissato da $H$.
+ \end{defi}
+ \textbf{Esercizio:}\\
+ Dimostrare che è un campo.\\
+ \begin{defi}[Galois]
+ 	$\F\subseteq\K$ estensione
+	 \[
+		 \mathcal F_{\K,\F} = \{ \text{estensioni intermedie } \F\subset\mathbb L \subset\K\}
+	.\] 
+	\[
+		\mathcal G_{\K,\F} = \{\text{sottogruppi di }G(\K,\F)
+	.\] 
+	\[
+	\begin{aligned}
+		\psi: &\mathcal F_{\K,\F} \rightarrow \mathcal G_{\K,\F}\\
+		      &(\mathcal F\subseteq\mathbb L\subseteq\K ) \rightarrow G(\K,\mathbb L)\leq G(\K,\F)
+	\end{aligned}
+	.\] 
+	\[
+		\begin{aligned}
+		\Phi: &\mathcal G_{\K,\F} \rightarrow\mathcal F_{\K,\F}\\
+		$H\leq &G(\K,\F) \rightarrow \F\subseteq\K_H\subseteq \K$
+		\end{aligned}
+	.\] 
+	$\psi$ e $\phi$ si dicono corrispondenze di Galois
+ \end{defi}
+ \textbf{Domande:}\\
+ \begin{enumerate}
+	 \item $\Phi(\psi(\L)) = \L?$ per ogni estensione $\F\subseteq\mathbb L\subseteq\K$
+	 \item  $\psi(\Phi(H))=H?$ per ogni  $H\leq G(\K,\F)$
+ \end{enumerate}
+ \textbf{Esercizi:}\\
+ $\F\subseteq\K$ estensione, dimostrare
+  \begin{enumerate}
+	  \item $G(\K,\K) = \{id\}$
+	  \item  $\F\subseteq\Le\subseteq\Le_2\subseteq\K$\\
+		   $ \Rightarrow  \psi(\Le_2)=G(\K,\Le_2) \leq G(\K,\Le_1) = \psi(\Le_1)$
+	   \item $\K_\{id\} = \K$
+	   \item  $H_1\leq H_2\leq G(\K,\F)$ \\
+		   $ \Rightarrow F\subseteq\K_{H_2} = \Phi(H_2)\subseteq \K_{H_1} = \Phi(H_1)\subseteq \K$
+	   \item $H\leq G(\K,\F) \Rightarrow H\leq G(\K,\K_H)= \psi(\K_H) = \psi(\Phi(H))$ 
+	   \item $\F\subseteq\Le\subseteq\K \Rightarrow  \F\subseteq\Le\subseteq\K_{G(\K,\Le)}\subseteq\K $ \\
+\[
+\begin{aligned}
+	\psi: &\mathcal F_{\K,\F} \rightarrow \mathcal G_{\K,\F}\\
+	      &(\F\subseteq\Le\subseteq\K) \rightarrow \mathcal G(\K,\Le)
+\end{aligned}
+.\] 
+\[
+\begin{aligned}
+	\psi: &\mathcal G_{\K,\F} \rightarrow \mathcal F_{\K,\F}
+	      &H\leq G(\K,\F) \rightarrow F\subseteq\K_G\subseteq \K
+\end{aligned}
+.\] 
+ \end{enumerate}
+ \textbf{Osservazione}
+\begin{itemize}
+	\item $H\leq \psi(\Phi(H))$
+	\item  $\Le\subseteq\Phi(\psi(\Le))$
+\end{itemize}
+\textbf{Obiettivo}\\
+Esibire condizioni su $\F\subseteq\K$ affinché $\Phi,\psi$ siano una l'inversa dell'altra
+ \begin{teo}
+	$\F\subseteq\K$ separabile di grado finito. Allora dato  $H\leq G(\K,\F)$ abbiamo
+	 \begin{itemize}
+		 \item $|H| = [\K,\K_H]$
+		 \item  $\psi(\Phi(H))= H$
+	\end{itemize}
+\end{teo}
+\begin{dimo}
+	Abbiamo $H\leq G(\K,\K_H)$ \\
+	\[
+		\Rightarrow  |H|\leq |G(\K,\K_H)| \leq [\K,\K_H]
+	.\] 
+	basta verificare che 
+	\[
+		|H| \geq [\K,\K_H]
+	.\] 
+	per dedurre entrambi gli enunciati.\\
+Dal teorema dell'elemento primitivo esiste $\alpha\in \K$ tale che  
+\[
+\F\subseteq\F(\alpha) = \K
+.\] 
+Vogliamo costruire un polinomio $f\in \K_H$ di cui  $\alpha$ sia radice.\\
+\[
+	H = \{\sigma_1 = Id,\sigma_2,\ldots,\sigma_h\}
+.\] 
+Definiamo:\\
+$\displaystyle\alpha_s := \sum^{}_{1\leq j_1 < \ldots < j_s\leq h}\sigma_{j_1}(\alpha)\cdot\ldots\cdot\sigma_{j_s}(\alpha)\in\K$\\
+Poniamo
+\[
+	f(x) = \prod_{j=1}^h(x-\sigma_j(\alpha)) = x^h - \alpha_1^{h-1} + \ldots + (-1)^h\alpha_h\in\K[x]
+.\] 
+Chiaramente $f(\delta) = 0$. Verifichiamo $\alpha_s\in\K_H$ ovvero  $\sigma_t(\alpha_s) = \alpha_s$ $\forall t,s\in\{1,\ldots,h\}$\\
+Abbiamo
+ \[
+\sigma_t(\alpha_s) = \sum^{}_{1\leq j_1 < \ldots < j_s\leq h}\sigma_{j_1}(\alpha)\cdot\ldots\cdot\sigma_{j_s}(\alpha) = \sigma_s
+.\] 
+Dove l'ultima uguaglianza segue dal fatto che 
+\[
+\begin{aligned}
+	& H \rightarrow H\\
+	& \sigma_j \rightarrow \sigma_t\cdot \sigma_j
+\end{aligned}
+.\] 
+è un isomorfismo $\forall t\in \{1,\ldots,h\}$\\
+$ \Rightarrow f\in \K_H[x]$ \\
+$ \Rightarrow  |H| = h = deg(f)\geq deg($ polinomio minimo di $\alpha$ su $\K_H) =[\K_H(\alpha):\K_H] = [\K:\K_H]$
+
+\end{dimo}
+\begin{teo}
+	$\F\subseteq\K$ estensione separabile di grado finito.\\
+	 Allora sono equivalenti:
+	 \begin{enumerate}
+		 \item $\F\subseteq\K$ estensione normale
+		 \item  $\Phi(\psi(\Le))=\Le$ per ogni  $\F\subseteq\Le\subseteq\K$
+	 \end{enumerate}
+\end{teo}
+\begin{dimo}
+	
+	$2) \Rightarrow  1)$ per ipotesi abbiamo $\F = \K_{G(\K,\F)}$\\
+	Per dimostrare che  $\F\subseteq\K$ è normale, basta verificare che sia un campo di spezzamento di un polinomio $f\in \F[x]$.\\
+Per il teorema dell'elemento primitivo \\
+$\exists \alpha\in \K\  \ $ tale che  $\F\subseteq\F(\alpha) = \K$ \\
+Inoltre $|G(\K,\F)| < +\infty$ \\
+$G(\K,\F) = \{\sigma_1,\ldots,\sigma_h\}$\\
+$f(x) = \prod^h_{j=1}(x-\sigma_j(\alpha)) = x^h - \alpha_1x^{h-1}+\ldots+(-1)^h\alpha_h$\\
+dove 
+\[
+	\alpha_s = \sum^{}_{i\leq j_1<\ldots<j_s\leq h}\sigma_{j_1}(\alpha)\cdot\ldots\cdot\sigma_{j_s}(\alpha)
+.\] 
+$f(x)\in\K[x]$\\
+Osserviamo che  $\dorall s,t\in\{1,\ldots,h\}$\\
+\[
+	\sigma_t(\alpha_s) = \sum^{}_{1\leq j_1 < \ldots< j_s\leq h} (\sigma_t\sigma_{j_1})(\alpha)\cdot\ldots\cdot(\sigma_t\sigma_{j_s})(\alpha)
+.\] 
+$ \Rightarrow \alpha_s\in\K_{G(\K,\F)}=\F \Rightarrow  f(x)\in\F[x]$ \\
+\begin{itemize}
+	\item $f$ si decompone in fattori lineari in $\K[x]$
+	\item  $f(\alpha) = 0$ quindi data un'estensione  $\F\subseteq\Le\subseteq\K$ abbiamo  $\alpha\in\Le$\\
+		 $ \Rightarrow \K = \F(\alpha)\subseteq\Le\subseteq\K$\\
+		 $ \Rightarrow \Le = \K$ \\
+		 $ \Rightarrow  \F\subseteq\K$ è campo di spezzamento di $f$.\\
+\end{itemize}
+$1) \Rightarrow  2)$  Dobbiamo verificare che se $\F\subseteq\K$ è separabile, di grado finito e normale, allora
+ \[
+	 \Phi(\psi(\Le))=\Le \  \ \ \ \text{per ogni }\F\subseteq\Le\subseteq\K
+.\] 
+$\Le \subseteq \Phi(\psi(\Le)) = \K_{G(\K,\Le)}$\\
+Verificare che $\K_{G(\K,\Le)}\subseteq \Le$\\
+Sappiamo che  $\Le\subseteq\K$\\
+è estensione normale di grado finito.\\
+Quindi esiste polinomio $f\in\Le[x]$ tale che  $\Le\subseteq\K$ sia campo di spezzamento di  $f$.\\
+Procedo per induzione su  $[\Le:\K]$\\
+se  $[\Le:\K] = 1 \Rightarrow  \Le = \K$ \\
+$ \Rightarrow  \K_{G(\K,\Le)} =\K = \Le$ \\
+Se $[\K:\Le] > 1$ allora\\
+$f: p_1\cdot\ldots\cdotp_r$ fattorizzazione in irriducibili\\
+Possiamo assumere che $deg(p_1) > 1$.\\
+Siano $\alpha_1,\alpha_2,\ldots,\alpha_h\in\K$ le radici di $p_1$ $(deg(p_1) = h > 1)$\\
+\[
+	[\K: \Le] =[\K:\Le(\alpha_1)][\Le(x):\Le]
+.\] 
+con $[\Le(x):\Le] = h$\\
+Quindi 
+\[
+	[\K:\Le(\alpha_1)] < [\K:\Le]
+.\] 
+e per ipotesi induttiva\\
+\[
+	\K_{G(\K,\Le(\alpha_1)} = \Le(\alpha_1)
+.\] 
+Definiamo
+\[
+\sigma_1,\ldots,\sigma_h\in G(\K,\Le)
+.\] 
+\[
+\begin{aligned}
+	\sigma_s: &\K \rightarrow \K\\
+		  &\alpha_1 \rightarrow \alpha_s
+\end{aligned}
+.\] 
+(si può estendere a tutto $\K$)\\
+Dobbiamo verificare $\K_{G(\K,\Le)}\subseteq\Le$\\
+Sia  $k\in \Ke_{G(\K,\Le)}\subseteq\K_{G(\K,\Le(\alpha))} = \Le(\alpha_1)$\\
+$ \Rightarrow k = c_0 + c_1\alpha_1 + \ldots + c_{h-1}\alpha_1^{h-1}\in\Le(\alpha_1)$\\
+$ \Rightarrow  \sigma_s(k) = k \ \ \ \forall s\in\{1,\ldots,h\}.$ \\
+poiché $\sigma_s\in G(\K,\Le)$\\
+Ora  $f(x) = (c_0-k) + c_1x + \ldots, c_hx^{h-1}\in\Le(\alpha_1)[x]$\\
+$\alpha_s   = \sigma_s(\alpha_1)$ è radice di $f(x) \ \ \forall s\in\{1,\ldots,h\}$ che sono tutte distinte.\\
+Quindi ho $h$ radici ma $deg(f) = h-1 \Rightarrow  f(x) = 0 \Rightarrow  k = c_0\in\Le$
+
+\end{dimo}
+\begin{defi}
+	$\F\subseteq\K$ si dice estensione Galoisiana se è separabile e normale
+\end{defi}
+\begin{coro}
+	$\F\subseteq\K$ estensione Galoisiana di grado finito, allora  $\Phi, \psi$ sono una l'inversa dell'altra.
+\end{coro}
+\end{document}

@@ -1,0 +1,221 @@
+\documentclass[12px]{article}
+
+\title{Lezione N Geometria 2}
+\date{2025-05-12}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Rivestimenti e svestimenti di alberto agostinelli}
+	\textbf{Esempi:}
+	\begin{enumerate}
+		\item Sia $p: E \rightarrow X$ un omeomorfismo, allora $p$ è un rivestimento. Infatti dato  $x\in X$ prendiamo  $V\ni x$ aperto banalizzante mettendo  $V = X$, Allora:
+			\[
+				p^{-1}(V) = E = U_1
+			.\] 
+			infatti $p|_{U_1} : U_1 \rightarrow V$ è semplicemente $p: E \rightarrow X$ omeomorfismo.
+		\item in $\R^2$ prendiamo  $E = \R\times \Z$ \\
+			$ \begin{aligned}
+				p: &E \rightarrow \R\\
+				   & (x,n) \rightarrow x
+			\end{aligned}$\\
+			proiezione sulla prima coordinata.\\
+			È un rivestimento. \\
+			Qui posso prendere $V = \R$ allora  $p^{-1}(V) = E = \bigcup^{}_{n\in\Z}\R\times\{n\}$\\
+			$U_n := \R\times\{n\}$ è aperto in $E$ e $p|_{U_n}:U_n \rightarrow V$ è omeomorfismo
+		\item  \begin{aligned}
+				$p&:\R^2 \rightarrow \R$\\
+				  & $(x,y) \rightarrow x$
+		\end{aligned}\\
+		non è un rivestimento, infatti prendendo $V \ni x(\in\R)$ intorno aperto in  $\R$ è vero  che 
+		\[
+			p^{-1}(V) = \bigcup^{}_{y\in\R}V\times\{y\}
+		.\] 
+		con  $p|_{V\times\{y\}} V\times \{y\} \rightarrow V$ è omeomorfismo\\
+		però $V\times \{y\}$ non è aperto in  $\R^2$
+	\item  \begin{aligned}
+			$p: &\R \rightarrow S^1$\\
+			    & $t \rightarrow (\cos(2\pi t, \sin (2\pi t))$
+	\end{aligned}\\
+È un rivestimento.\\
+Non è rivestimento banale poiché se $V = S^1$ fosse aperto banalizzante la sua controimmagine $\R$ sarebbe unione disgiunta di aperti, ciascuno omeomorfo a $S^1$non è vero perché  $\emptyset$ è l'unico compatto aperto di $\R$\\
+preso $(x_0,y_0)\in S^1$ scegliamo $t_0\in \R$ tale che $\rho(t_0) = (x_0,y_0)$\\
+l'intervallo $]t_0 = \frac 14, t_0 + \frac 14[$ va nella semicirconferenza che contiene $(x_0,v_0)$ nel mezzo.\\
+Allora $\rho^{-1}(V) = \bigcup^{}_{n\in\Z}]t_0-\frac 14 + n, t_0 + \frac 14 + n[$ con $U_n = ]t_0 - \frac 15 + n, t_0 + \frac 14 + n[$ sono aperti e disgiunti, ciascuno va omeomorficamente in $V$ tramite $\rho$ (esercizi settimanali) 
+\item La restrizione $\rho|_{]-2,2[}:]-2,2[ \rightarrow S^1$ non è un rivestimento\\
+	Scegliendo $V$ intorno di $(1,0)$  dato da  $V = \rho(]-\e, \e[) $ con $\e > 0 $ piccolo.\\
+	allora
+	\[
+		p|_{]-2.2[})^{-1}(V) = ]-2,2+\e[\cup ]-1-1\e,-1+\e[ \cup 
+		]0-\e, 0 + \e[\cup]1-\e, 1 + \e[\cup ]2-\e, 2[
+
+	.\] 
+	dove il primo e l'ultimo non vanno omomeorficamente su $V$ tramite $\rho$
+	\end{enumerate}
+	\begin{prop}
+		Sia $p: E \rightarrow X $ un rivestimento. Supponiamo $X$ connesso. Allora $|p^{-1}(x)| = |p^{-1}(y)|\ \ \forall x,y\in X$
+	\end{prop}
+	\begin{dimo}
+		Scegliamo $x_0\in X$ definiamo 
+		\[
+			A= \{x\in X\ |\ |p^{-1}(x)| = |p^{-1}(x_0)|\}
+		.\] 
+		chiaramente $x_0\in A$\\
+		Sia $V\subseteq X$ aperto banalizzante contenente  $x_0$ \\
+		Scriviamo
+		\[
+			p^{-1}(V) = \bigcup^{}_{i\in I}U_i
+		.\] 
+		come nella definizione di rivestimetno allora ciascuna $U_i$ contiene almeno 1 punto che va in  $x_0$\\
+	Cioè $|I| = |p^{-1}(x_0)|$\\
+	La stessa cosa vale per ogni punto di $V$. Segue $V\subseteq A$\\
+	lo stesso vale con  $y\in X$ al posto di  $x_0$ e un aperto canonizzante $W$ contenente $y$ al posto di $V$,  se $y\in A$. Quindi  $A$ intorno di ogni punto, cioè $A$ aperto. Se invece $y\not\in A$ allora  $\W\subseteq X \setminus A$ per lo stesso ragionamento. \\
+	Cioè  $X\setminus A$ è aperto, segue $A\in \{X,\emptyset\}$  ma  $A$ è non vuoto, quindi $A = X$
+	\end{dimo}
+	\textbf{Esempio}\\
+	$E = \{a,b,c\}$ topologia discreta\\
+	$X = \{d,e\}$ topologia discreta\\
+	 $p(a) = p(b) = d$\ \  $p(c) = e$\\
+	 $p^{-1}(V) = \{a,b\} = \{a\}\cup \{b\} := U_1\cup U_2$\\
+	 $\forall i\in I = \{1,2\}$ i  $U_i$ è omeomorfo a  $V$ tramite $p$\\
+	  $e\in X$ ha aperto banalizzante  $W$\\
+	  $p^{-1}(W) = \{e\} = U_1$ è omeomorfo a $W$.\\
+	  \textbf{Esercizio [ha chiesto all'esame in passato roba simile]}\\
+	  Esempio analogo con meno di 5 punti in totale.\\
+	  \begin{defi}
+		  Sia $p: E \rightarrow X$ rivestimento.\\
+		  Supponiamo $X$ connesso e $|p^{-1}(x)| = d\in \Z_{\geq 0}\ \ \ \forall x\in X. $ Allora  $p$ si dice di grado $d$.
+	  \end{defi}
+	  \textbf{Esempio}
+	  \begin{enumerate}
+		  \item $\rho : \R \rightarrow S^1$ il solito rivestimento non ha grado finito
+		  \item \begin{aligned}
+				  $p:&\ \ \ \ \ \ \ \ S^1  \ \ \ \ \ \ \ \ \ \ \  \rightarrow \ \ \ \ \ \ \ \ S^1$	  	\\
+				      & $\cos(2\pi t), \sin (2\pi t) \rightarrow (\cos(4\pi t), \sin(4\pi t))$
+		  \end{aligned}
+		  Un modo per dimostrare che $p$ è continua e osservare che
+		  \[
+			  p(z) = z^2\ \ \ se \ \ \ z\in S^1 = \{z\in \C\ |\ |z| = 1\}
+		  .\] 
+		  analogamente si definiscono rivestimenti $S^1 \rightarrow S^1$ di grado $n\in \Z_{\geq 1}$ qualsiasi, ponendo  $p(z) = z^n$
+	  \end{enumerate}
+		  \subsection{azioni propriamente discontinue}
+		  Ogni rivestimento suriettivo è un'identificazione ( perchè è aperto) quindi possiamo costruire un rivestimento usando i quozienti.
+		   \begin{defi}
+			   Sia $ E$ spazio topologico, $G\subseteq Omeo(E)$ sottogruppo. Si dice che  $G$ agisca in modo propriamente discontinuo se $\forall e\in E \ \ \exists U\subseteq E$ aperto  $U\ni e, t.c.$  $U\cap g(U) = \emptyset \ \ \ \ \forall g\in G\setminus\{Id_E\}$
+		  \end{defi}
+		  \textbf{Esempio}
+		  \begin{enumerate}
+			  \item $E = \R$ per  $n\in \Z$ \\
+				  \[
+				  \begin{aligned}
+					  f_n: &\R \rightarrow \R\\
+					   & x \rightarrow x + n
+				  \end{aligned}
+				  .\] 
+				  $G = \{f_n\ | n\in \Z\}$ abbiamo visto $E/G$ è omeomorfo a $S^1, $ Qui  $G$ agisce in modo propriamente discontinuo, sia $e\in \R$\\
+				  Basta prendere  $U = ]e-\frac 12, e + \frac 12[$ e avere\\
+				   $f_n(U)\cap U = \emptyset \ \ \ \forall n\neq 0$
+		  \end{enumerate}
+	  \end{enumerate}
+		  \begin{teo}
+		  	Sia $E$ spazio topologico, sia $G\subseteq Omeo(E)$ sottogruppo che agisce in modo propriamente discontinuo, Allora il quoziente $p: E \rightarrow E/G$ è un rivestimento.
+		  \end{teo}
+		  \begin{dimo}
+		  	Sappiamo che $p$ è aperta (vale $\forall G$)\\
+			Sia  $e\in E$ e considero  $[e]\in E/G$\\
+			Sia  $U\subseteq E$ aperto contenente $e$ come nella definizione precedente, poniamo $V = p(U),$ è aperto in  $E/G$\\
+			Dimostriamo che $V$ è aperto banalizzante.\\
+			$p^{-1}(V) = p^{-1}(p(U)) = \bigcup^{}_{g\in G}g(U)= $ (tutti i punti equivalenti a qualche punto di $U$ )\\
+Verifichiamo che i sottoinsiemi $g(U)$ sono aperti (ok perché $U\subseteq E$ aperto e $q:E \rightarrow E$ è omeomorfismo) e disgiunti cioè  $g(U)\cap h(U) = \emptyset $ se  $g\neq h$\\
+Abbiamo\\
+$g(U)\cap h(U) = h((h^{-1}\circ g)(U)\cap U)$\\
+$= h(\emptyset) = \emptyset$\\
+Quindi ho scritto  $p^{-1}(V)$ come unione disgiunta di aperti di $E$.\\
+Fissiamo $g\in G$ e considero.
+ \[
+p|_g(U): g(U) \rightarrow V
+.\] 
+Questa restrizione è continua, ed è aperta perché $p$ è aperta e $g(U)$ è aperta in $E$.\\
+Inoltre  $p|_{g(U)}: g(U) \rightarrow V$ è iniettiva. Infatti $U$ non ha coppie di punti distinti in relazione, quindi $g(U)$ neppure (verifica per casa).\\
+Inoltre $p|_{g(U)}: g(U) \rightarrow V$ è suriettiva, infatti sia $[u]\in V$ punto qualsiasi di  $V$, con $u\not\in U$ Allora  $g(u)\in g(U)$ e
+ \[
+	 p(g(u)) = [g(u)] = [u]
+.\] 
+Quindi $p$ è un rivestimento.
+		  \end{dimo}
+\subsection{Sollevamento di cammini e omotopie}
+\begin{defi}
+	Sia $f: X \rightarrow Y$ applicazione fra insiemi qualsiasi. Una sezione di $f$ è un'applicazione $s: Y \rightarrow X$ tale che $f\circ s = Id_Y$
+\end{defi}
+\textbf{Osservazione:}\\
+Se $f$ ha almeno una sezione, allora $f $ è suriettiva e ogni sua sezione $s $ è iniettiva\\
+\textbf{Esempio:}\\
+La solita $\rho : \R \rightarrow S^1$ non ha sezioni continue, perché una sezione continua sarebbe $s: S^1 \rightarrow \R$ continua e iniettiva, che non esiste.
+\begin{defi}
+	Sia $p: E \rightarrow X$ rivestimento su $V\subseteq X$ aperto banalizzante,  $p^{-1}(V) = \bigcup^{}_{i\in I}U_i$ come nella definizione di rivestimento, $q = p|_U : U \rightarrow V$ è omeomorfismo , l'inversa $q^{-1}:V \rightarrow U$  è detta sezione locale di $p$.
+\end{defi}
+\begin{defi}
+	Sia $p: E \rightarrow X$ rivestimento, sia $Y$ spazio topologico e $f: Y \rightarrow X$ continua.\\
+	INSERISCI IMMAGINE 17: 27\\
+	Un sollevamento $q$ di $f$ è un applicazione continua $g: Y \rightarrow E$ tale che $f = p\circ g$
+\end{defi}
+\begin{teo}
+	Siano $p: E \rightarrow X, f: Y \rightarrow X$ come nella definizione, siano $g,h: Y \rightarrow E$ sollevamento di $f.$ Supponiamo $ Y $ connesso, allora  $g(y) = h(y) \ \ \forall y\in Y$\\
+	oppure  $g(y) \neq h(y) \ \ \forall y\in Y$
+\end{teo}
+\begin{dimo}
+	Sia $A = \{y\in Y\ | \ g(y) = h(y)\}$\\
+	Dimostriamo che $A$ è sia aperto che chiuso. Sia  $y\in Y$\\
+	Sia  $V\subseteq X$ aperto banalizzante, $V\ni f(y)$, scriviamo  $p^{-1}(V) = \bigcup^{}_{i\in I}U_i$ come nella definizione.\\
+	Visto che $f = p\circ g$ e anche  $f =p\circ h$ abbiamo $g(y), h(y)\in p^{-1}(V)$\\
+	Siano $i,j\in I$ tale che 
+	 \[
+	U_i\ni g(y), \ \ \  U_j\ni h(y)
+	.\] 
+	(eventualmente $i=j)$\\
+	Sia  $W = g^{-1}(U_i)\cap h^{-1}(U_j)$\\
+	è aperto in  $Y$ e contiene $g$\\
+	Supponiamo  $g(y) = h(y)$ cioè  $y\in A, \ i=j$.\\
+	 Allora  $w\in W$ abbiamo 
+	  \[
+	 p(g(w)) = p(h(w)) = f(w)
+	 .\] 
+	 Allora $g(w),h(w)$ sono punti dello stesso  $U_i$ che vanno entrami in $f(W)$ tramite  $p$.\\
+	 Ma  $p|_{U_i}U_i \rightarrow V$ è iniettiva, quindi $g(w) = h(w). $ Segue  $W\subseteq A$ intorno aperto di  $y$\\
+	 Quindi  $A$ è aperto\\
+	 Supponiamo $g(y)\neq h(y)$, cioè  $y\not\in A$\\
+	 Allora  $U_i\neq U_j$ e  $i\neq j$, perché  $U_i$ ha solo il punto  $g(y)$ che va in $f(y)$ tramite  $p$\\
+	 Ma allora  $U_i\cap U_j = \emptyset$, da cui  $g(w)\in U_i, h(w)\in U_j$ devono essere diversi $\forall w\in W. $. Quindi $W\subseteq Y\setminus A,$ cioè  $A$ è chiuso\\
+	  $Y$ è connesso, quindi $A = Y$ oppure  $A = \emptyset$
+\end{dimo}
+\begin{teo}[Sollevameto dei cammini]
+	Siano $p:E \rightarrow X$ un rivestimento\\
+	$\alpha:[0,1] \rightarrow X$ cammino, sia $e\in E$ tale che  $p(e) = \alpha(0)$ Allora  $\exists !$ sollevamento
+	 \[
+		 \alpha^\uparrow_e:[0,1] \rightarrow E
+	.\] 
+	di $\alpha$ tale che $\alpha^\uparrow_e(0) = e$
+\end{teo}
+
+\begin{dimo}
+	Sia $R= \{V\subseteq X,$ aperto banalizzante  $\}$\\
+	è ricoprimento aperto di  $X.$ Applichiamo il corollario al teorema del numero di Lebesgue otteniamo $n\in \Z_{\geq 0}$ e aperti  $V_1,\ldots,V_n$ banalizzanti tali che 
+	\[
+		\alpha([\frac{ i-1}n, \frac in])\subset V_i
+	.\] 
+	Considero $s_1: V \rightarrow p^{-1}(V_1)$\\
+	se locale tale che $s_1(\alpha(0)) =e$ definisco $\alpha_1: [0,\frac 1n] \rightarrow E$\\
+	come $\alpha_1 = s_1\circ \alpha$ \\
+	Chiaramente $\alpha_1$ solleva $\alpha|_{[0,\frac 1n]}$ ricoperto da  $e_2 = \alpha_1(\frac 1n)\in E$ uso la sezione locale $s_2: V_2 \rightarrow p^{-1}(V_2)$ tale che $s(\alpha(\frac 1n)) = e_2$\\
+	e definisco $\alpha_2: [\frac 1n, \frac 2n] \rightarrow E$ come $a\alpha_2 = s_2\circ \alpha$\\
+Iterando ottengo
+\[
+	\alpha : [\frac {i-1}n,\frac in] \rightarrow E
+.\] 
+che si incollano per costruzione al cammino $\alpha^\uparrow_e$
+\end{dimo}
+\end{document}

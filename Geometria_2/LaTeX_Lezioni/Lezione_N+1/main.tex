@@ -1,0 +1,189 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+1}
+\date{2025-05-13}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+\maketitle
+\newpage
+\subsection{Sollevamenti di cammini}
+\textbf{Esempi}
+\begin{enumerate}
+	\item $\rho : \R \rightarrow S^1$ \\
+		solito rivestimento,\\
+		\begin{aligned}
+			$\alpha : [0&,1] \rightarrow S^1$\\
+				  &$t \rightarrow (\cos(2\pi t), \sin (2\pi t))$
+		\end{aligned}\\
+		$\alpha\in \Omega(S^1, (1,0),(1,0))$\\ 
+		I numeri $t\in \R$ t.c. $\rho(t) = a$ sono gli interi.\\
+		Possiamo sollevare  $\alpha$ partendo da 
+		\[
+			\begin{aligned}
+				\alpha^\uparrow_0: [0,1] \rightarrow &\R \rightarrow S^1\\
+						   &t \rightarrow  (\cos(2\pi t), \sin(2\pi t))\\
+				t \rightarrow ?&
+			\end{aligned}
+		.\] 
+		dove "?" è tale che composto con $\rho$ fa $\alpha$\\
+		quindi  $\alpha_0^\uparrow (t) = t$ \\
+		Posso partire da qualunque $n\in \Z$:\\
+		 $\alpha_3^t (t) = t + 3$\\
+		 Composto con $\rho$ da  $\alpha$ e parte da $3$\\
+		 Potrei usare 
+		  \[
+		 \begin{aligned}
+			 \beta : &[0,1] \rightarrow S^1\\
+				 &t \rightarrow (\cos(-6 \pi t), \sin (-6\pi t))
+		 \end{aligned}
+		 .\] 
+		 Esempi di sollevamento:\\
+		 $\beta^\uparrow_5(t) = 5 - 3t$
+\end{enumerate}
+\begin{teo}[Sollevamento delle omotopie di cammini]
+	Sia $p: E \rightarrow X$ un rivestimento, $F:[0,1]\times [0,1] \rightarrow X$ continua,\\
+	$e\in E$ tale che  $p(e) = F(0,0)$.\\
+	Allora esiste un unico sollevamento  $g: [0,1]\times [0,1] \rightarrow E$ di $F$ tale che  $G(0,0) = e$.
+\end{teo}
+\begin{dimo}
+	L'unicità segue dal teorema di unicità dei sollevamenti (quello di $Y \xrightarrow{f} X$ è $Y$ connesso). Dimostriamo l'esistenza di $G$.\\
+	Considero  $F(-,0)$ è un cammino  $[0,1] \rightarrow X$ e anche $F(0,-)$ è un cammino  $[0,1] \rightarrow X$ \\
+	Solleviamo partendo da $e$, otteniamo i sollevamenti\\
+	\[
+		\alpha: [0,1] \rightarrow E
+	.\] 
+	\[
+		\beta :[0,1] \rightarrow E
+	.\] 
+	Soddisfano \\
+	$p(\alpha(t)) = F(t,0)$\\
+	$p (\beta(t)) = F(0,t)$ \\
+	e coincidono per $t =0 $ \\
+	Definiamo $L: ([0,1]\times\{0\} ) \cup (\{0\}\times [0,1])\subseteq Q = [0,1]\times[0,1]$\\
+	Definiamo\\
+	 \[
+	\begin{aligned}
+		g: &L \ \ \ \ \rightarrow \ \ \ E\\
+		   & (t,s) \rightarrow \begin{cases}
+		   \alpha(t) \ \ \ \text { se } s = 0\\
+			   \beta(s) \ \ \text{ se } t = 0
+		   \end{cases}
+	\end{aligned}
+	.\] 
+	$g$ è continua e solleva\\
+	\[
+	F|_L : L \rightarrow X
+	.\] 
+	Quindi vogliamo dimostrare che esiste $G$ sottoinsieme di $F$ che coincide con $g$ su $L\subseteq Q$\\
+	Passo 1:\\
+	Supponiamo l'immagine di  $F$ contenuta in un aperto banalizzante $V \subseteq X.$\\
+	Sia $p^{-1}(V) = \bigcup_{i \in I}U_i$ come nella definizione.\\
+ $L$ è connesso, $g(L)$ è connesso, e contenuto in $p^{-1}(V)$ \\
+ Per connessione esiste un unico $i_0\in I$ tale che $g(L)\subseteq U_{i_0}$\\
+ Sia $s: V \rightarrow U_{i_0}$ la sezione locale, poniamo $G = s\circ F$ questa solleva  $F$\\
+  Coincide con $g$ su  $L$ per l'unicità dei sollevamenti. \\
+ Passo 2: caso generale.\\
+ Non supponiamo $Im(F)$ contenuta in un aperto banalizzante.\\
+ Dal teorema del numero di Lebesgue esiste  $n\in \Z_{\geq 1}$ tale che \\
+  \[
+	  \left[\frac{i-1}n,\frac in\right]\times\left[\frac{i-1}n,\frac in\right] = Q_{i,j}
+ .\]
+ un singolo aperto banalizzante $V_{i,h}\subseteq X$\\
+ Se sollevo ogni quadratino in ordine con continuità, posso "appiccicarlo" a quelli vecchi, così che la mia funzione non abbia "salti" e sia quindi discontinua \\
+ Per il passo 1, posso sollevare $F|_{Q_{i,j}}$\\
+ Per  assicurare che questi sollevamenti si incollino, ordiniamo i $Q_{i,j}$ la coppia definiamo $(i,j) \leq (h,k) \Leftrightarrow \begin{cases}
+ 	i + k < h+ k \ \\
+	i + j = h + k, \ \ i\ \leq k
+ \end{cases}$
+ Aggiungi foto 6:00 13 maggio.\\
+ Vale: i lati inferiore e sinistro di $Q_{i,j}$ sono contenuti in 
+  \[
+	  L\cup \bigcup^{}_{(a,b) < (i,j)} Q_{a,b}
+ .\]
+ Patiamo da $Q_{1,1}:$ per il passo $1$ esiste, un sollevamento:
+  \[
+	  \tilde G_{1,1}: Q_{1,1} \rightarrow E
+ .\] 
+ tale che $\tilde G (0,0) = e, $ e  $\tilde G$ solleva  $F|_{Q_{1,1}}: Q_{1,1} \rightarrow X$ \\
+ Per l'unicità dei sollevamenti, $g$ e  $\tilde G_{1,1}$ si incollano a un sollevamento\\  $G_{1,1}:L\cup Q_{1,1} \rightarrow E$ di $F|_{L\cup Q_{1,1}}$\\
+ Il quadrato successivo è  $Q_{2,1}$, per il passo  $1$ esiste $\tilde G_{2,1}: Q_{2,1} \rightarrow E$ che solleva $F|_{G_{2,1}}$ e tale che  $\tilde G_{2,1} \left(\frac 1n, 0) = G_{1,1}(\frac 1n, 0)$\\
+	 Di nuovo $\tilde G_{2,1} e G_{1,1}$ si incollano a un sollevamento \\
+	  \[
+		  G_{2,1}: L \cup Q_{1,1} \cup Q_{2,1} \rightarrow E
+	 .\] 
+	 che solleva:\\
+	 $F|_{L\cup Q_{1,1}\cup Q_{2,1}}$\\
+	 iterando sollevo $F|_{Q_{i,j}}$ a un'applicazione  $G_{i,j} : Q_{i,j} \rightarrow E$\\
+	 che si incolla alla precedente ottenendo
+	 \[
+		 G_{i,j}: L\cup \left( \bigcup^{}_{(a,b) \leq (i,j)}Q_{(a,b)} \right) \rightarrow E
+	 .\] 
+	 Il sollevamento richiesto di $F$ è $G_{n,n} : Q \rightarrow E.$
+\end{dimo}
+\begin{teo}
+	Sia $p : E \rightarrow X$ un rivestimento, scegliamo $a,b\in X$ e $\alpha,\beta\in \Omega(X,a,b)$ scegliamo  $e\in E$ tale che  $p(e) = a$ considero i sollevamenti  $\alpha^\uparrow_e, \beta^\uparrow_e$.\\
+	Allora sono equivalenti
+	 \begin{enumerate}
+		 \item $\alpha \sim \beta$
+		 \item  $\alpha^\uparrow_e(1) = \beta^\uparrow_e (1)$ e  $\alpha^\uparrow_e\sim\beta^\uparrow_e$
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	$(2) \Rightarrow  (1)$ è facile\\
+	se $\alpha^\uparrow_e(1) = \beta^\uparrow_e(1)$  ed esiste un omomorfismo di cammini $G$ di $\alpha^\uparrow_e$ a $\beta^\uparrow_e$\\
+	allora  $p\circ G = F: [0,1]\times[0,1] \rightarrow X$\\
+	è un omotopia di cammini da $\alpha$ a $\beta$\\
+	(verifica per esercizio)\\
+	 $(1) \Rightarrow (2)$\\
+	 Sia $F$ omotopia di cammini in $X$ da $\alpha$ a $\beta$.\\
+	 Per il teorema precedente posso sollevare $F$ a  $G : [0,1]\times [0,1] \rightarrow E$\\
+	 tale che $G(0,0) = e.$\\
+	 Dobbiamo dimostrare che $G$ è omotopia di cammini da $\alpha_e^\uparrow$ a  $\beta_e^\uparrow$, e che  $\alpha_e^\uparrow(1) = \beta^\uparrow_e(1)$. \\
+	 Foto 6:40\\
+	 $A)\ F(-,0) = \alpha, \ G(-,0)$ è sollevamento di  $F(-,0) = \alpha$\\
+	 e parte da  $G(0,0) = e$\\
+	 segue  $G(-,0) = \alpha^\uparrow_e$ per l'unicità dei sollevamenti.\\
+	 B) $G(0,-)$ solleva $F(0,-)$ partendo da  $G(0,0) = e$\\
+	 Ma  $F(0,-) = 1_a$ perché  $F$ è omotopia di cammino.\\
+	 Quindi $G(0,-)$ solleva  $1_a$ partendo da  $e$, ma anche  $1_e$ solleva  $1_a $ partendo da  $e$ \\
+	 Per l'unicità $G(0,-) = 1_e$\\
+	 Analogamente $F(1,-) = 1_b$\\
+	 e il cammino  $G(1,-)$ parte da  $G(1,0) = \alpha^\uparrow_e(1)$ e solleva  $1_b$ come prima  $G(1,-)$ è costante e vale $G(1,0) = 1_{\alpha^\uparrow_e(1)}$\\
+	 C)  $G(-,1)$ solleva  $F(-,1) = \beta$, parte da  $G(0,1)= $ punto finale di $G(0,-)=1_e$ quindi  $G(-,1)$ pare da  $e$, quindi per l'unicità  $G(-,1) = \beta^\uparrow_e$\\
+	 Segue:\\
+	 $\beta_e^\uparrow (1) = G(1,1) = 1_{\alpha^\uparrow_e(1)}(1)= \alpha_e^\uparrow(1)$\\
+	 inoltre  $G$ è omotopia di cammini da $\alpha^\uparrow_e$ a  $\beta^\uparrow_e$
+\end{dimo}
+Usiamo subito questo teorema per calcolare il primo gruppo fondamentale non banale, quello di $S^1$
+ \begin{coro}
+	$\pi_1(S^1) \cong \Z$.\\
+	Precisamente, sia $a = (1,0)$ definiamo \\
+	\begin{aligned}
+		$\alpha^{(n)}:&[0,1] \rightarrow S^1$ \\
+			      & $t \rightarrow (\cos(2\pi n t), \sin(2 \pi  n t))$\\
+	\end{aligned}\\
+		Definiamo\\
+		\begin{aligned}
+			$\Sigma: &Z \rightarrow \pi(S^1, a)$\\
+				      & $n \rightarrow [a^{(n)}]$
+		\end{aligned}\\
+		Allora $\Sigma$ è isomorfismo di gruppi
+\end{coro}
+	\begin{dimo}
+		Assumiamo $\Sigma $ omomorfismo, dimostriamo che è iniettivo, siano  $n,m\in \Z$, assumiamo  $\Sigma(n)= \Sigma(m)$\\
+		cioè  $\alpha^{(n)}\sim\alpha^{(m)}.$\\
+		Considero il rivestimento solito  $\rho : \R \rightarrow S^1$\\
+		solleviamo $\alpha^{(n)}$ e  $\alpha^{(m)}$ partendo da $0\in\R$\\
+		 \[
+			 (\alpha^{(n)})^\uparrow_0(t) = nt
+		.\] 
+		\[
+			(\alpha^{(m)})^\uparrow_0(t) = mt
+		.\] 
+		Per il teorema, questi hanno stesso punto finale: $n\cdot 1 = m\cdot 1$ cioè  $n = m$
+	\end{dimo}
+
+\end{document}
