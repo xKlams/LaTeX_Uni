@@ -1,0 +1,170 @@
+\documentclass[12px]{article}
+
+\title{Lezione 22 Analisi Reale}
+\date{2025-05-20}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{boh}
+	
+	\begin{defi}
+		$S\subset H$ sottoinsieme
+		 \[
+			 S^\perp  = \{f\in H \ | \ (f,g) = 0 \ \ \ \forall g\in S\}
+		.\] 
+		questo viene anche chiamato complemento ortogonale di $S$
+	\end{defi}
+	\begin{prop}
+		Sia $S\subset H \Rightarrow  S^\perp$ è un sottospazio vettoriale chiuso
+	\end{prop}
+	\textbf{Osservazione}\\
+	In dimensione infinita esistono sottospazi non chiusi\\
+	\textbf{Esempio}\\
+	$C([0,1])\subset L^2((0,1))$ \\
+	$C([0,1])$ non è chiuso in  $L^2([0,1])$\\
+	Quindi dire "chiuso" non è una banalità\\
+	Se  $f_1, f_2\in S^\perp$, $\alpha_1,\alpha_2\in \R$\\
+	$ \Rightarrow  (\alpha_1f_1 + \alpha_2f_2, g ) = \alpha_1(f_1,g) + \alpha_2(f_2,g) = 0 \ \ \ \forall g\in S$ \\
+	Se $\{f_n\}\subset S^\perp, f_n \rightarrow f$ in $H$\\
+	$ \Rightarrow (f_n,g) =0 \ \ \forall n,\forall g\in S$ \\
+	$ \xrightarrow{ n \rightarrow+\infty} (f,g) $\\
+	$|(f_n,g) - (f,g)| = |(f_n-f,g)| \leq \|f_n-f\| \|g \|\rightarrow 0$ se converge uniformemente.\\
+	\begin{coro}
+		Sia $M\subset H$ un sottospazio chiuso proprio  $ \Rightarrow $ $\exists g\in M^\perp\setminus\{0\}$
+	\end{coro}
+	\begin{dimo}
+	Sia $f\in H\setminus M$ e sia  $u = pr_M(f) \in M$\\
+	 $ \Rightarrow  f\neq u$ e $(f-u,v) = 0 \ \ \forall v\in M$\\
+	  $ \Rightarrow  f\cdot u\neq 0$ e $f -u\in M^\perp$
+	\end{dimo}
+	\textbf{Osservazione}\\
+	$M = C([0,1])\subset L^2((0,1))$ sottospazio proprio non chiuso\\
+	Sia  $g\in M^\perp \Leftrightarrow \int_{[0,1]}gfdm = 0 \ \ \forall f\in C([0,1]) \Rightarrow g = 0$\\
+	\begin{teo}[Riesz) (rappresentazione del duale per uno spazio di Hilbert]
+		Sia $H$ uno spazio di Hilbert\\
+	$\forall L\in H'$ (spazio duale = \{funzionali su $H$ lineari e continui\}) \\
+	$\exists !g\in H$ tale che  $L(f) = (f,g) \ \ \forall f\in H$\\
+	e $\| L\|_{H'} = \|g\|_H$
+	\end{teo}
+	\begin{dimo}
+		Se $L \eqiv 0 \rightarrow g = 0$ $ L(f) = (f,0) = 0 \ \ \forall f\in H$\\
+		Se $L \not\equiv 0 \Rightarrow \ker(L) = \{f\in H\ :\ L(f) =0 \}$ è un sottospazio  proprio $(L \neq 0)$ è chiuso (perché  $L$ continuo)\\
+		$ \Rightarrow  \exists \tilde g\in \ker(L)^\perp\setminus\{0\}$ \\
+		Osserviamo che $L(\tilde g)\neq 0 $ perché\\
+		se  $L(\tilde g) = 0 \Rightarrow  \tilde g\in \ker(L)\cap \ker(L)^\perp \Rightarrow  g^\tilde = 0$ \\
+		$\forall f\in H$\\
+		$\displaystyle L(f - \frac{L(f)}{L(\tilde g)}\tilde g))= L(f) - \frac{ L(f)}{\cancel{L(\tilde g)}}\cancel{L(\tilde g)} = 0$  \\
+		$ \Rightarrow  f - \frac { L(f)}{L(\tilde g)}\tilde g\in \ker(L)$ \\
+		$ \Rightarrow  (f - \frac { L(f)}{L(\tilde g)}\tilde g, \tilde g) = 0 $ perché $\tilde g\in \ker(L)^\perp$\\
+		$ \Rightarrow (f,\tilde g) = \frac{L(f)}{L(\tilde g)}\|g\|^2$ \\
+		$ \Rightarrow  (f,\frac{L(\tilde g)}{\|\tilde g\|^2}\tilde g) = L(f) \ \ \forall f\in H$ \\
+		se $g_1,g_2\in H$\\
+		tale che $L(f) = (f,g_1) = (f,g_2)\ \ \forall f\in H$\\
+		$ \Rightarrow  (f,g_1 - g_2) = 0\ \ \forall f\in H \Rightarrow  g_1 = g_2$ \\
+		Isometria:\\
+		$L(f) = (f,g) \ \ \forell f\in H \Rightarrow |L(f)| = |(f,g)| \leq \|f\|\|g\| \Rightarrow  \|L\|_{H'} = \sup_{f\in H\setminus\{0\}}\frac{\|L(f)\|}{\|f\|}\leq \|g\|$ \\
+		Ma $L(g) = \|g\|^2$\\
+		$ \Rightarrow  \frac { L(g)}{\|g\|} = \|g\|$ \\
+		$ \Rightarrow \|L\|_{H'} = \|g\|$ 
+	\end{dimo}
+	\begin{defi}
+		Un sottoinsieme $S\subset H$\\
+		si dice linearmente indipendente se ogni suo sottoinsieme finito è composto da vettori linearmente indipendenti.\\
+		Un sottoinsieme  $S$ linearmente indipendente si dice sistema ortogonale se $(f,g) = 0 \forall f,g\in S$\\
+		 $S$ si dice sistema ortonormale se $S$ è un sistema ortogonale e $\|f\| = 1 \ \ \forall f\in S$
+	\end{defi}
+	\begin{prop}
+		Sia $H$ uno spazio di Hilbert separabile e sia $S $ un sistema ortonormale di $H$ \\
+		$ \Rightarrow  S$ è al più numerabile
+	\end{prop}
+	\begin{dimo}
+		$S = \{ \varphi_\alpha\}_{\alpha\in A}$\\
+		 $\| \varphi_\alpha - \varphi_\beta\|^2 = ( \varphi_\alpha - \varphi_\beta, \varphi_\alpha - \varphi_\beta) = \| \varphi_\beta\|^2 + \| \varphi_\beta\|^2 = 2$ \\
+		 $B_{\frac 1 \sqrt 2}( \varphi_\alpha) = \{f\in H\ : \ \|f- phi_\alpha \| < \frac 1\sqrt 2\}$\\
+		 Sia $D \subset H, \bar D = H$\\
+		  $D$ numerabile\\
+		  $D\cap B_{\frac 1 \sqrt 2}( \varphi_\alpha) \neq \emptyset \ \ \forall \alpha$\\
+		  $\forall \alpha \ \ \exists \ v_\alpha\in D$\\
+		   \[
+		  \begin{aligned}
+			  S & \rightarrow D\\
+			  \varphi_\alpha\in S &\rightarrow v_\alpha\in D\cap B_{\frac 1 \sqrt 2}( \varphi_\alpha)
+		  \end{aligned}
+		  .\] 
+		  è iniettiva $ \Rightarrow  card(S)\leq cord(D)$
+	\end{dimo}
+	\begin{defi}
+		Sia $\{ \varphi_k\}$ un sistema ortonormale numerabile in  $H$ spazio di Hilbert.\\
+		$ \{\varphi_k\}$ si dice completo (o base hilbertiana) se  l'insieme delle combinazioni lineari finite di elementi di $\{ \varphi_k\}$ è denso in $H$\\
+		(se  $\displaystyle\forall f\in H\ \ f = \lim_{n \rightarrow +\infty} \sum^{n}_{i = 1}\lambda_k \varphi_k, \ \ \lambda_k\in \R$
+	\end{defi}
+	\begin{teo}
+		Sia $H$ uno spazio di Hilbert separabile\\
+		$ \Rightarrow  H$ ammette un sistema ortonormale completo
+	\end{teo}
+	\begin{dimo}
+		Sia $D = \{f_n\}$ sottoinsieme numerabile e denso\\
+		 da $D$ si tolgano gli elementi che sono della forma $f_n= \sum^{n-1}_{k=1}a_kf_k, \ \ a_k\in\R$\\
+		 si ottiene un sottoinsieme di $S$ linearmente indipendente \\
+		 $ \Rightarrow  D\subseteq <S>$ insieme delle combinazioni lineari finite di elementi di $S$\\
+		 $ \Rightarrow H  = \overline D \subseteq\overline{<S>} = H$ \\
+		 $S$ si ortonormalizza mediante il procedimento di ortonormalizzazione di \\Alberto-Agostinelli \hfill (Gram-Schmidt)\\
+	\end{dimo} 
+	\begin{prop}
+		Sia $H$ uno spazio di Hilbert e sia $\{ \varphi_k \}$ un sistema ortonormale numerabile $\forall n \geq 1$ sia  $M_n = < \varphi_1, \varphi_2, \ldots, \varphi_n > = \{ \sum^{n}_{k = 1}\lambda_k \varphi_k, \lambda_k\in \R\}$ (sottospazio vettoriale chiuso)\\
+		$\forall f\in H$ si ha 
+		 \[
+		 p_{M_n}(f) \sum^{n}_{k= 1}(f, \varphi_k) \varphi_k 
+		.\] 
+		e
+		\[
+		\|f- \sum^{n}_{k=1}(f, \varphi_k) \varphi_k \|^2 = \|f \|^2 - \| \sum^{n}_{k = 1}(f, \varphi_k) \varphi_k \|^2 = \|f\|^2 - \sum^{n}_{k = 1}(f ,\varphi_k)^2
+		.\] 
+	\end{prop}
+	\begin{dimo}
+		Siano $ \lambda_1,\ldots, \lambda_n\in\R$ e $f\in H$
+		 \[
+		\|f - \sum^{n }_{k = 1} \lambda_k \varphi_k\|^2 = (f - \sum^{n}_{k=1} \lambda_k\varphi_k, f- \sum^{n}_{k = 1} \lambda_k \varphi_k
+		.\] 
+ \[
+= \|f\|^2 - 2 \sum^{n}_{k = 1} \lambda_k(f, \varphi_k) + \sum^{n}_{k=1} \sum^{n}_{i=1} \lambda_k \lambda_i ( \varphi_k, \varphi_i)
+.\] 
+\[
+	= \|f\|& 2 - 2 \sum^{n}_{k = 1} \lambda_k(f, \varphi_k) + \sum^{n}_{k = 1} \lambda_k^2
+.\] 
+\[
+= \|f\|^2 + \sum^{n}_{k = 1}( \lambda_k^2 -2 \lambda_k(f, \varphi_k)) = \|f\|^2 + \sum^{n}_{k = 1}( \lambda_k - (f, \varphi_k))^2 - \sum^{n}_{k = 1}(f, \varphi_k)^2
+
+.\] 
+\[
+ \geq \|f\|^2 - \sum^{ n}_{k = 1}(f, \varphi_k)^2
+.\] 
+se $ \lambda_k = (f, \varphi_k) \Rightarrow  \|f = \sum^{n}_{i=1}(f, \varphi_k) \varphi_k\|^2 = \|f\|^2 - \sum^{n}_{k=1}(f, \varphi_k)^2$
+	\end{dimo}
+	\begin{coro}[Disuguaglianza di Bessel]
+		$H$ spazio di Hilbert $\{ \varphi_k\}$ sistema fondamentale numerabile \\
+		$ \Rightarrow f\in H$ \\
+		\[
+		\sum^{+\infty}_{k = 1} (f,f_k)^2 \leq \|f\|^2
+		.\] 
+	\end{coro}
+	\begin{dimo}
+		$\forall n$ 
+		 \[
+		\|f\|^2- \sum^{n}_{k = 1}(f, \varphi_k)^2 = \|f- \sum^{n}_{k=1}(f, \varphi_k) \varphi_k\|^2\geq 0
+		.\] 
+	\end{dimo}
+	\begin{defi}
+		Se $\{ \varphi_k\}$ è un sistema ortonormale, i numeri $(f, \varphi_k)$\\
+		si dicono coefficienti di Fourier di $f$\\
+		$ \Rightarrow  \{(f, \varphi_k)\}\in l^2$ \\
+		\[
+			\sum^{+\infty}_{k =1}(f, \varphi_k) \varphi_k \substac{?\\=} f
+		.\] 
+		si chiama serie di Fourier di $f$
+	\end{defi}
+\end{document}

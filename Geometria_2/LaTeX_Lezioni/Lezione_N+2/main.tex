@@ -1,0 +1,232 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+2 Geometria 2}
+\date{2025-05-19}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Fine della dimostrazione precedente}
+	\[
+	\begin{aligned}
+		\Sigma : &\Z \rightarrow \pi(S^1, a)\\
+			 & n \rightarrow [a^{(n)}]
+	\end{aligned}
+	.\] 
+	\[
+	\begin{aligned}
+		\alpha^{(n)}:&[0,1] \rightarrow S^1\\
+			     & t \rightarrow (\cos(2\pi nt), \sin(2\pi nt))
+	\end{aligned}
+	.\] 
+	\begin{dimo}
+		Abbiamo visto $\Sigma$ iniettiva, dimostriamo che è omomorfismo di gruppi,\\
+		Siano  $n,m\in \Z$, dobbiamo dimostrare
+		\[
+		\Sigma(n+m) = \Sigma(n)\cdot \Sigma(m)
+		.\] 
+	\end{dimo}
+	Abbiamo $\Sigma(n+m) = [\alpha^{(n+m)}]$\\
+	$\Sigma (n)\cdot\Sigma(m) = [\alpha^{(n)}]\cdot[\alpha^{(m)}] = [\alpha^{(n)}\star\alpha^{(m)}]$\\
+	Confrontiamo i sollevamenti dei cammini $\alpha^{(n+m)}. \alpha^{(n)}\star\alpha^{(m)}$ sul rivestimento  $\eho: \R \rightarrow S^1$ solito.\\
+	Solleviamo $\alpha^{n+m}$ ottenendo (partendo da 0)\\
+	$(\alpha^{n+m})^\uparrow_0(t) = (n+m)t$, parte da $0$ e finisce in $n+m\in\R$.\\
+	Solleviamo $\alpha^{(n)}\star\alpha^{(m)}$ in questo modo:\\
+	solleviamo  $\alpha^{(n)}$ partendo da 0, otteniamo  $(\alpha^{(n)})^\uparrow_0(t) = nt$, parte da $9$ e finisce in $n$.\\
+	Poi solleviamo $\alpha^{(m)}$ partendo da  $n$, otteniamo
+	\[
+		(\alpha^{m})^\uparrow_n = n + nt
+	.\] 
+	La giunzione $(\alpha^{(n)})^\uparrow_0\star(\alpha^{(m)})^\uparrow_n$ è definita e solleva $\alpha^{(n)}\star\alpha^{(m)}$.\\
+	Allora i sollevamenti partono da  $0$ e finiscono in  $n + m$ entrambi. Visto che  $\R$ è convesso, questi sollevamenti sono equivalenti, segue 
+	 \[
+		 \alpha^{(n+m)} \sim \alpha^{(n)}\star\alpha^{(m)}
+	.\] 
+	Quindi $\Sigma$ è omeomorfismo di gruppi.\\
+	Dimostriamo che $\Sigma$ è suriettiva.\\
+	Sia $\alpha\in\Omega(S^1, a, a)$ dimostriamo che $\exists n\in\Z\ \ \ [a]^{(?)} = [\alpha^{(n)}] = \Sigma(n)$\\
+	Solleviamo $\alpha$ partendo da $0$, otteniamo 
+	\[
+		\alpha^\uparrow_0:[0,1] \rightarrow \R
+	.\] 
+	fissiamo un punto di $\R$ che non viene mandato in $a\in S^1 $ da  $\rho$, Cioè  $\alpha_0^\uparrow$ finisce in $n\in \Z$\\
+	Confrontiamo  $\alpha$ con  $\alpha^{(n)}$, i loro sollevamenti $\alpha_0^\uparrow, (\alpha^{(n)})^\uparrow_0$ partono da $0$, finiscono in $n$, e sono equivalenti ($\R$ convesso). Segue $\alpha\sim\alpha^{(n)}$, cioè
+	\[
+		\Sigma(n) = [\alpha^{(n)}] = [\alpha]
+	.\] 
+
+\end{dimo}	
+\begin{coro}
+	$S^1$ non è retratto di  $D^2$, e  $a = (1,0)$ non è retratto per deformazione di  $S^1$.
+\end{coro}
+\begin{dimo}
+	Se per assurdo $S^1$ fosse retratto di $D^2$
+	\[
+		i_*:\pi(S^1,a) \rightarrow\pi(D^2,a)
+	.\] 
+	sarebbe iniettiva, assurdo perché avrei 
+	\[
+		\Z \rightarrow \{[1_a]\}
+	.\] 
+	iniettiva.\\[10px]
+	Per assurdo se $\{a\}$ fosse retratto per deformazione di  $S^1$, allora $\pi_1(S^1, a ) \cong \pi(\{a\},a)$ che è banale, assurdo.
+\end{dimo}
+\subsection{Teoremi di Brouwer e Barsuk}
+\begin{teo}[Brouwer]
+	Sia $f:D^2 \rightarrow D^2$ continua, allora $\exists p\in D^2$ $f(p) = p$
+\end{teo}
+\begin{dimo}
+	Per assurdo suppongo $f(p)\neq p \ \ \forall p\in D^2$\\
+	Sia $g(p)$ il punto di intersezione fra  $S^1$ e la retta che contiene $p$ e $f(p)$, quello più vicino a  $p$ (vedi esercizi settimanali per formula di $g(p)$)\\
+	Si verifica dalla formula che
+	 \[
+	g: D^2  \rightarrow S^1
+	.\]
+	è continua.\\
+	Se $q\in S^1$ allora  $g(q) = q$, cioè $g$ è retrazione, assurdo.
+\end{dimo}
+\textbf{Esercizio:}\\
+Sia $p:\exists \rightarrow X$ rivestimento e sia $f: \S^2 \rightarrow X$ continua, siano $y\in S^2$ e  $e\in E$ tale che  $p(e) = f(p)$\\
+Dimostrare che  $\exists g: S^2 \rightarrow E$ sollevamento di $f$ tale che $g(y) = e$\\
+(Suggerimento: Dimostrare che $S^2$ è omeomorfa a  $\frac{[0,1]\times[0,1]}{\sim}$  per una relazione d'equivalenza  $\sim$. \\
+Usare questo per avere un'applicazione $\tilde f : [0,1]\times[0,1] \rightarrow X$ e sollevare $\tilde f$).\\
+\begin{teo}[Borsuk]
+	Non esistono applicazioni continue dispari $S^2 \rightarrow S^1$,\\ cioè tali che $f(-p) = -f(p)$.
+\end{teo}
+\begin{dimo}
+	Sia $\rho : \R \rightarrow S^1$ il solito rivestimento, per l'esercizio ogni $f: S^2 \rightarrow S^1$ si solleva a $g: S^2 \rightarrow \R$.\\supponiamo per assurdo $f$ continua dispari. D'altronde $\exists p_0\in S^2$ tale che $g(p_0)= -g(-p_0)$\\
+	Allora $f(p_0)= f(-p_0) = -f(p_0)$.\hfill (dispari)\\
+	cioè $f(p_0) \in S^1$ assurdo
+\end{dimo}
+\begin{coro}
+	Sia $g: S^2 \rightarrow \R^2$ continua, allora esiste $x_0\in S^1$ tale che $g(x_0) = g(-x_0)$
+\end{coro}
+\begin{dimo}
+	Per assurdo supponiamo $g(x)\neq g(-x) \ \ \forall x\in S^1$\\
+	allora:
+	\[
+		f(x) = \frac{g(x) - g(-x)}{\|g(x)-g(-x)\|}
+	.\] 
+	Allora $f$ è continua e dispari $S^2 \rightarrow S^1$, assurdo
+\end{dimo}
+\begin{coro}
+	Sia $A\subseteq\R^m$ aperto non vuoto con  $m\geq 3$, sia  $B\subseteq \R^2$ aperto. Allora $A$ e  $B$ non sono omeomorfi (in particolare  $\R^2$ non è omeomorfo a  $\R^m$ con  $m\geq 3)$
+\end{coro}
+\begin{dimo}
+	Sia $a\in A$ allora  $\exists \e > 0 $ tale che  $B_\e(a) \subseteq A$. Allora  $S = \partial B_{\e/2}(a)$\\
+	è contenuta in  $A$ e  $S$ è omeomorfo a $S^{m-1}$.\\
+	$S^{m-1}$ contiene sottospazi omeomorfi a  $S^2$ ( ad esempio $S^{m-1}\cap ($span dei primi 3 vettori della base canonica$)$\\
+	Allora anche  $S$ contiene almeno un sottospazio  $\tilde S$ omeomorfo a  $S^2$\\
+	Sia per assurdo  $h: A \rightarrow B$ omeomorfismo allora $h|_{\tilde S}:\tilde S \rightarrow \R^2$ è continua e iniettiva con $\tilde S$ omeomorfo a $S^2$ assurdo.
+\end{dimo}
+\subsection{Altri legami fra rivestimenti e gruppi fondamentali}
+\begin{teo}
+	Sia $p: E \rightarrow X$ rivestimento, sia $e\in E, x = p(e)$.
+	 \begin{enumerate}
+		 \item $p_* \pi_1(E,e) \rightarrow \pi_1(X,x)$ è iniettiva.
+		 \item L'immagine di $p_*$ è l'insieme delle classi  $[\alpha]$ dei cammini  $\alpha$ tale che $\alpha_e^\uparrow$ è un cammino chiuso.
+		 \item  Se $E$ è connesso per archi allora c'è una biezione 
+	\[
+		p_*(\pi(E,e)\backslash \pi_1(X,x) \rightarrow p^{-1}(x)
+		 .\] 
+		 dove il primo è il\text{ quoziente delle classi laterali destre}
+		 data da 
+		 \[
+			 p_*(\pi(E,e))[\alpha] \rightarrow \alpha_e^\uparrow(1)
+		 .\] 
+		 $(\alpha\in\Omega(X,x,x) [\alpha\in\pi_1(X,x), p_*(\pi_1(E,e))[\alpha]$ è la classe laterale destra$)$
+	\end{enumerate}
+\end{teo}
+\begin{dimo}
+	Dimostriamo singolarmente le affermazioni
+	\begin{enumerate}
+		\item Supponiamo che  $p_*:\pi_1(E,e \rightarrow\pi_1(X,e)$ è omeomorfismo di gruppi. Dimostriamo che è iniettivo, calcoliamo $\ker(p_*)$. Sia $[\beta]\in \pi_1(E,e)$ con $\beta\in\Omega(E,e,e)$, allora $p_*([\beta]) = [p\circ \beta]$\\
+			Supponiamo sia l'elemento neutro $[1_x]$ cioè  $p\circ \beta\sim 1_x$ in  $X$\\
+			Solleviamo partendo da  $e.$ otteniamo  $\beta$ $($che solleva  $p\circ \beta)$ e  $1_e$ \\
+			Segue $\beta\sim 1$ e cioè\\
+			$[\beta] = [1_e]$ elemento neutro, cioè  $p_*$ iniettiva.
+		\item Da dimostrare $[\alpha]\in\pi_1(X,x)$ è in $Im(p_*)$ se e solo se è cammino chiuso.\\
+			Sia  $[\alpha]\in Im(p_*)$ allora 
+			 \[
+				 [\alpha] = [p\circ\beta] \text{  dove  } \beta\in\Omega(E,e,e)
+			.\] 
+			Solleviamo $\alpha $ e  $p\circ\beta$ partendo da  $e\in E$: otteniamo  $\alpha^\uparrow_e$ e  $\beta$. Questi sollevamenti hanno stesso punto finale   $\beta(1) = e$, quindi  $\alpha(1) = e$, cioè  $\gamma = \alpha^\uparrow_e$ è un cammino chiuso.\\
+			Quindi definisce la classe  $[\alpha^\uparrow_e]\in \pi_1(E,e)$ e vale\\
+			$p_*([\alpha^\uparrow_e]) = [p\circ\alpha^\uparrow_e] = [\alpha]$
+		\item L'applicazione è 
+			\[
+				\phi :	p_*(\pi(E,e)\backslash \pi_1(X,x) \rightarrow p^{-1}(x)
+			.\] 
+			$p_*(\pi_1(E,e))[\alpha] \rightarrow\alpha^\uparrow_e(1)$\\
+			Dobbiamo dimostrare che $\phi$ è ben definita. Intanto se $\alpha'\sim \alpha$ in  $\pi_1(X,x)$ allora
+			\[
+				(a\lpha')^\uparrow_e(1) = \alpha_e^\uparrow (1)
+			.\] 
+			Quindi $\phi$ non dipende da $\alpha\in[\alpha']$.\\
+			Supponiamo di cambiare rappresentante nella stessa classe laterale destra, cioè consideriamo  $[\gamma] = [\alpha]$ dove  $[\gamma]\in p_*(\pi_1(E,e))$.\\
+			Per $2)$ quando sollevo $\gamma$ rimane chiuso. Per definire $\phi$ usando  $[\gamma]\cdot[\alpha]$ al posto di  $\alpha,$ uso il punto finale di  $(\gamma *\alpha)^\uparrow_e$ perché  $[\gamma][\alpha] = [\gamma\star\alpha]$\\
+			Solleviamo  $\gamma\star \alpha$: è 
+			 \[
+				 \gamma^\uparrow_e\star \alpha^\uparrow_{\gamma^\uparrow_e(1)}
+			.\] 
+			ma essendo $\gamma^\uparrow_e$ un cammino chiuso, i punto finale è  $e$ stesso, e il sollevamento di $\gamma \star\alpha$ è  $\gamma_e^\uparrow\star\alpha^\uparrow_e$,  il suo punto finale è $\alpha^\uparrow_e(1)$, che è lo stesso ottenuto prima. Quindi  $\phi$ è ben definita.\\
+			Dimostriamo che $\phi$ è iniettiva, siamo  $[\alpha], [\delta]\in\pi_1(X,x)$, supponiamo le loro classi laterali destre vengano mandate nello stesso punto da $\phi.$ Cioè  $\alpha^\uparrow_e$ e  $\delta^\uparrow_e$ finiscono nello stesso punto. Allora è definita la  giunzione $\alpha^\uparrow_e\star i(\delta^\uparrow_e)$\\
+			che è un cammino chiuso in  $E$,  e solleva $\alpha\star i(\delta), $  quindi  $\alpha\star i(\delta)$ se lo solleva rimane chiuso, e allora la sua classe 
+			 \[
+				 [\alpha\star i(\delta) = [\alpha]\cdot[\delta]^{-1} 
+			.\] 
+			è in $p_\star(\pi_1(E,e))$ per 2)\\
+			Segue che  $[\alpha]$ e  $[\delta]$ sono nella stessa classe laterale destra modulo  $p_*(\pi_1(E,e)$. Quindi $\phi$ è iniettiva, dimostriamo che è suriettiva.\\
+			Cioè $\forall e\in p^{-1}(x)$ deve esistere $\alpha\in \pi_1(X,x)$ tale che  $\alpha^\uparrow_e(1) = e'$\\
+			Dato che  $E$ è connesso per archi, scegliamo  $\gamma\in\Omega(E,e,e').$\\
+			Allora $\gamma $ solleva  $\alpha = p\circ \gamma$.\\
+			La classe  $[\alpha]\in\pi_1(X,x)$ soddisfa $p_*(\pi(E,e))[\alpha] \xrightarrow{\varphi} \gamma(1) = e'$.\\
+			Quindi $\phi$ è suriettiva.
+	\end{enumerate}
+\end{dimo}
+\begin{coro}
+	$\displaystyle\pi_1(\pro^n_\R) \cong \frac{\Z}{2\Z}$ se $n\geq 2$
+\end{coro}
+\textbf{Osservazione}\\
+$n=2$ considero la proiezione 
+\[
+	\begin{aligned}
+		
+\R^3\setminus\{0\} &\rightarrow \pro^2_\R\\
+	v &\rightarrow [v]
+	\end{aligned}
+.\]
+e la restringo a $S^2$\\
+ \[
+p : S^2 \rightarrow\pro^2_\R
+.\] 
+Si dimostra che $p$ è un rivestimento.\\
+Consideriamo $X = S^2\cap \{z\geq 0\}$ ovvero la semisfera positiva.\\
+INSERISCI IMMAGINE 5:35\\
+$\alpha\neq 1_N$\\
+\subsection{Classificazione dei rivestimenti}
+\textbf{Esempio:}\\
+$\pi_1(S^1)\cong\Z$\\
+Sottogruppi: $\Z,\{0\}, n\Z$ con  $n\in\Z_{\geq 1 }$\\
+Rivestimenti connessi per archi di $S^1$:\\
+\begin{aligned}
+	$Id: S^1& \rightarrow S^1$\\
+	$\rho : \R &\rightarrow S^1$\\
+	$S^1 & \rightarrow S^1$\\
+	$ z & \rightarrow z^n$
+\end{aligned}
+\begin{teo}
+	Sia $X$ spazio topologico, $a\in X$. Supponiamo  $x\in X$ abbia un sistema fondamentale di intorni semplicemente connessi. Supponiamo $X$ abbia un rivestimento con spazio totale semplicemente connesso. Allora esiste una biezione tra 
+	\[
+		\{\substack{\text{rivestimenti } p : E \rightarrow X \\\text{con } E \text{ conn. per archi}}\}  \rightarrow \{\text{sottogruppi di }\pi_1(X,a)\}
+	.\] 
+	\[
+		[p] \rightarrow p_*(\pi(E,a))
+	.\]  dove $e\in E$ soddisfa  $p(e) = a$, e due rivestimenti  $p : E \rightarrow X$ e $p':E' \rightarrow X$ sono equivalenti se $\exists f: E \rightarrow E'$ omeomorfismo tale che\\
+	INSERISCI IMMAGINE 5 50 \\
+	commuta, cioè $p = p'\circ f$.
+\end{teo}
+\end{document}
