@@ -1,0 +1,239 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+3 Algebra I}
+\date{2025-05-22}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Ordine lessicografico sui monomi}
+	$\F$ campo\\
+	Definiamo l'ordinamento lessicografico sull'insieme dei monomi monici in $\F[x_1,\ldots,x_n]$\\
+	Diremo che \\
+	$x^{k_1}_1\cdot\ldots \cdot x_n^{k_n}\ \ \ k_1,\ldots,k_n\in\Z_{\geq 0}$\\
+	è maggiore di $x_1^{h_1}\cdot\ldots\cdot x_n^{h_n}$ \ $h_1,\ldots,h_n\in\Z_{\geq 0}$\\
+	se esiste $s\in \{1,\ldots, n-1\}$ tale che:
+	 \begin{enumerate}
+		 \item $k_j = h_j\ \ \forall j\in \{1,\ldots,s\}$
+		 \item  $k_{s+1} > h_{s + 1}$
+	\end{enumerate}\\
+	\textbf{Esempio}\\
+$n = 2$
+ \begin{itemize}
+	 \item $x_1^2 > x_1$
+	 \item $x_1 > x_2$
+	 \item $x_1 > x_2^{69}$
+\end{itemize}
+\subsection{Polinomi simmetrici}
+\begin{defi}
+	$\F$ campo\\
+	\begin{enumerate}
+		\item $p\in \F[x_1,\ldots, x_n]$ si dice polinomio simmetrico\\
+			$s\in p(x_1,\ldots,x_n) = p(x_{\tau(1)},\ldots,x_{\tau(n)})$ \\
+			per ogni $\tau\in S_n$
+		\item I polinomi simmetrici elementari sono 
+			 \[
+				 \varepsilon_s(x_1,\ldots,x_n) = \sum_{1 \leq j_1 < \ldots< j_s \leq n} x_{j_1}\cdot\ldots\cdot x_{j_s}
+			 .\]  con $s\in \{1,\ldots,n\}$ 
+		 \item L'insieme dei polinomi simmetrici si denota $\F[x_1,\ldot,x_n]^{S_n}$
+	\end{enumerate}
+\end{defi}
+\textbf{Obiettivo}\\
+Ogni polinomio simmetrico si scrive in modo unico come polinomio nei polinomi simmetrici elementari
+\begin{teo}
+	$\F[x_1,\ldots,x_n]^{S_n}\cong F[\varepsilon_1, \ldots, \varepsilon_n]$
+\end{teo}
+\begin{dimo}
+	Sia $p\in \F[x_1,\ldots, x_n]^{S_n}$ \\
+	Sia $\alpha x_1^{k_1}\cdot\ldots\cdot x_n^{k_n}$ il monomio massimo fra quelli che appaiono in $p$.
+	 \begin{itemize}
+		 \item dimostriamo che $k_1\geq k_2\geq \ldots\geq k_n$\\
+			 Se per assurdo $k_1 < k_2$ allora potremmo applicare $\tau  = ( 12)\in S_n$per ottenere il monomio
+			  \[
+				  \alpha x_2^{k_1}\cdot x_1^{k_2}\cdot x_3^{k_3}\cdot\ldots\cdot x_n^{k_n} \ \ \text{ in } p
+			 .\] 
+			 Ma questo monomio è 
+			 \[
+				 \alpha\cdot x_1^{k_2}\cdot x_2^{k_1}\cdot x_3^{k_3}\cdot \ldots\cdot x_n^{k_n} > \alpha x_1^{k_1}\cdot x_2^{k_2}\cdot\ldots\cdot x_n^{k_n}
+			 .\] 
+			 da cui l'assurdo per l'ipotesi di massimalità
+		 \item $\phi_1(x_1,\ldots,x_n): = \e_1^{k_1-k_2}\cdot\ldots\cdot\e_s^{k_s - k_{s+1}}\cdot\ldots\cdot \e^{k_n}_n$ \\
+			 $ \Rightarrow \phi_1\in\F[x_1,\ldots, x_n]^{S_n}$ \\
+			 Il monomio massimo di $\phi_1$ è 
+			 \[
+				 (x_1)^{k_1-k_2}\cdot (x_1x_2)^{k_2-k_3}\cdot\ldots\cdot(x_1\ldots x_n)^{k_n}
+			 .\] 
+			 ovvero
+			 \[
+				 x^{k_1}_1\cdot x_2^{k_2}\cdot\ldots\cdot x_n^{k_n}
+			 .\] 
+		 \item $p - \alpha\cdot \phi_1\in \F[x_1,\ldots,x_n]^{S_n}$\\
+			 ha monomio massimo minore rispetto a $p$
+		 \item Iterando il procedimento un numero finito di volte avremo
+			  \[
+				  p = \alpha_1\phi_1 + \ldots + \alpha_r\phi_r\in \F[\e_1,\ldots,\e_n]
+			 .\] 
+	\end{itemize}
+	\textbf{Unicità}\\
+	"basta" verificare che se $\exists g\in \F[z_1,\ldots, z_n]$ tale che
+	\[
+	g(\e_1,\ldots,\e_n) = 0
+	.\] 
+	allora $g(z_1,\ldots,z_n)= 0$\\
+Dimostriamo che se 
+\[
+g(z_1,\ldots,z_n)\neq 0 
+.\] 
+allora
+ \[
+g(\e_1,\ldots, \e_n)\neq 0
+.\] 
+Dato $g\in \F[z_1,\ldots,x_n]\setminus\{0\}$\\
+consideriamo il monomio massimo in $g$
+ \[
+	 \beta \cdot z_1^{h_1}\cdot\ldots\cdot x_n^{h_n}
+.\] 
+Allora il monomio massimo in $g(\e_1,\ldots,\e_n)$ rispetto\\
+alle variabili $x_1,\ldots,x_n$\\
+\[
+	\beta\cdot x_1^{h_1}\cdot (x_1x_2)^{h_2}\cdot\ldots\cdot(x_1\ldots x_n)^{h_n}
+.\] 
+ovvero 
+\[
+	\beta \cdot x^{h_1 +\ldots +  h_n}\cdot x_2^{h_2 + \ldots + h_n}\cdot\ldots\cdot x_n^{h_n}
+.\]  
+In particolare
+\[
+g(\e_1,\ldots,\e_n) \neq 0
+.\] 
+\end{dimo}
+\subsection{Estensioni radicali e gruppi risolubili}
+\begin{defi}[Estesione radicale]
+	$\F$ campo con $char(F) = 0$, Un'estensione  $\F\subseteq\K$ si dice radicale se\\
+	$\exists m,n_1,\ldots,n_m\in\Z_{\geq 1}$ e $\exists \alpha_1,\ldots,\alpha_m\in\K$ tali che
+	\begin{enumerate}
+		\item $\F\subseteq\F(\alpha_1,\ldots,\alpha_m) = \K$
+		\item $\alpha_1^{n_1}\in \F$ 
+		\item $\alpha_j^{n_j}\in\F(\alpha_1,\ldots,\alpha_{j-1}) \ \ \forell j\in\{2,\ldots,m\}$
+	\end{enumerate}
+\end{defi}
+\begin{defi}
+	$f\in\F[x]$ risolubile per radicali se un suo campo di spezzamento  $\F\subseteq\K$ esiste un'estensione  $\K\subseteq\Le$ tale che $\F\subseteq\Le$ è un'estensione radicale.
+\end{defi}
+\begin{prop}
+	Sia $\F$ campo, $char(\F) = 0$ $\F\subseteq\K$ estensione radicale, allora esiste un'estensione  $\K\subseteq\Le$ tale che la composizione $\F\subseteq \Le$ sia Galoisiana radicale (di grado finito)
+\end{prop}
+\begin{dimo}
+	Sia $\alpha_1,\ldots,\alpha_m$ successione radicale per $\F\subseteq\K$ Siano  $p_j\in\F[x]$ polinomi minimi di  $d_j$ per  $j\in\{1,\ldots,m\}$\\
+	$f = p_1\cdot\ldots\cdot p_m\in \F[x]$\\
+	Sia $\F\subseteq \Le$ campo di spezzamento di  $f \Rightarrow  \F\subseteq\Le$ Galoisiano di grado finito
+	\begin{itemize}
+		\item Dimostriamo che $\F\subseteq\Le$  è la composizione dell'estensione  $\F\subseteq\K$ con un'estensione  $\K\subseteq\Le$\\
+			Siano  $\beta_1,\ldots\beta_m\in\Le$ radici (qualsiasi) di $p_1,\ldots p_m$ rispettivamente\\
+			INSERISCI IMMAGINE 5 31 22 maggio\\
+			Quindi abbiamo l'estensione $\K \hookrightarrow \Le$ che rende commutativo il diagramma\\
+			INSERISCI IMMAGINE 5 33 22 maggio
+		\item Resta da verificare che $\F\subseteq\Le$ sia radicale.\\
+			Abbiamo dimostrato che $\beta_1,\ldots,\beta_m$ è una successione radicale per $\F\subseteq\F(\beta_1,\ldots,\beta_n)$\\
+			Siano $\{\beta_{j,r}\}_{k\in\{1,\ldots,deg(p_j)\}}$ le radici di $p_j$  in  $\Le$\\
+			$ \Rightarrow  F\subseteq F(\beta_{1,1},\ldots,\beta_{1,\deg(p_1)},\beta_{2,1},\ldots,\beta_{2,\deg(p_1)},\ldots ,\dlots,  \beta_{n,1},\ldots,\beta_{n,\deg(p_1)} $
+	\end{itemize}
+\end{dimo}
+\begin{lemm}
+	$\F$ campo, $char(\F) = 0 , a\in\F\setminus\{0\}$ supponiam oche  $\F$ contega tutte le radiii $n-$ e
+\end{lemm}
+PARTE CHE MANCA RECUPERALA DA LEONARDO
+\begin{prop}
+	$\F$ campo, $char(\F) = 0$   $\F\subseteq\K$ estensione Galoisiana e radicale. Allora  $G(\K,\F)$ è risolubile
+\end{prop}
+\begin{dimo}
+	$\alpha_1, \ldots, \alpha_k$ successione radicale di esponenti $n_1,\ldots n_m$ per $\F\subseteq\K$\\
+	$n = mcm(n_1,\ldots,n_m)\in \Z_{\geq 1}$ Abbiamo $\alpha_j^n\in\F(\alpha_1,\ldots,\alpha_{j-1})$ \\
+	Sia $\omega\in\A$ radice  $n$-esima primitiva dell'unità .
+	\[
+		\F = \Le_0\subseteq \Le_1 = \Le_0(\omega)\subseteq \Le_2 = \Le_1(\alpha_1\subseteq\ldots\subseteq\Le_j = \Le_{j-1}(\alpha_j)\subseteq\ldots\subseteq\Le = \K(\omega)
+	.\] 
+	dimostriamo che $G(\Le, \F)$ è risolubile.\\
+	 $\F\subseteq\Le$ è un'estensione Galoisiana perché composizione 
+	  \[
+	 \F\subseteq\K\subseteq\K(\omega) = \Le
+	 .\] 
+	 la prima giustificata perché Galoisiana per ipotesi e la seconda per cambio di sp. di $x^n - 1 \in \K[x]$ \\
+	 Quindi per il teorema di Galois abbiamo catena di sottogruppi
+	 \[
+		 G(\Le,\F) =  G(\Le, \Le_0)\geq G(\Le,\Le_1)\geq\ldots\geq G(\Le,\Le) = \{id\}
+	 .\] 
+Verifichiamo che
+\begin{enumerate}
+	\item $G(\Le,\Le_j)\trianglerighteq G(\Le, \Le_{j+1})$ infatti l'estensione $\Le_j\subseteq\Le_{j+1}$ è normale, perché è campo di spezzamento del polinomio  $x^n -\alpha_{j+1}^n\in\Le_j[x]$
+	\item  $\displaystyle\frac{G(\Le, \Le_j)}{G(\Le,\Le_{j+1})}\cong G(\Le_{j+1},\Le_j)$ che è abeliano (lemma)
+\end{enumerate}\\
+Quindi $G(\Le,\F)$ è risolubile
+\begin{itemize}
+	\item Resta da verificare che $G(\Le,\F)$ è risolubile\\
+		Abbiamo  $\F\subseteq\K\subseteq\K(\omega) = \Le$ \\
+		dove $\F\subseteq\K$ normale per ipotesi Dal teorema di Galois:
+		 \[
+			 \frac{G(\Le,\F)}{G(\Le,\K)}\cong G(\K,\F)
+		.\] 
+		quoziente di un gruppo risolubile $ \Rightarrow $ risolubile
+\end{itemize}
+\end{dimo}
+\begin{teo}
+	$\F$ campo,  $char(\F) =0 $  $f\in \F[x]$ risolubile per radicali.\\
+	Allora il suo campo di spezzamento  $\F\subseteq\K$ ha gruppo  di Galois $G(\K,\F)$ risolubile.
+\end{teo}
+\begin{dimo}
+	Sappiamo che esiste estensione $\K\subseteq\Le$  tale che $\F\subseteq\Le$ sia radicale e Galoisiana\\
+	Dalla proposizione segue che $G(\Le,\F)$ risolubile\\
+	Ora, $\F\subseteq\K$ normale (poiché campo di spezzamento) quindi per teorema di Galois
+	 \[
+		 G(\K,\F)\cong \frac{G(\Le,\F)}{G(\Le,\K)}
+	.\] 
+	che è risolubile poiché quoziente di risolubile.
+\end{dimo}
+\subsection{Teorema di Abel-Ruffini}
+\begin{defi}
+	$\F = \Q(a_1,\ldots,a_n)$ dove $a_1,\ldots,a_n$ variabili trascendenti.\\
+	\[
+		f(x) = x^n + a_1x^{n-1} + \ldots + a_{n-1}a + a_n\in\F[x]
+	.\] 
+	si dice polinomio generico di grado $n$.
+\end{defi}
+\begin{teo}[Abel-Ruffini (1799) - Galois (1846)]
+	Il polinomio generico di grado $n\geq 5$ non è risolubile per radicali 
+\end{teo}
+\begin{dimo}
+	Dato $\F\subseteq\K$ campo di spezzamento di  $f$, dimostriamo che
+	\[
+	G(\K,\F)\cong S_n
+	.\] 
+	e dunque non risolubile per $n\geq 5$ 
+	\begin{itemize}
+		\item $\alpha_1,\ldots,\alpha_n\in\K$ radici di $f\in \F[x]$\\
+			$\displaystyle f(x) = \prod_{j=1}^n(x-\alpha_j) = x^n + \sum^{n}_{s=1}(-1)^n \left(\sum^{n}_{1\leq j_1<\ldots< j_s\leq n}a_{j_1}\cdot\ldots\cdot a_{j_s} \right)x^{n-s}$\\
+			quindi $a_s\in\Q(\alpha_1,\ldots,\alpha_n)$ \ \ $\dorall s\in\{1,\ldots,n\}$\\
+			Quindi il campo di spezzamento di $f$ è\\
+			 \[
+			\F = \Q(\alpha_1,\ldots,\alpha_n)\subseteq\K = \Q(\alpha_1,\ldots,\alpha_n)
+			.\] 
+		\item Esiste un omomorfismo di gruppi (iniettivo!)
+			\[
+				\begin{aligned}
+					i: S_n &\rightarrow G(\K,\F)\\
+					\tau & \rightarrow i_\tau
+				\end{aligned}
+			.\] 
+			dove $i_\tau(\alpha_j) = \alpha_{\tau(j)}$\\
+			$H := im(i)\leq G(\K,\F)$ con  $H\cong S_n$
+		\item Dal teorema di Galois
+		\[
+		S_n\cong H = G(\K,\K_H) = G(\K,\F)
+		.\] 
+		dove l'ultima uguaglianza segue dal fatto che $\Q[x_1,\ldots,x_n]^{S_n} = \Q[\e_1,\ldots,\e_n]$ 
+	\end{itemize}
+\end{dimo}
+\end{document}

@@ -1,0 +1,141 @@
+\documentclass[12px]{article}
+
+\title{Lezione 25 Analisi Realae}
+\date{2025-05-27}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Prodotto di spazi di Misura}
+$(X,\mu), (Y,\nu)$ spazi di misura ( $\mu, \nu$ misure esterne)\\
+ $M_\mu$ misurabili in  $X$ rispetto a $\mu$\\
+ $M_\nu$ misurabili in  $Y$ rispetto a $\nu$ \\
+Vogliamo definire una misura in $X\times Y$\\
+che sia il prodotto delle due misure  $\mu\times \nu$\\
+ovvero si vuole che:\\
+se  $A\in M_\mu, B\in M_\nu$\\
+ $\mu\times\nu (A\times B)  = \mu(A)\nu(B)$\\
+ \textbf{Nota}\\
+ Non ci basta questo perché non tutti gli insiemi in  $X\times Y$ sono di forma  $A\times B$. Si può pensare ad una circonderenza in  $\R\times \R$, che non è il prodotto delle proiezioni. \\
+ \begin{defi}
+ 	La misura prodotto $\mu\times\nu$ su $X\times Y$ è definita da: $\forall E\subseteq X\times Y \ $
+	 \[
+		 \mu\times\nu(E) = \inf\left\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), \ A_i\in M_\mu, \ B_i\in M_\nu, \ E\subseteq \bigcup^{+\infty}_{i = 1}A_i\times B_i\right\}
+	.\] 
+	Se $A\in M_\mu, B\in M_\nu$  $ \Rightarrow R= A\times B$ rettangolo (misurabile) e $ \bigcup^{+\infty}_{i =1}A_i\times B_i$ si dice plurirettangolo.
+ \end{defi}
+ \textbf{Osservazione}\\
+  \begin{enumerate}
+	  \item $\mu\times\nu$ è una misura (esterna), infatti:
+		   \begin{itemize}
+			   \item $\mu \times \nu : X\times Y \rightarrow [0,+\infty]$ 
+			   \item $0\leq \mu\times\nu (\emptyset) \leq \sum^{}_{i}\mu(\emptyset)\nu(\emptyset) =0$
+			   \item Se $E\subseteq \sum^{+\infty}_{j = 1}E_j$\\
+				   Se $\exists j$ tale che  $\mu\times\nu(E_j) = +\infty \Rightarrow \mu\times \nu(E)\leq \sum^{+\infty}_{j = 1}\mu\times\nu(E_j)$ \\
+				   Se $\mu\times\nu(E_j) < +\infty \ \ \forall j$\\
+				   $ \Rightarrow  \forall j, \forall \e$ \ $\exists \{A_i^j\times B_i^j\}_i$\\
+				   tale che  $E_j\subseteq \bigcup^{+\infty}_{i= 1}A_i^j\times B_i^j$\\
+				   $\mu\times\nu(E_j) \leq \sum^{+\infty}_{i=1}\mu(A^j_i)\nu(B_i^j) < \mu\times \nu(E_j + \frac{\e}2^i$\\
+				   $E\subseteq \bigcup^{+\infty}_{j = 1}E_j\subseteq \bigcup^{+\infty}_{j=1} \bigcup^{+\infty}_{i = 1}A_i^j\times B^j_i$ è un plurirettangolo\\
+				   $ \Rightarrow \mu\times\nu(E)\leq \sum^{+\infty}_{jj=1} \sum^{+\infty}_{u = 1}\mu(A_i^j)\times\nu(B_i^j)$\\
+				   $\leq \sum^{+\infty}_{j=1}(\mu\times\nu(E_j) + \frac{\e}{2^j})$\\
+				   $= \sum^{+\infty}_{j=1}\mu\times\nu(E_j) + \e$ per $\e \rightarrow 0$\\
+				   $\mu\times\nu(E)\leq \sum^{+\infty}_{j=1}\mu\times\nu(E_j)$
+		  \end{itemize}
+	  \item La famiglia dei plurirettangoli è chiusa per unioni numerabili e per intersezioni finite, siano $A_i,B_i,C_i,D_i$ misurabili rispettivamente per  $\mu$ e per  $\nu\ \ \forall i$
+		  \[
+		  P = \bigcup^{+\infty}_{i=1}A_i\times B_i, \ Q = \bigcup^{+\infty}_{j=1}C_j\times D_j
+		  .\] 
+		  \[
+		  P\cap Q = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j =1 }A_i\times B_i\cap C_j\times D_j  = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j=1}(A_i\cap C_j)\times (B_i\cap D_j)
+		  	.\] 
+		\item La differenza di due rettangoli è un plurirettangolo\\
+			$R = A\times B, \ \ S= C\times D$\\
+			 $R\setminus S = A\setminus C\times B \cup A\cap C\times V\setminus D$
+		 \item Ogni plurirettangolo si può scrivere come unione numerabile di rettangoli disgiunti.
+			  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i = A_1\times B_1 \cup (A_2\times B_2\setminus A_1\times B_1) \cup A_3\times B_3\setminus \bigcup^{2}_{i=1}A_i\times B_i)$\\
+			  $\displaystyle P = A_1\times B_1 \cup\bigcup^{+\infty}_{i=2}(A_i\times B_i \setminus \bigcup^{i-1}_{j=1}A_j\setminus B_j)$
+ \end{enumerate}
+ $P$ plurirettangolo\\
+  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i$ \\
+  $\chi_P(x,y)$\\
+   $\forall y\in Y$ fissato\\
+    $x\in X \rightarrow \chi_P(x,y) = \begin{cases}
+    	1 \ \ se \ \ (x,y)\in P\\
+    	0 \ \ se \ \ (x,y)\not\in P
+    \end{cases} = \begin{cases}
+    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
+	1 \ \ se \ \ x\in A_i\ \ \forall i\ \ \text{tale che } y\in B_i
+    \end{cases}$\\
+    $ = \begin{cases}
+    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
+	\chi_{ \bigcup^{}_{\substack{i\\ y\in B_i}}A_i}(x)
+    \end{cases}$\\
+    $ \Rightarrow  \forall y\in Y \ \chi_P(\cdot,y)$ è $\mu$-misurabile\\
+    Se $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
+    $\forall y\not\in \bigcup^{}_{i}B_i' \Rightarrow  \chi_p(\cdot, y) \equiv 0$ \\
+    Se $y\in \bigcup^{}_{i}B'_i \Rightarrow  \exists! i$  tale che $y\in B_i$ e $\chi_p(\cdot, y) = \chi_{A'_i}$\\
+     $ \Rightarrow  \int_X \chi_p(x,y)d\mu = \begin{cases}
+     	0\ \ se \ \ y\not\in \bigcup^{+\infty}_{i =1}B'_i\\
+	\mu( \bigcup^{}_{\substack{i\\y\in B_i'}}A'_i)
+\end{cases} = \sum^{+\infty}_{i=1}\mu(A'_i)\chi_{B'_i}(y)$ è $\nu$-misurabile\\
+$y\in B_i'\cap B_j' \Rightarrow A'_i\cap A'_j = \emptyset$
+\begin{prop}
+	Se $P\subset X\times Y$ plurirettangolo\\
+	 $ \Rightarrow  \mu\times\nu(P)= \int_Y \left(\int_X \chi_P(x,y)d\mu \right)d\nu = \int_X \left(\int_Y\chi_P(x,y)d\nu \right)d\mu$
+\end{prop}
+\begin{dimo}
+	$P\subsetetq \bigcup^{+\infty}_{i=1}A_i\times B_i, A_i\in M_\mu, B_i\in M_\nu$\\
+	$ \Rightarrow  \chi_P(x,y)\leq \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i} (x,y)$ e sono funzioni caratteristiche di plurirettangoli\\
+	$\displaystyle\int_Y \left(\int_X \chi_P(x,y) d\mu\right)d\nu\leq \int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i}(x,y)d\mu \right) d\nu$ \\
+	$\displaystyle\leq \int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A_i\times B_i} (x,y)d\mu \right) d\nu$\\
+	$\displaystyle = \sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A_i}(x)\chi_{B_i}(y)d\mu \right)d\nu$\\
+	$\displaystyle = \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i)$ \\
+	$\displaystyle \Rightarrow  \int_Y \left( \int_X \chi_P(x,y)d\mu)d\nu\leq \inf\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), P\subseteq \bigcup^{+\infty}_{i=1}A_i\times B_i\} = \mu\times \nu(P)$\\
+		$\displaystyle P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$\\
+$A_i'\times B_i'\cap A'_j\times B_j' = \emptyset$ se $i\neq j$ \\
+$\displaystyle\int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A'_i\times B_i'}d\mu \right)d\nu\\
+=\int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A'_i\times B'_i}d\mu \right) d\nu\\
+=\sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A'_i\times B'_i}d\mu \right)d\nu = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B'_i)\geq \mu\times\nu(P) $
+\end{dimo}
+\begin{lemm}
+	Se $E\subseteq X\times Y$\\
+	 \[
+		 \mu\times\nu(E) = \inf \{\mu\times\nu (P), P \text{ plurirettangolo } E\subseteq P\}
+	 .\] 
+\end{lemm}
+\begin{dimo}
+	$E\subseteq P \Rightarrow  \mu\times\nu (E)\leq \mu\times \nu (P)$ \\
+	$ \Rightarrow \mu\times\nu(E)\leq \mu\times \nu(P)$ \\
+	$ \Rightarrow \mu\times\nu(E)\leq \inf\{\mu\times\nu(P), \ P\ \text{ plurirettangolo } E\subseteq P\}$ \\
+	Se  $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
+	$ \Rightarrow  \mu\times \nu (P) = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B_i')\geq \mu\times \nu(E)$
+\end{dimo}
+\begin{prop}
+	$P\subseteq X\times Y$ plurirettangolo  $ \Rightarrow P$ è $\mu\times\nu$-misurabile
+\end{prop}
+\begin{dimo}
+	Basta dimsotrare che $A\in M_\mu, B\in M_\nu \Rightarrow  A\times B\in M_{\mu\times\nu}$ \\
+	Th.  $\forall E\subseteq X\setminus Y\ \ \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) = \mu\times \nu(E)$\\
+	Sia  $Q$ plurirettangolo, $Q\geq E$\\
+	 \[
+	 \mu\times \nu(Q\cap A\times B) + \mu\times\nu(Q\setminus A\times B)
+	 .\] 
+	 $\displaystyle = \int_Y \left(\int_X \chi_{Q\cap A\times B} (x,y)d\mu \right)d\nu + \int_Y \left(\int_X \chi_{Q\setminus A\times B} \right)d\nu$\\
+	 $\displaystyle = \int_Y\int_X(\chi_{Q\cap A\times B} + \chi_{Q\setminus A\times B} )d\mu\dnu = \int_Y\int_X \chi_Qd\mu\dnu = \mu\times \nu (Q)$ \\
+	 $\displaystyle\mu\times\nu (E\cap A\times B) + \mu\times \nu (E\setminus A\times B)$\\ Prendendo l'inf rispetto a  $Q$ \[
+		 \Rightarrow  \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) \leq\mu\times\nu(E) \Rightarrow  A\times B \text{ misurabile}
+	 .\] 
+\end{dimo}
+\begin{prop}
+	$\mu\times \nu$ è regolare, ovvero  $\forall E\subset X\times Y\ \ \exists F\in M_{\mu\times\nu}$ tale che  $E\subseteq F$ e  $\mu\times\nu(E) = \mu\times\nu(F)  \Rightarrow  A\times B$ misurabile.
+\end{prop}
+\begin{dimo}
+	per esercizio.
+\end{dimo}
+
+	
+\end{document}

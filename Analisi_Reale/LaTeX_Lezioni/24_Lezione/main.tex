@@ -1,0 +1,69 @@
+\documentclass[12px]{article}
+
+\title{Lezione 24 Analisi Reale}
+\date{2025-05-23}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{altre cose sui polinomi trigonometrici}
+	\begin{teo}[Weierstrass]
+		Data $f\in C(\R)$ periodica di periodo  $2\pi$,  $\forall \e > 0 \ \ \exists p_n$ polinomio trigonometrico tale che  $\|f-f_n\|_\infty < \e$
+	\end{teo}
+	\begin{dimo}
+	 \[
+		 p_n(x) = \int_{-x}^xQ_n(x-y)f(y)dy
+	.\] 
+	Osserviamo che $p_n(x)$ è un polinomio trigonometrico
+	 \[
+		 Q_n(x) = \frac{\alpha_0^n}{2} + \sum^{n}_{k=0} \left(\alpha_k^n \cos( k x) + \beta_k^n \sin(kx) \right)
+	.\] 
+	\[
+		Q_n(x-y) = \frac{\alpha_0^2}{2} + \sum^{n}_{k=0}(\alpjha^n_k \cos(kx -ky) + \beta_k^n\sin(kx-ky))
+	.\]  
+	è combinazione lineare di $\cos(kx)$ e  $\sin(kx)$\\
+	 $ \Rightarrow p_n(x)$ è polinomio trigonometrico\\
+	 $p_n(x) = \int_{-\pi}^\pi Q_n(x-y)f(y)dy = -\int^{\pi-x}_{\pi+x}Q_n(t)f(x-t)dt = \int^{\pi + x}_{-\pi+x}Q_nf(x-t)dt = \int^\pi_{-\pi}Q_n(t)f(x-t)dt$ \\
+	 Osservo che $p_n$ come regolarità prende il "meglio" delle funzioni  $Q_n$ e  $f$
+	  \begin{gather*}
+		  |p_n(x)-f(x)| = |\int^\pi_{-\pi}Q_n(t)f(x-t)dt - f(x) \int^\pi_{-\pi}Q_n(t)dt|\\
+		 = |\int^\pi_{-\pi}Q_n(t)( f(x-t)-f(x))dt
+		 \leq \int_{-\pi}^\pi Q_n(t)|f(x-t)-f(x)|dt\\
+		 = \int^\delta_{-\delta}Q_n(t)|f(x-t)-f(x)|dt + \int^{-\delta}_{-\pi}Q_n(t)|f(x-t)-f(x)|dt +\\+ \int^\pi_\delta Q_n(t)|f(x-t)-f(x)|dt
+	 \end{gather*}\\
+	 $f\in C(\R)$ + $f$ periodica $ \Rightarrow $ uniformemente continua.\\
+	 Allora dato $\e > 0 \ \ \ \exists \ \ \ \delta > 0 $ tale che  $|f(x-t)-f(x)| < \frac {\e}{2}$ $x\in \R, \forall t$ tale che  $|t|<\delta$\\
+	 Scegliendo questo  $\delta$, sia ha  $|p_n(x)-f(x)| \leq \frac{\e}{2}\int^\pi_{-\pi}Q_n(t)dt + 8\pi\|f\|_\infty\sup_{\delta\leq|t|\leq\pi}Q_n(t) < \frac {\e}3 $ per $n\geq n_\delta$
+	\end{dimo}
+	\begin{teo}[Completezza in $L^2(-\pi,\pi)$ del sistema trigonometrico]
+		Il sistema trigonometrico $\{\frac{1}{\sqrt{2\pi}},\frac{1}{\sqrt pi}\cos(kx), \frac {1}{\sqrt 2}\sin(kx)\}_{k\geq 1}$  è completo in  $L^2((-\pi,\pi))$
+	\end{teo}
+	\begin{dimo}
+		$f\in L^2((-\pi,\pi)); \forall \e > 0 \ \ \exists g\in C_c((-\pi,\pi))$ tale che  $\|f-g\|_2<\e$\\
+		 $ \Rightarrow g(-\pi) = g(\pi) = 0 \Rightarrow g$ si estende per periodicità a una funzione $C(\R)$\\
+		 Per il teorema di Weierstrass  $\exists p_n$ polinomio trigonometrico tale che  $\|g-p_n\|_\infty < \e$\
+		  \[
+		  \Rightarrow  \|g-p_n\|_{L^2((-\pi,\pi))} = \sqrt{\int_{-\pi}^\pi|g-p_n|^2dx}\leq \|g-p_n\|_\infty\sqrt{2\pi} < \sqrt{2\pi}\e
+		 .\] 
+		 In conclusione, $\|f-p_n\|_{L^2((-\pi,\pi))}\leq\|f-g\|_2 + \|g-p_n\|_2 < \e + \sqrt{ 2\pi}\e= (1 + \sqrt{2\pi})\e$ \\
+			 \[
+			 f(x) = \frac{a_0}{2} + \sum^{+\infty}_{k=1} \left(a_k \cos(kx) + b_k\sin(kx) \right)
+			.\] 
+		 Dove viene usato il fatto che la convergenza in $L^2$ implica quella puntuale solo a meno di un'estratta, la convergenza quasi ovunque si ha per una sottosuccessione\\
+		  \[
+		  a_k = \frac 1\pi\int_{-\pi}^\pi f(x)\cos(kx)dx\ \ \ \ b_k = \frac 1 \pi\int_{-\pi}^\pi f(x) \sin(kx) dx
+		 .\] 
+	\end{dimo}
+	\subsection{Svolgimento esercizi foglio 8}
+	$(X,\mu)$ spazio di misura
+	$R: X \rightarrow [0,+\infty] $ misurabile\\
+	\[
+		K = \{u\in L^2(X): |u(x)| \leq h(x) \ \ q.o.\ \ \text{in }X\}
+	.\] 
+	$K\neq \emptyset$ perché  $0\equiv u$ in  $K$\\
+	$K$ convesso :  $u_1,u_2\in K, \ \lambda\in[0,1]$\\
+	Il resto delle soluzioni te le ha mandate Alberto su wa, nei messaggi importanti
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+5 Geometria 2}
+\date{2025-05-27}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Zenobobi}
+	\begin{defi}[Parametrizzazione di Monge]
+		$f: V \rightarrow\R$ differenziabile aperto di $\R^{n-1} \Rightarrow \begin{aligned}
+			\varphi : &V \rightarrow U = Im( \varphi)$  \\
+				  & $(a_1,\ldots,a_{n-1}) \rightarrow (a_1,\ldots,a_{n-1},f)$
+		\end{aligned}\\
+		è una parametrizzazione.
+	\end{defi}
+	\begin{teo}
+		Sia $S\subseteq\R^3$\\
+		una superficie differenziabile immersa allora $\exists$ una parametrizzazione di Monge per ogni punto di  $S$
+	\end{teo}
+	\begin{dimo}
+		$p\in S$\\ 
+\begin{aligned}
+	$\psi: &V \rightarrow U$\\
+	       & $q \rightarrow p$
+\end{aligned}
+		  parametrizzazione\\
+		$d\psi$ è iniettivo,  $q = \psi^{-1}(p)$\\
+		ed è dato della matrice Jacobiana\\
+		GUARDA 17 25\\
+		\[
+		\pi: \R^3 \rightarrow\R^2
+		.\] 
+		proiezione su $(x,y)$\\
+		 $\pi\circ\psi$ ha differenziale in  $q$ che è isomorfismo\\
+		 $ \Rightarrow  $ a meno di restringere l'aperto $U$ abbiamo $\pi\circ \psi : U \rightarrow W = \pi(U)$  invertibile con inversa $C^\infty $ \\
+INSERISCI IMMAGINE 5 28\\
+Otteniamo la parametrizzazione di Mange definita da
+\[
+	\begin{aligned}
+		\tilde \psi = &\psi\circ (\pi\circ\psi)^{-1}:W \rightarrow U\\
+			      &(x,y) \rightarrow (x,y,f(x,y))
+
+	\end{aligned}
+.\] 
+È $C^\infty$  sui punti di $W$ componibile con l'inversa della restrizione $\pi|_U$
+	\end{dimo}
+\end{document}

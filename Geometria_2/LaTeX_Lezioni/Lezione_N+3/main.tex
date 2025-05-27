@@ -1,0 +1,184 @@
+\documentclass[12px]{article}
+
+\title{Lezione N+3 Geometria 2}
+\date{2025-05-20}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{dimostrazione ultimo corollario}
+	\begin{coro}
+		$\pi_1(\pro_\R^n) \cong \frac{\Z}{2\Z}$ $\forall n\geq 2$
+	\end{coro}
+	\begin{dimo}
+		Negli esercizi settimanali è dato un rivestimento
+		\[
+		S^n \rightarrow \pro_\R^n
+		.\] 
+		di grado $2 \ \ \forall n\geq 1$\\
+		Per il teorema di ieri:
+		 \[
+			 p^{-1}(x) \leftrightarrow p_*(\pi_1(S^1))\backslash \pi_1(\pro^n_\R)
+		.\] 
+		dove $x =\pro^n_\R$ Se  $n\geq 2$ allora  $\pi_1(S^n)$ è banale, quindi $p_*(\pi(S^n))$ è banale, e $p_*(\pi_1(S^1))\backslash \pi_1(\pro^n_\R)$ è in biezione con $\pi_1(\pro^n_\R)$\\
+		Quindi $\pi_1(\pro^n_\R)$ ha solo due elementi da cui $\cong \frac{\Z}{2\Z}$
+	\end{dimo}
+	\section{Geometria differenziale}
+	\subsection{Varietà topologiche e differenziali}
+	\begin{defi}
+		Sia  $X$ spazio topologico. Esso si dice una varietà topologica di dimensione $n\in\Z_{\geq 0}$ se
+		\begin{enumerate}
+			\item $X$ di Hausdoff
+			\item  $\forall x\in X$ esistono un intorno aperto  $U\subseteq X$ di $x$, un aperot  $V\subseteq \R^n$ e un omeomorfismo  $ \varphi: U \rightarrow V$ detto carta locale
+			\item $X$ è $2^o$-numerabile.
+		\end{enumerate}
+		Una collezione di triple $(U,V, \varphi)$ tali che i sottoinsiemi $U$ ricoprono  $X$ è detta atlante.
+\end{defi}
+\textbf{Esempi:}
+\begin{enumerate}
+	\item $\R^n$ è una varietà topologica di dimensione  $n$ (basta una carta locale  $U = V = \R^n$,  $Id_{\R^n} = \varphi)$ 
+	\item $S^n$ è varietà topologica di dimensione  $n$, per esempio posso prendere l'atlante\\
+		\[
+		U_1 = S^n\setminus\{(0,\ldots,0,1)\} \]\[
+			U_2 = S^n\setminus\{(0,\ldots,0,-1)\}
+		.\] 
+		$V_1 = V_2 = \R^n$ \\
+		$U_1 \rightarrow V_1$ proiezione stereografica 
+	\item $T = $ toro in  $\R^3$\\
+		AGGIUNGI IMMAGINE 5 39\\
+		(il toro è omeomorfo a  $S^1\times S^1$ e al quoziente di un quadrato)
+	\item Ciambelle con tanti buchi\\
+		sono varietà di dimensione 2\\
+		AGGIUNGI Immagine
+	\item  $\pro^n_\R$ è varietà topologica di dimensione  $n$ :\\
+		carte locali $U_i$ dove 
+		 \[
+			 U_i = \{[x_0,\ldots,x_n]\ | \ x_i\neq 0 \}
+		.\] 
+		$ \varphi : U_i \rightarrow V_i = \R^n$\\
+		$[x_0,\ldots,x_n] \rightarrow (\frac {x_0} {x_i},\ldots,  \frac{x_{i-1}}{x_i},\frac{x_{i+1}}{x_i},\ldots, \frac {x_n} {x_i})$\\
+		è ben definita, \underline{continua} (verifica per esercizio)\\
+	 ed è omeomorfismo perchè ha inversa
+	 \[
+	 \begin{aligned}
+		 V_i &\rightarrow U_i\\
+		 (y_0,\ldots, y_n)& \rightarrow [y_0, \ldots, y_{i-1}, 1, y_{i+1},\ldots y_n]
+	 \end{aligned}
+	 .\] 
+ \item $\C^n$ e  $\pro^n_\C$ sono varietà topologiche di dimensione  $2n$
+\end{enumerate}
+	  \begin{defi}
+	 	Sia $A$ atlante di una varietà topologica di dimensione  $n.$  $A$ si dice  $C^\infty$ se per ogni
+		 \[
+			 (U_1,V_1, \varphi_1), \ \ (U_2,V_2, \varphi_2)\in A
+		.\] 
+		la composizione 
+		\[
+			\varphi_2\circ \varphi_1^{-1}|_{ \varphi_1( U_1\cap U_2)}: \varphi_1(U_1\cap U_2) \rightarrow \varphi_2(U_1\cap U_2)
+		.\] 
+		è di classe $C^\infty$ se $U_1\cap U_2\neq \emptyset$
+	 \end{defi}
+\textbf{Esempi}
+\begin{enumerate}
+	\item Gli atlanti visti prima per $\R^n, S^n, T, \pro^n_\R, \C^n, \pro^n_\C,$ sono tutti $C^\infty$
+	\item Se $X $ ha un atlante fatto da due sole carte locali, allora questo atlante è $C^\infty$
+\end{enumerate}
+\begin{defi}
+	Siano $A, B$ due atlanti $C^\infty$ di una stessa varietà topologica si dicono compatibili se $A\cup B$ è  $C^\infty$
+\end{defi}
+\textbf{Osservazione}\\
+Si verifica facilmente che la compatibilità è una relazione d'equivalenza.
+\begin{defi}
+	Una varietà differenziale di dimensione $n$ è una varietà topologica di dimensione  $n$ con una classe di equivalenza di atlanti  $C^\infty$
+\end{defi}
+\textbf{Esempio}\\
+$X =\R$\\
+$A = \{(U_1,V_1, \varphi_1)\}$ $U_1 = X$, $V_1 = \R$ $ \varphi_1 = Id_X$ è atlante $C^\infty$\\
+$B = \{(U_2, V_2, \varphi_2)\}$ $U_2 = X$ $V_2 = \R$ \\
+\begin{aligned}
+	$ \varphi_2: X = \R &\rightarrow \R$\\
+	$x & \rightarrow x^3$
+\end{aligned}\\
+omeomorfismo\\
+$A$ e $B$ non sono compatibili, i cambi di coordinate sono  \[
+	\begin{aligned}
+		\varphi_2\circ \varphi_1^{-1}: V_1 &\rightarrow V_2\\
+						   x& \rightarrow x^3
+	\end{aligned}
+.\] 
+\[
+	\begin{aligned}
+		\varphi_1\circ \varphi_2^{-1}: V_2 &\rightarrow V_1\\
+		x& \rightarrow \sqrt[3]x 
+	\end{aligned}
+.\] 
+è continua, biettiva non $C^\infty$\\
+\subsection{Varietà differenziabili immerse in  $\R^N$ }
+\begin{defi}[Varietà differenziabile immersa in $\R^N$]
+	Sia $X\subseteq\R^N$ sottospazio topologico $(N\geq 0)$. $X$ è detta varietà differenziabile immersa in  $\R^N$ di dimensione  $m\in\Z_{\geq 0}$ se $\forall x\in X$ esistono  $U\subseteq X$ intorno aperto di  $x, V\subseteq\R^m$ aperto,
+	 \[
+	\psi : V \rightarrow U\subseteq \R^N
+	.\] 
+	tale che 
+	\begin{enumerate}
+		\item 	$\psi$ è omeomorfismo
+		\item $\psi $ è  $C^\infty$ come applicazione  $V \rightarrow \R^N$ con $V\subseteq \R^m$ aperto 
+		\item $\forall q\in V$ il differenziale di  $d\psi_q$ è iniettivo
+				 $(d\psi_q: \R^m \rightarrow \R^n$ è l'applicazione lineare di matrice canonica Jacobiana di $\psi$ in $q)$
+	\end{enumerate}
+	le $\psi$ si dicono parametrizzazione\\
+	Gli aperti  $U$ si dicono aperti coordinati.\\
+\end{defi}
+\textbf{Nota}\\
+	In letteratura spesso "carte locali" e "parametrizzazioni" sono sinonimi.\\
+	Invece di "immerse" si dice spesso "immerse regolarmente", e in inglese questo "immerse" corrisponde a "embedded"
+\textbf{Esempi:}\\
+\begin{enumerate}
+	\item $S^1$ è varietà differenziabile immersa in $\R^2$\\
+		 \[
+			 \begin{aligned}
+				 \psi_1: ]0,2\pi[ &\rightarrow U_1 = S^1\setminus\{(1,0)\}\\
+						  t & \rightarrow (\cos(t), \sin (t))
+			 \end{aligned}
+		.\] 
+		 \[
+			 \begin{aligned}
+				 \psi_2: ]-\pi,\pi[ &\rightarrow U_1 = S^1\setminus\{(-1,0)\}\\
+						  t & \rightarrow (\cos( t), \sin (t))
+			 \end{aligned}
+		.\] 
+		Si verifica facilmente che $\psi_1, \psi_2$ sono continue, biettive, con inversa continua,\\
+		La matrice Jacobiana di $\psi_1$ è
+		\[
+			(J\psi_1) = \matrice{-\sin(t)\\\cos(t)}
+		.\] 
+		matrice di un'applicazione lineare
+		\[
+		\R \rightarrow\R^2
+		.\] 
+		ha rango $1\ \ \forall t$ quindi  $(d\psi_1)_t$ è iniettiva $\forall t$.\\
+		Quindi la definizione è soddisfatta.
+	\item  Sia  $V\subseteq \R^m$ aperto. Sia  $f: V \rightarrow \R$ $C^\infty$\\
+		il grafico di  $f$ in $\R^{m+1}$ è una varietà grafico immersa in  $\R^{m+1}$ di dimensione $m$.\\
+		Infatti  $\Gamma = \{(x_1,\ldots, x_m, f(x_1,\ldots,x_n))\ | \ (x_1,\ldots,x_n)\in V\}$\\
+		mettiamo la singola parametrizzazione
+		\[
+		\begin{aligned}
+			$\psi : V & \rightarrow U = \Gamma$\\
+			(x_1,\ldots,x_m) & \rightarrow (x_1,\ldots,x_m, f(x_1,\ldots,x_m))
+		\end{aligned}
+		.\] 
+		$\psi$ è biettiva, continua, $\psi^{-1}$ è la restrizione a $\Gamma$ alle prime  $m$ coordinate, quindi $\psi^{-1}$ è continua\\
+		 $\psi$ è  $C^\infty$ perché lo sono le sue componenti.\\
+		 La matrice Jacobiana è IMMAGINE\\
+		 ha rango $m$ quindi il differenziale è iniettiva.\\
+		 \textbf{Esercizio}\\
+		 Trovare parametrizzazione che rendano $S^n$ una varietà differenzaibile immersa in $\R^{n+1}$ (Suggerisco di usare parametrizzazione come quella del grafico)
+		 \textbf{Esempio:}\\
+		 Nella definizione non è sufficiente richiedere $\psi$cibtubya biettiva,  $C^\infty$, un differenziabile iniettivo in ogni punto. Cioè da queste ipotesi non segue $\psi^{-1}$ continua
+\end{enumerate}
+
+\end{document}
