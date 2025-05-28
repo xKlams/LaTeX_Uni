@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1748360017.47284 "main.tex" "main.pdf" "main" 1748360018.76961 2
+["pdflatex"] 1748361490.10079 "main.tex" "main.pdf" "main" 1748361491.39493 2
   "../../../setup.tex" 1747925543.64871 3650 2e827494703e72842548b310808f8166 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -35,6 +35,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -203,9 +204,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1714953600 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731417565.56539 4547823 614eba97e0451aad345770236b030e55 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1743276823 7761986 169ade5f844678263ddc411b9841a5cf ""
-  "main.aux" 1748360018.55373 704 ae263f90951b202e69f4d70f9543ef13 "pdflatex"
-  "main.out" 1748360018.55427 88 ab3f54c5a5b9b3182c909df1cbb154f5 "pdflatex"
-  "main.tex" 1748360015.51666 1516 f5fd397e62adcc8c4f5fe9cd17449a7d ""
+  "main.aux" 1748361491.16172 853 800e187ce7560180b5ddd07db14319eb "pdflatex"
+  "main.out" 1748361491.1623 355 dc261ea02b9320ff042c87371d162fc6 "pdflatex"
+  "main.tex" 1748361489.9028 3853 4de0f336484dee0454a205b9fb895e48 ""
   (generated)
   "main.aux"
   "main.log"

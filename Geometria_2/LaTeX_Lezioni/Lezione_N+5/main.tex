@@ -48,4 +48,55 @@ Otteniamo la parametrizzazione di Mange definita da
 .\] 
 È $C^\infty$  sui punti di $W$ componibile con l'inversa della restrizione $\pi|_U$
 	\end{dimo}
+	\subsection{Applicazioni differenziabile tra superfici}
+	\begin{defi}
+		\begin{enumerate}
+			\item Sia $S$ una superficie differenziabile \\
+				Una funzione  $f: S \rightarrow \R$ si dice differenziabile in $x\in S$ se  $\exists $ un intorno coordinato  $U$ di $x$ è carta  $ \varphi: U \rightarrow V\subseteq \R^2$\\
+				tale che $f\circ \varphi^{-1}: V \rightarrow \R$ differenziabile in $ \varphi(x)$\\
+				$f$ si dice differenziabile se è differenziabile in $x\ \ \forall x\in S$
+			\item  $f: S \rightarrow \R^n$\\
+				è differenziabile se lo sono tutte le sue componenti
+			\item $S_1, S_2$ superfici differenziabili\\
+				$f: S_1 \rightarrow S_2$ è differenziabile su $x\S_1$ se $\exists \varphi: U \rightarrow V$  carta locale intonro ad $x$\\
+				$ \varphi': U' \rightarrow V'$ carta locale intorno ad $f(x)$ tale che  $ \varphi'\circ f\circ \varphi^{-1}: V \rightarrow V'$ è differenziabile
+			\item $f: S_1 \rightarrow S_2$ è un diffeomorfismo se è iniettivo, differenziabile e $f^{-1}: S_2 \rightarrow S_1$ è differenziabile
+		\end{enumerate}
+	\end{defi}
+	\textbf{Esempi}\\
+	\begin{enumerate}
+		\item $ \begin{aligned}
+				f: &S \rightarrow \R$\\
+				   &$x \rightarrow \|x-u\|^2$ differenziabile
+		\end{aligned}
+	\item $S_1 = \{x^2 + y^2 + z^2 = 1\}$\\
+		$S_2 = \{(x,y,z) \ | \ x^2+ y^2 = 1\}$\\
+		$\tilde S_1 = S_2\setminus\{(0,0,1),(0,0,1)\}$\\
+		$f: \tilde S_1 \rightarrow S_2$\\
+		$(x,y,z) \rightarrow (\frac{x}{\sqrt{x^2 + y^2}}, \frac{y}{\sqrt{x^2 + y^2}}, z)$
+	\end{enumerate}
+	\textbf{Esercizio}\\
+	Dimostrare che $f$ è differenziabile\\
+	\textbf{Suggerimento}\\
+	usare la parametrizzazione
+	\[
+		\begin{aligned}
+			\psi: &V \rightarrow \tilde S_1\\
+			      & (\theta,\rho) \rightarrow (\cos(\rho)\cos(\theta),\cosa(\rho)\sin(\theta)\sin(\rho))
+
+		\end{aligned}
+	.\] 
+		\[
+		\begin{aligned}
+			\psi^{-1} : &V' \rightarrow S_{2}\\
+				    &(\theta, t) \rightarrow (\cos\theta, \sin\theta, t)
+		\end{aligned}
+		.\] 
+		Sia $f : A \rightarrow \R^m$ differenziabile \\ 
+		$A$ aperto di $\R^n$, $p\in A$\\
+		 $d_p f : \R^n \rightarrow \R^m$ ed è definito\\
+		 $\ \ \ v \rightarrow \mathcal J f_p\cdot v$, dove $\mathcal J$ è la Jacobiana\\
+		 Sia  $\alpha : I \rightarrow \R^n$ curva con $\alpha(t_0) = p$ e $\alpha'(t_0) = v$ per $t_0\in I$\\
+		 Allora $df_p(v) = \beta'(0)$\\
+		  $\beta(t) = f(\alpha(t))$
 \end{document}
