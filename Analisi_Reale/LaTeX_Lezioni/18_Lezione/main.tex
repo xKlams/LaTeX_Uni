@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
-\title{Lezione 17 Analisi Reale}
-\date{2025-04-30}
+\title{Lezione 18 Analisi Reale}
+\date{2025-05-06}
 \author{Federico De Sisti}
 
 \input{../../../setup.tex}
@@ -9,134 +9,100 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{Proprietà spazi L^p}
-	\textbf{Ricorda:}
-	\[
-		L^P(X) = \{f:X \rightarrow [-\infty, +\infty], f \text{ misurabile }, \int_X |f|^pd\mu < +\infty\}, 1\leq p  < +\infty
-	.\] 
+	\subsection{Inclusione sugli spazi $L^p$}
 	\begin{prop}
-		$L^p$ è uno spazio vettoriale
+	Sia $(X,\mu)$ uno spazio di misura finito $(\mu(X) < +\infty)$ se  $p,q\geq 1$ con  $p>q$\\
+	 $ \Rightarrow  L^p(X)\subsetneq L^q(X)$\\
+	 e $\exists c> 0 t.c. \|f\|_q\leq c\|f\|_p \ \ \forall f\in L^p(X)$\\
+	 Inoltre se  $f: X \rightarrow [-\infty, +\infty]$ è misurabile ed è tale che $\exists M> 0$ tale che  $|f(x)| \leq M$ per quasi ogni  $x\in X \Rightarrow f\in L^p(X) \ \ \forall p\geq 1 $ 
 	\end{prop}
-	\begin{dimo}
-		$\forall f,g\in L^p(X), \ \ \forall \alpha,\beta\in \R \Rightarrow  \alpha f + \beta g$   è misurabile
-		\[
-			\int_X|\alpha f + \beta g|^pd\mu \leq \int (|\alpha||f| + |\beta||g|)^pd\mu
-		\] 
-		\[
-		\leq 2^{p-1}(\int_X|\alpha|^p|f|^pd \mu + \int_X|\beta|^p|g|^pd\mu) < +\infty
-		.\] 
-	\end{dimo}
-Per definizione, su $L^p(X)$ è ben definita la funzione
-\begin{center}
-	
-	 \begin{aligned}
-	 	$
-		 \|\ \ \|_p: &L^p(X) \rightarrow [0,+\infty)\\
-		     &f \rightarrow ||f||_p = (\int_X|f|^pd\mu)^\frac 1p$
-	 \end{aligned}
-\end{center}
-\begin{prop}[Disuguaglianza di H$\ddot{o}$lder]
-	Sia $p>1$ e  $p' = \frac {p}{p-1}$  $(\frac 1 {p'} + \frac {1}{p} = 1)\ \ \forall f\in L^p(X), g\in L^{p'}(X)$\\
-	 $ \Rightarrow fg\in L^1(X)$ e 
+	 \begin{dimo}
+		 $f$ misurabile\\
+		 $f\in L^p \Leftrightarrow \int_X|f|^p < +\infty$\\
+		 $f\in L^q \Leftrightarrow \int_X|f|^q < +\infty$\\
+		 $p > q \ \ |f|^q \leq |f|^p \Leftrightarrow 1 \leq |f|^{p-q}$ vero se $|f|\geq 1$\\
+		 La dimostrazione segue ma è costruttiva, la hai nella chat con alberto.\\
+	 \end{dimo}
+	 \textbf{Osservazione}\\
+	 $\mu(X) <+\infty$\\
+	 $\{f_n\}, f\in L^p(X)\ | \ f_n \rightarrow f $ in $L^p(X) \Rightarrow  f_n \rightarrow f$ in $L^q(X)\ \ \forall 1\leq q < p$\\
+	 Usando Holder come nella dimostrazione
+	  \[
+		  \|f_n-f\|^q_q = \int_X|f_n-f|^qd \mu \leq \left(\int_X|f_n-f|^{q-\frac pq} \right)^{\frac qp}\cdot \left(\int_X (1)^{\frac q{p-q}} \right)^{\frac{p-q}p}
+	 \] 
 	 \[
-		 \int_X|fg|d\mu\leq \|f\|_p\|g\|_p = (\int_X|f|^pd\mu)^{1/p}(\int_X|g|^{p'}d\mu)^{1/{p'}}
-
+	  = \|f_n-f\|^q_p\cdot \mu(X)^{\frac{p-q}p} < +\infty
 	 .\] 
-\end{prop}
-\begin{dimo}
-	Si usa la disuguaglianza di Young se $f\neq 0, g\neq 0$\\
-	$ \Rightarrow  \|f\|_p = (\int_X|f|^pd\mu)^{1/p} > 0$\\
-	$ \|g\|_{p'} = (\int_X|g|^{p'}d\mu)^{1/p'} > 0$\\
-	Per quasi ogni (q.o.) $x\in X$
+	 $f_n \rightarrow f$ in $L^q$ \\
+	 \textbf{Esercizio}\\
+	 $\mu(X) < +\infty$  $f: X \rightarrow [-\infty, +\infty]$ misurabile tale che $f$ essenzialmente limitata $ \Leftrightarrow \exists M\in \R \ | \ |f|<M$ q.o. in $\X$\\
+	 $X = [0,1], \mu =m$\\
+	 $f(x) = \begin{cases}
+	 	+\infty \ \ se\ \  x = 0\\
+		1 \ \ se\ \  x> 0
+	 \end{cases} \Rightarrow $ $f$ è essenzialmente limitata\\
+	 $f(x) = \begin{cases}
+	 	0 \ \ se \ \ x = 0\\
+		\frac 1 x\ \ se \ \ x  >0
+	 \end{cases} \Rightarrow $ $f$ non è essenzialmente limitata\\
+	 $\exists \lim_{p \rightarrow+\infty}\|f\|_p?$
 	 \[
-	|f(x)| < +\infty, \ \ |g(x)|<+\infty
-	.\] 
-	$\displaystyle\frac{|f(x)|}{\|f\|_p}\frac{|g(x)|}{\|g\|_{p'}}\leq \frac 1p\frac{|f(x)|^p}{\|f\|_p^p} + \frac {1}{p'}\frac{|g(x)|^{p'}}{\|g\|^{p'}_{p'}}$\\
-	$\displaystyle\Rightarrow \int_X\frac {|f||g|}{\|f\|_p\|g\|_{p'}d\mu}\leq \frac 1p\frac{1}{\cancel{\int_X|f|^pd\mu}}\cancel{\int_X|f|^pd\mu} +\frac 1{p'}\frac{1}{\cancel{\int_X|g|^{p'}d\mu}}\cancel{\int_X|g|^{p'}d\mu} = 1 $
-\end{dimo}
-\begin{prop}[Disuguaglianza di Minkowski]
-	Sia $1\leq p < +\infty$\\
-	$\forall f,g\in L^p(X) \ \ \|f + g\|_p \leq \|f\|_p + \|g\|_p \\ ((\int_X|f + g|^pd\mu)^{1/p}\leq (\int_X |f|^pd\mu)^{1/p} + (\int_X|g|^pd\mu)^{1/p}))$
-\end{prop}
-\begin{dimo}
-	$\displaystyle\int_X |f + g|^pd\mu= \int_X|f+g||f+g|^{p-1}d\mu\leq\int_X(|f| + |g|)|f+g|^{p-1}d\mu = \int_X|f||f+g|^{p-1}d\mu + \int_X|g||f+g|^{p-1}d\mu\\\substack{\leq\\\text{Holder}}(\int_X|f|^pd\mu)^{1/p}(\int_X|f+g|^{(p-1)\frac{p}{p-1}})^{\frac{p-1}p}+ (\int_X|g|^pd\mu)^{1/p}(\int_X|f+g|^{(p-1)\frac{p}{p-1}}d\mu)^{\frac{p-1}p}$\\
-	$\leq \|f\|_p\|f+g\|_p^{p-1} + \|g\|_p \|f+g\|_p^{p-1}$ 
-	basta ultimamente dividere per $\|f+g\|^{p-1}$ entrambi i lati della disequazione
-\end{dimo}
-\begin{prop}
-	$\|f\|_p = (\int_X|f|^pd\mu)^{1/p}$ è una norma su  $L^p(X)$
-\end{prop}
-\begin{dimo}
-	(i)$|\f||_p \geq \forall f\in L^p(X)$\\
+		 \left(\int_X|f|^qd\mu \right)^{\frac 1q} \leq \mu(X)^{\frac 1q - \frac 1p} \left(\int_X |f|^pd\mu \right)^{\frac 1p}
+	 .\] 
 	 \[
-	||f||_p = 0 \Leftrightarrow \int_X |f|^pd\mu = 0 \Leftrightarrow f = 0 \ q.o.
-	.\] 
-	(ii) $\|\alpha f\|_p\ \ \ \alpha\in\R = |\alpha| \|f\|_p$\\
-	 (iii)  $\|f+g\|_p\leq \|f\|_p + \|g\|_p$
-\end{dimo}
-\textbf{Osservazione:}\\
-A rigore bisognerebbe definire $L^p(X)$ come l'insieme i cui elementi sono le classi di equivalenza 
-\[
-	[f] = \{g:X \rightarrow [-\infty,+\infty] \ \ : \ \ f = g \ \ q.o.\}
-.\] 
-L'insieme quozientato con questa relazione ci permette di definire bene la norma, altrimenti l'elemento nullo non è unico (posso fare cambiamenti di misura nulla).\\
-\begin{teo}
-	Se $p \geq 1 \Rightarrow  L^p(X) $ è uno spazio vettoriale normato completo (spazio di Banach)
-\end{teo}
-\begin{dimo}[La chiede all'orale]
-	Sia $\{f_n\}\subset L^p(X)$ successione di Cauchy\\
-	 $ \Leftrightarrow \forall \e > 0 \exists n_\e\ :\ \|f_n - f_m\|_p < \e \ \ \ \forall n,m\geq n_\e$ \\
-	 \textbf{Tesi:} $\exists f\in L^p(X)\ $ tale che  $f_n \rightarrow f $ in $L^p (X) \Leftrightarrow \|f_n-f\|_p \rightarrow 0$ per $ n \rightarrow +\infty$ \\
-	 Usiamo la definizione di successione di Cauchy con $\e = \frac {1}{2^k}$\\
-	  $\forall k \ \ \exists n_k$ tale che 
-	   \[
-		   \|f_n - f_m \| < \frac {1}{2^k} \ \ \forall n,m\geq n_\e
-	  .\] 
-	  selezionando $n_{k+1}> n_k$\\
-	  Si seleziona una estratta  $\{f_{n_k}\}$ tale che\\
-	   \[
-		   \|f_{n_{k+1}}-f_{n_k}\|_p < \frac {1}{2^k} \ \ \ \forall k\geq 1
-	  .\] 
-	  Consideriamo la nuova successione:
-	  \[
-	  g_j(x) = \sum^{j}_{k = 1} |f_{n_{k+1}}(x) - f_{n_k}(x)|\in L^p(X)
-	  .\] 
-	  $\displaystyle\|g_j\|_p = \|\sum^{j}_{k = 1}|f_{n_{k+1}} - f_{n_k}|\|_p\leq \sum^{j}_{k=1}\|f_{n_{k+1}} - f_k\|_p\leq \sum^{j}_{k=1}\frac{1}{2^k} < 1$\\
-	  $\displaystyle \Rightarrow  \int_X|g_j|^pd\mu\leq 1 \ \ \ \forall j$ \\
-	  \textbf{Attenzione}\\
-	  Il modulo è fondamentale così $g_j$ è una funzione crescente! \\$\displaystyle g_{j+1} \geq g_j \ \ \forall x\in X \Rightarrow \exists \lim_{ j \rightarrow+\infty}g_j(x) = g(x) = \sum^{+\infty}_{k = 1}|f_{n_k-1}(x) - f_{n_k}(x)|$\\
-	  Usando il teorema di B. Levi
-	  \[
-		  \int_X|g|^pd\mu = \lim_{j \rightarrow +\infty}\int_X |g_j|^p d\mu \leq 1
-	  .\] 
-	  $\displaystyle \Rightarrow  g\in L^p(X) \Rightarrow  g^p\in L^1(X) \Rightarrow g^p $ (e quindi anche $g$) è finita quasi ovunque.\\
-	 per quasi ogni  $x\in X$
-	  \[
-		  g(x) = \sum^{+\infty}_{k =1} |f_{n_{k+1}} - f_{n_k}(x)| < +\infty
+		 \left(\frac{\int_X|f|^qd\mu}{\mu(X)} \right)^{\frac 1q}\leq \left(\frac{\int_X|f|^pd\mu}{\mu(X)} \right)^{\frac 1p}\ \ \ con \ \ p> q
 	 .\] 
-	 $ \Rightarrow  $ per quasi ogni $x\in X$
-	  \[
-		  \sum^{+\infty}_{k = 1}[f_{n_{k+1}}(x) - f_{n_k}(x)] \text{ è convergente}
-	 .\] 
-	 $ \displaystyle\Rightarrow  \exists \lim_{j \rightarrow+\infty} \sum^{j-1}_{k=1}(f_{n_{k+1}}(x)-f_{n_k}(x))$ \\
- $ \displaystyle = \lim_{ j \rightarrow+\infty} (\cancel{f_{n_2}} - f_{n_1} + \cancel{f_{n_3}} - \cancel{f_{n_2}} + \ldots + f_{n_j} - f_{n_{j - 1}}$\\
- $ = - f_{n_1} +\lim_{j \rightarrow+\infty}f_{n_j}$\\
- $ \Rightarrow  \exists \lim_{ j \rightarrow+\infty} f_{n_j}(x)$ per ogni $x$\\
- $f(x) = \lim_{ j \rightarrow+\infty} f_{n_j}(x)$\\
- $\exists $ quasi ovunque, è misurabile\\
- $\forall \e > 0 $
+	 la funzione $ \varphi(p) = \left(\frac {1}{\mu(X)} \int_X|f|^pd\mu \right)^{\frac 1p}$\\
+	 è monotona crescente quindi $\displaystyle\exists \lim_{p \rightarrow +\infty} \varphi(p) = \lim_{p \rightarrow +\infty} \frac{\|f\|_p}{\mu(X)^{\frac 1p}} = \lim_{p \rightarrow +\infty}\|f\|_p$\\
+	 \textbf{Esempio}\\
+	 definiamo $\|f\|_{\infty} = \inf\{M > 0 \ | \ |f|\leq M \ \ q.o.\}$
+	 \begin{itemize}
+		 \item $f = $ costante su  $X\ | \ \mu(X) < +\infty$ \\
+			 $ \Rightarrow  \|f\|_\infty = |c| \left(\mu(X) \right)^{\frac 1 p} \xrightarrow{ \rightarrow +\infty} c = \|f\|_\infty$\\
+			 se $f$ è limitata in generale
+		 \item $|f|\leq M \Rightarrow  \|f\|_p \leq M(\mu(X) )^{\frac 1p} \rightarrow M \Rightarrow  \|f\|_p \leq <\mu(X)^{\frac 1p}$ 
+			 \[
+				 \limsup_{p \rightarrow +\infty}\|f\|_p \leq \inf\{M\in \R^+\ | \ |f| < M \ \ q.o.\} =\|f\|_\infty
+			 .\] 
+	 \end{itemize}
+Disuguaglianza opposta:\\
+sia $\alpha < \|f\|_\infty$ quindi \\
+$\mu(\{x\ |\ |f| > \alpha\} ) > 0 $ perché se per assurdo non valesse, quindi  $=0$\\
+ $|f(x)| \leq \alpha$ quasi ovunque ma è assurdo perchè  $\alpha < \|f\|_\infty$che è un inf
   \[
-	  \int_X|f_m-f_{n_j}|^p d\mu= \|f_m - f_{n_k}\|_p < \e \ \ \forall m\geq n_e \text{ per } j \ \text{suff. grande}
- .\] 
- \[
-	 \int_X|f_n-f|^pd\mu\substack{\leq\\\text{Fatou}}\liminf_{j \rightarrow +\infty}\int_X|f_m - f_{n_j}|^pd\mu \leq \e^p
- .\] 
- \[
-  \Rightarrow f_n - f\in L^p e $\|f_n -f \|_p\leq \e \ \ \forall m\geq n_e$
- .\] 
- \[
-	 \Rightarrow f = f_n - (f_m - f)\in L_p \text{ e } \|f_m - f\|_p \leq \e \ \forall m\geq n_e
- .\] 
- $ \Rightarrow  \|f_m - f\|_p \xrightarrow{ m \rightarrow +\infty} 0$
-\end{dimo}
+	  \|f\|_p = \left(\int_X |f|^pd\mu \right)^{\frac 1p}\geq \left(\int_{|f|>\alpha}|f|^pd\mu \right)^{\frac 1p} \geq \alpha \mu(\{|f|> \alpha\})^{\frac 1p} \xrightarrow
+  { p \rightarrow+\infty}\alpha.\] 
+  \[
+	  \liminf_{p \rightarrow+\infty} \|f\|_p \geq \alpha \ \ \forall \alpha < \|f\|_\infty \Rightarrow  \liminf_{p \rightarrow +\infty}\geq \|f\|_\infty \Rightarrow  \lim_{ p \rightarrow +\infty}\|f\|_p = \|f\|_\infty
+  .\] 
+  \begin{defi}
+  	$(X,\mu)$ spazio di misura
+	 \[
+		 L^\infty = \{f: X \rightarrow [-\infty, +\infty] \ misur.\ | \ \exists M\geq 0\ | \ |f| \leq M  \ \ q.o.\}
+	.\] 
+  \end{defi}
+  \begin{lemm}
+  	$f\in L^\infty(X) \Rightarrow  |f|\leq \|f\|_\infty$ q.o. su $X$
+  \end{lemm}
+  \begin{dimo}
+  	Appunti di Alberto
+  \end{dimo}
+  \begin{prop}
+  	$L^\inftu(X)$ è uno spazio vettoriale,  $\|\cdot\|_\infty$ è una norma su  $L^\infty$
+  \end{prop}
+  \textbf{Osservazione}\\
+  $[a,b]\subset\R$ intervallo chiuso e limitato\\
+  $C([a,b])\subset L^\infty((a,b),m)\ \ \ f\in C([a,b])$\\
+  $\|f\|_{C([a,b])} = \sup_{[a,b]}|f(x)|$\\
+	  $\|f\|_\infty = \inf\{M: \|f\|\leq M \ q.o.\}$\\
+	  $|f(x)| \leq \|f\|_{C([a,b])} \ \ \forall x\in [a,b]\\
+	  \Rightarrow  \|f\|_\infty \leq \|f\|_{C([a,b])}$\\
+  $|f(x)|\leq \|f\|_\infty \ q.o.$ in $[a,b]$\\
+  $ \Rightarrow  f(x) \leq \|f\|_\infty \ \ \forall x\in [a,b]$ \\
+  $\|f\|_{C([a,b])} = \|f\|_\infty$
+   \begin{prop}
+  	Siano $f\in L^\infty(X), g\in L^p(X) \ \ 1\leq p > +\infty$\\
+	 $ \Rightarrow  fg\in L^p(X)$ \\
+	 e $\|fg\|_p \leq \|f\|_\infty\|g\|_p$
+  \end{prop}
 \end{document}

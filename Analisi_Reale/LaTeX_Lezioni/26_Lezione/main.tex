@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
-\title{Lezione 26 Analisi Reale}
-\date{2025-05-28}
+\title{Lezione 25 Analisi Realae}
+\date{2025-05-27}
 \author{Federico De Sisti}
 
 \input{../../../setup.tex}
@@ -9,151 +9,133 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{Ricapitolando}
-	\[
-		\int_{X\times Y} \chi_P(x,y)d(\mu\times\nu) =\mu\times\nu(P) = \int_X\int_Y\chi_P(x,y)d\mu d\nu = \int_X\int_Y\chi_P d\nu d\mu
-	.\] 
-	In particolare se $P = A\times B \Rightarrow  \mu\times\nu(A\times B) = \mu(A)\cdot \nu(B)$ \\
-	$\forall E \subseteq X\times Y\ \ \mu\times\nu(E) = \inf\{\mu\times\nu(P), P$ plurirettangolo,  $E\subseteq P\}$ \\
-	$E\subseteq P \Rightarrow \mu\times\nu (E) \leq \mu\times\nu (P) \Rightarrow \mu\times\nu(E)\leq\inf\{\mu\times\nu(P), P\supseteq E\}$ \\
-	Se $\displaystyle E\subseteq \bigcup^{+\infty}_{i=1}A_i\times B_i = P \Rightarrow  \sum^{+\infty}_{k=1}\mu(A_i)\nu(B_i)\geq  \mu\times\nu(P) \geq \inf\{\mu\times\nu(P), \ P\supseteq E\}$ \\
-	$\mu\times\nu(E)\gqe \inf\{\mu\times\nu(P), P\supseteq E\}$\\
-	$ \Rightarrow  P$ plurirettangolo $ \Rightarrow  P\in M_{\mu\times\nu}$ \\
-	$\forall E\subseteq X\times Y\ \ \ \exists P_\infty = \bigcap^{+\infty}_{k=1}P_k, P_k$ plurirettangolo.\\
-	tale che $P_\infty\supseteq E$ e  $\mu\times\nu(P_\infty) =\mu\times\nu(E)$ \\
-	Quindi integrare secondo la misura prodotto è equivalente a integrare prima su una misura e poi sull'altra.\\
-\begin{lemm}
-	Sia $\{P_k\}$ una successione decrescente di plurirettangoli di misura  $\mu\times\nu$ finita.\\
-	 $P_1\supseteq P_2\supseteq\ldots, \ \mu\times\nu(P_k) < +\infty\ \ \forall k\ $  e sia $P_\infty = \bigcap^{+\infty}_{k=1}P_k$\\
-	 Allora $\forall y\in Y, \chi_{P_\infty}(\cdot, y)$ è $\mu$-misurabile,  $y \rightarrow \int_X \chi_{P_\infty}(x,y)d\mu$ è $\nu$-misurabile \\
-	 $\forall x\in X, \chi_{P_\infty}(X,\cdot)$ è  $\nu$-misurabile, $x \rightarrow \int_X\chi_{P_\infty} (x,y)d\nu$ è $\mu$-misurabile.\\
-	 Inoltre
+	\subsection{Prodotto di spazi di Misura}
+$(X,\mu), (Y,\nu)$ spazi di misura ( $\mu, \nu$ misure esterne)\\
+ $M_\mu$ misurabili in  $X$ rispetto a $\mu$\\
+ $M_\nu$ misurabili in  $Y$ rispetto a $\nu$ \\
+Vogliamo definire una misura in $X\times Y$\\
+che sia il prodotto delle due misure  $\mu\times \nu$\\
+ovvero si vuole che:\\
+se  $A\in M_\mu, B\in M_\nu$\\
+ $\mu\times\nu (A\times B)  = \mu(A)\nu(B)$\\
+ \textbf{Nota}\\
+ Non ci basta questo perché non tutti gli insiemi in  $X\times Y$ sono di forma  $A\times B$. Si può pensare ad una circonderenza in  $\R\times \R$, che non è il prodotto delle proiezioni. \\
+ \begin{defi}
+ 	La misura prodotto $\mu\times\nu$ su $X\times Y$ è definita da: $\forall E\subseteq X\times Y \ $
 	 \[
-		 \mu\times\nu(P_\infty) = \int_Y\int_X\chi_{P_\infty}(x,y)d\mu d\nu = \int_X\int_Y \chi_{p_\infty}d\nu d\mu
+		 \mu\times\nu(E) = \inf\left\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), \ A_i\in M_\mu, \ B_i\in M_\nu, \ E\subseteq \bigcup^{+\infty}_{i = 1}A_i\times B_i\right\}
+	.\] 
+	Se $A\in M_\mu, B\in M_\nu$  $ \Rightarrow R= A\times B$ rettangolo (misurabile) e $ \bigcup^{+\infty}_{i =1}A_i\times B_i$ si dice plurirettangolo.
+ \end{defi}
+ \textbf{Osservazione}\\
+  \begin{enumerate}
+	  \item $\mu\times\nu$ è una misura (esterna), infatti:
+		   \begin{itemize}
+			   \item $\mu \times \nu : X\times Y \rightarrow [0,+\infty]$ 
+			   \item $0\leq \mu\times\nu (\emptyset) \leq \sum^{}_{i}\mu(\emptyset)\nu(\emptyset) =0$
+			   \item Se $E\subseteq \sum^{+\infty}_{j = 1}E_j$\\
+				   Se $\exists j$ tale che  $\mu\times\nu(E_j) = +\infty \Rightarrow \mu\times \nu(E)\leq \sum^{+\infty}_{j = 1}\mu\times\nu(E_j)$ \\
+				   Se $\mu\times\nu(E_j) < +\infty \ \ \forall j$\\
+				   $ \Rightarrow  \forall j, \forall \e$ \ $\exists \{A_i^j\times B_i^j\}_i$\\
+				   tale che  $E_j\subseteq \bigcup^{+\infty}_{i= 1}A_i^j\times B_i^j$\\
+				   $\mu\times\nu(E_j) \leq \sum^{+\infty}_{i=1}\mu(A^j_i)\nu(B_i^j) < \mu\times \nu(E_j + \frac{\e}2^i$\\
+				   $E\subseteq \bigcup^{+\infty}_{j = 1}E_j\subseteq \bigcup^{+\infty}_{j=1} \bigcup^{+\infty}_{i = 1}A_i^j\times B^j_i$ è un plurirettangolo\\
+				   $ \Rightarrow \mu\times\nu(E)\leq \sum^{+\infty}_{jj=1} \sum^{+\infty}_{u = 1}\mu(A_i^j)\times\nu(B_i^j)$\\
+				   $\leq \sum^{+\infty}_{j=1}(\mu\times\nu(E_j) + \frac{\e}{2^j})$\\
+				   $= \sum^{+\infty}_{j=1}\mu\times\nu(E_j) + \e$ per $\e \rightarrow 0$\\
+				   $\mu\times\nu(E)\leq \sum^{+\infty}_{j=1}\mu\times\nu(E_j)$
+		  \end{itemize}
+	  \item La famiglia dei plurirettangoli è chiusa per unioni numerabili e per intersezioni finite, siano $A_i,B_i,C_i,D_i$ misurabili rispettivamente per  $\mu$ e per  $\nu\ \ \forall i$
+		  \[
+		  P = \bigcup^{+\infty}_{i=1}A_i\times B_i, \ Q = \bigcup^{+\infty}_{j=1}C_j\times D_j
+		  .\] 
+		  \[
+		  P\cap Q = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j =1 }A_i\times B_i\cap C_j\times D_j  = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j=1}(A_i\cap C_j)\times (B_i\cap D_j)
+		  	.\] 
+		\item La differenza di due rettangoli è un plurirettangolo\\
+			$R = A\times B, \ \ S= C\times D$\\
+			 $R\setminus S = A\setminus C\times B \cup A\cap C\times V\setminus D$
+		 \item Ogni plurirettangolo si può scrivere come unione numerabile di rettangoli disgiunti.
+			  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i = A_1\times B_1 \cup (A_2\times B_2\setminus A_1\times B_1) \cup A_3\times B_3\setminus \bigcup^{2}_{i=1}A_i\times B_i)$\\
+			  $\displaystyle P = A_1\times B_1 \cup\bigcup^{+\infty}_{i=2}(A_i\times B_i \setminus \bigcup^{i-1}_{j=1}A_j\setminus B_j)$
+ \end{enumerate}
+ $P$ plurirettangolo\\
+  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i$ \\
+  $\chi_P(x,y)$\\
+   $\forall y\in Y$ fissato\\
+    $x\in X \rightarrow \chi_P(x,y) = \begin{cases}
+    	1 \ \ se \ \ (x,y)\in P\\
+    	0 \ \ se \ \ (x,y)\not\in P
+    \end{cases} = \begin{cases}
+    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
+	1 \ \ se \ \ x\in A_i\ \ \forall i\ \ \text{tale che } y\in B_i
+    \end{cases}$\\
+    $ = \begin{cases}
+    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
+	\chi_{ \bigcup^{}_{\substack{i\\ y\in B_i}}A_i}(x)
+    \end{cases}$\\
+    $ \Rightarrow  \forall y\in Y \ \chi_P(\cdot,y)$ è $\mu$-misurabile\\
+    Se $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
+    $\forall y\not\in \bigcup^{}_{i}B_i' \Rightarrow  \chi_p(\cdot, y) \equiv 0$ \\
+    Se $y\in \bigcup^{}_{i}B'_i \Rightarrow  \exists! i$  tale che $y\in B_i$ e $\chi_p(\cdot, y) = \chi_{A'_i}$\\
+     $ \Rightarrow  \int_X \chi_p(x,y)d\mu = \begin{cases}
+     	0\ \ se \ \ y\not\in \bigcup^{+\infty}_{i =1}B'_i\\
+	\mu( \bigcup^{}_{\substack{i\\y\in B_i'}}A'_i)
+\end{cases} = \sum^{+\infty}_{i=1}\mu(A'_i)\chi_{B'_i}(y)$ è $\nu$-misurabile\\
+$y\in B_i'\cap B_j' \Rightarrow A'_i\cap A'_j = \emptyset$
+\begin{prop}
+	Se $P\subset X\times Y$ plurirettangolo\\
+	 $ \Rightarrow  \mu\times\nu(P)= \int_Y \left(\int_X \chi_P(x,y)d\mu \right)d\nu = \int_X \left(\int_Y\chi_P(x,y)d\nu \right)d\mu$
+\end{prop}
+\begin{dimo}
+	$P\subsetetq \bigcup^{+\infty}_{i=1}A_i\times B_i, A_i\in M_\mu, B_i\in M_\nu$\\
+	$ \Rightarrow  \chi_P(x,y)\leq \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i} (x,y)$ e sono funzioni caratteristiche di plurirettangoli\\
+	$\displaystyle\int_Y \left(\int_X \chi_P(x,y) d\mu\right)d\nu\leq \int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i}(x,y)d\mu \right) d\nu$ \\
+	$\displaystyle\leq \int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A_i\times B_i} (x,y)d\mu \right) d\nu$\\
+	$\displaystyle = \sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A_i}(x)\chi_{B_i}(y)d\mu \right)d\nu$\\
+	$\displaystyle = \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i)$ \\
+	$\displaystyle \Rightarrow  \int_Y \left( \int_X \chi_P(x,y)d\mu)d\nu\leq \inf\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), P\subseteq \bigcup^{+\infty}_{i=1}A_i\times B_i\} = \mu\times \nu(P)$\\
+		$\displaystyle P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$\\
+$A_i'\times B_i'\cap A'_j\times B_j' = \emptyset$ se $i\neq j$ \\
+$\displaystyle\int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A'_i\times B_i'}d\mu \right)d\nu\\
+=\int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A'_i\times B'_i}d\mu \right) d\nu\\
+=\sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A'_i\times B'_i}d\mu \right)d\nu = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B'_i)\geq \mu\times\nu(P) $
+\end{dimo}
+\begin{lemm}
+	Se $E\subseteq X\times Y$\\
+	 \[
+		 \mu\times\nu(E) = \inf \{\mu\times\nu (P), P \text{ plurirettangolo } E\subseteq P\}
 	 .\] 
 \end{lemm}
-\textbf{Osservazione}\\
-Quindi ciò che vale in generale per i plurirettangoli vale anche per il limite dell'intersezione.\\
-
 \begin{dimo}
-	$\displaystyle\mu\times\nu(P_\infty) = \lim_{ k \rightarrow +\infty}\mu\times\nu (P_k) = \lim_{k \rightarrow +\infty}\int_Y\int_X\chi_{P_k}(x,y)d\mu d\nu$\\
-	Il primo passaggio è giustificato dal fatto che $\{P_k\}$ è una successione decrescente di misurabili di misura finita.\\
+	$E\subseteq P \Rightarrow  \mu\times\nu (E)\leq \mu\times \nu (P)$ \\
+	$ \Rightarrow \mu\times\nu(E)\leq \mu\times \nu(P)$ \\
+	$ \Rightarrow \mu\times\nu(E)\leq \inf\{\mu\times\nu(P), \ P\ \text{ plurirettangolo } E\subseteq P\}$ \\
+	Se  $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
+	$ \Rightarrow  \mu\times \nu (P) = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B_i')\geq \mu\times \nu(E)$
+\end{dimo}
+\begin{prop}
+	$P\subseteq X\times Y$ plurirettangolo  $ \Rightarrow P$ è $\mu\times\nu$-misurabile
+\end{prop}
+\begin{dimo}
+	Basta dimsotrare che $A\in M_\mu, B\in M_\nu \Rightarrow  A\times B\in M_{\mu\times\nu}$ \\
+	Th.  $\forall E\subseteq X\setminus Y\ \ \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) = \mu\times \nu(E)$\\
+	Sia  $Q$ plurirettangolo, $Q\geq E$\\
 	 \[
-		 \chi_{P_\infty}(x,y)  = \lim_{k \rightarrow +\infty} \chi_{p_k}(x,y)\ \ \forall x\in X, \ \forall y\in Y
+	 \mu\times \nu(Q\cap A\times B) + \mu\times\nu(Q\setminus A\times B)
 	 .\] 
-	 $\chi_{P_\infty}(\cdot, y)$ è  $\mu$-misurabile $\forall y\in Y$ \\
-	 $\chi_{P_\infty}(x,\cdot)$ è  $\nu$-misurabile $\forall x\in X$\\
- Per passare al limite all'interno dell'integrale devo dimostrare che la prima funzione (la più grande) abbia integrale finito.\\
-  \[
-	  \mu\times\nu(P_1) = \int_Y\int_X\chi_{P_1}(x,y)d\mu d\nu < +\infty
- .\] 
- $ \Rightarrow  $ per quasi ogni $y$ \ \ $\displaystyle\int_X\chi_{P_1}(x,y)d\mu < +\infty$ \\
- \[
-	 \lim_{k \rightarrow +\infty}\int_X\chi_{P_k}(x,y)d\mu = \int_X\chi_{P_\infty}(x,y)d\mu
- .\] 
- per $\nu$-quasi ovunque $y\in Y$ \\
- \[
-	 \psi_k(y) = \int_X\chi_{P_k}(x,y)d\mu
- .\] 
- $\psi_k(y) \xrightarrow{k \rightarrow +\infty} \psi(y) = \int_X \chi_{P_\infty}(x,y)d\mu$  per $\nu$ quasi ogni  $y$ \\
- $\displaystyle\lim_{k \rightarrow +\infty}\int_Y \psi_k(Y)d\nui = \int_Y\psi(y)d\nu\hfill $ per convergenza monotona
- \[
-	 \int_Y\psi(y)d\nu =\int_Y\int_X \chi_{P_\infty}(x,y)d\mu d\nu
- .\] 
+	 $\displaystyle = \int_Y \left(\int_X \chi_{Q\cap A\times B} (x,y)d\mu \right)d\nu + \int_Y \left(\int_X \chi_{Q\setminus A\times B} \right)d\nu$\\
+	 $\displaystyle = \int_Y\int_X(\chi_{Q\cap A\times B} + \chi_{Q\setminus A\times B} )d\mu\dnu = \int_Y\int_X \chi_Qd\mu\dnu = \mu\times \nu (Q)$ \\
+	 $\displaystyle\mu\times\nu (E\cap A\times B) + \mu\times \nu (E\setminus A\times B)$\\ Prendendo l'inf rispetto a  $Q$ \[
+		 \Rightarrow  \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) \leq\mu\times\nu(E) \Rightarrow  A\times B \text{ misurabile}
+	 .\] 
 \end{dimo}
-\begin{lemm}
-	Sia $N\subseteq X\times Y$ tale che  $\mu\times\nu (N) = 0$\\
-	 $ \Rightarrow $ per $\nu$-quasi ogni  $y\in Y$ fissato,  $\chi_N(\cdot, y)$ è  $\mu$-misurabile $y \rightarrow\int_X\chi_N(x,y)d\mu$ è $\nu$-misurabile (definita q.o.)\\
-	 per $\mu$-quasi ogni $x\in X$ fissato,  $\chi_N(x,\cdot)$ è $\nu$-misurabile e $x \rightarrow \int_Y \chi_N (x,y)d\nu$  è $\mu$-misurabile (definita q.o.)\\
-	 e inoltre $\int_Y\int_X\chi_{N(x,y)}d\mu d\nu = \int_X\int_Y\chi_N (x,y) d\nu d\mu = 0 = \mu\times\nu(N)$
- \end{lemm}
- \begin{dimo}
-	 $\mu\times\nu(N) = 0 = \inf\{\mu\times\nu (P), P$ plurirettangolo,  $P\supseteq N\}$ \\
-	 $\exists \{P_k\}$ successione di plurirettangoli con  $P_k\supseteq N$ tale che  $\mu\times\nu (P_k) < \frac 1k \ \ \forall k$\\
-	 Eventualmente sostituendo
-	  \[
-		  P_k \ \ \text{con} \ \ P'_k = \bigcap^{k}_{j=1}P_j
-	 .\]  
-	 si può supporre $P_1\supseteq P_2\supseteq\ldots$\\
-	 $\displaystyle N\subseteq P_k \ \ \forall k \Rightarrow  N\subseteq \bigcap^{+\infty}_{k-1}P_k = P_\infty$ con $\displaystyle\mu\times\nu (P_\infty) = 0= \int_Y\int_X \chi_{P_\infty}(x,y)d\mu d\nu = \int_X\int_Y\chi_{P_\infty}(x,y)d\nu d\mu$\\
- $\chi_N(x,y)\leq \chi_{P_\infty}(x,y)\hfill (N\subseteq P_\infty)$ \\
- per $y\in Y$ fissato
-  \[
-	  \chi_N(\cdot, y)\leq \chi_{P_\infty}(\cdot, y)
- .\] 
- \[
-	 \int_Y\int_X \chi_{P_\infty}(x,y)d\mu d\nu \Rightarrow \int_X\chi_{P_\infty}(x,y)d\mu = 0
- .\]  Per $\nu$-quasi ogni $y\in Y$\\
-  \[
-	  \Rightarrow \chi_{P_\infty}(\cdot, y) =0 
- .\] 
- \[
-  \Rightarrow  \chi_N(\cdot, y) =0 \ \ q.o.\ \ in \ \ X
- .\] 
- per $\nu$-quasi ogni $y\in Y$\\
-  $ \Rightarrow $ per $\nu$-quasi ogni $y\in Y$,  $\chi_N(\cdot, y)$ è  $\mu$-misurabile ($ =0$ quasi ovunque)\\
-  e  $\displaystyle\int_X\chi_N(x,y) d\mu = 0 $ per  $\nu$-quasi ogni $y\in Y$\\
-   $\displaystyle \Rightarrow  \int_Y(\int_X\chi_N(x,y)d\mu)d\nu = 0$
- 
- \end{dimo}
- \begin{prop}
- 	Sia $E\subseteq X\times Y$ tale che  $E$ è  $\mu\times\nu$-misurabile e  $\mu\times\nu(E) < +\infty$\\
-	Allora:
-	\begin{itemize}
-		\item 	per $\nu$-q.o. $y\in Y$ fissato,  $\chi_E(\cdot,y)$ è  $\mu$-misurabile e $y \rightarrow \int_X\chi_E(x,y)d\mu$ è $\nu$-misurabile
-		\item per $\mu$-q.o. $x\in X$ fissato,  $\chi_E(x,\cdot)$ è $\nu$-misurabile e $ x \rightarrow \int_Y\chi_E(x,y)d\nu$ è  $\mu$-misurabile
-	\end{itemize}
-	Inoltre $\displaystyle\int_Y\int_X\chi_E(x,y)d\mu d\nu = \int_X\int_Y\chi_E(x,y)d\nu d\mu \\= \mu\times\nu(E) = \int_{X\times Y}\chi_E(x,y)d(\mu\times\nu)$
- \end{prop}
+\begin{prop}
+	$\mu\times \nu$ è regolare, ovvero  $\forall E\subset X\times Y\ \ \exists F\in M_{\mu\times\nu}$ tale che  $E\subseteq F$ e  $\mu\times\nu(E) = \mu\times\nu(F)  \Rightarrow  A\times B$ misurabile.
+\end{prop}
 \begin{dimo}
-	$\mu\times\nu(E) = \inf\{\mu\times\nu(P), E\subseteq P, P$ plurirettangolo$\}$\\
-	$ \Rightarrow  \exists P_\infty = \bigcap^{+\infty}_{k=1}P_k$, $\{P_k\}$ pulrirettangi  $P_k\subseteq P_{k+1}$\\
-	tale che  $E\subseteq P_{\infty}$ e  $\mu\times\nu(E) = \mu\times\nu(P_\infty)< +\infty$\\
-	 $E \ \ \mu\times\nu$-misurabile  $ \Rightarrow  \mu\times\nu (P_\infty\setminus E) =\mu\times\nu (P_\infty) - \mu\times\nu(E) = 0$ \\
-	 $ \Rightarrow  \chi_E(x,y) = \chi_{P_\infty} - \chi_{P_\infty\setminus E}(x,y)$ \\
-	 La prima verifica la tesi per lemma $1$ e la seconda parte verifica il la tesi per lemma $2$
+	per esercizio.
 \end{dimo}
-\begin{defi}
-	Uno spazio di misura $(X,\mu)$ si dice  $\sigma$-finita se $X = \bigcup^{+\infty}_{i=1}X_i$ con $X_i$ misurabili, $X_i\cap X_j = \emptyset \ \ \ $ se  $i\neq j$ e  $\mu(X_i) < \infty \ \forall i$
-\end{defi}
-\begin{teo}[Tonelli]
-	Siano $(X,\mu), (Y,\nu)$ spazi di misura  $\sigma$-finiti, sia $f: X \times Y \rightarrow [0,+\infty)$\\ $\mu\times\nu$-misurabile.\\
-	Allora:
-	\begin{enumerate}
-		\item per $\nu$-q.o. $y\in Y, \ f(\cdot ,y)$ è  $\mu$-misurabile e \\
-			$y \rightarrow \int_X f(x,y)d\mu$ è $\nu$-misurabile
-		\item per $\mu$-q.o, $\xin X$, $f)x,\cdot)$ è $\nu$-misurabile e\\
-			$x \rightarrow\int_Y f(x,y)d\nu$  è $\mu$-misurabile
-	\end{enumerate}
-	Inoltre 
-	 \[
-	\int_{X\times Y}f(x,y)d(\mu\times\nu) = \int_Y\int_X f(x,y)d\mu d \nu = \int_X\int_Y f(x,y)d\nu d\mu
-	.\] 
-\end{teo}
-\begin{dimo}
-Primo caso: $\mu(X) < +\infty, \mu(Y) < +\infty$\\
-$f \geq 0, $ misurabile  $ \Rightarrow  \exists \{s_k\}$ successione di funzioni semplici $s_k(x,y) \xrightarrow{ k \rightarrow +\infty} f(x,y) \ \ \forall (x,y)\in X\times Y \ \ s_k\leq s_{k+1}\ \ \forall k$\\
-\[
-	\int_{X\times Y}f(x,y) d (\mu\times\nu) = \lim_{ k \rightarrow+\infty} \int_{X\times Y}s_k (x,y)d (\mu\times\nu)
-.\] 
-verifica la tesi perché combinazione lineare finita di funzioni caratteristiche.\\
-secondo caso $X,Y\ \ \sigma$-finiti\\
-$X = \bigcup^{+\infty}_{i=1}X_i,\ \ \mu(X_i) < + \infty \ \forall i$
-$Y = \bigcup^{+\infty}_{j=1}Y_j,\ \ \mu(Y_j) < + \infty \ \forall j$\\
-$f(x,y) = \sum^{+\infty}_{i,j=1}f(x,y)\chi_{X_i}(x)\chi_{Y_j}(y)$\\
-$= \sum^{+\infty}_{i,j=1}f(x,y)\chi_{X_i\times Y_j}(x,y)$\\
-Quindi è combinazione di funzioni che verificano la tesi, quindi anche $f$ verifica la tesi
 
-\end{dimo}
-\begin{teo}[Fubini]
-	Siano $(X,\mu), (Y,\nu)$ spazi di misura  $\sigma$-finiti\\
-	Se $f\in L^1(X\times Y, \mu\times \nu)$\\
-	 $ \Rightarrow $ stessa tesi del teorema di Tonelli 
-\end{teo}
-\begin{dimo}
-	$f = f^+ - f^-$ si applica teorema di Tonelli a  $f^+$ e $f^-$
-\end{dimo}
-\textbf{Osservazione}\\
-Non è vero per funzioni non in $L^1$ oppure non non negative.
 	
 \end{document}

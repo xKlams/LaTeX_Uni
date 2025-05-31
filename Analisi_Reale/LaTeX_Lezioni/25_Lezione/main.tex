@@ -1,7 +1,7 @@
 \documentclass[12px]{article}
 
-\title{Lezione 25 Analisi Realae}
-\date{2025-05-27}
+\title{Lezione 24 Analisi Reale}
+\date{2025-05-23}
 \author{Federico De Sisti}
 
 \input{../../../setup.tex}
@@ -9,133 +9,61 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{Prodotto di spazi di Misura}
-$(X,\mu), (Y,\nu)$ spazi di misura ( $\mu, \nu$ misure esterne)\\
- $M_\mu$ misurabili in  $X$ rispetto a $\mu$\\
- $M_\nu$ misurabili in  $Y$ rispetto a $\nu$ \\
-Vogliamo definire una misura in $X\times Y$\\
-che sia il prodotto delle due misure  $\mu\times \nu$\\
-ovvero si vuole che:\\
-se  $A\in M_\mu, B\in M_\nu$\\
- $\mu\times\nu (A\times B)  = \mu(A)\nu(B)$\\
- \textbf{Nota}\\
- Non ci basta questo perché non tutti gli insiemi in  $X\times Y$ sono di forma  $A\times B$. Si può pensare ad una circonderenza in  $\R\times \R$, che non è il prodotto delle proiezioni. \\
- \begin{defi}
- 	La misura prodotto $\mu\times\nu$ su $X\times Y$ è definita da: $\forall E\subseteq X\times Y \ $
+	\subsection{altre cose sui polinomi trigonometrici}
+	\begin{teo}[Weierstrass]
+		Data $f\in C(\R)$ periodica di periodo  $2\pi$,  $\forall \e > 0 \ \ \exists p_n$ polinomio trigonometrico tale che  $\|f-f_n\|_\infty < \e$
+	\end{teo}
+	\begin{dimo}
 	 \[
-		 \mu\times\nu(E) = \inf\left\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), \ A_i\in M_\mu, \ B_i\in M_\nu, \ E\subseteq \bigcup^{+\infty}_{i = 1}A_i\times B_i\right\}
+		 p_n(x) = \int_{-x}^xQ_n(x-y)f(y)dy
 	.\] 
-	Se $A\in M_\mu, B\in M_\nu$  $ \Rightarrow R= A\times B$ rettangolo (misurabile) e $ \bigcup^{+\infty}_{i =1}A_i\times B_i$ si dice plurirettangolo.
- \end{defi}
- \textbf{Osservazione}\\
-  \begin{enumerate}
-	  \item $\mu\times\nu$ è una misura (esterna), infatti:
-		   \begin{itemize}
-			   \item $\mu \times \nu : X\times Y \rightarrow [0,+\infty]$ 
-			   \item $0\leq \mu\times\nu (\emptyset) \leq \sum^{}_{i}\mu(\emptyset)\nu(\emptyset) =0$
-			   \item Se $E\subseteq \sum^{+\infty}_{j = 1}E_j$\\
-				   Se $\exists j$ tale che  $\mu\times\nu(E_j) = +\infty \Rightarrow \mu\times \nu(E)\leq \sum^{+\infty}_{j = 1}\mu\times\nu(E_j)$ \\
-				   Se $\mu\times\nu(E_j) < +\infty \ \ \forall j$\\
-				   $ \Rightarrow  \forall j, \forall \e$ \ $\exists \{A_i^j\times B_i^j\}_i$\\
-				   tale che  $E_j\subseteq \bigcup^{+\infty}_{i= 1}A_i^j\times B_i^j$\\
-				   $\mu\times\nu(E_j) \leq \sum^{+\infty}_{i=1}\mu(A^j_i)\nu(B_i^j) < \mu\times \nu(E_j + \frac{\e}2^i$\\
-				   $E\subseteq \bigcup^{+\infty}_{j = 1}E_j\subseteq \bigcup^{+\infty}_{j=1} \bigcup^{+\infty}_{i = 1}A_i^j\times B^j_i$ è un plurirettangolo\\
-				   $ \Rightarrow \mu\times\nu(E)\leq \sum^{+\infty}_{jj=1} \sum^{+\infty}_{u = 1}\mu(A_i^j)\times\nu(B_i^j)$\\
-				   $\leq \sum^{+\infty}_{j=1}(\mu\times\nu(E_j) + \frac{\e}{2^j})$\\
-				   $= \sum^{+\infty}_{j=1}\mu\times\nu(E_j) + \e$ per $\e \rightarrow 0$\\
-				   $\mu\times\nu(E)\leq \sum^{+\infty}_{j=1}\mu\times\nu(E_j)$
-		  \end{itemize}
-	  \item La famiglia dei plurirettangoli è chiusa per unioni numerabili e per intersezioni finite, siano $A_i,B_i,C_i,D_i$ misurabili rispettivamente per  $\mu$ e per  $\nu\ \ \forall i$
-		  \[
-		  P = \bigcup^{+\infty}_{i=1}A_i\times B_i, \ Q = \bigcup^{+\infty}_{j=1}C_j\times D_j
-		  .\] 
-		  \[
-		  P\cap Q = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j =1 }A_i\times B_i\cap C_j\times D_j  = \bigcup^{+\infty}_{i=1} \bigcup^{+\infty}_{j=1}(A_i\cap C_j)\times (B_i\cap D_j)
-		  	.\] 
-		\item La differenza di due rettangoli è un plurirettangolo\\
-			$R = A\times B, \ \ S= C\times D$\\
-			 $R\setminus S = A\setminus C\times B \cup A\cap C\times V\setminus D$
-		 \item Ogni plurirettangolo si può scrivere come unione numerabile di rettangoli disgiunti.
-			  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i = A_1\times B_1 \cup (A_2\times B_2\setminus A_1\times B_1) \cup A_3\times B_3\setminus \bigcup^{2}_{i=1}A_i\times B_i)$\\
-			  $\displaystyle P = A_1\times B_1 \cup\bigcup^{+\infty}_{i=2}(A_i\times B_i \setminus \bigcup^{i-1}_{j=1}A_j\setminus B_j)$
- \end{enumerate}
- $P$ plurirettangolo\\
-  $P = \bigcup^{+\infty}_{i=1}A_i\times B_i$ \\
-  $\chi_P(x,y)$\\
-   $\forall y\in Y$ fissato\\
-    $x\in X \rightarrow \chi_P(x,y) = \begin{cases}
-    	1 \ \ se \ \ (x,y)\in P\\
-    	0 \ \ se \ \ (x,y)\not\in P
-    \end{cases} = \begin{cases}
-    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
-	1 \ \ se \ \ x\in A_i\ \ \forall i\ \ \text{tale che } y\in B_i
-    \end{cases}$\\
-    $ = \begin{cases}
-    	0 \ \ se \ \ y\not\in \bigcup^{+\infty}_{j = 1}B_j\\
-	\chi_{ \bigcup^{}_{\substack{i\\ y\in B_i}}A_i}(x)
-    \end{cases}$\\
-    $ \Rightarrow  \forall y\in Y \ \chi_P(\cdot,y)$ è $\mu$-misurabile\\
-    Se $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
-    $\forall y\not\in \bigcup^{}_{i}B_i' \Rightarrow  \chi_p(\cdot, y) \equiv 0$ \\
-    Se $y\in \bigcup^{}_{i}B'_i \Rightarrow  \exists! i$  tale che $y\in B_i$ e $\chi_p(\cdot, y) = \chi_{A'_i}$\\
-     $ \Rightarrow  \int_X \chi_p(x,y)d\mu = \begin{cases}
-     	0\ \ se \ \ y\not\in \bigcup^{+\infty}_{i =1}B'_i\\
-	\mu( \bigcup^{}_{\substack{i\\y\in B_i'}}A'_i)
-\end{cases} = \sum^{+\infty}_{i=1}\mu(A'_i)\chi_{B'_i}(y)$ è $\nu$-misurabile\\
-$y\in B_i'\cap B_j' \Rightarrow A'_i\cap A'_j = \emptyset$
-\begin{prop}
-	Se $P\subset X\times Y$ plurirettangolo\\
-	 $ \Rightarrow  \mu\times\nu(P)= \int_Y \left(\int_X \chi_P(x,y)d\mu \right)d\nu = \int_X \left(\int_Y\chi_P(x,y)d\nu \right)d\mu$
-\end{prop}
-\begin{dimo}
-	$P\subsetetq \bigcup^{+\infty}_{i=1}A_i\times B_i, A_i\in M_\mu, B_i\in M_\nu$\\
-	$ \Rightarrow  \chi_P(x,y)\leq \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i} (x,y)$ e sono funzioni caratteristiche di plurirettangoli\\
-	$\displaystyle\int_Y \left(\int_X \chi_P(x,y) d\mu\right)d\nu\leq \int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A_i\times B_i}(x,y)d\mu \right) d\nu$ \\
-	$\displaystyle\leq \int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A_i\times B_i} (x,y)d\mu \right) d\nu$\\
-	$\displaystyle = \sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A_i}(x)\chi_{B_i}(y)d\mu \right)d\nu$\\
-	$\displaystyle = \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i)$ \\
-	$\displaystyle \Rightarrow  \int_Y \left( \int_X \chi_P(x,y)d\mu)d\nu\leq \inf\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), P\subseteq \bigcup^{+\infty}_{i=1}A_i\times B_i\} = \mu\times \nu(P)$\\
-		$\displaystyle P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$\\
-$A_i'\times B_i'\cap A'_j\times B_j' = \emptyset$ se $i\neq j$ \\
-$\displaystyle\int_Y \left(\int_X \chi_{ \bigcup^{+\infty}_{i=1}A'_i\times B_i'}d\mu \right)d\nu\\
-=\int_Y \left(\int_X \sum^{+\infty}_{i=1}\chi_{A'_i\times B'_i}d\mu \right) d\nu\\
-=\sum^{+\infty}_{i=1}\int_Y \left(\int_X \chi_{A'_i\times B'_i}d\mu \right)d\nu = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B'_i)\geq \mu\times\nu(P) $
-\end{dimo}
-\begin{lemm}
-	Se $E\subseteq X\times Y$\\
+	Osserviamo che $p_n(x)$ è un polinomio trigonometrico
 	 \[
-		 \mu\times\nu(E) = \inf \{\mu\times\nu (P), P \text{ plurirettangolo } E\subseteq P\}
-	 .\] 
-\end{lemm}
-\begin{dimo}
-	$E\subseteq P \Rightarrow  \mu\times\nu (E)\leq \mu\times \nu (P)$ \\
-	$ \Rightarrow \mu\times\nu(E)\leq \mu\times \nu(P)$ \\
-	$ \Rightarrow \mu\times\nu(E)\leq \inf\{\mu\times\nu(P), \ P\ \text{ plurirettangolo } E\subseteq P\}$ \\
-	Se  $P = \bigcup^{+\infty}_{i=1}A_i'\times B_i'$ disgiunti\\
-	$ \Rightarrow  \mu\times \nu (P) = \sum^{+\infty}_{i=1}\mu(A'_i)\nu(B_i')\geq \mu\times \nu(E)$
-\end{dimo}
-\begin{prop}
-	$P\subseteq X\times Y$ plurirettangolo  $ \Rightarrow P$ è $\mu\times\nu$-misurabile
-\end{prop}
-\begin{dimo}
-	Basta dimsotrare che $A\in M_\mu, B\in M_\nu \Rightarrow  A\times B\in M_{\mu\times\nu}$ \\
-	Th.  $\forall E\subseteq X\setminus Y\ \ \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) = \mu\times \nu(E)$\\
-	Sia  $Q$ plurirettangolo, $Q\geq E$\\
-	 \[
-	 \mu\times \nu(Q\cap A\times B) + \mu\times\nu(Q\setminus A\times B)
-	 .\] 
-	 $\displaystyle = \int_Y \left(\int_X \chi_{Q\cap A\times B} (x,y)d\mu \right)d\nu + \int_Y \left(\int_X \chi_{Q\setminus A\times B} \right)d\nu$\\
-	 $\displaystyle = \int_Y\int_X(\chi_{Q\cap A\times B} + \chi_{Q\setminus A\times B} )d\mu\dnu = \int_Y\int_X \chi_Qd\mu\dnu = \mu\times \nu (Q)$ \\
-	 $\displaystyle\mu\times\nu (E\cap A\times B) + \mu\times \nu (E\setminus A\times B)$\\ Prendendo l'inf rispetto a  $Q$ \[
-		 \Rightarrow  \mu\times\nu(E\cap A\times B) + \mu\times \nu (E\setminus A\times B) \leq\mu\times\nu(E) \Rightarrow  A\times B \text{ misurabile}
-	 .\] 
-\end{dimo}
-\begin{prop}
-	$\mu\times \nu$ è regolare, ovvero  $\forall E\subset X\times Y\ \ \exists F\in M_{\mu\times\nu}$ tale che  $E\subseteq F$ e  $\mu\times\nu(E) = \mu\times\nu(F)  \Rightarrow  A\times B$ misurabile.
-\end{prop}
-\begin{dimo}
-	per esercizio.
-\end{dimo}
-
-	
+		 Q_n(x) = \frac{\alpha_0^n}{2} + \sum^{n}_{k=0} \left(\alpha_k^n \cos( k x) + \beta_k^n \sin(kx) \right)
+	.\] 
+	\[
+		Q_n(x-y) = \frac{\alpha_0^2}{2} + \sum^{n}_{k=0}(\alpjha^n_k \cos(kx -ky) + \beta_k^n\sin(kx-ky))
+	.\]  
+	è combinazione lineare di $\cos(kx)$ e  $\sin(kx)$\\
+	 $ \Rightarrow p_n(x)$ è polinomio trigonometrico\\
+	 $p_n(x) = \int_{-\pi}^\pi Q_n(x-y)f(y)dy = -\int^{\pi-x}_{\pi+x}Q_n(t)f(x-t)dt = \int^{\pi + x}_{-\pi+x}Q_nf(x-t)dt = \int^\pi_{-\pi}Q_n(t)f(x-t)dt$ \\
+	 Osservo che $p_n$ come regolarità prende il "meglio" delle funzioni  $Q_n$ e  $f$
+	  \begin{gather*}
+		  |p_n(x)-f(x)| = |\int^\pi_{-\pi}Q_n(t)f(x-t)dt - f(x) \int^\pi_{-\pi}Q_n(t)dt|\\
+		 = |\int^\pi_{-\pi}Q_n(t)( f(x-t)-f(x))dt
+		 \leq \int_{-\pi}^\pi Q_n(t)|f(x-t)-f(x)|dt\\
+		 = \int^\delta_{-\delta}Q_n(t)|f(x-t)-f(x)|dt + \int^{-\delta}_{-\pi}Q_n(t)|f(x-t)-f(x)|dt +\\+ \int^\pi_\delta Q_n(t)|f(x-t)-f(x)|dt
+	 \end{gather*}\\
+	 $f\in C(\R)$ + $f$ periodica $ \Rightarrow $ uniformemente continua.\\
+	 Allora dato $\e > 0 \ \ \ \exists \ \ \ \delta > 0 $ tale che  $|f(x-t)-f(x)| < \frac {\e}{2}$ $x\in \R, \forall t$ tale che  $|t|<\delta$\\
+	 Scegliendo questo  $\delta$, sia ha  $|p_n(x)-f(x)| \leq \frac{\e}{2}\int^\pi_{-\pi}Q_n(t)dt + 8\pi\|f\|_\infty\sup_{\delta\leq|t|\leq\pi}Q_n(t) < \frac {\e}3 $ per $n\geq n_\delta$
+	\end{dimo}
+	\begin{teo}[Completezza in $L^2(-\pi,\pi)$ del sistema trigonometrico]
+		Il sistema trigonometrico $\{\frac{1}{\sqrt{2\pi}},\frac{1}{\sqrt pi}\cos(kx), \frac {1}{\sqrt 2}\sin(kx)\}_{k\geq 1}$  è completo in  $L^2((-\pi,\pi))$
+	\end{teo}
+	\begin{dimo}
+		$f\in L^2((-\pi,\pi)); \forall \e > 0 \ \ \exists g\in C_c((-\pi,\pi))$ tale che  $\|f-g\|_2<\e$\\
+		 $ \Rightarrow g(-\pi) = g(\pi) = 0 \Rightarrow g$ si estende per periodicità a una funzione $C(\R)$\\
+		 Per il teorema di Weierstrass  $\exists p_n$ polinomio trigonometrico tale che  $\|g-p_n\|_\infty < \e$\
+		  \[
+		  \Rightarrow  \|g-p_n\|_{L^2((-\pi,\pi))} = \sqrt{\int_{-\pi}^\pi|g-p_n|^2dx}\leq \|g-p_n\|_\infty\sqrt{2\pi} < \sqrt{2\pi}\e
+		 .\] 
+		 In conclusione, $\|f-p_n\|_{L^2((-\pi,\pi))}\leq\|f-g\|_2 + \|g-p_n\|_2 < \e + \sqrt{ 2\pi}\e= (1 + \sqrt{2\pi})\e$ \\
+			 \[
+			 f(x) = \frac{a_0}{2} + \sum^{+\infty}_{k=1} \left(a_k \cos(kx) + b_k\sin(kx) \right)
+			.\] 
+		 Dove viene usato il fatto che la convergenza in $L^2$ implica quella puntuale solo a meno di un'estratta, la convergenza quasi ovunque si ha per una sottosuccessione\\
+		  \[
+		  a_k = \frac 1\pi\int_{-\pi}^\pi f(x)\cos(kx)dx\ \ \ \ b_k = \frac 1 \pi\int_{-\pi}^\pi f(x) \sin(kx) dx
+		 .\] 
+	\end{dimo}
+	\subsection{Svolgimento esercizi foglio 8}
+	$(X,\mu)$ spazio di misura
+	$R: X \rightarrow [0,+\infty] $ misurabile\\
+	\[
+		K = \{u\in L^2(X): |u(x)| \leq h(x) \ \ q.o.\ \ \text{in }X\}
+	.\] 
+	$K\neq \emptyset$ perché  $0\equiv u$ in  $K$\\
+	$K$ convesso :  $u_1,u_2\in K, \ \lambda\in[0,1]$\\
+	Il resto delle soluzioni te le ha mandate Alberto su wa, nei messaggi importanti
 \end{document}

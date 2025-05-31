@@ -9,8 +9,21 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\subsection{manca un aparte della lezione}
-	\subsection{parte nuova}
+	\subsection{Funzioni a supporto compatto}
+	\begin{defi}
+	Sia $f: \R \rightarrow \R$ si dice a  supporto compatto se $f$ è nulla fuori di un compatto\\
+	ovvero:\\
+	$\exists K$ compatto tale che  $supp(f)\subset K \Leftrightarrow f=0 $ in $\R$
+	 \[
+	C_c(\R)\subset L^p(\R) \ \ \forall 1\leq p < +\infty
+	.\] 
+infatti se $f\in C_c(\R) \Rightarrow  \exists K$ compatto tale che $f =0 $ in  $\R\setminus L \Rightarrow  f$  limitata in $K, $  $f$ è limitata in $\R\setminus K \Rightarrow  f\in L^\infty(\R)$ \\
+inoltre $\int_\R|f|^p d m = \int_K|f|^pd m\leq \|f\|_\infty^p m(K) < +\infty $
+	\end{defi}
+	\begin{teo}
+		$C_c(\R)$ è denso in  $L^p(\R)\ \ \forall 1\leq p < +\infty$ \\
+		ovvero  $\forall f\in L^p(\R), \forall \e> 0 \ \ \exists g\in C_c(\R)$ tale che  $\|f-g\|_p< \e$
+	\end{teo}
 	\begin{dimo}
 		$f\in L^p(\R), \ \e > 0 $\\
 		$f_n = f\chi_{[-n,n]}$ è a supporto compatto\\

@@ -1,0 +1,142 @@
+\documentclass[12px]{article}
+
+\title{Lezione 17 Analisi Reale}
+\date{2025-04-30}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Proprietà spazi L^p}
+	\textbf{Ricorda:}
+	\[
+		L^P(X) = \{f:X \rightarrow [-\infty, +\infty], f \text{ misurabile }, \int_X |f|^pd\mu < +\infty\}, 1\leq p  < +\infty
+	.\] 
+	\begin{prop}
+		$L^p$ è uno spazio vettoriale
+	\end{prop}
+	\begin{dimo}
+		$\forall f,g\in L^p(X), \ \ \forall \alpha,\beta\in \R \Rightarrow  \alpha f + \beta g$   è misurabile
+		\[
+			\int_X|\alpha f + \beta g|^pd\mu \leq \int (|\alpha||f| + |\beta||g|)^pd\mu
+		\] 
+		\[
+		\leq 2^{p-1}(\int_X|\alpha|^p|f|^pd \mu + \int_X|\beta|^p|g|^pd\mu) < +\infty
+		.\] 
+	\end{dimo}
+Per definizione, su $L^p(X)$ è ben definita la funzione
+\begin{center}
+	
+	 \begin{aligned}
+	 	$
+		 \|\ \ \|_p: &L^p(X) \rightarrow [0,+\infty)\\
+		     &f \rightarrow ||f||_p = (\int_X|f|^pd\mu)^\frac 1p$
+	 \end{aligned}
+\end{center}
+\begin{prop}[Disuguaglianza di H$\ddot{o}$lder]
+	Sia $p>1$ e  $p' = \frac {p}{p-1}$  $(\frac 1 {p'} + \frac {1}{p} = 1)\ \ \forall f\in L^p(X), g\in L^{p'}(X)$\\
+	 $ \Rightarrow fg\in L^1(X)$ e 
+	 \[
+		 \int_X|fg|d\mu\leq \|f\|_p\|g\|_p = (\int_X|f|^pd\mu)^{1/p}(\int_X|g|^{p'}d\mu)^{1/{p'}}
+
+	 .\] 
+\end{prop}
+\begin{dimo}
+	Si usa la disuguaglianza di Young se $f\neq 0, g\neq 0$\\
+	$ \Rightarrow  \|f\|_p = (\int_X|f|^pd\mu)^{1/p} > 0$\\
+	$ \|g\|_{p'} = (\int_X|g|^{p'}d\mu)^{1/p'} > 0$\\
+	Per quasi ogni (q.o.) $x\in X$
+	 \[
+	|f(x)| < +\infty, \ \ |g(x)|<+\infty
+	.\] 
+	$\displaystyle\frac{|f(x)|}{\|f\|_p}\frac{|g(x)|}{\|g\|_{p'}}\leq \frac 1p\frac{|f(x)|^p}{\|f\|_p^p} + \frac {1}{p'}\frac{|g(x)|^{p'}}{\|g\|^{p'}_{p'}}$\\
+	$\displaystyle\Rightarrow \int_X\frac {|f||g|}{\|f\|_p\|g\|_{p'}d\mu}\leq \frac 1p\frac{1}{\cancel{\int_X|f|^pd\mu}}\cancel{\int_X|f|^pd\mu} +\frac 1{p'}\frac{1}{\cancel{\int_X|g|^{p'}d\mu}}\cancel{\int_X|g|^{p'}d\mu} = 1 $
+\end{dimo}
+\begin{prop}[Disuguaglianza di Minkowski]
+	Sia $1\leq p < +\infty$\\
+	$\forall f,g\in L^p(X) \ \ \|f + g\|_p \leq \|f\|_p + \|g\|_p \\ ((\int_X|f + g|^pd\mu)^{1/p}\leq (\int_X |f|^pd\mu)^{1/p} + (\int_X|g|^pd\mu)^{1/p}))$
+\end{prop}
+\begin{dimo}
+	$\displaystyle\int_X |f + g|^pd\mu= \int_X|f+g||f+g|^{p-1}d\mu\leq\int_X(|f| + |g|)|f+g|^{p-1}d\mu = \int_X|f||f+g|^{p-1}d\mu + \int_X|g||f+g|^{p-1}d\mu\\\substack{\leq\\\text{Holder}}(\int_X|f|^pd\mu)^{1/p}(\int_X|f+g|^{(p-1)\frac{p}{p-1}})^{\frac{p-1}p}+ (\int_X|g|^pd\mu)^{1/p}(\int_X|f+g|^{(p-1)\frac{p}{p-1}}d\mu)^{\frac{p-1}p}$\\
+	$\leq \|f\|_p\|f+g\|_p^{p-1} + \|g\|_p \|f+g\|_p^{p-1}$ 
+	basta ultimamente dividere per $\|f+g\|^{p-1}$ entrambi i lati della disequazione
+\end{dimo}
+\begin{prop}
+	$\|f\|_p = (\int_X|f|^pd\mu)^{1/p}$ è una norma su  $L^p(X)$
+\end{prop}
+\begin{dimo}
+	(i)$|\f||_p \geq \forall f\in L^p(X)$\\
+	 \[
+	||f||_p = 0 \Leftrightarrow \int_X |f|^pd\mu = 0 \Leftrightarrow f = 0 \ q.o.
+	.\] 
+	(ii) $\|\alpha f\|_p\ \ \ \alpha\in\R = |\alpha| \|f\|_p$\\
+	 (iii)  $\|f+g\|_p\leq \|f\|_p + \|g\|_p$
+\end{dimo}
+\textbf{Osservazione:}\\
+A rigore bisognerebbe definire $L^p(X)$ come l'insieme i cui elementi sono le classi di equivalenza 
+\[
+	[f] = \{g:X \rightarrow [-\infty,+\infty] \ \ : \ \ f = g \ \ q.o.\}
+.\] 
+L'insieme quozientato con questa relazione ci permette di definire bene la norma, altrimenti l'elemento nullo non è unico (posso fare cambiamenti di misura nulla).\\
+\begin{teo}
+	Se $p \geq 1 \Rightarrow  L^p(X) $ è uno spazio vettoriale normato completo (spazio di Banach)
+\end{teo}
+\begin{dimo}[La chiede all'orale]
+	Sia $\{f_n\}\subset L^p(X)$ successione di Cauchy\\
+	 $ \Leftrightarrow \forall \e > 0 \exists n_\e\ :\ \|f_n - f_m\|_p < \e \ \ \ \forall n,m\geq n_\e$ \\
+	 \textbf{Tesi:} $\exists f\in L^p(X)\ $ tale che  $f_n \rightarrow f $ in $L^p (X) \Leftrightarrow \|f_n-f\|_p \rightarrow 0$ per $ n \rightarrow +\infty$ \\
+	 Usiamo la definizione di successione di Cauchy con $\e = \frac {1}{2^k}$\\
+	  $\forall k \ \ \exists n_k$ tale che 
+	   \[
+		   \|f_n - f_m \| < \frac {1}{2^k} \ \ \forall n,m\geq n_\e
+	  .\] 
+	  selezionando $n_{k+1}> n_k$\\
+	  Si seleziona una estratta  $\{f_{n_k}\}$ tale che\\
+	   \[
+		   \|f_{n_{k+1}}-f_{n_k}\|_p < \frac {1}{2^k} \ \ \ \forall k\geq 1
+	  .\] 
+	  Consideriamo la nuova successione:
+	  \[
+	  g_j(x) = \sum^{j}_{k = 1} |f_{n_{k+1}}(x) - f_{n_k}(x)|\in L^p(X)
+	  .\] 
+	  $\displaystyle\|g_j\|_p = \|\sum^{j}_{k = 1}|f_{n_{k+1}} - f_{n_k}|\|_p\leq \sum^{j}_{k=1}\|f_{n_{k+1}} - f_k\|_p\leq \sum^{j}_{k=1}\frac{1}{2^k} < 1$\\
+	  $\displaystyle \Rightarrow  \int_X|g_j|^pd\mu\leq 1 \ \ \ \forall j$ \\
+	  \textbf{Attenzione}\\
+	  Il modulo è fondamentale così $g_j$ è una funzione crescente! \\$\displaystyle g_{j+1} \geq g_j \ \ \forall x\in X \Rightarrow \exists \lim_{ j \rightarrow+\infty}g_j(x) = g(x) = \sum^{+\infty}_{k = 1}|f_{n_k-1}(x) - f_{n_k}(x)|$\\
+	  Usando il teorema di B. Levi
+	  \[
+		  \int_X|g|^pd\mu = \lim_{j \rightarrow +\infty}\int_X |g_j|^p d\mu \leq 1
+	  .\] 
+	  $\displaystyle \Rightarrow  g\in L^p(X) \Rightarrow  g^p\in L^1(X) \Rightarrow g^p $ (e quindi anche $g$) è finita quasi ovunque.\\
+	 per quasi ogni  $x\in X$
+	  \[
+		  g(x) = \sum^{+\infty}_{k =1} |f_{n_{k+1}} - f_{n_k}(x)| < +\infty
+	 .\] 
+	 $ \Rightarrow  $ per quasi ogni $x\in X$
+	  \[
+		  \sum^{+\infty}_{k = 1}[f_{n_{k+1}}(x) - f_{n_k}(x)] \text{ è convergente}
+	 .\] 
+	 $ \displaystyle\Rightarrow  \exists \lim_{j \rightarrow+\infty} \sum^{j-1}_{k=1}(f_{n_{k+1}}(x)-f_{n_k}(x))$ \\
+ $ \displaystyle = \lim_{ j \rightarrow+\infty} (\cancel{f_{n_2}} - f_{n_1} + \cancel{f_{n_3}} - \cancel{f_{n_2}} + \ldots + f_{n_j} - f_{n_{j - 1}}$\\
+ $ = - f_{n_1} +\lim_{j \rightarrow+\infty}f_{n_j}$\\
+ $ \Rightarrow  \exists \lim_{ j \rightarrow+\infty} f_{n_j}(x)$ per ogni $x$\\
+ $f(x) = \lim_{ j \rightarrow+\infty} f_{n_j}(x)$\\
+ $\exists $ quasi ovunque, è misurabile\\
+ $\forall \e > 0 $
+  \[
+	  \int_X|f_m-f_{n_j}|^p d\mu= \|f_m - f_{n_k}\|_p < \e \ \ \forall m\geq n_e \text{ per } j \ \text{suff. grande}
+ .\] 
+ \[
+	 \int_X|f_n-f|^pd\mu\substack{\leq\\\text{Fatou}}\liminf_{j \rightarrow +\infty}\int_X|f_m - f_{n_j}|^pd\mu \leq \e^p
+ .\] 
+ \[
+  \Rightarrow f_n - f\in L^p e $\|f_n -f \|_p\leq \e \ \ \forall m\geq n_e$
+ .\] 
+ \[
+	 \Rightarrow f = f_n - (f_m - f)\in L_p \text{ e } \|f_m - f\|_p \leq \e \ \forall m\geq n_e
+ .\] 
+ $ \Rightarrow  \|f_m - f\|_p \xrightarrow{ m \rightarrow +\infty} 0$
+\end{dimo}
+\end{document}
