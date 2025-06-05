@@ -1,0 +1,209 @@
+\documentclass[12px]{article}
+
+\title{Ultima Lezione Analisi Reale}
+\date{2025-06-04}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Coordinate polari}
+	Possiamo vedere le coordinate polari come l'effetto di una trasfomrazione
+	\[
+		\begin{aligned}
+		&\R^{n-1}\times (0,+\infty) \xrightarrow {g}\R^n\\
+		& ((y_1,\ldots,y_{n-1},\rho) \rightarrow \rho \phi(y_1,\ldots, y_n)
+		\end{aligned} .\] 
+		Quindi per calcolare
+		 \[
+			 \int_{\R^n} f(x)dx = \int_{\R^n\setminus\{(0,\ldots,0,x_n), x_n\geq 0\}}f(x)dx
+		.\] 
+		\[
+			= \int_{\R^{n-1}\times (0,+\infty)}f(\rho\phi(y_1,\ldots,y_{n-1}))|det Dg| dy d\rho
+		.\] 
+		\[
+			Dg(y,\rho) = \matrice{\rho \triangledown \phi_1& \ldots  & \phi_1\\
+				\rho\triangledown \varphi_2 & \ldots & phi_2\\
+				\vdots & \vdots & \vdots\\
+				\rho\triangledown \varphi_n & \ldots & \varphi_n
+			}
+
+		.\] 
+		\[
+			|det Dg| = |(-1)^{n-1} \varphi_1\rho^{n-1}det\frac{\partial (y_1,\ldots, y_{n-1})}{\partial (y_1,\ldots, y_{n-1})} + \ldots + (-1)^{2n} \varphi_n\rho^{n-1}| det\frac{\partial ( \phi_1,\ldots, \phi_{n-1})}{\partial(y_1,\ldots, y_{n-1})} |
+
+		.\] 
+		\[
+	= \rho^{n-1} \psi( y_1,\ldots, y_{n-1})	
+		.\] 
+		\[
+			\int_{\R_n}f(x)dx = \int_0^{+\infty}\rho^{n-1}\int_{\R^{n-1}}f( \rho \varphi(y_1,\ldots, y_n))\cancel{\rho^{n-1}}\psi(y_1,\ldots,y_{n-1})dyd\rho
+		.\] 
+		\[
+			\Rightarrow \int_{\R^n}f(x)dx = \int^{+\infty}_0\rho^{n-1}f(\rho)[\int_{\R^{n-1}}\psi(y_1,\ldots,y_{n-1})dy]d\rho
+		.\] 
+		e chiamo $C_n$ la parte tra le quadre
+		\[
+			= C_n\int_0^{+\infty}\rho^{n-1}f(\rho)d\rho
+		.\] 
+		\[
+			f(x) = \chi_{B_1}(x) = \begin{cases}
+				1\ \ se \ \ |x|>1\\
+				0 \ \ se |x|\geq 1
+			\end{cases}
+		.\] 
+		\[
+			\int_{\R^n}f dx = m_n(B_1) = \omega_n
+		.\] 
+		\[
+			C_n\int_0^{+\infty} \rho^{n-1}f(\rho)d\rho = C_n\int_0^1\rho^{n-1}d\rho = \frac {C_n}n
+		.\] 
+		$ \Rightarrow  C_n = n\omega_n$ \\
+		quindi per qualunque funzione radiale
+		\[
+			\int_{\R^n}f(x) dx = n\omega_n\int_0^{+\infty}\rho^{n-1}f(\rho)d\rho
+		.\] 
+		e $n\omega_n\rho^{n-1}$ è la misura della sfera $n$ dimensionale\\
+		\subsection{Esercizi delle schede}\\
+$(X,\mu)$ spazio di misura.  $\phi: X \rightarrow Y$, abbiamo la misura "push-forward" \[
+	\phi_\# \mu(E) = \mu( \phi^{-1}(E))\ \  \ \forall E\subseteq Y
+.\] 
+questa è una misura su $Y$  $N=\{E\subseteq Y\ : \ \phi^{-1}(E)\subseteq M_\mu\}$\\
+prendendo $f: Y \rightarrow\R$  misurabile rispetto a $N$ \\
+Quindi la controimmagine di ogni Boreliano appartiene a $N$\\
+ $f$ è  $\phi_\#\mu$-misurabile
+  \[
+ \int_Y fd \phi_\#\mu = \int f(\phi(x))d\mu
+ .\] 
+ \[
+	 \int_{\R^n}f(x)dx = \int_{\R^{n-1}\times (0,+\infty)}f(g(y,\rho))\rho^{n-1}\psi(y)dyd\rho
+ .\] 
+ \[
+	 \Leftrightarrow\int_Y\chi_E d\phi_\# \mu = \int_X(\chi_{E}(\phi(x))d\mu
+ .\] 
+ con $E\in N$
+ \[
+	 \int_Y\chi_Ed\phi_\#\mu = \phi_\#\mu(E) = \mu( \phi^{-1}(E)) = \int_{\phi^{-1}(E)}d\mu = \int_X\chi_{\phi^{-1}(E)}d\mu
+ .\] 
+ \[
+  =\int_X \chi_E(\phi(x))d\mu
+ .\] 
+ Possiamo considerare
+ $(0,\infty)\times S^{n-1}$ come spazio  prodotto e possiamo quidni metterci una misura\\
+ su   $(0,+\infty)$ usiamo la misura $\rho^{n-1}d\rho$\\
+ Su  $S^{n-1}$ usiamo la misura  $\sigma_{n-1}(E) = nm_n(\{\rho x\ | \ \rho\in [0,1], \ x\in E\})$   $\forall E\subseteq S^{n-1}$ \\
+ guardo quindi la funzione
+ \[
+ \begin{aligned}
+	 (0,+\infty)\times S^{n-1} &\xrightarrow {\phi} \R^n\setminus\{0\}\\
+	 (\rho, x) &\rightarrow \rho x
+ \end{aligned}
+ .\] 
+ Con la misura push forward in $\R^n\setminus\{0\}$ \\
+ $\rho^{n-1}d\rho(E) = \int_E\rho^{n-1}d\rho$
+ \[
+	 \int_{\R^n\setminus\{0\}}fd\phi_\# (\rho^{n-1}d\rho \times\sigma_{n-1}) = \int_{(0,+\infty)\times S^{n-1}}f(\rho x)\rho^{n-1}d \rho\times\sigma_{n-1}
+ .\] 
+ \[
+	 \int_0^{+\infty}\rho^{n-1}\int_{S^n}f (\rho x) d\sigma_{n-1} d\rho = \int_{\R^n}f(x) dx
+ .\] 
+ Tesi del secondo esercizio:
+ \[
+	 m_n(E) = \phi_\# (\rho^{n_-1}d\rho\times\sigma_{n-1})(E)	 =\rho^{n-1}d\rho\times\sigma_{n-1}( \varphi^{-1}(E))
+ .\] 
+ $S^n$ caso particolare  $E = \{y\in \R^n\ | \ \rho_1< |y| < \rho_2,\  \frac{y}{|y|}= x\in E_1\}\ \ E_1\subset S^{n-1}$
+\[
+	\phi^{-1}(E) = \{(\rho, x)\ \ \rho_1 < \rho< \rho_2, \ X\in E_1\} = (\rho_1,\rho_2)\times E_1
+.\] \\
+$\rho^{n-1}d\rho\times\sigma_{n-1}((\rho_1,\rho_2)\times E_1)= \rho^{n-1}d\rho((\rho_1,\rho_2))\sigma_{n-1}(E_1)=	\displaystyle \int_{\rho_1}^{\rho_2}\rho^{n-1}d\rho\sigma_{n-1}(E_1)$
+quindi con $\tilde E_1 = \{\rho x\ | \ x\in E_1, 0\leq \rho \leq 1\}$
+\[
+	\frac 1n  (\rho_2^n-\rho_1^n ) nm_n(\tilde E_1) = \rho_2^n m_n(\rilde E_1) - \rho^n_1(\tilde E_1) 
+\] 
+\[
+= m_n(\rho_2\tilde E_1) - m_n(\rho_1 \tilde E_1) = m_n(\rho_2\tilde E_1\setminus \rho_1 \tilde E_1) = m_n(E)
+.\] 
+dove $\rho $ sta per  $\rho$lberto $\rho$gostinelli \\
+AGGIUNGI IMMAGINE 5 12\\
+$\forall E\subset \R^n$ aperto  $ \Rightarrow  E$ è unione numerabile di settori di corone sferiche.\\
+$f$ radiale
+\[
+	\int_{\R^n}f(x)dx = m\omega_n\int_0^{+\infty}\rho^{n-1}f(\rho)d\rho
+.\] 
+dove $\omgea_n$  è la  $\sigma_{n-1}(S^{n-1})$, ovvero il volume della sfera unitaria  $= n\omega_n$ \\
+\textbf{Esercizio 3}\\
+$p\geq 0$ \\
+$f(x) = \frac {1}{(1 + |x|^2)^{p/2}}$ \\
+$f$ continua  $ \Rightarrow  f$ misurabile
+\[
+	\int_{\R^n}|f|dx =\int_{\R^n} \frac{1}{(1 + |x|^2)^{p/2}} = \int_0^{+\infty}n\omega_n\rho^{n-1}\frac{1}{(1 + |\rho|^2)^{p/2}}d\rho < +\infty
+.\] 
+Bisogna solo controllare il comportamento asintotico
+\[
+	p \rightarrow +\infty\ \ \  \frac{\rho^{n-1}}{(1 + |\rho|^2)^{p/2}}\sim \rho^{n-1-p} = \frac { 1}{\rho^{p+1-n}}
+.\] 
+che è integrabile solo se l'esponente è $>1$ quindi  $ \Rightarrow  p > n$
+
+\[
+\int_0^{R}n\omega_n\rho^{n-1}\frac{1}{(1 + |\rho|^2)^{p/2}}d\rho + \int_R^{+\infty}n\omega_n\rho^{n-1}\frac{1}{(1 + |\rho|^2)^{p/2}}d\rho
+.\] 
+dove il primo membro è $< +\infty$, quindi va controllato solo il secondo.\\
+\textbf{Seconda funzione}\\
+$f(x) = \frac{e^{-|x|^2}}{|x|^p}$ f continua in  $\R^n\setminus\{0\} \Rightarrow $ $f$ misurabile\\
+$\int_{\R^n} |f(x)|dx= \int_0^{+\infty}n\omega_n\frac{\rho^{n-1}e^{-\rho^2}}{\rho^p}d\rho$ \\
+Per $\rho \rightarrow 0$ $\frac{\rho^{n-1}}{\rho^p}e^{-\rho^2}\sim \frac 1{\rho^{p-n+1}}$ regolarità $ \Leftrightarrow p < n$\\
+Per  $\rho \rightarrow +\infty \rho^{n-1-p}e^{-\rho^2}$ è integrabile $\forall p$\\
+\textbf{Terza funzione}\\
+ \[
+	 f(x) =\frac{\lg|x|}{1 + |x|^p}
+.\] 
+$f$ continua in $\R^n\setminus\{0\} \Rightarrow f$  misurabile
+\[
+\int_{\R^n}|f(x)|dx = \int_0^{+\infty}n\omega_n\frac{\rho^{n-1}|\lg\rho|}{\rho^p}d\rho
+.\] 
+\[
+	\frac{\rho^{n-1}|\lg\rho|}{1+\rho^p} \rightarrow 0\ \ \ per \ \ \ \rho \rightarrow 0^+
+.\] 
+per $\rho \rightarrow +\infty$ $\frac{\rho^{n-1}|\lg\rho|}{1 + \rho^p} \sim \rho^{n+1-p}|\lg \rho|$ per $p + 1 - n > 1  \Rightarrow  p > n$ \\
+In particolare
+\[
+	\int^{+\infty}_1\frac{\lg\rho}{\rho^\alpha}d\rho <+\infty \Leftrightarrow \alpha > 1
+.\] 
+\[
+	\frac{1}{\rho^\alpha}\leq \frac{\lg \rho}{\rho^\alpha} \leq \frac 1{\rho^{\alpha-\e}}\ \ \ \ \forall \e > 0
+.\] 
+\textbf{Quarta funzione}\\
+$\displaystyle f(x) = \frac{\chi_{\{|x|>2\}}}{|x||\lg|x||^p}$ prodotto di funzioni misurabili quindi è misurabile.\\
+\[
+	\int_{\R^n}|f|dx = \int_2^{+\infty}n\omega_n\rho^{n-1}\frac{1}{\rho(\lg\rho)^p}d\rho
+.\] 
+Questo non è mai finito, se $n = 1$
+ \[
+	 2\int_2^{+\infty}\frac{1}{\rho(\lg\rho)^p}d\rho = 2\frac{(\lg\rho)^{1-p}}{1-p}|^{+\infty}_2<+\infty \  \ \Leftrightarrow p > 1
+.\] 
+se $n = 2 \int_2^{+\infty}\frac{1}{(\lg\rho)^p} = +\infty \ \ \forall p$ \\
+$n \geq 3\ \ \int^{+\infty}_2\frac{\rho^{n-1}}{(\lg\rho)^p} = +\infty \ \ \ \forall p$\\
+\textbf{Quinta funzione}\\
+$f(x) = \frac{\chi_{\{|x|>\frac 12\}}}{|x||\lg|x||^p}$ 
+\[
+\int_0^{1/2}\frac{n\omega_n \rho^{n-2}}{|\lg\rho|^p}d\rho
+.\] 
+se $n= 1$
+ \[
+	 2\int^{1/2}_0\frac{1}{\rho|\lg\rho|^p} < +\infty \  \ \ \Leftrightarrow \ \ p >1
+.\] 
+Quindi $< +\infty \ \ \forall p \geq 0 $ se  $n\geq 2$, $p > 1$ se  $n=1$\\
+ \textbf{Sesta funzione}\\
+$\displaystyle f(x) =  \frac{\chi_{\{\frac 12 < |x|< 2\}}}{|x||\lg|x||^p}$\\
+$\displaystyle\int_{1/2}^2\frac{n\omega_n\rho^{n-2}}{\cancel \rho |\lg\rho|^p}d\rho$\\
+$\ro \rightarrow 1 \ \ |\lg\rho|\sim|\rho -1|$\\
+\[
+	\int_{1/2}^2\frac{1}{|\rho-1|^p}d\rho < +\infty\ \ \Leftrightarrow p < 1
+.\] 
+\[
+	\Gamma (t) = \int^{+\infty}_0x^{t-1}e^{-x}dx \Leftrightarrow t > 0
+.\] 
+È un interpolazione del fattoriale. $\Gamma(n+1) = n!$ e questa quindi diverge a $ + \infty$ come i fattoriali. Per la formula di  $\omega_n$ compare questa funzione (forse, non sono sicuro di aver capito bene).
+\end{document}

@@ -1,0 +1,148 @@
+\documentclass[12px]{article}
+
+\title{Appunti Terzo Esonero}
+\date{2025-06-03}
+\author{Federico De Sisti}
+
+\input{../../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section{Spazi L^p}
+	\begin{prop}
+		Sia $(X,\mu)$ spazio di misura finito  $(
+		m(X) < +\infty$ se  $p,q \geq 1$  $ p > q \Rightarrow  L^p(X)\subsetneq L^q(X)$ e $\exists c > 0$ tale che  $\|f\|_q \leq c\|f\|_p\ \ \ \forall f\in L^p(X)$
+	\end{prop}
+	\begin{defi}
+		$(X,\mu)$ spazio di misura  $L^\infty = \{f: X \rightarrow [-\infty, +\infty] \ \ misur.\ | \ \exists M > 0 \ | \ |f|\leq M \ \ q.o.\}$
+	\end{defi}
+	\begin{lemm}
+		$f\in L^\infty(X) \Rightarrow |f|\leq \|f\|_\infty\ \ q.o. \ $ su $X$
+	\end{lemm}
+	\begin{prop}[Holder]
+		Sia $p> 1 $ e  $p'$ tale che  $\frac 1 p + \frac 1 {p'} = 1$ \ \  $\forall f\in L^p(X), g\in L^{p'}(X) \Rightarrow  fg\in L^1(X)$ e 
+		\[
+			\|f\cdot g\|\leq \|f\|_p\|g\|_{p'}
+		.\] 
+	\end{prop}
+	\begin{prop}[Minkoski]
+		Sia $1\leq p < +\infty \ \ \forall f,g\in L^p(X)\ \ \|f+g\|_p\leq \|f\|_g + \|g\|_p$
+	\end{prop}
+	\begin{teo}
+		per $p\geq 1$  $L^p$ è spazio normato completo
+	\end{teo}
+	\begin{defi}
+		$X$ spazio metrico si dice separabile se ammette sottoinsieme denso numerabile
+	\end{defi}
+	\begin{teo}
+		$L^P(\R)$ è separabile per  $1\leq p < +\infty$,  $L^\infty$ non è separabile
+	\end{teo}
+	\begin{defi}
+		$L: V_1 \rightarrow V_2$ operatore lineare \\
+		$L$ si dice limitato se $\|L(c)\|_{V_2} \leq c\|v\|_{V_1}\ \ \forall v\in V_1$
+	\end{defi}
+	\begin{teo}
+		Sia $L$ operatore lineare,  $L$ limitato $ \Leftrightarrow L$ continuo
+	\end{teo}
+	\begin{teo}[Parallelogramma]
+		\[
+		\|f+g\|^2 + \|f-g\|^2 \leq 2(\|f\|^2 + \|g\|^2)
+		.\] 
+	\end{teo}
+	\begin{teo}[della proiezione]
+		Sia $H$ spazio di Hilbert,  $C\subset H$ chiuso, connesso e non vuoto\\
+		$ \Rightarrow  $ $\forall f\in H\ \ \exists !\ \ u  \ \ t.c.\ \ \|u-f\| = \min_{v\in C} \{\|f-v\|\}$ \[
+		u = p_C(f) = \begin{cases}
+			u\in C\\
+			(f-u,  v-u)\leq 0\ \ \forall v\in C
+		\end{cases}
+		.\] 
+	\end{teo}
+	\begin{coro}
+		Sia $H$ spazio di Hilbert $M\subset H$ sottospazio vettoriale chiuso.  $\forall f\in H\ \ \exists! v\in M$ tale che 
+		 \[
+			 \|u-f\| = \min_{v\in M}\|f-v\|\ \ \ e \ \ u = p_M(f) \Leftrightarrow \begin{cases}
+			 	u \in M\\
+				(f-u, v) = 0\ \ \ \forall v \in M
+			 \end{cases}
+		.\] 
+	\end{coro}
+	\begin{defi}
+		$S\subset H$ sottoinsieme
+		 \[
+			 S^\perp = \{f\in H\ | \ (f,g) = 0\ \ \ \forall g\in S\}
+		.\]  e il completamento ortogonale di $S$
+	\end{defi}
+	\begin{prop}
+		Sia $S\subset H\ \ S^\perp$ è un sottospazio vettoriale chiuso.
+	\end{prop}
+	\begin{teo}[Ritz]
+		Sia $H$ spazio di Hilbert $\forall L\in H^*$\ \  $\exists ! g\in H$ tale che  $L(f) = (f,g)\ \ \forall f\in H$ e $\|L\|_{H^*} = \|g\|_H$
+	\end{teo}
+	\begin{prop}
+		Sia $H$ spazio di Hilbert  $S$ sistema ortonormale $S$ è al più numerabile
+	\end{prop}
+	\begin{defi}
+		Un sistema si dice completo se l'insieme delle combinazioni lineari finite di elementi $\{ \varphi_k\}$ è denso in $H$ ( $\forall f\in H\ \ f = \sum^{+\infty}_{k=1} \lambda_k \varphi_k \ \ \ \lambda_k\in \R)$
+	\end{defi}
+	\begin{teo}
+		Sia $H$ spazio di Hilbert separabile $ \Rightarrow  H$ ammette un sistema ortonormale completo.
+	\end{teo}
+	\begin{prop}
+		Sia $M = < \varphi_1,\ldots, \varphi_n > \ \ \forall f\in H$\\
+		\[
+		p_M(f) = \sum^{n}_{k=1} (f, \varphi_k) \varphi_k
+		.\]
+	\end{prop}
+	\begin{coro}
+		$H$ spazio  di Hilbert  $\{ \varphi_k \}$ sistema fondamentale numerabile 
+		\[
+		 \Rightarrow f\in H\ \ \sum^{+\infty}_{k=1}(f, \varphi_k)^2\leq \|f\|^2
+	 .\]
+	\end{coro}
+	\begin{teo}
+		Sia $H$ spazio di Hilbert e $\{ \varphi_k\}$ sistema ortonormale in $H$, sono equivalenti
+		\begin{enumerate}
+			\item $\{ \varphi_k\}$ è completo
+			\item $f = \sum^{+\infty }_{k=1}(f, \varphi_k) \varphi_k$ \ \ $\forall f \in H$
+			\item  $\forall f \in H \ \ \|f\|^2 = \sum^{+\infty}_{k=1} (f, \varphi_k)^2 $ Perseval
+			\item $\forall f,g\in H  \ \ \ (f,g) = \sum^{+\infty}_{k=1}(f, \varphi_k)(g, \varphi_k)$
+			\item $f =0 \Leftrightarrow (f, \varphi_k) = 0 \ \ \forall k\geq 1$
+		\end{enumerate}
+	\end{teo}
+	\begin{teo}[Weierstrass]
+		Dato $f\in C(\R)$ periodica di periodo  $2\pi\ \ \forall \e > 0 \ \ \exists p_n$ polinomio trigonometrico atle che  $\|f-f_n\|_\infty< \e$
+	\end{teo}
+	\begin{defi}[Misura prodotto]
+		 La misura $\mu\times\nu$ su  $X\times Y$ è definita da  $\forall E\subseteq X\times Y$
+		  \[
+			  \mu\times\nu (E) = \inf\{ \sum^{+\infty}_{i=1}\mu(A_i)\nu(B_i), \ A_i\in M_\mu, \ B_i\in M_\nu, E = \sum^{+\infty}_{i=1}A_i\times B_i\}
+		 .\] 
+		 Se $A\in M_\mu$ e $B\in M_\nu \Rightarrow  R = A\times B$ rettangolo (misurabile) e $ \bigcup^{+\infty}_{i =1}A_i\times B_i$ è un plurirettangolo (con $A_i, B_i$ misurabili)
+	\end{defi}
+	\begin{prop}
+		Se $P\subset X\times Y$ plurirettangolo
+		 \[
+		\mu\times\nu(P) = \int_Y\int_X\chi_P(x,y)d\mu d\nu = \int_X\int_Y\chi_P(x,y)d\nu d\mu
+		.\] 
+	\end{prop}
+	\begin{lemm}
+		$E\subseteq X\times Y$ plurirettangolo  $ \Rightarrow  \mu\times\nu (E) = \inf\{\mu\times\nu(P), P$ plurirettangolo $E\subseteq P\}$
+	\end{lemm}
+	\begin{prop}
+		$P\subseteq X\times Y$ plurirettangolo $ \Rightarrow  P$ è $\mu\times \nu$-misurabile
+	\end{prop}
+	\begin{lemm}
+		Sia $\{P_k\}$ successione di plurirettangoli tale che  $P_0\supseteq P_1\supseteq P_2\supseteq\ldots$ allora $P_\infty = \bigcap^{+\infty}_{k=1}P_k$ $\forall y\in Y$  $\chi_{P_\infty}(\cdot, y)$  è $\mu$-misurabile, $y \rightarrow \int_X\chi_{P_\infty}(x,y)d\mu$ e $\nu$-misurabile
+		\[
+			\mu\times\nu(P_\infty) = \int_Y\int_X \chi_{P_\infty}(x,y)d\mu d\nu = \int_X\int_Y \chi_{P_\infty} d\nu d\mu
+		.\] 
+	\end{lemm}
+	\begin{defi}
+		Spazio di misura $(X,\mu)$ si dice  $\sigma$-finito se $X = \bigcup^{+\infty}_{i=1}X_i$ con $X_i$ misurabili tali che  $X_i\cap X_j = \emptyset$ se  $i\neq j$ e  $\mu(X_i) < +\infty\ \ \forall i$
+	\end{defi}
+	\begin{teo}[Tonelli]
+		Siano $(X,\mu), (Y,\nu)$ Spazi di misura $\sigma$-finiti, sia $f:X\times Y \rightarrow [0,+\infty]$ allora \[\int_{X\times Y}f(x,y)d(\mu\times\nu) = \int_Y\int_X f(x,y)d\mu d\nu = \int_X\int_Yf(x,y)d\nu d\mu\]
+	\end{teo}
+\end{document}
