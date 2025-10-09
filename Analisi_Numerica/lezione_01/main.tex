@@ -1,0 +1,82 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4 Analisi Numerica}
+\date{2025-10-09}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Parte che hai sul tablet}
+	\subsection{Parte nuova}
+	Cosa facciamo con l'output di $lu$ di matlab?\\
+	\begin{gather*}
+	A = lu(A)\\
+	[\tilde L, U] = lu(A)\ \ \ \ \ \tilde L = P_1 P_2,\dlots, P_{n-1} L\\
+	[L,U,P] = lu(A)
+	\end{gather*}
+	\hline \ \\
+	Per risolvere $Ax = b$ dobbiamo usare anche $P$.
+	 \begin{gather}
+		Ax = b\\
+		PAx = Pb\\
+		LUx = Pb
+	\end{gather}
+	posso quindi risolvere:
+	\begin{gather}
+		Ly = Pb\ \ \ \ \ \ \text{triang. inf.}\\
+		Ux = y\ \ \ \ \ \ \  \text{triang. sup.}
+	\end{gather}
+	Bisogna scrivere queste due funzioni per la risoluzione di sistemi triangolari superiori e inferiori.\\
+	Sul manuale c'è "forwardrow" per risolvere un sistema triangolare inferiore.\\
+	$Ly = c, \ \ i = 1,\ldots, n$ \ \  $\displaystyle y_i = \frac{1}{l_{ii}}(c_i- \sum_{j=1}^{i-1}l_{ij}y_j)$\\
+	\textbf{Nota:}\\
+	Questo funziona anche per il primo elemento $y_1$, questo poichè $i$ parte da  $1$ e non entra quindi nel "ciclo" (sommatoria)\\
+$L(i,1:i-1)* y(1:i-1)$ è la sommatoria\\
+Si può anche sovrascrivere la soluzione sul vettore del termine noto, tanto una volta utilizzata una componente non mi serve più.\\
+$c = forwardrow(L,c)$ mi restituisce il vettore soluzione.\\
+$y = backwardrow(U,y)$ che risolve il sistema  $Ux = y$ \\
+$u = n:-1:1$\\  $\displaystyle x_i = \frac{1}{u_{ii}} = (y_i - \sum_{j=i+1}^n u_{ij}x_j)$ \\
+lukji, forwardrow, backwardrow sono 3 funzioni che vanno preparate per il laboratorio.\\
+$Ax = b$ in matlab,  $x= A\backslash b$ sottintende  $x = U\backslash (L \backslash (P * b))$ \\
+ovvero  $ y = L\backslash (P*b)$ e poi  $x = U \backslash y$\\
+Per controllare quindi che la soluzione sia corretta possiamo utilizzare questo metodo.\\
+\hline \ \\
+\subsection{Piovting parziale}
+Si utilizza per aumentare la stabilità del metodo risolutivo.\\
+$A = \matrice{10^{-13} & 1\\ 1 & 1}$ \\
+La norma spettrale di questa matrice è $K_2(A) = 2,6180$\\
+$b = A\icol {1\\1}$ Metto  $b$ in questo modo per avere una soluzione di tutti 1\\
+ $b = sum(A,2)$ (matlab lavora per colonne di base), trova il vettore riga $A$ senza secondo argomento, con $2$ si specifica di lavorare sulla seconda dimensione e trova il vettore somma di tutte le righe (controlla che sia vero)\\
+ $\hat L, \hat U = A + \delta A$ dove $\delta A$ è una piccola perturbazione\\
+ con la norma di Schur (?) (massimo modulo tra tutti gli elementi della matrice)\\
+ $\|\hat L\|_\Delta \cong 10^{12}$ \\
+ $\|\hat U\|_\Delta \cong 10^{13}$\\
+  $\|A\|_\Delta = 1$ \\
+	  Questo succederebbe se non facessi permutazioni (che non sono obbligatorie dato che non ci sono 0 sulla diagonale).\\
+  $\|x^{LU} - 1\|_2 = 8\cdot 10^{-4}$ ovvero c'è un errore di ordine $10^{-4}$ che è molto grande, ci aspettiamo 16 cifre significative esatte in matlab.\\
+  $\|x^{PA=LU} - 1\|_2 = 0$ (attuando la permutazione)\\
+  $\tilde L\tilde U = PA + \delta A$\\
+   $\|\tilde L\| = 1 = O(1)$ (una piccola costante)\\
+   $\|\tilde U\| =1$\\
+Si dice che la fattorizzazione  $PA = LU$ è stabile in senso debole  
+\[
+	\frac{\|\tilde{\delta A}\|_\Delta}{\|A\|_\Delta} = P(\rho_n \cdot eps)
+.\] 
+$eps$ è l'epsilon di macchina ovvero  $2.2\cdot 10^{-16}$ è la precisione macchina, è la differenza tra  $1 $ e il successivo numero macchina.\\
+ $\rho_n$  dovrebbe dipendere linearmente da $n$ ed essere relativamente piccolo. Questa dipendenza da $n$ mi fa parlare di stabilita in senso debole.\\
+ In esempi costruiti appositamente si ha anche $\rho_n = 2^{n-1}$, ma in genere dipende linearmente da  $n$.\\
+ Quando si parla invece di stabilità in senso forte il rapporto tra le norme di Schur è un O grande di una costante non dipendente dalla dimensione.
+
+
+
+
+
+
+
+
+
+
+\end{document}
