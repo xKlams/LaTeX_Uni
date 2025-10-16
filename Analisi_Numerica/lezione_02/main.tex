@@ -1,0 +1,132 @@
+\documentclass[12px]{article}
+
+\title{Lezione Boh Analisi Numerica}
+\date{2025-10-16}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Algoritmo di Thomas}
+	Se esiste la fattorizzazione $LU$ c'è un algoritmo per non fare il pivoting.\\
+	Se  $A$ è tridiagonale (e $!\exists$ fattorizzazione LU)\\
+	allora  $L$ è bidiagonale inferiore con $1 $ sulla diagonale\\
+	e $U$ è bidiagonale superiore\\
+	\[
+		A = \matrice{a_1 & c_1 & 0 & \ldots & 0\\
+			b_2 & a_2 & c_2 & 0 & 0\\
+			0 & \ddots & \ddots & \ddots & c_{n-1}\\
+		0 & 0 & 0 & b_n & a_n} 
+	.\] 
+	Notiamo che\\
+	$\alpha_1 = a_1$\\
+	$\gamma_1 = c_1$\\
+	$\alpha_1\beta_1 = b_2$\\
+	$\beta_2\gamma_1 + \alpha_2 = a_2$\\
+	$\gamma_2 = c_2 $\\
+	Più in generale possiamo dire\\
+	\begin{gather*}
+		\alpha_{i-1}\beta_i = b_i\\
+		\beta_i\gamma_{i-1} + \alpha_i = a_i\\
+		 \gamma_i = c_i\\
+		  2\leq i\leq n-1
+	\end{gather*}\\ e per $n$
+	 \begin{gather*}
+		 \alpha_{n-1}\beta_n = b_n\\
+		 \beta_n\gamma_{n-1} + \alpha_n = a_n
+	 \end{gather*}
+	$\alpha_1 = a_1$ e $\gamma_i = c_i\ \ \ 1\leq i\leq n-1$\\
+	$\displaystyle\beta_i = \frac{b_i}{\alpha_{i-1}}; \ \ \ \alpha_i = a_i- \beta_ic_{i-1}\hfill 2\leq i \leq n$ \\
+	\textbf{Costo computazionale}\\
+	$3(n-1)\ \ \ O(n)$\\
+	\textbf{Proprietà:}\\
+	Se $A$ è tridiagonale e hermitiana definita positiva oppure a dominanza diagonale.\\
+	si ha stabilità in senso forte dell'algoritmo $LU$.\\
+	 $\tilde L \tilde U = A + \delta \tilde A$ \\
+	 $\|\tilde L\|_\Delta\|\tilde U\|_\Delta \leq \rho \|A\|$\\
+	 $\displaystyle\frac{\|\delta \tilde A\|_\Delta}{\|A\|_\Delta} = O(\rho \ eps)$ \\
+	 \newpage
+ In generale $Ly = f$ con  $L$ bidiagonale inferiore (Considero L con $(\alpha_i)$ sulla diagonale superiore e $(\beta_i)$ su quella inferiore\\
+	 $\displaysytle y_1 = \frac{f_1}{\alpha_{11}}$\\
+	 $\displaystyle y_i = \frac{f_i - \beta_iy_{i-1}}{\alpha_i}$\ \ \ \  $i = 2:n$ \\
+	 abbiamo quindi una complessità di $2(n-1)$\\
+	  $Ux = y$ con  $U$ che ha  $\alpha_i$ sulla diagonale centrale e  $c_i$ su quella superiore\\
+	  $x_n = \frac{y_n}{\alpha_n}$\\
+  $\displaystyle x_i = \frac{y_i - c_ux_{i+1}}{\alpha_i}$\ \  $u = n-1:-1:1$ \ \ \ \ \ $n + 2(n-1)$\\
+  \textbf{Costo complessivo per risolvere il sistema $Tx = f$}\\
+  $3n - 3 + 2n - 2 + n + 2n - 2 = 8n - 7$\\
+  guarda codice $thomas.m$
+  \subsection{Metodi iterativi per sistemi lineari}
+  matrice dei coefficienti "sparsa" (con numero di elementi diversi da zero $(n)$ ) e di grandi dimensioni.
+  \subsubsection{Tecnica dello splitting additivo}
+  Consideriamo $A\in \C^{n\times n}$ non singolare,  $A = P-N$ con  $P$ non singolare (!)\\
+  Allora i l sistema
+  \begin{gather*}
+  	Ax = b\\
+	(P-N)x = b\\
+	Px = Nx + b\\
+	P^{-1}(Px) = P^{-1}(Nx + b)\\
+	x = P^{-1}Nx + P^{-1}b
+  \end{gather*}
+  quindi sappiamo che $x^* : Ax^* = b$ è anche tale che  $x^*= P^{-1}Nx^* + P^{-1}b$\\
+  Costruisco  la relazione di ricorrenza
+   \[
+	   \begin{cases}
+		   x^{(0)} \ \ \text{ dato}\\
+	   x^{(k+1)} = P^{-1}Nx^{(k)} + P^{-1}b\ \ \ k\geq 0
+	   \end{cases}
+  .\] 
+  $B:= P^{-1}N$ è la matrice di iterazioni\\
+  $f:= P^{-1}b$
+   \[
+	   x^{(k+1)} = Bx^{(k)}+f
+  .\] 
+  questo dà una classe di metodi iterativi "lineari" $(x^{(k+1}$ dipende linearmente da  $x^{(k)})$\\
+   $1)$ La successione generata dalla relazione di ricorrenza converge a  $x^*$?\\
+   $2)$ se sì, dipende da  $x^{(0)}$?\\
+   $B$, matrice di iterazione, non costruita con la tecnica dello splitting additivo:
+    \[
+   \begin{cases}
+	   x^{(0)} \ \ \text{ dato}\\
+   x^{(k+1)} = Bx^{(k)} + f\ \ \ \ k\geq 0
+\end{cases}
+   .\] 
+   B deve essere consistente, ovvero deve valere $x^* = Bx^* + f$ \\
+   Ovvero il metodo è consistente.\\
+   Un metodo consistente è convergente se $\{x^{(k)}\}$ è tale che  $\lim_{k \rightarrow \infty}x^{(k)} = x^*$\\
+   ovvero esiste una norma vettoriale $\|\cdot\|$ tale che  $\lim_{k \rightarrow+\infty} \|x^{(k)} - x^*\| =0 $\\
+   $e^{(k)} = x^*- x^{(k)}$ errore al passo  $k$\\
+   ovvero  $\lim_{k \rightarrow +\infty}\|e^{(k)}\| = 0$ 
+   \begin{teo}
+	   Un metodo consistente è convergente per ogni $x^{(0)}$ se e solo se  $\rho(B) < 1$ (raggio spettrale della matrice d'iterazione)\\
+   \end{teo}
+   \begin{dimo}
+	   il metodo è consistente. \\
+	   Quindi $e^{(k)} = x^* - x^{(k)} = (Bx^* + f) - (Bx^{(k-1)}+f) = B(x^* - x^{(k-1)}) = Be^{(k-1)} = B^2e^{(k-2)} = \ldots = B^ke^{(0)}\ \ \ \forall k\geq 0$ 
+	   \begin{enumerate}
+		   \item Sia $\rho(B) <1$. Scelgo  $\|\cdot\|$ naturale tale che \\
+			   $\|B\| < 1 \Rightarrow  \lim_{k \rightarrow +\infty}\|B^k\|\leq \lim_{k \rightarrow + \infty}\|B\|^k = 0$ \\
+			   Considero la norma vettoriale che induce la norma naturale che ho scelto.
+			   \[
+				   \lim_{ k \rightarrow + \infty} \|e^{(k)}\| = \lim_{k \rightarrow +\infty} \|B^k e^{(0)}\|\leq \lim_{k \rightarrow\infty} \|B^k\| \|e^{(0)}\| = 0 \ \ \ \forall e^{(0)}
+			   .\] 
+			   ovvero $\forall x^{(0)}$
+		   \item Esiste una norma vettoriale tale che 
+			   \[
+				   \lim_{k \rightarrow +\infty} \|e^{(k)}\| = 0 \ \ \ \forall x^{(0)} \ \ \ (\text{ ovvero } \forall e^{(0)}
+			   .\] 
+			   Supponiamo p.a. che $\rho(B)\geq 1$. Quindi $\exists \lambda: |\lambda| \geq 1$. Sia  $e^{(0)}$ un autovettore corrispondente a  $\lambda$  $Be^{(e_0)}= \lambda e^{(0)} \Rightarrow B^ke^{(0)} = \lambda^k e^{(0)}$\\
+			   $ \Rightarrow  e^{(k)} = \lambda^ke^{(0)} \Rightarrow  \|e^{(k)}\| = |\lambda|^k\|e^{(k)}\|$ \\
+			   Allora però $\lim_{k \rightarrow +\infty}\|e^{(k)}$ non può tendere a $0$.\\
+			   1) Se  $|\lambda| = 1$ allora  $\|e^{(k)}\| = \|e^{(0)}\|\ \forall k$\\
+			   2) Se $|\lambda|>1$ allora  $\lim_{k \rightarrow +\infty} \|e^{(k)}\| = +\infty.$
+	   \end{enumerate}
+   \end{dimo}
+
+
+
+ 
+	
+\end{document}
