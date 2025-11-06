@@ -1,0 +1,89 @@
+\documentclass[12px]{article}
+
+\title{Lezione 4}
+\date{2025-11-06}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\subsection{Netwon e qualcosa}
+	\textbf{Esempio:}\\
+	\begin{cases}
+		$e^{x_1^2 + x_2^2} - 2 = 0$\\
+		$e^{x_1^2-x_2^2}-1= 0$
+	\end{cases}\\
+	Scrivere $J_F(x)$ (dipende da  $x_1, x_2$) e implementarla in matlab\\
+	$F_2(x) = 0$ \ $e^{x_1^2 - x_2^2} = 1 \Rightarrow  x_1^2-x_2^2 = 0 \Rightarrow  x_1 = \pm x_2$\\
+	$F_1(x) = 0$ \ $e^{2x_1^2} = 2 \Rightarrow  2x_1^2 = \ln(2) \Rightarrow  x_1 = \pm \sqrt{\ln 2 /2}$\\
+	$(\sqrt{\frac{\ln 2}2}, -\sqrt{\frac{\ln 2}2}) (\sqrt{\frac{\ln 2}2}, \sqrt{\frac{\ln 2}2}) (-\sqrt{\frac{\ln 2}2}, \sqrt{\frac{\ln 2}2}) (-\sqrt{\frac{\ln 2}2}, -\sqrt{\frac{\ln 2}2})$\\
+	con $\sqrt{\frac{\ln 2}2} = 0.58870501$\\
+	Guarda script nel file.m\\
+	Scriviamo la funzione $f$ e la Jacobiana, dobbiamo farlo noi per ogni sistema.
+	f.m, j.m\\
+	\textbf{Chiamata di Newton}\\
+	$[x,r,niter] = newton(@Ffun, @Jfun, [0.4, 0.4], 1.e- 10, 25, 1)$\\
+	Si può implementare con funzioni inline, se lo fai puoi non mettere il function handle (@) nella chiamata della funzione newton.\\
+	Se $p = 1$ ci dovrebbero essere  $6$ iterazioni, se  $p = 5$ iterazioni = ?\\
+	con vettore iniziale $[5;5]$ in  $56$ iterazioni  $p = 1$\\
+	con vettore iniziale $[0.1;0.1]$ in  $19$ iterazioni $ p=1$\\
+	Completato il discorso sui sistemi non lineari.
+	\section{Interpolazione}
+	 $\pi_n = \Mathbb P_n \hfill( \pi_n f)$ \\
+	 la prima è quando abbiamo una tabella di nodi, nel secondo caso abbiamo una funzione che vogliamo approssimare ad un polinomio.\\
+	 Le condizioni sono $x_i \neq x_j \ \ \ i\neq j$\\
+	 In entrambi i casi abbiamo  $n + 1$ coppie di valori.\\
+	  $\pi_n(x_i) = x_i$  \ \ e\ \   $\pi_nf(x_i) = f(x_i)$ 
+	  \begin{enumerate}
+		  \item base di $\mathbb P _n$\\
+			  $\{x^i\}_{i = 0:n}$\\
+			   $\pi_n(x) = \sum^{i = 0 }_{n}c_ix^i$\\
+			   $\pi_n(x_j) = \sum^{n}_{i = 0}x_i(x_j)^i = y_j\ \ \ \ \  j = 0:n$\\
+			   $ V = \matrice{1& x_0 &\ldots& x^n_0 \\
+				    \vdots& \vdots& \vdots&\vdots \\
+				    1&x_n &\ldots &x_n^n }\matrice{c_0\\\vdots\\c_n} = \matrice{y_0\\\vdots\\y_n}$\\
+				    $ \displaystyle\det V = \prod_{0\leq j < i \leq n} (x_i - x_j)\neq 0$\\
+			     $V$ è la matrice di Vandermonde  ed è mal condizionata, potete verificarlo con $function \ \ vander$ e con   $fliplr(vander(x))$ il condizionamento della matrice è molto più alto di 1.\\
+			     In più risolvere un sistema è molto costoso.
+		     \item base di $\mathbb P_n$  $\{l_k(x)\}_{k=0:n}$
+			     \[
+				     l_k(x) = \prod^n_{j=0, j\neq k} \frac{x-x_j}{x_k-x_j}\ \ \  \ \ k = 0:n
+			     .\] 
+			     Questa è la base di Lagrange, il nostro polinomio $\pi_n(x) = \sum^{i = 0}_{n}y_il_i(x)$\\
+			     Questa è la forma di lagrange, mentre prima risolvevamo il sistema qui è come se avessimo una matrice diagonale.\\
+		     \item base di $\mathbb P_n$\\
+			     $\{\omega_k(x)\}_{k=0:n}$\\
+			     $\omega_0=1$\\
+			     $\omega_k(x) = \prod_{j = 0}^{k-1}(x-x_j) = (x-x_0)\cdot\ldots\cdot(x-x_{k-1})$\ \ \ $k = 1:n$\\
+			     \[
+			     \pi_n(x) = \sum^{n}_{i=0}a_i\omega_i(x)
+			     .\] 
+			     $\{1, x-x_0, (x-x_0)(x-x_1),\ldots, (x-x_0)\cdot\ldots\cdot(x-x_{n-1})\}$\\
+			     $\pi_n(x) = \sum^{k = 0}_{n}a_k\omega_k(x)$
+			     $\matrice{1& 0 & \ldots & 0\\
+				     1& (x_1-x_0) & \ldots & 0\\
+			     1 & (x_2 - x_0) & \omega_2(x_2) & \ldots\\
+	     \vdots & \vdots & \vdots& \vdots\\
+     1 & (x_n-x_0) & \ldots & \omega_n(x_n)}
+				     \matrice{a_0\\ a_1\\\vdots\\\vdots\\a_n} = \matrice{y_0\\ y_1\\\vdots\\ \vdots\\ y_n}$\\
+				     La matrice è quindi triangolare inferiore, posso usare forwardorw.\\
+				     $a_0 = y_0$\\
+				     $a_1 =  \frac{y_1 - a_0\omega_0(x_1)}{\omega_1(x_1)}$\\
+				     $\displaystyle a_k = \frac{y_k - \sum^{j=0}_{k-1}a_j \omega_j(x_k)}{\omega_k(x_k)} = \frac{y_k - \pi_k(x_k)}{\omega_k(x_k)}$\\
+				     Si nota come per aggiungere un punto, basta aggiungere una riga alla matrice.
+	  \end{enumerate}
+  $\pi_nf$\ \ \ \ \ \ \  $f,\ \ \ \ x_0,\ldots, x_n, \ \ x_i\neq x_j\ \ \ i\neq j$\\
+  Dati $\displaystyle\{x_i,f(x_i)\}_{i=0:n}$\\
+  Voglio ottenere  $\pi_nf(x)$ a partire dal  $\pi_{n-1}f(x)\ \ \ n\geq 1\ \ \ \ \ \pi_0f(x) = f(x_0)$\\
+  Chi è $q(x)$ tale che  $\pi_nf(x) = \pi_{n-1}f(x) + q_n(x)$ con $q_n\in \mathbb P_n$\\
+  $q_n(x_i) = \pi_f(x_i) - \pi_{n-1}f(x_i) = 0 \ \ \ \ \ i = 0,\ldots, n-1$\\
+  $q_n(x) = a_n(x-x_0)(x-x_1)\cdot\ldots\cdot (x-x_{n-1}) = a_n\omega_n(x)$\\
+  Chi è $a_n$?\\
+  Deve valere  $\pi_nf(x_n) = f(x_n)$\\
+  $a_n = \frac{q_n(x)}{\omega_n(x)}= \frac{\pi_nf(x) - \pi_{n-1}f(x)}{\omega_n(x)}$ 
+	 
+
+
+\end{document}
