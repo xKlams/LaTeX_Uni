@@ -1,4 +1,4 @@
-\documentclass[12px]{article}
+\documentclass[12pt]{article}
 
 \title{Dispense Analisi Numerica}
 \date{2026-01-26}
@@ -9,7 +9,7 @@
 \begin{document}
 	\maketitle
 	\newpage
-	\Section{Norme Matriciali}
+	\section{Norme Matriciali}
 	\begin{defi}[Norma Matriciale]
 		Una norma matriciale è un applicazione $\|\cdot\|:\C^{m\times n} \rightarrow \R$ tale che
 		\begin{enumerate}
@@ -29,7 +29,7 @@
 	\end{defi}
 	\begin{defi}[Norma di Frobenius]
 		\[
-			\|A\|_F = \sqrt{ \sum^{m}_{i = 1} \sum^{n}_{j=1}|a_{ij}|^2}= \sqrt{\tr(AA^H)}
+			\|A\|_F = \sqrt{ \sum^{m}_{i = 1} \sum^{n}_{j=1}|a_{ij}|^2}= \sqrt{tr(AA^H)}
 		.\] 
 	\end{defi}
 	\begin{teo}
@@ -127,7 +127,7 @@
 	.\] 
 	e si può dimostrare che
 	\[
-		\dist_p(A) = \frac{1}{K_p(A)}
+		dist_p(A) = \frac{1}{K_p(A)}
 	.\] 
 	Ciò significa che una matrice con un numero di condizionamento elevato potrebbe comportarsi come una matrice singolare della forma $A + \delta A$ . In altre parole, in tal caso, a perturbazioni nulle del termine noto potrebbero  non corrispondere perturbazioni nulle sulla soluzione.\\
 	 \begin{teo}
@@ -339,7 +339,7 @@ La corrispondente matrice di iterazione è data da
 \end{teo}
 \subsubsection{Metodo del rilassamento successivo (SOR)}
 \[
-	x_i^{(k+1)}_i = \frac{\omega}{a_ii} \left[ b_i - \sum^{i-1}_{j=1}a_{ij}x_k^{(k+1)}- \sum^{n}_{j=i+1}a_{ij}x_j^{(k)} \right] + (1-\omega)x^{(k)}_i
+	x_i^{(k+1)} = \frac{\omega}{a_{ii}} \left[ b_i - \sum^{i-1}_{j=1}a_{ij}x_k^{(k+1)}- \sum^{n}_{j=i+1}a_{ij}x_j^{(k)} \right] + (1-\omega)x^{(k)}_i
 .\] 
 per $i = 1,\ldots, n$\\
 La matrice di iterazione è per tanto
@@ -514,5 +514,6 @@ Per analizzare il comportamento dell'errore di interpolazione quando $n$ tende a
 	 \|f\|_\infty = \max_{x\in[a,b]}|f(x)|
 .\] 
 Introduciamo una matrice triangolare inferiore $X$ di dimensione infinita, detta matrice di interpolazione su $[a,b]$ i cui elementi  $x_{ij}, i,j=0,1,\ldots$ rappresentano i punti di  $[a,b]$ con l'assunzione che in ogni riga gli elementi siano tutti distinti\\
-In tal caso, per ogni  $n\geq 0$, la $n+1$-esima riga di $X$ contiene $n+1$ valori che possiamo identificare come nodi di inteprolazione. Per una data funzione $f$, si puo allora definire in modo univoco un polinomio interpolatore $\Pi_nf$ di grado $n$ rispetto a detti nodi. Naturalmente, $\Pi_n f$ dipenderà solamente da $X$, oltre che da $f.$
+In tal caso, per ogni  $n\geq 0$, la $n+1$-esima riga di $X$ contiene $n+1$ valori che possiamo identificare come nodi di inteprolazione. Per una data funzione $f$, si puo allora definire in modo univoco un polinomio interpolatore $\Pi_nf$ di grado $n$ rispetto a detti nodi. Naturalmente, $\Pi_n f$ dipenderà solamente da $X$, oltre che da $f.$\\
+
 \end{document}

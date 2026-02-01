@@ -1,3 +1,5 @@
+\documentclass{article}
+
 \usepackage{amsmath}
 \usepackage{tikz-cd}
 \usepackage{amsthm}
@@ -62,7 +64,7 @@
 
 \newenvironment{dimo}
   {\begin{dimostrazione}}
-  {$\text{ }\hfill\square\newline$\end{dimostrazione}}
+  {\text{ }\hfill\square\newline\end{dimostrazione}}
 
 \newenvironment{teo}
 {\begin{mdframed}[linecolor=red, backgroundcolor=red!10]\begin{theo}}
@@ -133,3 +135,7 @@
 \newcommand{\semi}{\rtimes_{\o}}
 \newcommand{\agisce}{\curvearrowright}
 \newcommand{\e}{\varepsilon}
+
+\begin{document}
+	test
+\end{document}
