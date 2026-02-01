@@ -1,0 +1,518 @@
+\documentclass[12px]{article}
+
+\title{Dispense Analisi Numerica}
+\date{2026-01-26}
+\author{Federico De Sisti}
+
+\input{../../setup.tex}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\Section{Norme Matriciali}
+	\begin{defi}[Norma Matriciale]
+		Una norma matriciale è un applicazione $\|\cdot\|:\C^{m\times n} \rightarrow \R$ tale che
+		\begin{enumerate}
+			\item $\| A\|\geq 0 \ \ \forall A\in \C^{m\times n}$ e  $\| A\| = 0$ se e solo se  $A = 0$
+			\item   $\|\alpha A \| = |\alpha | \|A\|\forall \alpha\in C, \forall A \in \C^{m\times n}$ (omogeneità)
+			\item  $\| A + B \| \leq \|A\| + \|B\| \ \ \ \forall A,B\in\C^{m\times n}$ (disuguaglianza triangolare)
+		\end{enumerate}
+	\end{defi}
+	\begin{defi}[Norma compatibile]
+		Diciamo che una norma matriciale $\| \cdot \| $ è compatibile o consistente con una norma vettoriale  $\| \cdot \|$ se 
+		 \[
+		\|Ax\|\leq\|A\|\|x\|. \ \ \forall x\in \C^n
+		.\] 
+	\end{defi}
+	\begin{defi}[Matrice coniugata trasposta (aggiunta)]
+		Sia $A\in \C^{m\times n}; $ la matrice  $B = A^H\in\C^{m\times n}$ è detta matrice coniugata trasposta (o aggiunta) di  $A$ se  $b_{ij} = \overline{a_{ji}}$ essendo  $\overline{a_{ji}}$ il numero complesso coniugato di $a_{ji}$
+	\end{defi}
+	\begin{defi}[Norma di Frobenius]
+		\[
+			\|A\|_F = \sqrt{ \sum^{m}_{i = 1} \sum^{n}_{j=1}|a_{ij}|^2}= \sqrt{\tr(AA^H)}
+		.\] 
+	\end{defi}
+	\begin{teo}
+		Sia $\| \cdot \|$ una norma vettoriale su  $\C^n$. La funzione
+		 \[
+			 \|A\| = \sup_{x\neq 0}\frac{\|Ax\|}{\|x\|}
+		.\] 
+		è una norma matriciale su $\C^{m\times n}$, che viene detta norma matriciale indotta (o subordinata) o norma matriciale naturale.
+	\end{teo}
+	La dimostrazione di questo teorema non è richiesta
+	\begin{teo}
+		Se $\|\|\cdot \|\|$ è una norma matriciale naturale indotta da  $\|\cdot \|$, allora
+		\begin{enumerate}
+			\item $\|Ax\|\leq \|\|A\|\|\|x\|$, ossia è una norma compatibile
+			\item $\|\|I\|\| = 1$
+			\item  $\|\|AB\|\|\leq \|\|A\|\|\|B\|\|$, ossia è sub moltiplicativa
+		\end{enumerate}
+	\end{teo}
+	\begin{dimo}
+		 guarda libro
+	\end{dimo}
+	\begin{defi}[Raggio spettrale]
+		Chiamiamo $\rho(A)$ il raggio spettrale della matrice  $A\in \C^{n\times n}$ 
+		 \[
+			 \rho(A) = \max_{i=1,\ldots,n}|\lambda_i|
+		.\] 
+	\end{defi}
+	\begin{teo}
+		Sia $\|\cdot\|$ una norma matriciale compatibile con una norma vettoriale che indichiamo con lo stesso simbolo, allora
+		 \[
+		\rho(A)\leq \|A\| \ \ \ \forall A\in \C^{n\times n}
+		.\] 
+	\end{teo}
+	La norma spettrale è la norma indotta dalla norma euclidea.
+	\begin{teo}[di Ostrowski]
+		Sia $A\in\C^{n\times n}$ e  $\varepsilon > 0$. Allora esiste una norma matriciale naturale  $\|\cdot\|_{\rho, \varepsilon}$ (dipendente da $ \varepsilon$ tale che 
+		\[
+			\|A\|_{\rho, \varepsilon}\leq \rho (A) + \varepsilon
+		.\] 
+		Di conseguenza fissata una tolleranza piccola a piacere, esiste sempre una norma matriciale che è arbitrariamente vicina la raggio spettrale di $A$, ossia
+		 \[
+			 \rho(A) = \inf_{\|\cdot\|}\|A\|
+		.\] 
+	\end{teo}
+	\begin{teo}[Successione di matrici e raggio spettrale]
+		Sia $A$ una matrice quadrata e sia $\|\cdot\|$ una norma naturale allora
+		$$\lim_{m \rightarrow +\infty}\|A^m\|^{1/m} = \rho(A)$$
+	\end{teo}
+	\begin{defi}[Convergenza di una successione di matrici]
+		Una successione di matrici $\{A^{(k)}\in\R^{n\times m}$ è detta convergente ad una matrice $A\in \R^{n\times n}$ se 
+			 \[
+				 \lim_{k \rightarrow +\infty} \|A^{(k)}- A\| = 0
+			.\] 
+			La scelta della norma è ininfluente in quanto in $\R^{n\times n}$ le norme sono equivalenti.
+	\end{defi}
+	\begin{defi}[Matrice Convergente]
+		Una matrice $A$ si dice convergente se
+		 \[
+			 \lim_{ k \rightarrow +\infty} A^k = 0
+		.\] 
+	\end{defi}
+	\begin{teo}
+		Sia $A$ una matrice quadrata. Allora:
+		\[
+			\lim_{k \rightarrow +\infty} A^k = 0 \Leftrightarrow \rho(A) < 1
+		.\] 
+		Inoltre se $\rho(A) < 1$  allora la matrice  $I-A$ è invertibile.\\
+		La serie geometrica  $ \sum^{+\infty}_{k =0 }A^k$ è convergente se e solo se $\rho(A) <1$ e, in tal caso 
+		 \[
+			 \sum^{+\infty}_{k =0}A^k = (I-A)^{-1}
+		.\] 
+		Infine, sia $\|\cdot\|$ una norma matriciale naturale tale che  $\|A\| < 1$. Allora, se  $I-A$ è invertibile, valgono le seguenti disuguaglianze
+		 \[
+			 \frac{1}{1+\|A\|}\leq\|(I-A)^{-1}\|\leq\frac 1 {1-\|A\|}
+		.\] 
+	\end{teo}
+	\begin{dimo}
+		guarda il libro ed è da fare, non il 1.24, mi sa manco l'enunciato.
+	\end{dimo}
+	\section{Sistemi Lineari}
+	\begin{defi}[Numero di condizionamento]
+		Si definisce numero di condizionamento di una matrice $A\in\C^{n\times n}$ la quantità
+		 \[
+			 K(A) = \|A\|\|A^{-1}\|
+		.\] 
+		Essendo $\|\cdot\|$ una norma matriciale indotta. In generale  $K(A)$ dipende dalla norma scelta.
+	\end{defi}
+	\begin{defi}
+		Una martice si dice singolare quando non è invertibile, ovvero quando il suo determinante è nullo
+	\end{defi}
+	\textbf{Osservazione}\\
+	In generale, se definiamo la distanza relatia di $A\in \C^{n\times n}$ dall'insieme delle matrici singolari rispetto alla norma  $p$ come
+	 \[
+		 dist_p(A) = \min\lbrace \frac{\|\delta A\|_p}{\|A\|_p}; A + \delta A \text { è singolare } \rbrace
+	.\] 
+	e si può dimostrare che
+	\[
+		\dist_p(A) = \frac{1}{K_p(A)}
+	.\] 
+	Ciò significa che una matrice con un numero di condizionamento elevato potrebbe comportarsi come una matrice singolare della forma $A + \delta A$ . In altre parole, in tal caso, a perturbazioni nulle del termine noto potrebbero  non corrispondere perturbazioni nulle sulla soluzione.\\
+	 \begin{teo}
+		 Siano $A\in \R^{n\times n}$ una matrice non singolare e  $\delta A\in \R^{n\times n}$ tali che sia soddisfatta:
+		  \[
+			  \|A^{-1}\|\|\delta A\| < 1
+		 .\] 
+		 per una generica norma matriciale indotta $\|\cdot\|$.\\
+		 Allora se $x\in \R^n$ è soluzione di  $Ax = b$ con $b\in \R^n\ \ (b\neq 0)$ e  $\delta x \in\R^n$ verifica 
+		  \[
+			  (A+\delta A)(x + \delta x) = b + \delta b
+		 .\] 
+		 si ha che
+		 \[
+			 \frac{\|\delta x\|} {\| x\|} \leq \frac{K(A)}{1-K(A)\|\delta A\| / \|A\|} \left(\frac{\|\delta b\|}{\|b\|} + \frac {\|\delta A\|}{\|A\|} \right)
+		 .\] 
+	\end{teo}
+	\begin{dimo}
+		guarda il libro
+	\end{dimo}
+	\begin{coro}
+		Si suppongano valide le ipotesi del teorema 7, sia $\delta A = 0$ Allora
+		 \[
+			 \frac 1 {K(A)}\frac{\|\delta b\|}{\|b\|}\leq \frac{\|\delta x\|}{\|x\|}\leq K(A) \frac{\|\delta b\|}{\|b\|}
+		.\] 
+	\end{coro}
+	Per poter impiegare queste due disuguaglianze nell'analisi della propagazione degli errori di arrotondamento per i metodi diretti, $\|\delta A\|$ e  $\delta b\|$ dovranno essere stimati in funzione della dimensione del sistema e delle caratteristiche dell'aritmetica floating-point usata.\\
+	È infatti ragionevole aspettarsi che le perturbazioni indotte da un metodo per la risoluzione di un sistema lineare siano tali che  $\|\delta A \|\leq\gamma \|A\|$ e  $\|\delta b\|\leq \gamma \|b\|$, essendo $\gamma$ un numero positivo che dipende da  $u$, l'unità di roundoff (ad esempio si porrà in seguito  $\gamma  = \beta^{1-t}$, essendo  $\beta$ la base e  $t$ il numero di cifre della mantissa del sistema  $\F$  scelto).
+	\subsection{Metodo di eliminazione gaussiana (MEG) e fattorizzazione LU}
+	Il metodo di eliminazione gaussiana si basa sul ridurre il sistema $Ax = b$ ad un nuovo sistema equivalente  $Ux = \hat b$ dove  $U$ è triangolare superiore e  $\hat b$ è un nuovo termine noto.\\
+	Il MEG equivale a fattorizzare la matrice di partenza nel prodotto di due matrici $A = LU$ con  $U = A^{(n)}.\\$
+	Fattorizzare la matrice $A$ in questo modo è utile perché non dipende dal termine noto, e quindi posso risolvere più sistemi lineari con matrice dei coefficienti uguale e termine noto diverso.\\
+	Sostianzialmente possiamo prendere la matrice di trasformazione gaussiana  del $k$-esimo passo $M_k$ e ricavare che
+	\[
+		A^{k+1} = M_k(A^{(k)}
+	.\] 
+	possiamo quindi scrivere
+	 \[
+		 M_{n-1}M_{n-2}\ldots M_1A = A^{(n)} = U
+	.\] 
+	Le matrici $M_k$ sono matrici triangolari inferiori con elementi diangolai pari ad uno e con inversa data da 
+	 \[
+		 M_k^{-1}  = 2I_n - M_k = I_n + m_ke_k^T
+	.\] 
+	essendo $(m_ie_i^T)(m_je_j^T)$ uguale alla matrice nulla se  $i\leq j$ di conseguenza\\
+	\[
+		\begin{aligned}[t]
+			A &= M_1^{-1}\ldots M_{n-1}^{-1} U \\
+			     &= (I_n + m_1e_1^T)\ldots(I_n + m_{n-1}e^T_{n-1}U\\
+			     & =\left( I_n + \sum^{n-1}_{i=1}m_ie_i^T \right) U\\
+			     & = \matrice{1 & 0 & \ldots & \ldots & 0\\
+		m_{21} & 1  & & & \vdots\\
+	\vdots & m_{32} & \ddots &  & \vdots\\
+\vdots & \vdots & & \ddots & 0\\
+m_{n_1} & m_{n_2} & \ldots & m_{n,n-1} &1} U
+		\end{aligned}
+	\]
+	Definiamo allora $L = M_{n-1}\ldots M_1)^{-1} = M_1^{-1}\ldots M_{n-1}^{-1}$ sia 
+	\[
+	A = LU
+	.\] 
+La risoluzione del sistema lineare diventa quindi la soluzione, in sequenza, di questi due sistemi lineari
+\begin{gather}
+	Ly = b\\
+	Ux = y
+\end{gather}\\
+Il programma numero 3 a pagina 78 è lukji della fattorizzazione LU.\\
+Studio fowardrow e backwardrow.\\
+\begin{defi}[Pivoting Parziale]
+	Il pivoting parziale è l'applicazione del metodo MEG su una matrice con la scelta dell'elemento di modulo massimo come PIVOT per ridurre l'errore
+\end{defi}
+\textbf{Esistenza e unicità della fattorizzazione LU}\\
+Sia $A\in R^{n\times n}$. La fattorizzazione  $LU$ di  $A$ con  $l_ii = 1$ per  $i = 1,\ldots, n$ esiste ed è unica se e solo se le sottomatrici principali  $A_i$ di  $A$ di ordine  $i=1,\ldots,n-1$ sono non singolari.\\
+\begin{defi}
+	Una matrice quadrata $A = (a_{ij}) \in \mathbb{C}^{n \times n}$ è 
+\textbf{a diagonale dominante per righe} se:
+\[
+|a_{ii}| \geq \sum_{\substack{j=1 \\ j \neq i}}^n |a_{ij}| \quad \forall \, i = 1, \dots, n
+\]
+e \textbf{strettamente dominante diagonale} se:
+\[
+|a_{ii}| > \sum_{\substack{j=1 \\ j \neq i}}^n |a_{ij}| \quad \forall \, i = 1, \dots, n
+\]
+
+\end{defi}
+\textbf{Matrici a dominanza diagonale e fattorizzazione LU}\\
+Se $A$ è una matrice a dominanza diagonale stretta per righe o per colonne, allora esiste ed è unica la fattorizzazione  $LU$ di  $A$ con elementi diagonali di $L$ tutti pari ad  $1$. Lo stesso risultato vale se  $A$ è a dominanza diagonale nel caso sia non singolare.\\
+\begin{teo}[Fattorizzazione di Cholesky]
+	Sia $A\in \R^{n\times n}$ una matrice simmetrica e definita positiva; allora esiste un'unica matrice triangolare superiore  $H$ con elementi diagonali positivi tale che 
+	 \[
+	A = H^TH
+	.\] 
+	Questa è la fattorizzazioen di Cholesky, Gli elementi $h_{ij}$ di $H$ sono dati dalle fomrule seguenti  $h_{11} = \sqrt{a_{11}}$, per $j= 2,\ldots,n$
+	 \[
+		 h_{ij} = \left(a_{ij} - \sum^{i-1}_{k=1}j_{ki}h_{kj} \right)/h_ii, i=1,\ldots,j-1
+	.\] 
+	\[
+		h_jj = \left(a_jj - \sum^{j-1}_{k=1}h_{kj}^2 \right)^{1/2}
+	.\] 
+\end{teo}
+Il  teorema si generalizza alle matrici ermitiane definite positive
+	 
+\begin{teo}[Fattorizzazione di Cholesky complessa]
+	Una matrice quadrata $A\in C^{n\times n}$ è hermitiana definita positiva se:
+	 \begin{itemize}
+	 \item $A = A^H$ (proprietà hermitiana)\\
+	 \item $x^HAx > 0$ per ogni $x\neq 0$
+	\end{itemize}
+	In tal caso, esiste una matrice triangolare inferiore $L\in C^{n\times n}$ con elementi diagonali reali e positivi tali che
+	 \[
+	A = LL^H
+	.\] 
+	dove $L^H$ è la trasposta coniugata di  $L$ \\
+	Per $k = 1, \dots, n$:
+\begin{align}
+l_{kk} &= \sqrt{a_{kk} - \sum_{j=1}^{k-1} |l_{kj}|^2} \label{eq:choldiag} \\
+l_{ik} &= \frac{1}{l_{kk}} \left( a_{ik} - \sum_{j=1}^{k-1} l_{ij} \overline{l_{kj}} \right), \quad i = k+1, \dots, n 
+\end{align}
+\end{teo}
+Qui c'è il codice della fattorizzazione di chol2, il programma 7 a pagina 84\\
+\subsection{Matrici tridiagonali e algoritmo di Thomas}
+\begin{defi}
+	Una matrice tridiagonale è una matrice nulla se non per la diagonale, i coefficienti streattamente al di sopra e strettamente al di sotto
+\end{defi}
+In caso di matrici tridiagonali le matrici $LU$ sono del tipo:\\
+$L$ ha sulla diagonale 1 e sulla diagonale subito sotto i coefficienti $\beta_k$ con  $k=2,\ldots,n$ \\
+$U$ ha sulla diagonale i coefficienti  $\alpha_k$ e sulla diagonale subito sopra i coefficienti  $c_k$ con $k= 1, \ldots, n-1, n$\\
+i coefficienti  $c_k$ sono gli stessi della matrice di partenza e per calcolare gli  $\alpha$ e i $\beta$ si usa la formula
+ \[
+	 \alpha_1 = a_1, \beta_i = \frac{b_i}{\alpha_{i-1}}, \alpha_i = a_i - \beta_ic_{i-1}, i = 2,\ldots,n
+.\] 
+Questo algoritmo prende il nome di algoritmo di Thomas.\\
+Questo algoritmo può essere utilizzato per risolvere il sistema tridiagonale traimte
+ \[
+	 (Ly=f) \  y_1 = f_1, y_i=f_i - \beta_i y_{i-1}, i =2,\ldots, n
+.\] 
+\[
+	(Ux=y) \ x_n   = \frac{y_n}{\alpha_n}, \ x_i = (y_i - c_ix_{i+1})/\alpha_{i}, i = n-1,\ldots, 1
+.\]
+\subsection{Metodi iterativi}
+I metodi iterativi sono tutti quelli che ci portano alla soluzione tramite un numero di iterazioni determinato dalla precisione scelta.\\
+\textbf{Splitting additivo}\\
+Una strategia generale per costruire metodi iterativi lineari consiste in una decomposizione additiva della matrice $A$, della forma  $A = P-N$ dove  $P$ e  $N$ sono due matrici opportune e  $P$ è non singolare,  $P$ è detta matrice di precondizionamento o precondizionaore.\\
+Precisamnte, assegnare  $x^{0}$, si ottiene  $x^{k+1}$ per  $k\geq 0$ risolvendo i nuovi sistemi
+ \[
+	 Px^{(k+1)} = Nx^{(k)} + b \ \ k\geq 0
+.\] 
+Più in generale per i metodi iterativi avremo $x^{(0)}$ dato e  
+\[
+	x^{(k+1)} = Bx^{(k)} + f\ \ \ k\geq 0
+.\] 
+avendo indicato con $B$ una matrice quadrata  $n\times n$ detta matrice di iterazione e con  $f$ un vettore che si ottiene a partire dal termine noto $b$.
+\begin{defi}[Condizione di consistenza]
+	Un metodo iterativo della forma appena descritta si dirà consistente con il sistema $Ax = b$ se e solo se  $f$ e  $B$ sono tali che  $x = Bx + f$. Equivalentemente
+	 \[
+		 f = (I-B)A^{-1}b
+	.\] 
+	Indicato con 
+	\[
+		e^{(k)} = x^{(k)} - x
+	.\] 
+	L'errore al passo $k$, la condizione di convergenza è quivalente a richiedere che  $\lim_{k \rightarrow +\infty} e^{(k)} = 0$ per ogni scelta del vettore iniziale $x^{(0)}$
+\end{defi}
+\begin{teo}[Convergenza e Raggio spettrale]
+	Se il metodo è consistente, esso converge alla soluzione del sistema per ogni scelta del vettore iniziale $x^{(0)}$ se e solo se  $\rho(B) < 1$
+\end{teo}
+\begin{dimo}
+	Questa te la fai sul libro a pagina 116
+\end{dimo}
+\subsubsection{Metodo di Jacobi}
+Nel metodo di Jacobi, scelto un dato iniziale $x^{(0)}$, si calcola  $x^{(k+1)}$ attraverso le formule
+ \[
+	 x_i^{(k+1)} = \frac{1}{a_{ii}} \left[ b_i - \sum^{n}_{\substack{j = 1\\ j\neq i}}a_{ij}x_j^{(k)} \right], \ \ \ i = 1,\ldots,n
+.\] 
+Ciò equivale allo splitting $A = P-N$ con
+ \[
+P = D, \ \ N = D - A= E + F
+.\] 
+Dove $D$ è la matrice diagonale rappresentata dagli elementi diagonali di  $A$,  $E$ è la matrice triangolare inferiore di coefficienti  $e_{ij} = -a_{ij}$ se  $i > j, e_ij = 0$ se  $i\leq j$, mentre  $F$ è la matrice triangolare superiore di coefficienti  $d_{ij} = -a_{ij}$ se  $j > i, f_{ij} =0 $ se  $j\leq i$. Di conseguenza, $A = D - (E+F)$\\
+La matrice di iterazione corrispondente è 
+ \[
+	 B_J = D^{-1}(E+F) = I- D^{-1}A
+.\] 
+\subsubsection{Metodo di Gauss-Seidel}
+Il metodo di Gauss-Seidel si differenzia dal metodo di Jacobi per il fatto che al passo $k+1$ si utilizzano i valori di $x_i^{(k+1)}$ qualora sianodisponibili
+ \[
+	 x_i^{(k+1)} = \frac{1}{a_{ii}} \left[ b_i - \sum^{i-1}_{j=1}a_{ij}x_k^{(k+1)}- \sum^{n}_{j=i+1}a_{ij}x_j^{(k)} \right], \ \ \ i = 1,\ldots,n
+.\] 
+Questo metodo equivale ad aver utilizzato lo splitting $A = P-N$ dove 
+ \[
+P = D-E, \ \ N=F
+.\] 
+La corrispondente matrice di iterazione è data da
+\[
+	B_{GS} = (D-E)^{-1}F
+.\] 
+\begin{teo}[Convergenza di Jacobi e Gauss Seidel]
+	Se $A$ è una matrice a dominanza diagonale stretta per righe, i metodi di Jacobi e Gauss-Seidel sono convergenti.
+\end{teo}
+\begin{dimo}
+	questa va fatta sul libro ma è una mezza cazzata (pag 121)
+\end{dimo}
+\begin{teo}[Convergenza tridiagonali]
+	Nel caso in cui $A$ sia una matrice tridiagonale (per punti o per blocchi), si può dimostrare che 
+	 \[
+		 \rho(B_{GS}) = \rho^2(B_J)
+	.\] 
+	Da tale relazione si conclude che due metodi convergono o divergono contemporaneamente. Nel caso in cui convergano, il metodo di Gauss-Seidel converge più rapidamente
+\end{teo}
+\subsubsection{Metodo del rilassamento successivo (SOR)}
+\[
+	x_i^{(k+1)}_i = \frac{\omega}{a_ii} \left[ b_i - \sum^{i-1}_{j=1}a_{ij}x_k^{(k+1)}- \sum^{n}_{j=i+1}a_{ij}x_j^{(k)} \right] + (1-\omega)x^{(k)}_i
+.\] 
+per $i = 1,\ldots, n$\\
+La matrice di iterazione è per tanto
+ \[
+	 B(\omega) = (1-\omega D^{-1} E)^{-1}[(1-\omega)I + \omega D^{-1}F] 
+.\] 
+Si puo trovare la formula seguente per il metodo SOR\\
+\[
+	x^{(k+1)} = x^{(k)} + \left(\frac{1}{\omega}D = E \right)^{-1} r^{(k)}
+.\] 
+Esso risulta consistente per ogni $\omega\neq 0$ e per  $\omega 1$ concide con il metodo di Gauss-Seidel. In particolare, se  $\omega \in(0,1)$ il metodo si dice sottorilassamento, mentre se $\omega > 1 $ si dice sovrarilassamento.
+\begin{teo}[Convergenza SOR (Teorema di Kahan)]
+	Per ogni $\omega\in \R$ si ha  $\rho(B(\omega))\geq |\omega-1|$, pertanto il metodo SOR diverge se  $\omega\leq 0$ o se $\omega\geq 2.$
+\end{teo}
+\textbf{Proprietà 4.3 (Ostrowski)}\\
+Se $A$ è una matrice simmetrica definita positiva, il metodo SOR converge se e solo se  $0  < \omega < 2$. Inoltre, la convergenza è monotona rispetto alla norma  $\|\cdot \|_A$\\
+Infine, se $A$ è a dominanza diagonale stretta per righe, il metodo SOR converge se $0 < \omega \leq 1$\\
+\textbf{Proprietà 4.4}\\
+Sia $A$ simmetrica definita positiva e tridiagonale. Allora il metodo SOR converge per ogni valore iniziale  $x^{(0)}$ se $0 < \omega < 2.$ In tal caso 
+ \[
+	 \omega_{opt} = \frac{2}{1 + \sqrt{1-\rho^2(B_J)}}
+.\] 
+ed è in corrispondenza di tale valore il fattore asintotico di convergenza è pari a
+\[
+	\rho(B(\omega_{opt})) = \frac{1 - \sqrt{1 - \rho^2(B_J)}}{1 + \sqrt{1 - \rho^2(B_J)}}
+.\] 
+\subsubsection{Un criterio basato sul controllo dell'incremento}
+Dalla relazione ricorsiva sull'errore $e^{(k+1)} = Be^{(k)}$, otteniamo
+ \[
+	 \|e^{(k+1)}\|\leq \|B\| \|e^{(k)}\|
+.\] 
+Usando la disuguaglianza triangolare si trova
+\[
+	\|e^{(k+1)}\|\leq \|B\| \left(\|e^{(k+1)}\| + \|x^{(k_1)} - x^{(k)}\| \right)
+.\] 
+dunque se $\|B\| > 1$
+ \[
+	 \|x - x^{(k+1)}\|  \leq  \frac{\|B\|}{1-\|B\|} \|x^{(k+1)} - x^{(k)}\|
+.\] 
+In particolare prendendo $k=0$ e applicando ricorsivamente la formula precedente si trova
+ \[
+	 \|x-x^{(k+1)}\|\leq \frac{\|B\|^{k+1}}{1-\|B\|}\|x^{(1)} - x^{(0)}
+.\] 
+che può essere usata per sistemare il numero di iterazioni necessario per soddisfare la condizione $\|e^{(k+1)}\|\leq \varepsilon$ per unna data tolleranza  $\varepsilon$ \\
+In pratica, $\|B\|$ può essere stimata nel modo seguente avendosi
+ \[
+	 x^{(k+1)} - x^{(k)} = - (x - x^{(k+1)}) + (x - x^{(k)}) = B(x^{(k)} - x^{(k+1)})
+.\] 
+\subsubsection{Un criterio basato sul controllo del residuo}
+Un criterio d'arresto più pratico dei precedenti è quello in cui ci si ferma quando $\|r^{(k)}| \leq \varepsilon$, essendo  $\varepsilon$ una tolleranza fissata. In tal caso si ricava
+ \[
+	 \|x-x^{(k)}\| = \|A^{-1}b - x^{(k)}\| = \|A^{-1}r^{(k)}\leq \|A^{-1}\|\varepsilon
+.\] 
+e di conseguenza, se vogliamo che l'errore sia minore di $\delta$, dovremo scegliere  $\varepsilon \leq \delta/\|A^{-1}\|$. In generale conviene tuttavia effettuare un test d'arresto sul residuo normalizzato: ci si ferma dunque non appena  $\frac{\|r^{(k)}\|}{\|r^{0}\|}\leq \varepsilon$  oppure quando risulta  $\frac{\|r^{(k)}\|}{\|b\|}\leq \varepsilon$ (che corrisponde ad aver scelto $x^{(0)} = 0$). In quest ultimo caso si ha il seguente controllo sull'errore relativo commesso.
+ \[
+	 \frac{\|x-x^{(k)}\|}{\|x\|}\leq \frac{\|A^{-1}\|\|r^{(k)}\|}{\|x\|}\leq K(A)\frac{\|r^{(k)}\|}{\|b\|}\leq \varepsilon K(A)
+.\] 
+Ne caso di metodi precondizionati, al residuo si sotituisce il residuo precondizionato e quindi il criterio precedente diventa
+\[
+	\frac{\|P^{-1}\|r^{(k)}\|}{\|P^{-1}r^{(0)}\|}\leq \varepsilon
+.\]
+essendo $P$ la matrice di precondizionamento.
+\section{Sistemi non lineari}
+Affrontiamo in questa sezione la risoluzione numerica di sistemi di equazioni non lineari della forma:
+\[
+	\text{ data } F : \R^n \rightarrow \R^n, \ \ \text{ trovare } x^*\in \R^n\ \ \text{ tale che } F(x^*) = 0
+.\] 
+\begin{nota}
+	Chiameremo $J_F(x)$ la matrice jacobiana associata a  $F$ e valutata in $x = (x_1,\ldots,x_n)^T$
+\end{nota}
+\subsection{Il metodo di Newton}
+Una immediata estensione al caso vettoriale del metodo di Newton si formula nel modo seguente:\\
+dato $x^{(0)}\in\R^n$, per  $k=0,1,\ldots, $ fino a convergenza
+ \[
+	 \text{risolvere}\ \ \ J_F(x^{(k)})\delta x^{(k)} = -F(x^{(k)})
+.\] 
+\[
+	\text{porre} \ \ \ x^{(k+1)} = x^{(k)} + \delta x^{(k)}
+.\] 
+dove  $\delta x^{(k)}$ è la correzione rispetto al termine precedente
+\begin{teo}[Convergenza metodo di Newton]
+	Sia $F:\R^n \rightarrow \R^n$ una funzione vettoriale di classe $C^1$ in un aperto convesso  $D$ di $\R^n$ contenente  $x^*$. Supponiamo che  $J^{-1}_F(x^*)$ esista e che esistano delle costanti positive,  $R$, $C$ ed $L$ tali che  $\|J_F^{-1}(x^*)\|\leq C$ e 
+	 \[
+		 \|J_F(x)-J_F(y)\|\leq L\|x-y\|\ \ \ \forall x,y\in B(x^*; R)
+	.\] 
+	Avendo indicato con lo stesso simbolo $\|\cdot\|$ una norma vettoriale ed una norma matriciale consistenti. Esiste allora  $r>0$ tale che , per ogni  $x^{(0)}\in B(x^*;r)$ la successione è univocamente definita, converge a  $x^*$ e 
+	 \[
+		 \|x^{(k+1)} - x^*\|\leq CL\|x^{(k)}-x^*\|^2
+	.\] 
+\end{teo}
+\begin{dimo}
+	sul libro a pagina 251
+\end{dimo}
+\section{Interpolaione polinomiale}
+In questo capito illustreremo i principali metodi per l'apprissimazione di funzioni attraverso i loro valori nodali.\\
+\subsection{Interpolazione polinomiale di Lagrange}
+Consideriamo $n+1$ coppie di valori $(x_i,y_i)$. Cerchiamo un polinomio $\Pi_n\in \pro_m$ detto polinomio interpolatore tale che
+ \[
+\Pi_m(x_i) = a_mx^m_i + \ldots + a_1x_i + a_0 = y_0, \ \ i = 0,\ldots,n
+.\] 
+\begin{teo}
+	Dati $n+1$ punti distinti  $x_0,\ldots,x_n$ e $n+1$ corrispondenti  $y_0,\ldots,y_n$ esiste un unico polinomio $\Pi_n\in\pro_n$ tale che  $\Pi_n(x_i) = y_i$ per  $i = 0,\ldots,n$
+\end{teo}
+La dimostrazione non è necessaria ma costruisce così il polinomio\\
+\begin{gather*}
+	\Pi_n(x_i) = \sum^{n}_{j=0}b_jl_j(x_i) = y_i, \ \ \ i= 0,\ldots, n\\
+	l_i\in\pro_n: \ \ \l_i = \prod_{\substack{i = 0\\j\neq i}}^n\frac{x-x_j}{x_i-x_j}\ \ \ \ \ i = 0,\ldots,n 
+\end{gather*}
+Questa forma è detta forma di Lagrange del polinomio interpolatore.\\
+\subsection{Forma di Newton}
+Introduciamo una forma aternativa dal costo computazionale inferiore. Poniamo il seguente obbiettivo:\\
+date $n+1$ coppie $\{x_i,y_i\}$ si può rappresentare $\Pi_n$ come la soma di  $\Pi_{n-1}$ e di un polinomio di grado  $n$ dipendente dai nodi $x_i$ e da un solo coefficiente incognito. Precisamente poniamo
+\[
+	\Pi_n (x) = \Pi_{n-1}(x) + q_n(x)
+.\] 
+doev $q_n\in\pro_n.$ Poiché  $q_n(x_i) = \Pi_n - \Pi_{n-1}(x_i) = 0$ per  $i = 0,\ldots, n-1$, dovrà necessariamente essere
+ \[
+	 q_n(x) = a_n(x-x_0)\ldots(x-x_{n-1}) = a_n\omega_n(x)
+.\] 
+Per determinare il coefficiente incognito $a_n$, supponiamo che  $y_i = f(x_i)$, $i = 0,\ldots, n$ dove $f$ è una funzione opportuna, non necessariamente nota in forma esplicita. Siccome $\Pi_nf(x_n) = f(x_n)$ si avrà
+ \[
+	 a_n = \frac{f(x_n) - \Pi_{n-1}f(x_n)}{\omega_n(x_n)}
+.\] 
+Il coefficiente $a_n$ è detto  $n$-esima differenza divisa di Newton e viene generalmente indicato con
+\[
+	a_n = f[x_0,\ldots, x_n]
+.\] 
+per $n\geq 1$. Di conseguenza la prima formula diventa
+\[
+	\Pi_nf(x) = \Pi_{n-1}f(x) + \omega_n(x)f[x_0,\ldots,x_n]
+.\] 
+Se poniamo $y_0 = f(x_0) = f[x_0]$ e $\omega_0 =1$, per ricorsione su $n$ possiamo ottenere la formula seguente
+ \[
+	 \Pi_nf(x) = \sum^{n}_{k=0}\omega_k(x)f[x_0,\ldots,x_k]
+.\] 
+\subsubsection{Formula ricorsiva per il calcolo delle differenze divise}
+Rielaborando algebricamente la formula si giunge alla seguente formula ricorsiva per il calcolo delle differenze divise:
+\[
+	f[x_0,\ldots,x_n] = \frac{f[x_1,\ldots,x_n] - f[x_0,\ldots,x_{n-1}]}{x_n-x_0}, \ \ n\geq 1
+.\]
+\textbf{Il programma di interpolazione è il numero 57 a pagina 273}\\
+\subsubsection{Stabilità della procedura}
+Il valore assunto dalla differenza divisa è invariante rispetto ad una permutazione degli indici dei nodi. Questo fatto puo essere sfruttato opportunamente quando problemi di stabilità suggeriscano l'uso di una opportuna permutazione degli indici (ad esempio se $x$ è il punto in cui si vuole valuare il polinomio è conveniente utilizzare una permutazione degli indici in modo tale che $|x-x_k|\leq |x-x_{k-1}|$ con $k = 1,\ldots, n)$
+\subsubsection{L'errore di interpolazione}
+ \begin{teo}
+ Siano $x_0,\ldots,x_n \ n+1$ nodi distinti e $x$ un punto appartenente al dominio di una data funzione $f$. Supponiamo che $f\in C^{n+1}(I_x)$ essendo $I_x$ il pi u piccolo intervallo contenente i nodi  $x_0,\ldots,x_n$ ed è il punto $x$. Allora l'errore di interpolazione nel generico punto $x$ è dato da
+ \[
+	 E_n(x) = f(x) - \Pi_nf(x) = \frac{f^{(n+1)}(\xi(x))}{(n+1)!}\omega_{n+1}(x)
+ .\] 
+ con $\xi(x)\in I_x$ e dove  $\omega_{n+1}$ è il polinomio nodale di grado $n+1$
+\end{teo}
+\subsubsection{L'errore di interpolazione usando le differenze divise}
+Consideriamo i nodi $x_0,\ldots, x_n$  e sia $\Pi_nf$ il polinomio interpolatore di  $f$ su tali nodi. Sia ora $x$ un nodo distinto dai precedenti; posto $x_{n+1} = x$, denotiamo con  $\Pi_{n+1}f$ il polinomio interpolatore sui nodi  $x_k, k= 0,\ldots,n+1$. Usando la formula delle differenze divide di Newton si trova
+ \[
+	 \Pi_{n+1}f(t) = \Pi_nf(t) + (t-x_0)\ldots(t-x_n)f[x_0,\ldots x_n,t]
+.\] 
+Essendo $\Pi_{n+1}f(x) = f(x)$, si ricava la seguente formula dell'errore di interpolazione in  $t =x$
+\[
+\begin{aligned}
+	E_n(x) &= f(x) - \Pi_nf(x) = \Pi_{n+1}f(x) - \Pi_nf(x)\\
+	       &= (x-x_0)\ldots(x-x_n)f[x_0,\ldots,x_n,x] \\
+	       &= \omega_{n+1}(x)f[0,\ldots,x_n,x]
+\end{aligned}
+\] 
+Supponendo $f\in C^{(n+1)}(I_x)$ otteniamo  \[
+	f[x_0,\ldots,x_n,x] = \frac{f^{(n+1)}(\xi(x))}{(n+1)!}
+.\] 
+$\xi(x)\in I_x$. Per la somiglianza della formula con il resto dello svilupop in serie di Taylor, la formula di Newton del polinomio interpolatore viene paragonata ad uno sviluppo troncato intorno ad  $x_0$ a patto che $|x_n - x_0|$ non sia troppo grande.
+\subsubsection{Limiti dell'interpolazione polinomiale su nodi equidistanziati}
+Per analizzare il comportamento dell'errore di interpolazione quando $n$ tende all'infinito, definiamo per ogni funzione $f\in C^0([a,b])$ la norma infinito come
+ \[
+	 \|f\|_\infty = \max_{x\in[a,b]}|f(x)|
+.\] 
+Introduciamo una matrice triangolare inferiore $X$ di dimensione infinita, detta matrice di interpolazione su $[a,b]$ i cui elementi  $x_{ij}, i,j=0,1,\ldots$ rappresentano i punti di  $[a,b]$ con l'assunzione che in ogni riga gli elementi siano tutti distinti\\
+In tal caso, per ogni  $n\geq 0$, la $n+1$-esima riga di $X$ contiene $n+1$ valori che possiamo identificare come nodi di inteprolazione. Per una data funzione $f$, si puo allora definire in modo univoco un polinomio interpolatore $\Pi_nf$ di grado $n$ rispetto a detti nodi. Naturalmente, $\Pi_n f$ dipenderà solamente da $X$, oltre che da $f.$
+\end{document}
