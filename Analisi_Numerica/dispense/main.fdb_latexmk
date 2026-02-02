@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1769988276.30164 "main.xdv" "main.pdf" "main" 1769988276.3458 0
-  "main.xdv" 1769988276.18494 259804 f9d4dde08a4ba3983edbbfaad5ed4329 "xelatex"
+["xdvipdfmx"] 1770041974.49316 "main.xdv" "main.pdf" "main" 1770041974.54199 0
+  "main.xdv" 1770041974.37607 330652 5e891a055d01df0d33594f1217bde12f "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1769988275.0569 "main.tex" "main.xdv" "main" 1769988276.34322 0
+["xelatex"] 1770041973.22891 "main.tex" "main.xdv" "main" 1770041974.53949 0
   "../../setup.tex" 1769987726.40128 3632 97a3bd827ff402b51f95a031ded8e56c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -185,10 +185,10 @@
   "/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty" 1649363507 2245 c8a4088d07cffc2e5207730c738edd76 ""
   "/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty" 1649363507 20785 71a3d72ab517959a6979c27e6176bec1 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1764115200 40900 887e0dc8cac988a9e9c574af364cf837 ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1769986827 9455226 d245052960cafb2261852f60aa404476 ""
-  "main.aux" 1769988276.18424 3517 249ad79a1281e3ca17ea244392438ba5 "xelatex"
-  "main.out" 1769988276.18424 4696 afa8a38e4cc1e1c0f237538fffbcc8fa "xelatex"
-  "main.tex" 1769988271.66298 27107 d73f5e0d33a1866b9a2b03a579c70eb9 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1770025571 9455235 d1502d9e8c0591ba1aff974f49eb8ef0 ""
+  "main.aux" 1770041974.37507 4081 73883484cba79105c7b30cb636fdb906 "xelatex"
+  "main.out" 1770041974.37607 5570 2bcce478b4546ced872951905ec34328 "xelatex"
+  "main.tex" 1770041972.38209 34524 d57bcd4aed61a56710a5cc395c2cfe8c ""
   (generated)
   "main.aux"
   "main.log"

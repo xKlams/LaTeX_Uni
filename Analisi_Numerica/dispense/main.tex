@@ -514,6 +514,103 @@ Per analizzare il comportamento dell'errore di interpolazione quando $n$ tende a
 	 \|f\|_\infty = \max_{x\in[a,b]}|f(x)|
 .\] 
 Introduciamo una matrice triangolare inferiore $X$ di dimensione infinita, detta matrice di interpolazione su $[a,b]$ i cui elementi  $x_{ij}, i,j=0,1,\ldots$ rappresentano i punti di  $[a,b]$ con l'assunzione che in ogni riga gli elementi siano tutti distinti\\
-In tal caso, per ogni  $n\geq 0$, la $n+1$-esima riga di $X$ contiene $n+1$ valori che possiamo identificare come nodi di inteprolazione. Per una data funzione $f$, si puo allora definire in modo univoco un polinomio interpolatore $\Pi_nf$ di grado $n$ rispetto a detti nodi. Naturalmente, $\Pi_n f$ dipenderà solamente da $X$, oltre che da $f.$\\
+In tal caso, per ogni  $n\geq 0$, la $n+1$-esima riga di $X$ contiene $n+1$ valori che possiamo identificare come nodi di inteprolazione. Per una data funzione $f$, si puo allora definire in modo univoco un polinomio interpolatore $\Pi_nf$ di grado $n$ rispetto a detti nodi. Naturalmente, $\Pi_n f$ dipenderà solamente da $X$, oltre che da $f.$
 
+Fissata $f$ e la matrice di interpolazione $X$, definiamo l'errore di interpolazione
+ \[
+E_{n,\infty}(X) = \|f-\Pi_nf\|_\infty, \ \ \ n = 0,1,\ldots
+.\] 
+Indichiamo con $p^*\in\pro_n$ il polinomio di miglior approssimazione uniforma (detto in inglese polinomio di best approximation), in corrispondenza del quale si ha
+ \[
+	 E^*_n = \|f-p^*_n\|_\infty\leq \|f-q_n\|_\infty \ \ \ \forall q\in\pro_n
+.\] 
+
+Vale il seguente risultato di confronto\\
+\textbf{Proprietà 7.1}
+
+Sia $f\in X^0([a,b])$ e $X$ una matrice di interpolazione su $[a,b]$.
+Allora
+\[
+	E_{n,\infty}(X)\leq (1 + \Lambda_n(X))E^*_n, \ \ \ \ n = 0,1,\ldots
+.\] 
+dove $\Lambda_n(X)$ denota la costante di Lebesgue di  $X$ definita come
+\[
+	\Lambda_n(X) = \| \sum^n_{j=0} |l_j^{(n)}|\|_\infty
+.\] 
+essendo $l_j^{(n)}\in\pro_n$ il  $j$-esimo polinomio caratteristico associato alla $n+1$-esima riga di $X$, ovvero tale che $l_j^{(n)}(x_{nk}) = \delta_{jk}, \ \ j,k=0,1,\ldots$
+
+Essendo  $E^*_n$ indipendente da $X$, tutte le informazioni relative agli effetti di $X$ su $E_{n,\infty}(X)$ andranno ricercate in $\Lambda_n(X)$. Pur esistendo una matrice di interpolazione $X^*$ in corrispondenza della quale $\Lambda_n(X)$ è minimo, non è possibile, se non in rari casi, determiunare esplicitamente gli elementi.
+
+D'altro canto per ogni possibile scelta di $X$, esiste una costante $C > 0$ tale che
+ \[
+\Lambda_n(X) > \frac 2 \pi \log(n+1) - C
+.\] 
+Questa proprietà mostra che $\Lambda_n(X) \rightarrow +\infty$ per $n \rightarrow +\infty$. In particolare si può dedurre che per ogni matrice di interpolazione $X$ su un intervallo $[a,b]$ esiste sempre una funzione $f$, continua in $[a,b]$ tale che $\Pi_nf$ non converge uniformemente (nella norma massimo) ad $f$. Non è quindi possibile approssimare tramite l'interpolazione polinomiale tutte le funzioni continue, il seguente ne è un esempio.
+
+\textbf{Controesempio di Runge}\\
+Si voglia approssimare la seguente funzione
+\[
+f(x) = \frac{1}{1+x^2} \ \ \ \ -5\leq x\leq 5
+.\] 
+con l'interpolazione di Lagrange su nodi equispaziati. Si verifica che esistono dei punti $x$ interni all'intervallo tali che 
+\[
+	\lim_{n \rightarrow +\infty} |f(x) - \Pi_nf(x)|\neq 0
+.\] 
+In particolare si ha divergenza per $|x| > 3.63\ldots$. Questo fenomeno è particolarmente marcato agli estremi dell'intervallo di interpolazione, come mostrato nella figura (pag 270) ed è legato alla scelta di nodi equispaziati.\\
+\newpage
+\subsection{Stabilità dell'interpolazione polinomiale}
+Supponiamo di considerare una approssimazione,  $\tilde f (x_i)$, di un insieme di dati  $f(x_i)$ relativi ai nodi  $x_i$, con  $i = 0,\ldots, n$ in un intervallo $[a,b]$. La perturbazione  $f(x_i) - \tilde f (x_i)$ potrà essere dovuta ad esempio all'effetto degli errori di arrotondamento, oppure causata da un errore nella misurazione dei dati stessi.\\
+Indicando con  $\Pi_n\tilde f$ il polinomio interpolatore corrispondente ai valori  $\tilde f (x_i)$ si ha\\
+\begin{align*}
+	\|\Pi_nf - \Pi_n\tilde f\|_\infty &= \max_{a\leq x\leq b}\left| \sum^n_{j=1} (f(x_j) - \tilde f(x_j))l_j(x)\right|\\
+					  &\leq \Lambda_n(X)\max_{i=0,\ldots, n}|f(x_i)-\tilde f(x_i)|
+\end{align*}
+Di conseguenza, a piccole perturbazione sui dati corrisponderanno piccole variazioni sul polinomio interpolatore puchè la costante di Lebesgue sia piccola. Quest'ultima assume il significato di numero di condizionamento del problema dell'interpolazione. Come abbiamo già osservato, $\Lambda_n$ cresce per $ n \rightarrow +\infty$ ed in particolare, nel caso dell'interpolazione polinomiale di Lagrange su nodi equispaziati, si trova
+\[
+	\Lambda_n(X) \simeq\frac{2^{n+1}}{en(\log n + \gamma)}
+.\] 
+dove $e$ è il numero di nepero e $\gamma \simeq_0.547721$ rappresenta la costante di Eulero. Di conseguenza per $n$ grande questo tipo di interpolazione può essere instabile. Facciamo notare come siano stati del tutto trascurati gli errori generati dal processo di interpolazione nella costruzione di $\Pi_n$. Tuttavia, l'effetto di questi errori è in generale trascurabile
+
+\textbf{Esempio}\\
+Sull'intervallo $[-1,1]$ interpoliamo la funzione  $f(x) = \sin(2\pi x)$ con  $22$ nodi equidistanti $x_i$, Generiamo un insieme perturbato di valori  $\tilde f (x_i)$ in modo che 
+ \[
+	 \max_{i=0,\ldots,21}|f(x_i) - \tilde f (x_i)\simeq 9.5\cdot 10^{-4}
+.\] 
+\subsection{Interpolazione composita di Lagrange}
+In generale, per distribuzioni equispaziate dei nodi di interpolazione, non si ha convergenza uniforme di $\Pi_nf$ a  $f$ per $n \rightarrow\infty$. D'altra parte, da un lato l'equispaziatura dei nodi presenta considerevoli vantaggi ocmputazionali, dall'altro l'interpolazione di Lagrange risulta ragionveolmente accurata per gradi bassi, a patto di interpolare su intervalli sufficientemente piccoli.\\
+È per tanto naturale introdurre una partizione $\mathcal T_h$ di  $[a,b]$ in  $M$ sottointervalli $I_j = [x_j,x_{j+1}]$ con  $j = 0, \ldots, M$ di lunghezza  $h_j$, con $h = \max_{0\leq j\leq M-1} h_j, $ tali che $[a,b] = \Cup_{j=0}^{M-1}$ $I_j$ ed usare poi l'interpolazione di Lagrange su ciascun intervallo  $I_j$ con  $k$ piccolo e su $k+1$ nodi equidistanziati $\{x_J^{(i)}, 0 \leq i\leq k\}$.
+
+Per  $k\geq 1$, introduciamo su  $\mathcal T$ lo spazio dei polinomi compositi
+ \[
+	 X_h^k = \{v\in C^0([a,b])\ : \ v|_{I_j}\in\pro_k(I_j)\forall I_j\in\mathcal T_h\}
+.\] 
+definito come lo spazio delle funzioni continue su $[a,b]$ le cui restrizioni a ciascun $I_j$ sono polinomi di grado $\leq k$. Allora, per ogni funzione  $f$ continua su $[a,b]$ il polinomio inteprolatore composito, $\Pi_h^kf$, coincide su $I_j$ con il polinomio interpolatore di  $f_{|I_j}$ sui  $k+1$ nodi $\{x_j^{(i)}, 0\leq i\leq k\}$. Di conseguenza, se  $f\in C^{k+1}([a,b])$, su ricava la seguente stima dell'errore
+ \[
+	 \|f - \Pi_h^kf\|_\infty \leq Ch^{k+1}\|f^{(k+1)}\|_\infty
+.\] 
+\subsection{Funzioni spline}
+Introduciamo in questa sezione le funzioni splines, che consentono di effetuare l'interpolazione di una funzione attraverso polinomi compositi non solo continui, ma anche derivabili su tutto l'intervallo $[a,b]$
+ \begin{defi}
+	 Siano $x_0,\ldots, x_n$$,n+1$ nodi distinti e ordinati sull'intervallo $[a,b]$ con  $a = x_0 < x_1< \ldots < x_n = b$. Una funzione $s_j(x)$ sull'intervallo $[a,b]$ è detta spline di grado  $k$  $(k\geq 1)$ relativa ai nodi  $x_j$ se
+	  \[
+		  s_{k|[x_j,x_{j+1}]}\in\pro_k, \ \ \ j = 0,1\ldots, n-1
+	 .\] 
+	 \[
+		 s_k\in C^{k-1}[a,b]
+	 .\] 
+\end{defi}
+\subsubsection{Spline cubiche interpolatorie}
+Le spline cubiche di grfado $3$ di tipo interpolatorio hanno un rilievo particolare, in quanto
+\begin{enumerate}
+	\item  sono le spline di grado minimo che consentano di ottenere approssimazioni almeno di classe $C^2$
+	\item sono sufficientemente regolari in presenza di piccole curvature.
+\end{enumerate}
+Consideriamo dunque in $[a,b], n+1$ nodi ordinati  $a = x_0< x_1< \ldots < x_n = b$ e le corrispondenti valutazioni $f_i$. Si vuole fornire una procedura efficiente per la costruzione della spline cubica interpolante tali valori. Essendo la spline di grado  $3$, essa dovrà presentare derivate continue fino al second'ordine. Introduciamo le seguenti notazioni
+\[
+f_i = s_3(x_i), \ \ m_i = s'_3(x_i), \ \ M_i = s''_3(x_i), \ \ i =0,\ldots, n
+.\] 
+Avendosi $s_{3,i-1}(x)\in \pro_3, s_{3,i-1}''$ sarà lineare e
+\[
+	s_{3,i-1}'' = M_{i-1}\frac{x_i - x}{h_i} + M_i\frac{x-x_{i-1}}{h_i} \ \ \text{ per } x\in[x_{i-1},x_i]
+\]
 \end{document}
