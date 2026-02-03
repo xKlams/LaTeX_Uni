@@ -613,4 +613,33 @@ Avendosi $s_{3,i-1}(x)\in \pro_3, s_{3,i-1}''$ sarà lineare e
 \[
 	s_{3,i-1}'' = M_{i-1}\frac{x_i - x}{h_i} + M_i\frac{x-x_{i-1}}{h_i} \ \ \text{ per } x\in[x_{i-1},x_i]
 \]
+essendo $h_i = x- x_i, i = 1 ,\ldots, n$. Integrando l'uguaglianza precedente due volte otteniamo
+ \[
+	 s_{3,i-1} = M_{i-1}\frac{(x_i-x)^3}{6h_i} + M_i\frac{(x-x_i)^3}{6h_i} + C_{i-1}(x-x_{i-1} + \tilde C_{i-1}
+.\] 
+e le costanti $C_{i-1}$ e $\tilde C_{i-1}$ vengono deliminate imponendo che  $s_3(x_{i-1} = f_{i-1}$ e $s_3(x_i) = f_i$. Si ricava quindi che, per $i = 1,\ldots, n-1$
+ \[
+	 \tilde C_{i-1} = f_{i-1} - M_{i-1}\frac{h^2_i}{6}, \ \ C_{i-1} = \frac{f_i-f_{i-1}}{h_i} = \frac{h_i}6(M_i-M_{i-1})
+.\] 
+Imponiamo ora la continuità delle derivate prime in $x_i$; avremo:\\
+\begin{align}
+	s'_{3,i-1}(x_i) &=\frac{h_i}{6}M_{i-1} + \frac{h_i}3M_i + \frac{f_i - f_{i-1}}{h_i}\\
+			&= -\frac{h_{i+1}}3M_i- \frac{h_{i+1}}6M_{i+1} + \frac{f_{i+1} - f_i}{h_{i+1}} = s'_{3,i}(x_i)
+\end{align}
+Si giunge così al seguente sistema lineare (detto di $M$-continuità)
+\[
+	\mu_iM_{i-1} +2M_i + \lambda_iM_{i+1} = d_i \ \ i = 1,\ldots, n-1
+.\] 
+avendo posto 
+\[
+	\mu_i = \frac{h_i}{h_i+h_{i+1}}, \ \ \ \ \lambda_i = \frac{h_{i+1}}{h_i + h_{i+1}}
+.\]
+\[
+	d_i = \frac 6{h_i + h_{i+1}} \left(\frac{f_{i+1} - f_i}{h_{i+1}} - \frac{f_i - f_{i-1}}{h_i} \right), \ \ \ i = 1, \ldots, n-1
+.\] 
+Il sistema ha $n+1$ incognite e  $n-1$ equazioni: servono ancora $2 (=k-1)$ condizioni. In generale, queste condizioni potranno essere della formula
+ \[
+	 2M_0 + \lambda_0M_1 = d_0, \ \ \mu_nM_{n-1} + 2M_n = d_n
+.\] 
+con $0\leq \lambda_0, \mu_n\leq 1$ e $d_0, d_n$  valorai assegnati. Ad esempio nel caso in cui si vogliano ottenere spline naturali (soddisfacenti $s''_3(a)= s_3''(b)= 0$), si prenderanno tali coefficienti tutti nulli.
 \end{document}
