@@ -641,5 +641,332 @@ Il sistema ha $n+1$ incognite e  $n-1$ equazioni: servono ancora $2 (=k-1)$ cond
  \[
 	 2M_0 + \lambda_0M_1 = d_0, \ \ \mu_nM_{n-1} + 2M_n = d_n
 .\] 
-con $0\leq \lambda_0, \mu_n\leq 1$ e $d_0, d_n$  valorai assegnati. Ad esempio nel caso in cui si vogliano ottenere spline naturali (soddisfacenti $s''_3(a)= s_3''(b)= 0$), si prenderanno tali coefficienti tutti nulli.
+con $0\leq \lambda_0, \mu_n\leq 1$ e $d_0, d_n$  valorai assegnati. Ad esempio nel caso in cui si vogliano ottenere spline naturali (soddisfacenti $s''_3(a)= s_3''(b)= 0$), si prenderanno tali coefficienti tutti nulli.\\
+
+\textbf{Proprietà 7.2}
+
+Sia $f\in C^2([a,b])$ e sia $s_3$ la spline cubica natruale interpolante di $f$. Allora
+\[
+	\int_a^b[s''_3(x)]^2dx\leq\int_a^b[f''(x)]^2dx
+.\] 
+valendo l'uguaglianza se e solo se $f = s_3$ \\
+\textbf{Proprietà 7.3}
+
+Sia $f\in C^4([a,b])$ e si consideri una partizione di  $[a,b]$ in sottointervalli di ampiezza  $h_i$, sia $s_3$ la spline cubica interpolante $f$. Allora
+\[
+	\|f^{(r)} - s_3^{(r)}\|_\infty\leq C_r h^{4-r}\|f^{(4)}\|_\infty\ \ \ r = 0,1,2,3
+.\] 
+dove $h = \max_i h_i, C_0 5/384, C_1 = 1/24, C_2 = 3/8, C_3 = (\beta + \beta)^{-1}/2$ e $\beta = h/\min_i h_i$\\
+\section{Integrazione numerica}
+In questo capitolo vengono illustrati i metodi più comunemente usati per il calcolo numerico degli integrali.\\
+
+Sia $f$ una funzione reale integrabile sull'intervallo $[a,b]$. Il suo integrale definito  $I(f) = \int_a^bf(x)dx$ può non essere sempre valutabile in forma esplicita o comunque può risultare difficile da calcolare. Una qualunque formula esplicita che consenta di approssimare $I(f)$ viene detta formula di quadratura o formula di integrazione numerica.
+
+Un esempio può essere ottenuto sostituendo ad  $f$ una sua approssimazione $f_n$, dipendente dall'intero $n\geq 0$, e calcolare $I(f_n)$ in luogo di  $I(f)$. Ponendo  $I_n(f) = I(f_n)$ si ha dunque
+ \[
+I_n(f;a,b) = \int_a^bf_n(x)dx\ \ \ n\geq 0
+.\] 
+La dipendenza dagli estremi di integrazione $a,b$ sarà omessa e scriveremo semplicemente $I_n(f)$.
+
+Se  $f\ion C^0([a,b])$, l'errore di quadratura $E_n(f) = I(f) - I_n(f)$ soddisfa
+\[
+|E_n(f)|\leq \int_a^b|f(x)-f_n(x)|dx\leq (b-a)\|f-f_n\|_\infty
+.\] 
+e dunque, se per qualche $n$, $\|f-f_n\|_\infty < \varepsilon$, si avrà $|E_n(f)|\leq \varepsilon(b-a)$.
+
+Ovviamente, sarà opportuno scegliere  $f_n$ in modo tale che il suo integrale sia facile da calcolare. Un modo naturale di proecdere consiste nello scegliere $f_n = \Pi_nf$ il polinomio interpolatore di Lagrange di  $f$ su $n+1$ nodi distinti, in tal caso si ha
+\[
+I_n(f) = \sum^{n}_{i=0}f(x_i)\int^b_al_i(x)dx
+.\] 
+dove $l_i$ è il polinomio caratteristico di Lagrange di grado  $n$ relativo al nodo $x_i$, in generale è un caso particolare della seguente formula
+ \[
+I_n(f) = \sum^{n}_{i=0}\alpha_if(x_i)
+.\] 
+nel caso in cui i coefficienti $\alpha_i$ della combinazione lineare siano dati da $\int_a^bl_i(x)dx$\\
+\subsection{Formule di quadratura interpolatorie}
+Vediamo tre esempi significativi della formula precedente,corrispondenti a  $n=0,1$ e $2$\\
+\subsubsection{Formula punto medio o del rettangolo}
+Sostituiamo a  $f$ su $[a,b]$ la funzione costante pari al valore assunto da  $f$ nel punto medio di $[a,b]$. Avremo
+ \[
+	 I_0(f) = (b-a)f \left(\frac{a+b}2 \right)
+.\] 
+con peso $\alpha_0 = b-a$ e nodo $x_0= (a+b)/2$. Se $f\in C^2([a,b])$, l'errore di quadratura è dato da
+\[
+	E_0(f) = \frac {h^3}3f''(\xi), \ h = \frac{b-a}2
+.\] 
+essendo $\xi$ un punto interno all'intervallo di integrazione $(a,b)$.\\
+Infatti, sviluppando la funzione  $f$ in serie di Taylod nell'intorno di $c = (a+b)/2$ ed arrestandosi al secondo termine, si ottiene
+ \[
+f(x) = f(c) + f'(c)(x-c) + f''(\eta(x))(x-c)^2/2
+.\] 
+da cui integrando e usando i lteorema del valor medio integrale si ottiene la formula precedente.\\
+Introducendo i nodi di quadratura $x_k = a + (2k + 1)H/2$, per  $k=0,\ldots,m-1$, si ottiene la formula del punto medio composita
+\[
+	I_{0,m}(f) = H \sum^{m-1}_{k=0}f(x_k), \ \ \ m\geq 1
+.\] 
+L'errore di quadratura $E_{o,m}(f) = I(f) - I_{0,m}(f)$ è dato da 
+\[
+	E_{0,m}(f) = \frac{b-a}{24}H^2f''(\xi), \ \ H = \frac{b-a}m
+.\] 
+\subsubsection{La formula del trapezio}
+Questa formula si ottiene sostituendo a $f$ il suo polinomio interpolatore di Lagrange di grado 1, $\Pi_1f,$ relativo ai nodi $x_0 = a$ e $x_1 = b$. L'espressione della formula di quadratura, che ha nodi $x_0 =a, x_1 = b$ e pesi $\alpha_0=\alpha_1=(b-a)/2$ risulta essere
+\[
+	I_1(f) = \frac{b-a}2[f(a)-f(b)]
+.\] 
+Se $f\in C^2([a,b])$, l'errore di quadratura è dato da 
+\[
+E_1(f) = -\frac{h^3}{12}f''(\xi), \ \ h = b-a
+.\]
+essendo $\xi$ un punto interno all'intervallo di integrazione.
+Per ottenere la formula composita si procede come nel caso $n=0$
+ \[
+	 I_{1,m} = \frac H 2 \sum^{m-1}_{k=0}(f(x_k)+f(x_{k+1})) \ \ m \geq 1
+.\] 
+Possiamo dunque scrivere
+\[
+	I_{1,m}(f) = H [\frac 12 f(x_0) + f(x_1)+\ldots+ f(x_{m-1}) = \frac 12 f(x_m)]
+.\] 
+Si dimostra che l'errore di quadratura associato è dato da
+\[
+	E_{1,m}(f) =- \frac{b-a}{12}H^2f''(\xi)
+.\] 
+purché $f\in C^2([a,b])$ ed essendo $\xi\in (a,b)$. Il grado di esattezza è ancora pari a $1$.
+\subsubsection{Formula della parabola}
+La formula si ottiene integrando sull'intervallo $[a,b]$ anziché $f$, il suo polinomio interpolatore di grado $2$ nei nodi $x_0 = a, x_1 = (a+b)/2$ e $x_2 = b$. I pesi risultano dati pertanto da $\alpha_0 = \alpha_2 = (b-a)/6$ e $\alpha_1 = 4(b-a)/6$, e la formula risulta essere
+\[
+	I_2(f) = \frac{b-a}6 \left[ f(a) + 4f(\frac{a+b}2) + f(b) \right]
+.\] 
+Si può dimostrare che l'errore di quadratura è dato da
+\[
+	E_2(f) = - \frac{h^5}{90}f^{(4)}(\xi), \ h = \frac{b-a}2
+.\] 
+purché $f\in C^4([a,b])$, ed essendo $\xi$ un punto interno all'intervallo $(a,b)$. Si deduce che la prima formula ha grado di esattezza 3.
+
+Sostituendo ad $f$ il polinomio inteprolatore composito di grado $2$ su $[a,b]$ si perviene dalla formula composita. Introduciamo i nodi di quadratura  $x_k = a + k H/2,$, per $k =0,\ldots, 2m$ e  $H = (b-a)/m$ con  $,\geq 1$ si ha
+\[
+	I_{2,m} = \frac H 6 \left[ f(x_0) + 2 \sum^{m-1}_{r=1}f(x_{2r}) + 4 \sum^{m-1}_{s=0}f(x_{2s+1}) + f(x_{2m}) \right]
+.\] 
+\subsection{Formula di Newton-Cotes}
+Queste formule sono basate sul metodo di interpolazione di Lagrange con nodi equidistanziati in  $[a,b]$. Per $n\geq 0$ fissato, indichiamo i nodi di quadratura con $x_k = x_0 + kh, k = 0,\ldots, n$. Le formule del punto medio, del trapezio sono esempi di formule di Newton-Cotes, dove, rispettivamente, $n=0, n=1$. Nel caso generale si definiscono:
+ \begin{itemize}
+	 \item \textbf{formule chiuse}, quelle in cui $x_0 = a, x_n = b$ e $h = \frac{b-a}n \ (n\geq 1)$
+	 \item  \textbf{formule aperte}, quelle in cui $x_0 = a + h, x_n = b-h$ e $h = \frac{b-a}{n-2}\ (n\geq 0)$
+\end{itemize}
+Una proprietà interessante delle formule di Newton-Cotes è quella di avere pesi di quadratura $\alpha_i$ che dipendono solo da $n$ e da $h$, ma non dall'intervallo di integrazione $[a,b]$.\\
+Si può ricavare la formula dei pesi di quadratura
+\[
+\alpha_i = \int_a^bl_i(x)dx = \int_0^n\varphi_i(t)hdt = h\int^n_0\varphi_i(t)dt
+.\] 
+con
+\[
+	l_i(x) = \prod^n_{\substack{k=0\\k\neq i}}\frac{t-k}{i-k} = \varphi_i(t)\ \ \ 0\leq i\leq n
+.\] 
+da cui si ottiene ela formula di quadratura
+\[
+I_n(f) = h \sum^{n}_{i=0}w_if(x_i), \ \ \ w_i = \int^n_0\varphi_i(t)dt
+.\] 
+In modo analogo lavorando si possono reinterpretare le formule aperte
+\[
+	I_n(f) = h \sum^{n}_{i=0}w_if(x_i), \ \ \ w_i = \int^{n+1}_{-1} \varphi_i(t)dt
+.\] 
+\begin{teo}
+	Data una formula di Newton-Cotes con $n$ pari, aperta o chiusa, vale la seguente rappresentazione dell'errore
+	\[
+		E_n(f) = \frac{M_n}{(n_2)!}h^{n+3}f^{(n+2)}(\bar \xi)
+	.\] 
+	purché $f\in C^{n+2}$, dove $\bar \xi \in(a,b)$ e 
+	 \[
+	M_n = \begin{cases}
+		\displaystyle
+		\int^n_0t\pi_{n+1}(t)dt < 0 \ \ \ \text{ per formule chiuse,}\\
+		\displaystyle
+		\int_{-1}^{n+1}t\pi_{n+1}(t)dt > 0 \ \ \ \text{ per formule aperte}
+	\end{cases}
+	.\] 
+	avendo definito $\pi_{n+1}(t) = \prod_{i=0}^n(t-i)$. Si deduce che il grado di esattezza è pari a $n+1$ e che l'errore è proporzionale a $h^{n+3}$.\\
+	Similmente per  $n$ dispari vale la seguente rappresentazione dell'errore
+	\[
+		E_n(f) = \frac{K_n}{(n+1)!}h^{n+2}f^{(n+1)}(\bar \eta)
+	.\] 
+	purché $f\in C^{n+1} ([a,b]),$ dove $\bar\eta\in(a,b)$ e 
+	 \[
+	K_n = \begin{cases}
+		\displaystyle
+		\int^n_0\pi_{n+1}(t)dt < 0 \ \ \ \text{ per formule chiuse,}\\
+		\displaystyle
+		\int_{-1}^{n+1}\pi_{n+1}(t)dt > 0 \ \ \ \text{ per formule aperte}
+	\end{cases}
+	.\] 
+	Dunque il grado di esattezza è pari a $n$ e l'errore è proporzionale a $h^{n+2}$
+\end{teo}
+\subsection{Formule di Newton-Cotes composite}
+Si può ottenere la formula di quadratura interpolatoria composita sostituendo $I(f)$ con 
+\[
+	I_{n,m}(f) = \sum^{m-1}_{j=0} \sum^{n}_{k=0}\alpha_k^{(j)}f(x_k^{(j)})
+.\] 
+L'errore che si genera sarà $E_{n,m} (f) = I(f) - I_{n,m}(f)$
+ \begin{teo}
+	 Data una formula di Newton-Cotes composita, aperta o chiusa su ogni sottointervallo e con $n$ pari, se $f\in C^{n+2}([a,b])$ si ha
+	 \[
+		 E_{n,m}(f) = \frac{b-a}{(n_2)!}\frac{M_n}{\gamma^{n+3}_n}H^{n+2}f^{(n+2)}(\xi)
+	 .\] 
+	 per un opportuno $\xi\in(a,b)$. Pertanto, la formula di quadratura ha ordine di infinitesimo $n+2$ rispetto ad $H$ e di grado di esattezza pari a $n+1$.
+
+	 Nel caso in cui  $n$ sia dispari, se $f\in C^{n+1}([a,b])$ si ha
+	 \[
+		 E_{n,m}(f) = \frac{b-a}{(n+1)!}\frac{K_n}{\gamma^{n+2}_m}H^{n+1}f^{(n+1)}(\eta)
+	 .\] 
+	 per un opportuno $\eta\in(a,b)$. Pertanto, la formula di quadratura ha ordine di infinitesimo $n+1$ rispetto ad $H$ e grado di esattezza pari a $n$.\\
+	 nelle due formule precedenti si ha $\gamma_n = (n+2)$ se la formula è aperta e $\gamma_n = n$ se la formula è chiusa.
+\end{teo}
+\subsection{L'estrapolazione di Richardson}
+Il metodo di estrapolazione di Richardson è una procedura che combina opoprtunamente varie approssimazioni di una certa quantità $\alpha_0$ in modo da trovare una stima più accurata di $\alpha_0$ con una quantità $A(h)$ che sia calcolabile per ogni valore del parametro  $h\neq 0$. Assumiamo inoltre che per  $A(h)$ valga uno sviluppo del tipo
+\[
+	A(h) = \alpha_0 + \alpha_1h + \ldots + \alpha_kh^k + R_{k+1}(h).
+.\] 
+per un opportuno $k\geq 0$, dove $|R_{k+1}|\leq C_{k+1}h^{K+1}$. La costante $C_{k+1}$ e i coefficienti $\alpha_i$ sono indipendenti da $h$. Quindi $\alpha_0 = \lim_{h \rightarrow 0} A(h).$ 
+
+Scrivendo la precedente formula con $\delta h$ invece di $h$ con $0 < \delta < 1$, si ottiene
+ \[
+	 A(\delta h) = \alpha_0 + \alpha_1(\delta h) + \ldots + \alpha_k(\delta h)^k + R_{k+1}(\delta h)
+.\] 
+Possiamo calcolare quindi
+\[
+	B(h) = \frac{A(\delta h) - \delta A(h)}{1-\delta} = \alpha_0 + \tilde \alpha_2h^2 + \ldots \tilde\alpha_kh^k + \tilde R_{k+1}(h)
+.\] 
+avendo definito, per $k\geq 2, \tilde \alpha_i = \alpha_i(\delta^i - \delta)/(1- \delta)$, per $i =2,\ldots, k$ e  $\tilde R_{k+1}(h) = [R_{k+1}(\delta h) - \delta R_{k+1}(h)]/(1-\delta)$
+
+Si noti che  $\tilde \alpha_i\neq 0$ se e solo se $\alpha_i\neq 0$; dunque, se in particolare risulta  $\alpha_1\neq 0$, allora $A(h)$ è un'approssimazione al prim'ordine per $\alpha_0$, mentre $B(h)$ lo è almeno al second'ordine. Più in generale, se $A(h)$ è un'approssimazione di $\alpha_0$ all'ordine $p$, allora la quantità $B(h) = [A(\delta h) - \delta^pA(h)]/(1-\delta^p)$ è un'approssimazione di $\alpha 0$ almeno all'ordine  $p+1$.\\
+Procedendo per induzione si genera il seguente algoritmo di estrapolazione di Richardson, fissati  $n\geq 0, h > 0$ e $\delta\in (0,1)$ si costruiscono le successioni
+ \begin{gather}
+	 A_{m,0} =A(\delta^m h)\ \ \ \ \ \ m = 0,\ldots, n\\
+	 A_{m,q+1} = \frac{A_{m,q} - \delta^{q+1}A_{m-1,q}}{1 - \delta^{q+1}}\ \ \ \substack{q = 0,\ldots, n-1\\m = q+1,\ldots n}
+\end{gather}
+\section{Risoluzione numerica di equazioni differenziali ordinarie}
+In questo capitolo affrontiamo la risoluzione numerica del problema di Cauchy per le equazioni differenziali.
+\begin{defi}[Problema di Cauchy (ODE)]
+	trovare $y\in C^1(I)$ a valori reali tale che
+	 \[
+	\begin{cases}
+		y'(t) = f(t,y(t))\ \ \ t\in I\\
+		t(t_0) = y_0
+	\end{cases}
+	.\] 
+	dove $f(t,y)$ è una funzione assegnata nella striscia $S = I\times (-\infty, +\infty)$ a valori reali e continua rispetto ad entrambe le variabili.
+\end{defi}
+\begin{defi}[Problema di Cauchy vettoriale]
+	\[
+	\begin{cases}
+		y' = F(t,y)\\
+		y(t_0) = y_0
+	\end{cases}
+	.\] 
+	dove $y$ è il vettore soluzione e $F:\R\times\R^n \rightarrow \R^n$ unna funzione assegnata.
+\end{defi}
+\textbf{Proprietà (esistenza ed unicità in grande}
+Sia $F:\R\times \R^n \rightarrow \R^n$ una funzione continua su $D = [t_0,T]\times \R^n$ con $t_0$ e $T$ finiti. Allora, se esiste una costante positiva $ L$ tale che la disuguaglianza
+\[
+\|F(t,y) - F(t,\bar y)\|\leq L\|y-\bar y\|
+.\] 
+valga per ogni $(t,y), (t,\bar y)\in D$, allora per ogni  $y_0\in \R^n$ esiste un'unica $y$ continua e differenziabile per ogni  $(t,y)\in D$, soluzione del problema di Cauchy
+\subsection{Metodi numerici ad un passo}
+Consideriamo l approssimazione numerica del problema di Cauchy, fissato $0<T<+\infty$, sia $I = (t_0,t_0 + T)$ l'intervallo di integrazione e, in corrispondenza di $h > 0,$ sia $t_n = t_0 + nh,$ con $n = 0,1,2,\ldots, N_h,$ la successione dei nodi di discretizzazione di $I$ in sottointervalli $I_n = [t_n,t_{n+1}]$ con  $n=0,1,\ldots,N_h-1$. L'ampiezza  $h$ di tali intervalli verrà detta passo di discretizzazione. Si noti che $N_h$ è il massimo intero per il quale risulti $t_{N_h}\leq t_0 + T$. Indichiamo con $u_j$ l'approssimazione del nodo  $t_j$ della soluzione esatta $y(t_j);$ quest'ultima verrà denotata per comodità come $y_j$. Analogamente, $f_j$ indicherà il valore di $f(t_j,u_j).$ Ovviamente in generale si porrà $u_0 = y_0$\\
+\begin{defi}[Metodo numerico ad un passo]
+	Un metodo numerico per l'approssimazione del problema ODE si dice ad un passo se $\forall n \geq 0, u_{n+1}$ dipende solo da $u_n$. In caso contrario si dirà a più passi o multistep.
+\end{defi}
+\begin{defi}[Metodi espliciti ed impliciti]
+	Un metodo si dice esplicito se $u_{n+1}$ si ricava direttamente in funzione dei valori nei soli punti precedenti. Un metodo è implicito se $u_{n+1}$ dipende implicitamente da se stessa attraverso $f$.
+\end{defi}
+Alcuni di questi metodi sono
+\begin{enumerate}
+	\item  \textbf{Il metodo di Eulero in avanti (o di Eulero Esplicito}
+		\[
+			u_{n+1} = u_n + hf_n
+		.\] 
+	\item \textbf{Il metodo di Eulero all'indietro (o di Eulero implicito)}
+		\[
+			u_{n+1} = u_n + hf_{n+1}
+		.\] 
+	\item \textbf{Il metodo del trapezio (o di Cranck-Nicolson)}
+		\[
+			u_{n+1} = u_n + \frac h 2[f_n + f_{n+1}]
+		.\] 
+	\item \textbf{Il metodo di Heun}
+		\[
+			u_{n+1} = u_n + \frac h 2[f_n + f(t_{n+1},u_n + h f_n)]
+		.\] 
+	\item \textbf{Eulero modificato}
+		\[
+			u_{n+1} = u_n + hf(t_n + \frac h 2 , u_n + \frac h 2 f_n ), \ \ n\geq 0
+		.\] 
+\end{enumerate}
+\subsection{Analisi dei metodi ad un passo}
+Ogni metodo esplicito ad un passo si può scrivere nella forma compatta
+\[
+	u_{n+1} = u_n + h\Phi(t_n,u_n,f_n:h), \ \ \ 0 \leq n\leq N_h-1, \ \ u_0 = y_0
+.\] 
+dove $\Phi(\cdot.\cdot,\cdot;\cdot)$ è detta funzione di incremento. Ponendo come al solito $y_n = y_n(t_n)$, in analogia alla formula precedente possiamo scrivere
+\[
+	y_{n+1} = y_n = h\Phi(t_n,y_n,f(t_n,y_n);h) + \varepsilon_{n+1}, \ \ \ 0\leq n\leq N_h -1
+.\] 
+dove $\varepsilon_{n+1}$ è  il residuo che si genera nel punto $t_{n+1}$ avendo preteso che la soluzione esatta soddisfi lo schema numerico. Riscriviamo il residuo nella forma seguente
+\[
+	\varepsilon_{n+1} = h\tau_{n+1}(h)
+.\] 
+La quantità $\tau_{n+1}(h)$ è detta errore di troncamento locale nel nodo $t_{n+1}$. Definiamo allora errore di troncamento globale la quantità
+\[
+	\tau(h) = \max_{0\leqn\leq N_h-1}|\tau_{n+1}(h)|
+.\] 
+Si noti che $\tau(h)$ dipende dalla funzione  $y$, soluzione del problema di Chauchy.\\
+Il metodo di Eulero in avanti è un caso particolare della prima formula ove si ponga
+\[
+\Phi(t_n,u_n,f_n;h) = f_n
+.\] 
+mentre per ritrovare il metodo di Heun si deve porre
+\[
+\Phi(t_n,u_n,f_n;h) = \frac 12 [f_n + f(t_n + h, u_n+ hf_n)
+.\] 
+Uno schema esplicito ad un passo è completamente caratterizzato dalla sua funzione di incremento $\Phi$. Quest'ultima, in tuttii casi sin qui considerati è tale che
+\[
+	\lim_{ h \rightarrow 0}\Phi(t_n,u_n,f_n;h)= f(t_n,y_n),\ \ \ \forall t_n\geq t_0
+.\] 
+La proprietà precedente, unita all'ovvia proprietà che $y_{n+1}-y_n = hy'(t_n)+O(h^2)\ \ \forall n\geq 0$, assicura che segua  $\lim_{h \rightarrow 0} \tau_{n+1}(h) = 0, \ 0\leq n\leq N_{h}-1$. A sua volta questa condizione garantisce che
+\[
+	\lim_{h \rightarrow 0}\tau(h) =0
+.\]
+Proprietà che esprime la consistenza del metodo numerico ad inizio pagina con il problema di Cauchy. In generale un metodo si dirà consistente quando il suo LTE (local truncation error) è infinitesimo  rispetto ad $h$. Inoltre uno schema ha ordine $p$ se, $\forall t\in I$, la soluzione $y(t)$ del problema di Cauchy soddisfa la condizione
+\[
+	\tau(h) = O(h^p)\ \ \text{per } h \rightarrow 0
+.\] 
+Usando gli sviluppi di Taylor si può stabilire che il metodo di Eulero in avanti ha ordine uno, mentre il metodo di Crank-Nicolson e quello di Heun hanno ordine due.
+\subsection{Metodo di Runge-Kutta a 3 stadi}
+\[u_{n+1} = u_n + \frac h 6(K_1 +2K_2 + 2K_3 + K_4)\]
+$K_1 = f_n$\\
+$K_2 = f(t_n + \frac h 2, u_n + \frac h 2 K_1)$\\
+$K_3 = f(t_n + \frac h 2, u_n + \frac h 2 K_2)$\\
+$K_4 = f(t_{n+1}, u_n + h K_3)$
+\subsection{Zero stabilità}
+Il metodo numerico ad un passo per la risoluzione del problema di Cauchy è zero-stabile se $\exists h_0>0,\exists C>0$ ed $\exists \varepsilon_0>0$ tali che $\forall h\in(0,h_0]$ e $\forall \varepsilon\in (0,\varepsilon_0]$, se $|\delta_n|\leq \varepsilon$, $0\leq n\leq N_h$ allora
+ \[
+	 |z_n^{(h)} - u_n^{(h)}\leq C\varepsilon, \ \ 0\leq n\leq N_h
+.\] 
+dove $z_n^{(h)}$ e $u_n^{(h)}$ sono rispettivamente le soluzioni dei problemi
+\[
+\begin{cases}
+	z_{n+1}^{(h)}= z_n^{(h)} + h[\Phi(t_n, z_n^{(h)}, f(t_n, z_n^{(h)});h)+\delta_{n+1}], n = 0,\ldots, N_h-1\\
+	z_0^{(h)} = y_0 + \delta_0
+\end{cases}
+.\] 
+\[
+\begin{cases}
+	u_{n+1}^{(h)} = u_n^{(h)} + h\Phi(t_n,u_n^{(h)}, f(t_n,u_n^{(h)});h), n = 0,1,\ldots,N_h-1\\
+	u_0^{(h)} =y_0
+\end{cases}
+.\] 
+\subsection{Prima barriera di Dahlquist per i metodi ad un passo lineari}
+Caso Esplicito: La barriera dice $p\leq k$. Con $k=1$, otteniamo $p\leq1$. Esempio: Il metodo di Eulero in avanti è esplicito a un passo ed ha ordine 1. Non è possibile costruire un metodo lineare esplicito a un passo con ordine $>1$ (senza aggiungere stadi interni, vedi sotto).
+
+Caso Implicito : La barriera dice $p\leq k+1$ (per k dispari). Con $k=1$, otteniamo $p\leq2$. Esempio: Il metodo di Crank-Nicolson (o dei Trapezi) è implicito a un passo ed ha ordine 2. Questo è il massimo ordine raggiungibile per questa struttura.
+
+Conclusione: Se restiamo nella struttura lineare classica $y_{n+1}=y_n+h(\ldots)$, non possiamo superare l'ordine 2.
 \end{document}

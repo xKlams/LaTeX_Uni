@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.29)  3 FEB 2026 12:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Fedora 40) (preloaded format=pdflatex 2025.3.29)  4 FEB 2026 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1158,23 +1158,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
-[23] [24] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2BCCE478B4546CED872951905EC34328;5570.
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 643--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--660
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+[24]
+./main.tex:671: Undefined control sequence.
+l.671 Se  $f\ion
+                 C^0([a,b])$, l'errore di quadratura $E_n(f) = I(f) - I_n(f)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
+
+ []
+
+[25] [26] [27]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 772.
+ [28]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 808.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 821.
+ [29] [30]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 847.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 857.
+
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
+
+ []
+
+[31]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 874.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 877.
+ [32]
+./main.tex:918: Undefined control sequence.
+l.918 	\tau(h) = \max_{0\leqn
+                             \leq N_h-1}|\tau_{n+1}(h)|
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[33] [34] [35] (./main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 65903E7238FCA29E911F04F3119DCA6D;8621
+(rerunfilecheck)             After:  9EA4DB2654CA6C61BA75A8C27B6815D2;8755.
  ) 
 Here is how much of TeX's memory you used:
- 28253 strings out of 476034
- 587845 string characters out of 5792854
+ 28304 strings out of 476034
+ 588440 string characters out of 5792854
  1864388 words of memory out of 6000000
- 48134 multiletter control sequences out of 15000+600000
+ 48147 multiletter control sequences out of 15000+600000
  524097 words of font info for 78 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 121i,15n,121p,494b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 121i,15n,121p,778b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (24 pages, 258515 bytes).
+Output written on main.pdf (35 pages, 297744 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 95 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 405 compressed objects within 5 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 309 words of extra memory for PDF output out of 10000 (max. 10000000)
 
